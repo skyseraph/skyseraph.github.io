@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>手掌手指分割算法（源码） | SkySeraph</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="开发环境开发环境
+
+64 bits Windows OS (Win8.1)  
+VS2013  
+OpenCV 2.4.9  
+
+功能原理
+算法要求  
+
+完成将Camera拍摄的手掌图片中分割出每个手指用于指纹识别  
+
+算法流程
+
+
+
+核心代码
+
+1234567891011121314151617181920212223242526272829303132333435363738394041">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手掌手指分割算法（源码）">
+<meta property="og:url" content="http://skyseraph.com/2014/07/24/CV/手掌手指分割算法/index.html">
+<meta property="og:site_name" content="SkySeraph">
+<meta property="og:description" content="开发环境开发环境
+
+64 bits Windows OS (Win8.1)  
+VS2013  
+OpenCV 2.4.9  
+
+功能原理
+算法要求  
+
+完成将Camera拍摄的手掌图片中分割出每个手指用于指纹识别  
+
+算法流程
+
+
+
+核心代码
+
+1234567891011121314151617181920212223242526272829303132333435363738394041">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E6%89%B9%E9%87%8F2.png">
+<meta property="og:updated_time" content="2017-03-19T13:58:28.391Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="手掌手指分割算法（源码）">
+<meta name="twitter:description" content="开发环境开发环境
+
+64 bits Windows OS (Win8.1)  
+VS2013  
+OpenCV 2.4.9  
+
+功能原理
+算法要求  
+
+完成将Camera拍摄的手掌图片中分割出每个手指用于指纹识别  
+
+算法流程
+
+
+
+核心代码
+
+1234567891011121314151617181920212223242526272829303132333435363738394041">
+<meta name="twitter:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E6%89%B9%E9%87%8F2.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/avatar.png" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-77554390-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?622a2108abaca144ab683efc8b9d1430";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+</head>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">SkySeraph</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/projects/">Projects</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">SkySeraph</h2>
+            <h3 id="title">Senior Engineer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>ShenZhen, China</span>
+            <a id="follow" target="_blank" href="https://github.com/skyseraph">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                19
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                31
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    <td><a href="http://github.com/skyseraph" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+                    
+                    <td><a href="http://stackoverflow.com/users/1343127/skyseraph" target="_blank" title="stack-overflow"><i class="fa fa-stack-overflow"></i></a></td>
+                    
+                    <td><a href="http://weibo.com/skyseraph" target="_blank" title="weibo"><i class="fa fa-weibo"></i></a></td>
+                    
+                    <td><a href="https://twitter.com/seraph_sky" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+                    
+                    <td><a href="/" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></td>
+                    
+                    <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-CV/手掌手指分割算法" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            手掌手指分割算法（源码）
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2014/07/24/CV/手掌手指分割算法/">
+            <time datetime="2014-07-24T15:40:20.000Z" itemprop="datePublished">2014-07-24</time>
+        </a>
+    </div>
+
+
+                    
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/CV/">CV</a>
+    </div>
+
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CV-MV/">CV/MV</a>, <a class="tag-link" href="/tags/DIP/">DIP</a>, <a class="tag-link" href="/tags/OpenCV/">OpenCV</a>, <a class="tag-link" href="/tags/Project/">Project</a>, <a class="tag-link" href="/tags/图像算法/">图像算法</a>
+    </div>
+          
+					
+<div class="article-category">
+	<i class="fa fa-line-chart"></i>
+	<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> article.hits
+</div>
+
+
+					
+<div class="article-author"><i class="fa fa-user"></i>
+  
+  <a href="http://skyseraph.com" title="SkySeraph">SkySeraph</a>
+</div>
+  
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#开发环境"><span class="toc-number">1.</span> <span class="toc-text">开发环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#功能原理"><span class="toc-number">2.</span> <span class="toc-text">功能原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#算法效果"><span class="toc-number">3.</span> <span class="toc-text">算法效果</span></a></li></ol>
+                </div>
+            
+            <hr>
+<h1 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h1><p>开发环境</p>
+<ul>
+<li>64 bits Windows OS (Win8.1)  </li>
+<li>VS2013  </li>
+<li>OpenCV 2.4.9  </li>
+</ul>
+<h1 id="功能原理"><a href="#功能原理" class="headerlink" title="功能原理"></a>功能原理</h1><blockquote>
+<p><strong>算法要求</strong>  </p>
+</blockquote>
+<p>完成将Camera拍摄的手掌图片中分割出每个手指用于指纹识别  </p>
+<blockquote>
+<p><strong>算法流程</strong></p>
+</blockquote>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt=""></p>
+<blockquote>
+<p><strong>核心代码</strong></p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> TIME_RUN_COST</span></div><div class="line">	<span class="keyword">double</span> duration = <span class="keyword">static_cast</span>&lt;<span class="keyword">double</span>&gt;(cv::getTickCount());<span class="comment">//time</span></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"filename="</span> &lt;&lt; filename &lt;&lt;<span class="built_in">endl</span>;</div><div class="line">	Mat src = imread(filename, CV_LOAD_IMAGE_COLOR); </div><div class="line">	<span class="keyword">if</span> (src.empty())</div><div class="line">	&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"imread error!!!"</span>;</div><div class="line">		getchar();</div><div class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">	&#125;</div><div class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> BOB_DBG_COM</span></div><div class="line">	<span class="built_in">memset</span>(out_filename, <span class="number">0</span>, <span class="keyword">sizeof</span>(out_filename) / <span class="keyword">sizeof</span>(<span class="keyword">char</span>));</div><div class="line">	<span class="built_in">sprintf</span>(out_filename, <span class="string">"%s-%s.jpg"</span>,out_name,<span class="string">"0-0src"</span>);</div><div class="line">	imwrite(out_filename, src);</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// BOB_DBG_COM		</span></span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">if</span> 0</span></div><div class="line">	<span class="keyword">int</span> scaleSize = <span class="number">4</span>;</div><div class="line">	resize(src, src, Size(src.cols / scaleSize, src.rows / scaleSize), <span class="number">0</span>, <span class="number">0</span>, CV_INTER_AREA);</div><div class="line">	<span class="built_in">memset</span>(out_filename, <span class="number">0</span>, <span class="keyword">sizeof</span>(out_filename) / <span class="keyword">sizeof</span>(<span class="keyword">char</span>));</div><div class="line">	<span class="built_in">sprintf</span>(out_filename, <span class="string">"%s-%s.jpg"</span>, out_name, <span class="string">"0-0src"</span>);</div><div class="line">	imwrite(out_filename, src);</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">if</span> 1</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"cut..."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="keyword">int</span> width = src.cols; </div><div class="line">	<span class="keyword">int</span> height = src.rows;		</div><div class="line">	<span class="keyword">float</span> scale = <span class="number">0.8</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"width="</span> &lt;&lt; width &lt;&lt; <span class="string">",height="</span> &lt;&lt; height &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="function">Rect <span class="title">rect</span><span class="params">(<span class="number">0</span>, <span class="number">0</span>, width, height*scale)</span></span>;</div><div class="line">	Mat imgCut;</div><div class="line">	imgCut = src(rect).clone(); </div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line">	<span class="comment">//Mat  imgCut = src;</span></div><div class="line"></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"filter..."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="comment">// filter2D(imgCut, imgCut, -1, kernel); </span></div><div class="line">	GaussianBlur(imgCut, imgCut, Size(<span class="number">5</span>, <span class="number">5</span>), <span class="number">0</span>, <span class="number">0</span>); </div><div class="line">	<span class="comment">// blur(imgCut, imgCut, Size(5, 5));</span></div><div class="line">	</div><div class="line"><span class="meta">#<span class="meta-keyword">if</span> 0</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"EqualizeHist..."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	Mat matOutEqualizeHist = Mat(imgCut.size(), CV_8UC3);</div><div class="line">	<span class="comment">//IplImage* pImgOutEqualizeHist = cvCreateImage(cvSize(cameraFrame.cols, cameraFrame.rows), IPL_DEPTH_8U, 3);</span></div><div class="line">	IplImage pImgInEqualizeHist = (IplImage)(imgCut);	<span class="comment">// Mat-&gt; IplImage</span></div><div class="line">	IplImage* pImgOutEqualizeHist = EqualizeHistColorImage(&amp;pImgInEqualizeHist);</div><div class="line">	matOutEqualizeHist = pImgOutEqualizeHist; <span class="comment">//IplImage -&gt; Mat</span></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line">	<span class="comment">// out</span></div><div class="line">	Mat imgSrc = Mat(imgCut.size(), CV_8UC1);</div><div class="line">	imgCut.copyTo(imgSrc);</div><div class="line"></div><div class="line">	Mat imgContour = Mat(imgSrc.size(), CV_8UC1);</div><div class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> FINGER_EXTRACT_AT_NIGHT</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Nigth,Threshold..."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	Mat imgTmp;<span class="comment">// = Mat(imgCut.size(), CV_8UC1);</span></div><div class="line">	cvtColor(imgSrc, imgTmp, CV_RGB2GRAY);</div><div class="line">	cvThresholdOtsu(&amp;((IplImage)imgTmp), &amp;((IplImage)imgTmp));</div><div class="line">	imgTmp.copyTo(imgContour);</div><div class="line"><span class="meta">#<span class="meta-keyword">else</span></span></div><div class="line"></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Day,Skin..."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	Mat imgSkin2 = Mat(imgSrc.size(), CV_8UC1);</div><div class="line">	IplImage* pImgSkin2 = cvCreateImage(cvSize(imgSrc.cols, imgSrc.rows), IPL_DEPTH_8U, <span class="number">1</span>);</div><div class="line">	IplImage pImg2 = (IplImage)(imgSrc);	<span class="comment">// Mat-&gt; IplImage</span></div><div class="line">	cvSkinOtsu(&amp;pImg2, pImgSkin2);</div><div class="line">	imgSkin2 = pImgSkin2; <span class="comment">//IplImage -&gt; Mat</span></div><div class="line"></div><div class="line">	<span class="comment">//Mat imgSkin = Mat(imgSrc.size(), CV_8UC1);</span></div><div class="line">	imgSkin2.copyTo(imgContour);</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line">	</div><div class="line">	<span class="comment">/////////////////////// Contours</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Find Contours..."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;cv::Point&gt; &gt; contours;</div><div class="line">	<span class="built_in">vector</span>&lt;Vec4i&gt; hierarchy;</div><div class="line">	findContours(imgContour, contours, hierarchy,</div><div class="line">		CV_RETR_EXTERNAL, CV_CHAIN_APPROX_SIMPLE, cv::Point(<span class="number">0</span>, <span class="number">0</span>)); </div><div class="line"></div><div class="line">	sort(contours.begin(), contours.end(), compareContourAreas);</div><div class="line"></div><div class="line">	<span class="keyword">int</span> contours_num = contours.size();</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"contours_num="</span> &lt;&lt; contours_num &lt;&lt; <span class="built_in">endl</span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">if</span> 0	</span></div><div class="line">	<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;Point&gt;&gt;::const_iterator itContours = contours.begin();</div><div class="line">	<span class="comment">//for (int i = 0; i &lt; contours.size(); i++)</span></div><div class="line">	<span class="keyword">for</span> (; itContours != contours.end(); ++itContours)</div><div class="line">	&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Size: "</span> &lt;&lt; itContours-&gt;size() &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//每个轮廓包含的点数</span></div><div class="line">	&#125;</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">if</span> 1 <span class="comment">//usd</span></span></div><div class="line">	<span class="comment">// Eliminate too short or too long contours  </span></div><div class="line">	<span class="keyword">int</span> cmin = <span class="number">100</span>;  <span class="comment">// minimum contour length  </span></div><div class="line">	<span class="comment">//int cmax= 1000; // maximum contour length  </span></div><div class="line">	<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;Point&gt;&gt;::const_iterator itc = contours.begin();</div><div class="line">	<span class="keyword">while</span> (itc != contours.end())</div><div class="line">	&#123;</div><div class="line">		<span class="comment">//if (itc-&gt;size() &lt; cmin || itc-&gt;size() &gt; cmax)		</span></div><div class="line">		<span class="keyword">if</span> (itc-&gt;size() &lt; cmin)	&#123;</div><div class="line">			itc = contours.erase(itc);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span></div><div class="line">			++itc;</div><div class="line">	&#125;</div><div class="line">	contours_num = contours.size();</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; <span class="string">"contours_num after Eliminate="</span> &lt;&lt; contours_num &lt;&lt; <span class="built_in">endl</span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line"></div><div class="line">	<span class="comment">// extract the contour img</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Extract Contours..."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="keyword">if</span> (contours_num &gt;= <span class="number">4</span>)</div><div class="line">	&#123;</div><div class="line">		Mat img1, img2, img3, img4;</div><div class="line">		<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;cv::Point&gt; biggest1Contour = contours[contours_num - <span class="number">1</span>];</div><div class="line">		<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;cv::Point&gt; biggest2Contour = contours[contours_num - <span class="number">2</span>];</div><div class="line">		<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;cv::Point&gt; biggest3Contour = contours[contours_num - <span class="number">3</span>];</div><div class="line">		<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;cv::Point&gt; biggest4Contour = contours[contours_num - <span class="number">4</span>];</div><div class="line">		<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;cv::Point&gt; smallestContour = contours[<span class="number">0</span>];</div><div class="line">		extractFingerImg2(contours, imgSrc, img1, contours_num, <span class="number">1</span>);		</div><div class="line">		extractFingerImg2(contours, imgSrc, img2, contours_num, <span class="number">2</span>);</div><div class="line">		extractFingerImg2(contours, imgSrc, img3, contours_num, <span class="number">3</span>);</div><div class="line">		extractFingerImg2(contours, imgSrc, img4, contours_num, <span class="number">4</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (contours_num == <span class="number">3</span>)</div><div class="line">	&#123;</div><div class="line">		Mat img1, img2, img3;</div><div class="line">		<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;cv::Point&gt; biggest1Contour = contours[contours_num - <span class="number">1</span>];</div><div class="line">		<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;cv::Point&gt; biggest2Contour = contours[contours_num - <span class="number">2</span>];</div><div class="line">		<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;cv::Point&gt; biggest3Contour = contours[contours_num - <span class="number">3</span>];</div><div class="line">		<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;cv::Point&gt; smallestContour = contours[<span class="number">0</span>];</div><div class="line">		extractFingerImg2(contours, imgSrc, img1, contours_num, <span class="number">1</span>);</div><div class="line">		extractFingerImg2(contours, imgSrc, img2, contours_num, <span class="number">2</span>);</div><div class="line">		extractFingerImg2(contours, imgSrc, img3, contours_num, <span class="number">3</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (contours_num == <span class="number">2</span>)</div><div class="line">	&#123;</div><div class="line">		Mat img1, img2;</div><div class="line">		<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;cv::Point&gt; biggest1Contour = contours[contours_num - <span class="number">1</span>];</div><div class="line">		<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;cv::Point&gt; biggest2Contour = contours[contours_num - <span class="number">2</span>];</div><div class="line">		<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;cv::Point&gt; smallestContour = contours[<span class="number">0</span>];</div><div class="line">		extractFingerImg2(contours, imgSrc, img1, contours_num, <span class="number">1</span>);</div><div class="line">		extractFingerImg2(contours, imgSrc, img2, contours_num, <span class="number">2</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (contours_num == <span class="number">1</span>)</div><div class="line">	&#123;	</div><div class="line">		Mat img1;</div><div class="line">		<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;cv::Point&gt; biggest1Contour = contours[contours_num - <span class="number">1</span>];</div><div class="line">		<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;cv::Point&gt; smallestContour = contours[<span class="number">0</span>];</div><div class="line">		extractFingerImg2(contours, imgSrc, img1, contours_num, <span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span></div><div class="line">	&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"error"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> TIME_RUN_COST</span></div><div class="line">	duration = <span class="keyword">static_cast</span>&lt;<span class="keyword">double</span>&gt;(cv::getTickCount()) - duration;</div><div class="line">	duration /= cv::getTickFrequency(); <span class="comment">// the elapsed time in ms</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"time cost="</span> &lt;&lt; duration &lt;&lt; <span class="string">"s"</span>&lt;&lt;<span class="built_in">endl</span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> BOB_DBG_COM</span></div><div class="line">	<span class="built_in">memset</span>(out_filename, <span class="number">0</span>, <span class="keyword">sizeof</span>(out_filename) / <span class="keyword">sizeof</span>(<span class="keyword">char</span>));</div><div class="line">	<span class="built_in">sprintf</span>(out_filename, <span class="string">"%s-%s.jpg"</span>, out_name, <span class="string">"4-imgContoursInSrc"</span>);</div><div class="line">	imwrite(out_filename, imgSrc);</div><div class="line">	<span class="comment">//imwrite("4-imgContoursInSrc.jpg", imgSrc);</span></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// BOB_DBG_COM</span></span></div></pre></td></tr></table></figure>
+<h1 id="算法效果"><a href="#算法效果" class="headerlink" title="算法效果"></a>算法效果</h1><blockquote>
+<p><strong>白天复杂场景</strong>  </p>
+</blockquote>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E6%B5%8B%E8%AF%95-%E7%99%BD%E5%A4%A9.png" alt=""> </p>
+<blockquote>
+<p><strong>晚上场景</strong>  </p>
+</blockquote>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E6%B5%8B%E8%AF%95-%E6%99%9A%E4%B8%8A.jpg" alt=""></p>
+<blockquote>
+<p><strong>批量测试场景</strong>  </p>
+</blockquote>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E6%89%B9%E9%87%8F1.png" alt=""></p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E6%89%B9%E9%87%8F2.png" alt=""></p>
+<hr>
+<p><font size="2"><br>By SkySeraph-2014<br></font><br>合作联系：skyseraph00@163.com</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+        <a href="http://skyseraph.com/2014/07/24/CV/手掌手指分割算法/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2014/07/24/CV/手掌手指分割算法/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2014/08/08/Tools/IT生涯，我记忆中的那些命令/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    IT生涯，我记忆中的那些命令
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2014/03/14/NFC/《Android NFC 开发实战详解 》/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">《Android NFC 开发实战详解 》</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/26/Android/Appuim源码剖析(Boottrap)/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ8PsHcdHiRZQ9plFuKvJTAUR-raIBJdUzEeQc3z2yfT41Xz2MJ)" alt="Appuim源码剖析(Bootstrap)" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a></p>
+                            <p class="item-title"><a href="/2017/01/26/Android/Appuim源码剖析(Boottrap)/" class="title">Appuim源码剖析(Bootstrap)</a></p>
+                            <p class="item-date"><time datetime="2017-01-25T17:40:40.000Z" itemprop="datePublished">2017-01-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://skyseraph.com/css/images/avatar.png)" alt="而立之年，未开始的创业路" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SkySeraph/">SkySeraph</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/SkySeraph/Life/">Life</a></p>
+                            <p class="item-title"><a href="/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/" class="title">而立之年，未开始的创业路</a></p>
+                            <p class="item-date"><time datetime="2016-10-30T16:30:30.000Z" itemprop="datePublished">2016-10-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://jenkins.io/images/226px-Jenkins_logo.svg.png)" alt="Jenkins Gitlab持续集成打包平台搭建" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Tools/">Tools</a></p>
+                            <p class="item-title"><a href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/" class="title">Jenkins Gitlab持续集成打包平台搭建</a></p>
+                            <p class="item-date"><time datetime="2016-07-17T16:00:00.000Z" itemprop="datePublished">2016-07-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://devimages.apple.com.edgekey.net/assets/elements/icons/swift/swift-64x64.png)" alt="Select all the cell in UITabView or UICollectionView problem" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/iOS/">iOS</a></p>
+                            <p class="item-title"><a href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/" class="title">Select all the cell in UITabView or UICollectionView problem</a></p>
+                            <p class="item-date"><time datetime="2016-06-29T16:40:20.000Z" itemprop="datePublished">2016-06-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/06/19/Android/一种提高Android应用进程存活率新方法/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/ps%20grep1.png)" alt="一种提高Android应用进程存活率新方法" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a></p>
+                            <p class="item-title"><a href="/2016/06/19/Android/一种提高Android应用进程存活率新方法/" class="title">一种提高Android应用进程存活率新方法</a></p>
+                            <p class="item-date"><time datetime="2016-06-18T16:40:20.000Z" itemprop="datePublished">2016-06-19</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/">SkySeraph</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Reading/">Reading</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/">Tech</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/CV/">CV</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Media/">Media</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/NFC/">NFC</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/OpenGL/">OpenGL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Tools/">Tools</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/iOS/">iOS</a><span class="category-list-count">2</span></li></ul></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/AR-VR/" style="font-size: 10px;">AR/VR</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Appuim/" style="font-size: 10px;">Appuim</a> <a href="/tags/CI/" style="font-size: 10px;">CI</a> <a href="/tags/CV-MV/" style="font-size: 18px;">CV/MV</a> <a href="/tags/DIP/" style="font-size: 18px;">DIP</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/H264/" style="font-size: 10px;">H264</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Life/" style="font-size: 16px;">Life</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/OpenCV/" style="font-size: 18px;">OpenCV</a> <a href="/tags/OpenGL/" style="font-size: 10px;">OpenGL</a> <a href="/tags/Project/" style="font-size: 10px;">Project</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/SkySeraph/" style="font-size: 16px;">SkySeraph</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/iOS/" style="font-size: 14px;">iOS</a> <a href="/tags/jrtplib/" style="font-size: 10px;">jrtplib</a> <a href="/tags/live555/" style="font-size: 10px;">live555</a> <a href="/tags/图像特征/" style="font-size: 10px;">图像特征</a> <a href="/tags/图像算法/" style="font-size: 18px;">图像算法</a> <a href="/tags/存活率/" style="font-size: 10px;">存活率</a> <a href="/tags/彩色图像/" style="font-size: 12px;">彩色图像</a> <a href="/tags/机器视觉/" style="font-size: 10px;">机器视觉</a> <a href="/tags/流媒体/" style="font-size: 10px;">流媒体</a> <a href="/tags/瑕疵检测/" style="font-size: 10px;">瑕疵检测</a> <a href="/tags/进程/" style="font-size: 10px;">进程</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.cnblogs.com/skyseraph/">SkySeraph-cnBlogs</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 SkySeraph<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Modified by <a href="http://skyseraph.com">SkySeraph</a>.Total <span id="busuanzi_value_site_pv"></span> views.
+        </div>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+        
+    
+    <script>
+    var disqus_shortname = 'skyseraph';
+    
+    
+    var disqus_url = 'http://skyseraph.com/2014/07/24/CV/手掌手指分割算法/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>织物疵点检测机器视觉系统 软件测试平台 | SkySeraph</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="啰嗦　　之前针对个人研究的不同算法开发过三个检测平台（平台一 和 平台二 ），此平台为最后的综合平台，实现织物疵点检测和分类，实现了织物图像的批量化处理，实现了数据库存储疵点信息和用户管理，同时具备自动化测试的同时还可以进行单步算法调试。
+开发环境开发工具采用VS2010+OpenCV，开发语言为CPP。OpenCV环境搭建  
+功能详述1 软件架构　　该平台主要包括系统登录模块、图像采集模块、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="织物疵点检测机器视觉系统 软件测试平台">
+<meta property="og:url" content="http://skyseraph.com/2012/05/04/CV/织物疵点检测机器视觉系统 软件测试平台/index.html">
+<meta property="og:site_name" content="SkySeraph">
+<meta property="og:description" content="啰嗦　　之前针对个人研究的不同算法开发过三个检测平台（平台一 和 平台二 ），此平台为最后的综合平台，实现织物疵点检测和分类，实现了织物图像的批量化处理，实现了数据库存储疵点信息和用户管理，同时具备自动化测试的同时还可以进行单步算法调试。
+开发环境开发工具采用VS2010+OpenCV，开发语言为CPP。OpenCV环境搭建  
+功能详述1 软件架构　　该平台主要包括系统登录模块、图像采集模块、">
+<meta property="og:image" content="http://pic002.cnblogs.com/images/2012/137896/2012050410150071.png">
+<meta property="og:updated_time" content="2017-03-19T13:58:28.395Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="织物疵点检测机器视觉系统 软件测试平台">
+<meta name="twitter:description" content="啰嗦　　之前针对个人研究的不同算法开发过三个检测平台（平台一 和 平台二 ），此平台为最后的综合平台，实现织物疵点检测和分类，实现了织物图像的批量化处理，实现了数据库存储疵点信息和用户管理，同时具备自动化测试的同时还可以进行单步算法调试。
+开发环境开发工具采用VS2010+OpenCV，开发语言为CPP。OpenCV环境搭建  
+功能详述1 软件架构　　该平台主要包括系统登录模块、图像采集模块、">
+<meta name="twitter:image" content="http://pic002.cnblogs.com/images/2012/137896/2012050410150071.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/avatar.png" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-77554390-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?622a2108abaca144ab683efc8b9d1430";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+</head>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">SkySeraph</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/projects/">Projects</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">SkySeraph</h2>
+            <h3 id="title">Senior Engineer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>ShenZhen, China</span>
+            <a id="follow" target="_blank" href="https://github.com/skyseraph">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                19
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                31
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    <td><a href="http://github.com/skyseraph" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+                    
+                    <td><a href="http://stackoverflow.com/users/1343127/skyseraph" target="_blank" title="stack-overflow"><i class="fa fa-stack-overflow"></i></a></td>
+                    
+                    <td><a href="http://weibo.com/skyseraph" target="_blank" title="weibo"><i class="fa fa-weibo"></i></a></td>
+                    
+                    <td><a href="https://twitter.com/seraph_sky" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+                    
+                    <td><a href="/" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></td>
+                    
+                    <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-CV/织物疵点检测机器视觉系统 软件测试平台" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            织物疵点检测机器视觉系统 软件测试平台
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2012/05/04/CV/织物疵点检测机器视觉系统 软件测试平台/">
+            <time datetime="2012-05-03T16:23:20.000Z" itemprop="datePublished">2012-05-04</time>
+        </a>
+    </div>
+
+
+                    
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/CV/">CV</a>
+    </div>
+
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CV-MV/">CV/MV</a>, <a class="tag-link" href="/tags/DIP/">DIP</a>, <a class="tag-link" href="/tags/OpenCV/">OpenCV</a>, <a class="tag-link" href="/tags/图像算法/">图像算法</a>, <a class="tag-link" href="/tags/机器视觉/">机器视觉</a>, <a class="tag-link" href="/tags/瑕疵检测/">瑕疵检测</a>
+    </div>
+          
+					
+<div class="article-category">
+	<i class="fa fa-line-chart"></i>
+	<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> article.hits
+</div>
+
+
+					
+<div class="article-author"><i class="fa fa-user"></i>
+  
+  <a href="http://skyseraph.com" title="SkySeraph">SkySeraph</a>
+</div>
+  
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#啰嗦"><span class="toc-number">1.</span> <span class="toc-text">啰嗦</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发环境"><span class="toc-number">2.</span> <span class="toc-text">开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#功能详述"><span class="toc-number">3.</span> <span class="toc-text">功能详述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-软件架构"><span class="toc-number">3.1.</span> <span class="toc-text">1 软件架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-核心功能"><span class="toc-number">3.2.</span> <span class="toc-text">2 核心功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-算法流程"><span class="toc-number">3.3.</span> <span class="toc-text">3 算法流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实验测试"><span class="toc-number">4.</span> <span class="toc-text">实验测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目工程及核心函数模块"><span class="toc-number">5.</span> <span class="toc-text">项目工程及核心函数模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Links"><span class="toc-number">6.</span> <span class="toc-text">Links</span></a></li></ol>
+                </div>
+            
+            <hr>
+<h2 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h2><p>　　之前针对个人研究的不同算法开发过三个检测平台（<a href="http://www.cnblogs.com/skyseraph/archive/2011/03/24/1993438.html" target="_blank" rel="external">平台一</a> 和 <a href="http://www.cnblogs.com/skyseraph/archive/2011/07/21/2113211.html" target="_blank" rel="external">平台二</a> ），此平台为最后的综合平台，实现织物疵点检测和分类，实现了织物图像的批量化处理，实现了数据库存储疵点信息和用户管理，同时具备自动化测试的同时还可以进行单步算法调试。</p>
+<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>开发工具采用VS2010+OpenCV，开发语言为CPP。<br><a href="http://www.cnblogs.com/skyseraph/archive/2010/10/28/1863974.html" target="_blank" rel="external">OpenCV环境搭建</a>  </p>
+<h2 id="功能详述"><a href="#功能详述" class="headerlink" title="功能详述"></a>功能详述</h2><h3 id="1-软件架构"><a href="#1-软件架构" class="headerlink" title="1 软件架构"></a>1 软件架构</h3><p>　　该平台主要包括系统登录模块、图像采集模块、图像预处理模块、织物疵点检测模块、织物疵点分类模块、疵点信息管理模块、用户管理模块以及系统设置模块，检测算法为自主研究，分类算法采用BPNN，软件架构如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050119365916.png" alt=""></p>
+<h3 id="2-核心功能"><a href="#2-核心功能" class="headerlink" title="2 核心功能"></a>2 核心功能</h3><p>　　该平台核心功能包括：织物疵点检测和分类，疵点信息存储和查询，用户管理等。</p>
+<h3 id="3-算法流程"><a href="#3-算法流程" class="headerlink" title="3 算法流程"></a>3 算法流程</h3><p>①系统设置，如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050409424319.png" alt=""></p>
+<p>②图像采集，图像的获取可以采取两种方式，单张图像加载或批量图像（文件夹）加载，在系统设置模块中的图像获取方式中，可选择设置单张图像的路径或者设置图像文件夹的路径来获取图像并实时显示, 如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050410142148.png" alt=""></p>
+<p>③图像预处理，如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050410143581.png" alt=""></p>
+<p>④织物检测和分类，如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050410144927.png" alt=""><br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050410150071.png" alt=""></p>
+<p>⑤织物信息查询，如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050409435944.png" alt=""></p>
+<p>⑥用户管理，如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050409440985.png" alt=""></p>
+<h2 id="实验测试"><a href="#实验测试" class="headerlink" title="实验测试"></a>实验测试</h2><p>针对常见的四类疵点，软件测试结果如下图所示：<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050409441863.png" alt=""></p>
+<h2 id="项目工程及核心函数模块"><a href="#项目工程及核心函数模块" class="headerlink" title="项目工程及核心函数模块"></a>项目工程及核心函数模块</h2><p>工程项目及核心处理函数模块如下图：<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050410013461.png" alt=""></p>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><p><a href="http://www.cnblogs.com/skyseraph/archive/2011/03/24/1993438.html" target="_blank" rel="external">【My Project】织物疵点检测机器视觉系统 平台一</a><br><a href="http://www.cnblogs.com/skyseraph/archive/2011/07/21/2113211.html" target="_blank" rel="external">【My Project】织物疵点检测机器视觉系统 平台二</a><br><a href="http://www.cnblogs.com/skyseraph/archive/2011/08/11/2135291.html" target="_blank" rel="external">关于显著性算法的实践效果请参考此文</a>  </p>
+<hr>
+<font size="2"><br>By SkySeraph-2012<br><a href="http://www.cnblogs.com/skyseraph/archive/2012/05/04/2478105.html" target="_blank" rel="external">SkySeraph cnBlogs</a><br>合作联系：skyseraph00@163.com<br></font>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+        <a href="http://skyseraph.com/2012/05/04/CV/织物疵点检测机器视觉系统 软件测试平台/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2012/05/04/CV/织物疵点检测机器视觉系统 软件测试平台/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2013/11/30/SkySeraph/Life/写在年末, 我的2013/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    写在年末, 我的2013
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2012/04/11/Media/流媒体专题/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">流媒体专题</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/26/Android/Appuim源码剖析(Boottrap)/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ8PsHcdHiRZQ9plFuKvJTAUR-raIBJdUzEeQc3z2yfT41Xz2MJ)" alt="Appuim源码剖析(Bootstrap)" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a></p>
+                            <p class="item-title"><a href="/2017/01/26/Android/Appuim源码剖析(Boottrap)/" class="title">Appuim源码剖析(Bootstrap)</a></p>
+                            <p class="item-date"><time datetime="2017-01-25T17:40:40.000Z" itemprop="datePublished">2017-01-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://skyseraph.com/css/images/avatar.png)" alt="而立之年，未开始的创业路" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SkySeraph/">SkySeraph</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/SkySeraph/Life/">Life</a></p>
+                            <p class="item-title"><a href="/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/" class="title">而立之年，未开始的创业路</a></p>
+                            <p class="item-date"><time datetime="2016-10-30T16:30:30.000Z" itemprop="datePublished">2016-10-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://jenkins.io/images/226px-Jenkins_logo.svg.png)" alt="Jenkins Gitlab持续集成打包平台搭建" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Tools/">Tools</a></p>
+                            <p class="item-title"><a href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/" class="title">Jenkins Gitlab持续集成打包平台搭建</a></p>
+                            <p class="item-date"><time datetime="2016-07-17T16:00:00.000Z" itemprop="datePublished">2016-07-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://devimages.apple.com.edgekey.net/assets/elements/icons/swift/swift-64x64.png)" alt="Select all the cell in UITabView or UICollectionView problem" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/iOS/">iOS</a></p>
+                            <p class="item-title"><a href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/" class="title">Select all the cell in UITabView or UICollectionView problem</a></p>
+                            <p class="item-date"><time datetime="2016-06-29T16:40:20.000Z" itemprop="datePublished">2016-06-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/06/19/Android/一种提高Android应用进程存活率新方法/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/ps%20grep1.png)" alt="一种提高Android应用进程存活率新方法" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a></p>
+                            <p class="item-title"><a href="/2016/06/19/Android/一种提高Android应用进程存活率新方法/" class="title">一种提高Android应用进程存活率新方法</a></p>
+                            <p class="item-date"><time datetime="2016-06-18T16:40:20.000Z" itemprop="datePublished">2016-06-19</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/">SkySeraph</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Reading/">Reading</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/">Tech</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/CV/">CV</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Media/">Media</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/NFC/">NFC</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/OpenGL/">OpenGL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Tools/">Tools</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/iOS/">iOS</a><span class="category-list-count">2</span></li></ul></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/AR-VR/" style="font-size: 10px;">AR/VR</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Appuim/" style="font-size: 10px;">Appuim</a> <a href="/tags/CI/" style="font-size: 10px;">CI</a> <a href="/tags/CV-MV/" style="font-size: 18px;">CV/MV</a> <a href="/tags/DIP/" style="font-size: 18px;">DIP</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/H264/" style="font-size: 10px;">H264</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Life/" style="font-size: 16px;">Life</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/OpenCV/" style="font-size: 18px;">OpenCV</a> <a href="/tags/OpenGL/" style="font-size: 10px;">OpenGL</a> <a href="/tags/Project/" style="font-size: 10px;">Project</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/SkySeraph/" style="font-size: 16px;">SkySeraph</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/iOS/" style="font-size: 14px;">iOS</a> <a href="/tags/jrtplib/" style="font-size: 10px;">jrtplib</a> <a href="/tags/live555/" style="font-size: 10px;">live555</a> <a href="/tags/图像特征/" style="font-size: 10px;">图像特征</a> <a href="/tags/图像算法/" style="font-size: 18px;">图像算法</a> <a href="/tags/存活率/" style="font-size: 10px;">存活率</a> <a href="/tags/彩色图像/" style="font-size: 12px;">彩色图像</a> <a href="/tags/机器视觉/" style="font-size: 10px;">机器视觉</a> <a href="/tags/流媒体/" style="font-size: 10px;">流媒体</a> <a href="/tags/瑕疵检测/" style="font-size: 10px;">瑕疵检测</a> <a href="/tags/进程/" style="font-size: 10px;">进程</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.cnblogs.com/skyseraph/">SkySeraph-cnBlogs</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 SkySeraph<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Modified by <a href="http://skyseraph.com">SkySeraph</a>.Total <span id="busuanzi_value_site_pv"></span> views.
+        </div>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+        
+    
+    <script>
+    var disqus_shortname = 'skyseraph';
+    
+    
+    var disqus_url = 'http://skyseraph.com/2012/05/04/CV/织物疵点检测机器视觉系统 软件测试平台/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

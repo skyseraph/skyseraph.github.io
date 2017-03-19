@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>彩色图像分析软件 ColorImgSft V1.0.1.0 | SkySeraph</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="开发环境 VC6.0+OpenCV1.0 
+软件界面用户登陆 
+完整界面
+软件功能界面功能1  Picture Control 图像显示与保存 Source Image：源图像Dst Image：空间转换后图像(彩色)/目标彩色图像A channel：A通道图像(灰度)/目标灰度图像B channel：B通道图像C channel：C通道图像Save： 图像保存  
+2  Inf.Show 信息">
+<meta property="og:type" content="article">
+<meta property="og:title" content="彩色图像分析软件 ColorImgSft V1.0.1.0">
+<meta property="og:url" content="http://skyseraph.com/2011/08/14/CV/彩色图像分析软件 ColorImgSft-V1.0.1.0/index.html">
+<meta property="og:site_name" content="SkySeraph">
+<meta property="og:description" content="开发环境 VC6.0+OpenCV1.0 
+软件界面用户登陆 
+完整界面
+软件功能界面功能1  Picture Control 图像显示与保存 Source Image：源图像Dst Image：空间转换后图像(彩色)/目标彩色图像A channel：A通道图像(灰度)/目标灰度图像B channel：B通道图像C channel：C通道图像Save： 图像保存  
+2  Inf.Show 信息">
+<meta property="og:image" content="http://pic002.cnblogs.com/images/2011/137896/2011081417455925.png">
+<meta property="og:updated_time" content="2017-03-19T13:58:28.386Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="彩色图像分析软件 ColorImgSft V1.0.1.0">
+<meta name="twitter:description" content="开发环境 VC6.0+OpenCV1.0 
+软件界面用户登陆 
+完整界面
+软件功能界面功能1  Picture Control 图像显示与保存 Source Image：源图像Dst Image：空间转换后图像(彩色)/目标彩色图像A channel：A通道图像(灰度)/目标灰度图像B channel：B通道图像C channel：C通道图像Save： 图像保存  
+2  Inf.Show 信息">
+<meta name="twitter:image" content="http://pic002.cnblogs.com/images/2011/137896/2011081417455925.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/avatar.png" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-77554390-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?622a2108abaca144ab683efc8b9d1430";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+</head>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">SkySeraph</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/projects/">Projects</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">SkySeraph</h2>
+            <h3 id="title">Senior Engineer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>ShenZhen, China</span>
+            <a id="follow" target="_blank" href="https://github.com/skyseraph">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                19
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                31
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    <td><a href="http://github.com/skyseraph" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+                    
+                    <td><a href="http://stackoverflow.com/users/1343127/skyseraph" target="_blank" title="stack-overflow"><i class="fa fa-stack-overflow"></i></a></td>
+                    
+                    <td><a href="http://weibo.com/skyseraph" target="_blank" title="weibo"><i class="fa fa-weibo"></i></a></td>
+                    
+                    <td><a href="https://twitter.com/seraph_sky" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+                    
+                    <td><a href="/" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></td>
+                    
+                    <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-CV/彩色图像分析软件 ColorImgSft-V1.0.1.0" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            彩色图像分析软件 ColorImgSft V1.0.1.0
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2011/08/14/CV/彩色图像分析软件 ColorImgSft-V1.0.1.0/">
+            <time datetime="2011-08-13T17:23:20.000Z" itemprop="datePublished">2011-08-14</time>
+        </a>
+    </div>
+
+
+                    
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/CV/">CV</a>
+    </div>
+
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CV-MV/">CV/MV</a>, <a class="tag-link" href="/tags/DIP/">DIP</a>, <a class="tag-link" href="/tags/OpenCV/">OpenCV</a>, <a class="tag-link" href="/tags/图像算法/">图像算法</a>, <a class="tag-link" href="/tags/彩色图像/">彩色图像</a>
+    </div>
+          
+					
+<div class="article-category">
+	<i class="fa fa-line-chart"></i>
+	<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> article.hits
+</div>
+
+
+					
+<div class="article-author"><i class="fa fa-user"></i>
+  
+  <a href="http://skyseraph.com" title="SkySeraph">SkySeraph</a>
+</div>
+  
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#开发环境"><span class="toc-number">1.</span> <span class="toc-text">开发环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#软件界面"><span class="toc-number">2.</span> <span class="toc-text">软件界面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#用户登陆"><span class="toc-number">2.1.</span> <span class="toc-text">用户登陆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完整界面"><span class="toc-number">2.2.</span> <span class="toc-text">完整界面</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#软件功能"><span class="toc-number">3.</span> <span class="toc-text">软件功能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#界面功能"><span class="toc-number">3.1.</span> <span class="toc-text">界面功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目录功能"><span class="toc-number">3.2.</span> <span class="toc-text">目录功能</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#操作实例"><span class="toc-number">4.</span> <span class="toc-text">操作实例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#空间转换"><span class="toc-number">4.1.</span> <span class="toc-text">空间转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基于颜色聚类分割"><span class="toc-number">4.2.</span> <span class="toc-text">基于颜色聚类分割</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基于颜色提取的分割"><span class="toc-number">4.3.</span> <span class="toc-text">基于颜色提取的分割</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#软件下载"><span class="toc-number">5.</span> <span class="toc-text">软件下载</span></a></li></ol>
+                </div>
+            
+            <hr>
+<h1 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h1><p><strong> VC6.0+OpenCV1.0 </strong></p>
+<h1 id="软件界面"><a href="#软件界面" class="headerlink" title="软件界面"></a>软件界面</h1><h2 id="用户登陆"><a href="#用户登陆" class="headerlink" title="用户登陆"></a>用户登陆</h2><p><img src="http://pic002.cnblogs.com/images/2011/137896/2011081417455925.png" alt=""> </p>
+<h2 id="完整界面"><a href="#完整界面" class="headerlink" title="完整界面"></a>完整界面</h2><p><img src="http://images2015.cnblogs.com/blog/137896/201605/137896-20160526201540350-547747680.png" alt=""></p>
+<h1 id="软件功能"><a href="#软件功能" class="headerlink" title="软件功能"></a>软件功能</h1><h2 id="界面功能"><a href="#界面功能" class="headerlink" title="界面功能"></a>界面功能</h2><p><strong>1  Picture Control 图像显示与保存 </strong><br>Source Image：源图像<br>Dst Image：空间转换后图像(彩色)/目标彩色图像<br>A channel：A通道图像(灰度)/目标灰度图像<br>B channel：B通道图像<br>C channel：C通道图像<br>Save： 图像保存  </p>
+<p><strong>2  Inf.Show 信息显示</strong><br>RunningTime： 法运行时间显示         -输出<br>Threshold：  图像分割时阈值显示     -输出<br>ClusterThred：颜色聚类分割阈值         -输入，默认0.12<br>ClusterNum：颜色聚类数目显示         -输出<br>ClusterNum：聚类数目显示(KCM)       -输入，默认2   </p>
+<p><strong>3  FetchColor  获取屏幕上任意点RGB/HSV/Lab/YIQ值</strong><br>FetchColor：打开/关闭按钮<br>注：采用了定时器，故要进行其它操作时，最好关闭此按钮。   </p>
+<p><strong>4  FindColor 查找SouceImage指定颜色</strong><br>说明：采用弹出式显示。分别代表原图上的原颜色、调整后的颜色、灰度值。  </p>
+<p><strong>5  Button 按钮</strong><br>LoadPIC：加载图像<br>Test：作者测试用，无效<br>Quit：退出  </p>
+<p><strong>6  SpaceChoose 空间转换</strong><br>SpaceCov：根据用户选择的颜色空间，执行空间转换  </p>
+<h2 id="目录功能"><a href="#目录功能" class="headerlink" title="目录功能"></a>目录功能</h2><p><strong>1  File</strong><br>LoadPIC：                 加载图像<br>SavePIC：                 保存DstImage<br>Quit：                        退出    </p>
+<p><strong>2  Edit</strong><br>CreatImage：         生成一张测试图片/作者图标<br>注：必须先加载一张图片，初始化内存。   </p>
+<p><strong>3  View</strong><br>FetchColor：            同界面FetchColor功能<br>Dlg-SliderColor：    辅助作用–查RGB值与对应颜色关系<br>WatchColours：     外部软件–功能同FetchColor<br>ImageInfo：            图像信息–图像大小、平均/最大/最小饱和度、平均/最大/最小亮度<br>Histogram：            直方图<br>GrayHist：                灰度直方图<br>Dlg-GrayHist：        灰度直方图(对话框显示)<br>Dlg-HSVHistSeg：  HSV直方图分割<br>ColorHist(RGB)：   RGB直方图<br>ColorHist(HS)：       H-S直方图<br>EqualizeHist：        直方图均衡化<br>EqualizeHist(Gray)：直方图均衡化(灰度)   </p>
+<p><strong>4  Image </strong><br>SpaceCov：             同界面SpaceCov功能<br>ImgAdjust：            图像调整(彩色)<br>ImageInvert：                  图像反转<br>RGB归一化：        图像RGB归一化<br>EdgeDetect：         图像边缘检测(彩色&amp;灰度：彩色和灰度都适合)<br>Sobel：                      Sobel边缘检测<br>Laplace：                  Laplace边缘检测<br>Canny：                    Canny边缘检测<br>ImgSeg：                  图像分割（彩色/灰度）<br>GrayImgSeg：                  灰度图像分割，有常见的六种分割方法<br>ColorSegByHSV：  基于颜色提取的彩色分割(两种形式：定义范围不同)<br>KCM：                        根据输入的聚类类别数(默认2)进行K均值分割(彩色&amp;灰度)<br>MeanShift：            MeanShift彩色分割<br>Watershed：           分水岭彩色分割<br>HSVColorCluster：基于颜色聚类的彩色分割<br>Morphology：        图像腐蚀/膨胀操作(彩色&amp;灰度：彩色和灰度都适合)<br>Gabor：                    Gabor变换<br>GaborFilter：           显示实/虚/模部Gabor滤波结果<br>GaborTransfer：    显示最终Gabor滤波结果<br>DWT：                       DWT变换<br>SM：                          图像显著性区域提取，包含三种不同的方法    </p>
+<p><strong>5  Help </strong><br>About：                   关于本软件信息<br>Help：简要操作说明文档  </p>
+<h1 id="操作实例"><a href="#操作实例" class="headerlink" title="操作实例"></a>操作实例</h1><h2 id="空间转换"><a href="#空间转换" class="headerlink" title="空间转换"></a>空间转换</h2><p><img src="http://images2015.cnblogs.com/blog/137896/201605/137896-20160526201626100-237219052.png" alt=""></p>
+<h2 id="基于颜色聚类分割"><a href="#基于颜色聚类分割" class="headerlink" title="基于颜色聚类分割"></a>基于颜色聚类分割</h2><p><img src="http://pic002.cnblogs.com/images/2011/137896/2011081418023774.png" alt="">  </p>
+<p><img src="http://pic002.cnblogs.com/images/2011/137896/2011081418024973.png" alt=""></p>
+<h2 id="基于颜色提取的分割"><a href="#基于颜色提取的分割" class="headerlink" title="基于颜色提取的分割"></a>基于颜色提取的分割</h2><p><img src="http://images2015.cnblogs.com/blog/137896/201605/137896-20160526201641288-2078807384.png" alt=""></p>
+<h1 id="软件下载"><a href="#软件下载" class="headerlink" title="软件下载"></a>软件下载</h1><p><a href="http://files.cnblogs.com/skyseraph/ColorImgSft1.0.1.0%E5%8F%91%E5%B8%83.zip" target="_blank" rel="external">ColorImgSft1.0.1.0.zip</a> </p>
+<p><a href="http://skyseraph.com/2011/08/01/CV/%E5%BD%A9%E8%89%B2%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2%E4%B8%93%E9%A2%98/"><strong>部分原理参考</strong></a></p>
+<hr>
+<font size="2"><br>By SkySeraph-2011<br><a href="http://www.cnblogs.com/skyseraph/archive/2011/08/14/2138086.html" target="_blank" rel="external">SkySeraph cnBlogs</a><br>合作联系：skyseraph00@163.com<br></font>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+        <a href="http://skyseraph.com/2011/08/14/CV/彩色图像分析软件 ColorImgSft-V1.0.1.0/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2011/08/14/CV/彩色图像分析软件 ColorImgSft-V1.0.1.0/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2011/08/27/CV/图像算法专题/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    图像算法专题
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2011/08/01/CV/彩色图像分割专题/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">彩色图像分割专题</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/26/Android/Appuim源码剖析(Boottrap)/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ8PsHcdHiRZQ9plFuKvJTAUR-raIBJdUzEeQc3z2yfT41Xz2MJ)" alt="Appuim源码剖析(Bootstrap)" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a></p>
+                            <p class="item-title"><a href="/2017/01/26/Android/Appuim源码剖析(Boottrap)/" class="title">Appuim源码剖析(Bootstrap)</a></p>
+                            <p class="item-date"><time datetime="2017-01-25T17:40:40.000Z" itemprop="datePublished">2017-01-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://skyseraph.com/css/images/avatar.png)" alt="而立之年，未开始的创业路" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SkySeraph/">SkySeraph</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/SkySeraph/Life/">Life</a></p>
+                            <p class="item-title"><a href="/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/" class="title">而立之年，未开始的创业路</a></p>
+                            <p class="item-date"><time datetime="2016-10-30T16:30:30.000Z" itemprop="datePublished">2016-10-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://jenkins.io/images/226px-Jenkins_logo.svg.png)" alt="Jenkins Gitlab持续集成打包平台搭建" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Tools/">Tools</a></p>
+                            <p class="item-title"><a href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/" class="title">Jenkins Gitlab持续集成打包平台搭建</a></p>
+                            <p class="item-date"><time datetime="2016-07-17T16:00:00.000Z" itemprop="datePublished">2016-07-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://devimages.apple.com.edgekey.net/assets/elements/icons/swift/swift-64x64.png)" alt="Select all the cell in UITabView or UICollectionView problem" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/iOS/">iOS</a></p>
+                            <p class="item-title"><a href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/" class="title">Select all the cell in UITabView or UICollectionView problem</a></p>
+                            <p class="item-date"><time datetime="2016-06-29T16:40:20.000Z" itemprop="datePublished">2016-06-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/06/19/Android/一种提高Android应用进程存活率新方法/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/ps%20grep1.png)" alt="一种提高Android应用进程存活率新方法" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a></p>
+                            <p class="item-title"><a href="/2016/06/19/Android/一种提高Android应用进程存活率新方法/" class="title">一种提高Android应用进程存活率新方法</a></p>
+                            <p class="item-date"><time datetime="2016-06-18T16:40:20.000Z" itemprop="datePublished">2016-06-19</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/">SkySeraph</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Reading/">Reading</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/">Tech</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/CV/">CV</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Media/">Media</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/NFC/">NFC</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/OpenGL/">OpenGL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Tools/">Tools</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/iOS/">iOS</a><span class="category-list-count">2</span></li></ul></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/AR-VR/" style="font-size: 10px;">AR/VR</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Appuim/" style="font-size: 10px;">Appuim</a> <a href="/tags/CI/" style="font-size: 10px;">CI</a> <a href="/tags/CV-MV/" style="font-size: 18px;">CV/MV</a> <a href="/tags/DIP/" style="font-size: 18px;">DIP</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/H264/" style="font-size: 10px;">H264</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Life/" style="font-size: 16px;">Life</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/OpenCV/" style="font-size: 18px;">OpenCV</a> <a href="/tags/OpenGL/" style="font-size: 10px;">OpenGL</a> <a href="/tags/Project/" style="font-size: 10px;">Project</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/SkySeraph/" style="font-size: 16px;">SkySeraph</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/iOS/" style="font-size: 14px;">iOS</a> <a href="/tags/jrtplib/" style="font-size: 10px;">jrtplib</a> <a href="/tags/live555/" style="font-size: 10px;">live555</a> <a href="/tags/图像特征/" style="font-size: 10px;">图像特征</a> <a href="/tags/图像算法/" style="font-size: 18px;">图像算法</a> <a href="/tags/存活率/" style="font-size: 10px;">存活率</a> <a href="/tags/彩色图像/" style="font-size: 12px;">彩色图像</a> <a href="/tags/机器视觉/" style="font-size: 10px;">机器视觉</a> <a href="/tags/流媒体/" style="font-size: 10px;">流媒体</a> <a href="/tags/瑕疵检测/" style="font-size: 10px;">瑕疵检测</a> <a href="/tags/进程/" style="font-size: 10px;">进程</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.cnblogs.com/skyseraph/">SkySeraph-cnBlogs</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 SkySeraph<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Modified by <a href="http://skyseraph.com">SkySeraph</a>.Total <span id="busuanzi_value_site_pv"></span> views.
+        </div>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+        
+    
+    <script>
+    var disqus_shortname = 'skyseraph';
+    
+    
+    var disqus_url = 'http://skyseraph.com/2011/08/14/CV/彩色图像分析软件 ColorImgSft-V1.0.1.0/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

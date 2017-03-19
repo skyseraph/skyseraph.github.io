@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Projects | SkySeraph</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="前传
+这个页面主要对本人完成或参与完成的部分项目进行规整，主观的将其分为智能硬件、图像算法和TV/游戏/移动应用(Android/iOS)几大项，每项以时间为序进行逆向排列，其中某些领域研究较多以专题的形式呈现，如NFC/RFID专题，我的开源，目前只整理了小部分，这是一个长期过程，后续逐一补全。
+
+部分项目有原理或源码分享，请在SkySeraph博客翻找。
+
+欢迎您告诉我您的任何想法或需求，或者">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Projects">
+<meta property="og:url" content="http://skyseraph.com/projects/index.html">
+<meta property="og:site_name" content="SkySeraph">
+<meta property="og:description" content="前传
+这个页面主要对本人完成或参与完成的部分项目进行规整，主观的将其分为智能硬件、图像算法和TV/游戏/移动应用(Android/iOS)几大项，每项以时间为序进行逆向排列，其中某些领域研究较多以专题的形式呈现，如NFC/RFID专题，我的开源，目前只整理了小部分，这是一个长期过程，后续逐一补全。
+
+部分项目有原理或源码分享，请在SkySeraph博客翻找。
+
+欢迎您告诉我您的任何想法或需求，或者">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/OCR0.jpg">
+<meta property="og:updated_time" content="2017-03-19T13:58:28.461Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Projects">
+<meta name="twitter:description" content="前传
+这个页面主要对本人完成或参与完成的部分项目进行规整，主观的将其分为智能硬件、图像算法和TV/游戏/移动应用(Android/iOS)几大项，每项以时间为序进行逆向排列，其中某些领域研究较多以专题的形式呈现，如NFC/RFID专题，我的开源，目前只整理了小部分，这是一个长期过程，后续逐一补全。
+
+部分项目有原理或源码分享，请在SkySeraph博客翻找。
+
+欢迎您告诉我您的任何想法或需求，或者">
+<meta name="twitter:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/OCR0.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/avatar.png" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-77554390-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?622a2108abaca144ab683efc8b9d1430";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+</head>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">SkySeraph</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/projects/">Projects</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">SkySeraph</h2>
+            <h3 id="title">Senior Engineer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>ShenZhen, China</span>
+            <a id="follow" target="_blank" href="https://github.com/skyseraph">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                19
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                31
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    <td><a href="http://github.com/skyseraph" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+                    
+                    <td><a href="http://stackoverflow.com/users/1343127/skyseraph" target="_blank" title="stack-overflow"><i class="fa fa-stack-overflow"></i></a></td>
+                    
+                    <td><a href="http://weibo.com/skyseraph" target="_blank" title="weibo"><i class="fa fa-weibo"></i></a></td>
+                    
+                    <td><a href="https://twitter.com/seraph_sky" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+                    
+                    <td><a href="/" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></td>
+                    
+                    <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="projects-undefined" class="article article-type-projects" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Projects
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/projects/index.html">
+            <time datetime="2015-12-30T15:21:20.000Z" itemprop="datePublished">2015-12-30</time>
+        </a>
+    </div>
+
+
+                    
+                              
+					
+
+					
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前传"><span class="toc-number">1.</span> <span class="toc-text">前传</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#智能硬件"><span class="toc-number">2.</span> <span class="toc-text">智能硬件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图像算法"><span class="toc-number">3.</span> <span class="toc-text">图像算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#OCR文字识别"><span class="toc-number">3.1.</span> <span class="toc-text">OCR文字识别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#手掌手指分割算法"><span class="toc-number">3.2.</span> <span class="toc-text">手掌手指分割算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#织物瑕疵检测系统"><span class="toc-number">3.3.</span> <span class="toc-text">织物瑕疵检测系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#彩色图像分析软件"><span class="toc-number">3.4.</span> <span class="toc-text">彩色图像分析软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#停车场车位检测算法"><span class="toc-number">3.5.</span> <span class="toc-text">停车场车位检测算法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TV应用-Android"><span class="toc-number">4.</span> <span class="toc-text">TV应用(Android)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#手势控制"><span class="toc-number">4.1.</span> <span class="toc-text">手势控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多屏互动-nScreen"><span class="toc-number">4.2.</span> <span class="toc-text">多屏互动/nScreen</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#家庭云-FamilyCloud"><span class="toc-number">4.3.</span> <span class="toc-text">家庭云/FamilyCloud</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#T-CAST"><span class="toc-number">4.4.</span> <span class="toc-text">T-CAST</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#悬浮球"><span class="toc-number">4.5.</span> <span class="toc-text">悬浮球</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#游戏相关（Android-iOS）"><span class="toc-number">5.</span> <span class="toc-text">游戏相关（Android/iOS）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#雷姆利亚（Android-iOS）"><span class="toc-number">5.1.</span> <span class="toc-text">雷姆利亚（Android/iOS）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#九游"><span class="toc-number">5.2.</span> <span class="toc-text">九游</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#九游SDK（浮窗）"><span class="toc-number">5.3.</span> <span class="toc-text">九游SDK（浮窗）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#幽灵辅助（皇室战争／COC）"><span class="toc-number">5.4.</span> <span class="toc-text">幽灵辅助（皇室战争／COC）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#移动应用-Android-iOS"><span class="toc-number">6.</span> <span class="toc-text">移动应用(Android/iOS)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#NETS-MConnect-iOS-Android"><span class="toc-number">6.1.</span> <span class="toc-text">NETS MConnect(iOS/Android)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NetTest-Android"><span class="toc-number">6.2.</span> <span class="toc-text">NetTest(Android)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SmartParking-Android"><span class="toc-number">6.3.</span> <span class="toc-text">SmartParking(Android)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#…"><span class="toc-number">6.4.</span> <span class="toc-text">…</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NFC-RFID专题"><span class="toc-number">7.</span> <span class="toc-text">NFC/RFID专题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#某省会城市一卡通项目"><span class="toc-number">7.1.</span> <span class="toc-text">某省会城市一卡通项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#碰碰米"><span class="toc-number">7.2.</span> <span class="toc-text">碰碰米</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#极控者智能戒指"><span class="toc-number">7.3.</span> <span class="toc-text">极控者智能戒指</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NFC云分享"><span class="toc-number">7.4.</span> <span class="toc-text">NFC云分享</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NFC任务管理"><span class="toc-number">7.5.</span> <span class="toc-text">NFC任务管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TV-NFC控制"><span class="toc-number">7.6.</span> <span class="toc-text">TV NFC控制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我的开源"><span class="toc-number">8.</span> <span class="toc-text">我的开源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其它"><span class="toc-number">9.</span> <span class="toc-text">其它</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-number">10.</span> <span class="toc-text">后记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#联系我"><span class="toc-number">11.</span> <span class="toc-text">联系我</span></a></li></ol>
+                </div>
+            
+            <h1 id="前传"><a href="#前传" class="headerlink" title="前传"></a>前传</h1><ul>
+<li><p>这个页面主要对本人完成或参与完成的部分项目进行规整，主观的将其分为智能硬件、图像算法和TV/游戏/移动应用(Android/iOS)几大项，每项以时间为序进行逆向排列，其中某些领域研究较多以专题的形式呈现，如<strong>NFC/RFID专题</strong>，<strong>我的开源</strong>，目前只整理了小部分，这是一个长期过程，后续逐一补全。</p>
+</li>
+<li><p>部分项目有原理或源码分享，请在<a href="http://www.skyseraph.com" target="_blank" rel="external">SkySeraph</a>博客翻找。</p>
+</li>
+<li><p>欢迎您告诉我您的任何想法或需求，或者有什么好点子我能帮上忙的也可以与我联系，联系方式见文末。</p>
+</li>
+</ul>
+<hr>
+<h1 id="智能硬件"><a href="#智能硬件" class="headerlink" title="智能硬件"></a>智能硬件</h1><p>待补充…</p>
+<hr>
+<h1 id="图像算法"><a href="#图像算法" class="headerlink" title="图像算法"></a>图像算法</h1><h2 id="OCR文字识别"><a href="#OCR文字识别" class="headerlink" title="OCR文字识别"></a><a href=""><strong>OCR文字识别</strong></a></h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/OCR0.jpg" width="600" height="200"></p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/OCR1.jpg" width="600" height="200"></p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/OCR2.jpg" width="600" height="200"></p>
+<h2 id="手掌手指分割算法"><a href="#手掌手指分割算法" class="headerlink" title="手掌手指分割算法"></a><a href="http://skyseraph.com/2014/07/24/CV/%E6%89%8B%E6%8E%8C%E6%89%8B%E6%8C%87%E5%88%86%E5%89%B2%E7%AE%97%E6%B3%95/"><strong>手掌手指分割算法</strong></a></h2><p>该算法是<strong>2014</strong>年时为朋友一家公司做指纹识别做的一套手掌分割手指的算法，可以很好的识别出白天/黑夜场景下摄像头拍照手掌图片分割后获取手指指纹图片输入给指纹识别，更多介绍请<a href="http://skyseraph.com/2014/07/24/CV/%E6%89%8B%E6%8E%8C%E6%89%8B%E6%8C%87%E5%88%86%E5%89%B2%E7%AE%97%E6%B3%95/">参考此文</a>（<em>含核心源码</em>），运行效果如下如：</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E6%B5%8B%E8%AF%95-%E7%99%BD%E5%A4%A9.png" alt=""><br><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E6%89%B9%E9%87%8F2.png" alt=""></p>
+<h2 id="织物瑕疵检测系统"><a href="#织物瑕疵检测系统" class="headerlink" title="织物瑕疵检测系统"></a><a href="http://skyseraph.com/2012/05/04/CV/%E7%BB%87%E7%89%A9%E7%96%B5%E7%82%B9%E6%A3%80%E6%B5%8B%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E7%B3%BB%E7%BB%9F%20%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0/"><strong>织物瑕疵检测系统</strong></a></h2><p>该软件是<strong>2011</strong>年硕士生涯的研究课题，“织物疵点检测机器视觉系统研究”，算法+软件+系统，涉及两篇核心算法学术论文，软件平台基于Visual Studio2010 + OpenCV2.1，单张图片总耗时为<strong>241~278 ms</strong>，<a href="http://skyseraph.com/2012/05/04/CV/%E7%BB%87%E7%89%A9%E7%96%B5%E7%82%B9%E6%A3%80%E6%B5%8B%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E7%B3%BB%E7%BB%9F%20%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0/">更多介绍请参考此文</a>，其中<a href="http://www.cnblogs.com/skyseraph/archive/2011/08/11/2135291.html" target="_blank" rel="external">关于显著性算法的实践效果请参考此文</a>，软件效果如下： </p>
+<p><img src="http://pic002.cnblogs.com/images/2012/137896/2012050410150071.png" alt=""></p>
+<h2 id="彩色图像分析软件"><a href="#彩色图像分析软件" class="headerlink" title="彩色图像分析软件"></a><a href="http://skyseraph.com/2011/08/14/CV/%E5%BD%A9%E8%89%B2%E5%9B%BE%E5%83%8F%E5%88%86%E6%9E%90%E8%BD%AF%E4%BB%B6%20ColorImgSft-V1.0.1.0/"><strong>彩色图像分析软件</strong></a></h2><p>该软件是<strong>2010</strong>年在国内某大型停车诱导公司做<strong>车位识别</strong>算法时对彩色图像的专题研究整理出的一套彩色图像分析软件，部分原理可<a href="http://skyseraph.com/2011/08/01/CV/%E5%BD%A9%E8%89%B2%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2%E4%B8%93%E9%A2%98/">参考此文</a>，软件介绍请<a href="http://skyseraph.com/2011/08/14/CV/%E5%BD%A9%E8%89%B2%E5%9B%BE%E5%83%8F%E5%88%86%E6%9E%90%E8%BD%AF%E4%BB%B6%20ColorImgSft-V1.0.1.0/">参考此文</a>，软件效果如下： </p>
+<p><img src="http://images2015.cnblogs.com/blog/137896/201605/137896-20160526201626100-237219052.png" alt="">  </p>
+<h2 id="停车场车位检测算法"><a href="#停车场车位检测算法" class="headerlink" title="停车场车位检测算法"></a><a href=""><strong>停车场车位检测算法</strong></a></h2><p>该算法是2010年给国内一家大型停车诱导公司基于彩色图像的研究的车位识别算法，暂不便公开说明。</p>
+<hr>
+<h1 id="TV应用-Android"><a href="#TV应用-Android" class="headerlink" title="TV应用(Android)"></a>TV应用(Android)</h1><h2 id="手势控制"><a href="#手势控制" class="headerlink" title="手势控制"></a>手势控制</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/tv-gesture.png" alt="">  </p>
+<h2 id="多屏互动-nScreen"><a href="#多屏互动-nScreen" class="headerlink" title="多屏互动/nScreen"></a>多屏互动/nScreen</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/tv-nScreen.png" alt=""></p>
+<p><a href="http://zhushou.360.cn/detail/index/soft_id/141604?recrefer=SE_D_TCL%E5%A4%9A%E5%B1%8F%E4%BA%92%E5%8A%A8" target="_blank" rel="external">360应用市场</a><br><a href="http://www.wandoujia.com/apps/com.tcl.multiscreen.interactive" target="_blank" rel="external">豌豆荚</a></p>
+<h2 id="家庭云-FamilyCloud"><a href="#家庭云-FamilyCloud" class="headerlink" title="家庭云/FamilyCloud"></a>家庭云/FamilyCloud</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/%E5%AE%B6%E5%BA%AD%E4%BA%91-1.jpg" alt="">  </p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/%E5%AE%B6%E5%BA%AD%E4%BA%91-2.jpg" alt=""> </p>
+<h2 id="T-CAST"><a href="#T-CAST" class="headerlink" title="T-CAST"></a>T-CAST</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/T-CAST.jpg" alt=""></p>
+<h2 id="悬浮球"><a href="#悬浮球" class="headerlink" title="悬浮球"></a>悬浮球</h2><p>该应用曾与极简电视一起参加美国2013 CES展</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/TV-Floating.jpg" alt=""> </p>
+<p>…… 还有很多，后面继续补充。。。。</p>
+<hr>
+<h1 id="游戏相关（Android-iOS）"><a href="#游戏相关（Android-iOS）" class="headerlink" title="游戏相关（Android/iOS）"></a>游戏相关（Android/iOS）</h1><h2 id="雷姆利亚（Android-iOS）"><a href="#雷姆利亚（Android-iOS）" class="headerlink" title="雷姆利亚（Android/iOS）"></a>雷姆利亚（Android/iOS）</h2><p><img src="http://pp.myapp.com/ma_icon/0/icon_42335335_1480314623/96" alt=""><br>一个专注的开放世界观的二次元企划社区平台和动漫平台。</p>
+<p><a href="https://itunes.apple.com/us/app/lei-mu-li-ya/id1146321243?mt=8" target="_blank" rel="external">Apple</a><br><a href="http://sj.qq.com/myapp/detail.htm?apkName=com.leimuliya.app" target="_blank" rel="external">应用宝</a><br><a href="http://zhushou.360.cn/detail/index/soft_id/3504817?recrefer=SE_D_%E9%9B%B7%E5%A7%86%E5%88%A9%E4%BA%9A" target="_blank" rel="external">360应用市场</a><br><a href="http://www.wandoujia.com/apps/com.leimuliya.app" target="_blank" rel="external">豌豆荚</a><br><a href="http://app.mi.com/details?id=com.leimuliya.app&amp;ref=search" target="_blank" rel="external">小米应用商店</a>  </p>
+<h2 id="九游"><a href="#九游" class="headerlink" title="九游"></a>九游</h2><p><img src="http://image.game.uc.cn/2013/11/21/9526686.png" alt=""></p>
+<p><a href="http://www.9game.cn/" target="_blank" rel="external">官网/App</a></p>
+<h2 id="九游SDK（浮窗）"><a href="#九游SDK（浮窗）" class="headerlink" title="九游SDK（浮窗）"></a>九游SDK（浮窗）</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Float-1.jpg" width="600" height="300"></p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Float-2.jpg" width="600" height="300"></p>
+<h2 id="幽灵辅助（皇室战争／COC）"><a href="#幽灵辅助（皇室战争／COC）" class="headerlink" title="幽灵辅助（皇室战争／COC）"></a>幽灵辅助（皇室战争／COC）</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Octopus-1.jpg" alt=""></p>
+<hr>
+<h1 id="移动应用-Android-iOS"><a href="#移动应用-Android-iOS" class="headerlink" title="移动应用(Android/iOS)"></a>移动应用(Android/iOS)</h1><h2 id="NETS-MConnect-iOS-Android"><a href="#NETS-MConnect-iOS-Android" class="headerlink" title="NETS MConnect(iOS/Android)"></a>NETS MConnect(iOS/Android)</h2><p><img src="http://a3.mzstatic.com/us/r30/Purple69/v4/d2/bf/89/d2bf89d7-616e-300b-f6be-14f152e06f05/screen696x696.jpeg" width="150" height="280"></p>
+<p><a href="https://itunes.apple.com/sg/app/nets-mconnect/id998916671?mt=8" target="_blank" rel="external">Apple</a> </p>
+<h2 id="NetTest-Android"><a href="#NetTest-Android" class="headerlink" title="NetTest(Android)"></a>NetTest(Android)</h2><p><a href="https://www.pgyer.com/nettest" target="_blank" rel="external">蒲公英</a></p>
+<h2 id="SmartParking-Android"><a href="#SmartParking-Android" class="headerlink" title="SmartParking(Android)"></a>SmartParking(Android)</h2><h2 id="…"><a href="#…" class="headerlink" title="…"></a>…</h2><p>…</p>
+<p>太多，待以后一一补充…</p>
+<hr>
+<h1 id="NFC-RFID专题"><a href="#NFC-RFID专题" class="headerlink" title="NFC/RFID专题"></a>NFC/RFID专题</h1><h2 id="某省会城市一卡通项目"><a href="#某省会城市一卡通项目" class="headerlink" title="某省会城市一卡通项目"></a>某省会城市一卡通项目</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/bdt.jpg" alt="">  </p>
+<h2 id="碰碰米"><a href="#碰碰米" class="headerlink" title="碰碰米"></a>碰碰米</h2><p><img src="http://pp.myapp.com/ma_pic2/0/shot_10417951_19491884_1_1415122453/550" alt=""></p>
+<p><a href="http://sj.qq.com/myapp/detail.htm?apkName=me.pengpeng.ppme" target="_blank" rel="external">应用宝</a><br><a href="http://zhushou.360.cn/detail/index/soft_id/857247" target="_blank" rel="external">360应用市场</a><br><a href="http://www.wandoujia.com/apps/me.pengpeng.ppme" target="_blank" rel="external">豌豆荚</a><br><a href="http://app.mi.com/details?id=me.pengpeng.ppme" target="_blank" rel="external">小米应用商店</a><br><a href="https://www.pgyer.com/ppme" target="_blank" rel="external">蒲公英</a> </p>
+<h2 id="极控者智能戒指"><a href="#极控者智能戒指" class="headerlink" title="极控者智能戒指"></a><a href="http://www.jakcom.com/" target="_blank" rel="external">极控者</a>智能戒指</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/TimeR.jpg" alt="">  </p>
+<p><a href="https://play.google.com/store/apps/details?id=com.jakcom.timer&amp;hl=zh_CN" target="_blank" rel="external">Google-Play</a><br><a href="http://android.myapp.com/myapp/detail.htm?apkName=com.jakcom.timer" target="_blank" rel="external">应用宝</a><br><a href="http://zhushou.360.cn/detail/index/soft_id/3082395?recrefer=SE_D_Smart%20Ring" target="_blank" rel="external">360应用市场</a><br><a href="http://www.wandoujia.com/apps/com.jakcom.timer" target="_blank" rel="external">豌豆荚</a><br><a href="https://www.pgyer.com/smartring" target="_blank" rel="external">蒲公英</a>  </p>
+<h2 id="NFC云分享"><a href="#NFC云分享" class="headerlink" title="NFC云分享"></a>NFC云分享</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/TimeR1%20.png" alt="">  </p>
+<p><a href="http://android.myapp.com/myapp/detail.htm?apkName=com.imtimer.nfcshareport" target="_blank" rel="external">应用宝</a><br><a href="http://zhushou.360.cn/detail/index/soft_id/2194764?recrefer=SE_D_NFC%E4%BA%91%E5%88%86%E4%BA%AB" target="_blank" rel="external">360应用市场</a><br><a href="http://www.wandoujia.com/apps/com.imtimer.nfcshareport" target="_blank" rel="external">豌豆荚</a></p>
+<h2 id="NFC任务管理"><a href="#NFC任务管理" class="headerlink" title="NFC任务管理"></a>NFC任务管理</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/TimeR2%20.png" alt=""> </p>
+<p><a href="http://android.myapp.com/myapp/detail.htm?apkName=com.imtimer.nfctaskediter" target="_blank" rel="external">应用宝</a><br><a href="http://zhushou.360.cn/detail/index/soft_id/2194763?recrefer=SE_D_NFC%E4%BA%91%E5%88%86%E4%BA%AB" target="_blank" rel="external">360应用市场</a><br><a href="http://www.wandoujia.com/apps/com.imtimer.nfctaskediter" target="_blank" rel="external">豌豆荚</a></p>
+<h2 id="TV-NFC控制"><a href="#TV-NFC控制" class="headerlink" title="TV NFC控制"></a>TV NFC控制</h2><p>该项目曾参加德国2013 <a href="http://b2b.ifa-berlin.com/" target="_blank" rel="external">IFA展</a></p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/tv-nfc.png" alt="">  </p>
+<hr>
+<h1 id="我的开源"><a href="#我的开源" class="headerlink" title="我的开源"></a>我的开源</h1><ul>
+<li><p><a href="https://github.com/skyseraph/android_nfc_book" target="_blank" rel="external"><strong>nfc_wifi_assistant</strong></a>    Android NFC Wifi Auto Connect</p>
+</li>
+<li><p><a href=""><strong>TopAppMonitor</strong></a>  Android前台应用监测  </p>
+</li>
+<li><p><a href="https://github.com/skyseraph/PlistAutoCreate" target="_blank" rel="external"><strong>PlistAutoCreate</strong></a> iOS plist和OTA 自动生成脚本</p>
+</li>
+</ul>
+<p>更多待补充…</p>
+<hr>
+<h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><p>待补充…</p>
+<hr>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><hr>
+<h1 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h1><p><strong>Email</strong>：    skyserpah00#126.com（技术交流）<br><strong>微信号</strong>：   452728574（合作交流，注明需求）   </p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" alt=""></p>
+<hr>
+<p>Update time<br>10/31/2016 Update,add Game<br>08/31/2016 Update,add nfc<br>06/12/2016 Update,add TV App<br>11/30/2015 Create this page      </p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+        <a href="http://skyseraph.com/projects/index.html#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/projects/index.html">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/26/Android/Appuim源码剖析(Boottrap)/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ8PsHcdHiRZQ9plFuKvJTAUR-raIBJdUzEeQc3z2yfT41Xz2MJ)" alt="Appuim源码剖析(Bootstrap)" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a></p>
+                            <p class="item-title"><a href="/2017/01/26/Android/Appuim源码剖析(Boottrap)/" class="title">Appuim源码剖析(Bootstrap)</a></p>
+                            <p class="item-date"><time datetime="2017-01-25T17:40:40.000Z" itemprop="datePublished">2017-01-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://skyseraph.com/css/images/avatar.png)" alt="而立之年，未开始的创业路" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SkySeraph/">SkySeraph</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/SkySeraph/Life/">Life</a></p>
+                            <p class="item-title"><a href="/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/" class="title">而立之年，未开始的创业路</a></p>
+                            <p class="item-date"><time datetime="2016-10-30T16:30:30.000Z" itemprop="datePublished">2016-10-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://jenkins.io/images/226px-Jenkins_logo.svg.png)" alt="Jenkins Gitlab持续集成打包平台搭建" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Tools/">Tools</a></p>
+                            <p class="item-title"><a href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/" class="title">Jenkins Gitlab持续集成打包平台搭建</a></p>
+                            <p class="item-date"><time datetime="2016-07-17T16:00:00.000Z" itemprop="datePublished">2016-07-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://devimages.apple.com.edgekey.net/assets/elements/icons/swift/swift-64x64.png)" alt="Select all the cell in UITabView or UICollectionView problem" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/iOS/">iOS</a></p>
+                            <p class="item-title"><a href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/" class="title">Select all the cell in UITabView or UICollectionView problem</a></p>
+                            <p class="item-date"><time datetime="2016-06-29T16:40:20.000Z" itemprop="datePublished">2016-06-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/06/19/Android/一种提高Android应用进程存活率新方法/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/ps%20grep1.png)" alt="一种提高Android应用进程存活率新方法" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a></p>
+                            <p class="item-title"><a href="/2016/06/19/Android/一种提高Android应用进程存活率新方法/" class="title">一种提高Android应用进程存活率新方法</a></p>
+                            <p class="item-date"><time datetime="2016-06-18T16:40:20.000Z" itemprop="datePublished">2016-06-19</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/">SkySeraph</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Reading/">Reading</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/">Tech</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/CV/">CV</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Media/">Media</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/NFC/">NFC</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/OpenGL/">OpenGL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Tools/">Tools</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/iOS/">iOS</a><span class="category-list-count">2</span></li></ul></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/AR-VR/" style="font-size: 10px;">AR/VR</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Appuim/" style="font-size: 10px;">Appuim</a> <a href="/tags/CI/" style="font-size: 10px;">CI</a> <a href="/tags/CV-MV/" style="font-size: 18px;">CV/MV</a> <a href="/tags/DIP/" style="font-size: 18px;">DIP</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/H264/" style="font-size: 10px;">H264</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Life/" style="font-size: 16px;">Life</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/OpenCV/" style="font-size: 18px;">OpenCV</a> <a href="/tags/OpenGL/" style="font-size: 10px;">OpenGL</a> <a href="/tags/Project/" style="font-size: 10px;">Project</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/SkySeraph/" style="font-size: 16px;">SkySeraph</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/iOS/" style="font-size: 14px;">iOS</a> <a href="/tags/jrtplib/" style="font-size: 10px;">jrtplib</a> <a href="/tags/live555/" style="font-size: 10px;">live555</a> <a href="/tags/图像特征/" style="font-size: 10px;">图像特征</a> <a href="/tags/图像算法/" style="font-size: 18px;">图像算法</a> <a href="/tags/存活率/" style="font-size: 10px;">存活率</a> <a href="/tags/彩色图像/" style="font-size: 12px;">彩色图像</a> <a href="/tags/机器视觉/" style="font-size: 10px;">机器视觉</a> <a href="/tags/流媒体/" style="font-size: 10px;">流媒体</a> <a href="/tags/瑕疵检测/" style="font-size: 10px;">瑕疵检测</a> <a href="/tags/进程/" style="font-size: 10px;">进程</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.cnblogs.com/skyseraph/">SkySeraph-cnBlogs</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 SkySeraph<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Modified by <a href="http://skyseraph.com">SkySeraph</a>.Total <span id="busuanzi_value_site_pv"></span> views.
+        </div>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+        
+    
+    <script>
+    var disqus_shortname = 'skyseraph';
+    
+    
+    var disqus_url = 'http://skyseraph.com/projects/index.html';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

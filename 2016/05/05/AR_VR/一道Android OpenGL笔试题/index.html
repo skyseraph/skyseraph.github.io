@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>一道Android OpenGL笔试题 | SkySeraph</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="题目
+设计一个Android平台的Gallery组件，要求Gallery中每个item内的图片显示达成有效显示的最大精度，并保证Gallery在滚屏时能够全60FPS帧率地及时显示出加载的图片。请详细说明实现架构、关键技术点及APIs。
+约束条件：GPU空间传输通道带宽较小，对于400*400pixel尺寸的图像而言，一次传输耗时超过30ms。
+
+答案当时的答案如下：
+
+ 1. Gallery组">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一道Android OpenGL笔试题">
+<meta property="og:url" content="http://skyseraph.com/2016/05/05/AR_VR/一道Android OpenGL笔试题/index.html">
+<meta property="og:site_name" content="SkySeraph">
+<meta property="og:description" content="题目
+设计一个Android平台的Gallery组件，要求Gallery中每个item内的图片显示达成有效显示的最大精度，并保证Gallery在滚屏时能够全60FPS帧率地及时显示出加载的图片。请详细说明实现架构、关键技术点及APIs。
+约束条件：GPU空间传输通道带宽较小，对于400*400pixel尺寸的图像而言，一次传输耗时超过30ms。
+
+答案当时的答案如下：
+
+ 1. Gallery组">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/OpenGL-Gallery.jpg">
+<meta property="og:updated_time" content="2017-03-19T13:58:28.346Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一道Android OpenGL笔试题">
+<meta name="twitter:description" content="题目
+设计一个Android平台的Gallery组件，要求Gallery中每个item内的图片显示达成有效显示的最大精度，并保证Gallery在滚屏时能够全60FPS帧率地及时显示出加载的图片。请详细说明实现架构、关键技术点及APIs。
+约束条件：GPU空间传输通道带宽较小，对于400*400pixel尺寸的图像而言，一次传输耗时超过30ms。
+
+答案当时的答案如下：
+
+ 1. Gallery组">
+<meta name="twitter:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/OpenGL-Gallery.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/avatar.png" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-77554390-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?622a2108abaca144ab683efc8b9d1430";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+</head>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">SkySeraph</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/projects/">Projects</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">SkySeraph</h2>
+            <h3 id="title">Senior Engineer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>ShenZhen, China</span>
+            <a id="follow" target="_blank" href="https://github.com/skyseraph">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                19
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                31
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    <td><a href="http://github.com/skyseraph" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+                    
+                    <td><a href="http://stackoverflow.com/users/1343127/skyseraph" target="_blank" title="stack-overflow"><i class="fa fa-stack-overflow"></i></a></td>
+                    
+                    <td><a href="http://weibo.com/skyseraph" target="_blank" title="weibo"><i class="fa fa-weibo"></i></a></td>
+                    
+                    <td><a href="https://twitter.com/seraph_sky" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+                    
+                    <td><a href="/" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></td>
+                    
+                    <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-AR_VR/一道Android OpenGL笔试题" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            一道Android OpenGL笔试题
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/05/05/AR_VR/一道Android OpenGL笔试题/">
+            <time datetime="2016-05-05T01:40:20.000Z" itemprop="datePublished">2016-05-05</time>
+        </a>
+    </div>
+
+
+                    
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/OpenGL/">OpenGL</a>
+    </div>
+
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/AR-VR/">AR/VR</a>, <a class="tag-link" href="/tags/Android/">Android</a>, <a class="tag-link" href="/tags/OpenGL/">OpenGL</a>
+    </div>
+          
+					
+<div class="article-category">
+	<i class="fa fa-line-chart"></i>
+	<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> article.hits
+</div>
+
+
+					
+<div class="article-author"><i class="fa fa-user"></i>
+  
+  <a href="http://skyseraph.com" title="SkySeraph">SkySeraph</a>
+</div>
+  
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#答案"><span class="toc-number">2.</span> <span class="toc-text">答案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思考-讨论"><span class="toc-number">3.</span> <span class="toc-text">思考/讨论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-number">4.</span> <span class="toc-text">后记</span></a></li></ol>
+                </div>
+            
+            <hr>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><ul>
+<li>设计一个Android平台的Gallery组件，要求Gallery中每个item内的图片显示达成有效显示的最大精度，并保证Gallery在滚屏时能够全60FPS帧率地及时显示出加载的图片。请详细说明实现架构、关键技术点及APIs。</li>
+<li>约束条件：GPU空间传输通道带宽较小，对于400*400pixel尺寸的图像而言，一次传输耗时超过30ms。</li>
+</ul>
+<h1 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h1><p>当时的答案如下：</p>
+<blockquote>
+<p><strong> 1. Gallery组件类图</strong>   </p>
+</blockquote>
+<p>Gallery组件类图设计如下图所示，其中:  </p>
+<ul>
+<li>GalleryView为自定义Gallery组件视图;   </li>
+<li>GalleryRenderer为GLSurfaceView的Renderer.  </li>
+<li>AbstractImage为抽象的ImageView基类，子类继承实现loadGLTexture和Draw  </li>
+<li>DataCache为图片缓存类，NetworkHelper为NetWork模块的管理类，负责图片的下载.  </li>
+</ul>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/OpenGL-Gallery.jpg" alt="">    </p>
+<blockquote>
+<p><strong>2. 关键技术点及相关API设计</strong></p>
+<blockquote>
+<p>2.1 最大精度下60fps帧率显示图片  </p>
+</blockquote>
+</blockquote>
+<p><strong>方案1： VBO/FBO方案</strong><br><strong><em>VBO</em></strong>(Vertex Buffer Array)： OpenGL存储顶点数据的高速缓存，可减少渲染时间，相关APIs如下(OpenGL ES 2.0以上)  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">GLES20.glGenBuffers(<span class="number">1</span>, vboId, <span class="number">0</span>);<span class="comment">//申请</span></div><div class="line">GLES20.glBindBuffer(GLES30.GL_ARRAY_BUFFER, vboId[<span class="number">0</span>]);<span class="comment">//绑定</span></div><div class="line">GLES20.glBufferData(GLES30.GL_ARRAY_BUFFER, vertexBuffer.capacity() * <span class="number">4</span>,vertexBuffer,GLES30.GL_STATIC_DRAW);<span class="comment">//存储      </span></div><div class="line">GLES20.glBindBuffer(GLES30.GL_ARRAY_BUFFER, <span class="number">0</span>);</div></pre></td></tr></table></figure>
+<p><a href="http://www.learnopengles.com/android-lesson-seven-an-introduction-to-vertex-buffer-objects-vbos/" target="_blank" rel="external">参考</a>   </p>
+<p><strong><em>PBO</em></strong>(Pixel Buffer Object)：OpenGL存储像素数据的高速缓存，可实现快速的像素数据传递，减少数据的拷贝/传递时间，相关APIs如下(OpenGL ES 3.0以上)  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">GLES30.glReadBuffer(GLES30.GL_BACK); <span class="comment">//set framebuffer to read from</span></div><div class="line">GLES30.glBindBuffer(GLES30.GL_PIXEL_PACK_BUFFER, mPboHandleContainer[<span class="number">0</span>]);  <span class="comment">// bind pbo</span></div><div class="line">GLES30.glReadPixels(<span class="number">0</span>, <span class="number">0</span>, width, height, GLES30.GL_RGBA, GLES30.GL_UNSIGNED_BYTE, pboByteBuffer); <span class="comment">// read pixels</span></div><div class="line">ByteBuffer byteBuffer =((ByteBuffer) GLES30.glMapBufferRange(GLES30.GL_PIXEL_PACK_BUFFER, <span class="number">0</span>, <span class="number">4</span> * mWidth * mHeight,</div><div class="line">                                              GLES30.GL_MAP_READ_BIT)).order(ByteOrder.nativeOrder()); <span class="comment">// map pbo to bb</span></div><div class="line">GLES30.glUnmapBuffer(GLES30.GL_PIXEL_PACK_BUFFER);<span class="comment">// unmap pbo</span></div><div class="line">GLES30.glBindBuffer(GLES30.GL_PIXEL_PACK_BUFFER, <span class="number">0</span>);<span class="comment">// unbind pbo</span></div></pre></td></tr></table></figure>
+<p><strong>PBO DMA异步快速传递原理及多缓存对象设计</strong>  </p>
+<ul>
+<li>如下面两图所示，其中上图是传统的方法从图像源载入图像数据到纹理对象的过程，像素数据首先存到系统内存中，接着使用glTexImage2D将数据从系统内存拷贝到纹理对象，包含的两个子过程均需要有CPU执行；而下图中，像素数据是直接载入到PBO中，这个过程仍需要CPU来执行，但是从数据从PBO到纹理对象的过程则由GPU来执行DMA，不需要CPU参与。而且opengl可安排异步DMA，不必马上进行像素数据的传递。因此，相比而言，下图中的glTexImage2D立即返回而不是马上执行，这样CPU可以执行其它的操作而不需要等待像素数据传递的结束。</li>
+</ul>
+<p><img src="http://www.songho.ca/opengl/files/gl_pbo02.png" alt=""><br><img src="http://www.songho.ca/opengl/files/gl_pbo03.png" alt="">  </p>
+<ul>
+<li>如下图所示表示同时使用了两个PBO。在glTexSubImage2D将像素数据从PBO拷贝出来的同时，另一份像素数据写进了另一个PBO。即在第n帧时，PBO1用于glTexSubImage2D，而PBO2用于生成一个新的纹理对象了。再到n+1帧时，两个PBO则互换了角色。由于异步DMA传递，像素数据的更新和拷贝过程可同时进行，即CPU将纹理源更新到PBO，同时GPU将从另一PBO中拷贝出纹理，从而提高处理速度。<br><img src="http://www.songho.ca/opengl/files/gl_pbo04.png" alt=""></li>
+</ul>
+<p><a href="http://www.songho.ca/opengl/gl_pbo.html" target="_blank" rel="external">参考</a>（图片来源）</p>
+<p><strong>方案二：Triple-Buffering等</strong>  </p>
+<p><strong>Triple-Buffering基本思路</strong>：<br>frame N正在显示时，frameN+1已经缓存并准备好(Only ready to show)，frameN+2已经开始获取</p>
+<p><strong>纹理索引基本思路</strong>：<br>所有图片都对应一个索引值，cache on memory，preloading，滑动时快速切换索引</p>
+<blockquote>
+<blockquote>
+<p>2.2 Gallery组件架构    </p>
+</blockquote>
+</blockquote>
+<p>Gallery组件是一个独立的模块，前期设计时需考虑后期的可维护性性及可可扩展性等进行综合考虑，<br>例如Gallery中图片的来源，可能来自本地或者网络下载，这样设计时需要将图片加载的模块单独抽离出来以便可扩展性等; 同时，从框架上考虑，Android组件的设计在具体情况下可考虑MVC/MVP等模式，这样不仅便于后期可维护可扩展，另外也能很好的将Model、View和Control/Presenter分离.</p>
+<h1 id="思考-讨论"><a href="#思考-讨论" class="headerlink" title="思考/讨论"></a>思考/讨论</h1><ul>
+<li><p>由于该题是OpenGL题目，所以笔者在回答时重点侧重在图片的显示上，而对图片的加载直接忽略掉了，后面想一下，还是在上述答案中加上对Android中图片下载的多级缓存设计会比较好。  </p>
+</li>
+<li><p>OpenGL渲染深入 </p>
+</li>
+</ul>
+<p>大家有好的答案或建议可直接下面留言回复，一起讨论! ~</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>本文首发于<a href="http://skyseraph.com/">skyseraph.com</a>：<a href="http://skyseraph.com/2016/05/05/AR_VR/%E4%B8%80%E9%81%93Android%20OpenGL%E7%AC%94%E8%AF%95%E9%A2%98/">“一道Android OpenGL笔试题”</a><br>同步发表/转载 <a href="http://www.cnblogs.com/skyseraph/p/5511614.html" target="_blank" rel="external">cnBlogs</a> / <a href="http://blog.csdn.net/zgzhaobo/article/details/51563460" target="_blank" rel="external">CSDN</a> / <a href=""></a> …</p>
+<hr>
+<font size="2"><br>By SkySeraph-2016<br></font>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+        <a href="http://skyseraph.com/2016/05/05/AR_VR/一道Android OpenGL笔试题/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2016/05/05/AR_VR/一道Android OpenGL笔试题/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/06/19/Android/一种提高Android应用进程存活率新方法/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    一种提高Android应用进程存活率新方法
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2016/01/11/SkySeraph/SkySeraph-Reading_Sharing-Life/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">SkySeraph-Reading Sharing-Life</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/26/Android/Appuim源码剖析(Boottrap)/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ8PsHcdHiRZQ9plFuKvJTAUR-raIBJdUzEeQc3z2yfT41Xz2MJ)" alt="Appuim源码剖析(Bootstrap)" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a></p>
+                            <p class="item-title"><a href="/2017/01/26/Android/Appuim源码剖析(Boottrap)/" class="title">Appuim源码剖析(Bootstrap)</a></p>
+                            <p class="item-date"><time datetime="2017-01-25T17:40:40.000Z" itemprop="datePublished">2017-01-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://skyseraph.com/css/images/avatar.png)" alt="而立之年，未开始的创业路" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SkySeraph/">SkySeraph</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/SkySeraph/Life/">Life</a></p>
+                            <p class="item-title"><a href="/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/" class="title">而立之年，未开始的创业路</a></p>
+                            <p class="item-date"><time datetime="2016-10-30T16:30:30.000Z" itemprop="datePublished">2016-10-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://jenkins.io/images/226px-Jenkins_logo.svg.png)" alt="Jenkins Gitlab持续集成打包平台搭建" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Tools/">Tools</a></p>
+                            <p class="item-title"><a href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/" class="title">Jenkins Gitlab持续集成打包平台搭建</a></p>
+                            <p class="item-date"><time datetime="2016-07-17T16:00:00.000Z" itemprop="datePublished">2016-07-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://devimages.apple.com.edgekey.net/assets/elements/icons/swift/swift-64x64.png)" alt="Select all the cell in UITabView or UICollectionView problem" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/iOS/">iOS</a></p>
+                            <p class="item-title"><a href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/" class="title">Select all the cell in UITabView or UICollectionView problem</a></p>
+                            <p class="item-date"><time datetime="2016-06-29T16:40:20.000Z" itemprop="datePublished">2016-06-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/06/19/Android/一种提高Android应用进程存活率新方法/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/ps%20grep1.png)" alt="一种提高Android应用进程存活率新方法" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a></p>
+                            <p class="item-title"><a href="/2016/06/19/Android/一种提高Android应用进程存活率新方法/" class="title">一种提高Android应用进程存活率新方法</a></p>
+                            <p class="item-date"><time datetime="2016-06-18T16:40:20.000Z" itemprop="datePublished">2016-06-19</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/">SkySeraph</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Reading/">Reading</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/">Tech</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/CV/">CV</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Media/">Media</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/NFC/">NFC</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/OpenGL/">OpenGL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Tools/">Tools</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/iOS/">iOS</a><span class="category-list-count">2</span></li></ul></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/AR-VR/" style="font-size: 10px;">AR/VR</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Appuim/" style="font-size: 10px;">Appuim</a> <a href="/tags/CI/" style="font-size: 10px;">CI</a> <a href="/tags/CV-MV/" style="font-size: 18px;">CV/MV</a> <a href="/tags/DIP/" style="font-size: 18px;">DIP</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/H264/" style="font-size: 10px;">H264</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Life/" style="font-size: 16px;">Life</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/OpenCV/" style="font-size: 18px;">OpenCV</a> <a href="/tags/OpenGL/" style="font-size: 10px;">OpenGL</a> <a href="/tags/Project/" style="font-size: 10px;">Project</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/SkySeraph/" style="font-size: 16px;">SkySeraph</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/iOS/" style="font-size: 14px;">iOS</a> <a href="/tags/jrtplib/" style="font-size: 10px;">jrtplib</a> <a href="/tags/live555/" style="font-size: 10px;">live555</a> <a href="/tags/图像特征/" style="font-size: 10px;">图像特征</a> <a href="/tags/图像算法/" style="font-size: 18px;">图像算法</a> <a href="/tags/存活率/" style="font-size: 10px;">存活率</a> <a href="/tags/彩色图像/" style="font-size: 12px;">彩色图像</a> <a href="/tags/机器视觉/" style="font-size: 10px;">机器视觉</a> <a href="/tags/流媒体/" style="font-size: 10px;">流媒体</a> <a href="/tags/瑕疵检测/" style="font-size: 10px;">瑕疵检测</a> <a href="/tags/进程/" style="font-size: 10px;">进程</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.cnblogs.com/skyseraph/">SkySeraph-cnBlogs</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 SkySeraph<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Modified by <a href="http://skyseraph.com">SkySeraph</a>.Total <span id="busuanzi_value_site_pv"></span> views.
+        </div>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+        
+    
+    <script>
+    var disqus_shortname = 'skyseraph';
+    
+    
+    var disqus_url = 'http://skyseraph.com/2016/05/05/AR_VR/一道Android OpenGL笔试题/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
