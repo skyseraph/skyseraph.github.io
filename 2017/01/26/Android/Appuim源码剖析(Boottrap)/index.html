@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="SkySeraph">
 <meta property="og:description" content="Appuim">
 <meta property="og:image" content="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ8PsHcdHiRZQ9plFuKvJTAUR-raIBJdUzEeQc3z2yfT41Xz2MJ">
-<meta property="og:updated_time" content="2017-03-19T15:01:26.633Z">
+<meta property="og:updated_time" content="2017-03-26T04:34:33.388Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Appuim源码剖析(Bootstrap)">
 <meta name="twitter:description" content="Appuim">
@@ -282,7 +282,7 @@ var _hmt = _hmt || [];
 <ul>
 <li><p>Session机制<br>Appuim的自动化测试是在一个 session 的上下文中运行，可以理解成Appuim会话。<br>每一次当Appium server成功启动后，客户端的测试库（client library）会要求与Server创建一个会话（session）。<br>会话的作用是为了确保能区别不同的客户端请求与不同的被测应用，每个特定的会话都有一个特定的sessionId参数。每次测试开始时，客户端将初始化一个session会话，虽然不同的语言初始化的方式不同，但是他们都要发送POST/session请求到服务器端，这些请求里面都会带有一个对象：desired capabilities ,这个时候服务器端会启动自动化session然后返回一个session ID，以后的命令都会用这个seesion ID去匹配。</p>
 </li>
-<li><p>Appuim服务端<br>包含众多语言库（Java, Ruby, Python, PHP, JavaScript,C#等），都实现了 Appium 对 WebDriver 协议的扩展。</p>
+<li><p>Appuim Client<br>包含众多语言库（Java, Ruby, Python, PHP, JavaScript,C#等），都实现了 Appium 对 WebDriver 协议的扩展。</p>
 </li>
 <li><p>JSON wire protocol<br>Appuim中非常重要的协议</p>
 </li>
