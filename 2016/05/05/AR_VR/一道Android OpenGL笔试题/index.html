@@ -323,9 +323,29 @@ var _hmt = _hmt || [];
 <ul>
 <li>如下面两图所示，其中上图是传统的方法从图像源载入图像数据到纹理对象的过程，像素数据首先存到系统内存中，接着使用glTexImage2D将数据从系统内存拷贝到纹理对象，包含的两个子过程均需要有CPU执行；而下图中，像素数据是直接载入到PBO中，这个过程仍需要CPU来执行，但是从数据从PBO到纹理对象的过程则由GPU来执行DMA，不需要CPU参与。而且opengl可安排异步DMA，不必马上进行像素数据的传递。因此，相比而言，下图中的glTexImage2D立即返回而不是马上执行，这样CPU可以执行其它的操作而不需要等待像素数据传递的结束。</li>
 </ul>
-<p><img src="http://www.songho.ca/opengl/files/gl_pbo02.png" alt=""><br><img src="http://www.songho.ca/opengl/files/gl_pbo03.png" alt="">  </p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://www.songho.ca/opengl/files/gl_pbo02.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>  
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://www.songho.ca/opengl/files/gl_pbo03.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>  
 <ul>
-<li>如下图所示表示同时使用了两个PBO。在glTexSubImage2D将像素数据从PBO拷贝出来的同时，另一份像素数据写进了另一个PBO。即在第n帧时，PBO1用于glTexSubImage2D，而PBO2用于生成一个新的纹理对象了。再到n+1帧时，两个PBO则互换了角色。由于异步DMA传递，像素数据的更新和拷贝过程可同时进行，即CPU将纹理源更新到PBO，同时GPU将从另一PBO中拷贝出纹理，从而提高处理速度。<br><img src="http://www.songho.ca/opengl/files/gl_pbo04.png" alt=""></li>
+<li>如下图所示表示同时使用了两个PBO。在glTexSubImage2D将像素数据从PBO拷贝出来的同时，另一份像素数据写进了另一个PBO。即在第n帧时，PBO1用于glTexSubImage2D，而PBO2用于生成一个新的纹理对象了。再到n+1帧时，两个PBO则互换了角色。由于异步DMA传递，像素数据的更新和拷贝过程可同时进行，即CPU将纹理源更新到PBO，同时GPU将从另一PBO中拷贝出纹理，从而提高处理速度。<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://www.songho.ca/opengl/files/gl_pbo04.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+</li>
 </ul>
 <p><a href="http://www.songho.ca/opengl/gl_pbo.html" target="_blank" rel="external">参考</a>（图片来源）</p>
 <p><strong>方案二：Triple-Buffering等</strong>  </p>
