@@ -289,47 +289,17 @@ var _hmt = _hmt || [];
 </ul>
 <h1 id="Appuim-架构"><a href="#Appuim-架构" class="headerlink" title="Appuim 架构"></a>Appuim 架构</h1><p>Appuim基于Nodejs编写，基于HTTP协议，可以看成一个类似<a href="http://www.seleniumhq.org/projects/webdriver/" target="_blank" rel="external">selenium webdriver</a>的基于移动平台的webdriver，遵循RESTful设计风格web服务器，接受客户端的连接然后在手机设备上执行命令，最后通过HTTP的响应收集命令执行的结果。</p>
 <p>如下为我整理的Appuim Android平台下架构原理图，iOS也类似，只是Bootstrap部分由Instruments替换，UiAutomator由UIAutomation替换。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E6%9E%B6%E6%9E%84%E5%9B%BE-min.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E6%9E%B6%E6%9E%84%E5%9B%BE-min.jpg" alt=""></p>
 <p>如下两图参考<a href="">testerhome PPT</a>的Appuim Android和iOS平台下数据流程图。</p>
 <p>其中，Android平台下，Android API 17+，底层调用android平台自带的UI测试框架Uiautomator;反之，调用的selendroid测试框架来完成。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-android-%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE-min.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-ios-%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE-min.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-android-%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE-min.jpg" alt=""></p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-ios-%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE-min.jpg" alt=""></p>
 <h1 id="Bootstrap源码剖析"><a href="#Bootstrap源码剖析" class="headerlink" title="Bootstrap源码剖析"></a>Bootstrap源码剖析</h1><h2 id="源码结构"><a href="#源码结构" class="headerlink" title="源码结构"></a>源码结构</h2><p>如下所示，Appuim Bootstrap部分源码结构，分UiWatchers、Bootstrap和UIAutomator三部分，非常清晰。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/Appuim-%E6%BA%90%E7%A0%81%E7%BB%93%E6%9E%84-min.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/Appuim-%E6%BA%90%E7%A0%81%E7%BB%93%E6%9E%84-min.jpg" alt=""></p>
 <h2 id="启动时序"><a href="#启动时序" class="headerlink" title="启动时序"></a>启动时序</h2><p>Bootstrap入口类为Bootstrap.java，继承自UiAutomatorTestCase，然后开启Socket接收命令，时序如下。</p>
 <p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E6%97%B6%E5%BA%8F%E5%9B%BE-min.jpg" alt=""></p>
 <h2 id="类关系图"><a href="#类关系图" class="headerlink" title="类关系图"></a>类关系图</h2><p>类关系如下图所示，很简单。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E7%B1%BB%E5%9B%BE-min.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E7%B1%BB%E5%9B%BE-min.jpg" alt=""></p>
 <h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><p>Bootstrap整体分SocketServer部分，CommandHandler部分，Watchers部分和UiAutomator四部分。</p>
 <ul>
 <li>SocketServer。完成PC Server端命令接收和解析，再通过CommandHandler的execute操作调用UiAutomator实现触控操作。</li>

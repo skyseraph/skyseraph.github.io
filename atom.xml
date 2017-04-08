@@ -38,47 +38,17 @@
 </ul>
 <h1 id="Appuim-架构"><a href="#Appuim-架构" class="headerlink" title="Appuim 架构"></a>Appuim 架构</h1><p>Appuim基于Nodejs编写，基于HTTP协议，可以看成一个类似<a href="http://www.seleniumhq.org/projects/webdriver/" target="_blank" rel="external">selenium webdriver</a>的基于移动平台的webdriver，遵循RESTful设计风格web服务器，接受客户端的连接然后在手机设备上执行命令，最后通过HTTP的响应收集命令执行的结果。</p>
 <p>如下为我整理的Appuim Android平台下架构原理图，iOS也类似，只是Bootstrap部分由Instruments替换，UiAutomator由UIAutomation替换。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E6%9E%B6%E6%9E%84%E5%9B%BE-min.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E6%9E%B6%E6%9E%84%E5%9B%BE-min.jpg" alt=""></p>
 <p>如下两图参考<a href="">testerhome PPT</a>的Appuim Android和iOS平台下数据流程图。</p>
 <p>其中，Android平台下，Android API 17+，底层调用android平台自带的UI测试框架Uiautomator;反之，调用的selendroid测试框架来完成。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-android-%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE-min.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-ios-%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE-min.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-android-%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE-min.jpg" alt=""></p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-ios-%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE-min.jpg" alt=""></p>
 <h1 id="Bootstrap源码剖析"><a href="#Bootstrap源码剖析" class="headerlink" title="Bootstrap源码剖析"></a>Bootstrap源码剖析</h1><h2 id="源码结构"><a href="#源码结构" class="headerlink" title="源码结构"></a>源码结构</h2><p>如下所示，Appuim Bootstrap部分源码结构，分UiWatchers、Bootstrap和UIAutomator三部分，非常清晰。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/Appuim-%E6%BA%90%E7%A0%81%E7%BB%93%E6%9E%84-min.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/Appuim-%E6%BA%90%E7%A0%81%E7%BB%93%E6%9E%84-min.jpg" alt=""></p>
 <h2 id="启动时序"><a href="#启动时序" class="headerlink" title="启动时序"></a>启动时序</h2><p>Bootstrap入口类为Bootstrap.java，继承自UiAutomatorTestCase，然后开启Socket接收命令，时序如下。</p>
 <p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E6%97%B6%E5%BA%8F%E5%9B%BE-min.jpg" alt=""></p>
 <h2 id="类关系图"><a href="#类关系图" class="headerlink" title="类关系图"></a>类关系图</h2><p>类关系如下图所示，很简单。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E7%B1%BB%E5%9B%BE-min.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E7%B1%BB%E5%9B%BE-min.jpg" alt=""></p>
 <h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><p>Bootstrap整体分SocketServer部分，CommandHandler部分，Watchers部分和UiAutomator四部分。</p>
 <ul>
 <li>SocketServer。完成PC Server端命令接收和解析，再通过CommandHandler的execute操作调用UiAutomator实现触控操作。</li>
@@ -215,21 +185,9 @@
 <li><a href="https://www.pgyer.com/apps" target="_blank" rel="external">蒲公英(pgyer)</a>为移动开发者提供App免费测试分发应用的服务平台，支持iOS与Android，简单两步分发应用。类似的还有fir.im等.</li>
 </ul>
 <h1 id="流程结构"><a href="#流程结构" class="headerlink" title="流程结构"></a>流程结构</h1><p>简单绘制了下Jenkins的一个流程，如下图：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E6%B5%81%E7%A8%8B-min.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>  
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E6%B5%81%E7%A8%8B-min.png" alt="">  </p>
 <p><a href="http://www.ibm.com/developerworks/cn/devops/d-continuous-delivery-framework-jenkins/" target="_blank" rel="external">IBM Developer</a>上也有一个看似更复杂一点的图，如下图<br><img src="http://www.ibm.com/developerworks/cn/devops/d-continuous-delivery-framework-jenkins/image007.png" alt="">   </p>
-<p>持续交互流程图：<br><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://www.ibm.com/developerworks/cn/devops/d-continuous-delivery-framework-jenkins/image006.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>  </p>
+<p>持续交互流程图：<br><img src="http://www.ibm.com/developerworks/cn/devops/d-continuous-delivery-framework-jenkins/image006.png" alt="">  </p>
 <h1 id="平台搭建"><a href="#平台搭建" class="headerlink" title="平台搭建"></a>平台搭建</h1><h2 id="Jenkins安装和启动"><a href="#Jenkins安装和启动" class="headerlink" title="Jenkins安装和启动"></a>Jenkins安装和启动</h2><p><a href="https://jenkins.io/index.html" target="_blank" rel="external">官网</a>： <a href="https://jenkins.io/index.html" target="_blank" rel="external">https://jenkins.io/index.html</a><br><a href="http://mirrors.jenkins-ci.org/war/latest/jenkins.war" target="_blank" rel="external">下载</a>： <a href="http://mirrors.jenkins-ci.org/war/latest/jenkins.war" target="_blank" rel="external">http://mirrors.jenkins-ci.org/war/latest/jenkins.war</a>  </p>
 <blockquote>
 <p>安装： </p>
@@ -253,13 +211,7 @@
 <p>插件安装</p>
 </blockquote>
 <p>操作： Manage Jenkins -&gt; Manage Plugins -&gt; Available -&gt; Search -&gt; Click to install，如下图所示</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%851-min.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>   
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%851-min.png" alt="">   </p>
 <p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%852-min.png" alt="">  </p>
 <blockquote>
 <p>实用插件</p>
@@ -286,73 +238,31 @@
 <ul>
 <li>Jenkins内部shell UTF-8 编码设置，如下图所示</li>
 </ul>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E8%AE%BE%E7%BD%AE1-min.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>  
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E8%AE%BE%E7%BD%AE1-min.png" alt="">  </p>
 <ul>
 <li>Jenkins Location和Email设置，如下图所示</li>
 </ul>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E8%AE%BE%E7%BD%AE2-min.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>  
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E8%AE%BE%E7%BD%AE2-min.png" alt="">  </p>
 <ul>
 <li>E-mail Notification，设置如下如所示</li>
 </ul>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkis%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE3-min.png" alt="Jenkis系统设置3" title="">
-                </div>
-                <div class="image-caption">Jenkis系统设置3</div>
-            </figure>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkis%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE3-min.png" alt="Jenkis系统设置3"></p>
 <p>SMTP详细配置请参考 <a href="http://www.nailedtothex.org/roller/kyle/entry/articles-jenkins-email" target="_blank" rel="external">How to send Email at every build with Jenkins</a>  </p>
 <h2 id="Jenkins-Jobs配置"><a href="#Jenkins-Jobs配置" class="headerlink" title="Jenkins Jobs配置"></a>Jenkins Jobs配置</h2><h3 id="Jobs基础配置"><a href="#Jobs基础配置" class="headerlink" title="Jobs基础配置"></a>Jobs基础配置</h3><blockquote>
 <p>配置编译参数</p>
 </blockquote>
 <p>例如，如果需要打包者自行选择打包类型，如需要编译Release/Debug/Test等不同版本的包，那需要配置Jobs的编译参数，配置方法如下图所示：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE2-min.png" alt="Jenkins编译设置-参数设置2" title="">
-                </div>
-                <div class="image-caption">Jenkins编译设置-参数设置2</div>
-            </figure>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE2-min.png" alt="Jenkins编译设置-参数设置2"></p>
 <p>你还可以配置一些其它参数，例如：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE3-min.png" alt="Jenkins编译设置-参数设置3" title="">
-                </div>
-                <div class="image-caption">Jenkins编译设置-参数设置3</div>
-            </figure>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE3-min.png" alt="Jenkins编译设置-参数设置3"></p>
 <p>配置完后，build界面中就会出现，如下如所示：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE1-min.png" alt="Jenkins编译设置-参数设置1" title="">
-                </div>
-                <div class="image-caption">Jenkins编译设置-参数设置1</div>
-            </figure>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE1-min.png" alt="Jenkins编译设置-参数设置1"></p>
 <p><a href="http://stackoverflow.com/questions/7751735/how-to-configure-a-single-jenkins-job-to-make-the-release-process-from-trunk-or" target="_blank" rel="external">How to configure a single Jenkins job to make the release process from trunk or branches?</a></p>
 <blockquote>
 <p>配置匿名用户权限</p>
 </blockquote>
 <p>后面打包的应用发布时，如果懒得自己搭建服务器，就用Jenkins的，但发布出去的链接需要登录才能访问，这时候你可以设置匿名用户的访问权限，这样匿名用户可以下载访问你提供的应用链接了，非常取巧的方法，如下图：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE4-min.png" alt="Jenkins编译设置-参数设置4.png" title="">
-                </div>
-                <div class="image-caption">Jenkins编译设置-参数设置4.png</div>
-            </figure>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE4-min.png" alt="Jenkins编译设置-参数设置4.png"></p>
 <h3 id="Jobs源码库配置-Gitlab为例"><a href="#Jobs源码库配置-Gitlab为例" class="headerlink" title="Jobs源码库配置(Gitlab为例)"></a>Jobs源码库配置(Gitlab为例)</h3><blockquote>
 <p>配置SSH</p>
 </blockquote>
@@ -371,13 +281,7 @@
 <p>配置Gitlab</p>
 </blockquote>
 <p>在新建的任务（Jobs）中，Gitlab源码配置如下图：需要输入git仓库和build分支，公钥使用上面配置SSH生成的公钥。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE1-min.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>    
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE1-min.png" alt="">    </p>
 <h3 id="Jobs触发条件配置"><a href="#Jobs触发条件配置" class="headerlink" title="Jobs触发条件配置"></a>Jobs触发条件配置</h3><p>Jenkins支持多种触发器配置，包括：</p>
 <ul>
 <li><p>定期进行构建（Build periodically），定时器使用示例如下：  </p>
@@ -399,13 +303,7 @@
 </blockquote>
 <p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE-Archive-min.png" alt="Jenkins项目设置-Archive-min">  </p>
 <p>可借助Email Extension Plugin 插件进行详细配置，具体可参考<a href="http://blog.csdn.net/fengshi_sh/article/details/50669754" target="_blank" rel="external">此文</a></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE-%E9%82%AE%E4%BB%B6-min.png" alt="Jenkins项目设置-邮件-min" title="">
-                </div>
-                <div class="image-caption">Jenkins项目设置-邮件-min</div>
-            </figure>  
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE-%E9%82%AE%E4%BB%B6-min.png" alt="Jenkins项目设置-邮件-min">  </p>
 <blockquote>
 <p>发布</p>
 </blockquote>
@@ -418,25 +316,13 @@
 <p>iOS的发布可能希望用到OTA，可参考<a href="http://blog.csdn.net/close_marty/article/details/38559673" target="_blank" rel="external">此文</a>  还有这篇<a href="http://www.jianshu.com/p/35ca63ec0d8e" target="_blank" rel="external">一步一步实现无线安装iOS应用(内网OTA)</a> </p>
 <p>这里分享一个我写的shell脚本模板(<a href="https://github.com/skyseraph/PlistAutoCreate" target="_blank" rel="external">已开源</a>)，可以用于iOS的plist文件自动创建以及OTA简单发布页面的自动创建，参考<a href="https://github.com/skyseraph/PlistAutoCreate" target="_blank" rel="external">此链接获取源码</a>, 欢迎Star.</p>
 <p>自动生成一个简单HTML界面，如下图，点击Install即可安装：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/jenkins_index.png" alt="Jenkis发布1" title="">
-                </div>
-                <div class="image-caption">Jenkis发布1</div>
-            </figure>  
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/jenkins_index.png" alt="Jenkis发布1">  </p>
 <p>注意，这里iOS7.1以后限定必须要要用https，所以需要对jenkins设置下https，参考下面”后记” 中的Jenkins Https设置</p>
 <blockquote>
 <p>Last Show  </p>
 </blockquote>
 <p>构建成功后最终的结果如下如所示：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/jenkins_finish.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>  
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/jenkins_finish.jpg" alt="">  </p>
 <h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><h2 id="签名和证书问题-iOS"><a href="#签名和证书问题-iOS" class="headerlink" title="签名和证书问题(iOS)"></a>签名和证书问题(iOS)</h2><ul>
 <li><a href="https://circleci.com/docs/ios-code-signing/" target="_blank" rel="external">Set up code signing for iOS projects</a></li>
 <li><a href="http://eqi.cc/2016/05/17/%E5%AE%89%E8%A3%85jenkins%E5%88%B0%E5%8F%91%E5%B8%83ipa%E4%B8%AD%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/" target="_blank" rel="external">安装JENKINS到发布IPA中的那些坑</a></li>
@@ -671,13 +557,7 @@
 <li>通过adb查看,运行在后台的服务其进程号变成了1（优先级仅次于前台进程），能提高进程优先级，对比如下图 </li>
 </ul>
 <p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/ps%20grep2.png" alt="正常情况"></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/ps%20grep1.png" alt="采用AccountSyncAdapter方法后" title="">
-                </div>
-                <div class="image-caption">采用AccountSyncAdapter方法后</div>
-            </figure>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/ps%20grep1.png" alt="采用AccountSyncAdapter方法后"></p>
 <ul>
 <li>进程被系统kill后，可以由syn拉起</li>
 </ul>
@@ -769,13 +649,7 @@
 <li><p><a href="https://medium.com/@rotxed/going-multiprocess-on-android-52975ed8863c#.20jjl1u9h" target="_blank" rel="external">Going multiprocess on Android</a></p>
 </li>
 </ol>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://camo.githubusercontent.com/8a7b101c1131bee44c083442109c44fb4a877261/687474703a2f2f377869386b6a2e636f6d312e7a302e676c622e636c6f7564646e2e636f6d2f696d6730312e676966" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure> 
+<p><img src="https://camo.githubusercontent.com/8a7b101c1131bee44c083442109c44fb4a877261/687474703a2f2f377869386b6a2e636f6d312e7a302e676c622e636c6f7564646e2e636f6d2f696d6730312e676966" alt=""> </p>
 <h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><blockquote>
 <p><strong>2016.5.24</strong>    </p>
 </blockquote>
@@ -848,29 +722,9 @@
 <ul>
 <li>如下面两图所示，其中上图是传统的方法从图像源载入图像数据到纹理对象的过程，像素数据首先存到系统内存中，接着使用glTexImage2D将数据从系统内存拷贝到纹理对象，包含的两个子过程均需要有CPU执行；而下图中，像素数据是直接载入到PBO中，这个过程仍需要CPU来执行，但是从数据从PBO到纹理对象的过程则由GPU来执行DMA，不需要CPU参与。而且opengl可安排异步DMA，不必马上进行像素数据的传递。因此，相比而言，下图中的glTexImage2D立即返回而不是马上执行，这样CPU可以执行其它的操作而不需要等待像素数据传递的结束。</li>
 </ul>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://www.songho.ca/opengl/files/gl_pbo02.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>  
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://www.songho.ca/opengl/files/gl_pbo03.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>  
+<p><img src="http://www.songho.ca/opengl/files/gl_pbo02.png" alt=""><br><img src="http://www.songho.ca/opengl/files/gl_pbo03.png" alt="">  </p>
 <ul>
-<li>如下图所示表示同时使用了两个PBO。在glTexSubImage2D将像素数据从PBO拷贝出来的同时，另一份像素数据写进了另一个PBO。即在第n帧时，PBO1用于glTexSubImage2D，而PBO2用于生成一个新的纹理对象了。再到n+1帧时，两个PBO则互换了角色。由于异步DMA传递，像素数据的更新和拷贝过程可同时进行，即CPU将纹理源更新到PBO，同时GPU将从另一PBO中拷贝出纹理，从而提高处理速度。<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://www.songho.ca/opengl/files/gl_pbo04.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-</li>
+<li>如下图所示表示同时使用了两个PBO。在glTexSubImage2D将像素数据从PBO拷贝出来的同时，另一份像素数据写进了另一个PBO。即在第n帧时，PBO1用于glTexSubImage2D，而PBO2用于生成一个新的纹理对象了。再到n+1帧时，两个PBO则互换了角色。由于异步DMA传递，像素数据的更新和拷贝过程可同时进行，即CPU将纹理源更新到PBO，同时GPU将从另一PBO中拷贝出纹理，从而提高处理速度。<br><img src="http://www.songho.ca/opengl/files/gl_pbo04.png" alt=""></li>
 </ul>
 <p><a href="http://www.songho.ca/opengl/gl_pbo.html" target="_blank" rel="external">参考</a>（图片来源）</p>
 <p><strong>方案二：Triple-Buffering等</strong>  </p>
@@ -919,14 +773,14 @@
     <link href="http://skyseraph.com/2016/01/11/SkySeraph/SkySeraph-Reading_Sharing-Life/"/>
     <id>http://skyseraph.com/2016/01/11/SkySeraph/SkySeraph-Reading_Sharing-Life/</id>
     <published>2016-01-10T17:23:20.000Z</published>
-    <updated>2017-03-19T13:58:28.419Z</updated>
+    <updated>2017-04-08T13:55:02.256Z</updated>
     
     <content type="html"><![CDATA[<hr>
-<h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><ul>
+<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><ul>
 <li><a href="http://www.cnblogs.com/skyseraph/p/5162149.html" target="_blank" rel="external">【讀書筆記】成为技术领导者</a></li>
 </ul>
 <h2 id="2016-before"><a href="#2016-before" class="headerlink" title="2016 before"></a>2016 before</h2><ul>
-<li><p><a href="http://www.cnblogs.com/skyseraph/p/3895564.html" target="_blank" rel="external">【讀書筆記】精益创业实战</a></p>
+<li><p><a href="http://www.cnblogs.com/skyseraph/p/3895564.html" target="_blank" rel="external">【讀書筆記】精益创业实战</a>，<a href="https://book.douban.com/subject/20505765/" target="_blank" rel="external">豆瓣</a></p>
 </li>
 <li><p><a href="http://www.cnblogs.com/skyseraph/p/3693005.html" target="_blank" rel="external">【讀書筆記】高效能人士的七个习惯</a></p>
 </li>
@@ -935,14 +789,15 @@
 <li><p><a href="http://www.cnblogs.com/skyseraph/archive/2013/01/07/2850003.html" target="_blank" rel="external">【分享】RSS订阅技巧及工具和实用RSS链接分享 </a></p>
 </li>
 </ul>
+<p>## </p>
+<p><a href="https://book.douban.com/mine?icn=index-nav" target="_blank" rel="external">我的豆瓣读书首页</a>  </p>
 <hr>
 <font size="2"><br>By SkySeraph<br></font>]]></content>
     
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h2 id=&quot;2016&quot;&gt;&lt;a href=&quot;#2016&quot; class=&quot;headerlink&quot; title=&quot;2016&quot;&gt;&lt;/a&gt;2016&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/skyseraph/p/5162149
+&lt;h2 id=&quot;2017&quot;&gt;&lt;a href=&quot;#2017&quot; class=&quot;headerlink&quot; title=&quot;2017&quot;&gt;&lt;/a&gt;2017&lt;/h2&gt;&lt;h2 id=&quot;2016&quot;&gt;&lt;a href=&quot;#2016&quot; class=&quot;headerlink&quot; title=&quot;2016
     
     </summary>
     
@@ -1077,14 +932,7 @@
 </ul>
 <hr>
 <h2 id="读书-图片-音乐-视频"><a href="#读书-图片-音乐-视频" class="headerlink" title="读书/图片/音乐/视频"></a>读书/图片/音乐/视频</h2><ul>
-<li><p><a href="https://github.com/SkillCollege/SimplifyReader" target="_blank" rel="external">SimplifyReader</a><br>一款基于Google Material Design设计开发的Android客户端，包括新闻简读，图片浏览，视频爽看 ，音乐轻听以及二维码扫描五个子模块</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/SkillCollege/server/master/SimplifyReader/images/all_in_one.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<li><p><a href="https://github.com/SkillCollege/SimplifyReader" target="_blank" rel="external">SimplifyReader</a><br>一款基于Google Material Design设计开发的Android客户端，包括新闻简读，图片浏览，视频爽看 ，音乐轻听以及二维码扫描五个子模块<br><img src="https://raw.githubusercontent.com/SkillCollege/server/master/SimplifyReader/images/all_in_one.jpg" alt=""></p>
 </li>
 <li><p><a href="https://github.com/liuguangqiang/shuba" target="_blank" rel="external">shuba</a> <strong>书吧</strong><br>专注为用户提供人性化的搜书引擎，快捷，方便，为用户找到最好的小说</p>
 </li>
@@ -1929,13 +1777,7 @@
 <blockquote>
 <p><strong>算法流程</strong></p>
 </blockquote>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt=""></p>
 <blockquote>
 <p><strong>核心代码</strong></p>
 </blockquote>
@@ -1952,13 +1794,7 @@
 <p><strong>批量测试场景</strong>  </p>
 </blockquote>
 <p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E6%89%B9%E9%87%8F1.png" alt=""></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E6%89%B9%E9%87%8F2.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E6%89%B9%E9%87%8F2.png" alt=""></p>
 <hr>
 <p><font size="2"><br>By SkySeraph-2014<br></font><br>合作联系：skyseraph00@163.com</p>
 ]]></content>
@@ -2000,13 +1836,7 @@
     <content type="html"><![CDATA[<hr>
 <h1 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h1><p>  哇哈..,历时一年多，一哥的第一本书终于要出版了 (原本应该今年年初出版的,跟马航一样, 莫名其妙就拖到了现在 , 据出版社最新消息, 预计三月中下旬正式出版,敬请期待), 封面如下, 感谢人民邮电的张涛老师为本书的付出,……<br>这本书的写作大概是从去年的3月左右开始的, 全书分为三大块,分别为基础篇,应用篇和实例篇(具体见下述MENU)…  </p>
 <hr>
-<h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images.cnitblog.com/i/137896/201404/200849150572095.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><p><img src="http://images.cnitblog.com/i/137896/201404/200849150572095.png" alt=""></p>
 <hr>
 <h2 id="LINK"><a href="#LINK" class="headerlink" title="LINK"></a>LINK</h2><ul>
 <li><p><a href="http://www.ptpress.com.cn/Book.aspx?id=37758" target="_blank" rel="external">出版社</a></p>
@@ -2448,13 +2278,7 @@
 </li>
 </ul>
 <p>（收集中…）</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images.cnitblog.com/i/137896/201403/181335397566227.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images.cnitblog.com/i/137896/201403/181335397566227.png" alt=""></p>
 <hr>
 <font size="2"><br>By SkySeraph-2014<br><a href="http://www.cnblogs.com/skyseraph/p/3599172.html" target="_blank" rel="external">SkySeraph cnBlogs</a><br><a href="http://blog.csdn.net/zgzhaobo/article/details/21453941" target="_blank" rel="external">SkySeraph CSDN</a><br></font>
 
@@ -2487,55 +2311,13 @@
     
     <content type="html"><![CDATA[<hr>
 <h1 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h1><p>好久没写博客了, 遗忘的历史,遗忘了自我… 岁月拾回,几度轮回…<br>2013，奇妙的一年，糊涂的一年，说不清，理更乱… 从雄心壮志，斗志昂扬，到忙得一塌糊涂，到习惯麻木，而年末却极其清闲无聊，完全找不着自我，以至于能够静下心来好好回顾一年，好好规划即将开始之路…<br>我的2013,这样走过…</p>
-<h1 id="身心"><a href="#身心" class="headerlink" title="身心"></a>身心</h1><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images.cnitblog.com/blog/137896/201312/30190643-9fb0a9bfb214425688fb692f9a75c7ad.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<h1 id="事业"><a href="#事业" class="headerlink" title="事业"></a>事业</h1><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images.cnitblog.com/blog/137896/201312/30190652-d053219048304114a7c3c2bba5000592.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<h1 id="能力-个人提升"><a href="#能力-个人提升" class="headerlink" title="能力/个人提升"></a>能力/个人提升</h1><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images.cnitblog.com/blog/137896/201312/30190701-2407c16d375a4ebaa309816792f11eda.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<h1 id="家庭"><a href="#家庭" class="headerlink" title="家庭"></a>家庭</h1><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images.cnitblog.com/blog/137896/201312/30190710-18b34eb5b9e14b298fa47930049fe4e2.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<h1 id="价值"><a href="#价值" class="headerlink" title="价值"></a>价值</h1><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images.cnitblog.com/blog/137896/201312/30190718-7654469176b8404caee812037c7d65a1.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<h1 id="财富"><a href="#财富" class="headerlink" title="财富"></a>财富</h1><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images.cnitblog.com/blog/137896/201312/30190725-256b4de074ff4013a2f359e992700579.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<h1 id="写入历史"><a href="#写入历史" class="headerlink" title="写入历史"></a>写入历史</h1><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images.cnitblog.com/blog/137896/201312/31085641-ac5ae76bd9a049989fca4d0e6e0c1a20.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<h1 id="身心"><a href="#身心" class="headerlink" title="身心"></a>身心</h1><p><img src="http://images.cnitblog.com/blog/137896/201312/30190643-9fb0a9bfb214425688fb692f9a75c7ad.png" alt=""></p>
+<h1 id="事业"><a href="#事业" class="headerlink" title="事业"></a>事业</h1><p><img src="http://images.cnitblog.com/blog/137896/201312/30190652-d053219048304114a7c3c2bba5000592.png" alt=""></p>
+<h1 id="能力-个人提升"><a href="#能力-个人提升" class="headerlink" title="能力/个人提升"></a>能力/个人提升</h1><p><img src="http://images.cnitblog.com/blog/137896/201312/30190701-2407c16d375a4ebaa309816792f11eda.png" alt=""></p>
+<h1 id="家庭"><a href="#家庭" class="headerlink" title="家庭"></a>家庭</h1><p><img src="http://images.cnitblog.com/blog/137896/201312/30190710-18b34eb5b9e14b298fa47930049fe4e2.png" alt=""></p>
+<h1 id="价值"><a href="#价值" class="headerlink" title="价值"></a>价值</h1><p><img src="http://images.cnitblog.com/blog/137896/201312/30190718-7654469176b8404caee812037c7d65a1.png" alt=""></p>
+<h1 id="财富"><a href="#财富" class="headerlink" title="财富"></a>财富</h1><p><img src="http://images.cnitblog.com/blog/137896/201312/30190725-256b4de074ff4013a2f359e992700579.png" alt=""></p>
+<h1 id="写入历史"><a href="#写入历史" class="headerlink" title="写入历史"></a>写入历史</h1><p><img src="http://images.cnitblog.com/blog/137896/201312/31085641-ac5ae76bd9a049989fca4d0e6e0c1a20.png" alt=""></p>
 <font size="4," color="red"><br>DEL， F5<br></font>
 
 
@@ -2570,76 +2352,16 @@
     <content type="html"><![CDATA[<hr>
 <h2 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h2><p>　　之前针对个人研究的不同算法开发过三个检测平台（<a href="http://www.cnblogs.com/skyseraph/archive/2011/03/24/1993438.html" target="_blank" rel="external">平台一</a> 和 <a href="http://www.cnblogs.com/skyseraph/archive/2011/07/21/2113211.html" target="_blank" rel="external">平台二</a> ），此平台为最后的综合平台，实现织物疵点检测和分类，实现了织物图像的批量化处理，实现了数据库存储疵点信息和用户管理，同时具备自动化测试的同时还可以进行单步算法调试。</p>
 <h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>开发工具采用VS2010+OpenCV，开发语言为CPP。<br><a href="http://www.cnblogs.com/skyseraph/archive/2010/10/28/1863974.html" target="_blank" rel="external">OpenCV环境搭建</a>  </p>
-<h2 id="功能详述"><a href="#功能详述" class="headerlink" title="功能详述"></a>功能详述</h2><h3 id="1-软件架构"><a href="#1-软件架构" class="headerlink" title="1 软件架构"></a>1 软件架构</h3><p>　　该平台主要包括系统登录模块、图像采集模块、图像预处理模块、织物疵点检测模块、织物疵点分类模块、疵点信息管理模块、用户管理模块以及系统设置模块，检测算法为自主研究，分类算法采用BPNN，软件架构如下图所示<br><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://pic002.cnblogs.com/images/2012/137896/2012050119365916.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
+<h2 id="功能详述"><a href="#功能详述" class="headerlink" title="功能详述"></a>功能详述</h2><h3 id="1-软件架构"><a href="#1-软件架构" class="headerlink" title="1 软件架构"></a>1 软件架构</h3><p>　　该平台主要包括系统登录模块、图像采集模块、图像预处理模块、织物疵点检测模块、织物疵点分类模块、疵点信息管理模块、用户管理模块以及系统设置模块，检测算法为自主研究，分类算法采用BPNN，软件架构如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050119365916.png" alt=""></p>
 <h3 id="2-核心功能"><a href="#2-核心功能" class="headerlink" title="2 核心功能"></a>2 核心功能</h3><p>　　该平台核心功能包括：织物疵点检测和分类，疵点信息存储和查询，用户管理等。</p>
-<h3 id="3-算法流程"><a href="#3-算法流程" class="headerlink" title="3 算法流程"></a>3 算法流程</h3><p>①系统设置，如下图所示<br><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://pic002.cnblogs.com/images/2012/137896/2012050409424319.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
-<p>②图像采集，图像的获取可以采取两种方式，单张图像加载或批量图像（文件夹）加载，在系统设置模块中的图像获取方式中，可选择设置单张图像的路径或者设置图像文件夹的路径来获取图像并实时显示, 如下图所示<br><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://pic002.cnblogs.com/images/2012/137896/2012050410142148.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
-<p>③图像预处理，如下图所示<br><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://pic002.cnblogs.com/images/2012/137896/2012050410143581.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
-<p>④织物检测和分类，如下图所示<br><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://pic002.cnblogs.com/images/2012/137896/2012050410144927.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure><br><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://pic002.cnblogs.com/images/2012/137896/2012050410150071.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
-<p>⑤织物信息查询，如下图所示<br><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://pic002.cnblogs.com/images/2012/137896/2012050409435944.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
-<p>⑥用户管理，如下图所示<br><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://pic002.cnblogs.com/images/2012/137896/2012050409440985.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
-<h2 id="实验测试"><a href="#实验测试" class="headerlink" title="实验测试"></a>实验测试</h2><p>针对常见的四类疵点，软件测试结果如下图所示：<br><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://pic002.cnblogs.com/images/2012/137896/2012050409441863.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
-<h2 id="项目工程及核心函数模块"><a href="#项目工程及核心函数模块" class="headerlink" title="项目工程及核心函数模块"></a>项目工程及核心函数模块</h2><p>工程项目及核心处理函数模块如下图：<br><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://pic002.cnblogs.com/images/2012/137896/2012050410013461.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
+<h3 id="3-算法流程"><a href="#3-算法流程" class="headerlink" title="3 算法流程"></a>3 算法流程</h3><p>①系统设置，如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050409424319.png" alt=""></p>
+<p>②图像采集，图像的获取可以采取两种方式，单张图像加载或批量图像（文件夹）加载，在系统设置模块中的图像获取方式中，可选择设置单张图像的路径或者设置图像文件夹的路径来获取图像并实时显示, 如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050410142148.png" alt=""></p>
+<p>③图像预处理，如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050410143581.png" alt=""></p>
+<p>④织物检测和分类，如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050410144927.png" alt=""><br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050410150071.png" alt=""></p>
+<p>⑤织物信息查询，如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050409435944.png" alt=""></p>
+<p>⑥用户管理，如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050409440985.png" alt=""></p>
+<h2 id="实验测试"><a href="#实验测试" class="headerlink" title="实验测试"></a>实验测试</h2><p>针对常见的四类疵点，软件测试结果如下图所示：<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050409441863.png" alt=""></p>
+<h2 id="项目工程及核心函数模块"><a href="#项目工程及核心函数模块" class="headerlink" title="项目工程及核心函数模块"></a>项目工程及核心函数模块</h2><p>工程项目及核心处理函数模块如下图：<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050410013461.png" alt=""></p>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><p><a href="http://www.cnblogs.com/skyseraph/archive/2011/03/24/1993438.html" target="_blank" rel="external">【My Project】织物疵点检测机器视觉系统 平台一</a><br><a href="http://www.cnblogs.com/skyseraph/archive/2011/07/21/2113211.html" target="_blank" rel="external">【My Project】织物疵点检测机器视觉系统 平台二</a><br><a href="http://www.cnblogs.com/skyseraph/archive/2011/08/11/2135291.html" target="_blank" rel="external">关于显著性算法的实践效果请参考此文</a>  </p>
 <hr>
 <font size="2"><br>By SkySeraph-2012<br><a href="http://www.cnblogs.com/skyseraph/archive/2012/05/04/2478105.html" target="_blank" rel="external">SkySeraph cnBlogs</a><br>合作联系：skyseraph00@163.com<br></font>]]></content>
@@ -2723,61 +2445,17 @@
 <h2 id="系列"><a href="#系列" class="headerlink" title="系列"></a>系列</h2><ul>
 <li><p><a href="http://www.cnblogs.com/skyseraph/archive/2011/03/29/1998681.html" target="_blank" rel="external">【图像算法】模板匹配</a></p>
 </li>
-<li><p><a href="http://www.cnblogs.com/skyseraph/archive/2011/03/29/1998492.html" target="_blank" rel="external">【图像算法】图像匹配 平台一</a></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://pic002.cnblogs.com/images/2011/137896/2011032910150494.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<li><p><a href="http://www.cnblogs.com/skyseraph/archive/2011/03/29/1998492.html" target="_blank" rel="external">【图像算法】图像匹配 平台一</a><br><img src="http://pic002.cnblogs.com/images/2011/137896/2011032910150494.png" alt=""></p>
 </li>
-<li><p><a href="http://www.cnblogs.com/skyseraph/archive/2011/03/29/1998536.html" target="_blank" rel="external">【图像算法】图像匹配 平台二</a></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://pic002.cnblogs.com/images/2011/137896/2011032910520978.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<li><p><a href="http://www.cnblogs.com/skyseraph/archive/2011/03/29/1998536.html" target="_blank" rel="external">【图像算法】图像匹配 平台二</a><br><img src="http://pic002.cnblogs.com/images/2011/137896/2011032910520978.png" alt=""></p>
 </li>
 <li><p><a href="http://www.cnblogs.com/skyseraph/archive/2011/03/29/1998432.html" target="_blank" rel="external">【图像算法】不变矩</a></p>
 </li>
 <li><p><a href="http://www.cnblogs.com/skyseraph/archive/2011/07/19/2110183.html" target="_blank" rel="external">【图像算法】图像特征：几何不变矩–Hu矩</a></p>
 </li>
-<li><p><a href="http://www.cnblogs.com/skyseraph/archive/2011/08/11/2135291.html" target="_blank" rel="external">【图像算法】图像特征：三个图像显著性区域特征提取方法</a></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://pic002.cnblogs.com/images/2011/137896/2011081117074469.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<p>上图我的算法最终效果：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://pic002.cnblogs.com/images/2011/137896/2011081117084715.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<li><p><a href="http://www.cnblogs.com/skyseraph/archive/2011/08/11/2135291.html" target="_blank" rel="external">【图像算法】图像特征：三个图像显著性区域特征提取方法</a><br><img src="http://pic002.cnblogs.com/images/2011/137896/2011081117074469.jpg" alt=""><br>上图我的算法最终效果：<br><img src="http://pic002.cnblogs.com/images/2011/137896/2011081117084715.jpg" alt=""></p>
 </li>
-<li><p><a href="http://www.cnblogs.com/skyseraph/archive/2011/08/27/2155776.html" target="_blank" rel="external">【图像算法】图像特征：GLCM</a></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://pic002.cnblogs.com/images/2011/137896/2011082720344032.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<p>上图单个 GLCM以及4个方向的均值、方差GLCM特征：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://pic002.cnblogs.com/images/2011/137896/2011082720352061.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<li><p><a href="http://www.cnblogs.com/skyseraph/archive/2011/08/27/2155776.html" target="_blank" rel="external">【图像算法】图像特征：GLCM</a><br><img src="http://pic002.cnblogs.com/images/2011/137896/2011082720344032.png" alt=""><br>上图单个 GLCM以及4个方向的均值、方差GLCM特征：<br><img src="http://pic002.cnblogs.com/images/2011/137896/2011082720352061.png" alt=""></p>
 </li>
 <li><p><a href="http://www.cnblogs.com/skyseraph/archive/2012/02/23/2365542.html" target="_blank" rel="external">(彩色/灰度)图像像素值读取并保存到txt文件</a></p>
 </li>
@@ -2819,13 +2497,7 @@
     
     <content type="html"><![CDATA[<hr>
 <h1 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h1><p><strong> VC6.0+OpenCV1.0 </strong></p>
-<h1 id="软件界面"><a href="#软件界面" class="headerlink" title="软件界面"></a>软件界面</h1><h2 id="用户登陆"><a href="#用户登陆" class="headerlink" title="用户登陆"></a>用户登陆</h2><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://pic002.cnblogs.com/images/2011/137896/2011081417455925.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure> 
+<h1 id="软件界面"><a href="#软件界面" class="headerlink" title="软件界面"></a>软件界面</h1><h2 id="用户登陆"><a href="#用户登陆" class="headerlink" title="用户登陆"></a>用户登陆</h2><p><img src="http://pic002.cnblogs.com/images/2011/137896/2011081417455925.png" alt=""> </p>
 <h2 id="完整界面"><a href="#完整界面" class="headerlink" title="完整界面"></a>完整界面</h2><p><img src="http://images2015.cnblogs.com/blog/137896/201605/137896-20160526201540350-547747680.png" alt=""></p>
 <h1 id="软件功能"><a href="#软件功能" class="headerlink" title="软件功能"></a>软件功能</h1><h2 id="界面功能"><a href="#界面功能" class="headerlink" title="界面功能"></a>界面功能</h2><p><strong>1  Picture Control 图像显示与保存 </strong><br>Source Image：源图像<br>Dst Image：空间转换后图像(彩色)/目标彩色图像<br>A channel：A通道图像(灰度)/目标灰度图像<br>B channel：B通道图像<br>C channel：C通道图像<br>Save： 图像保存  </p>
 <p><strong>2  Inf.Show 信息显示</strong><br>RunningTime： 法运行时间显示         -输出<br>Threshold：  图像分割时阈值显示     -输出<br>ClusterThred：颜色聚类分割阈值         -输入，默认0.12<br>ClusterNum：颜色聚类数目显示         -输出<br>ClusterNum：聚类数目显示(KCM)       -输入，默认2   </p>
@@ -2862,13 +2534,13 @@
     
       <category term="图像算法" scheme="http://skyseraph.com/tags/%E5%9B%BE%E5%83%8F%E7%AE%97%E6%B3%95/"/>
     
-      <category term="彩色图像" scheme="http://skyseraph.com/tags/%E5%BD%A9%E8%89%B2%E5%9B%BE%E5%83%8F/"/>
-    
       <category term="DIP" scheme="http://skyseraph.com/tags/DIP/"/>
     
       <category term="CV/MV" scheme="http://skyseraph.com/tags/CV-MV/"/>
     
       <category term="OpenCV" scheme="http://skyseraph.com/tags/OpenCV/"/>
+    
+      <category term="彩色图像" scheme="http://skyseraph.com/tags/%E5%BD%A9%E8%89%B2%E5%9B%BE%E5%83%8F/"/>
     
   </entry>
   
@@ -2911,13 +2583,13 @@
     
       <category term="图像算法" scheme="http://skyseraph.com/tags/%E5%9B%BE%E5%83%8F%E7%AE%97%E6%B3%95/"/>
     
-      <category term="彩色图像" scheme="http://skyseraph.com/tags/%E5%BD%A9%E8%89%B2%E5%9B%BE%E5%83%8F/"/>
-    
       <category term="DIP" scheme="http://skyseraph.com/tags/DIP/"/>
     
       <category term="CV/MV" scheme="http://skyseraph.com/tags/CV-MV/"/>
     
       <category term="OpenCV" scheme="http://skyseraph.com/tags/OpenCV/"/>
+    
+      <category term="彩色图像" scheme="http://skyseraph.com/tags/%E5%BD%A9%E8%89%B2%E5%9B%BE%E5%83%8F/"/>
     
   </entry>
   
