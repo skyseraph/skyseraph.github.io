@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://skyseraph.com/"/>
-  <updated>2017-05-14T02:58:51.973Z</updated>
+  <updated>2017-05-14T03:02:26.454Z</updated>
   <id>http://skyseraph.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://skyseraph.com/2017/01/31/SkySeraph/Sharing/%E9%82%A3%E4%BA%9B%E5%B9%B4%E5%87%BA%E8%BF%87%E4%B9%A6%E7%9A%84%E5%8D%9A%E4%B8%BB/"/>
     <id>http://skyseraph.com/2017/01/31/SkySeraph/Sharing/那些年出过书的博主/</id>
     <published>2017-01-30T17:40:40.000Z</published>
-    <updated>2017-05-14T02:58:51.973Z</updated>
+    <updated>2017-05-14T03:02:26.454Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1><h2 id="移动开发（Android-iOS）"><a href="#移动开发（Android-iOS）" class="headerlink" title="移动开发（Android/iOS）"></a>移动开发（Android/iOS）</h2><blockquote>
@@ -30,13 +30,13 @@
 <p><strong>2</strong>. 著作：<br><a href="https://book.douban.com/subject/25863872/" target="_blank" rel="external">《深入理解Android：Wi-Fi、NFC和GPS卷》</a> 2014.机械工业出版社<br><a href="https://book.douban.com/subject/11542973/" target="_blank" rel="external">《深入理解Android : 卷II》</a> 2014.机械工业出版社<br><a href="https://book.douban.com/subject/6802440/" target="_blank" rel="external">《深入理解Android : 卷I》</a> 2014.机械工业出版社   </p>
 <p><strong>3</strong>. 其它： </p>
 <blockquote>
-<p>罗升阳   </p>
+<p><strong>罗升阳</strong>   </p>
 </blockquote>
 <p><strong>1</strong>. 站点：<a href="http://blog.csdn.net/luoshengyang" target="_blank" rel="external">csdn-老罗的Android之旅</a></p>
 <p><strong>2</strong>. 著作：<a href="">《Android系统源代码情景分析》</a>  2012.电子工业出版社</p>
 <p><strong>3</strong>. 作者： 1984年生，浙大学士(2007界)，上交大硕士(2010界)</p>
 <blockquote>
-<p>林学森   </p>
+<p><strong>林学森</strong>   </p>
 </blockquote>
 <p><strong>1</strong>. 站点：<a href="http://blog.csdn.net/xuesen_lin" target="_blank" rel="external">csdn-林学森的Android专栏</a></p>
 <p><strong>2</strong>. 著作：<a href="https://book.douban.com/subject/25921329/" target="_blank" rel="external">《深入理解Android内核设计思想》</a>  2014.5 人民邮电出版社</p>
@@ -66,7 +66,7 @@
 <p><strong>2</strong>. 著作：<br><a href="https://book.douban.com/subject/26599539/" target="_blank" rel="external">《Android群英传》</a>  2015.9 电子工业出版社<br><a href="https://book.douban.com/subject/26855851/" target="_blank" rel="external">《Android群英传:神兵利器》</a>  2016.9 电子工业出版社</p>
 <p><strong>3</strong>. 作者： CSDN认证专家,职于上海沪江网</p>
 <blockquote>
-<p>任玉刚   </p>
+<p><strong>任玉刚</strong>   </p>
 </blockquote>
 <p><strong>1</strong>. 站点：<a href="http://blog.csdn.net/singwhatiwanna" target="_blank" rel="external">csdn-任玉刚</a></p>
 <p><strong>2</strong>. 著作：<a href="https://book.douban.com/subject/26599538/" target="_blank" rel="external">《Android开发艺术探索》</a>  2015.9  电子工业出版社  </p>
@@ -157,7 +157,7 @@
     <link href="http://skyseraph.com/2017/01/26/Android/Appuim%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90(Boottrap)/"/>
     <id>http://skyseraph.com/2017/01/26/Android/Appuim源码剖析(Boottrap)/</id>
     <published>2017-01-25T17:40:40.000Z</published>
-    <updated>2017-03-26T04:34:33.388Z</updated>
+    <updated>2017-05-14T03:04:55.113Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><h2 id="Appuim"><a href="#Appuim" class="headerlink" title="Appuim"></a>Appuim</h2><p>Appium 是一个自动化测试开源工具，支持 iOS 平台和 Android 平台上的原生应用，web 应用和混合应用。</p>
@@ -543,9 +543,9 @@
     
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
-      <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
-    
       <category term="Jenkins" scheme="http://skyseraph.com/tags/Jenkins/"/>
+    
+      <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
     
       <category term="Gitlab" scheme="http://skyseraph.com/tags/Gitlab/"/>
     
@@ -897,11 +897,11 @@
       <category term="OpenGL" scheme="http://skyseraph.com/categories/Tech/OpenGL/"/>
     
     
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
-    
       <category term="AR/VR" scheme="http://skyseraph.com/tags/AR-VR/"/>
     
       <category term="OpenGL" scheme="http://skyseraph.com/tags/OpenGL/"/>
+    
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
   </entry>
   
@@ -2574,6 +2574,126 @@
   </entry>
   
   <entry>
+    <title>SkySeraph Reading Life</title>
+    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Reading%20Life/"/>
+    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Reading Life/</id>
+    <published>2012-02-05T18:00:00.000Z</published>
+    <updated>2017-04-09T13:02:25.314Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h1 id="Reading"><a href="#Reading" class="headerlink" title="Reading"></a>Reading</h1><h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><ul>
+<li><p><a href="https://book.douban.com/subject/3688489/" target="_blank" rel="external">《异类》</a> #2</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26297606/" target="_blank" rel="external">《从0到1》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26823208/" target="_blank" rel="external">《离经叛道》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26306686/" target="_blank" rel="external">《创业维艰》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26952485/" target="_blank" rel="external">《人民的名义》</a> #1</p>
+</li>
+</ul>
+<h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><ul>
+<li><p><a href="https://book.douban.com/subject/26419762/" target="_blank" rel="external">《成为技术领导者》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/5162149.html" target="_blank" rel="external">【讀書筆記】成为技术领导者</a></p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26437231/" target="_blank" rel="external">《技术管理之巅》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/25868303/" target="_blank" rel="external">《微管理》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26322756/" target="_blank" rel="external">《产品经理面试宝典》</a> #1</p>
+</li>
+</ul>
+<h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><ul>
+<li><p><a href="https://book.douban.com/subject/25873066/" target="_blank" rel="external">《麦肯锡工作法》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/25975485/" target="_blank" rel="external">《穿布鞋的马云》</a> #1</p>
+</li>
+<li><p><a href="">《成功创业三级跳》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/25773433/" target="_blank" rel="external">《你欠大学一次远行》</a> #1</p>
+</li>
+</ul>
+<h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><ul>
+<li><p><a href="https://book.douban.com/subject/20505765/" target="_blank" rel="external">《精益创业实战》</a> #1， <a href="http://www.cnblogs.com/skyseraph/p/3895564.html" target="_blank" rel="external">【讀書筆記】精益创业实战</a></p>
+</li>
+<li><p><a href="https://book.douban.com/subject/1048007/" target="_blank" rel="external">《高效能人士的七个习惯》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/3693005.html" target="_blank" rel="external">【讀書筆記】高效能人士的七个习惯</a></p>
+</li>
+<li><p><a href="https://book.douban.com/subject/4723970/" target="_blank" rel="external">《人人都是产品经理》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/3590471.html" target="_blank" rel="external">【讀書筆記】人人都是产品经理</a></p>
+</li>
+<li><p><a href="https://book.douban.com/subject/3688489/" target="_blank" rel="external">《异类》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/1033778/" target="_blank" rel="external">《富爸爸，穷爸爸》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/3151772/" target="_blank" rel="external">《一页纸项目管理》</a> #1</p>
+</li>
+</ul>
+<h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
+<li><a href="http://www.cnblogs.com/skyseraph/archive/2013/01/07/2850003.html" target="_blank" rel="external">【分享】RSS订阅技巧及工具和实用RSS链接分享 </a></li>
+</ul>
+<h2 id="2012"><a href="#2012" class="headerlink" title="2012"></a>2012</h2><ul>
+<li><a href="">《》</a></li>
+</ul>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><hr>
+<font size="2"><br>By SkySeraph<br></font>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h1 id=&quot;Reading&quot;&gt;&lt;a href=&quot;#Reading&quot; class=&quot;headerlink&quot; title=&quot;Reading&quot;&gt;&lt;/a&gt;Reading&lt;/h1&gt;&lt;h2 id=&quot;2017&quot;&gt;&lt;a href=&quot;#2017&quot; class=&quot;headerlink&quot;
+    
+    </summary>
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
+    
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+    
+      <category term="Reading" scheme="http://skyseraph.com/tags/Reading/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SkySeraph Plan Life</title>
+    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Plan%20Life/"/>
+    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Plan Life/</id>
+    <published>2012-02-05T18:00:00.000Z</published>
+    <updated>2017-04-09T13:07:19.175Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
+<li><a href="http://skyseraph.com/2013/11/30/SkySeraph/Life/写在年末,%20我的2013/">写在年末, 我的2013</a></li>
+</ul>
+<h2 id="2012-Before"><a href="#2012-Before" class="headerlink" title="2012  Before"></a>2012  Before</h2><ul>
+<li><a href="http://skyseraph.com/2010/09/12/SkySeraph/Life/那一年的“暑假书籍读后感”/">那一年的“暑假书籍读后感”</a></li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><hr>
+<font size="2"><br>By SkySeraph<br></font>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h2 id=&quot;2017&quot;&gt;&lt;a href=&quot;#2017&quot; class=&quot;headerlink&quot; title=&quot;2017&quot;&gt;&lt;/a&gt;2017&lt;/h2&gt;&lt;h2 id=&quot;2016&quot;&gt;&lt;a href=&quot;#2016&quot; class=&quot;headerlink&quot; title=&quot;2016
+    
+    </summary>
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
+    
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+    
+      <category term="Plan" scheme="http://skyseraph.com/tags/Plan/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SkySeraph Travel Life</title>
     <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Travel%20Life/"/>
     <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Travel Life/</id>
@@ -2669,126 +2789,6 @@
       <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
     
       <category term="Travel" scheme="http://skyseraph.com/tags/Travel/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SkySeraph Plan Life</title>
-    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Plan%20Life/"/>
-    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Plan Life/</id>
-    <published>2012-02-05T18:00:00.000Z</published>
-    <updated>2017-04-09T13:07:19.175Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
-<li><a href="http://skyseraph.com/2013/11/30/SkySeraph/Life/写在年末,%20我的2013/">写在年末, 我的2013</a></li>
-</ul>
-<h2 id="2012-Before"><a href="#2012-Before" class="headerlink" title="2012  Before"></a>2012  Before</h2><ul>
-<li><a href="http://skyseraph.com/2010/09/12/SkySeraph/Life/那一年的“暑假书籍读后感”/">那一年的“暑假书籍读后感”</a></li>
-</ul>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><hr>
-<font size="2"><br>By SkySeraph<br></font>]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h2 id=&quot;2017&quot;&gt;&lt;a href=&quot;#2017&quot; class=&quot;headerlink&quot; title=&quot;2017&quot;&gt;&lt;/a&gt;2017&lt;/h2&gt;&lt;h2 id=&quot;2016&quot;&gt;&lt;a href=&quot;#2016&quot; class=&quot;headerlink&quot; title=&quot;2016
-    
-    </summary>
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
-    
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
-    
-      <category term="Plan" scheme="http://skyseraph.com/tags/Plan/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SkySeraph Reading Life</title>
-    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Reading%20Life/"/>
-    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Reading Life/</id>
-    <published>2012-02-05T18:00:00.000Z</published>
-    <updated>2017-04-09T13:02:25.314Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<h1 id="Reading"><a href="#Reading" class="headerlink" title="Reading"></a>Reading</h1><h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><ul>
-<li><p><a href="https://book.douban.com/subject/3688489/" target="_blank" rel="external">《异类》</a> #2</p>
-</li>
-<li><p><a href="https://book.douban.com/subject/26297606/" target="_blank" rel="external">《从0到1》</a> #1</p>
-</li>
-<li><p><a href="https://book.douban.com/subject/26823208/" target="_blank" rel="external">《离经叛道》</a> #1</p>
-</li>
-<li><p><a href="https://book.douban.com/subject/26306686/" target="_blank" rel="external">《创业维艰》</a> #1</p>
-</li>
-<li><p><a href="https://book.douban.com/subject/26952485/" target="_blank" rel="external">《人民的名义》</a> #1</p>
-</li>
-</ul>
-<h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><ul>
-<li><p><a href="https://book.douban.com/subject/26419762/" target="_blank" rel="external">《成为技术领导者》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/5162149.html" target="_blank" rel="external">【讀書筆記】成为技术领导者</a></p>
-</li>
-<li><p><a href="https://book.douban.com/subject/26437231/" target="_blank" rel="external">《技术管理之巅》</a> #1</p>
-</li>
-<li><p><a href="https://book.douban.com/subject/25868303/" target="_blank" rel="external">《微管理》</a> #1</p>
-</li>
-<li><p><a href="https://book.douban.com/subject/26322756/" target="_blank" rel="external">《产品经理面试宝典》</a> #1</p>
-</li>
-</ul>
-<h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><ul>
-<li><p><a href="https://book.douban.com/subject/25873066/" target="_blank" rel="external">《麦肯锡工作法》</a> #1</p>
-</li>
-<li><p><a href="https://book.douban.com/subject/25975485/" target="_blank" rel="external">《穿布鞋的马云》</a> #1</p>
-</li>
-<li><p><a href="">《成功创业三级跳》</a> #1</p>
-</li>
-<li><p><a href="https://book.douban.com/subject/25773433/" target="_blank" rel="external">《你欠大学一次远行》</a> #1</p>
-</li>
-</ul>
-<h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><ul>
-<li><p><a href="https://book.douban.com/subject/20505765/" target="_blank" rel="external">《精益创业实战》</a> #1， <a href="http://www.cnblogs.com/skyseraph/p/3895564.html" target="_blank" rel="external">【讀書筆記】精益创业实战</a></p>
-</li>
-<li><p><a href="https://book.douban.com/subject/1048007/" target="_blank" rel="external">《高效能人士的七个习惯》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/3693005.html" target="_blank" rel="external">【讀書筆記】高效能人士的七个习惯</a></p>
-</li>
-<li><p><a href="https://book.douban.com/subject/4723970/" target="_blank" rel="external">《人人都是产品经理》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/3590471.html" target="_blank" rel="external">【讀書筆記】人人都是产品经理</a></p>
-</li>
-<li><p><a href="https://book.douban.com/subject/3688489/" target="_blank" rel="external">《异类》</a> #1</p>
-</li>
-<li><p><a href="https://book.douban.com/subject/1033778/" target="_blank" rel="external">《富爸爸，穷爸爸》</a> #1</p>
-</li>
-<li><p><a href="https://book.douban.com/subject/3151772/" target="_blank" rel="external">《一页纸项目管理》</a> #1</p>
-</li>
-</ul>
-<h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
-<li><a href="http://www.cnblogs.com/skyseraph/archive/2013/01/07/2850003.html" target="_blank" rel="external">【分享】RSS订阅技巧及工具和实用RSS链接分享 </a></li>
-</ul>
-<h2 id="2012"><a href="#2012" class="headerlink" title="2012"></a>2012</h2><ul>
-<li><a href="">《》</a></li>
-</ul>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><hr>
-<font size="2"><br>By SkySeraph<br></font>]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h1 id=&quot;Reading&quot;&gt;&lt;a href=&quot;#Reading&quot; class=&quot;headerlink&quot; title=&quot;Reading&quot;&gt;&lt;/a&gt;Reading&lt;/h1&gt;&lt;h2 id=&quot;2017&quot;&gt;&lt;a href=&quot;#2017&quot; class=&quot;headerlink&quot;
-    
-    </summary>
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
-    
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
-    
-      <category term="Reading" scheme="http://skyseraph.com/tags/Reading/"/>
     
   </entry>
   
