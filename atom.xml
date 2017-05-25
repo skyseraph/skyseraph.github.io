@@ -101,7 +101,7 @@
     <link href="http://skyseraph.com/2017/01/12/SkySeraph/Sharing/%E9%82%A3%E4%BA%9B%E5%B9%B4%E5%87%BA%E8%BF%87%E4%B9%A6%E7%9A%84%E5%8D%9A%E4%B8%BB/"/>
     <id>http://skyseraph.com/2017/01/12/SkySeraph/Sharing/那些年出过书的博主/</id>
     <published>2017-01-11T17:40:40.000Z</published>
-    <updated>2017-05-21T00:51:50.160Z</updated>
+    <updated>2017-05-25T14:31:20.959Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1><h2 id="综合"><a href="#综合" class="headerlink" title="综合"></a>综合</h2><blockquote>
@@ -175,6 +175,15 @@
 <p><strong>1</strong>. 站点：<a href="http://blog.csdn.net/singwhatiwanna" target="_blank" rel="external">csdn-任玉刚</a></p>
 <p><strong>2</strong>. 著作：<a href="https://book.douban.com/subject/26599538/" target="_blank" rel="external">《Android开发艺术探索》</a>  2015.9  电子工业出版社  </p>
 <p><strong>3</strong>. 其它： </p>
+<blockquote>
+<p><strong>陈刚</strong></p>
+</blockquote>
+<ol>
+<li><p>站点：<a href="http://blog.csdn.net/cg1991130" target="_blank" rel="external">CSDN-Cwift的专栏</a></p>
+</li>
+<li><p>著作：<br><a href="https://book.douban.com/subject/26708968/" target="_blank" rel="external">《Swift 开发手册：技巧与实战》</a>  2016.1 电子工业出版社</p>
+</li>
+</ol>
 <h2 id="PC-Web-后台"><a href="#PC-Web-后台" class="headerlink" title="PC/Web/后台"></a>PC/Web/后台</h2><blockquote>
 <p><strong>王福强</strong>   </p>
 </blockquote>
@@ -194,7 +203,25 @@
 </li>
 <li><p>著/译作：<br><a href="https://book.douban.com/subject/25886197/" target="_blank" rel="external">《深入理解Bootstrap》</a> 2014.5. 机械工业出版社<br><a href="https://book.douban.com/subject/19933548/" target="_blank" rel="external">译《JavaScript编程精解》</a> 2012.10. 机械工业出版社华章公司<br><a href="https://book.douban.com/subject/24744217/" target="_blank" rel="external">译《JavaScript设计模式》</a> 2013.人民邮电出版社<br><a href="https://book.douban.com/subject/25980651/" target="_blank" rel="external">译《Backbone.js应用程序开发》</a> 2014.9  人民邮电出版社</p>
 </li>
-<li><p>其它： </p>
+</ol>
+<blockquote>
+<p><strong>鸟哥</strong></p>
+</blockquote>
+<ol>
+<li><p>站点：<a href="http://cn.linux.vbird.org/" target="_blank" rel="external">vdird</a></p>
+</li>
+<li><p>著作：<br><a href="https://book.douban.com/subject/4889838/" target="_blank" rel="external">《鸟哥的Linux私房菜》</a>  2010.6 人民邮电出版社</p>
+</li>
+<li><p>其它：台湾成功大学环境工程系博士 </p>
+</li>
+</ol>
+<blockquote>
+<p><strong>汪建</strong></p>
+</blockquote>
+<ol>
+<li><p>站点：<a href="http://blog.csdn.net/wangyangzhizhou" target="_blank" rel="external">CSDN-wangyangzhizhou的专栏</a></p>
+</li>
+<li><p>著作：<br><a href="https://item.jd.com/12185360.html" target="_blank" rel="external">《Tomcat内核设计剖析》</a> 2017.4 人民邮电出版社</p>
 </li>
 </ol>
 <blockquote>
@@ -570,9 +597,9 @@
     
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
-      <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
-    
       <category term="Jenkins" scheme="http://skyseraph.com/tags/Jenkins/"/>
+    
+      <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
     
       <category term="Gitlab" scheme="http://skyseraph.com/tags/Gitlab/"/>
     
@@ -924,11 +951,11 @@
       <category term="OpenGL" scheme="http://skyseraph.com/categories/Tech/OpenGL/"/>
     
     
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
+    
       <category term="AR/VR" scheme="http://skyseraph.com/tags/AR-VR/"/>
     
       <category term="OpenGL" scheme="http://skyseraph.com/tags/OpenGL/"/>
-    
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
   </entry>
   
@@ -2422,9 +2449,9 @@
       <category term="NFC" scheme="http://skyseraph.com/categories/Tech/NFC/"/>
     
     
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
-    
       <category term="NFC" scheme="http://skyseraph.com/tags/NFC/"/>
+    
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
   </entry>
   
@@ -2561,14 +2588,100 @@
   </entry>
   
   <entry>
+    <title>SkySeraph Movie Life</title>
+    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Movie%20Life/"/>
+    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Movie Life/</id>
+    <published>2012-02-05T18:00:00.000Z</published>
+    <updated>2017-04-23T11:55:18.366Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h1 id="Movie-amp-Video"><a href="#Movie-amp-Video" class="headerlink" title="Movie &amp; Video"></a>Movie &amp; Video</h1><h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><ul>
+<li><a href="https://movie.douban.com/subject/26260853/" target="_blank" rel="external">《速度与激情8》</a></li>
+<li><a href="https://movie.douban.com/subject/26387939/" target="_blank" rel="external">《摔跤吧！爸爸》</a></li>
+<li><a href="https://movie.douban.com/subject/3025375/" target="_blank" rel="external">《奇异博士》</a></li>
+<li><a href="https://movie.douban.com/subject/26862259/" target="_blank" rel="external">《乘风破浪（韩寒）》</a></li>
+<li><a href="https://movie.douban.com/subject/1297481/" target="_blank" rel="external">《芳心何处》</a></li>
+<li><a href="https://movie.douban.com/subject/25801066/" target="_blank" rel="external">《西游伏妖篇》</a></li>
+<li><a href="https://movie.douban.com/subject/2078989/" target="_blank" rel="external">《四月三周两天》</a></li>
+<li><a href="https://movie.douban.com/subject/25769362/" target="_blank" rel="external">《哆啦A梦：伴我同行》</a></li>
+<li><a href="https://movie.douban.com/subject/25882861/" target="_blank" rel="external">《危楼愚夫》</a></li>
+<li><a href="https://movie.douban.com/subject/1867345/" target="_blank" rel="external">《遗愿清单》</a></li>
+<li><a href="https://movie.douban.com/subject/26663086/" target="_blank" rel="external">《射雕英雄传 (2017)》</a> </li>
+<li><a href="https://movie.douban.com/subject/26727273/" target="_blank" rel="external">《人民的名义》</a>  </li>
+</ul>
+<h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><h2 id="2012"><a href="#2012" class="headerlink" title="2012"></a>2012</h2><ul>
+<li><a href="">《》</a></li>
+</ul>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><hr>
+<font size="2"><br>By SkySeraph<br></font>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h1 id=&quot;Movie-amp-Video&quot;&gt;&lt;a href=&quot;#Movie-amp-Video&quot; class=&quot;headerlink&quot; title=&quot;Movie &amp;amp; Video&quot;&gt;&lt;/a&gt;Movie &amp;amp; Video&lt;/h1&gt;&lt;h2 id=&quot;2017
+    
+    </summary>
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
+    
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
+    
+      <category term="Movie" scheme="http://skyseraph.com/tags/Movie/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SkySeraph Plan Life</title>
+    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Plan%20Life/"/>
+    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Plan Life/</id>
+    <published>2012-02-05T18:00:00.000Z</published>
+    <updated>2017-04-09T13:07:19.175Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
+<li><a href="http://skyseraph.com/2013/11/30/SkySeraph/Life/写在年末,%20我的2013/">写在年末, 我的2013</a></li>
+</ul>
+<h2 id="2012-Before"><a href="#2012-Before" class="headerlink" title="2012  Before"></a>2012  Before</h2><ul>
+<li><a href="http://skyseraph.com/2010/09/12/SkySeraph/Life/那一年的“暑假书籍读后感”/">那一年的“暑假书籍读后感”</a></li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><hr>
+<font size="2"><br>By SkySeraph<br></font>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h2 id=&quot;2017&quot;&gt;&lt;a href=&quot;#2017&quot; class=&quot;headerlink&quot; title=&quot;2017&quot;&gt;&lt;/a&gt;2017&lt;/h2&gt;&lt;h2 id=&quot;2016&quot;&gt;&lt;a href=&quot;#2016&quot; class=&quot;headerlink&quot; title=&quot;2016
+    
+    </summary>
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
+    
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+    
+      <category term="Plan" scheme="http://skyseraph.com/tags/Plan/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SkySeraph Travel Life</title>
     <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Travel%20Life/"/>
     <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Travel Life/</id>
     <published>2012-02-05T18:00:00.000Z</published>
-    <updated>2017-04-23T11:52:16.830Z</updated>
+    <updated>2017-05-21T08:27:31.894Z</updated>
     
     <content type="html"><![CDATA[<hr>
-<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><ul>
+<h1 id="All"><a href="#All" class="headerlink" title="All"></a>All</h1><h1 id="YEAR"><a href="#YEAR" class="headerlink" title="YEAR"></a>YEAR</h1><h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><ul>
+<li>中国 九江</li>
 <li>中国 北京 鸟巢/颐和园/北大/清华/天安门/故宫  </li>
 <li>中国 深圳 塘朗山 </li>
 </ul>
@@ -2640,9 +2753,7 @@
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h2 id=&quot;2017&quot;&gt;&lt;a href=&quot;#2017&quot; class=&quot;headerlink&quot; title=&quot;2017&quot;&gt;&lt;/a&gt;2017&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;中国 北京 鸟巢/颐和园/北大/清华/天安门/故宫  &lt;/li&gt;
-&lt;li&gt;中国 深圳 塘朗山 &lt;/li
+&lt;h1 id=&quot;All&quot;&gt;&lt;a href=&quot;#All&quot; class=&quot;headerlink&quot; title=&quot;All&quot;&gt;&lt;/a&gt;All&lt;/h1&gt;&lt;h1 id=&quot;YEAR&quot;&gt;&lt;a href=&quot;#YEAR&quot; class=&quot;headerlink&quot; title=&quot;YEAR&quot;&gt;&lt;/
     
     </summary>
     
@@ -2739,91 +2850,6 @@
       <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
     
       <category term="Reading" scheme="http://skyseraph.com/tags/Reading/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SkySeraph Plan Life</title>
-    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Plan%20Life/"/>
-    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Plan Life/</id>
-    <published>2012-02-05T18:00:00.000Z</published>
-    <updated>2017-04-09T13:07:19.175Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
-<li><a href="http://skyseraph.com/2013/11/30/SkySeraph/Life/写在年末,%20我的2013/">写在年末, 我的2013</a></li>
-</ul>
-<h2 id="2012-Before"><a href="#2012-Before" class="headerlink" title="2012  Before"></a>2012  Before</h2><ul>
-<li><a href="http://skyseraph.com/2010/09/12/SkySeraph/Life/那一年的“暑假书籍读后感”/">那一年的“暑假书籍读后感”</a></li>
-</ul>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><hr>
-<font size="2"><br>By SkySeraph<br></font>]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h2 id=&quot;2017&quot;&gt;&lt;a href=&quot;#2017&quot; class=&quot;headerlink&quot; title=&quot;2017&quot;&gt;&lt;/a&gt;2017&lt;/h2&gt;&lt;h2 id=&quot;2016&quot;&gt;&lt;a href=&quot;#2016&quot; class=&quot;headerlink&quot; title=&quot;2016
-    
-    </summary>
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
-    
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
-    
-      <category term="Plan" scheme="http://skyseraph.com/tags/Plan/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SkySeraph Movie Life</title>
-    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Movie%20Life/"/>
-    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Movie Life/</id>
-    <published>2012-02-05T18:00:00.000Z</published>
-    <updated>2017-04-23T11:55:18.366Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<h1 id="Movie-amp-Video"><a href="#Movie-amp-Video" class="headerlink" title="Movie &amp; Video"></a>Movie &amp; Video</h1><h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><ul>
-<li><a href="https://movie.douban.com/subject/26260853/" target="_blank" rel="external">《速度与激情8》</a></li>
-<li><a href="https://movie.douban.com/subject/26387939/" target="_blank" rel="external">《摔跤吧！爸爸》</a></li>
-<li><a href="https://movie.douban.com/subject/3025375/" target="_blank" rel="external">《奇异博士》</a></li>
-<li><a href="https://movie.douban.com/subject/26862259/" target="_blank" rel="external">《乘风破浪（韩寒）》</a></li>
-<li><a href="https://movie.douban.com/subject/1297481/" target="_blank" rel="external">《芳心何处》</a></li>
-<li><a href="https://movie.douban.com/subject/25801066/" target="_blank" rel="external">《西游伏妖篇》</a></li>
-<li><a href="https://movie.douban.com/subject/2078989/" target="_blank" rel="external">《四月三周两天》</a></li>
-<li><a href="https://movie.douban.com/subject/25769362/" target="_blank" rel="external">《哆啦A梦：伴我同行》</a></li>
-<li><a href="https://movie.douban.com/subject/25882861/" target="_blank" rel="external">《危楼愚夫》</a></li>
-<li><a href="https://movie.douban.com/subject/1867345/" target="_blank" rel="external">《遗愿清单》</a></li>
-<li><a href="https://movie.douban.com/subject/26663086/" target="_blank" rel="external">《射雕英雄传 (2017)》</a> </li>
-<li><a href="https://movie.douban.com/subject/26727273/" target="_blank" rel="external">《人民的名义》</a>  </li>
-</ul>
-<h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><h2 id="2012"><a href="#2012" class="headerlink" title="2012"></a>2012</h2><ul>
-<li><a href="">《》</a></li>
-</ul>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><hr>
-<font size="2"><br>By SkySeraph<br></font>]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h1 id=&quot;Movie-amp-Video&quot;&gt;&lt;a href=&quot;#Movie-amp-Video&quot; class=&quot;headerlink&quot; title=&quot;Movie &amp;amp; Video&quot;&gt;&lt;/a&gt;Movie &amp;amp; Video&lt;/h1&gt;&lt;h2 id=&quot;2017
-    
-    </summary>
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
-    
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
-    
-      <category term="Movie" scheme="http://skyseraph.com/tags/Movie/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
     
   </entry>
   
