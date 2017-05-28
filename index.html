@@ -1169,8 +1169,148 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
 
 
+    <article id="post-iOS/Select all the cell in UITabView or UICollectionView problem" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/">Select all the cell in UITabView or UICollectionView problem</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/">
+            <time datetime="2016-06-29T16:40:20.000Z" itemprop="datePublished">2016-06-30</time>
+        </a>
+    </div>
+
+
+                    
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/iOS/">iOS</a>
+    </div>
+
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Swift/">Swift</a>, <a class="tag-link" href="/tags/iOS/">iOS</a>
+    </div>
+          
+					
+
+					
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#The-Issue"><span class="toc-number">1.</span> <span class="toc-text">The Issue</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Solutions-in-NetWork"><span class="toc-number">2.</span> <span class="toc-text">Solutions in NetWork</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#The-real-Solution"><span class="toc-number">3.</span> <span class="toc-text">The real Solution</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ref"><span class="toc-number">4.</span> <span class="toc-text">Ref</span></a></li></ol>
+                </div>
+            
+            <hr>
+<h1 id="The-Issue"><a href="#The-Issue" class="headerlink" title="The Issue"></a>The Issue</h1><p>Recently in my new project I need to select all the cell data in my UITabViewCell and UICollectionViewCell, and need to do some operations with all the cells(like delete etc.), What I do as follows:</p>
+<blockquote>
+<p>UITabView  </p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">selectAll</span><span class="params">(select: Bool)</span></span> &#123;</div><div class="line">    <span class="keyword">let</span> numSections = mListTableView?.numberOfSections</div><div class="line">    <span class="keyword">if</span> <span class="keyword">let</span> numSections = numSections &#123;</div><div class="line">        <span class="keyword">for</span> numSection <span class="keyword">in</span>  <span class="number">0</span> ..&lt; numSections&#123;</div><div class="line">            <span class="keyword">let</span> numItems = mListTableView?.numberOfRowsInSection(numSection)</div><div class="line">            <span class="keyword">if</span> <span class="keyword">let</span> numItems = numItems &#123;</div><div class="line">                <span class="keyword">for</span> numItem <span class="keyword">in</span> <span class="number">0</span> ..&lt; numItems &#123;</div><div class="line">                    selectCell(<span class="type">NSIndexPath</span>(forRow: numItem, inSection: numSection), select: select)</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">selectCell</span><span class="params">(indexPath : NSIndexPath, select: Bool)</span></span> &#123;</div><div class="line">    <span class="keyword">if</span> mListTableView?.cellForRowAtIndexPath(indexPath) != <span class="literal">nil</span> &#123;</div><div class="line">        <span class="keyword">let</span> cell = mListTableView?.cellForRowAtIndexPath(indexPath) <span class="keyword">as</span>! <span class="type">DownloadListViewCell</span></div><div class="line">        <span class="comment">//cell.setSelected(select, animated: true)</span></div><div class="line">        cell.setSelectForDelete(select)  <span class="comment">// select status UI in UITabViewCell</span></div><div class="line">        mDownloadList[indexPath.row].selectToDelete = select  <span class="comment">// Pojo data</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>UICollectionView  </p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">selectAll</span><span class="params">(select: Bool)</span></span> &#123;</div><div class="line">    <span class="keyword">let</span> numSections = mMyOfflineCollectView?.numberOfSections()</div><div class="line">    <span class="keyword">if</span> <span class="keyword">let</span> numSections = numSections &#123;</div><div class="line">        <span class="keyword">for</span> numSection <span class="keyword">in</span>  <span class="number">0</span> ..&lt; numSections&#123;</div><div class="line">            <span class="keyword">let</span> numItems = mMyOfflineCollectView?.numberOfItemsInSection(numSection)</div><div class="line">            <span class="keyword">if</span> <span class="keyword">let</span> numItems = numItems &#123;</div><div class="line">                <span class="keyword">for</span> numItem <span class="keyword">in</span> <span class="number">0</span> ..&lt; numItems &#123;</div><div class="line">                    selectCell(<span class="type">NSIndexPath</span>(forRow: numItem, inSection: numSection), flag: select)</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">selectCell</span><span class="params">(indexPath : NSIndexPath, flag: Bool)</span></span> &#123;</div><div class="line">    <span class="keyword">if</span> mMyOfflineCollectView.cellForItemAtIndexPath(indexPath) != <span class="literal">nil</span> &#123;</div><div class="line">        <span class="keyword">let</span> cell = mMyOfflineCollectView.cellForItemAtIndexPath(indexPath) <span class="keyword">as</span>! <span class="type">MyOfflineCollectionViewCell</span></div><div class="line">        cell.setSelect(flag)</div><div class="line">        <span class="keyword">if</span> flag &#123;</div><div class="line">            mMyOfflineCollectView.selectItemAtIndexPath(indexPath, animated: <span class="literal">true</span>, scrollPosition: <span class="type">UICollectionViewScrollPosition</span>.<span class="type">None</span>)</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            mMyOfflineCollectView.deselectItemAtIndexPath(indexPath, animated: <span class="literal">true</span>)</div><div class="line">        &#125;</div><div class="line">        mMyofflinesData[indexPath.row].needDelete = flag</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>But</strong>, The problem is , I can only select the visible cell  when I scoll down or up, or do operations</p>
+<h1 id="Solutions-in-NetWork"><a href="#Solutions-in-NetWork" class="headerlink" title="Solutions in NetWork"></a>Solutions in NetWork</h1><p><a href="http://stackoverflow.com/questions/22861804/uicollectionview-cellforitematindexpath-is-nil" target="_blank" rel="external">UICollectionView cellForItemAtIndexPath is nil</a></p>
+<p><a href="http://stackoverflow.com/questions/21469459/cellforitematindexpath-returns-nil-after-force-scrolling-to-make-it-visible" target="_blank" rel="external">cellForItemAtIndexPath returns nil after force scrolling to make it visible</a></p>
+<p><a href="http://stackoverflow.com/questions/1524043/select-all-the-cells-in-uitableview" target="_blank" rel="external">Select all the cells in UITableView</a></p>
+<p><a href="http://stackoverflow.com/questions/21168393/easier-way-to-select-all-rows-in-uitableview" target="_blank" rel="external">Easier way to select all rows in UITableView</a></p>
+<p><a href="http://stackoverflow.com/questions/32748447/tableview-cellforrowatindexpath-returns-nil-with-too-many-cells-swift" target="_blank" rel="external">tableView.cellForRowAtIndexPath returns nil with too many cells (swift)</a></p>
+<p><a href="http://stackoverflow.com/questions/31188893/tableview-cellforrowatindexpathindexpath-return-nil" target="_blank" rel="external">tableView.cellForRowAtIndexPath(indexPath) return nil</a></p>
+<h1 id="The-real-Solution"><a href="#The-real-Solution" class="headerlink" title="The real Solution"></a>The real Solution</h1><p>The real problem happened at the cellForRowAtIndexPath / cellForItemAtIndexPath, Which defined in Apple as follows:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">cellForRowAtIndexPath</span><span class="params">(indexPath: NSIndexPath)</span></span> -&gt; <span class="type">UITableViewCell</span>? </div><div class="line"><span class="comment">// returns nil if cell is **not visible** or index path is out of range</span></div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">cellForItemAtIndexPath</span><span class="params">(indexPath: NSIndexPath)</span></span> -&gt; <span class="type">UICollectionViewCell</span>?</div></pre></td></tr></table></figure>
+<p>When the cell is not visible, the cellForRowAtIndexPath will return <strong>nil</strong>,<br>So, it’s not the right way to do the cell select operation out the<br>UITableViewDataSource in cellForRowAtIndexPath (UITabView), <strong>you should do it separate</strong>. The right way as follows:   </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath)</span></span> -&gt; <span class="type">UITableViewCell</span> &#123;</div><div class="line">    <span class="keyword">let</span> cell = tableView.dequeueReusableCellWithIdentifier(<span class="type">DOWNLOAD_LIST_CELL_INDENTIFIER</span>, forIndexPath: indexPath) <span class="keyword">as</span>! <span class="type">DownloadListViewCell</span></div><div class="line">    cell.selectionStyle = <span class="type">UITableViewCellSelectionStyle</span>.<span class="type">None</span>        </div><div class="line">    <span class="comment">// ...  </span></div><div class="line">   cell.setSelectForDelete(<span class="keyword">self</span>.mDownloadList[indexPath.row].selectToDelete)<span class="comment">// select status UI in UITabViewCell</span></div><div class="line">    <span class="comment">// ...</span></div><div class="line">    <span class="keyword">return</span> cell</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">selectCell</span><span class="params">(indexPath : NSIndexPath, select: Bool)</span></span> &#123;</div><div class="line">    mDownloadList[indexPath.row].selectToDelete = select <span class="comment">// Pojo data</span></div><div class="line">    mListTableView?.reloadData() <span class="comment">// reloadData</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h1><p><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableView_Class/index.html#//apple_ref/occ/instm/UITableView/cellForRowAtIndexPath:" target="_blank" rel="external">UITableView</a></p>
+<p><a href="https://developer.apple.com/reference/uikit/uicollectionview" target="_blank" rel="external">UICollectionView</a></p>
+<hr>
+<font size="2"><br>By SkySeraph-2016<br></font>   
+
+<hr>
+<p><strong><em>版权声明</em></strong></p>
+<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
+
+<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
+<p>如果您愿意捐助其它金额<a href="http://skyseraph.com/about">请戳我~~</a>，扫码支付宝/微信</p>
+<p>本文永久链接：<a href="http://skyseraph.com/2016/06/30/iOS/Select">http://skyseraph.com/2016/06/30/iOS/Select</a> all the cell in UITabView or UICollectionView problem/</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+        <a href="http://skyseraph.com/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
 </section>
             
