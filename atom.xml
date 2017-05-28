@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://skyseraph.com/"/>
-  <updated>2017-05-28T03:48:57.276Z</updated>
+  <updated>2017-05-28T04:40:56.069Z</updated>
   <id>http://skyseraph.com/</id>
   
   <author>
@@ -16,17 +16,17 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>那些年出过书的博主</title>
-    <link href="http://skyseraph.com/2017/05/27/SkySeraph/Sharing/%E9%82%A3%E4%BA%9B%E5%B9%B4%E5%87%BA%E8%BF%87%E4%B9%A6%E7%9A%84%E5%8D%9A%E4%B8%BB/"/>
-    <id>http://skyseraph.com/2017/05/27/SkySeraph/Sharing/那些年出过书的博主/</id>
+    <title>那些年，从博客到出书的博主</title>
+    <link href="http://skyseraph.com/2017/05/27/SkySeraph/Sharing/%E9%82%A3%E4%BA%9B%E5%B9%B4%EF%BC%8C%E4%BB%8E%E5%8D%9A%E5%AE%A2%E5%88%B0%E5%87%BA%E4%B9%A6%E7%9A%84%E5%8D%9A%E4%B8%BB/"/>
+    <id>http://skyseraph.com/2017/05/27/SkySeraph/Sharing/那些年，从博客到出书的博主/</id>
     <published>2017-05-26T17:40:40.000Z</published>
-    <updated>2017-05-28T03:48:57.276Z</updated>
+    <updated>2017-05-28T04:40:56.069Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <ul>
 <li>古人说，著书立说，纵然而今的现实，书籍本身质量存在一定的局限，但不可否认，一本书从构思，撰写到最终交稿出版，需要一定的沉淀，同时时间的代价是非常大的，而所谓的稿酬其实是几乎是可忽略的。  </li>
 <li>一直认为的技术书有两种，一种是入门级别的，例如Android/iOS/Swift/.. XX，XX天学会XX等等，就如Google I/O 2017最新宣布Android Studio 3.0完全支持Kotlin，出版社老师就联系我是不是写一本Kotlin XX，我宛然拒绝了。。。另一种是经验或感悟相关的，需要作者一定的沉淀，有思考，有总结，有思考，这是笔者更青睐的一种方式，所以也是上面婉拒的原因之一。</li>
-<li>顺便将读者读过或了解过的一些从博客到出书的书籍进行一个汇总，分享。</li>
+<li>顺便将读者读过或了解过的一些从博客到出书相关书籍进行一个汇总，分享。</li>
 </ul>
 <h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1><h2 id="综合"><a href="#综合" class="headerlink" title="综合"></a>综合</h2><blockquote>
 <p><strong>黄博文</strong>   </p>
@@ -208,7 +208,7 @@
 
 <p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
 <p>如果您愿意捐助其它金额<a href="http://skyseraph.com/about">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2017/05/27/SkySeraph/Sharing/那些年出过书的博主/">http://skyseraph.com/2017/05/27/SkySeraph/Sharing/那些年出过书的博主/</a></p>
+<p>本文永久链接：<a href="http://skyseraph.com/2017/05/27/SkySeraph/Sharing/那些年，从博客到出书的博主/">http://skyseraph.com/2017/05/27/SkySeraph/Sharing/那些年，从博客到出书的博主/</a></p>
 ]]></content>
     
     <summary type="html">
@@ -649,9 +649,9 @@
     
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
-      <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
-    
       <category term="Jenkins" scheme="http://skyseraph.com/tags/Jenkins/"/>
+    
+      <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
     
       <category term="Gitlab" scheme="http://skyseraph.com/tags/Gitlab/"/>
     
@@ -2739,52 +2739,6 @@
   </entry>
   
   <entry>
-    <title>SkySeraph Plan Life</title>
-    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Plan%20Life/"/>
-    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Plan Life/</id>
-    <published>2012-02-05T18:00:00.000Z</published>
-    <updated>2017-04-09T13:07:19.175Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
-<li><a href="http://skyseraph.com/2013/11/30/SkySeraph/Life/写在年末,%20我的2013/">写在年末, 我的2013</a></li>
-</ul>
-<h2 id="2012-Before"><a href="#2012-Before" class="headerlink" title="2012  Before"></a>2012  Before</h2><ul>
-<li><a href="http://skyseraph.com/2010/09/12/SkySeraph/Life/那一年的“暑假书籍读后感”/">那一年的“暑假书籍读后感”</a></li>
-</ul>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><hr>
-<font size="2"><br>By SkySeraph<br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://skyseraph.com/about">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph</a> Plan Life/</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h2 id=&quot;2017&quot;&gt;&lt;a href=&quot;#2017&quot; class=&quot;headerlink&quot; title=&quot;2017&quot;&gt;&lt;/a&gt;2017&lt;/h2&gt;&lt;h2 id=&quot;2016&quot;&gt;&lt;a href=&quot;#2016&quot; class=&quot;headerlink&quot; title=&quot;2016
-    
-    </summary>
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
-    
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
-    
-      <category term="Plan" scheme="http://skyseraph.com/tags/Plan/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
-    
-  </entry>
-  
-  <entry>
     <title>SkySeraph Movie Life</title>
     <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Movie%20Life/"/>
     <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Movie Life/</id>
@@ -2836,9 +2790,55 @@
     
       <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
     
+      <category term="Movie" scheme="http://skyseraph.com/tags/Movie/"/>
+    
       <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
     
-      <category term="Movie" scheme="http://skyseraph.com/tags/Movie/"/>
+  </entry>
+  
+  <entry>
+    <title>SkySeraph Plan Life</title>
+    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Plan%20Life/"/>
+    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Plan Life/</id>
+    <published>2012-02-05T18:00:00.000Z</published>
+    <updated>2017-04-09T13:07:19.175Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
+<li><a href="http://skyseraph.com/2013/11/30/SkySeraph/Life/写在年末,%20我的2013/">写在年末, 我的2013</a></li>
+</ul>
+<h2 id="2012-Before"><a href="#2012-Before" class="headerlink" title="2012  Before"></a>2012  Before</h2><ul>
+<li><a href="http://skyseraph.com/2010/09/12/SkySeraph/Life/那一年的“暑假书籍读后感”/">那一年的“暑假书籍读后感”</a></li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><hr>
+<font size="2"><br>By SkySeraph<br></font>   
+
+<hr>
+<p><strong><em>版权声明</em></strong></p>
+<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
+
+<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
+<p>如果您愿意捐助其它金额<a href="http://skyseraph.com/about">请戳我~~</a>，扫码支付宝/微信</p>
+<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph</a> Plan Life/</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h2 id=&quot;2017&quot;&gt;&lt;a href=&quot;#2017&quot; class=&quot;headerlink&quot; title=&quot;2017&quot;&gt;&lt;/a&gt;2017&lt;/h2&gt;&lt;h2 id=&quot;2016&quot;&gt;&lt;a href=&quot;#2016&quot; class=&quot;headerlink&quot; title=&quot;2016
+    
+    </summary>
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
+    
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+    
+      <category term="Plan" scheme="http://skyseraph.com/tags/Plan/"/>
     
   </entry>
   
