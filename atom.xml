@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://skyseraph.com/"/>
-  <updated>2017-05-14T03:06:43.265Z</updated>
+  <updated>2017-05-28T03:42:31.679Z</updated>
   <id>http://skyseraph.com/</id>
   
   <author>
@@ -16,103 +16,18 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Appuim源码剖析(Bootstrap)</title>
-    <link href="http://skyseraph.com/2017/01/26/Android/Appuim%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90(Boottrap)/"/>
-    <id>http://skyseraph.com/2017/01/26/Android/Appuim源码剖析(Boottrap)/</id>
-    <published>2017-01-25T17:40:40.000Z</published>
-    <updated>2017-05-14T03:06:43.265Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><h2 id="Appuim"><a href="#Appuim" class="headerlink" title="Appuim"></a>Appuim</h2><p>Appium 是一个自动化测试开源工具，支持 iOS 平台和 Android 平台上的原生应用，web 应用和混合应用。</p>
-<p>这里有很关键一点，跨平台。更多了解Appuim多平台支持相关信息，参考官方<a href="https://github.com/appium/appium/blob/master/docs/old/cn/platform-support.cn.md" target="_blank" rel="external">platform-support</a></p>
-<h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><ul>
-<li>C/S 架构<br>Appium 的核心是一个 web 服务器，它提供了一套 REST 的接口，接收客户端的连接，监听到命令，接着在移动设备上执行这些命令，然后将执行结果放在 HTTP 响应中返还给客户端。</li>
-</ul>
-<ul>
-<li><p>Session机制<br>Appuim的自动化测试是在一个 session 的上下文中运行，可以理解成Appuim会话。<br>每一次当Appium server成功启动后，客户端的测试库（client library）会要求与Server创建一个会话（session）。<br>会话的作用是为了确保能区别不同的客户端请求与不同的被测应用，每个特定的会话都有一个特定的sessionId参数。每次测试开始时，客户端将初始化一个session会话，虽然不同的语言初始化的方式不同，但是他们都要发送POST/session请求到服务器端，这些请求里面都会带有一个对象：desired capabilities ,这个时候服务器端会启动自动化session然后返回一个session ID，以后的命令都会用这个seesion ID去匹配。</p>
-</li>
-<li><p>Appuim Client<br>包含众多语言库（Java, Ruby, Python, PHP, JavaScript,C#等），都实现了 Appium 对 WebDriver 协议的扩展。</p>
-</li>
-<li><p>JSON wire protocol<br>Appuim中非常重要的协议</p>
-</li>
-</ul>
-<h1 id="Appuim-架构"><a href="#Appuim-架构" class="headerlink" title="Appuim 架构"></a>Appuim 架构</h1><p>Appuim基于Nodejs编写，基于HTTP协议，可以看成一个类似<a href="http://www.seleniumhq.org/projects/webdriver/" target="_blank" rel="external">selenium webdriver</a>的基于移动平台的webdriver，遵循RESTful设计风格web服务器，接受客户端的连接然后在手机设备上执行命令，最后通过HTTP的响应收集命令执行的结果。</p>
-<p>如下为我整理的Appuim Android平台下架构原理图，iOS也类似，只是Bootstrap部分由Instruments替换，UiAutomator由UIAutomation替换。</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E6%9E%B6%E6%9E%84%E5%9B%BE-min.jpg" alt=""></p>
-<p>如下两图参考<a href="">testerhome PPT</a>的Appuim Android和iOS平台下数据流程图。</p>
-<p>其中，Android平台下，Android API 17+，底层调用android平台自带的UI测试框架Uiautomator;反之，调用的selendroid测试框架来完成。</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-android-%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE-min.jpg" alt=""></p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-ios-%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE-min.jpg" alt=""></p>
-<h1 id="Bootstrap源码剖析"><a href="#Bootstrap源码剖析" class="headerlink" title="Bootstrap源码剖析"></a>Bootstrap源码剖析</h1><h2 id="源码结构"><a href="#源码结构" class="headerlink" title="源码结构"></a>源码结构</h2><p>如下所示，Appuim Bootstrap部分源码结构，分UiWatchers、Bootstrap和UIAutomator三部分，非常清晰。</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/Appuim-%E6%BA%90%E7%A0%81%E7%BB%93%E6%9E%84-min.jpg" alt=""></p>
-<h2 id="启动时序"><a href="#启动时序" class="headerlink" title="启动时序"></a>启动时序</h2><p>Bootstrap入口类为Bootstrap.java，继承自UiAutomatorTestCase，然后开启Socket接收命令，时序如下。</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E6%97%B6%E5%BA%8F%E5%9B%BE-min.jpg" alt=""></p>
-<h2 id="类关系图"><a href="#类关系图" class="headerlink" title="类关系图"></a>类关系图</h2><p>类关系如下图所示，很简单。</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E7%B1%BB%E5%9B%BE-min.jpg" alt=""></p>
-<h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><p>Bootstrap整体分SocketServer部分，CommandHandler部分，Watchers部分和UiAutomator四部分。</p>
-<ul>
-<li>SocketServer。完成PC Server端命令接收和解析，再通过CommandHandler的execute操作调用UiAutomator实现触控操作。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">    client = server.accept();</div><div class="line">    Logger.debug(<span class="string">"Client connected"</span>);</div><div class="line">    in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(client.getInputStream(), <span class="string">"UTF-8"</span>));</div><div class="line">    out = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(client.getOutputStream(), <span class="string">"UTF-8"</span>));</div><div class="line">    <span class="keyword">while</span> (keepListening) &#123;</div><div class="line">      handleClientData();</div><div class="line">    &#125;</div><div class="line">    in.close();</div><div class="line">    out.close();</div><div class="line">    client.close();</div><div class="line">    Logger.debug(<span class="string">"Closed client connection"</span>);</div><div class="line">  &#125; <span class="keyword">catch</span> (<span class="keyword">final</span> IOException e) &#123;</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> SocketServerException(<span class="string">"Error when client was trying to connect"</span>);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>CommandHandler，虚基类，功能类都集成自该类完成execute操作，通过HashMap映射，如下。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> HashMap&lt;String, CommandHandler&gt; map = <span class="keyword">new</span> HashMap&lt;String, CommandHandler&gt;();</div><div class="line"></div><div class="line">  <span class="keyword">static</span> &#123;</div><div class="line">    map.put(<span class="string">"waitForIdle"</span>, <span class="keyword">new</span> WaitForIdle());</div><div class="line">    map.put(<span class="string">"clear"</span>, <span class="keyword">new</span> Clear());</div><div class="line">    map.put(<span class="string">"orientation"</span>, <span class="keyword">new</span> Orientation());</div><div class="line">    map.put(<span class="string">"swipe"</span>, <span class="keyword">new</span> Swipe());</div><div class="line">    map.put(<span class="string">"flick"</span>, <span class="keyword">new</span> Flick());</div><div class="line">    map.put(<span class="string">"drag"</span>, <span class="keyword">new</span> Drag());</div><div class="line">    map.put(<span class="string">"pinch"</span>, <span class="keyword">new</span> Pinch());</div><div class="line">    map.put(<span class="string">"click"</span>, <span class="keyword">new</span> Click());</div><div class="line">    map.put(<span class="string">"touchLongClick"</span>, <span class="keyword">new</span> TouchLongClick());</div><div class="line">    map.put(<span class="string">"touchDown"</span>, <span class="keyword">new</span> TouchDown());</div><div class="line">    map.put(<span class="string">"touchUp"</span>, <span class="keyword">new</span> TouchUp());</div><div class="line">    map.put(<span class="string">"touchMove"</span>, <span class="keyword">new</span> TouchMove());</div><div class="line">    map.put(<span class="string">"getText"</span>, <span class="keyword">new</span> GetText());</div><div class="line">    map.put(<span class="string">"setText"</span>, <span class="keyword">new</span> SetText());</div><div class="line">    map.put(<span class="string">"getName"</span>, <span class="keyword">new</span> GetName());</div><div class="line">    map.put(<span class="string">"getAttribute"</span>, <span class="keyword">new</span> GetAttribute());</div><div class="line">    map.put(<span class="string">"getDeviceSize"</span>, <span class="keyword">new</span> GetDeviceSize());</div><div class="line">    map.put(<span class="string">"scrollTo"</span>, <span class="keyword">new</span> ScrollTo());</div><div class="line">    map.put(<span class="string">"find"</span>, <span class="keyword">new</span> Find());</div><div class="line">    map.put(<span class="string">"getLocation"</span>, <span class="keyword">new</span> GetLocation());</div><div class="line">    map.put(<span class="string">"getSize"</span>, <span class="keyword">new</span> GetSize());</div><div class="line">    map.put(<span class="string">"wake"</span>, <span class="keyword">new</span> Wake());</div><div class="line">    map.put(<span class="string">"pressBack"</span>, <span class="keyword">new</span> PressBack());</div><div class="line">    map.put(<span class="string">"pressKeyCode"</span>, <span class="keyword">new</span> PressKeyCode());</div><div class="line">    map.put(<span class="string">"longPressKeyCode"</span>, <span class="keyword">new</span> LongPressKeyCode());</div><div class="line">    map.put(<span class="string">"takeScreenshot"</span>, <span class="keyword">new</span> TakeScreenshot());</div><div class="line">    map.put(<span class="string">"updateStrings"</span>, <span class="keyword">new</span> UpdateStrings());</div><div class="line">    map.put(<span class="string">"getDataDir"</span>, <span class="keyword">new</span> GetDataDir());</div><div class="line">    map.put(<span class="string">"performMultiPointerGesture"</span>, <span class="keyword">new</span> MultiPointerGesture());</div><div class="line">    map.put(<span class="string">"openNotification"</span>, <span class="keyword">new</span> OpenNotification());</div><div class="line">    map.put(<span class="string">"source"</span>, <span class="keyword">new</span> Source());</div><div class="line">    map.put(<span class="string">"compressedLayoutHierarchy"</span>, <span class="keyword">new</span> CompressedLayoutHierarchy());</div><div class="line">    map.put(<span class="string">"configurator"</span>, <span class="keyword">new</span> ConfiguratorHandler());</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<p>具体映射通过AndroidCommandExecutor中的execute实现。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> AndroidCommandResult <span class="title">execute</span><span class="params">(<span class="keyword">final</span> AndroidCommand command)</span> </span>&#123;</div><div class="line">  <span class="keyword">try</span> &#123;</div><div class="line">    Logger.debug(<span class="string">"Got command action: "</span> + command.action());</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (map.containsKey(command.action())) &#123;</div><div class="line">      <span class="keyword">return</span> map.get(command.action()).execute(command);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">new</span> AndroidCommandResult(WDStatus.UNKNOWN_COMMAND,</div><div class="line">          <span class="string">"Unknown command: "</span> + command.action());</div><div class="line">    &#125;</div><div class="line">  &#125; <span class="keyword">catch</span> (<span class="keyword">final</span> JSONException e) &#123;</div><div class="line">    Logger.error(<span class="string">"Could not decode action/params of command"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> AndroidCommandResult(WDStatus.JSON_DECODER_ERROR,</div><div class="line">        <span class="string">"Could not decode action/params of command, please check format!"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>Watchers，Android ANR 和 Crash，如下代码。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerAnrAndCrashWatchers</span><span class="params">()</span> </span>&#123;</div><div class="line">  UiDevice.getInstance().registerWatcher(<span class="string">"ANR"</span>, <span class="keyword">new</span> UiWatcher() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkForCondition</span><span class="params">()</span> </span>&#123;</div><div class="line">      UiObject window = <span class="keyword">new</span> UiObject(<span class="keyword">new</span> UiSelector()</div><div class="line">          .className(<span class="string">"com.android.server.am.AppNotRespondingDialog"</span>));</div><div class="line">      String errorText = <span class="keyword">null</span>;</div><div class="line">      <span class="keyword">if</span> (window.exists()) &#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">          errorText = window.getText();</div><div class="line">        &#125; <span class="keyword">catch</span> (UiObjectNotFoundException e) &#123;</div><div class="line">          Log.e(LOG_TAG, <span class="string">"dialog gone?"</span>, e);</div><div class="line">        &#125;</div><div class="line">        onAnrDetected(errorText);</div><div class="line">        postHandler();</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>; <span class="comment">// triggered</span></div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">false</span>; <span class="comment">// no trigger</span></div><div class="line">    &#125;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
-<ul>
-<li>UiAutomator，通过UiAutomator执行触控操作。</li>
-</ul>
-<h1 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h1><ul>
-<li><p>官方Links<br><a href="http://appium.io/" target="_blank" rel="external">主页</a><br><a href="https://github.com/appium" target="_blank" rel="external">源码主页</a><br><a href="https://github.com/appium/appium" target="_blank" rel="external">Appuim源码</a><br><a href="https://github.com/appium/appium-android-bootstrap" target="_blank" rel="external">Bootstrap源码</a>  </p>
-</li>
-<li><p><a href="https://www.google.com.hk/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=4&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwjJ9rDkvavSAhVL7YMKHTwWDCEQFgg2MAM&amp;url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F26738728%2F&amp;usg=AFQjCNGG8n5FtIO10lr_zo57dHf7onuB5A" target="_blank" rel="external">《Appium Essential》</a></p>
-</li>
-<li><p><a href="http://www.slideshare.net/lihuazhang/appium-tester-home" target="_blank" rel="external">testerhome PPT</a>  </p>
-</li>
-<li><p><a href="https://github.com/appium/appium/blob/master/docs/old/cn/intro.cn.md" target="_blank" rel="external">Appuim介绍</a>  </p>
-</li>
-</ul>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>本文首发于<a href="http://skyseraph.com/">skyseraph.com</a>：<a href="http://skyseraph.com/2017/01/26/Android/Appuim%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90(Boottrap">“Appuim源码剖析(Bootstrap)”</a>/)<br>同步发表/转载 <a href="http://www.cnblogs.com/skyseraph/p/6443596.html" target="_blank" rel="external">cnBlogs</a> / <a href="http://blog.csdn.net/zgzhaobo/article/details/57145480" target="_blank" rel="external">CSDN</a> /  …</p>
-<hr>
-<font size="2"><br>By <a href="www.skyseraph.com">SkySeraph</a>-2017<br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://skyseraph.com/about">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2017/01/26/Android/Appuim源码剖析(Boottrap)/">http://skyseraph.com/2017/01/26/Android/Appuim源码剖析(Boottrap)/</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      Appuim
-    
-    </summary>
-    
-      <category term="Tech" scheme="http://skyseraph.com/categories/Tech/"/>
-    
-      <category term="Android" scheme="http://skyseraph.com/categories/Tech/Android/"/>
-    
-    
-      <category term="Appuim" scheme="http://skyseraph.com/tags/Appuim/"/>
-    
-  </entry>
-  
-  <entry>
     <title>那些年出过书的博主</title>
-    <link href="http://skyseraph.com/2017/01/12/SkySeraph/Sharing/%E9%82%A3%E4%BA%9B%E5%B9%B4%E5%87%BA%E8%BF%87%E4%B9%A6%E7%9A%84%E5%8D%9A%E4%B8%BB/"/>
-    <id>http://skyseraph.com/2017/01/12/SkySeraph/Sharing/那些年出过书的博主/</id>
-    <published>2017-01-11T17:40:40.000Z</published>
-    <updated>2017-05-25T14:31:20.959Z</updated>
+    <link href="http://skyseraph.com/2017/05/27/SkySeraph/Sharing/%E9%82%A3%E4%BA%9B%E5%B9%B4%E5%87%BA%E8%BF%87%E4%B9%A6%E7%9A%84%E5%8D%9A%E4%B8%BB/"/>
+    <id>http://skyseraph.com/2017/05/27/SkySeraph/Sharing/那些年出过书的博主/</id>
+    <published>2017-05-26T17:40:40.000Z</published>
+    <updated>2017-05-28T03:42:31.679Z</updated>
     
     <content type="html"><![CDATA[<hr>
+<ul>
+<li>古人说，著书立说，纵然而今的现实，书籍本身质量存在一定的局限，但不可否认，一本书从构思，撰写到最终交稿出版，需要一定的沉淀，同时时间的代价是非常大的，而所谓的稿酬其实是几乎是可忽略的。  </li>
+<li>一直认为的技术书有两种，一种是入门级别的，例如Android/iOS/Swift/.. XX，XX天学会XX等等，就如Google I/O 2017最新宣布Android Studio 3.0完全支持Kotlin，出版社老师就联系我是不是写一本Kotlin XX，我宛然拒绝了。。。另一种是经验或感悟相关的，需要作者一定的沉淀，有思考，有总结，有思考，这是笔者更青睐的一种方式，所以也是上面婉拒的原因之一。</li>
+<li>顺便将读者读过或了解过的一些从博客到出书的书籍进行一个汇总，分享。</li>
+</ul>
 <h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1><h2 id="综合"><a href="#综合" class="headerlink" title="综合"></a>综合</h2><blockquote>
 <p><strong>黄博文</strong>   </p>
 </blockquote>
@@ -225,6 +140,17 @@
 </li>
 </ol>
 <blockquote>
+<p><strong>黄峰达</strong></p>
+</blockquote>
+<ol>
+<li><p>站点：<a href="https://www.phodal.com/blog/" target="_blank" rel="external">PHODAL</a></p>
+</li>
+<li><p>著作：<br><a href="https://book.douban.com/subject/26841195/" target="_blank" rel="external">《自己动手设计物联网》</a>  2016.7 电子工业出版社<br><a href="https://book.douban.com/subject/27044427/" target="_blank" rel="external">《全栈应用开发：精益实践》</a>  2017.5 电子工业出版社   </p>
+</li>
+<li><p>其它：</p>
+</li>
+</ol>
+<blockquote>
 <p><strong>汪建</strong></p>
 </blockquote>
 <ol>
@@ -258,7 +184,7 @@
 <p><strong>2</strong>. 著作：<a href="https://book.douban.com/subject/26825082/" target="_blank" rel="external">《深度学习：21天实战Caffe）》</a>   2016.电子工业出版社  </p>
 <p><strong>3</strong>. 其它： Work in 阿里云</p>
 <hr>
-<h1 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h1><p>todo</p>
+<h1 id="管理"><a href="#管理" class="headerlink" title="管理/"></a>管理/</h1><p>todo</p>
 <h1 id="经历"><a href="#经历" class="headerlink" title="经历"></a>经历</h1><hr>
 <blockquote>
 <p><strong>池建强</strong>   </p>
@@ -282,13 +208,15 @@
 
 <p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
 <p>如果您愿意捐助其它金额<a href="http://skyseraph.com/about">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2017/01/12/SkySeraph/Sharing/那些年出过书的博主/">http://skyseraph.com/2017/01/12/SkySeraph/Sharing/那些年出过书的博主/</a></p>
+<p>本文永久链接：<a href="http://skyseraph.com/2017/05/27/SkySeraph/Sharing/那些年出过书的博主/">http://skyseraph.com/2017/05/27/SkySeraph/Sharing/那些年出过书的博主/</a></p>
 ]]></content>
     
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h1 id=&quot;技术&quot;&gt;&lt;a href=&quot;#技术&quot; class=&quot;headerlink&quot; title=&quot;技术&quot;&gt;&lt;/a&gt;技术&lt;/h1&gt;&lt;h2 id=&quot;综合&quot;&gt;&lt;a href=&quot;#综合&quot; class=&quot;headerlink&quot; title=&quot;综合&quot;&gt;&lt;/a&gt;综合&lt;/h2&gt;&lt;
+&lt;ul&gt;
+&lt;li&gt;古人说，著书立说，纵然而今的现实，书籍本身质量存在一定的局限，但不可否认，一本书从构思，撰写到最终交稿出版，需要一定的沉淀，同时时间的代价是非常大的，而所谓的稿酬其实是几乎是可忽略的。  &lt;/li&gt;
+&lt;li&gt;一直认为的技术书有两种，一种是入门级别的，例
     
     </summary>
     
@@ -302,6 +230,96 @@
       <category term="Sharing" scheme="http://skyseraph.com/tags/Sharing/"/>
     
       <category term="著书" scheme="http://skyseraph.com/tags/%E8%91%97%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Appuim源码剖析(Bootstrap)</title>
+    <link href="http://skyseraph.com/2017/01/26/Android/Appuim%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90(Boottrap)/"/>
+    <id>http://skyseraph.com/2017/01/26/Android/Appuim源码剖析(Boottrap)/</id>
+    <published>2017-01-25T17:40:40.000Z</published>
+    <updated>2017-05-14T03:06:43.265Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><h2 id="Appuim"><a href="#Appuim" class="headerlink" title="Appuim"></a>Appuim</h2><p>Appium 是一个自动化测试开源工具，支持 iOS 平台和 Android 平台上的原生应用，web 应用和混合应用。</p>
+<p>这里有很关键一点，跨平台。更多了解Appuim多平台支持相关信息，参考官方<a href="https://github.com/appium/appium/blob/master/docs/old/cn/platform-support.cn.md" target="_blank" rel="external">platform-support</a></p>
+<h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><ul>
+<li>C/S 架构<br>Appium 的核心是一个 web 服务器，它提供了一套 REST 的接口，接收客户端的连接，监听到命令，接着在移动设备上执行这些命令，然后将执行结果放在 HTTP 响应中返还给客户端。</li>
+</ul>
+<ul>
+<li><p>Session机制<br>Appuim的自动化测试是在一个 session 的上下文中运行，可以理解成Appuim会话。<br>每一次当Appium server成功启动后，客户端的测试库（client library）会要求与Server创建一个会话（session）。<br>会话的作用是为了确保能区别不同的客户端请求与不同的被测应用，每个特定的会话都有一个特定的sessionId参数。每次测试开始时，客户端将初始化一个session会话，虽然不同的语言初始化的方式不同，但是他们都要发送POST/session请求到服务器端，这些请求里面都会带有一个对象：desired capabilities ,这个时候服务器端会启动自动化session然后返回一个session ID，以后的命令都会用这个seesion ID去匹配。</p>
+</li>
+<li><p>Appuim Client<br>包含众多语言库（Java, Ruby, Python, PHP, JavaScript,C#等），都实现了 Appium 对 WebDriver 协议的扩展。</p>
+</li>
+<li><p>JSON wire protocol<br>Appuim中非常重要的协议</p>
+</li>
+</ul>
+<h1 id="Appuim-架构"><a href="#Appuim-架构" class="headerlink" title="Appuim 架构"></a>Appuim 架构</h1><p>Appuim基于Nodejs编写，基于HTTP协议，可以看成一个类似<a href="http://www.seleniumhq.org/projects/webdriver/" target="_blank" rel="external">selenium webdriver</a>的基于移动平台的webdriver，遵循RESTful设计风格web服务器，接受客户端的连接然后在手机设备上执行命令，最后通过HTTP的响应收集命令执行的结果。</p>
+<p>如下为我整理的Appuim Android平台下架构原理图，iOS也类似，只是Bootstrap部分由Instruments替换，UiAutomator由UIAutomation替换。</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E6%9E%B6%E6%9E%84%E5%9B%BE-min.jpg" alt=""></p>
+<p>如下两图参考<a href="">testerhome PPT</a>的Appuim Android和iOS平台下数据流程图。</p>
+<p>其中，Android平台下，Android API 17+，底层调用android平台自带的UI测试框架Uiautomator;反之，调用的selendroid测试框架来完成。</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-android-%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE-min.jpg" alt=""></p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-ios-%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE-min.jpg" alt=""></p>
+<h1 id="Bootstrap源码剖析"><a href="#Bootstrap源码剖析" class="headerlink" title="Bootstrap源码剖析"></a>Bootstrap源码剖析</h1><h2 id="源码结构"><a href="#源码结构" class="headerlink" title="源码结构"></a>源码结构</h2><p>如下所示，Appuim Bootstrap部分源码结构，分UiWatchers、Bootstrap和UIAutomator三部分，非常清晰。</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/Appuim-%E6%BA%90%E7%A0%81%E7%BB%93%E6%9E%84-min.jpg" alt=""></p>
+<h2 id="启动时序"><a href="#启动时序" class="headerlink" title="启动时序"></a>启动时序</h2><p>Bootstrap入口类为Bootstrap.java，继承自UiAutomatorTestCase，然后开启Socket接收命令，时序如下。</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E6%97%B6%E5%BA%8F%E5%9B%BE-min.jpg" alt=""></p>
+<h2 id="类关系图"><a href="#类关系图" class="headerlink" title="类关系图"></a>类关系图</h2><p>类关系如下图所示，很简单。</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E7%B1%BB%E5%9B%BE-min.jpg" alt=""></p>
+<h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><p>Bootstrap整体分SocketServer部分，CommandHandler部分，Watchers部分和UiAutomator四部分。</p>
+<ul>
+<li>SocketServer。完成PC Server端命令接收和解析，再通过CommandHandler的execute操作调用UiAutomator实现触控操作。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">    client = server.accept();</div><div class="line">    Logger.debug(<span class="string">"Client connected"</span>);</div><div class="line">    in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(client.getInputStream(), <span class="string">"UTF-8"</span>));</div><div class="line">    out = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(client.getOutputStream(), <span class="string">"UTF-8"</span>));</div><div class="line">    <span class="keyword">while</span> (keepListening) &#123;</div><div class="line">      handleClientData();</div><div class="line">    &#125;</div><div class="line">    in.close();</div><div class="line">    out.close();</div><div class="line">    client.close();</div><div class="line">    Logger.debug(<span class="string">"Closed client connection"</span>);</div><div class="line">  &#125; <span class="keyword">catch</span> (<span class="keyword">final</span> IOException e) &#123;</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> SocketServerException(<span class="string">"Error when client was trying to connect"</span>);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>CommandHandler，虚基类，功能类都集成自该类完成execute操作，通过HashMap映射，如下。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> HashMap&lt;String, CommandHandler&gt; map = <span class="keyword">new</span> HashMap&lt;String, CommandHandler&gt;();</div><div class="line"></div><div class="line">  <span class="keyword">static</span> &#123;</div><div class="line">    map.put(<span class="string">"waitForIdle"</span>, <span class="keyword">new</span> WaitForIdle());</div><div class="line">    map.put(<span class="string">"clear"</span>, <span class="keyword">new</span> Clear());</div><div class="line">    map.put(<span class="string">"orientation"</span>, <span class="keyword">new</span> Orientation());</div><div class="line">    map.put(<span class="string">"swipe"</span>, <span class="keyword">new</span> Swipe());</div><div class="line">    map.put(<span class="string">"flick"</span>, <span class="keyword">new</span> Flick());</div><div class="line">    map.put(<span class="string">"drag"</span>, <span class="keyword">new</span> Drag());</div><div class="line">    map.put(<span class="string">"pinch"</span>, <span class="keyword">new</span> Pinch());</div><div class="line">    map.put(<span class="string">"click"</span>, <span class="keyword">new</span> Click());</div><div class="line">    map.put(<span class="string">"touchLongClick"</span>, <span class="keyword">new</span> TouchLongClick());</div><div class="line">    map.put(<span class="string">"touchDown"</span>, <span class="keyword">new</span> TouchDown());</div><div class="line">    map.put(<span class="string">"touchUp"</span>, <span class="keyword">new</span> TouchUp());</div><div class="line">    map.put(<span class="string">"touchMove"</span>, <span class="keyword">new</span> TouchMove());</div><div class="line">    map.put(<span class="string">"getText"</span>, <span class="keyword">new</span> GetText());</div><div class="line">    map.put(<span class="string">"setText"</span>, <span class="keyword">new</span> SetText());</div><div class="line">    map.put(<span class="string">"getName"</span>, <span class="keyword">new</span> GetName());</div><div class="line">    map.put(<span class="string">"getAttribute"</span>, <span class="keyword">new</span> GetAttribute());</div><div class="line">    map.put(<span class="string">"getDeviceSize"</span>, <span class="keyword">new</span> GetDeviceSize());</div><div class="line">    map.put(<span class="string">"scrollTo"</span>, <span class="keyword">new</span> ScrollTo());</div><div class="line">    map.put(<span class="string">"find"</span>, <span class="keyword">new</span> Find());</div><div class="line">    map.put(<span class="string">"getLocation"</span>, <span class="keyword">new</span> GetLocation());</div><div class="line">    map.put(<span class="string">"getSize"</span>, <span class="keyword">new</span> GetSize());</div><div class="line">    map.put(<span class="string">"wake"</span>, <span class="keyword">new</span> Wake());</div><div class="line">    map.put(<span class="string">"pressBack"</span>, <span class="keyword">new</span> PressBack());</div><div class="line">    map.put(<span class="string">"pressKeyCode"</span>, <span class="keyword">new</span> PressKeyCode());</div><div class="line">    map.put(<span class="string">"longPressKeyCode"</span>, <span class="keyword">new</span> LongPressKeyCode());</div><div class="line">    map.put(<span class="string">"takeScreenshot"</span>, <span class="keyword">new</span> TakeScreenshot());</div><div class="line">    map.put(<span class="string">"updateStrings"</span>, <span class="keyword">new</span> UpdateStrings());</div><div class="line">    map.put(<span class="string">"getDataDir"</span>, <span class="keyword">new</span> GetDataDir());</div><div class="line">    map.put(<span class="string">"performMultiPointerGesture"</span>, <span class="keyword">new</span> MultiPointerGesture());</div><div class="line">    map.put(<span class="string">"openNotification"</span>, <span class="keyword">new</span> OpenNotification());</div><div class="line">    map.put(<span class="string">"source"</span>, <span class="keyword">new</span> Source());</div><div class="line">    map.put(<span class="string">"compressedLayoutHierarchy"</span>, <span class="keyword">new</span> CompressedLayoutHierarchy());</div><div class="line">    map.put(<span class="string">"configurator"</span>, <span class="keyword">new</span> ConfiguratorHandler());</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>具体映射通过AndroidCommandExecutor中的execute实现。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> AndroidCommandResult <span class="title">execute</span><span class="params">(<span class="keyword">final</span> AndroidCommand command)</span> </span>&#123;</div><div class="line">  <span class="keyword">try</span> &#123;</div><div class="line">    Logger.debug(<span class="string">"Got command action: "</span> + command.action());</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (map.containsKey(command.action())) &#123;</div><div class="line">      <span class="keyword">return</span> map.get(command.action()).execute(command);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">new</span> AndroidCommandResult(WDStatus.UNKNOWN_COMMAND,</div><div class="line">          <span class="string">"Unknown command: "</span> + command.action());</div><div class="line">    &#125;</div><div class="line">  &#125; <span class="keyword">catch</span> (<span class="keyword">final</span> JSONException e) &#123;</div><div class="line">    Logger.error(<span class="string">"Could not decode action/params of command"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> AndroidCommandResult(WDStatus.JSON_DECODER_ERROR,</div><div class="line">        <span class="string">"Could not decode action/params of command, please check format!"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Watchers，Android ANR 和 Crash，如下代码。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerAnrAndCrashWatchers</span><span class="params">()</span> </span>&#123;</div><div class="line">  UiDevice.getInstance().registerWatcher(<span class="string">"ANR"</span>, <span class="keyword">new</span> UiWatcher() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkForCondition</span><span class="params">()</span> </span>&#123;</div><div class="line">      UiObject window = <span class="keyword">new</span> UiObject(<span class="keyword">new</span> UiSelector()</div><div class="line">          .className(<span class="string">"com.android.server.am.AppNotRespondingDialog"</span>));</div><div class="line">      String errorText = <span class="keyword">null</span>;</div><div class="line">      <span class="keyword">if</span> (window.exists()) &#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">          errorText = window.getText();</div><div class="line">        &#125; <span class="keyword">catch</span> (UiObjectNotFoundException e) &#123;</div><div class="line">          Log.e(LOG_TAG, <span class="string">"dialog gone?"</span>, e);</div><div class="line">        &#125;</div><div class="line">        onAnrDetected(errorText);</div><div class="line">        postHandler();</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>; <span class="comment">// triggered</span></div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">false</span>; <span class="comment">// no trigger</span></div><div class="line">    &#125;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>UiAutomator，通过UiAutomator执行触控操作。</li>
+</ul>
+<h1 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h1><ul>
+<li><p>官方Links<br><a href="http://appium.io/" target="_blank" rel="external">主页</a><br><a href="https://github.com/appium" target="_blank" rel="external">源码主页</a><br><a href="https://github.com/appium/appium" target="_blank" rel="external">Appuim源码</a><br><a href="https://github.com/appium/appium-android-bootstrap" target="_blank" rel="external">Bootstrap源码</a>  </p>
+</li>
+<li><p><a href="https://www.google.com.hk/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=4&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwjJ9rDkvavSAhVL7YMKHTwWDCEQFgg2MAM&amp;url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F26738728%2F&amp;usg=AFQjCNGG8n5FtIO10lr_zo57dHf7onuB5A" target="_blank" rel="external">《Appium Essential》</a></p>
+</li>
+<li><p><a href="http://www.slideshare.net/lihuazhang/appium-tester-home" target="_blank" rel="external">testerhome PPT</a>  </p>
+</li>
+<li><p><a href="https://github.com/appium/appium/blob/master/docs/old/cn/intro.cn.md" target="_blank" rel="external">Appuim介绍</a>  </p>
+</li>
+</ul>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>本文首发于<a href="http://skyseraph.com/">skyseraph.com</a>：<a href="http://skyseraph.com/2017/01/26/Android/Appuim%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90(Boottrap">“Appuim源码剖析(Bootstrap)”</a>/)<br>同步发表/转载 <a href="http://www.cnblogs.com/skyseraph/p/6443596.html" target="_blank" rel="external">cnBlogs</a> / <a href="http://blog.csdn.net/zgzhaobo/article/details/57145480" target="_blank" rel="external">CSDN</a> /  …</p>
+<hr>
+<font size="2"><br>By <a href="www.skyseraph.com">SkySeraph</a>-2017<br></font>   
+
+<hr>
+<p><strong><em>版权声明</em></strong></p>
+<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
+
+<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
+<p>如果您愿意捐助其它金额<a href="http://skyseraph.com/about">请戳我~~</a>，扫码支付宝/微信</p>
+<p>本文永久链接：<a href="http://skyseraph.com/2017/01/26/Android/Appuim源码剖析(Boottrap)/">http://skyseraph.com/2017/01/26/Android/Appuim源码剖析(Boottrap)/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      Appuim
+    
+    </summary>
+    
+      <category term="Tech" scheme="http://skyseraph.com/categories/Tech/"/>
+    
+      <category term="Android" scheme="http://skyseraph.com/categories/Tech/Android/"/>
+    
+    
+      <category term="Appuim" scheme="http://skyseraph.com/tags/Appuim/"/>
     
   </entry>
   
@@ -631,9 +649,9 @@
     
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
-      <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
-    
       <category term="Jenkins" scheme="http://skyseraph.com/tags/Jenkins/"/>
+    
+      <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
     
       <category term="Gitlab" scheme="http://skyseraph.com/tags/Gitlab/"/>
     
