@@ -36,7 +36,7 @@ onStartCommand返回START_STICKY
 onDestroy中startself 
 Service后台变前置，setForg">
 <meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/ps%20grep1.png">
-<meta property="og:updated_time" content="2017-03-19T13:58:28.370Z">
+<meta property="og:updated_time" content="2017-06-08T14:50:04.870Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一种提高Android应用进程存活率新方法">
 <meta name="twitter:description" content="基础知识Android 进程优先级1 进程优先级等级一般分法
@@ -385,7 +385,7 @@ var _hmt = _hmt || [];
 </ul>
 <h2 id="Linux-Am命令开启后台进程"><a href="#Linux-Am命令开启后台进程" class="headerlink" title="Linux Am命令开启后台进程"></a>Linux Am命令开启后台进程</h2><p>一种底层实现让进程不被杀死的方法，在Android4.4以上可能有兼容性问题，具体参考Ref-7  </p>
 <h2 id="NotificationListenerService通知"><a href="#NotificationListenerService通知" class="headerlink" title="NotificationListenerService通知"></a>NotificationListenerService通知</h2><p>一种需要用户允许特定权限的系统拉起方式，4.3以上系统</p>
-<h2 id="前台浮窗"><a href="#前台浮窗" class="headerlink" title="前台浮窗"></a>前台浮窗</h2><p>有朋友提出一种应用退出后启动一个不可交互的浮窗，个人觉得这种方法是无效的，读者有兴趣可以一试  </p>
+<h2 id="前台浮窗"><a href="#前台浮窗" class="headerlink" title="前台浮窗"></a>前台浮窗</h2><p>有朋友提出一种应用退出后启动一个不可交互的浮窗，个人觉得这种方法是无效的，读者有兴趣可以一试，参考<a href="https://github.com/Justson/Pixel-Activity-Keep-Alive" target="_blank" rel="external">Pixel-Activity-Keep-Alive</a>  </p>
 <h1 id="新方法-AccountSync"><a href="#新方法-AccountSync" class="headerlink" title="新方法(AccountSync)"></a>新方法(AccountSync)</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>利用Android系统提供的账号和同步机制实现</p>
 <h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><ul>
 <li>通过adb查看,运行在后台的服务其进程号变成了1（优先级仅次于前台进程），能提高进程优先级，对比如下图 </li>
