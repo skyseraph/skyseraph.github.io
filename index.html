@@ -257,7 +257,7 @@ var _hmt = _hmt || [];
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#啰嗦"><span class="toc-number">1.</span> <span class="toc-text">啰嗦</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#重大特性"><span class="toc-number">2.</span> <span class="toc-text">重大特性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#采坑记"><span class="toc-number">3.</span> <span class="toc-text">采坑记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#REFS"><span class="toc-number">4.</span> <span class="toc-text">REFS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-number">5.</span> <span class="toc-text">后记</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#啰嗦"><span class="toc-number">1.</span> <span class="toc-text">啰嗦</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#重大特性"><span class="toc-number">2.</span> <span class="toc-text">重大特性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基础使用"><span class="toc-number">3.</span> <span class="toc-text">基础使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#采坑记"><span class="toc-number">4.</span> <span class="toc-text">采坑记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#REFS"><span class="toc-number">5.</span> <span class="toc-text">REFS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-number">6.</span> <span class="toc-text">后记</span></a></li></ol>
                 </div>
             
             <hr>
@@ -268,7 +268,22 @@ var _hmt = _hmt || [];
 <p><strong>4</strong>.  新增<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/UiObject2.html" target="_blank" rel="external">UiObject2</a>、<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/Until.html" target="_blank" rel="external">Until</a>、<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/By.html" target="_blank" rel="external">By</a>、<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/BySelector.html" target="_blank" rel="external">BySelector</a>等接口, 详细请参考<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/package-summary.html" target="_blank" rel="external">官方文档</a>。<br>其中，U2必须明确EditText框才能向里面输入文字，U1直接指定父类也可以在子类中输入文字。</p>
 <p><strong>5</strong>.  Log日志输出变更。U1可以使用System.out.print输出流回显至执行端，而U2输出到Logcat。</p>
 <p><strong>6</strong>.  命令运行差异。</p>
-<figure class="highlight plain"><figcaption><span>shell uiautomator runtest xx.jar -c package.name.ClassName ```   </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">```adb shell am instrument -w -r   -e class com.xx.xx com.xx.xx.test/ android.support.test.runner.AndroidJUnitRunner ```  </div><div class="line"></div><div class="line">代码中运行：  </div><div class="line">```Runtime.getRuntime().exec(&quot;**&quot;) ```  </div><div class="line">```device.executeShellCommand(&quot;**&quot;) ```  </div><div class="line"></div><div class="line">命令格式：```instrument [options] component```，详细命令格式介绍参考[官方文档](https://developer.android.com/studio/command-line/adb.html)。</div><div class="line"></div><div class="line">**7**.  U2测试用例无需继承于任何父类，方法名不限，使用Annotation进行; U1需要继承UiAutomatorTestCase，测试方法需要以test开头</div><div class="line"></div><div class="line"># 基础使用</div><div class="line"></div><div class="line">1. 新建Android Studio工程。  </div><div class="line"></div><div class="line">2. gradle中添加依赖。  </div><div class="line"></div><div class="line">``` androidTestCompile(&apos;com.android.support.test.espresso:espresso-core:2.2.2&apos;, &#123;  </div><div class="line">        exclude group: &apos;com.android.support&apos;, module: &apos;support-annotations&apos;</div><div class="line">    &#125;)  </div><div class="line">    androidTestCompile &apos;com.android.support.test:runner:0.5&apos;  </div><div class="line">    androidTestCompile &apos;com.android.support.test:rules:0.5&apos;  </div><div class="line">    androidTestCompile &apos;com.android.support.test.uiautomator:uiautomator-v18:2.1.2&apos;  </div><div class="line">    androidTestCompile &apos;com.android.support:support-annotations:25.3.1&apos;</div><div class="line">```  </div><div class="line"></div><div class="line">如需要依赖jar包   </div><div class="line">  ``` androidTestCompile fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])```  </div><div class="line"></div><div class="line">3. androidTest目录下添加测试用例。</div></pre></td></tr></table></figure>
+<p><code>adb shell uiautomator runtest xx.jar -c package.name.ClassName</code><br><code>adb shell am instrument -w -r   -e class com.xx.xx com.xx.xx.test/ android.support.test.runner.AndroidJUnitRunner</code>  </p>
+<p>代码中运行：<br>Runtime.getRuntime().exec(“*<em>“)<br>device.executeShellCommand(“*</em>“)      </p>
+<p>命令格式：<code>instrument [options] component</code>，详细命令格式介绍参考<a href="https://developer.android.com/studio/command-line/adb.html" target="_blank" rel="external">官方文档</a>。</p>
+<p><strong>7</strong>.  U2测试用例无需继承于任何父类，方法名不限，使用Annotation进行; U1需要继承UiAutomatorTestCase，测试方法需要以test开头.</p>
+<h1 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h1><ol>
+<li><p>新建Android Studio工程。  </p>
+</li>
+<li><p>gradle中添加依赖。  </p>
+</li>
+</ol>
+<p>androidTestCompile(‘com.android.support.test.espresso:espresso-core:2.2.2’{<br>exclude group: ‘com.android.support’, module: ‘support-annotations’<br>})<br>androidTestCompile ‘com.android.support.test:runner:0.5’<br>androidTestCompile ‘com.android.support.test:rules:0.5’<br>androidTestCompile ‘com.android.support.test.uiautomator:uiautomator-v18:2.1.2’<br>androidTestCompile ‘com.android.support:support-annotations:25.3.1’  </p>
+<p>如需要依赖jar包   </p>
+<pre><code>androidTestCompile fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;]) 
+</code></pre><ol>
+<li>androidTest目录下添加测试用例。  </li>
+</ol>
 <p>@RunWith(AndroidJUnit4.class)<br>@FixMethodOrder(MethodSorters.NAME_ASCENDING)<br>public class XXTest {<br>    public Bundle bundle;<br>    public UiDevice device;<br>    private Instrumentation instrumentation;</p>
 <pre><code>@BeforeClass
 public static void beforeClass() {
@@ -297,7 +312,7 @@ public static void afterClass() {
 public Bundle getParams() {
     return bundle;
 }
-</code></pre><p>}<br>```</p>
+</code></pre><p>}</p>
 <h1 id="采坑记"><a href="#采坑记" class="headerlink" title="采坑记"></a>采坑记</h1><ul>
 <li><p><strong>编译错误</strong>。<br>这个应该说是官方故意坑爹吧，U2的包名结构发生了变化，所以需要将之前所有用到的U1相关API包名进行替换，具体为<br>com.android.uiautomator.core.<em>  -&gt; android.support.test.uiautomator.</em></p>
 </li>

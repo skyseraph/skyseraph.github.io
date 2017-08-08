@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://skyseraph.com/"/>
-  <updated>2017-08-08T14:50:38.129Z</updated>
+  <updated>2017-08-08T15:05:36.816Z</updated>
   <id>http://skyseraph.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://skyseraph.com/2017/06/04/Android/UiAutomator2.0%E5%8D%87%E7%BA%A7%E5%A1%AB%E5%9D%91%E8%AE%B0/"/>
     <id>http://skyseraph.com/2017/06/04/Android/UiAutomator2.0升级填坑记/</id>
     <published>2017-06-03T17:40:40.000Z</published>
-    <updated>2017-08-08T14:50:38.129Z</updated>
+    <updated>2017-08-08T15:05:36.816Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h1><p>Google Android Developers 在2015年3月就发布了UiAutomator 2.0版本（下文简称U2），而公司的核心产品中用到还是UiAutomator老版本（下文简称U1），业界用U2的也不是很多，虽然有诸多问题和不便（如高版本OS中不支持Remote Debug等），但大家似乎在苟延残喘中麻木了。 公司以前也有专家做过研究和探索，毕竟老项目是万级别的，涉及诸多算法和复杂业务逻辑，遇到几个问题最终不了了之。于是乎，又到了我手里了。</p>
@@ -30,7 +30,22 @@
 <p><strong>4</strong>.  新增<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/UiObject2.html" target="_blank" rel="external">UiObject2</a>、<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/Until.html" target="_blank" rel="external">Until</a>、<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/By.html" target="_blank" rel="external">By</a>、<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/BySelector.html" target="_blank" rel="external">BySelector</a>等接口, 详细请参考<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/package-summary.html" target="_blank" rel="external">官方文档</a>。<br>其中，U2必须明确EditText框才能向里面输入文字，U1直接指定父类也可以在子类中输入文字。</p>
 <p><strong>5</strong>.  Log日志输出变更。U1可以使用System.out.print输出流回显至执行端，而U2输出到Logcat。</p>
 <p><strong>6</strong>.  命令运行差异。</p>
-<figure class="highlight plain"><figcaption><span>shell uiautomator runtest xx.jar -c package.name.ClassName ```   </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">```adb shell am instrument -w -r   -e class com.xx.xx com.xx.xx.test/ android.support.test.runner.AndroidJUnitRunner ```  </div><div class="line"></div><div class="line">代码中运行：  </div><div class="line">```Runtime.getRuntime().exec(&quot;**&quot;) ```  </div><div class="line">```device.executeShellCommand(&quot;**&quot;) ```  </div><div class="line"></div><div class="line">命令格式：```instrument [options] component```，详细命令格式介绍参考[官方文档](https://developer.android.com/studio/command-line/adb.html)。</div><div class="line"></div><div class="line">**7**.  U2测试用例无需继承于任何父类，方法名不限，使用Annotation进行; U1需要继承UiAutomatorTestCase，测试方法需要以test开头</div><div class="line"></div><div class="line"># 基础使用</div><div class="line"></div><div class="line">1. 新建Android Studio工程。  </div><div class="line"></div><div class="line">2. gradle中添加依赖。  </div><div class="line"></div><div class="line">``` androidTestCompile(&apos;com.android.support.test.espresso:espresso-core:2.2.2&apos;, &#123;  </div><div class="line">        exclude group: &apos;com.android.support&apos;, module: &apos;support-annotations&apos;</div><div class="line">    &#125;)  </div><div class="line">    androidTestCompile &apos;com.android.support.test:runner:0.5&apos;  </div><div class="line">    androidTestCompile &apos;com.android.support.test:rules:0.5&apos;  </div><div class="line">    androidTestCompile &apos;com.android.support.test.uiautomator:uiautomator-v18:2.1.2&apos;  </div><div class="line">    androidTestCompile &apos;com.android.support:support-annotations:25.3.1&apos;</div><div class="line">```  </div><div class="line"></div><div class="line">如需要依赖jar包   </div><div class="line">  ``` androidTestCompile fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])```  </div><div class="line"></div><div class="line">3. androidTest目录下添加测试用例。</div></pre></td></tr></table></figure>
+<p><code>adb shell uiautomator runtest xx.jar -c package.name.ClassName</code><br><code>adb shell am instrument -w -r   -e class com.xx.xx com.xx.xx.test/ android.support.test.runner.AndroidJUnitRunner</code>  </p>
+<p>代码中运行：<br>Runtime.getRuntime().exec(“*<em>“)<br>device.executeShellCommand(“*</em>“)      </p>
+<p>命令格式：<code>instrument [options] component</code>，详细命令格式介绍参考<a href="https://developer.android.com/studio/command-line/adb.html" target="_blank" rel="external">官方文档</a>。</p>
+<p><strong>7</strong>.  U2测试用例无需继承于任何父类，方法名不限，使用Annotation进行; U1需要继承UiAutomatorTestCase，测试方法需要以test开头.</p>
+<h1 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h1><ol>
+<li><p>新建Android Studio工程。  </p>
+</li>
+<li><p>gradle中添加依赖。  </p>
+</li>
+</ol>
+<p>androidTestCompile(‘com.android.support.test.espresso:espresso-core:2.2.2’{<br>exclude group: ‘com.android.support’, module: ‘support-annotations’<br>})<br>androidTestCompile ‘com.android.support.test:runner:0.5’<br>androidTestCompile ‘com.android.support.test:rules:0.5’<br>androidTestCompile ‘com.android.support.test.uiautomator:uiautomator-v18:2.1.2’<br>androidTestCompile ‘com.android.support:support-annotations:25.3.1’  </p>
+<p>如需要依赖jar包   </p>
+<pre><code>androidTestCompile fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;]) 
+</code></pre><ol>
+<li>androidTest目录下添加测试用例。  </li>
+</ol>
 <p>@RunWith(AndroidJUnit4.class)<br>@FixMethodOrder(MethodSorters.NAME_ASCENDING)<br>public class XXTest {<br>    public Bundle bundle;<br>    public UiDevice device;<br>    private Instrumentation instrumentation;</p>
 <pre><code>@BeforeClass
 public static void beforeClass() {
@@ -59,7 +74,7 @@ public static void afterClass() {
 public Bundle getParams() {
     return bundle;
 }
-</code></pre><p>}<br>```</p>
+</code></pre><p>}</p>
 <h1 id="采坑记"><a href="#采坑记" class="headerlink" title="采坑记"></a>采坑记</h1><ul>
 <li><p><strong>编译错误</strong>。<br>这个应该说是官方故意坑爹吧，U2的包名结构发生了变化，所以需要将之前所有用到的U1相关API包名进行替换，具体为<br>com.android.uiautomator.core.<em>  -&gt; android.support.test.uiautomator.</em></p>
 </li>
@@ -1166,11 +1181,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="OpenGL" scheme="http://skyseraph.com/categories/Tech/OpenGL/"/>
     
     
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
+    
       <category term="AR/VR" scheme="http://skyseraph.com/tags/AR-VR/"/>
     
       <category term="OpenGL" scheme="http://skyseraph.com/tags/OpenGL/"/>
-    
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
   </entry>
   
@@ -2925,9 +2940,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
     
-      <category term="Plan" scheme="http://skyseraph.com/tags/Plan/"/>
-    
       <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+    
+      <category term="Plan" scheme="http://skyseraph.com/tags/Plan/"/>
     
   </entry>
   
@@ -2990,81 +3005,66 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
   </entry>
   
   <entry>
-    <title>SkySeraph Travel Life</title>
-    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Travel%20Life/"/>
-    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Travel Life/</id>
+    <title>SkySeraph Reading Life</title>
+    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Reading%20Life/"/>
+    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Reading Life/</id>
     <published>2012-02-05T18:00:00.000Z</published>
-    <updated>2017-05-21T08:27:31.894Z</updated>
+    <updated>2017-04-09T13:02:25.314Z</updated>
     
     <content type="html"><![CDATA[<hr>
-<h1 id="All"><a href="#All" class="headerlink" title="All"></a>All</h1><h1 id="YEAR"><a href="#YEAR" class="headerlink" title="YEAR"></a>YEAR</h1><h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><ul>
-<li>中国 九江</li>
-<li>中国 北京 鸟巢/颐和园/北大/清华/天安门/故宫  </li>
-<li>中国 深圳 塘朗山 </li>
+<h1 id="Reading"><a href="#Reading" class="headerlink" title="Reading"></a>Reading</h1><h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><ul>
+<li><p><a href="https://book.douban.com/subject/3688489/" target="_blank" rel="external">《异类》</a> #2</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26297606/" target="_blank" rel="external">《从0到1》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26823208/" target="_blank" rel="external">《离经叛道》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26306686/" target="_blank" rel="external">《创业维艰》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26952485/" target="_blank" rel="external">《人民的名义》</a> #1</p>
+</li>
 </ul>
 <h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><ul>
-<li>中国 长沙 滨江新城/洋湖/省政府/梅溪湖</li>
-<li>中国 黄梅</li>
-<li>中国 佛山 </li>
-<li>中国 海口</li>
-<li>中国 成都</li>
-<li>中国 香港 旺仔</li>
+<li><p><a href="https://book.douban.com/subject/26419762/" target="_blank" rel="external">《成为技术领导者》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/5162149.html" target="_blank" rel="external">【讀書筆記】成为技术领导者</a></p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26437231/" target="_blank" rel="external">《技术管理之巅》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/25868303/" target="_blank" rel="external">《微管理》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26322756/" target="_blank" rel="external">《产品经理面试宝典》</a> #1</p>
+</li>
 </ul>
 <h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><ul>
-<li>中国 韶山 毛泽东故居</li>
-<li>中国 深圳 红树林/莲花山</li>
-<li>中国 广州 珠江新城/CBD 花城广场/广州图书馆</li>
-<li>中国 广州 暨南大学</li>
-<li>中国 广州 沙面/上下步行街/花城广场</li>
-<li>中国 长沙 梅溪湖</li>
-<li>中国 东莞 红军灶</li>
-<li>中国 东莞 常平</li>
-<li>中国 黄梅</li>
-<li>中国 贵阳 黄果树瀑布/青岩古镇…</li>
+<li><p><a href="https://book.douban.com/subject/25873066/" target="_blank" rel="external">《麦肯锡工作法》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/25975485/" target="_blank" rel="external">《穿布鞋的马云》</a> #1</p>
+</li>
+<li><p><a href="">《成功创业三级跳》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/25773433/" target="_blank" rel="external">《你欠大学一次远行》</a> #1</p>
+</li>
 </ul>
 <h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><ul>
-<li>中国 香港 美孚/荔枝角/长沙湾</li>
-<li>中国 香港 湾仔/荃湾</li>
-<li>中国 香港 屯门</li>
-<li>中国 深圳 塘朗山 </li>
-<li>中国 深圳 西丽水库 </li>
-<li>中国 深圳 西乡体育馆</li>
-<li>中国 深圳 石芽岭公园</li>
-<li>中国 深圳 光明农场</li>
-<li>中国 潮汕 涵碧楼/潮州古城/开元寺/韩公祠/汕头塔山 </li>
-<li>中国 韶关 官渡基地</li>
-<li>中国 佛山 顺德美食之旅</li>
-<li>中国 黄梅</li>
+<li><p><a href="https://book.douban.com/subject/20505765/" target="_blank" rel="external">《精益创业实战》</a> #1， <a href="http://www.cnblogs.com/skyseraph/p/3895564.html" target="_blank" rel="external">【讀書筆記】精益创业实战</a></p>
+</li>
+<li><p><a href="https://book.douban.com/subject/1048007/" target="_blank" rel="external">《高效能人士的七个习惯》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/3693005.html" target="_blank" rel="external">【讀書筆記】高效能人士的七个习惯</a></p>
+</li>
+<li><p><a href="https://book.douban.com/subject/4723970/" target="_blank" rel="external">《人人都是产品经理》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/3590471.html" target="_blank" rel="external">【讀書筆記】人人都是产品经理</a></p>
+</li>
+<li><p><a href="https://book.douban.com/subject/3688489/" target="_blank" rel="external">《异类》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/1033778/" target="_blank" rel="external">《富爸爸，穷爸爸》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/3151772/" target="_blank" rel="external">《一页纸项目管理》</a> #1</p>
+</li>
 </ul>
 <h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
-<li>中国 深圳 深圳湾公园</li>
-<li>中国 深圳 中山公园</li>
-<li>中国 深圳 红树林</li>
-<li>中国 韶关 丹霞山/南华寺</li>
-<li>中国 黄梅</li>
-<li>中国 香港 屯门</li>
-<li>中国 香港 香港国际机场</li>
-<li>法国 巴黎 戴高乐机场</li>
-<li>德国 柏林 IFA/亚历山大广场/勃兰登堡门…</li>
+<li><a href="http://www.cnblogs.com/skyseraph/archive/2013/01/07/2850003.html" target="_blank" rel="external">【分享】RSS订阅技巧及工具和实用RSS链接分享 </a></li>
 </ul>
 <h2 id="2012"><a href="#2012" class="headerlink" title="2012"></a>2012</h2><ul>
-<li>中国 泉州 东湖公园</li>
-<li>中国 厦门 鼓浪屿/厦大</li>
-<li>中国 深圳 塘朗山 </li>
-<li>中国 深圳 上梅林水库</li>
-<li>中国 惠州 西湖</li>
-<li>中国 惠州 巽寮湾海岸</li>
-<li>中国 广州 IFC&amp;花城广场</li>
+<li><a href="">《》</a></li>
 </ul>
-<h2 id="2011-Before"><a href="#2011-Before" class="headerlink" title="2011 Before"></a>2011 Before</h2><ul>
-<li>中国 常德 河洑公园</li>
-<li>中国 厦门 鼓浪屿/园博苑/集美龙舟池/中山公园/椰风寨/天马山</li>
-<li>中国 泉州 惠安青山湾(崇武)/安溪</li>
-<li>中国 龙岩/连城 龙岩龙硿洞/连城冠豸山</li>
-<li>中国 长沙 岳麓山/烈士公园</li>
-<li>中国 湘潭 湘钢</li>
-</ul>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><hr>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><hr>
 <font size="2"><br>By SkySeraph<br></font>   
 
 <hr>
@@ -3073,13 +3073,13 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 
 <p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
 <p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph</a> Travel Life/</p>
+<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph</a> Reading Life/</p>
 ]]></content>
     
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h1 id=&quot;All&quot;&gt;&lt;a href=&quot;#All&quot; class=&quot;headerlink&quot; title=&quot;All&quot;&gt;&lt;/a&gt;All&lt;/h1&gt;&lt;h1 id=&quot;YEAR&quot;&gt;&lt;a href=&quot;#YEAR&quot; class=&quot;headerlink&quot; title=&quot;YEAR&quot;&gt;&lt;/
+&lt;h1 id=&quot;Reading&quot;&gt;&lt;a href=&quot;#Reading&quot; class=&quot;headerlink&quot; title=&quot;Reading&quot;&gt;&lt;/a&gt;Reading&lt;/h1&gt;&lt;h2 id=&quot;2017&quot;&gt;&lt;a href=&quot;#2017&quot; class=&quot;headerlink&quot;
     
     </summary>
     
@@ -3090,9 +3090,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
     
-      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+      <category term="Reading" scheme="http://skyseraph.com/tags/Reading/"/>
     
-      <category term="Travel" scheme="http://skyseraph.com/tags/Travel/"/>
+      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
     
   </entry>
   
