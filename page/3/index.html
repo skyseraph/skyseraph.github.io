@@ -177,11 +177,11 @@ var _hmt = _hmt || [];
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                24
+                25
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                37
+                38
                 <span>tags</span>
             </div>
         </div>
@@ -211,6 +211,262 @@ var _hmt = _hmt || [];
 
             
             <section id="main">
+    <article id="post-Tools/IT生涯，我记忆中的那些命令" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2014/08/08/Tools/IT生涯，我记忆中的那些命令/">IT生涯，我记忆中的那些命令</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2014/08/08/Tools/IT生涯，我记忆中的那些命令/">
+            <time datetime="2014-08-07T16:40:20.000Z" itemprop="datePublished">2014-08-08</time>
+        </a>
+    </div>
+
+
+                    
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Tools/">Tools</a>
+    </div>
+
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Git/">Git</a>, <a class="tag-link" href="/tags/Linux/">Linux</a>, <a class="tag-link" href="/tags/adb/">adb</a>
+    </div>
+          
+					
+
+					
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#adb-命令"><span class="toc-number">1.</span> <span class="toc-text">adb 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#APK操作"><span class="toc-number">1.1.</span> <span class="toc-text">APK操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-命令"><span class="toc-number">2.</span> <span class="toc-text">git 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-命令"><span class="toc-number">3.</span> <span class="toc-text">Linux 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#批处理-命令"><span class="toc-number">4.</span> <span class="toc-text">批处理 命令</span></a></li></ol>
+                </div>
+            
+            <hr>
+<p><a href="https://github.com/skyseraph/Soft-Tools" target="_blank" rel="external"><strong>Star Here ~~</strong></a>. </p>
+<p><a href="https://github.com/skyseraph/Soft-Tools" target="_blank" rel="external">Soft-Tools</a> 完整目录如下（持续更新，欢迎补充~）：</p>
+<p><strong>命令类</strong></p>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Git.md" target="_blank" rel="external">Git</a></td>
+<td>Git Commands</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Adb.md" target="_blank" rel="external">Adb</a></td>
+<td>Adb Commands</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Git.md" target="_blank" rel="external">Bat</a></td>
+<td>Bat Commands</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Regular.md" target="_blank" rel="external">Regular</a></td>
+<td>Regulars</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Vim.md" target="_blank" rel="external">Vim</a></td>
+<td>Vim    Commands</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Python.md" target="_blank" rel="external">Python</a></td>
+<td>Python    Commands</td>
+</tr>
+</tbody>
+</table>
+<h1 id="adb-命令"><a href="#adb-命令" class="headerlink" title="adb 命令"></a>adb 命令</h1><blockquote>
+<p>汇总</p>
+</blockquote>
+<ul>
+<li><p>adb <strong>kill-server</strong></p>
+</li>
+<li><p>adb <strong>devices</strong>  </p>
+</li>
+<li><p>adb <strong>install</strong> [-l] [-r] [-s] <file><br>  -l 表示锁定该程序;<br>  -r 表示替换原有的apk安装;<br>  -s 表示安装在SD卡内，而不是设备内部存储</file></p>
+</li>
+<li><p>adb <strong>uninstall</strong> [-k] <package><br>  -k 表示不删除程序运行所产生的数据和缓存目录(如软件的数据库文件)</package></p>
+</li>
+<li><p>adb shell pm clear  <package><br>清除应用缓存</package></p>
+</li>
+<li><p>taskkill /f /im adb*  </p>
+</li>
+<li><p>adb shell getprop ro.build.version.release  版本</p>
+</li>
+<li><p>adb shell + cat /system/build.prop  查看手机配置信息</p>
+</li>
+<li><p>adb shell getprop dalvik.vm.heapsize  </p>
+</li>
+</ul>
+<blockquote>
+<p><strong>获取进程号</strong>    </p>
+</blockquote>
+<ul>
+<li>adb shell  </li>
+<li>ps | grep 进程名  </li>
+<li>cat /proc/pid/oom_adj  //其中<strong>pid</strong>是上述grep得到的进程号     </li>
+</ul>
+<blockquote>
+<p><strong>查看包名相关</strong>    </p>
+</blockquote>
+<ul>
+<li><p>adb shell pm list package [-f]  获取手机内所有包名<br>  -f 包名+路径    </p>
+</li>
+<li><p><strong>adb shell dumpsys window w | findstr \/ | findstr name=</strong><br>查看包名   </p>
+</li>
+<li><p>adb shell dumpsys activity&gt; d:\log.txt<br>导出包名（log中搜索 Stack #1，然后寻找cmp=）   </p>
+</li>
+<li><p>adb shell + logcat | grep START   </p>
+</li>
+</ul>
+<h2 id="APK操作"><a href="#APK操作" class="headerlink" title="APK操作"></a>APK操作</h2><ul>
+<li><p>apktool d x.apk</p>
+</li>
+<li><p>apktool b x</p>
+</li>
+<li><p>apkReSign.jar</p>
+</li>
+</ul>
+<h1 id="git-命令"><a href="#git-命令" class="headerlink" title="git 命令"></a>git 命令</h1><blockquote>
+<p>汇总   </p>
+</blockquote>
+<ul>
+<li><p>git log  历史记录</p>
+</li>
+<li><p>git status  </p>
+</li>
+<li><p>git clean -df      </p>
+</li>
+<li><p>git branch -vv  </p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Git配置相关</strong>    </p>
+</blockquote>
+<ul>
+<li><p>git config -l<br>查看Git当前配置信息</p>
+</li>
+<li><p>配置<br>git config –global user.email “you@email.com”<br>git config –global user.name “Your Name”<br>git config –global core.editor “nano”<br>git config –global color.ui true    </p>
+</li>
+</ul>
+<blockquote>
+<p><strong>删除远程分支A</strong>    </p>
+</blockquote>
+<ul>
+<li><p>git push origin –delete A    </p>
+</li>
+<li><p>git push origin :A    </p>
+</li>
+</ul>
+<blockquote>
+<p><strong>回退</strong>    </p>
+</blockquote>
+<ul>
+<li>远程服务器支持SSH前提下    </li>
+</ul>
+<p>git reset –mixed   // 此为默认方式，不带任何参数的git reset，就是这种方式，它回退到某个版本，只保留源码，回退commit和stage信息</p>
+<p>git reset –soft    // 回退到某个版本，只回退了commit的信息，不会恢复stage（如果还要提交，直接commit即可)</p>
+<p>git reset –hard    // 彻底回退到某个版本， 本地的源码也会变为上一个版本的内容</p>
+<ul>
+<li>远程服务器不支持SSH    </li>
+</ul>
+<p>git branch old_master  //新建old_master分支 作为备份，以防万一</p>
+<p>git push origin old_master:old_master //将本地的old_master分支　推送到远程的old_master</p>
+<p>git reset –hard //本地仓库　彻底回退到某一个版本</p>
+<p>git push origin :master // 删除远程的master分支</p>
+<p>git push origin master //重新创建远程master分支</p>
+<h1 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h1><h1 id="批处理-命令"><a href="#批处理-命令" class="headerlink" title="批处理 命令"></a>批处理 命令</h1><p><strong>Update time </strong>   </p>
+<p>08/08/2014 Create this page      </p>
+<hr>
+<font size="2"><br>By SkySeraph-2014<br></font>   
+
+<hr>
+<p><strong><em>版权声明</em></strong></p>
+<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
+
+<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
+<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
+<p>本文永久链接：<a href="http://skyseraph.com/2014/08/08/Tools/IT生涯，我记忆中的那些命令/">http://skyseraph.com/2014/08/08/Tools/IT生涯，我记忆中的那些命令/</a></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+        <a href="http://skyseraph.com/2014/08/08/Tools/IT生涯，我记忆中的那些命令/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2014/08/08/Tools/IT生涯，我记忆中的那些命令/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-Tools/IT生涯，我的常用软件清单" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1739,136 +1995,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
 
 
-    <article id="post-CV/织物疵点检测机器视觉系统 软件测试平台" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2012/05/04/CV/织物疵点检测机器视觉系统 软件测试平台/">织物疵点检测机器视觉系统 软件测试平台</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2012/05/04/CV/织物疵点检测机器视觉系统 软件测试平台/">
-            <time datetime="2012-05-03T16:23:20.000Z" itemprop="datePublished">2012-05-04</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/CV/">CV</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CV-MV/">CV/MV</a>, <a class="tag-link" href="/tags/DIP/">DIP</a>, <a class="tag-link" href="/tags/OpenCV/">OpenCV</a>, <a class="tag-link" href="/tags/图像算法/">图像算法</a>, <a class="tag-link" href="/tags/机器视觉/">机器视觉</a>, <a class="tag-link" href="/tags/瑕疵检测/">瑕疵检测</a>
-    </div>
-          
-					
-
-					
-                </div>
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-                <div id="toc" class="toc-article">
-                <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#啰嗦"><span class="toc-number">1.</span> <span class="toc-text">啰嗦</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发环境"><span class="toc-number">2.</span> <span class="toc-text">开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#功能详述"><span class="toc-number">3.</span> <span class="toc-text">功能详述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-软件架构"><span class="toc-number">3.1.</span> <span class="toc-text">1 软件架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-核心功能"><span class="toc-number">3.2.</span> <span class="toc-text">2 核心功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-算法流程"><span class="toc-number">3.3.</span> <span class="toc-text">3 算法流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实验测试"><span class="toc-number">4.</span> <span class="toc-text">实验测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目工程及核心函数模块"><span class="toc-number">5.</span> <span class="toc-text">项目工程及核心函数模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Links"><span class="toc-number">6.</span> <span class="toc-text">Links</span></a></li></ol>
-                </div>
-            
-            <hr>
-<h2 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h2><p>　　之前针对个人研究的不同算法开发过三个检测平台（<a href="http://www.cnblogs.com/skyseraph/archive/2011/03/24/1993438.html" target="_blank" rel="external">平台一</a> 和 <a href="http://www.cnblogs.com/skyseraph/archive/2011/07/21/2113211.html" target="_blank" rel="external">平台二</a> ），此平台为最后的综合平台，实现织物疵点检测和分类，实现了织物图像的批量化处理，实现了数据库存储疵点信息和用户管理，同时具备自动化测试的同时还可以进行单步算法调试。</p>
-<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>开发工具采用VS2010+OpenCV，开发语言为CPP。<br><a href="http://www.cnblogs.com/skyseraph/archive/2010/10/28/1863974.html" target="_blank" rel="external">OpenCV环境搭建</a>  </p>
-<h2 id="功能详述"><a href="#功能详述" class="headerlink" title="功能详述"></a>功能详述</h2><h3 id="1-软件架构"><a href="#1-软件架构" class="headerlink" title="1 软件架构"></a>1 软件架构</h3><p>　　该平台主要包括系统登录模块、图像采集模块、图像预处理模块、织物疵点检测模块、织物疵点分类模块、疵点信息管理模块、用户管理模块以及系统设置模块，检测算法为自主研究，分类算法采用BPNN，软件架构如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050119365916.png" alt=""></p>
-<h3 id="2-核心功能"><a href="#2-核心功能" class="headerlink" title="2 核心功能"></a>2 核心功能</h3><p>　　该平台核心功能包括：织物疵点检测和分类，疵点信息存储和查询，用户管理等。</p>
-<h3 id="3-算法流程"><a href="#3-算法流程" class="headerlink" title="3 算法流程"></a>3 算法流程</h3><p>①系统设置，如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050409424319.png" alt=""></p>
-<p>②图像采集，图像的获取可以采取两种方式，单张图像加载或批量图像（文件夹）加载，在系统设置模块中的图像获取方式中，可选择设置单张图像的路径或者设置图像文件夹的路径来获取图像并实时显示, 如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050410142148.png" alt=""></p>
-<p>③图像预处理，如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050410143581.png" alt=""></p>
-<p>④织物检测和分类，如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050410144927.png" alt=""><br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050410150071.png" alt=""></p>
-<p>⑤织物信息查询，如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050409435944.png" alt=""></p>
-<p>⑥用户管理，如下图所示<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050409440985.png" alt=""></p>
-<h2 id="实验测试"><a href="#实验测试" class="headerlink" title="实验测试"></a>实验测试</h2><p>针对常见的四类疵点，软件测试结果如下图所示：<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050409441863.png" alt=""></p>
-<h2 id="项目工程及核心函数模块"><a href="#项目工程及核心函数模块" class="headerlink" title="项目工程及核心函数模块"></a>项目工程及核心函数模块</h2><p>工程项目及核心处理函数模块如下图：<br><img src="http://pic002.cnblogs.com/images/2012/137896/2012050410013461.png" alt=""></p>
-<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><p><a href="http://www.cnblogs.com/skyseraph/archive/2011/03/24/1993438.html" target="_blank" rel="external">【My Project】织物疵点检测机器视觉系统 平台一</a><br><a href="http://www.cnblogs.com/skyseraph/archive/2011/07/21/2113211.html" target="_blank" rel="external">【My Project】织物疵点检测机器视觉系统 平台二</a><br><a href="http://www.cnblogs.com/skyseraph/archive/2011/08/11/2135291.html" target="_blank" rel="external">关于显著性算法的实践效果请参考此文</a>  </p>
-<hr>
-<font size="2"><br>By SkySeraph-2012<br><a href="http://www.cnblogs.com/skyseraph/archive/2012/05/04/2478105.html" target="_blank" rel="external">SkySeraph cnBlogs</a><br>合作联系：skyseraph00@163.com<br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2012/05/04/CV/织物疵点检测机器视觉系统">http://skyseraph.com/2012/05/04/CV/织物疵点检测机器视觉系统</a> 软件测试平台/</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-    <div class="bdsharebuttonbox">
-    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
-    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
-    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
-    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
-</div>
-<script>
-window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-<style>
-    .bdshare_popup_box {
-        border-radius: 4px;
-        border: #e1e1e1 solid 1px;
-    }
-    .bdshare-button-style0-16 a,
-    .bdshare-button-style0-16 .bds_more {
-        padding-left: 20px;
-        margin: 6px 10px 6px 0;
-    }
-    .bdshare_dialog_list a,
-    .bdshare_popup_list a,
-    .bdshare_popup_bottom a {
-        font-family: 'Microsoft Yahei';
-    }
-    .bdshare_popup_top {
-        display: none;
-    }
-    .bdshare_popup_bottom {
-        height: auto;
-        padding: 5px;
-    }
-</style>
-
-
-</div>
-
-            
-    
-        <a href="http://skyseraph.com/2012/05/04/CV/织物疵点检测机器视觉系统 软件测试平台/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2012/05/04/CV/织物疵点检测机器视觉系统 软件测试平台/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
@@ -1881,6 +2007,25 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/06/04/Android/UiAutomator2.0升级填坑记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/css/images/skyseraph_wx.png)" alt="UiAutomator2.0升级填坑记" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a></p>
+                            <p class="item-title"><a href="/2017/06/04/Android/UiAutomator2.0升级填坑记/" class="title">UiAutomator2.0升级填坑记</a></p>
+                            <p class="item-date"><time datetime="2017-06-03T17:40:40.000Z" itemprop="datePublished">2017-06-04</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1958,25 +2103,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://devimages.apple.com.edgekey.net/assets/elements/icons/swift/swift-64x64.png)" alt="Select all the cell in UITabView or UICollectionView problem" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/iOS/">iOS</a></p>
-                            <p class="item-title"><a href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/" class="title">Select all the cell in UITabView or UICollectionView problem</a></p>
-                            <p class="item-date"><time datetime="2016-06-29T16:40:20.000Z" itemprop="datePublished">2016-06-30</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1986,7 +2112,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/">SkySeraph</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Life/">Life</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Sharing/">Sharing</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/">Tech</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/CV/">CV</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Media/">Media</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/NFC/">NFC</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/OpenGL/">OpenGL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/iOS/">iOS</a><span class="category-list-count">2</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/">SkySeraph</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Life/">Life</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Sharing/">Sharing</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/">Tech</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/CV/">CV</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Media/">Media</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/NFC/">NFC</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/OpenGL/">OpenGL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/iOS/">iOS</a><span class="category-list-count">2</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -1995,7 +2121,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/AR-VR/" style="font-size: 10px;">AR/VR</a> <a href="/tags/Android/" style="font-size: 16.67px;">Android</a> <a href="/tags/Appuim/" style="font-size: 10px;">Appuim</a> <a href="/tags/CI/" style="font-size: 10px;">CI</a> <a href="/tags/CV-MV/" style="font-size: 15px;">CV/MV</a> <a href="/tags/DIP/" style="font-size: 15px;">DIP</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/H264/" style="font-size: 10px;">H264</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Life/" style="font-size: 18.33px;">Life</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Movie/" style="font-size: 10px;">Movie</a> <a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/OpenCV/" style="font-size: 15px;">OpenCV</a> <a href="/tags/OpenGL/" style="font-size: 10px;">OpenGL</a> <a href="/tags/Plan/" style="font-size: 10px;">Plan</a> <a href="/tags/Project/" style="font-size: 10px;">Project</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/Sharing/" style="font-size: 10px;">Sharing</a> <a href="/tags/SkySeraph/" style="font-size: 20px;">SkySeraph</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/Travel/" style="font-size: 10px;">Travel</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/iOS/" style="font-size: 13.33px;">iOS</a> <a href="/tags/jrtplib/" style="font-size: 10px;">jrtplib</a> <a href="/tags/live555/" style="font-size: 10px;">live555</a> <a href="/tags/图像特征/" style="font-size: 10px;">图像特征</a> <a href="/tags/图像算法/" style="font-size: 15px;">图像算法</a> <a href="/tags/存活率/" style="font-size: 10px;">存活率</a> <a href="/tags/彩色图像/" style="font-size: 11.67px;">彩色图像</a> <a href="/tags/机器视觉/" style="font-size: 10px;">机器视觉</a> <a href="/tags/流媒体/" style="font-size: 10px;">流媒体</a> <a href="/tags/瑕疵检测/" style="font-size: 10px;">瑕疵检测</a> <a href="/tags/著书/" style="font-size: 10px;">著书</a> <a href="/tags/进程/" style="font-size: 10px;">进程</a>
+            <a href="/tags/AR-VR/" style="font-size: 10px;">AR/VR</a> <a href="/tags/Android/" style="font-size: 16.67px;">Android</a> <a href="/tags/Appuim/" style="font-size: 10px;">Appuim</a> <a href="/tags/CI/" style="font-size: 10px;">CI</a> <a href="/tags/CV-MV/" style="font-size: 15px;">CV/MV</a> <a href="/tags/DIP/" style="font-size: 15px;">DIP</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/H264/" style="font-size: 10px;">H264</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Life/" style="font-size: 18.33px;">Life</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Movie/" style="font-size: 10px;">Movie</a> <a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/OpenCV/" style="font-size: 15px;">OpenCV</a> <a href="/tags/OpenGL/" style="font-size: 10px;">OpenGL</a> <a href="/tags/Plan/" style="font-size: 10px;">Plan</a> <a href="/tags/Project/" style="font-size: 10px;">Project</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/Sharing/" style="font-size: 10px;">Sharing</a> <a href="/tags/SkySeraph/" style="font-size: 20px;">SkySeraph</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/Travel/" style="font-size: 10px;">Travel</a> <a href="/tags/UiAutomator/" style="font-size: 10px;">UiAutomator</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/iOS/" style="font-size: 13.33px;">iOS</a> <a href="/tags/jrtplib/" style="font-size: 10px;">jrtplib</a> <a href="/tags/live555/" style="font-size: 10px;">live555</a> <a href="/tags/图像特征/" style="font-size: 10px;">图像特征</a> <a href="/tags/图像算法/" style="font-size: 15px;">图像算法</a> <a href="/tags/存活率/" style="font-size: 10px;">存活率</a> <a href="/tags/彩色图像/" style="font-size: 11.67px;">彩色图像</a> <a href="/tags/机器视觉/" style="font-size: 10px;">机器视觉</a> <a href="/tags/流媒体/" style="font-size: 10px;">流媒体</a> <a href="/tags/瑕疵检测/" style="font-size: 10px;">瑕疵检测</a> <a href="/tags/著书/" style="font-size: 10px;">著书</a> <a href="/tags/进程/" style="font-size: 10px;">进程</a>
         </div>
     </div>
 
