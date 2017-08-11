@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://skyseraph.com/"/>
-  <updated>2017-08-08T15:05:36.816Z</updated>
+  <updated>2017-08-11T14:05:50.216Z</updated>
   <id>http://skyseraph.com/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="http://skyseraph.com/2017/06/04/Android/UiAutomator2.0%E5%8D%87%E7%BA%A7%E5%A1%AB%E5%9D%91%E8%AE%B0/"/>
     <id>http://skyseraph.com/2017/06/04/Android/UiAutomator2.0升级填坑记/</id>
     <published>2017-06-03T17:40:40.000Z</published>
-    <updated>2017-08-08T15:05:36.816Z</updated>
+    <updated>2017-08-11T14:05:50.216Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h1><p>Google Android Developers 在2015年3月就发布了UiAutomator 2.0版本（下文简称U2），而公司的核心产品中用到还是UiAutomator老版本（下文简称U1），业界用U2的也不是很多，虽然有诸多问题和不便（如高版本OS中不支持Remote Debug等），但大家似乎在苟延残喘中麻木了。 公司以前也有专家做过研究和探索，毕竟老项目是万级别的，涉及诸多算法和复杂业务逻辑，遇到几个问题最终不了了之。于是乎，又到了我手里了。</p>
 <h1 id="重大特性"><a href="#重大特性" class="headerlink" title="重大特性"></a>重大特性</h1><p><strong>1</strong>.  基于 Instrumentation，使用Instrumentation test runner即可运行UiAutomator，反之，也即在基于Instrumentation的test中也能使用UiAutomator; 可以获取应用Context，可以使用Android服务及接口。</p>
-<p><strong>2</strong>.  基于 Junit4，测试用例无需继承于任何父类，方法名不限，使用注解 Annotation进行。</p>
+<p><strong>2</strong>.  基于 Junit4，测试用例无需继承于任何父类，方法名不限，使用Annotation进行; U1需要继承UiAutomatorTestCase，测试方法需要以test开头.  </p>
 <p><strong>3</strong>.  与U1的Maven或Ant构建方式不同，U2采用Gradle进行构建； U2输出为APK，Android工程，而U1为Java工程，输出jar包。</p>
 <p><strong>4</strong>.  新增<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/UiObject2.html" target="_blank" rel="external">UiObject2</a>、<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/Until.html" target="_blank" rel="external">Until</a>、<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/By.html" target="_blank" rel="external">By</a>、<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/BySelector.html" target="_blank" rel="external">BySelector</a>等接口, 详细请参考<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/package-summary.html" target="_blank" rel="external">官方文档</a>。<br>其中，U2必须明确EditText框才能向里面输入文字，U1直接指定父类也可以在子类中输入文字。</p>
 <p><strong>5</strong>.  Log日志输出变更。U1可以使用System.out.print输出流回显至执行端，而U2输出到Logcat。</p>
@@ -33,19 +33,18 @@
 <p><code>adb shell uiautomator runtest xx.jar -c package.name.ClassName</code><br><code>adb shell am instrument -w -r   -e class com.xx.xx com.xx.xx.test/ android.support.test.runner.AndroidJUnitRunner</code>  </p>
 <p>代码中运行：<br>Runtime.getRuntime().exec(“*<em>“)<br>device.executeShellCommand(“*</em>“)      </p>
 <p>命令格式：<code>instrument [options] component</code>，详细命令格式介绍参考<a href="https://developer.android.com/studio/command-line/adb.html" target="_blank" rel="external">官方文档</a>。</p>
-<p><strong>7</strong>.  U2测试用例无需继承于任何父类，方法名不限，使用Annotation进行; U1需要继承UiAutomatorTestCase，测试方法需要以test开头.</p>
-<h1 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h1><ol>
-<li><p>新建Android Studio工程。  </p>
+<h1 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h1><ul>
+<li><p>新建Android Studio工程。   </p>
 </li>
-<li><p>gradle中添加依赖。  </p>
+<li><p>gradle中添加依赖。   </p>
 </li>
-</ol>
+</ul>
 <p>androidTestCompile(‘com.android.support.test.espresso:espresso-core:2.2.2’{<br>exclude group: ‘com.android.support’, module: ‘support-annotations’<br>})<br>androidTestCompile ‘com.android.support.test:runner:0.5’<br>androidTestCompile ‘com.android.support.test:rules:0.5’<br>androidTestCompile ‘com.android.support.test.uiautomator:uiautomator-v18:2.1.2’<br>androidTestCompile ‘com.android.support:support-annotations:25.3.1’  </p>
 <p>如需要依赖jar包   </p>
 <pre><code>androidTestCompile fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;]) 
-</code></pre><ol>
-<li>androidTest目录下添加测试用例。  </li>
-</ol>
+</code></pre><ul>
+<li>androidTest目录下添加测试用例。   </li>
+</ul>
 <p>@RunWith(AndroidJUnit4.class)<br>@FixMethodOrder(MethodSorters.NAME_ASCENDING)<br>public class XXTest {<br>    public Bundle bundle;<br>    public UiDevice device;<br>    private Instrumentation instrumentation;</p>
 <pre><code>@BeforeClass
 public static void beforeClass() {
@@ -76,19 +75,19 @@ public Bundle getParams() {
 }
 </code></pre><p>}</p>
 <h1 id="采坑记"><a href="#采坑记" class="headerlink" title="采坑记"></a>采坑记</h1><ul>
-<li><p><strong>编译错误</strong>。<br>这个应该说是官方故意坑爹吧，U2的包名结构发生了变化，所以需要将之前所有用到的U1相关API包名进行替换，具体为<br>com.android.uiautomator.core.<em>  -&gt; android.support.test.uiautomator.</em></p>
+<li><p><strong>编译错误.</strong><br>这个应该说是官方故意坑爹吧，U2的包名结构发生了变化，所以需要将之前所有用到的U1相关API包名进行替换，具体为<br>com.android.uiautomator.core.<em>  -&gt; android.support.test.uiautomator.</em></p>
 </li>
-<li><p><strong>反射相关</strong>。<br>这个有点坑爹，还是U2包名结构问题（原项目很多地方用到了反射获取U1相关类/方法等），除非对原业务非常熟悉，否则只有遇到问题分析时才会发现此坑，读者以后如果遇到这种类似包结构变化的问题，先不管三七二十一，全局搜索相关字段全局了解再说。当然，如果用到了混淆，也要对应修改。</p>
+<li><p><strong>反射相关.</strong><br>这个有点坑爹，还是U2包名结构问题（原项目很多地方用到了反射获取U1相关类/方法等），除非对原业务非常熟悉，否则只有遇到问题分析时才会发现此坑，读者以后如果遇到这种类似包结构变化的问题，先不管三七二十一，全局搜索相关字段全局了解再说。当然，如果用到了混淆，也要对应修改。</p>
 </li>
-<li><p><strong>UiAutomatorTestCase相关</strong>。<br>基础：去除所有测试类中的extend UiAutomatorTestCase后异常。<br>问题：原项目依赖于UiAutomatorTestCase中的getPara API来获取U1命令传参。<br>方案：修改成U2的InstrumentationRegistry.getArguments方式。  </p>
+<li><p><strong>UiAutomatorTestCase相关.</strong><br>问题：去除所有测试类中的extend UiAutomatorTestCase后异常。因为原项目依赖于UiAutomatorTestCase中的getPara API来获取U1命令传参。<br>方案：修改成U2的InstrumentationRegistry.getArguments方式。  </p>
 </li>
-<li><p><strong>日志相关</strong>。<br>问题：原项目中业务逻辑依赖System.out.println日志输出结果，而U2中System.out.println不会回显到终端显示，直接影响之前业务逻辑的执行。<br>方案：使用Instrumentation.sentStatus自定义状态。  </p>
+<li><p><strong>日志相关.</strong><br>问题：原项目中业务逻辑依赖System.out.println日志输出结果，而U2中System.out.println不会回显到终端显示，直接影响之前业务逻辑的执行。<br>方案：使用Instrumentation.sentStatus自定义状态。  </p>
 </li>
-<li><p><strong>属性文件</strong>。<br>描述：这个有点意思，原项目为Java工程，有很多属性配置在properties属性文件中，大概有20来个properties文件。而对属性文件的读取是在一个common的公共jar包中，采取的是Thread.currentThread().getContextClassLoader().getResourceAsStream方式。<br>问题：①属性配置文件无法打包进apk中 ②读取方式问题<br>解决：<br>方法1： 将属性配置文件全部放入assets目录，然后通过Context().getAssets().open方式读取；而原先的jar中的公共类，抽离出来作为业务类。<br>方法2： 通过gradle自定义打包，将所有属性配置文件打包进apk中，建议。  </p>
+<li><p><strong>属性文件.</strong><br>描述：这个有点意思，原项目为Java工程，有很多属性配置在properties属性文件中，大概有20来个properties文件。而对属性文件的读取是在一个common的公共jar包中，采取的是Thread.currentThread().getContextClassLoader().getResourceAsStream方式。<br>问题：①属性配置文件无法打包进apk中 ②读取方式问题<br>解决：<br>方法1： 将属性配置文件全部放入assets目录，然后通过Context().getAssets().open方式读取；而原先的jar中的公共类，抽离出来作为业务类。<br>方法2： 通过gradle自定义打包，将所有属性配置文件打包进apk中，建议。  </p>
 </li>
-<li><p><strong>xml配置文件</strong>。<br>问题：原工程用到了RPC框架，有xml配置文件，存在与上述properties类似问题。<br>解决：gradle自定义打包。  </p>
+<li><p><strong>xml配置文件.</strong><br>问题：原工程用到了RPC框架，有xml配置文件，存在与上述properties类似问题。<br>解决：gradle自定义打包。  </p>
 </li>
-<li><p><strong>权限问题</strong>。<br>问题：Android M+对权限进行了升级，本工程需要用到文件存储权限，仅在Manifest中声明WRITE_EXTERNAL_STORAGE权限还不够。<br>解决：  </p>
+<li><p><strong>权限问题.</strong><br><strong>问题</strong>：Android M+对权限进行了升级，本工程需要用到文件存储权限，仅在Manifest中声明WRITE_EXTERNAL_STORAGE权限还不够。<br><strong>解决</strong>：  </p>
 </li>
 </ul>
 <p>方法1：</p>
@@ -107,9 +106,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 </code></pre><ul>
 <li><strong>NoClassDefFoundError问题.</strong>  </li>
 </ul>
-<p>描述：在Android 4.4手机出现NoClassDefFoundError问题，Instrumentation消息为 </p>
+<p><strong>问题</strong>：在Android 4.4手机出现NoClassDefFoundError问题，Instrumentation消息为 </p>
 <pre><code>INSTRUMENTATION_RESULT: longMsg=java.lang.NoClassDefFoundError: org.junit.runner.manipulation.Filter$1 
-</code></pre><p>解决： MultiDex手动拆包A<br>①gradle文件中添加multiDexKeepProguard </p>
+</code></pre><p><strong>解决</strong>： MultiDex手动拆包A<br>①gradle文件中添加multiDexKeepProguard </p>
 <pre><code>defaultConfig {
     multiDexEnabled true
     multiDexKeepProguard file(&apos;multidex.pro&apos;)
@@ -118,7 +117,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 <pre><code>-keep class android.support.multidex.** {*;}
 -keep public class org.junit.runner.** {*;}
 </code></pre><ul>
-<li><strong>executeShellCommand注意</strong><br>executeShellCommand最低版本要求，API 21+.  </li>
+<li><strong>系统签名问题</strong>.<br><strong>描述</strong>：此问题是后续测试中才发现的，原来的稳定性/兼容性测试上的性能指标参数大部分显示为空，极其诡异，后面花了很大功夫进行分析发现，很多指标会出现会出现类似Permission Denial : cannot dump <servicename>错误，获取不到任何数据。因为原工程需要获取电池、CPU、内存等等几十项性能参数指标，有很大一部分是通过sh读取系统文件等方式获取的，通过Runtime.getRuntime().exec 或者 ProcessBuilder.start方式， 比如通过dump中的dump battery获取电池信息，因为dumpsys涉及android:protectionLevel=”signatureOrSystem”，需要    <uses-permission android:name="android.permission.DUMP">权限，需要声明android:sharedUserId=”android.uid.system”，需要系统签名. …<br><strong>解决</strong>：<br><strong>①</strong>系统签名（无奈之举）.<br><strong>②</strong>采用device.executeShellCommand，注意只支持API 21+.  </uses-permission></servicename></li>
 </ul>
 <h1 id="REFS"><a href="#REFS" class="headerlink" title="REFS"></a>REFS</h1><ul>
 <li><p><a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/package-summary.html" target="_blank" rel="external">Google 官方文档</a></p>
@@ -800,9 +799,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
-      <category term="Jenkins" scheme="http://skyseraph.com/tags/Jenkins/"/>
-    
       <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
+    
+      <category term="Jenkins" scheme="http://skyseraph.com/tags/Jenkins/"/>
     
       <category term="Gitlab" scheme="http://skyseraph.com/tags/Gitlab/"/>
     
@@ -1181,11 +1180,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="OpenGL" scheme="http://skyseraph.com/categories/Tech/OpenGL/"/>
     
     
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
-    
       <category term="AR/VR" scheme="http://skyseraph.com/tags/AR-VR/"/>
     
       <category term="OpenGL" scheme="http://skyseraph.com/tags/OpenGL/"/>
+    
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
   </entry>
   
@@ -2901,110 +2900,6 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
   </entry>
   
   <entry>
-    <title>SkySeraph Plan Life</title>
-    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Plan%20Life/"/>
-    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Plan Life/</id>
-    <published>2012-02-05T18:00:00.000Z</published>
-    <updated>2017-04-09T13:07:19.175Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
-<li><a href="http://skyseraph.com/2013/11/30/SkySeraph/Life/写在年末,%20我的2013/">写在年末, 我的2013</a></li>
-</ul>
-<h2 id="2012-Before"><a href="#2012-Before" class="headerlink" title="2012  Before"></a>2012  Before</h2><ul>
-<li><a href="http://skyseraph.com/2010/09/12/SkySeraph/Life/那一年的“暑假书籍读后感”/">那一年的“暑假书籍读后感”</a></li>
-</ul>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><hr>
-<font size="2"><br>By SkySeraph<br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph</a> Plan Life/</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h2 id=&quot;2017&quot;&gt;&lt;a href=&quot;#2017&quot; class=&quot;headerlink&quot; title=&quot;2017&quot;&gt;&lt;/a&gt;2017&lt;/h2&gt;&lt;h2 id=&quot;2016&quot;&gt;&lt;a href=&quot;#2016&quot; class=&quot;headerlink&quot; title=&quot;2016
-    
-    </summary>
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
-    
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
-    
-      <category term="Plan" scheme="http://skyseraph.com/tags/Plan/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SkySeraph Movie Life</title>
-    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Movie%20Life/"/>
-    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Movie Life/</id>
-    <published>2012-02-05T18:00:00.000Z</published>
-    <updated>2017-05-26T14:29:21.272Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<h1 id="Movie-amp-Video"><a href="#Movie-amp-Video" class="headerlink" title="Movie &amp; Video"></a>Movie &amp; Video</h1><h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><ul>
-<li><a href="https://movie.douban.com/subject/25983044/" target="_blank" rel="external">《Billy Lynn’s Long Halftime Walk》</a></li>
-<li><a href="https://movie.douban.com/subject/26260853/" target="_blank" rel="external">《速度与激情8》</a></li>
-<li><a href="https://movie.douban.com/subject/26387939/" target="_blank" rel="external">《摔跤吧！爸爸》</a></li>
-<li><a href="https://movie.douban.com/subject/3025375/" target="_blank" rel="external">《奇异博士》</a></li>
-<li><a href="https://movie.douban.com/subject/26862259/" target="_blank" rel="external">《乘风破浪（韩寒）》</a></li>
-<li><a href="https://movie.douban.com/subject/1297481/" target="_blank" rel="external">《芳心何处》</a></li>
-<li><a href="https://movie.douban.com/subject/25801066/" target="_blank" rel="external">《西游伏妖篇》</a></li>
-<li><a href="https://movie.douban.com/subject/2078989/" target="_blank" rel="external">《四月三周两天》</a></li>
-<li><a href="https://movie.douban.com/subject/25769362/" target="_blank" rel="external">《哆啦A梦：伴我同行》</a></li>
-<li><a href="https://movie.douban.com/subject/25882861/" target="_blank" rel="external">《危楼愚夫》</a></li>
-<li><a href="https://movie.douban.com/subject/1867345/" target="_blank" rel="external">《遗愿清单》</a></li>
-<li><a href="https://movie.douban.com/subject/26663086/" target="_blank" rel="external">《射雕英雄传 (2017)》</a> </li>
-<li><a href="https://movie.douban.com/subject/26727273/" target="_blank" rel="external">《人民的名义》</a>  </li>
-</ul>
-<h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><h2 id="2012"><a href="#2012" class="headerlink" title="2012"></a>2012</h2><ul>
-<li><a href="">《》</a></li>
-</ul>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><hr>
-<font size="2"><br>By SkySeraph<br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph</a> Movie Life/</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h1 id=&quot;Movie-amp-Video&quot;&gt;&lt;a href=&quot;#Movie-amp-Video&quot; class=&quot;headerlink&quot; title=&quot;Movie &amp;amp; Video&quot;&gt;&lt;/a&gt;Movie &amp;amp; Video&lt;/h1&gt;&lt;h2 id=&quot;2017
-    
-    </summary>
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
-    
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
-    
-      <category term="Movie" scheme="http://skyseraph.com/tags/Movie/"/>
-    
-  </entry>
-  
-  <entry>
     <title>SkySeraph Reading Life</title>
     <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Reading%20Life/"/>
     <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Reading Life/</id>
@@ -3093,6 +2988,176 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="Reading" scheme="http://skyseraph.com/tags/Reading/"/>
     
       <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SkySeraph Movie Life</title>
+    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Movie%20Life/"/>
+    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Movie Life/</id>
+    <published>2012-02-05T18:00:00.000Z</published>
+    <updated>2017-05-26T14:29:21.272Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h1 id="Movie-amp-Video"><a href="#Movie-amp-Video" class="headerlink" title="Movie &amp; Video"></a>Movie &amp; Video</h1><h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><ul>
+<li><a href="https://movie.douban.com/subject/25983044/" target="_blank" rel="external">《Billy Lynn’s Long Halftime Walk》</a></li>
+<li><a href="https://movie.douban.com/subject/26260853/" target="_blank" rel="external">《速度与激情8》</a></li>
+<li><a href="https://movie.douban.com/subject/26387939/" target="_blank" rel="external">《摔跤吧！爸爸》</a></li>
+<li><a href="https://movie.douban.com/subject/3025375/" target="_blank" rel="external">《奇异博士》</a></li>
+<li><a href="https://movie.douban.com/subject/26862259/" target="_blank" rel="external">《乘风破浪（韩寒）》</a></li>
+<li><a href="https://movie.douban.com/subject/1297481/" target="_blank" rel="external">《芳心何处》</a></li>
+<li><a href="https://movie.douban.com/subject/25801066/" target="_blank" rel="external">《西游伏妖篇》</a></li>
+<li><a href="https://movie.douban.com/subject/2078989/" target="_blank" rel="external">《四月三周两天》</a></li>
+<li><a href="https://movie.douban.com/subject/25769362/" target="_blank" rel="external">《哆啦A梦：伴我同行》</a></li>
+<li><a href="https://movie.douban.com/subject/25882861/" target="_blank" rel="external">《危楼愚夫》</a></li>
+<li><a href="https://movie.douban.com/subject/1867345/" target="_blank" rel="external">《遗愿清单》</a></li>
+<li><a href="https://movie.douban.com/subject/26663086/" target="_blank" rel="external">《射雕英雄传 (2017)》</a> </li>
+<li><a href="https://movie.douban.com/subject/26727273/" target="_blank" rel="external">《人民的名义》</a>  </li>
+</ul>
+<h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><h2 id="2012"><a href="#2012" class="headerlink" title="2012"></a>2012</h2><ul>
+<li><a href="">《》</a></li>
+</ul>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><hr>
+<font size="2"><br>By SkySeraph<br></font>   
+
+<hr>
+<p><strong><em>版权声明</em></strong></p>
+<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
+
+<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
+<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
+<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph</a> Movie Life/</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h1 id=&quot;Movie-amp-Video&quot;&gt;&lt;a href=&quot;#Movie-amp-Video&quot; class=&quot;headerlink&quot; title=&quot;Movie &amp;amp; Video&quot;&gt;&lt;/a&gt;Movie &amp;amp; Video&lt;/h1&gt;&lt;h2 id=&quot;2017
+    
+    </summary>
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
+    
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+    
+      <category term="Movie" scheme="http://skyseraph.com/tags/Movie/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SkySeraph Travel Life</title>
+    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Travel%20Life/"/>
+    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Travel Life/</id>
+    <published>2012-02-05T18:00:00.000Z</published>
+    <updated>2017-08-11T14:17:27.702Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h1 id="All"><a href="#All" class="headerlink" title="All"></a>All</h1><h1 id="YEAR"><a href="#YEAR" class="headerlink" title="YEAR"></a>YEAR</h1><h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><ul>
+<li>2017.01 中国 九江</li>
+<li>2017.02 中国 深圳（塘朗山） </li>
+<li>2017.04 中国 北京（中关村/鸟巢/颐和园/北大/清华/天安门/故宫…） </li>
+<li>2017.07 中国 北京（北京国际会议中心/恭王府…）</li>
+<li>2017.07 中国 杭州（西湖/网易…）</li>
+<li>2017.07 中国 香港</li>
+</ul>
+<h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><ul>
+<li>2017.02 中国 黄梅</li>
+<li>2017.02 中国 湘潭</li>
+<li>2017.04 中国 长沙（滨江新城/洋湖/省政府/梅溪湖）</li>
+<li>2017.05 中国 佛山 </li>
+<li>2017.06 中国 海口</li>
+<li>2017.09 中国 成都</li>
+<li>2017.10 中国 香港（旺仔）</li>
+</ul>
+<h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><ul>
+<li>2017.02 中国 黄梅</li>
+<li>2017.02 中国 湘潭</li>
+<li>2017.02 中国 韶山（毛泽东故居）</li>
+<li>2017.03 中国 深圳（红树林/莲花山）</li>
+<li>2017.05 中国 广州（珠江新城/CBD 花城广场/广州图书馆）</li>
+<li>2017.05 中国 广州（暨南大学）</li>
+<li>2017.08 中国 广州（沙面/上下步行街/花城广场）</li>
+<li>2017.08 中国 长沙（梅溪湖）</li>
+<li>2017.11 中国 贵阳（黄果树瀑布/青岩古镇…）</li>
+<li>2017.12 中国 东莞（红军灶）</li>
+<li>2017.12 中国 东莞（常平）</li>
+</ul>
+<h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><ul>
+<li>中国 香港 美孚/荔枝角/长沙湾</li>
+<li>中国 香港 湾仔/荃湾</li>
+<li>中国 香港 屯门</li>
+<li>中国 深圳 塘朗山 </li>
+<li>中国 深圳 西丽水库 </li>
+<li>中国 深圳 西乡体育馆</li>
+<li>中国 深圳 石芽岭公园</li>
+<li>中国 深圳 光明农场</li>
+<li>中国 潮汕 涵碧楼/潮州古城/开元寺/韩公祠/汕头塔山 </li>
+<li>中国 韶关 官渡基地</li>
+<li>中国 佛山 顺德美食之旅</li>
+<li>中国 黄梅</li>
+</ul>
+<h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
+<li>中国 深圳 深圳湾公园</li>
+<li>中国 深圳 中山公园</li>
+<li>中国 深圳 红树林</li>
+<li>中国 韶关 丹霞山/南华寺</li>
+<li>中国 黄梅</li>
+<li>中国 香港 屯门</li>
+<li>中国 香港 香港国际机场</li>
+<li>法国 巴黎 戴高乐机场</li>
+<li>德国 柏林 IFA/亚历山大广场/勃兰登堡门…</li>
+</ul>
+<h2 id="2012"><a href="#2012" class="headerlink" title="2012"></a>2012</h2><ul>
+<li>中国 泉州 东湖公园</li>
+<li>中国 厦门 鼓浪屿/厦大</li>
+<li>中国 深圳 塘朗山 </li>
+<li>中国 深圳 上梅林水库</li>
+<li>中国 惠州 西湖</li>
+<li>中国 惠州 巽寮湾海岸</li>
+<li>中国 广州 IFC&amp;花城广场</li>
+</ul>
+<h2 id="2011-Before"><a href="#2011-Before" class="headerlink" title="2011 Before"></a>2011 Before</h2><ul>
+<li>中国 常德 河洑公园</li>
+<li>中国 厦门 鼓浪屿/园博苑/集美龙舟池/中山公园/椰风寨/天马山</li>
+<li>中国 泉州 惠安青山湾(崇武)/安溪</li>
+<li>中国 龙岩/连城 龙岩龙硿洞/连城冠豸山</li>
+<li>中国 长沙 岳麓山/烈士公园</li>
+<li>中国 湘潭 湘钢</li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><hr>
+<font size="2"><br>By SkySeraph<br></font>   
+
+<hr>
+<p><strong><em>版权声明</em></strong></p>
+<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
+
+<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
+<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
+<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph</a> Travel Life/</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h1 id=&quot;All&quot;&gt;&lt;a href=&quot;#All&quot; class=&quot;headerlink&quot; title=&quot;All&quot;&gt;&lt;/a&gt;All&lt;/h1&gt;&lt;h1 id=&quot;YEAR&quot;&gt;&lt;a href=&quot;#YEAR&quot; class=&quot;headerlink&quot; title=&quot;YEAR&quot;&gt;&lt;/
+    
+    </summary>
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
+    
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+    
+      <category term="Travel" scheme="http://skyseraph.com/tags/Travel/"/>
     
   </entry>
   

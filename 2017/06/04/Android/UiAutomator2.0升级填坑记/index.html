@@ -11,12 +11,12 @@
 <meta property="og:url" content="http://skyseraph.com/2017/06/04/Android/UiAutomator2.0升级填坑记/index.html">
 <meta property="og:site_name" content="SkySeraph">
 <meta property="og:description" content="UiAutomator">
-<meta property="og:image" content="http://skyseraph.com/css/images/skyseraph_wx.png">
-<meta property="og:updated_time" content="2017-08-08T15:05:36.816Z">
+<meta property="og:image" content="https://image.slidesharecdn.com/androiduitesting-141008153844-conversion-gate02/95/android-ui-testing-with-uiautomator-1-638.jpg?cb=1412917257">
+<meta property="og:updated_time" content="2017-08-11T14:05:50.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UiAutomator2.0升级填坑记">
 <meta name="twitter:description" content="UiAutomator">
-<meta name="twitter:image" content="http://skyseraph.com/css/images/skyseraph_wx.png">
+<meta name="twitter:image" content="https://image.slidesharecdn.com/androiduitesting-141008153844-conversion-gate02/95/android-ui-testing-with-uiautomator-1-638.jpg?cb=1412917257">
     
 
     
@@ -276,7 +276,7 @@ var _hmt = _hmt || [];
             <hr>
 <h1 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h1><p>Google Android Developers 在2015年3月就发布了UiAutomator 2.0版本（下文简称U2），而公司的核心产品中用到还是UiAutomator老版本（下文简称U1），业界用U2的也不是很多，虽然有诸多问题和不便（如高版本OS中不支持Remote Debug等），但大家似乎在苟延残喘中麻木了。 公司以前也有专家做过研究和探索，毕竟老项目是万级别的，涉及诸多算法和复杂业务逻辑，遇到几个问题最终不了了之。于是乎，又到了我手里了。</p>
 <h1 id="重大特性"><a href="#重大特性" class="headerlink" title="重大特性"></a>重大特性</h1><p><strong>1</strong>.  基于 Instrumentation，使用Instrumentation test runner即可运行UiAutomator，反之，也即在基于Instrumentation的test中也能使用UiAutomator; 可以获取应用Context，可以使用Android服务及接口。</p>
-<p><strong>2</strong>.  基于 Junit4，测试用例无需继承于任何父类，方法名不限，使用注解 Annotation进行。</p>
+<p><strong>2</strong>.  基于 Junit4，测试用例无需继承于任何父类，方法名不限，使用Annotation进行; U1需要继承UiAutomatorTestCase，测试方法需要以test开头.  </p>
 <p><strong>3</strong>.  与U1的Maven或Ant构建方式不同，U2采用Gradle进行构建； U2输出为APK，Android工程，而U1为Java工程，输出jar包。</p>
 <p><strong>4</strong>.  新增<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/UiObject2.html" target="_blank" rel="external">UiObject2</a>、<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/Until.html" target="_blank" rel="external">Until</a>、<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/By.html" target="_blank" rel="external">By</a>、<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/BySelector.html" target="_blank" rel="external">BySelector</a>等接口, 详细请参考<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/package-summary.html" target="_blank" rel="external">官方文档</a>。<br>其中，U2必须明确EditText框才能向里面输入文字，U1直接指定父类也可以在子类中输入文字。</p>
 <p><strong>5</strong>.  Log日志输出变更。U1可以使用System.out.print输出流回显至执行端，而U2输出到Logcat。</p>
@@ -284,19 +284,18 @@ var _hmt = _hmt || [];
 <p><code>adb shell uiautomator runtest xx.jar -c package.name.ClassName</code><br><code>adb shell am instrument -w -r   -e class com.xx.xx com.xx.xx.test/ android.support.test.runner.AndroidJUnitRunner</code>  </p>
 <p>代码中运行：<br>Runtime.getRuntime().exec(“*<em>“)<br>device.executeShellCommand(“*</em>“)      </p>
 <p>命令格式：<code>instrument [options] component</code>，详细命令格式介绍参考<a href="https://developer.android.com/studio/command-line/adb.html" target="_blank" rel="external">官方文档</a>。</p>
-<p><strong>7</strong>.  U2测试用例无需继承于任何父类，方法名不限，使用Annotation进行; U1需要继承UiAutomatorTestCase，测试方法需要以test开头.</p>
-<h1 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h1><ol>
-<li><p>新建Android Studio工程。  </p>
+<h1 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h1><ul>
+<li><p>新建Android Studio工程。   </p>
 </li>
-<li><p>gradle中添加依赖。  </p>
+<li><p>gradle中添加依赖。   </p>
 </li>
-</ol>
+</ul>
 <p>androidTestCompile(‘com.android.support.test.espresso:espresso-core:2.2.2’{<br>exclude group: ‘com.android.support’, module: ‘support-annotations’<br>})<br>androidTestCompile ‘com.android.support.test:runner:0.5’<br>androidTestCompile ‘com.android.support.test:rules:0.5’<br>androidTestCompile ‘com.android.support.test.uiautomator:uiautomator-v18:2.1.2’<br>androidTestCompile ‘com.android.support:support-annotations:25.3.1’  </p>
 <p>如需要依赖jar包   </p>
 <pre><code>androidTestCompile fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;]) 
-</code></pre><ol>
-<li>androidTest目录下添加测试用例。  </li>
-</ol>
+</code></pre><ul>
+<li>androidTest目录下添加测试用例。   </li>
+</ul>
 <p>@RunWith(AndroidJUnit4.class)<br>@FixMethodOrder(MethodSorters.NAME_ASCENDING)<br>public class XXTest {<br>    public Bundle bundle;<br>    public UiDevice device;<br>    private Instrumentation instrumentation;</p>
 <pre><code>@BeforeClass
 public static void beforeClass() {
@@ -327,19 +326,19 @@ public Bundle getParams() {
 }
 </code></pre><p>}</p>
 <h1 id="采坑记"><a href="#采坑记" class="headerlink" title="采坑记"></a>采坑记</h1><ul>
-<li><p><strong>编译错误</strong>。<br>这个应该说是官方故意坑爹吧，U2的包名结构发生了变化，所以需要将之前所有用到的U1相关API包名进行替换，具体为<br>com.android.uiautomator.core.<em>  -&gt; android.support.test.uiautomator.</em></p>
+<li><p><strong>编译错误.</strong><br>这个应该说是官方故意坑爹吧，U2的包名结构发生了变化，所以需要将之前所有用到的U1相关API包名进行替换，具体为<br>com.android.uiautomator.core.<em>  -&gt; android.support.test.uiautomator.</em></p>
 </li>
-<li><p><strong>反射相关</strong>。<br>这个有点坑爹，还是U2包名结构问题（原项目很多地方用到了反射获取U1相关类/方法等），除非对原业务非常熟悉，否则只有遇到问题分析时才会发现此坑，读者以后如果遇到这种类似包结构变化的问题，先不管三七二十一，全局搜索相关字段全局了解再说。当然，如果用到了混淆，也要对应修改。</p>
+<li><p><strong>反射相关.</strong><br>这个有点坑爹，还是U2包名结构问题（原项目很多地方用到了反射获取U1相关类/方法等），除非对原业务非常熟悉，否则只有遇到问题分析时才会发现此坑，读者以后如果遇到这种类似包结构变化的问题，先不管三七二十一，全局搜索相关字段全局了解再说。当然，如果用到了混淆，也要对应修改。</p>
 </li>
-<li><p><strong>UiAutomatorTestCase相关</strong>。<br>基础：去除所有测试类中的extend UiAutomatorTestCase后异常。<br>问题：原项目依赖于UiAutomatorTestCase中的getPara API来获取U1命令传参。<br>方案：修改成U2的InstrumentationRegistry.getArguments方式。  </p>
+<li><p><strong>UiAutomatorTestCase相关.</strong><br>问题：去除所有测试类中的extend UiAutomatorTestCase后异常。因为原项目依赖于UiAutomatorTestCase中的getPara API来获取U1命令传参。<br>方案：修改成U2的InstrumentationRegistry.getArguments方式。  </p>
 </li>
-<li><p><strong>日志相关</strong>。<br>问题：原项目中业务逻辑依赖System.out.println日志输出结果，而U2中System.out.println不会回显到终端显示，直接影响之前业务逻辑的执行。<br>方案：使用Instrumentation.sentStatus自定义状态。  </p>
+<li><p><strong>日志相关.</strong><br>问题：原项目中业务逻辑依赖System.out.println日志输出结果，而U2中System.out.println不会回显到终端显示，直接影响之前业务逻辑的执行。<br>方案：使用Instrumentation.sentStatus自定义状态。  </p>
 </li>
-<li><p><strong>属性文件</strong>。<br>描述：这个有点意思，原项目为Java工程，有很多属性配置在properties属性文件中，大概有20来个properties文件。而对属性文件的读取是在一个common的公共jar包中，采取的是Thread.currentThread().getContextClassLoader().getResourceAsStream方式。<br>问题：①属性配置文件无法打包进apk中 ②读取方式问题<br>解决：<br>方法1： 将属性配置文件全部放入assets目录，然后通过Context().getAssets().open方式读取；而原先的jar中的公共类，抽离出来作为业务类。<br>方法2： 通过gradle自定义打包，将所有属性配置文件打包进apk中，建议。  </p>
+<li><p><strong>属性文件.</strong><br>描述：这个有点意思，原项目为Java工程，有很多属性配置在properties属性文件中，大概有20来个properties文件。而对属性文件的读取是在一个common的公共jar包中，采取的是Thread.currentThread().getContextClassLoader().getResourceAsStream方式。<br>问题：①属性配置文件无法打包进apk中 ②读取方式问题<br>解决：<br>方法1： 将属性配置文件全部放入assets目录，然后通过Context().getAssets().open方式读取；而原先的jar中的公共类，抽离出来作为业务类。<br>方法2： 通过gradle自定义打包，将所有属性配置文件打包进apk中，建议。  </p>
 </li>
-<li><p><strong>xml配置文件</strong>。<br>问题：原工程用到了RPC框架，有xml配置文件，存在与上述properties类似问题。<br>解决：gradle自定义打包。  </p>
+<li><p><strong>xml配置文件.</strong><br>问题：原工程用到了RPC框架，有xml配置文件，存在与上述properties类似问题。<br>解决：gradle自定义打包。  </p>
 </li>
-<li><p><strong>权限问题</strong>。<br>问题：Android M+对权限进行了升级，本工程需要用到文件存储权限，仅在Manifest中声明WRITE_EXTERNAL_STORAGE权限还不够。<br>解决：  </p>
+<li><p><strong>权限问题.</strong><br><strong>问题</strong>：Android M+对权限进行了升级，本工程需要用到文件存储权限，仅在Manifest中声明WRITE_EXTERNAL_STORAGE权限还不够。<br><strong>解决</strong>：  </p>
 </li>
 </ul>
 <p>方法1：</p>
@@ -358,9 +357,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 </code></pre><ul>
 <li><strong>NoClassDefFoundError问题.</strong>  </li>
 </ul>
-<p>描述：在Android 4.4手机出现NoClassDefFoundError问题，Instrumentation消息为 </p>
+<p><strong>问题</strong>：在Android 4.4手机出现NoClassDefFoundError问题，Instrumentation消息为 </p>
 <pre><code>INSTRUMENTATION_RESULT: longMsg=java.lang.NoClassDefFoundError: org.junit.runner.manipulation.Filter$1 
-</code></pre><p>解决： MultiDex手动拆包A<br>①gradle文件中添加multiDexKeepProguard </p>
+</code></pre><p><strong>解决</strong>： MultiDex手动拆包A<br>①gradle文件中添加multiDexKeepProguard </p>
 <pre><code>defaultConfig {
     multiDexEnabled true
     multiDexKeepProguard file(&apos;multidex.pro&apos;)
@@ -369,7 +368,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 <pre><code>-keep class android.support.multidex.** {*;}
 -keep public class org.junit.runner.** {*;}
 </code></pre><ul>
-<li><strong>executeShellCommand注意</strong><br>executeShellCommand最低版本要求，API 21+.  </li>
+<li><strong>系统签名问题</strong>.<br><strong>描述</strong>：此问题是后续测试中才发现的，原来的稳定性/兼容性测试上的性能指标参数大部分显示为空，极其诡异，后面花了很大功夫进行分析发现，很多指标会出现会出现类似Permission Denial : cannot dump <servicename>错误，获取不到任何数据。因为原工程需要获取电池、CPU、内存等等几十项性能参数指标，有很大一部分是通过sh读取系统文件等方式获取的，通过Runtime.getRuntime().exec 或者 ProcessBuilder.start方式， 比如通过dump中的dump battery获取电池信息，因为dumpsys涉及android:protectionLevel=”signatureOrSystem”，需要    <uses-permission android:name="android.permission.DUMP">权限，需要声明android:sharedUserId=”android.uid.system”，需要系统签名. …<br><strong>解决</strong>：<br><strong>①</strong>系统签名（无奈之举）.<br><strong>②</strong>采用device.executeShellCommand，注意只支持API 21+.  </uses-permission></servicename></li>
 </ul>
 <h1 id="REFS"><a href="#REFS" class="headerlink" title="REFS"></a>REFS</h1><ul>
 <li><p><a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/package-summary.html" target="_blank" rel="external">Google 官方文档</a></p>
@@ -490,7 +489,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                             <a href="/2017/06/04/Android/UiAutomator2.0升级填坑记/" class="thumbnail">
     
     
-        <span style="background-image:url(/css/images/skyseraph_wx.png)" alt="UiAutomator2.0升级填坑记" class="thumbnail-image"></span>
+        <span style="background-image:url(https://image.slidesharecdn.com/androiduitesting-141008153844-conversion-gate02/95/android-ui-testing-with-uiautomator-1-638.jpg?cb=1412917257)" alt="UiAutomator2.0升级填坑记" class="thumbnail-image"></span>
     
 </a>
 
