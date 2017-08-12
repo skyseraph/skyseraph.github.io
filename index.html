@@ -355,7 +355,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 <pre><code>-keep class android.support.multidex.** {*;}
 -keep public class org.junit.runner.** {*;}
 </code></pre><ul>
-<li><strong>系统签名问题</strong>.<br><strong>描述</strong>：此问题是后续测试中才发现的，原来的稳定性/兼容性测试上的性能指标参数大部分显示为空，极其诡异，后面花了很大功夫进行分析发现，很多指标会出现会出现类似Permission Denial : cannot dump <servicename>错误，获取不到任何数据。因为原工程需要获取电池、CPU、内存等等几十项性能参数指标，有很大一部分是通过sh读取系统文件等方式获取的，通过Runtime.getRuntime().exec 或者 ProcessBuilder.start方式， 比如通过dump中的dump battery获取电池信息，因为dumpsys涉及android:protectionLevel=”signatureOrSystem”，需要    <uses-permission android:name="android.permission.DUMP">权限，需要声明android:sharedUserId=”android.uid.system”，需要系统签名. …<br><strong>解决</strong>：<br><strong>①</strong>系统签名（无奈之举）.<br><strong>②</strong>采用device.executeShellCommand，注意只支持API 21+.  </uses-permission></servicename></li>
+<li><strong>系统签名问题</strong>.<br><strong>描述</strong>：此问题是后续测试中才发现的，原来的稳定性/兼容性测试上的性能指标参数大部分显示为空，极其诡异，后面花了很大功夫进行分析发现，很多指标会出现会出现类似Permission Denial : cannot dump <servicename>错误，获取不到任何数据。因为原工程需要获取电池、CPU、内存等等几十项性能参数指标，很大一部分是通过sh读取系统文件等方式获取的，通过Runtime.getRuntime().exec 或者 ProcessBuilder.start方式， 比如通过dump中的dump battery获取电池信息，因为dumpsys涉及android:protectionLevel=”signatureOrSystem”，需要权限 <uses-permission android:name="android.permission.DUMP">，需要声明android:sharedUserId=”android.uid.system”，需要系统签名….<br><strong>解决</strong>：<br><strong>①</strong>系统签名（无奈之举）.<br><strong>②</strong>采用device.executeShellCommand，注意只支持API 21+.  </uses-permission></servicename></li>
 </ul>
 <h1 id="REFS"><a href="#REFS" class="headerlink" title="REFS"></a>REFS</h1><ul>
 <li><p><a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/package-summary.html" target="_blank" rel="external">Google 官方文档</a></p>
@@ -369,7 +369,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 <li><p><a href="https://stackoverflow.com/questions/40867407/android-espresso-multidex-fail" target="_blank" rel="external">Android Espresso multidex fail</a></p>
 </li>
 </ul>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>本文首发于<a href="http://skyseraph.com/">skyseraph.com</a>：<a href="http://skyseraph.com/2017/05/26/Android/UiAutomator2.0升级填坑记/">“UiAutomator2.0升级填坑记”</a><br>同步发表/转载 <a href="">cnBlogs</a> / <a href="">CSDN</a> / <a href="">TesterHome</a> …</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>本文首发于<a href="http://skyseraph.com/">skyseraph.com</a>：<a href="http://skyseraph.com/2017/06/04/Android/UiAutomator2.0升级填坑记/">“UiAutomator2.0升级填坑记”</a><br>同步发表/转载 <a href="http://www.cnblogs.com/skyseraph/p/7297450.html" target="_blank" rel="external">cnBlogs</a> / <a href="http://blog.csdn.net/zgzhaobo/article/details/77105059" target="_blank" rel="external">CSDN</a> / <a href="">TesterHome</a> …</p>
 <hr>
 <font size="2"><br>By <a href="www.skyseraph.com">SkySeraph</a>-2017<br></font>   
 
