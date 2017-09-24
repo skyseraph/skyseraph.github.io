@@ -20,7 +20,7 @@
 软件功能界面功能1  Picture Control 图像显示与保存 Source Image：源图像Dst Image：空间转换后图像(彩色)/目标彩色图像A channel：A通道图像(灰度)/目标灰度图像B channel：B通道图像C channel：C通道图像Save： 图像保存  
 2  Inf.Show 信息">
 <meta property="og:image" content="http://pic002.cnblogs.com/images/2011/137896/2011081417455925.png">
-<meta property="og:updated_time" content="2017-03-19T13:58:28.386Z">
+<meta property="og:updated_time" content="2017-09-24T07:27:08.807Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="彩色图像分析软件 ColorImgSft V1.0.1.0">
 <meta name="twitter:description" content="开发环境 VC6.0+OpenCV1.0 
@@ -287,8 +287,8 @@ var _hmt = _hmt || [];
             
             <hr>
 <h1 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h1><p><strong> VC6.0+OpenCV1.0 </strong></p>
-<h1 id="软件界面"><a href="#软件界面" class="headerlink" title="软件界面"></a>软件界面</h1><h2 id="用户登陆"><a href="#用户登陆" class="headerlink" title="用户登陆"></a>用户登陆</h2><p><img src="http://pic002.cnblogs.com/images/2011/137896/2011081417455925.png" alt=""> </p>
-<h2 id="完整界面"><a href="#完整界面" class="headerlink" title="完整界面"></a>完整界面</h2><p><img src="http://images2015.cnblogs.com/blog/137896/201605/137896-20160526201540350-547747680.png" alt=""></p>
+<h1 id="软件界面"><a href="#软件界面" class="headerlink" title="软件界面"></a>软件界面</h1><h2 id="用户登陆"><a href="#用户登陆" class="headerlink" title="用户登陆"></a>用户登陆</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/2011081417455925.png" alt=""> </p>
+<h2 id="完整界面"><a href="#完整界面" class="headerlink" title="完整界面"></a>完整界面</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/137896-20160526201540350-547747680.png" alt=""></p>
 <h1 id="软件功能"><a href="#软件功能" class="headerlink" title="软件功能"></a>软件功能</h1><h2 id="界面功能"><a href="#界面功能" class="headerlink" title="界面功能"></a>界面功能</h2><p><strong>1  Picture Control 图像显示与保存 </strong><br>Source Image：源图像<br>Dst Image：空间转换后图像(彩色)/目标彩色图像<br>A channel：A通道图像(灰度)/目标灰度图像<br>B channel：B通道图像<br>C channel：C通道图像<br>Save： 图像保存  </p>
 <p><strong>2  Inf.Show 信息显示</strong><br>RunningTime： 法运行时间显示         -输出<br>Threshold：  图像分割时阈值显示     -输出<br>ClusterThred：颜色聚类分割阈值         -输入，默认0.12<br>ClusterNum：颜色聚类数目显示         -输出<br>ClusterNum：聚类数目显示(KCM)       -输入，默认2   </p>
 <p><strong>3  FetchColor  获取屏幕上任意点RGB/HSV/Lab/YIQ值</strong><br>FetchColor：打开/关闭按钮<br>注：采用了定时器，故要进行其它操作时，最好关闭此按钮。   </p>
@@ -300,10 +300,10 @@ var _hmt = _hmt || [];
 <p><strong>3  View</strong><br>FetchColor：            同界面FetchColor功能<br>Dlg-SliderColor：    辅助作用–查RGB值与对应颜色关系<br>WatchColours：     外部软件–功能同FetchColor<br>ImageInfo：            图像信息–图像大小、平均/最大/最小饱和度、平均/最大/最小亮度<br>Histogram：            直方图<br>GrayHist：                灰度直方图<br>Dlg-GrayHist：        灰度直方图(对话框显示)<br>Dlg-HSVHistSeg：  HSV直方图分割<br>ColorHist(RGB)：   RGB直方图<br>ColorHist(HS)：       H-S直方图<br>EqualizeHist：        直方图均衡化<br>EqualizeHist(Gray)：直方图均衡化(灰度)   </p>
 <p><strong>4  Image </strong><br>SpaceCov：             同界面SpaceCov功能<br>ImgAdjust：            图像调整(彩色)<br>ImageInvert：                  图像反转<br>RGB归一化：        图像RGB归一化<br>EdgeDetect：         图像边缘检测(彩色&amp;灰度：彩色和灰度都适合)<br>Sobel：                      Sobel边缘检测<br>Laplace：                  Laplace边缘检测<br>Canny：                    Canny边缘检测<br>ImgSeg：                  图像分割（彩色/灰度）<br>GrayImgSeg：                  灰度图像分割，有常见的六种分割方法<br>ColorSegByHSV：  基于颜色提取的彩色分割(两种形式：定义范围不同)<br>KCM：                        根据输入的聚类类别数(默认2)进行K均值分割(彩色&amp;灰度)<br>MeanShift：            MeanShift彩色分割<br>Watershed：           分水岭彩色分割<br>HSVColorCluster：基于颜色聚类的彩色分割<br>Morphology：        图像腐蚀/膨胀操作(彩色&amp;灰度：彩色和灰度都适合)<br>Gabor：                    Gabor变换<br>GaborFilter：           显示实/虚/模部Gabor滤波结果<br>GaborTransfer：    显示最终Gabor滤波结果<br>DWT：                       DWT变换<br>SM：                          图像显著性区域提取，包含三种不同的方法    </p>
 <p><strong>5  Help </strong><br>About：                   关于本软件信息<br>Help：简要操作说明文档  </p>
-<h1 id="操作实例"><a href="#操作实例" class="headerlink" title="操作实例"></a>操作实例</h1><h2 id="空间转换"><a href="#空间转换" class="headerlink" title="空间转换"></a>空间转换</h2><p><img src="http://images2015.cnblogs.com/blog/137896/201605/137896-20160526201626100-237219052.png" alt=""></p>
-<h2 id="基于颜色聚类分割"><a href="#基于颜色聚类分割" class="headerlink" title="基于颜色聚类分割"></a>基于颜色聚类分割</h2><p><img src="http://pic002.cnblogs.com/images/2011/137896/2011081418023774.png" alt="">  </p>
-<p><img src="http://pic002.cnblogs.com/images/2011/137896/2011081418024973.png" alt=""></p>
-<h2 id="基于颜色提取的分割"><a href="#基于颜色提取的分割" class="headerlink" title="基于颜色提取的分割"></a>基于颜色提取的分割</h2><p><img src="http://images2015.cnblogs.com/blog/137896/201605/137896-20160526201641288-2078807384.png" alt=""></p>
+<h1 id="操作实例"><a href="#操作实例" class="headerlink" title="操作实例"></a>操作实例</h1><h2 id="空间转换"><a href="#空间转换" class="headerlink" title="空间转换"></a>空间转换</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/137896-20160526201626100-237219052.png" alt=""></p>
+<h2 id="基于颜色聚类分割"><a href="#基于颜色聚类分割" class="headerlink" title="基于颜色聚类分割"></a>基于颜色聚类分割</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/2011081418023774.png" alt="">  </p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/2011081418024973.png" alt=""></p>
+<h2 id="基于颜色提取的分割"><a href="#基于颜色提取的分割" class="headerlink" title="基于颜色提取的分割"></a>基于颜色提取的分割</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/137896-20160526201641288-2078807384.png" alt=""></p>
 <h1 id="软件下载"><a href="#软件下载" class="headerlink" title="软件下载"></a>软件下载</h1><p><a href="http://files.cnblogs.com/skyseraph/ColorImgSft1.0.1.0%E5%8F%91%E5%B8%83.zip" target="_blank" rel="external">ColorImgSft1.0.1.0.zip</a> </p>
 <p><a href="http://skyseraph.com/2011/08/01/CV/%E5%BD%A9%E8%89%B2%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2%E4%B8%93%E9%A2%98/"><strong>部分原理参考</strong></a></p>
 <hr>
