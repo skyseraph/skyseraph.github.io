@@ -799,9 +799,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
-      <category term="Jenkins" scheme="http://skyseraph.com/tags/Jenkins/"/>
-    
       <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
+    
+      <category term="Jenkins" scheme="http://skyseraph.com/tags/Jenkins/"/>
     
       <category term="Gitlab" scheme="http://skyseraph.com/tags/Gitlab/"/>
     
@@ -1180,11 +1180,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="OpenGL" scheme="http://skyseraph.com/categories/Tech/OpenGL/"/>
     
     
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
+    
       <category term="AR/VR" scheme="http://skyseraph.com/tags/AR-VR/"/>
     
       <category term="OpenGL" scheme="http://skyseraph.com/tags/OpenGL/"/>
-    
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
   </entry>
   
@@ -2734,9 +2734,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="NFC" scheme="http://skyseraph.com/categories/Tech/NFC/"/>
     
     
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
-    
       <category term="NFC" scheme="http://skyseraph.com/tags/NFC/"/>
+    
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
   </entry>
   
@@ -2960,52 +2960,6 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
   </entry>
   
   <entry>
-    <title>SkySeraph Plan Life</title>
-    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Plan%20Life/"/>
-    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Plan Life/</id>
-    <published>2012-02-05T18:00:00.000Z</published>
-    <updated>2017-04-09T13:07:19.175Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
-<li><a href="http://skyseraph.com/2013/11/30/SkySeraph/Life/写在年末,%20我的2013/">写在年末, 我的2013</a></li>
-</ul>
-<h2 id="2012-Before"><a href="#2012-Before" class="headerlink" title="2012  Before"></a>2012  Before</h2><ul>
-<li><a href="http://skyseraph.com/2010/09/12/SkySeraph/Life/那一年的“暑假书籍读后感”/">那一年的“暑假书籍读后感”</a></li>
-</ul>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><hr>
-<font size="2"><br>By SkySeraph<br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph</a> Plan Life/</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h2 id=&quot;2017&quot;&gt;&lt;a href=&quot;#2017&quot; class=&quot;headerlink&quot; title=&quot;2017&quot;&gt;&lt;/a&gt;2017&lt;/h2&gt;&lt;h2 id=&quot;2016&quot;&gt;&lt;a href=&quot;#2016&quot; class=&quot;headerlink&quot; title=&quot;2016
-    
-    </summary>
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
-    
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
-    
-      <category term="Plan" scheme="http://skyseraph.com/tags/Plan/"/>
-    
-  </entry>
-  
-  <entry>
     <title>SkySeraph Reading Life</title>
     <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Reading%20Life/"/>
     <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Reading Life/</id>
@@ -3107,6 +3061,52 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
     
       <category term="Reading" scheme="http://skyseraph.com/tags/Reading/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SkySeraph Plan Life</title>
+    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph%20Plan%20Life/"/>
+    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph Plan Life/</id>
+    <published>2012-02-05T18:00:00.000Z</published>
+    <updated>2017-04-09T13:07:19.175Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
+<li><a href="http://skyseraph.com/2013/11/30/SkySeraph/Life/写在年末,%20我的2013/">写在年末, 我的2013</a></li>
+</ul>
+<h2 id="2012-Before"><a href="#2012-Before" class="headerlink" title="2012  Before"></a>2012  Before</h2><ul>
+<li><a href="http://skyseraph.com/2010/09/12/SkySeraph/Life/那一年的“暑假书籍读后感”/">那一年的“暑假书籍读后感”</a></li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><hr>
+<font size="2"><br>By SkySeraph<br></font>   
+
+<hr>
+<p><strong><em>版权声明</em></strong></p>
+<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
+
+<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
+<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
+<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraph</a> Plan Life/</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h2 id=&quot;2017&quot;&gt;&lt;a href=&quot;#2017&quot; class=&quot;headerlink&quot; title=&quot;2017&quot;&gt;&lt;/a&gt;2017&lt;/h2&gt;&lt;h2 id=&quot;2016&quot;&gt;&lt;a href=&quot;#2016&quot; class=&quot;headerlink&quot; title=&quot;2016
+    
+    </summary>
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
+    
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+    
+      <category term="Plan" scheme="http://skyseraph.com/tags/Plan/"/>
     
   </entry>
   
