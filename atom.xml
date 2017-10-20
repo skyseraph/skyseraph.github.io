@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://skyseraph.com/"/>
-  <updated>2017-08-12T12:21:47.089Z</updated>
+  <updated>2017-10-20T15:16:50.045Z</updated>
   <id>http://skyseraph.com/</id>
   
   <author>
@@ -14,6 +14,116 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Awesome Projects</title>
+    <link href="http://skyseraph.com/2017/10/01/Tools/AwesomeProjects/"/>
+    <id>http://skyseraph.com/2017/10/01/Tools/AwesomeProjects/</id>
+    <published>2017-09-30T17:00:00.000Z</published>
+    <updated>2017-10-20T15:16:50.045Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><ul>
+<li><a href="https://github.com/skyseraph/awesome-projects" target="_blank" rel="external"><strong>awesome-projects</strong></a> 致力于收集 Awesome Projects，Tech or Non-Tech.  </li>
+<li>欢迎您的加入!   <a href="https://github.com/skyseraph/awesome-projects" target="_blank" rel="external">Fork</a> or <a href="skyseraph00@126.com">Email</a> to Me, tks!</li>
+</ul>
+<p><a href="https://github.com/skyseraph/awesome-projects/releases" target="_blank" rel="external"><img src="https://img.shields.io/github/tag/skyseraph/awesome-projects.svg" alt="GitHub tag"></a><br><a href="https://github.com/skyseraph/awesome-projects/issues" target="_blank" rel="external"><img src="https://img.shields.io/github/issues/skyseraph/awesome-projects.svg" alt="GitHub issues"></a><br><a href="https://github.com/skyseraph/awesome-projects/pulls" target="_blank" rel="external"><img src="https://img.shields.io/github/issues-pr/skyseraph/awesome-projects.svg" alt="GitHub pull requests"></a></p>
+<p><a href="https://github.com/skyseraph/awesome-projects" target="_blank" rel="external"><img src="https://img.shields.io/github/stars/skyseraph/awesome-projects.svg?style=social&amp;label=Star" alt="GitHub stars"></a><br><a href="https://github.com/skyseraph/awesome-projects" target="_blank" rel="external"><img src="https://img.shields.io/github/watchers/skyseraph/awesome-projects.svg?style=social&amp;label=Watch" alt="GitHub watchers"></a><br><a href="https://github.com/skyseraph/awesome-projects" target="_blank" rel="external"><img src="https://img.shields.io/github/followers/skyseraph.svg?style=social&amp;label=Follow" alt="GitHub followers"></a></p>
+<h2 id="Contribute"><a href="#Contribute" class="headerlink" title="Contribute"></a>Contribute</h2><p><a href="http://skyseraph.com/">SkySeraph</a> …</p>
+<h1 id="Menu"><a href="#Menu" class="headerlink" title="Menu"></a>Menu</h1><hr>
+<h2 id="TECH"><a href="#TECH" class="headerlink" title="TECH"></a>TECH</h2><table>
+<thead>
+<tr>
+<th>Menu</th>
+<th>Desc.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/android.md" target="_blank" rel="external">Android</a></td>
+<td>Awesome Androids</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/ios.md" target="_blank" rel="external">iOS</a></td>
+<td>Awesome iOSs</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/ai.md" target="_blank" rel="external">AI</a></td>
+<td>Awesome AIs</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/front_end.md" target="_blank" rel="external">Front-End</a></td>
+<td>Awesome Front-Ends</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/hardware.md" target="_blank" rel="external">HardWare</a></td>
+<td>Awesome HardWares</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/tech_all.md" target="_blank" rel="external">Tech-All</a></td>
+<td>Awesome Techs All</td>
+</tr>
+</tbody>
+</table>
+<h2 id="NON-TECH"><a href="#NON-TECH" class="headerlink" title="NON-TECH"></a>NON-TECH</h2><table>
+<thead>
+<tr>
+<th>Menu</th>
+<th>Desc.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/weblink.md" target="_blank" rel="external">Web</a></td>
+<td>Awesome Web Links</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/interview.md" target="_blank" rel="external">Interview</a></td>
+<td>Awesome interviews</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/soft.md" target="_blank" rel="external">Soft</a></td>
+<td>Awesome Softs</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/ebooks.md" target="_blank" rel="external">EBooks</a></td>
+<td>Awesome EBooks</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/data.md" target="_blank" rel="external">Data</a></td>
+<td>Awesome Datas</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<hr>
+<p>By SkySeraph 10/01/2017</p>
+<hr>
+<p><strong><em>版权声明</em></strong></p>
+<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
+
+<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
+<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
+<p>本文永久链接：<a href="http://skyseraph.com/2017/10/01/Tools/AwesomeProjects/">http://skyseraph.com/2017/10/01/Tools/AwesomeProjects/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h1&gt;&lt;h2 id=&quot;About&quot;&gt;&lt;a href=&quot;#About&quot; c
+    
+    </summary>
+    
+      <category term="Tech" scheme="http://skyseraph.com/categories/Tech/"/>
+    
+      <category term="Android" scheme="http://skyseraph.com/categories/Tech/Android/"/>
+    
+    
+      <category term="Awesome" scheme="http://skyseraph.com/tags/Awesome/"/>
+    
+      <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
+    
+      <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
+    
+  </entry>
   
   <entry>
     <title>UiAutomator2.0升级填坑记</title>
@@ -1180,221 +1290,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="OpenGL" scheme="http://skyseraph.com/categories/Tech/OpenGL/"/>
     
     
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
-    
       <category term="AR/VR" scheme="http://skyseraph.com/tags/AR-VR/"/>
     
       <category term="OpenGL" scheme="http://skyseraph.com/tags/OpenGL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>完整开源项目荟萃（iOS篇）</title>
-    <link href="http://skyseraph.com/2015/11/30/iOS/OpenProjectsIniOS/"/>
-    <id>http://skyseraph.com/2015/11/30/iOS/OpenProjectsIniOS/</id>
-    <published>2015-11-29T17:01:00.000Z</published>
-    <updated>2017-03-19T13:58:28.440Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><ul>
-<li>“【All-OpenSource-Project】” 致力于收集完整优质/优秀/优美完整的Android/iOS/Web等开源项目  </li>
-<li>欢迎您的加入!   <a href="https://github.com/skyseraph/All-OpenSource-Project" target="_blank" rel="external">Fork</a> or <a href="skyseraph00@163.com">Email</a> to Me, tks!</li>
-</ul>
-<h2 id="Contribute"><a href="#Contribute" class="headerlink" title="Contribute"></a>Contribute</h2><p><a href="http://skyseraph.com/">SkySeraph</a> …</p>
-<h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><ul>
-<li>2015.11.30 First Create</li>
-</ul>
-<h1 id="Categories"><a href="#Categories" class="headerlink" title="Categories"></a>Categories</h1><hr>
-<h2 id="新闻-资讯"><a href="#新闻-资讯" class="headerlink" title="新闻/资讯"></a>新闻/资讯</h2><ul>
-<li><p><a href="https://github.com/dennisreimann/ioctocat" target="_blank" rel="external">ioctocat</a> <strong>GitHub iOS客户端</strong><br>iOctocat v1 - GitHub for iOS (works on the iPhone, iPad, and iPod Touch) <a href="http://ioctocat.com/" target="_blank" rel="external">http://ioctocat.com/</a></p>
-</li>
-<li><p><a href="http://git.oschina.net/oschina/iphone-app" target="_blank" rel="external">iphone-app</a> <strong>开源中国社区 iPhone 客户端</strong>  </p>
-</li>
-<li><p><a href="https://github.com/cubewang/GameDaily" target="_blank" rel="external">GameDaily</a> <strong>电竞第一视角</strong><br>iOS Game Video App compatible with iPhone and iPad.</p>
-</li>
-</ul>
-<hr>
-<h2 id="社交-聊天"><a href="#社交-聊天" class="headerlink" title="社交/聊天"></a>社交/聊天</h2><hr>
-<h2 id="读书-图片-音乐-视频"><a href="#读书-图片-音乐-视频" class="headerlink" title="读书/图片/音乐/视频"></a>读书/图片/音乐/视频</h2><ul>
-<li><p><a href="https://github.com/TonnyTao/DoubanAlbum" target="_blank" rel="external">DoubanAlbum</a> <strong> 豆瓣相册 </strong><br>Slowslab iOS应用 豆瓣相册 精选集 开源项目，<a href="http://www.douban.com/people/slowslab/" target="_blank" rel="external">http://www.douban.com/people/slowslab/</a></p>
-</li>
-<li><p><a href="https://github.com/vfr/Reader" target="_blank" rel="external">Reader</a> <strong>iOS PDF阅读器</strong><br>PDF Reader Core for iOS <a href="http://www.vfr.org/" target="_blank" rel="external">http://www.vfr.org/</a></p>
-</li>
-</ul>
-<hr>
-<h2 id="学习-工具"><a href="#学习-工具" class="headerlink" title="学习/工具"></a>学习/工具</h2><ul>
-<li><a href="https://github.com/cubewang/GameDaily" target="_blank" rel="external">NewsReader</a> <strong>VOA在线英语 </strong><br>iOS News Reader compatible with iPhone and iPad，<a href="http://www.cnblogs.com/wangkewei/archive/2012/09/29/2708373.html" target="_blank" rel="external">详细介绍</a> </li>
-</ul>
-<hr>
-<h2 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h2><hr>
-<h2 id="高仿系列"><a href="#高仿系列" class="headerlink" title="高仿系列"></a>高仿系列</h2><ul>
-<li><p><a href="https://github.com/lookingstars/meituan" target="_blank" rel="external">meituan</a> <strong>高仿美团</strong><br>高仿美团iOS版，版本号5.7</p>
-</li>
-<li><p><a href="https://github.com/lookingstars/nuomi" target="_blank" rel="external">nuomi</a> <strong>高仿百度糯米</strong><br>高仿百度糯米iOS版，版本号5.13.0</p>
-</li>
-</ul>
-<hr>
-<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ul>
-<li><a href="https://github.com/sobri909/MGBoxKit" target="_blank" rel="external">MGBoxKit</a> <strong>iOS 优雅组件</strong><br>Simple, quick iOS tables, grids, and more</li>
-</ul>
-<p>By SkySeraph 11/30/2015   </p>
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2015/11/30/iOS/OpenProjectsIniOS/">http://skyseraph.com/2015/11/30/iOS/OpenProjectsIniOS/</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h1&gt;&lt;h2 id=&quot;About&quot;&gt;&lt;a href=&quot;#About&quot; c
-    
-    </summary>
-    
-      <category term="Tech" scheme="http://skyseraph.com/categories/Tech/"/>
-    
-      <category term="iOS" scheme="http://skyseraph.com/categories/Tech/iOS/"/>
-    
-    
-      <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>完整开源项目荟萃（Android篇）</title>
-    <link href="http://skyseraph.com/2015/11/30/Android/OpenProjectsInAndroid/"/>
-    <id>http://skyseraph.com/2015/11/30/Android/OpenProjectsInAndroid/</id>
-    <published>2015-11-29T17:00:00.000Z</published>
-    <updated>2017-10-17T13:14:11.050Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><ul>
-<li>“【<a href="https://github.com/skyseraph/All-OpenSource-Project" target="_blank" rel="external">All-OpenSource-Project</a>】” 致力于收集完整优质/优秀/优美完整的Android/iOS/Web等开源项目  </li>
-<li>欢迎您的加入!   <a href="https://github.com/skyseraph/All-OpenSource-Project" target="_blank" rel="external">Fork</a> or <a href="skyseraph00@163.com">Email</a> to Me, tks!</li>
-</ul>
-<h2 id="Contribute"><a href="#Contribute" class="headerlink" title="Contribute"></a>Contribute</h2><p><a href="http://skyseraph.com/">SkySeraph</a> …</p>
-<h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><ul>
-<li>2015.11.30 First Create</li>
-</ul>
-<h1 id="Categories"><a href="#Categories" class="headerlink" title="Categories"></a>Categories</h1><hr>
-<h2 id="高仿-原生"><a href="#高仿-原生" class="headerlink" title="高仿/原生"></a>高仿/原生</h2><blockquote>
-<p>高仿</p>
-</blockquote>
-<ul>
-<li><a href="https://github.com/GitLqr/LQRWeChat" target="_blank" rel="external">LQRWeChat 仿微信6.5.7（基于融云SDK）</a> </li>
-<li><a href="https://github.com/motianhuo/wechat" target="_blank" rel="external">wechat 仿微信 </a> </li>
-<li><a href="https://github.com/wenmingvs/WeiBo" target="_blank" rel="external">WeiBo 仿新浪微博</a> </li>
-<li><a href="https://github.com/chaychan/TouTiao" target="_blank" rel="external">TouTiao 仿今日头条</a></li>
-<li><a href="https://github.com/Rano1/TopNews" target="_blank" rel="external">TopNews 高仿“今日头条”客户端 </a> </li>
-<li><a href="https://github.com/jenly1314/KingTV" target="_blank" rel="external">KingTV 仿全民直播（全民TV）</a> </li>
-<li><a href="https://github.com/aa112901/remusic" target="_blank" rel="external">remusic 仿网易云音乐</a> </li>
-<li><a href="https://github.com/youlookwhat/CloudReader" target="_blank" rel="external">CloudReader 云阅(仿网易云音乐UI)</a> </li>
-<li><a href="https://github.com/mayubao/KuaiChuan" target="_blank" rel="external">KuaiChuan 仿茄子快传</a></li>
-<li><a href="https://github.com/myxh/CoolShopping" target="_blank" rel="external">CoolShopping 仿拉手团购</a></li>
-<li><a href="https://github.com/HotBitmapGG/bilibili-android-client" target="_blank" rel="external">bilibili-android-client 高仿哔哩哔哩动画</a> </li>
-<li><a href="https://github.com/movexmanlife/TongBanJie" target="_blank" rel="external">TongBanJie 高仿铜板街</a></li>
-<li><a href="https://github.com/Orangelittle/Liwusuo" target="_blank" rel="external">Liwusuo 仿礼物说</a></li>
-</ul>
-<blockquote>
-<p>原生 </p>
-</blockquote>
-<ul>
-<li><a href="http://git.oschina.net/oschina/android-app" target="_blank" rel="external">OSChina</a></li>
-<li><a href="http://git.oschina.net/handoop/FlowGeek" target="_blank" rel="external">OSChina（Material Design风格）</a></li>
-<li><a href="https://github.com/hidroh/materialistic" target="_blank" rel="external">Hacker News</a></li>
-<li><a href="https://github.com/TellH/GitClub" target="_blank" rel="external">Github客户端</a> </li>
-<li><a href="https://github.com/laowch/GithubTrends" target="_blank" rel="external">GithubTrends</a> </li>
-</ul>
-<hr>
-<h2 id="资讯-生活"><a href="#资讯-生活" class="headerlink" title="资讯/生活"></a>资讯/生活</h2><ul>
-<li><a href="https://github.com/kinneyyan/36krReader" target="_blank" rel="external">36krReader</a> <strong>36氪客户端</strong><br>MD风格的36氪Android阅读客户端</li>
-<li><a href="https://github.com/avenwu/cnblogs" target="_blank" rel="external">cnblogs</a> <strong>博客园客户端</strong><br>博客园客户端（作者有保留，未完全开源）</li>
-<li><a href="https://github.com/Anthonyeef/FanfouDaily" target="_blank" rel="external">FanfouDaily</a> <strong>饭否精选</strong>  </li>
-<li><a href="https://github.com/drakeet/Meizhi" target="_blank" rel="external">Meizhi</a> <strong>干妹子</strong><br>每天自动更新一张精选妹纸图、一个小视频、一系列精选程序猿干货（周末不更新）</li>
-<li><a href="https://github.com/burgessjp/GanHuoIO" target="_blank" rel="external">GanHuoIO</a><br>基于Gank.IO提供的API的第三方客户端（RxJava+Retrofit+MVP） </li>
-<li><a href="https://github.com/race604/ZhiHuDaily-React-Native" target="_blank" rel="external">ZhiHuDaily-React-Native</a> <strong>知乎日报</strong>  </li>
-<li><a href="https://github.com/izzyleung/ZhihuDailyPurify" target="_blank" rel="external">ZhihuDailyPurify</a> <strong>更纯净的知乎日报</strong>  </li>
-<li><a href="https://github.com/bxbxbai/ZhuanLan" target="_blank" rel="external">ZhuanLan</a> <strong>知乎专栏</strong>   </li>
-<li><a href="https://github.com/xinghongfei/LookLook" target="_blank" rel="external">LookLook</a> 新闻阅读，知乎日报等</li>
-<li><a href="https://github.com/vbauer/android-arsenal.com" target="_blank" rel="external">android-arsenal.com</a> <strong>android-arsenal.com客户端</strong> </li>
-</ul>
-<ul>
-<li><a href="https://github.com/ittianyu/POCenter" target="_blank" rel="external">POCenter</a> 整合多个软件外包平台项目信息</li>
-<li><a href="https://github.com/onlyloveyd/JuheNews" target="_blank" rel="external">JuheNews</a>  使用聚合新闻数据而成的新闻资讯客户端</li>
-</ul>
-<ul>
-<li><a href="https://github.com/SkillCollege/SimplifyReader" target="_blank" rel="external">SimplifyReader</a><br>一款基于Google Material Design设计开发的Android客户端，包括新闻简读，图片浏览，视频爽看 ，音乐轻听以及二维码扫描五个子模块</li>
-</ul>
-<ul>
-<li><a href="https://github.com/liuguangqiang/shuba" target="_blank" rel="external">shuba</a> <strong>书吧</strong><br>专注为用户提供人性化的搜书引擎，快捷，方便，为用户找到最好的小说</li>
-<li><a href="https://github.com/erttyy8821/MyDiary" target="_blank" rel="external">MyDiary</a>  君の名は。, 你的名字  </li>
-</ul>
-<hr>
-<h2 id="音视频-图片"><a href="#音视频-图片" class="headerlink" title="音视频/图片"></a>音视频/图片</h2><ul>
-<li><a href="https://github.com/zhangliangming/HappyPlayer5" target="_blank" rel="external">HappyPlayer5（基于ijkplayer框架的Android音乐播放器）</a></li>
-<li><a href="https://github.com/daniulive/SmarterStreaming" target="_blank" rel="external">SmarterStreaming（大牛直播)</a></li>
-<li><a href="https://github.com/LRH1993/SmartRecom" target="_blank" rel="external">SmartRecom（基于行为识别和个性化推荐的智能推荐APP）</a></li>
-<li><a href="https://github.com/psaravan/JamsMusicPlayer" target="_blank" rel="external">JamsMusicPlayer 强大的音乐播放器</a> </li>
-<li><a href="https://github.com/saulmm/Material-Movies" target="_blank" rel="external">Material-Movies MD风格视频播放器</a> </li>
-<li><a href="https://github.com/AndroidJiang/StockChart" target="_blank" rel="external">StockChart 股票走势图</a></li>
-</ul>
-<hr>
-<h2 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h2><ul>
-<li><a href="https://github.com/LehmanHe/A4print" target="_blank" rel="external">在线云打印平台</a></li>
-<li><a href="https://github.com/Nightonke/CoCoin" target="_blank" rel="external">记账</a></li>
-<li><a href="https://github.com/lizixian18/AppLock" target="_blank" rel="external">应用锁</a></li>
-<li><a href="https://github.com/codekidX/storage-chooser" target="_blank" rel="external">文件管理</a></li>
-<li><a href="https://github.com/wangchenyan/PonyExpress" target="_blank" rel="external">小马快递</a></li>
-<li><a href="https://github.com/linglongxin24/DylanStepCount" target="_blank" rel="external">Android精准计步器</a></li>
-<li><a href="https://github.com/tiandawu/IotXmpp" target="_blank" rel="external">基于XMPP的物联网客户端</a></li>
-</ul>
-<h3 id="todo系列"><a href="#todo系列" class="headerlink" title="todo系列"></a>todo系列</h3><ul>
-<li><p><a href="https://github.com/avjinder/Minimal-Todo" target="_blank" rel="external">Minimal-Todo</a><br>A fully Material ToDo app with minimal features, just enough to be useful.</p>
-</li>
-<li><p><a href="https://github.com/rakuishi/Todo-Android" target="_blank" rel="external">Todo-Android</a><br>Todo Android App using Realm and Lolipop Material Design.</p>
-</li>
-<li><p><a href="https://github.com/zhenghuiy/TodayThing" target="_blank" rel="external">TodayThing</a><br>一款简单的 Material Design 风格的 to do list 应用</p>
-</li>
-</ul>
-<h3 id="Android辅助工具"><a href="#Android辅助工具" class="headerlink" title="Android辅助工具"></a>Android辅助工具</h3><ul>
-<li><p><a href="https://github.com/arpitkh96/AmazeFileManager" target="_blank" rel="external">AmazeFileManager</a>  <strong>Amaze File Manager</strong></p>
-</li>
-<li><p><a href="https://github.com/msAndroid/MobileSafer" target="_blank" rel="external">MobileSafer</a>  <strong>手机安全小卫士</strong></p>
-</li>
-</ul>
-<ul>
-<li><a href="https://github.com/ittianyu/MobileGuard" target="_blank" rel="external">MobileGuard</a> 一个管理安卓手机的应用，支持安卓7.0 </li>
-</ul>
-<ul>
-<li><a href="https://github.com/cundong/MemoryMonitor" target="_blank" rel="external">MemoryMonitor</a><br>一款开发者专用的内存清理、Pss监控工具</li>
-</ul>
-<hr>
-<h2 id="游戏类"><a href="#游戏类" class="headerlink" title="游戏类"></a>游戏类</h2><hr>
-<h2 id="Android组件篇"><a href="#Android组件篇" class="headerlink" title="Android组件篇"></a>Android组件篇</h2><ul>
-<li><a href="https://github.com/Bilibili/DanmakuFlameMaster" target="_blank" rel="external">DanmakuFlameMaster</a> <strong>弹幕引擎</strong><br>Android开源弹幕引擎·烈焰弹幕使 ～ <a href="http://app.bilibili.com/" target="_blank" rel="external">http://app.bilibili.com/</a></li>
-</ul>
-<hr>
-<p><strong>Update time </strong><br>08/12/2017 Update<br>11/30/2015 Create this page     </p>
-<p>By SkySeraph 11/30/2015</p>
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2015/11/30/Android/OpenProjectsInAndroid/">http://skyseraph.com/2015/11/30/Android/OpenProjectsInAndroid/</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h1&gt;&lt;h2 id=&quot;About&quot;&gt;&lt;a href=&quot;#About&quot; c
-    
-    </summary>
-    
-      <category term="Tech" scheme="http://skyseraph.com/categories/Tech/"/>
-    
-      <category term="Android" scheme="http://skyseraph.com/categories/Tech/Android/"/>
-    
     
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
@@ -2913,6 +2811,111 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
   </entry>
   
   <entry>
+    <title>SkySeraph Reading Life</title>
+    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/"/>
+    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/</id>
+    <published>2012-02-05T18:00:00.000Z</published>
+    <updated>2017-10-06T10:32:29.059Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h1 id="Reading"><a href="#Reading" class="headerlink" title="Reading"></a>Reading</h1><h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><blockquote>
+<p>技术类</p>
+</blockquote>
+<ul>
+<li><a href="https://book.douban.com/subject/26891415/" target="_blank" rel="external">《移动App性能评测与优化》</a></li>
+</ul>
+<blockquote>
+<p>非技术类</p>
+</blockquote>
+<ul>
+<li><p><a href="https://book.douban.com/subject/3688489/" target="_blank" rel="external">《异类》</a> </p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26297606/" target="_blank" rel="external">《从0到1》</a> </p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26823208/" target="_blank" rel="external">《离经叛道》</a> </p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26306686/" target="_blank" rel="external">《创业维艰》</a> </p>
+</li>
+<li><p><a href="http://www.ximalaya.com/60348226/album/5398185/" target="_blank" rel="external">《徐洁：如何练就好声音》</a></p>
+</li>
+<li><p><a href="https://book.douban.com/subject/27015138/" target="_blank" rel="external">欧神 《中产解决如何保护自己的财产》</a></p>
+</li>
+<li><p><a href="https://book.douban.com/subject/1444900/" target="_blank" rel="external">盖瑞.查普曼《爱的五种语言》</a></p>
+</li>
+</ul>
+<h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><ul>
+<li><p><a href="https://book.douban.com/subject/26419762/" target="_blank" rel="external">《成为技术领导者》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/5162149.html" target="_blank" rel="external">【讀書筆記】成为技术领导者</a></p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26437231/" target="_blank" rel="external">《技术管理之巅》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/25868303/" target="_blank" rel="external">《微管理》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26322756/" target="_blank" rel="external">《产品经理面试宝典》</a> #1</p>
+</li>
+</ul>
+<h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><ul>
+<li><p><a href="https://book.douban.com/subject/25873066/" target="_blank" rel="external">《麦肯锡工作法》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/25975485/" target="_blank" rel="external">《穿布鞋的马云》</a> #1</p>
+</li>
+<li><p><a href="">《成功创业三级跳》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/25773433/" target="_blank" rel="external">《你欠大学一次远行》</a> #1</p>
+</li>
+</ul>
+<h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><ul>
+<li><p><a href="https://book.douban.com/subject/20505765/" target="_blank" rel="external">《精益创业实战》</a> #1， <a href="http://www.cnblogs.com/skyseraph/p/3895564.html" target="_blank" rel="external">【讀書筆記】精益创业实战</a></p>
+</li>
+<li><p><a href="https://book.douban.com/subject/1048007/" target="_blank" rel="external">《高效能人士的七个习惯》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/3693005.html" target="_blank" rel="external">【讀書筆記】高效能人士的七个习惯</a></p>
+</li>
+<li><p><a href="https://book.douban.com/subject/4723970/" target="_blank" rel="external">《人人都是产品经理》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/3590471.html" target="_blank" rel="external">【讀書筆記】人人都是产品经理</a></p>
+</li>
+<li><p><a href="https://book.douban.com/subject/3688489/" target="_blank" rel="external">《异类》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/1033778/" target="_blank" rel="external">《富爸爸，穷爸爸》</a> #1</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/3151772/" target="_blank" rel="external">《一页纸项目管理》</a> #1</p>
+</li>
+</ul>
+<h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
+<li><a href="http://www.cnblogs.com/skyseraph/archive/2013/01/07/2850003.html" target="_blank" rel="external">【分享】RSS订阅技巧及工具和实用RSS链接分享 </a></li>
+</ul>
+<h2 id="2012"><a href="#2012" class="headerlink" title="2012"></a>2012</h2><ul>
+<li><a href="">《》</a></li>
+</ul>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><hr>
+<font size="2"><br>By SkySeraph<br></font>   
+
+<hr>
+<p><strong><em>版权声明</em></strong></p>
+<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
+
+<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
+<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
+<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h1 id=&quot;Reading&quot;&gt;&lt;a href=&quot;#Reading&quot; class=&quot;headerlink&quot; title=&quot;Reading&quot;&gt;&lt;/a&gt;Reading&lt;/h1&gt;&lt;h2 id=&quot;2017&quot;&gt;&lt;a href=&quot;#2017&quot; class=&quot;headerlink&quot;
+    
+    </summary>
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
+    
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
+    
+      <category term="Reading" scheme="http://skyseraph.com/tags/Reading/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SkySeraph Movie Life</title>
     <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphMovieLife/"/>
     <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphMovieLife/</id>
@@ -2967,9 +2970,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
     
-      <category term="Movie" scheme="http://skyseraph.com/tags/Movie/"/>
-    
       <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+    
+      <category term="Movie" scheme="http://skyseraph.com/tags/Movie/"/>
     
   </entry>
   

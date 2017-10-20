@@ -177,11 +177,11 @@ var _hmt = _hmt || [];
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                25
+                24
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                38
+                40
                 <span>tags</span>
             </div>
         </div>
@@ -211,6 +211,346 @@ var _hmt = _hmt || [];
 
             
             <section id="main">
+    <article id="post-Tools/Jenkins Gitlab持续集成打包平台搭建" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/">Jenkins Gitlab持续集成打包平台搭建</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/">
+            <time datetime="2016-07-17T16:00:00.000Z" itemprop="datePublished">2016-07-18</time>
+        </a>
+    </div>
+
+
+                    
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Tools/">Tools</a>
+    </div>
+
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Android/">Android</a>, <a class="tag-link" href="/tags/CI/">CI</a>, <a class="tag-link" href="/tags/Gitlab/">Gitlab</a>, <a class="tag-link" href="/tags/Jenkins/">Jenkins</a>, <a class="tag-link" href="/tags/iOS/">iOS</a>
+    </div>
+          
+					
+
+					
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#相关概念"><span class="toc-number">1.</span> <span class="toc-text">相关概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Jenkins"><span class="toc-number">1.1.</span> <span class="toc-text">Jenkins</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gitlab"><span class="toc-number">1.2.</span> <span class="toc-text">Gitlab</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CI"><span class="toc-number">1.3.</span> <span class="toc-text">CI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OTA"><span class="toc-number">1.4.</span> <span class="toc-text">OTA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pgyer"><span class="toc-number">1.5.</span> <span class="toc-text">pgyer</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#流程结构"><span class="toc-number">2.</span> <span class="toc-text">流程结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#平台搭建"><span class="toc-number">3.</span> <span class="toc-text">平台搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Jenkins安装和启动"><span class="toc-number">3.1.</span> <span class="toc-text">Jenkins安装和启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Jenkins插件安装"><span class="toc-number">3.2.</span> <span class="toc-text">Jenkins插件安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Jenkins系统设置"><span class="toc-number">3.3.</span> <span class="toc-text">Jenkins系统设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Jenkins-Jobs配置"><span class="toc-number">3.4.</span> <span class="toc-text">Jenkins Jobs配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Jobs基础配置"><span class="toc-number">3.4.1.</span> <span class="toc-text">Jobs基础配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Jobs源码库配置-Gitlab为例"><span class="toc-number">3.4.2.</span> <span class="toc-text">Jobs源码库配置(Gitlab为例)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Jobs触发条件配置"><span class="toc-number">3.4.3.</span> <span class="toc-text">Jobs触发条件配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Jobs构建方式-编译-配置"><span class="toc-number">3.4.4.</span> <span class="toc-text">Jobs构建方式/编译 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Jobs构建后处理"><span class="toc-number">3.4.5.</span> <span class="toc-text">Jobs构建后处理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-number">4.</span> <span class="toc-text">后记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#签名和证书问题-iOS"><span class="toc-number">4.1.</span> <span class="toc-text">签名和证书问题(iOS)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#邮件发送失败"><span class="toc-number">4.2.</span> <span class="toc-text">邮件发送失败</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Jenkins-Https-Support"><span class="toc-number">4.3.</span> <span class="toc-text">Jenkins Https Support</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Refs"><span class="toc-number">5.</span> <span class="toc-text">Refs</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记-1"><span class="toc-number">6.</span> <span class="toc-text">后记</span></a></li></ol>
+                </div>
+            
+            <hr>
+<h1 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h1><h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><ul>
+<li><a href="https://jenkins.io/index.html" target="_blank" rel="external">Jenkins</a>，一个用Java编写的开源的持续集成工具，提供了软件开发的持续集成服务，可监控并触发持续重复的工作，具有开源，支持多平台和插件扩展，安装简单，界面化管理等特点。更多介绍参考<a href="https://en.wikipedia.org/wiki/Jenkins_(software" target="_blank" rel="external">维基</a>介绍.  </li>
+</ul>
+<h2 id="Gitlab"><a href="#Gitlab" class="headerlink" title="Gitlab"></a>Gitlab</h2><ul>
+<li>GitLab是一个利用Ruby on Rails开发的开源应用程序，实现一个自托管的Git项目仓库，可通过Web界面进行访问公开的或者私人项目，更多介绍参考<a href="https://en.wikipedia.org/wiki/GitLab" target="_blank" rel="external">维基</a>介绍.</li>
+</ul>
+<h2 id="CI"><a href="#CI" class="headerlink" title="CI"></a>CI</h2><ul>
+<li>持续集成, 简称CI（continuous integration）.</li>
+<li>CI作为敏捷开发重要的一步，其目的在于让产品快速迭代的同时，尽可能保持高质量.</li>
+<li>CI一种可以增加项目可见性，降低项目失败风险的开发实践。其每一次代码更新，都要通过自动化测试来检测代码和功能的正确性，只有通过自动测试的代码才能进行后续的交付和部署.</li>
+<li>CI 是团队成员间（产研测）更好地协调工作，更好的适应敏捷迭代开发，自动完成减少人工干预，保证每个时间点上团队成员提交的代码都能成功集成的，可以很好的用于对Android/iOS项目的打包.</li>
+</ul>
+<h2 id="OTA"><a href="#OTA" class="headerlink" title="OTA"></a>OTA</h2><ul>
+<li>OTA（Over-the-Air Technology）空中下载技术,具体参<a href="https://support.apple.com/en-us/HT201435" target="_blank" rel="external">考此文介绍</a>.</li>
+</ul>
+<h2 id="pgyer"><a href="#pgyer" class="headerlink" title="pgyer"></a>pgyer</h2><ul>
+<li><a href="https://www.pgyer.com/apps" target="_blank" rel="external">蒲公英(pgyer)</a>为移动开发者提供App免费测试分发应用的服务平台，支持iOS与Android，简单两步分发应用。类似的还有fir.im等.</li>
+</ul>
+<h1 id="流程结构"><a href="#流程结构" class="headerlink" title="流程结构"></a>流程结构</h1><p>简单绘制了下Jenkins的一个流程，如下图：</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E6%B5%81%E7%A8%8B-min.png" alt="">  </p>
+<p><a href="http://www.ibm.com/developerworks/cn/devops/d-continuous-delivery-framework-jenkins/" target="_blank" rel="external">IBM Developer</a>上也有一个看似更复杂一点的图，如下图<br><img src="http://www.ibm.com/developerworks/cn/devops/d-continuous-delivery-framework-jenkins/image007.png" alt="">   </p>
+<p>持续交互流程图：<br><img src="http://www.ibm.com/developerworks/cn/devops/d-continuous-delivery-framework-jenkins/image006.png" alt="">  </p>
+<h1 id="平台搭建"><a href="#平台搭建" class="headerlink" title="平台搭建"></a>平台搭建</h1><h2 id="Jenkins安装和启动"><a href="#Jenkins安装和启动" class="headerlink" title="Jenkins安装和启动"></a>Jenkins安装和启动</h2><p><a href="https://jenkins.io/index.html" target="_blank" rel="external">官网</a>： <a href="https://jenkins.io/index.html" target="_blank" rel="external">https://jenkins.io/index.html</a><br><a href="http://mirrors.jenkins-ci.org/war/latest/jenkins.war" target="_blank" rel="external">下载</a>： <a href="http://mirrors.jenkins-ci.org/war/latest/jenkins.war" target="_blank" rel="external">http://mirrors.jenkins-ci.org/war/latest/jenkins.war</a>  </p>
+<blockquote>
+<p>安装： </p>
+</blockquote>
+<ul>
+<li>依赖于Java环境，首先安装和配置<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">Java环境</a>  </li>
+<li>到<a href="https://jenkins.io/index.html" target="_blank" rel="external">官网</a>下载Jenkins,双击安装，如果是Mac电脑，会自动生成全局变量jenkins  </li>
+<li>修改参数： jenkins + 相关参数，如<br>jenkins –httpPort=8888  #更换端口号，当默认端口8080被占用，或指定特定端口时。</li>
+</ul>
+<blockquote>
+<p>启动  </p>
+</blockquote>
+<ul>
+<li>手动启动： java  -jar jenkins.war  </li>
+<li>后台启动(默认端口)： nohup java -jar jenkins.war &amp;  </li>
+<li>后台启动(指定端口)： nohup java -jar jenkins.war -httpPort=88 &amp;  </li>
+<li>后台启动(HTTPS)： nohup java -jar jenkins.war -httpsPort=88 &amp;  </li>
+<li>浏览：<a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a>  , localhost可配置</li>
+</ul>
+<h2 id="Jenkins插件安装"><a href="#Jenkins插件安装" class="headerlink" title="Jenkins插件安装"></a>Jenkins插件安装</h2><blockquote>
+<p>插件安装</p>
+</blockquote>
+<p>操作： Manage Jenkins -&gt; Manage Plugins -&gt; Available -&gt; Search -&gt; Click to install，如下图所示</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%851-min.png" alt="">   </p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%852-min.png" alt="">  </p>
+<blockquote>
+<p>实用插件</p>
+</blockquote>
+<ul>
+<li>iOS专用：Xcode integration  </li>
+<li>Android专用：Gradle plugin </li>
+<li>Gitlab插件：GitLab Plugin 和 Gitlab Hook Plugin   </li>
+<li>Git插件： Git plugin  </li>
+<li>GitBuckit插件： GitBuckit plugin   </li>
+<li>签名证书管理插件:  Credentials Plugin 和Keychains and Provisioning Profiles Management  </li>
+<li>FTP插件:  Publish over FTP  </li>
+<li>脚本插件: Post-Build Script Plug-in  </li>
+<li>修改Build名称/描述(二维码)： build-name-setter / description setter plugin</li>
+<li>获取仓库提交的commit log： Git Changelog Plugin  </li>
+<li>自定义全局变量: Environment Injector Plugin  </li>
+<li>自定义邮件插件： Email Extension Plugin  </li>
+<li>获取当前登录用户信息： build-user-vars-plugin </li>
+<li>显示代码测试覆盖率报表： Cobertura Plugin   </li>
+<li>来展示生成的单元测试报表，支持一切单测框架，如junit、nosetests等： Junit Plugin</li>
+<li>其它： GIT plugin / SSH Credentials Plugin</li>
+</ul>
+<h2 id="Jenkins系统设置"><a href="#Jenkins系统设置" class="headerlink" title="Jenkins系统设置"></a>Jenkins系统设置</h2><p>操作： Manage Jenkins -&gt; Configure System </p>
+<ul>
+<li>Jenkins内部shell UTF-8 编码设置，如下图所示</li>
+</ul>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E8%AE%BE%E7%BD%AE1-min.png" alt="">  </p>
+<ul>
+<li>Jenkins Location和Email设置，如下图所示</li>
+</ul>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E8%AE%BE%E7%BD%AE2-min.png" alt="">  </p>
+<ul>
+<li>E-mail Notification，设置如下如所示</li>
+</ul>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkis%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE3-min.png" alt="Jenkis系统设置3"></p>
+<p>SMTP详细配置请参考 <a href="http://www.nailedtothex.org/roller/kyle/entry/articles-jenkins-email" target="_blank" rel="external">How to send Email at every build with Jenkins</a>  </p>
+<h2 id="Jenkins-Jobs配置"><a href="#Jenkins-Jobs配置" class="headerlink" title="Jenkins Jobs配置"></a>Jenkins Jobs配置</h2><h3 id="Jobs基础配置"><a href="#Jobs基础配置" class="headerlink" title="Jobs基础配置"></a>Jobs基础配置</h3><blockquote>
+<p>配置编译参数</p>
+</blockquote>
+<p>例如，如果需要打包者自行选择打包类型，如需要编译Release/Debug/Test等不同版本的包，那需要配置Jobs的编译参数，配置方法如下图所示：</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE2-min.png" alt="Jenkins编译设置-参数设置2"></p>
+<p>你还可以配置一些其它参数，例如：</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE3-min.png" alt="Jenkins编译设置-参数设置3"></p>
+<p>配置完后，build界面中就会出现，如下如所示：</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE1-min.png" alt="Jenkins编译设置-参数设置1"></p>
+<p><a href="http://stackoverflow.com/questions/7751735/how-to-configure-a-single-jenkins-job-to-make-the-release-process-from-trunk-or" target="_blank" rel="external">How to configure a single Jenkins job to make the release process from trunk or branches?</a></p>
+<blockquote>
+<p>配置匿名用户权限</p>
+</blockquote>
+<p>后面打包的应用发布时，如果懒得自己搭建服务器，就用Jenkins的，但发布出去的链接需要登录才能访问，这时候你可以设置匿名用户的访问权限，这样匿名用户可以下载访问你提供的应用链接了，非常取巧的方法，如下图：</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE4-min.png" alt="Jenkins编译设置-参数设置4.png"></p>
+<h3 id="Jobs源码库配置-Gitlab为例"><a href="#Jobs源码库配置-Gitlab为例" class="headerlink" title="Jobs源码库配置(Gitlab为例)"></a>Jobs源码库配置(Gitlab为例)</h3><blockquote>
+<p>配置SSH</p>
+</blockquote>
+<p>操作： Manage Jenkins -&gt; Credentials -&gt; Global credentials (unrestricted) -&gt; Add Credentials</p>
+<ol>
+<li>本机生成SSH：ssh-keygen -t rsa -C “Your email” ， 生成过程中需设置密码，最终生成id_rsa和id_rsa.pub(公钥)  </li>
+<li>本机添加秘钥到SSH：ssh-add 文件名（需输入管理密码）  </li>
+<li>Gitlab上添加公钥：复制id_rsa.pub里面的公钥添加到Gitlab    </li>
+<li>Jenkins上配置密钥到SSH：复制id_rsa.pub里面的公钥添加到Jenkins（private key选项）  </li>
+</ol>
+<blockquote>
+<p>新建Job  </p>
+</blockquote>
+<p>在Jenkins中，所有的任务都是以”Job”为单位的。在进行操作前，你需要新建一个Job，Job新建比较简单，只需要在Jenkins管理的首页左侧，点击“New Job”，一般选择free-style software project，再输入Job的名字即可。</p>
+<blockquote>
+<p>配置Gitlab</p>
+</blockquote>
+<p>在新建的任务（Jobs）中，Gitlab源码配置如下图：需要输入git仓库和build分支，公钥使用上面配置SSH生成的公钥。</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE1-min.png" alt="">    </p>
+<h3 id="Jobs触发条件配置"><a href="#Jobs触发条件配置" class="headerlink" title="Jobs触发条件配置"></a>Jobs触发条件配置</h3><p>Jenkins支持多种触发器配置，包括：</p>
+<ul>
+<li><p>定期进行构建（Build periodically），定时器使用示例如下：  </p>
+<p>  H(25-30) 18 <em> </em> 1-5： 工作日下午6点25到30分之间进行build<br>  H 23 <em> </em> 1-5：工作日每晚23:00至23:59之间的某一时刻进行build<br>  H(0-29)/15 <em> </em> <em> </em>：前半小时内每隔15分钟进行build（开始时间不确定）<br>  H/20 <em> </em> <em> </em>：每隔20分钟进行build（开始时间不确定）   </p>
+</li>
+<li><p>根据提交进行构建（Build when a change is pushed to GitHub）</p>
+</li>
+<li>定期检测代码更新，如有更新则进行构建（Poll SCM）</li>
+</ul>
+<h3 id="Jobs构建方式-编译-配置"><a href="#Jobs构建方式-编译-配置" class="headerlink" title="Jobs构建方式/编译 配置"></a>Jobs构建方式/编译 配置</h3><p>Jenkins支持多种编译配置方式，包括：</p>
+<ul>
+<li>Xcode: iOS编译配置（安装Xcode integration插件） </li>
+<li>Invoke Gradle script：  Android编译配置(安装Gradle plugin插件)   </li>
+<li>Exceute Shell： 脚本方式  </li>
+</ul>
+<p>对于iOS应用的构建，如果选择Xcode方式构建，需要配置好开发者证书，具体参考后面签名和整数问题。<br>推荐使用Exceute Shell方式，简单有效。</p>
+<h3 id="Jobs构建后处理"><a href="#Jobs构建后处理" class="headerlink" title="Jobs构建后处理"></a>Jobs构建后处理</h3><blockquote>
+<p>Artifacts和邮件通知配置，参考下图   </p>
+</blockquote>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE-Archive-min.png" alt="Jenkins项目设置-Archive-min">  </p>
+<p>可借助Email Extension Plugin 插件进行详细配置，具体可参考<a href="http://blog.csdn.net/fengshi_sh/article/details/50669754" target="_blank" rel="external">此文</a></p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE-%E9%82%AE%E4%BB%B6-min.png" alt="Jenkins项目设置-邮件-min">  </p>
+<blockquote>
+<p>发布</p>
+</blockquote>
+<ul>
+<li>FTP服务器, 最传统的方式，可助蒲公英或者fir.im（安装对应的Jenkins插件）。</li>
+<li>专业的Artifacts存储仓库, 比如Nexus, Artifactory等。</li>
+<li>对象存储服务：比如阿里云OSS，AWS S3等，以阿里云为例，具体请参考此文 <a href="http://blog.fit2cloud.com/2015/01/20/aliyun-oss-jenkins-plugin.html" target="_blank" rel="external">在Jenkins持续集成方案中使用阿里云OSS作为Artifacts仓库</a>  </li>
+</ul>
+<p>当然，如果不想自己的应用发布到三方网站，只希望在自己的内网上托管，这样需要在自己内网上搭建服务器，服务器搭建方式有很多种，Mac上可以用自带的Apache服务，也可以用其它服务。</p>
+<p>iOS的发布可能希望用到OTA，可参考<a href="http://blog.csdn.net/close_marty/article/details/38559673" target="_blank" rel="external">此文</a>  还有这篇<a href="http://www.jianshu.com/p/35ca63ec0d8e" target="_blank" rel="external">一步一步实现无线安装iOS应用(内网OTA)</a> </p>
+<p>这里分享一个我写的shell脚本模板(<a href="https://github.com/skyseraph/PlistAutoCreate" target="_blank" rel="external">已开源</a>)，可以用于iOS的plist文件自动创建以及OTA简单发布页面的自动创建，参考<a href="https://github.com/skyseraph/PlistAutoCreate" target="_blank" rel="external">此链接获取源码</a>, 欢迎Star.</p>
+<p>自动生成一个简单HTML界面，如下图，点击Install即可安装：</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/jenkins_index.png" alt="Jenkis发布1">  </p>
+<p>注意，这里iOS7.1以后限定必须要要用https，所以需要对jenkins设置下https，参考下面”后记” 中的Jenkins Https设置</p>
+<blockquote>
+<p>Last Show  </p>
+</blockquote>
+<p>构建成功后最终的结果如下如所示：</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/jenkins_finish.jpg" alt="">  </p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><h2 id="签名和证书问题-iOS"><a href="#签名和证书问题-iOS" class="headerlink" title="签名和证书问题(iOS)"></a>签名和证书问题(iOS)</h2><ul>
+<li><a href="https://circleci.com/docs/ios-code-signing/" target="_blank" rel="external">Set up code signing for iOS projects</a></li>
+<li><a href="http://eqi.cc/2016/05/17/%E5%AE%89%E8%A3%85jenkins%E5%88%B0%E5%8F%91%E5%B8%83ipa%E4%B8%AD%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/" target="_blank" rel="external">安装JENKINS到发布IPA中的那些坑</a></li>
+</ul>
+<h2 id="邮件发送失败"><a href="#邮件发送失败" class="headerlink" title="邮件发送失败"></a>邮件发送失败</h2><ul>
+<li>实际搭建过程中有遇到此问题，折腾了小会，还以为是公司邮箱地址为题，后面发现仅仅是一个小配置问题。</li>
+<li>Extended E-mail Notification中也需要和E-mail Notification一样，点击Advanced，然后选择Use SMTP Authentication，配置同E-mail Notification的参数。</li>
+</ul>
+<h2 id="Jenkins-Https-Support"><a href="#Jenkins-Https-Support" class="headerlink" title="Jenkins Https Support"></a>Jenkins Https Support</h2><p>查询Jenkins Https相关命令： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar jenkins.war --help | grep -i https</div></pre></td></tr></table></figure>
+<p>说明：下面以Mac为例.</p>
+<blockquote>
+<p>KeyStore方式</p>
+</blockquote>
+<ul>
+<li>生成： </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">keytool -genkey -keyalg RSA -alias selfsigned -keystore keystore.jks -storepass 密码 -dname &quot;cn=WEB&quot;</div></pre></td></tr></table></figure>
+<ul>
+<li>使用： </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar jenkins.war --httpPort=-1 --httpsPort=8080 --httpsKeyStore=/目录/keystore.jks --httpsKeyStorePassword=密码</div></pre></td></tr></table></figure>
+<ul>
+<li>注意： 第一次使用时需要将”WEB”证书导入，导入步骤为：Chrome导出证书 -&gt; 安装证书 -&gt; 设置证书”全部允许”， 图解步骤可参考下面实用参考中的第5篇文章.</li>
+</ul>
+<blockquote>
+<p>Certificate方式  </p>
+</blockquote>
+<ul>
+<li>生成：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo openssl genrsa -out server.key 2048  </div><div class="line">sudo openssl req -new -key server.key -out server.csr  </div><div class="line">sudo openssl genrsa  -out ca.key 1024  </div><div class="line">sudo openssl req  -new -x509 -days 365 -key ca.key -out ca.crt  </div><div class="line">sudo openssl ca -in server.csr -out server.crt -cert ca.crt -keyfile ca.key</div></pre></td></tr></table></figure>
+<ul>
+<li>使用：</li>
+</ul>
+<p>启动Jenkins:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar jenkins.war --httpsPort=8088 --httpsCertificate=/path/server.crt --httpsPrivateKey=/path/server.key</div></pre></td></tr></table></figure></p>
+<ul>
+<li>注意/说明：<br>1 同上<br>2 iOS手机需要导入cer证书(ca.crt)<br>3 Common Name  填写IP地址或域名地址<br>4 第5步骤如果提提示“I am unable to access the ./demoCA/newcerts directory” 错误，解决方法为：<br>在当前操作目录，新建demoCA\newcerts2层文件夹<br>然后再demoCA文件夹下新建一个空的index.txt文件<br>再新建一个serial文件，没有后缀。里面填入01  </li>
+</ul>
+<blockquote>
+<p>实用参考   </p>
+</blockquote>
+<ul>
+<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Starting+and+Accessing+Jenkins" target="_blank" rel="external">Starting and Accessing Jenkins</a>  官网说明</li>
+<li><a href="http://balodeamit.blogspot.hk/2014/03/jenkins-switch-to-ssl-https-mode.html" target="_blank" rel="external">Jenkins: Switch to SSL/ HTTPS mode</a>  支持HTTPS的两种方式</li>
+<li><a href="https://wiki.wocommunity.org/display/documentation/Installing+and+Configuring+Jenkins" target="_blank" rel="external">Installing and Configuring Jenkins</a>  KeyStore方式</li>
+<li><a href="https://discuss.zendesk.com/hc/en-us/articles/202652748-Generating-a-self-signed-SSL-certificate-using-the-Java-keytool-command-2004193-" target="_blank" rel="external">Generating a self-signed SSL certificate using the Java keytool command (2004193)</a>  KeyStore方式</li>
+<li><a href="http://www.andrewconnell.com/blog/setup-self-signed-certificates-trusting-them-on-os-x#ZAUu13DJEy2AYEYM.99" target="_blank" rel="external">Setup Self-Signed Certificates &amp; Trusting them on OS X</a>  Certificate方式</li>
+<li><a href="http://nassir.iteye.com/blog/1983613" target="_blank" rel="external">免费openssl生成ssl证书</a>   Certificate方式   </li>
+<li><a href="https://github.com/hughperkins/howto-jenkins-ssl" target="_blank" rel="external">howto-jenkins-ssl</a>  </li>
+<li><a href="https://support.cloudbees.com/hc/en-us/articles/226744608-Jenkins-fails-to-Start-due-to-HttpsConnectorFactory" target="_blank" rel="external">Jenkins fails to Start due to HttpsConnectorFactory</a>  </li>
+<li><a href="http://yuur369.iteye.com/blog/1720321" target="_blank" rel="external">openssl 生成服务端证书所遇到的问题</a>  </li>
+</ul>
+<h1 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h1><ul>
+<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Use+Jenkins" target="_blank" rel="external">Using Jenkins</a></li>
+<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Building+a+software+project" target="_blank" rel="external">Building a software project</a></li>
+<li><a href="https://danielbeard.wordpress.com/2013/04/23/auto-build-and-deploy-ios-apps-using-jenkins/" target="_blank" rel="external">Auto build and deploy iOS apps using Jenkins</a>  </li>
+<li><a href="http://savvyapps.com/blog/continuous-integration-ios-jenkins" target="_blank" rel="external">Continuous Integration for iOS with Jenkins</a>  </li>
+<li><a href="http://docs.gitlab.com/ee/integration/jenkins.html#jenkins-ci-deprecated-service" target="_blank" rel="external">GitLab Documentation</a> </li>
+<li><a href="https://felixha.wordpress.com/2014/04/24/luu-bi/" target="_blank" rel="external">Setup Jenkins + TestFlight for iOS apps</a>    </li>
+<li><a href="https://nickcharlton.net/posts/installing-jenkins-osx-yosemite.html" target="_blank" rel="external">Installing Jenkins on OS X Yosemite</a></li>
+<li><a href="https://www.ibm.com/developerworks/cn/java/j-lo-jenkins/" target="_blank" rel="external">基于 Jenkins 快速搭建持续集成环境</a>  </li>
+<li><a href="http://files.cnblogs.com/files/itech/Jenkins%E5%85%A5%E9%97%A8.pdf" target="_blank" rel="external">Jenkins入门</a>  </li>
+<li><a href="http://blog.csdn.net/close_marty/article/details/38559673" target="_blank" rel="external">jenkins中集成OTA发布</a>  </li>
+</ul>
+<h1 id="后记-1"><a href="#后记-1" class="headerlink" title="后记"></a>后记</h1><p>本文首发于<a href="http://skyseraph.com/">skyseraph.com</a>：<a href="http://skyseraph.com/2016/07/18/Tools/Jenkins%20Gitlab%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E6%89%93%E5%8C%85%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/">“Jenkins Gitlab持续集成打包平台搭建”</a><br>同步发表/转载 <a href="http://www.cnblogs.com/skyseraph/p/5695021.html" target="_blank" rel="external">cnBlogs</a> / <a href="http://blog.csdn.net/zgzhaobo/article/details/52002181" target="_blank" rel="external">CSDN</a> / <a href=""></a> …</p>
+<hr>
+<font size="2"><br>By SkySeraph-2016<br></font>   
+
+<hr>
+<p><strong><em>版权声明</em></strong></p>
+<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
+
+<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
+<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
+<p>本文永久链接：<a href="http://skyseraph.com/2016/07/18/Tools/Jenkins">http://skyseraph.com/2016/07/18/Tools/Jenkins</a> Gitlab持续集成打包平台搭建/</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+        <a href="http://skyseraph.com/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-iOS/Select all the cell in UITabView or UICollectionView problem" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -822,7 +1162,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
 
 
-    <article id="post-iOS/OpenProjectsIniOS" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Tools/ITLifeCmds" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -831,7 +1171,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2015/11/30/iOS/OpenProjectsIniOS/">完整开源项目荟萃（iOS篇）</a>
+            <a class="article-title" href="/2014/08/08/Tools/ITLifeCmds/">IT生涯，我记忆中的那些命令</a>
         </h1>
     
 
@@ -839,8 +1179,8 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2015/11/30/iOS/OpenProjectsIniOS/">
-            <time datetime="2015-11-29T17:01:00.000Z" itemprop="datePublished">2015-11-30</time>
+        <a href="/2014/08/08/Tools/ITLifeCmds/">
+            <time datetime="2014-08-07T16:40:20.000Z" itemprop="datePublished">2014-08-08</time>
         </a>
     </div>
 
@@ -848,13 +1188,13 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/iOS/">iOS</a>
+        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Tools/">Tools</a>
     </div>
 
                     
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/iOS/">iOS</a>
+        <a class="tag-link" href="/tags/Git/">Git</a>, <a class="tag-link" href="/tags/Linux/">Linux</a>, <a class="tag-link" href="/tags/adb/">adb</a>
     </div>
           
 					
@@ -868,279 +1208,159 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction"><span class="toc-number">1.</span> <span class="toc-text">Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#About"><span class="toc-number">1.1.</span> <span class="toc-text">About</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Contribute"><span class="toc-number">1.2.</span> <span class="toc-text">Contribute</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#History"><span class="toc-number">1.3.</span> <span class="toc-text">History</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Categories"><span class="toc-number">2.</span> <span class="toc-text">Categories</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#新闻-资讯"><span class="toc-number">2.1.</span> <span class="toc-text">新闻/资讯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#社交-聊天"><span class="toc-number">2.2.</span> <span class="toc-text">社交/聊天</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#读书-图片-音乐-视频"><span class="toc-number">2.3.</span> <span class="toc-text">读书/图片/音乐/视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学习-工具"><span class="toc-number">2.4.</span> <span class="toc-text">学习/工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#游戏"><span class="toc-number">2.5.</span> <span class="toc-text">游戏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高仿系列"><span class="toc-number">2.6.</span> <span class="toc-text">高仿系列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它"><span class="toc-number">2.7.</span> <span class="toc-text">其它</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#adb-命令"><span class="toc-number">1.</span> <span class="toc-text">adb 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#APK操作"><span class="toc-number">1.1.</span> <span class="toc-text">APK操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-命令"><span class="toc-number">2.</span> <span class="toc-text">git 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-命令"><span class="toc-number">3.</span> <span class="toc-text">Linux 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#批处理-命令"><span class="toc-number">4.</span> <span class="toc-text">批处理 命令</span></a></li></ol>
                 </div>
             
-            <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><ul>
-<li>“【All-OpenSource-Project】” 致力于收集完整优质/优秀/优美完整的Android/iOS/Web等开源项目  </li>
-<li>欢迎您的加入!   <a href="https://github.com/skyseraph/All-OpenSource-Project" target="_blank" rel="external">Fork</a> or <a href="skyseraph00@163.com">Email</a> to Me, tks!</li>
-</ul>
-<h2 id="Contribute"><a href="#Contribute" class="headerlink" title="Contribute"></a>Contribute</h2><p><a href="http://skyseraph.com/">SkySeraph</a> …</p>
-<h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><ul>
-<li>2015.11.30 First Create</li>
-</ul>
-<h1 id="Categories"><a href="#Categories" class="headerlink" title="Categories"></a>Categories</h1><hr>
-<h2 id="新闻-资讯"><a href="#新闻-资讯" class="headerlink" title="新闻/资讯"></a>新闻/资讯</h2><ul>
-<li><p><a href="https://github.com/dennisreimann/ioctocat" target="_blank" rel="external">ioctocat</a> <strong>GitHub iOS客户端</strong><br>iOctocat v1 - GitHub for iOS (works on the iPhone, iPad, and iPod Touch) <a href="http://ioctocat.com/" target="_blank" rel="external">http://ioctocat.com/</a></p>
-</li>
-<li><p><a href="http://git.oschina.net/oschina/iphone-app" target="_blank" rel="external">iphone-app</a> <strong>开源中国社区 iPhone 客户端</strong>  </p>
-</li>
-<li><p><a href="https://github.com/cubewang/GameDaily" target="_blank" rel="external">GameDaily</a> <strong>电竞第一视角</strong><br>iOS Game Video App compatible with iPhone and iPad.</p>
-</li>
-</ul>
-<hr>
-<h2 id="社交-聊天"><a href="#社交-聊天" class="headerlink" title="社交/聊天"></a>社交/聊天</h2><hr>
-<h2 id="读书-图片-音乐-视频"><a href="#读书-图片-音乐-视频" class="headerlink" title="读书/图片/音乐/视频"></a>读书/图片/音乐/视频</h2><ul>
-<li><p><a href="https://github.com/TonnyTao/DoubanAlbum" target="_blank" rel="external">DoubanAlbum</a> <strong> 豆瓣相册 </strong><br>Slowslab iOS应用 豆瓣相册 精选集 开源项目，<a href="http://www.douban.com/people/slowslab/" target="_blank" rel="external">http://www.douban.com/people/slowslab/</a></p>
-</li>
-<li><p><a href="https://github.com/vfr/Reader" target="_blank" rel="external">Reader</a> <strong>iOS PDF阅读器</strong><br>PDF Reader Core for iOS <a href="http://www.vfr.org/" target="_blank" rel="external">http://www.vfr.org/</a></p>
-</li>
-</ul>
-<hr>
-<h2 id="学习-工具"><a href="#学习-工具" class="headerlink" title="学习/工具"></a>学习/工具</h2><ul>
-<li><a href="https://github.com/cubewang/GameDaily" target="_blank" rel="external">NewsReader</a> <strong>VOA在线英语 </strong><br>iOS News Reader compatible with iPhone and iPad，<a href="http://www.cnblogs.com/wangkewei/archive/2012/09/29/2708373.html" target="_blank" rel="external">详细介绍</a> </li>
-</ul>
-<hr>
-<h2 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h2><hr>
-<h2 id="高仿系列"><a href="#高仿系列" class="headerlink" title="高仿系列"></a>高仿系列</h2><ul>
-<li><p><a href="https://github.com/lookingstars/meituan" target="_blank" rel="external">meituan</a> <strong>高仿美团</strong><br>高仿美团iOS版，版本号5.7</p>
-</li>
-<li><p><a href="https://github.com/lookingstars/nuomi" target="_blank" rel="external">nuomi</a> <strong>高仿百度糯米</strong><br>高仿百度糯米iOS版，版本号5.13.0</p>
-</li>
-</ul>
-<hr>
-<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ul>
-<li><a href="https://github.com/sobri909/MGBoxKit" target="_blank" rel="external">MGBoxKit</a> <strong>iOS 优雅组件</strong><br>Simple, quick iOS tables, grids, and more</li>
-</ul>
-<p>By SkySeraph 11/30/2015   </p>
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2015/11/30/iOS/OpenProjectsIniOS/">http://skyseraph.com/2015/11/30/iOS/OpenProjectsIniOS/</a></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-    <div class="bdsharebuttonbox">
-    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
-    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
-    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
-    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
-</div>
-<script>
-window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-<style>
-    .bdshare_popup_box {
-        border-radius: 4px;
-        border: #e1e1e1 solid 1px;
-    }
-    .bdshare-button-style0-16 a,
-    .bdshare-button-style0-16 .bds_more {
-        padding-left: 20px;
-        margin: 6px 10px 6px 0;
-    }
-    .bdshare_dialog_list a,
-    .bdshare_popup_list a,
-    .bdshare_popup_bottom a {
-        font-family: 'Microsoft Yahei';
-    }
-    .bdshare_popup_top {
-        display: none;
-    }
-    .bdshare_popup_bottom {
-        height: auto;
-        padding: 5px;
-    }
-</style>
-
-
-</div>
-
-            
-    
-        <a href="http://skyseraph.com/2015/11/30/iOS/OpenProjectsIniOS/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2015/11/30/iOS/OpenProjectsIniOS/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-Android/OpenProjectsInAndroid" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2015/11/30/Android/OpenProjectsInAndroid/">完整开源项目荟萃（Android篇）</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2015/11/30/Android/OpenProjectsInAndroid/">
-            <time datetime="2015-11-29T17:00:00.000Z" itemprop="datePublished">2015-11-30</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Android/">Android</a>
-    </div>
-          
-					
-
-					
-                </div>
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-                <div id="toc" class="toc-article">
-                <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction"><span class="toc-number">1.</span> <span class="toc-text">Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#About"><span class="toc-number">1.1.</span> <span class="toc-text">About</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Contribute"><span class="toc-number">1.2.</span> <span class="toc-text">Contribute</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#History"><span class="toc-number">1.3.</span> <span class="toc-text">History</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Categories"><span class="toc-number">2.</span> <span class="toc-text">Categories</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#高仿-原生"><span class="toc-number">2.1.</span> <span class="toc-text">高仿/原生</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#资讯-生活"><span class="toc-number">2.2.</span> <span class="toc-text">资讯/生活</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#音视频-图片"><span class="toc-number">2.3.</span> <span class="toc-text">音视频/图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工具类"><span class="toc-number">2.4.</span> <span class="toc-text">工具类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#todo系列"><span class="toc-number">2.4.1.</span> <span class="toc-text">todo系列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android辅助工具"><span class="toc-number">2.4.2.</span> <span class="toc-text">Android辅助工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#游戏类"><span class="toc-number">2.5.</span> <span class="toc-text">游戏类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android组件篇"><span class="toc-number">2.6.</span> <span class="toc-text">Android组件篇</span></a></li></ol></li></ol>
-                </div>
-            
-            <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><ul>
-<li>“【<a href="https://github.com/skyseraph/All-OpenSource-Project" target="_blank" rel="external">All-OpenSource-Project</a>】” 致力于收集完整优质/优秀/优美完整的Android/iOS/Web等开源项目  </li>
-<li>欢迎您的加入!   <a href="https://github.com/skyseraph/All-OpenSource-Project" target="_blank" rel="external">Fork</a> or <a href="skyseraph00@163.com">Email</a> to Me, tks!</li>
-</ul>
-<h2 id="Contribute"><a href="#Contribute" class="headerlink" title="Contribute"></a>Contribute</h2><p><a href="http://skyseraph.com/">SkySeraph</a> …</p>
-<h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><ul>
-<li>2015.11.30 First Create</li>
-</ul>
-<h1 id="Categories"><a href="#Categories" class="headerlink" title="Categories"></a>Categories</h1><hr>
-<h2 id="高仿-原生"><a href="#高仿-原生" class="headerlink" title="高仿/原生"></a>高仿/原生</h2><blockquote>
-<p>高仿</p>
+            <hr>
+<p><a href="https://github.com/skyseraph/Soft-Tools" target="_blank" rel="external"><strong>Star Here ~~</strong></a>. </p>
+<p><a href="https://github.com/skyseraph/Soft-Tools" target="_blank" rel="external">Soft-Tools</a> 完整目录如下（持续更新，欢迎补充~）：</p>
+<p><strong>命令类</strong></p>
+<table>
+<thead>
+<tr>
+<th>Menu</th>
+<th>Desc.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Git.md" target="_blank" rel="external">Git</a></td>
+<td>Git Commands</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Adb.md" target="_blank" rel="external">Adb</a></td>
+<td>Adb Commands</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Bat.md" target="_blank" rel="external">Bat</a></td>
+<td>Bat Commands</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Vim.md" target="_blank" rel="external">Vim</a></td>
+<td>Vim    Commands</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Regular.md" target="_blank" rel="external">Regular</a></td>
+<td>Regular</td>
+</tr>
+<tr>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Python.md" target="_blank" rel="external">Python</a></td>
+<td>Python    Commands</td>
+</tr>
+</tbody>
+</table>
+<h1 id="adb-命令"><a href="#adb-命令" class="headerlink" title="adb 命令"></a>adb 命令</h1><blockquote>
+<p>汇总</p>
 </blockquote>
 <ul>
-<li><a href="https://github.com/GitLqr/LQRWeChat" target="_blank" rel="external">LQRWeChat 仿微信6.5.7（基于融云SDK）</a> </li>
-<li><a href="https://github.com/motianhuo/wechat" target="_blank" rel="external">wechat 仿微信 </a> </li>
-<li><a href="https://github.com/wenmingvs/WeiBo" target="_blank" rel="external">WeiBo 仿新浪微博</a> </li>
-<li><a href="https://github.com/chaychan/TouTiao" target="_blank" rel="external">TouTiao 仿今日头条</a></li>
-<li><a href="https://github.com/Rano1/TopNews" target="_blank" rel="external">TopNews 高仿“今日头条”客户端 </a> </li>
-<li><a href="https://github.com/jenly1314/KingTV" target="_blank" rel="external">KingTV 仿全民直播（全民TV）</a> </li>
-<li><a href="https://github.com/aa112901/remusic" target="_blank" rel="external">remusic 仿网易云音乐</a> </li>
-<li><a href="https://github.com/youlookwhat/CloudReader" target="_blank" rel="external">CloudReader 云阅(仿网易云音乐UI)</a> </li>
-<li><a href="https://github.com/mayubao/KuaiChuan" target="_blank" rel="external">KuaiChuan 仿茄子快传</a></li>
-<li><a href="https://github.com/myxh/CoolShopping" target="_blank" rel="external">CoolShopping 仿拉手团购</a></li>
-<li><a href="https://github.com/HotBitmapGG/bilibili-android-client" target="_blank" rel="external">bilibili-android-client 高仿哔哩哔哩动画</a> </li>
-<li><a href="https://github.com/movexmanlife/TongBanJie" target="_blank" rel="external">TongBanJie 高仿铜板街</a></li>
-<li><a href="https://github.com/Orangelittle/Liwusuo" target="_blank" rel="external">Liwusuo 仿礼物说</a></li>
+<li><p>adb <strong>kill-server</strong></p>
+</li>
+<li><p>adb <strong>devices</strong>  </p>
+</li>
+<li><p>adb <strong>install</strong> [-l] [-r] [-s] <file><br>  -l 表示锁定该程序;<br>  -r 表示替换原有的apk安装;<br>  -s 表示安装在SD卡内，而不是设备内部存储</file></p>
+</li>
+<li><p>adb <strong>uninstall</strong> [-k] <package><br>  -k 表示不删除程序运行所产生的数据和缓存目录(如软件的数据库文件)</package></p>
+</li>
+<li><p>adb shell pm clear  <package><br>清除应用缓存</package></p>
+</li>
+<li><p>taskkill /f /im adb*  </p>
+</li>
+<li><p>adb shell getprop ro.build.version.release  版本</p>
+</li>
+<li><p>adb shell + cat /system/build.prop  查看手机配置信息</p>
+</li>
+<li><p>adb shell getprop dalvik.vm.heapsize  </p>
+</li>
 </ul>
 <blockquote>
-<p>原生 </p>
+<p><strong>获取进程号</strong>    </p>
 </blockquote>
 <ul>
-<li><a href="http://git.oschina.net/oschina/android-app" target="_blank" rel="external">OSChina</a></li>
-<li><a href="http://git.oschina.net/handoop/FlowGeek" target="_blank" rel="external">OSChina（Material Design风格）</a></li>
-<li><a href="https://github.com/hidroh/materialistic" target="_blank" rel="external">Hacker News</a></li>
-<li><a href="https://github.com/TellH/GitClub" target="_blank" rel="external">Github客户端</a> </li>
-<li><a href="https://github.com/laowch/GithubTrends" target="_blank" rel="external">GithubTrends</a> </li>
+<li>adb shell  </li>
+<li>ps | grep 进程名  </li>
+<li>cat /proc/pid/oom_adj  //其中<strong>pid</strong>是上述grep得到的进程号     </li>
 </ul>
-<hr>
-<h2 id="资讯-生活"><a href="#资讯-生活" class="headerlink" title="资讯/生活"></a>资讯/生活</h2><ul>
-<li><a href="https://github.com/kinneyyan/36krReader" target="_blank" rel="external">36krReader</a> <strong>36氪客户端</strong><br>MD风格的36氪Android阅读客户端</li>
-<li><a href="https://github.com/avenwu/cnblogs" target="_blank" rel="external">cnblogs</a> <strong>博客园客户端</strong><br>博客园客户端（作者有保留，未完全开源）</li>
-<li><a href="https://github.com/Anthonyeef/FanfouDaily" target="_blank" rel="external">FanfouDaily</a> <strong>饭否精选</strong>  </li>
-<li><a href="https://github.com/drakeet/Meizhi" target="_blank" rel="external">Meizhi</a> <strong>干妹子</strong><br>每天自动更新一张精选妹纸图、一个小视频、一系列精选程序猿干货（周末不更新）</li>
-<li><a href="https://github.com/burgessjp/GanHuoIO" target="_blank" rel="external">GanHuoIO</a><br>基于Gank.IO提供的API的第三方客户端（RxJava+Retrofit+MVP） </li>
-<li><a href="https://github.com/race604/ZhiHuDaily-React-Native" target="_blank" rel="external">ZhiHuDaily-React-Native</a> <strong>知乎日报</strong>  </li>
-<li><a href="https://github.com/izzyleung/ZhihuDailyPurify" target="_blank" rel="external">ZhihuDailyPurify</a> <strong>更纯净的知乎日报</strong>  </li>
-<li><a href="https://github.com/bxbxbai/ZhuanLan" target="_blank" rel="external">ZhuanLan</a> <strong>知乎专栏</strong>   </li>
-<li><a href="https://github.com/xinghongfei/LookLook" target="_blank" rel="external">LookLook</a> 新闻阅读，知乎日报等</li>
-<li><a href="https://github.com/vbauer/android-arsenal.com" target="_blank" rel="external">android-arsenal.com</a> <strong>android-arsenal.com客户端</strong> </li>
-</ul>
+<blockquote>
+<p><strong>查看包名相关</strong>    </p>
+</blockquote>
 <ul>
-<li><a href="https://github.com/ittianyu/POCenter" target="_blank" rel="external">POCenter</a> 整合多个软件外包平台项目信息</li>
-<li><a href="https://github.com/onlyloveyd/JuheNews" target="_blank" rel="external">JuheNews</a>  使用聚合新闻数据而成的新闻资讯客户端</li>
-</ul>
-<ul>
-<li><a href="https://github.com/SkillCollege/SimplifyReader" target="_blank" rel="external">SimplifyReader</a><br>一款基于Google Material Design设计开发的Android客户端，包括新闻简读，图片浏览，视频爽看 ，音乐轻听以及二维码扫描五个子模块</li>
-</ul>
-<ul>
-<li><a href="https://github.com/liuguangqiang/shuba" target="_blank" rel="external">shuba</a> <strong>书吧</strong><br>专注为用户提供人性化的搜书引擎，快捷，方便，为用户找到最好的小说</li>
-<li><a href="https://github.com/erttyy8821/MyDiary" target="_blank" rel="external">MyDiary</a>  君の名は。, 你的名字  </li>
-</ul>
-<hr>
-<h2 id="音视频-图片"><a href="#音视频-图片" class="headerlink" title="音视频/图片"></a>音视频/图片</h2><ul>
-<li><a href="https://github.com/zhangliangming/HappyPlayer5" target="_blank" rel="external">HappyPlayer5（基于ijkplayer框架的Android音乐播放器）</a></li>
-<li><a href="https://github.com/daniulive/SmarterStreaming" target="_blank" rel="external">SmarterStreaming（大牛直播)</a></li>
-<li><a href="https://github.com/LRH1993/SmartRecom" target="_blank" rel="external">SmartRecom（基于行为识别和个性化推荐的智能推荐APP）</a></li>
-<li><a href="https://github.com/psaravan/JamsMusicPlayer" target="_blank" rel="external">JamsMusicPlayer 强大的音乐播放器</a> </li>
-<li><a href="https://github.com/saulmm/Material-Movies" target="_blank" rel="external">Material-Movies MD风格视频播放器</a> </li>
-<li><a href="https://github.com/AndroidJiang/StockChart" target="_blank" rel="external">StockChart 股票走势图</a></li>
-</ul>
-<hr>
-<h2 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h2><ul>
-<li><a href="https://github.com/LehmanHe/A4print" target="_blank" rel="external">在线云打印平台</a></li>
-<li><a href="https://github.com/Nightonke/CoCoin" target="_blank" rel="external">记账</a></li>
-<li><a href="https://github.com/lizixian18/AppLock" target="_blank" rel="external">应用锁</a></li>
-<li><a href="https://github.com/codekidX/storage-chooser" target="_blank" rel="external">文件管理</a></li>
-<li><a href="https://github.com/wangchenyan/PonyExpress" target="_blank" rel="external">小马快递</a></li>
-<li><a href="https://github.com/linglongxin24/DylanStepCount" target="_blank" rel="external">Android精准计步器</a></li>
-<li><a href="https://github.com/tiandawu/IotXmpp" target="_blank" rel="external">基于XMPP的物联网客户端</a></li>
-</ul>
-<h3 id="todo系列"><a href="#todo系列" class="headerlink" title="todo系列"></a>todo系列</h3><ul>
-<li><p><a href="https://github.com/avjinder/Minimal-Todo" target="_blank" rel="external">Minimal-Todo</a><br>A fully Material ToDo app with minimal features, just enough to be useful.</p>
+<li><p>adb shell pm list package [-f]  获取手机内所有包名<br>  -f 包名+路径    </p>
 </li>
-<li><p><a href="https://github.com/rakuishi/Todo-Android" target="_blank" rel="external">Todo-Android</a><br>Todo Android App using Realm and Lolipop Material Design.</p>
+<li><p><strong>adb shell dumpsys window w | findstr \/ | findstr name=</strong><br>查看包名   </p>
 </li>
-<li><p><a href="https://github.com/zhenghuiy/TodayThing" target="_blank" rel="external">TodayThing</a><br>一款简单的 Material Design 风格的 to do list 应用</p>
+<li><p>adb shell dumpsys activity&gt; d:\log.txt<br>导出包名（log中搜索 Stack #1，然后寻找cmp=）   </p>
+</li>
+<li><p>adb shell + logcat | grep START   </p>
 </li>
 </ul>
-<h3 id="Android辅助工具"><a href="#Android辅助工具" class="headerlink" title="Android辅助工具"></a>Android辅助工具</h3><ul>
-<li><p><a href="https://github.com/arpitkh96/AmazeFileManager" target="_blank" rel="external">AmazeFileManager</a>  <strong>Amaze File Manager</strong></p>
+<h2 id="APK操作"><a href="#APK操作" class="headerlink" title="APK操作"></a>APK操作</h2><ul>
+<li><p>apktool d x.apk</p>
 </li>
-<li><p><a href="https://github.com/msAndroid/MobileSafer" target="_blank" rel="external">MobileSafer</a>  <strong>手机安全小卫士</strong></p>
+<li><p>apktool b x</p>
+</li>
+<li><p>apkReSign.jar</p>
 </li>
 </ul>
+<h1 id="git-命令"><a href="#git-命令" class="headerlink" title="git 命令"></a>git 命令</h1><blockquote>
+<p>汇总   </p>
+</blockquote>
 <ul>
-<li><a href="https://github.com/ittianyu/MobileGuard" target="_blank" rel="external">MobileGuard</a> 一个管理安卓手机的应用，支持安卓7.0 </li>
+<li><p>git log  历史记录</p>
+</li>
+<li><p>git status  </p>
+</li>
+<li><p>git clean -df      </p>
+</li>
+<li><p>git branch -vv  </p>
+</li>
 </ul>
+<blockquote>
+<p><strong>Git配置相关</strong>    </p>
+</blockquote>
 <ul>
-<li><a href="https://github.com/cundong/MemoryMonitor" target="_blank" rel="external">MemoryMonitor</a><br>一款开发者专用的内存清理、Pss监控工具</li>
+<li><p>git config -l<br>查看Git当前配置信息</p>
+</li>
+<li><p>配置<br>git config –global user.email “you@email.com”<br>git config –global user.name “Your Name”<br>git config –global core.editor “nano”<br>git config –global color.ui true    </p>
+</li>
 </ul>
-<hr>
-<h2 id="游戏类"><a href="#游戏类" class="headerlink" title="游戏类"></a>游戏类</h2><hr>
-<h2 id="Android组件篇"><a href="#Android组件篇" class="headerlink" title="Android组件篇"></a>Android组件篇</h2><ul>
-<li><a href="https://github.com/Bilibili/DanmakuFlameMaster" target="_blank" rel="external">DanmakuFlameMaster</a> <strong>弹幕引擎</strong><br>Android开源弹幕引擎·烈焰弹幕使 ～ <a href="http://app.bilibili.com/" target="_blank" rel="external">http://app.bilibili.com/</a></li>
+<blockquote>
+<p><strong>删除远程分支A</strong>    </p>
+</blockquote>
+<ul>
+<li><p>git push origin –delete A    </p>
+</li>
+<li><p>git push origin :A    </p>
+</li>
 </ul>
+<blockquote>
+<p><strong>回退</strong>    </p>
+</blockquote>
+<ul>
+<li>远程服务器支持SSH前提下    </li>
+</ul>
+<p>git reset –mixed   // 此为默认方式，不带任何参数的git reset，就是这种方式，它回退到某个版本，只保留源码，回退commit和stage信息</p>
+<p>git reset –soft    // 回退到某个版本，只回退了commit的信息，不会恢复stage（如果还要提交，直接commit即可)</p>
+<p>git reset –hard    // 彻底回退到某个版本， 本地的源码也会变为上一个版本的内容</p>
+<ul>
+<li>远程服务器不支持SSH    </li>
+</ul>
+<p>git branch old_master  //新建old_master分支 作为备份，以防万一</p>
+<p>git push origin old_master:old_master //将本地的old_master分支　推送到远程的old_master</p>
+<p>git reset –hard //本地仓库　彻底回退到某一个版本</p>
+<p>git push origin :master // 删除远程的master分支</p>
+<p>git push origin master //重新创建远程master分支</p>
+<h1 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h1><h1 id="批处理-命令"><a href="#批处理-命令" class="headerlink" title="批处理 命令"></a>批处理 命令</h1><p><strong>Update time </strong>   </p>
+<p>08/08/2014 Create this page      </p>
 <hr>
-<p><strong>Update time </strong><br>08/12/2017 Update<br>11/30/2015 Create this page     </p>
-<p>By SkySeraph 11/30/2015</p>
+<font size="2"><br>By SkySeraph-2014<br></font>   
+
 <hr>
 <p><strong><em>版权声明</em></strong></p>
 <font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
 
 <p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
 <p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2015/11/30/Android/OpenProjectsInAndroid/">http://skyseraph.com/2015/11/30/Android/OpenProjectsInAndroid/</a></p>
+<p>本文永久链接：<a href="http://skyseraph.com/2014/08/08/Tools/ITLifeCmds/">http://skyseraph.com/2014/08/08/Tools/ITLifeCmds/</a></p>
 
         
         </div>
@@ -1188,7 +1408,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
             
     
-        <a href="http://skyseraph.com/2015/11/30/Android/OpenProjectsInAndroid/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2015/11/30/Android/OpenProjectsInAndroid/">Comments</a>
+        <a href="http://skyseraph.com/2014/08/08/Tools/ITLifeCmds/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2014/08/08/Tools/ITLifeCmds/">Comments</a>
     
 
         </footer>
@@ -1210,6 +1430,25 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/10/01/Tools/AwesomeProjects/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://img.shields.io/github/tag/skyseraph/awesome-projects.svg)" alt="Awesome Projects" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a></p>
+                            <p class="item-title"><a href="/2017/10/01/Tools/AwesomeProjects/" class="title">Awesome Projects</a></p>
+                            <p class="item-date"><time datetime="2017-09-30T17:00:00.000Z" itemprop="datePublished">2017-10-01</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1287,25 +1526,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://jenkins.io/images/226px-Jenkins_logo.svg.png)" alt="Jenkins Gitlab持续集成打包平台搭建" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Tools/">Tools</a></p>
-                            <p class="item-title"><a href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/" class="title">Jenkins Gitlab持续集成打包平台搭建</a></p>
-                            <p class="item-date"><time datetime="2016-07-17T16:00:00.000Z" itemprop="datePublished">2016-07-18</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1315,7 +1535,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/">SkySeraph</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Life/">Life</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Sharing/">Sharing</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/">Tech</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/CV/">CV</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Media/">Media</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/NFC/">NFC</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/OpenGL/">OpenGL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/iOS/">iOS</a><span class="category-list-count">2</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/">SkySeraph</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Life/">Life</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Sharing/">Sharing</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/">Tech</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/CV/">CV</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Media/">Media</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/NFC/">NFC</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/OpenGL/">OpenGL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/iOS/">iOS</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -1324,7 +1544,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/AR-VR/" style="font-size: 10px;">AR/VR</a> <a href="/tags/Android/" style="font-size: 16.67px;">Android</a> <a href="/tags/Appuim/" style="font-size: 10px;">Appuim</a> <a href="/tags/CI/" style="font-size: 10px;">CI</a> <a href="/tags/CV-MV/" style="font-size: 15px;">CV/MV</a> <a href="/tags/DIP/" style="font-size: 15px;">DIP</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/H264/" style="font-size: 10px;">H264</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Life/" style="font-size: 18.33px;">Life</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Movie/" style="font-size: 10px;">Movie</a> <a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/OpenCV/" style="font-size: 15px;">OpenCV</a> <a href="/tags/OpenGL/" style="font-size: 10px;">OpenGL</a> <a href="/tags/Plan/" style="font-size: 10px;">Plan</a> <a href="/tags/Project/" style="font-size: 10px;">Project</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/Sharing/" style="font-size: 10px;">Sharing</a> <a href="/tags/SkySeraph/" style="font-size: 20px;">SkySeraph</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/Travel/" style="font-size: 10px;">Travel</a> <a href="/tags/UiAutomator/" style="font-size: 10px;">UiAutomator</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/iOS/" style="font-size: 13.33px;">iOS</a> <a href="/tags/jrtplib/" style="font-size: 10px;">jrtplib</a> <a href="/tags/live555/" style="font-size: 10px;">live555</a> <a href="/tags/图像特征/" style="font-size: 10px;">图像特征</a> <a href="/tags/图像算法/" style="font-size: 15px;">图像算法</a> <a href="/tags/存活率/" style="font-size: 10px;">存活率</a> <a href="/tags/彩色图像/" style="font-size: 11.67px;">彩色图像</a> <a href="/tags/机器视觉/" style="font-size: 10px;">机器视觉</a> <a href="/tags/流媒体/" style="font-size: 10px;">流媒体</a> <a href="/tags/瑕疵检测/" style="font-size: 10px;">瑕疵检测</a> <a href="/tags/著书/" style="font-size: 10px;">著书</a> <a href="/tags/进程/" style="font-size: 10px;">进程</a>
+            <a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/AR-VR/" style="font-size: 10px;">AR/VR</a> <a href="/tags/Android/" style="font-size: 16px;">Android</a> <a href="/tags/Appuim/" style="font-size: 10px;">Appuim</a> <a href="/tags/Awesome/" style="font-size: 10px;">Awesome</a> <a href="/tags/CI/" style="font-size: 10px;">CI</a> <a href="/tags/CV-MV/" style="font-size: 16px;">CV/MV</a> <a href="/tags/DIP/" style="font-size: 16px;">DIP</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/H264/" style="font-size: 10px;">H264</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Life/" style="font-size: 18px;">Life</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Movie/" style="font-size: 10px;">Movie</a> <a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/OpenCV/" style="font-size: 16px;">OpenCV</a> <a href="/tags/OpenGL/" style="font-size: 10px;">OpenGL</a> <a href="/tags/Plan/" style="font-size: 10px;">Plan</a> <a href="/tags/Project/" style="font-size: 10px;">Project</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/Sharing/" style="font-size: 10px;">Sharing</a> <a href="/tags/SkySeraph/" style="font-size: 20px;">SkySeraph</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/Travel/" style="font-size: 10px;">Travel</a> <a href="/tags/UiAutomator/" style="font-size: 10px;">UiAutomator</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/iOS/" style="font-size: 14px;">iOS</a> <a href="/tags/jrtplib/" style="font-size: 10px;">jrtplib</a> <a href="/tags/live555/" style="font-size: 10px;">live555</a> <a href="/tags/图像特征/" style="font-size: 10px;">图像特征</a> <a href="/tags/图像算法/" style="font-size: 16px;">图像算法</a> <a href="/tags/存活率/" style="font-size: 10px;">存活率</a> <a href="/tags/彩色图像/" style="font-size: 12px;">彩色图像</a> <a href="/tags/机器视觉/" style="font-size: 10px;">机器视觉</a> <a href="/tags/流媒体/" style="font-size: 10px;">流媒体</a> <a href="/tags/瑕疵检测/" style="font-size: 10px;">瑕疵检测</a> <a href="/tags/著书/" style="font-size: 10px;">著书</a> <a href="/tags/进程/" style="font-size: 10px;">进程</a>
         </div>
     </div>
 
