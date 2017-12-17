@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="SkySeraph">
 <meta property="og:description" content="UiAutomator">
 <meta property="og:image" content="https://image.slidesharecdn.com/androiduitesting-141008153844-conversion-gate02/95/android-ui-testing-with-uiautomator-1-638.jpg?cb=1412917257">
-<meta property="og:updated_time" content="2017-08-12T12:21:47.089Z">
+<meta property="og:updated_time" content="2017-12-17T01:25:53.037Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UiAutomator2.0升级填坑记">
 <meta name="twitter:description" content="UiAutomator">
@@ -20,21 +20,26 @@
     
 
     
+        <link rel="alternate" href="/atom.xml" title="SkySeraph" type="application/atom+xml" />
+    
 
     
         <link rel="icon" href="/css/images/avatar.png" />
     
 
-    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
-    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
     <link rel="stylesheet" href="/css/style.css">
 
-    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
     
     
-        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
     
     
         <script type="text/javascript">
@@ -62,7 +67,9 @@ var _hmt = _hmt || [];
 
     
 
+
 </head>
+
 <body>
     <div id="container">
         <header id="header">
@@ -193,17 +200,42 @@ var _hmt = _hmt || [];
             <table>
                 <tr>
                     
-                    <td><a href="http://github.com/skyseraph" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
                     
-                    <td><a href="http://stackoverflow.com/users/1343127/skyseraph" target="_blank" title="stack-overflow"><i class="fa fa-stack-overflow"></i></a></td>
+                    <td>
+                        <a href="http://github.com/skyseraph" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="http://weibo.com/skyseraph" target="_blank" title="weibo"><i class="fa fa-weibo"></i></a></td>
+                    <td>
+                        <a href="http://stackoverflow.com/users/1343127/skyseraph" target="_blank" title="stack-overflow" class=tooltip>
+                            <i class="fa fa-stack-overflow"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="https://twitter.com/seraph_sky" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+                    <td>
+                        <a href="http://weibo.com/skyseraph" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="/" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></td>
+                    <td>
+                        <a href="https://twitter.com/seraph_sky" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+                    <td>
+                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/atom.xml" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
                     
                 </tr>
             </table>
@@ -217,7 +249,6 @@ var _hmt = _hmt || [];
     <div class="article-inner">
         
         
-        
             <header class="article-header">
                 
     
@@ -226,8 +257,9 @@ var _hmt = _hmt || [];
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/2017/06/04/Android/UiAutomator2.0升级填坑记/">
@@ -236,34 +268,36 @@ var _hmt = _hmt || [];
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/tags/UiAutomator/">UiAutomator</a>
     </div>
-          
-					
+
+			
 <div class="article-category">
 	<i class="fa fa-line-chart"></i>
 	<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> article.hits
 </div>
 
 
-					
+			
 <div class="article-author"><i class="fa fa-user"></i>
   
   <a href="http://skyseraph.com" title="SkySeraph">SkySeraph</a>
 </div>
   
 
-                </div>
+                    </div>
+                
             </header>
+        
         
         <div class="article-entry" itemprop="articleBody">
         
@@ -275,6 +309,7 @@ var _hmt = _hmt || [];
             
             <hr>
 <h1 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h1><p>Google Android Developers 在2015年3月就发布了UiAutomator 2.0版本（下文简称U2），而公司的核心产品中用到还是UiAutomator老版本（下文简称U1），业界用U2的也不是很多，虽然有诸多问题和不便（如高版本OS中不支持Remote Debug等），但大家似乎在苟延残喘中麻木了。 公司以前也有专家做过研究和探索，毕竟老项目是万级别的，涉及诸多算法和复杂业务逻辑，遇到几个问题最终不了了之。于是乎，又到了我手里了。</p>
+<a id="more"></a>
 <h1 id="重大特性"><a href="#重大特性" class="headerlink" title="重大特性"></a>重大特性</h1><p><strong>1</strong>.  基于 Instrumentation，使用Instrumentation test runner即可运行UiAutomator，反之，也即在基于Instrumentation的test中也能使用UiAutomator; 可以获取应用Context，可以使用Android服务及接口。</p>
 <p><strong>2</strong>.  基于 Junit4，测试用例无需继承于任何父类，方法名不限，使用Annotation进行; U1需要继承UiAutomatorTestCase，测试方法需要以test开头.  </p>
 <p><strong>3</strong>.  与U1的Maven或Ant构建方式不同，U2采用Gradle进行构建； U2输出为APK，Android工程，而U1为Java工程，输出jar包。</p>
@@ -440,8 +475,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
             
     
-        <a href="http://skyseraph.com/2017/06/04/Android/UiAutomator2.0升级填坑记/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2017/06/04/Android/UiAutomator2.0升级填坑记/">Comments</a>
-    
 
         </footer>
     </div>
@@ -472,19 +505,16 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
 
     
-    <section id="comments">
     
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
+        <section id="comments">
+	<div id="commentContainer"></div>
+</section>
     
-    </section>
 
 </section>
             
-                <aside id="sidebar">
+                
+<aside id="sidebar">
    
         
     <div class="widget-wrap">
@@ -628,6 +658,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
+
             
         </div>
         <footer id="footer">
@@ -642,26 +673,44 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 </script>
         
     
-    <script>
-    var disqus_shortname = 'skyseraph';
-    
-    
-    var disqus_url = 'http://skyseraph.com/2017/06/04/Android/UiAutomator2.0升级填坑记/';
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+		var gitment = new Gitment({
+			owner: 'skyseraph',
+			repo: 'master',
+			oauth: {
+				client_id: 'd0b94b76cd93fe2cc346',
+				client_secret: '72289b4a44a71a021fb5eaaa760026fad93f60a6',
+			},
+		})
+		gitment.render('commentContainer')
+	</script>
+	
 
 
 
     
-        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
     
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
+    
+
 
 
 <!-- Custom Scripts -->

@@ -17,21 +17,26 @@
     
 
     
+        <link rel="alternate" href="/atom.xml" title="SkySeraph" type="application/atom+xml" />
+    
 
     
         <link rel="icon" href="/css/images/avatar.png" />
     
 
-    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
-    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
     <link rel="stylesheet" href="/css/style.css">
 
-    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
     
     
-        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
     
     
         <script type="text/javascript">
@@ -59,7 +64,9 @@ var _hmt = _hmt || [];
 
     
 
+
 </head>
+
 <body>
     <div id="container">
         <header id="header">
@@ -190,17 +197,42 @@ var _hmt = _hmt || [];
             <table>
                 <tr>
                     
-                    <td><a href="http://github.com/skyseraph" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
                     
-                    <td><a href="http://stackoverflow.com/users/1343127/skyseraph" target="_blank" title="stack-overflow"><i class="fa fa-stack-overflow"></i></a></td>
+                    <td>
+                        <a href="http://github.com/skyseraph" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="http://weibo.com/skyseraph" target="_blank" title="weibo"><i class="fa fa-weibo"></i></a></td>
+                    <td>
+                        <a href="http://stackoverflow.com/users/1343127/skyseraph" target="_blank" title="stack-overflow" class=tooltip>
+                            <i class="fa fa-stack-overflow"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="https://twitter.com/seraph_sky" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+                    <td>
+                        <a href="http://weibo.com/skyseraph" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="/" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></td>
+                    <td>
+                        <a href="https://twitter.com/seraph_sky" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+                    <td>
+                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/atom.xml" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
                     
                 </tr>
             </table>
@@ -215,7 +247,6 @@ var _hmt = _hmt || [];
     <div class="article-inner">
         
         
-        
             <header class="article-header">
                 
     
@@ -224,8 +255,9 @@ var _hmt = _hmt || [];
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/2017/10/01/Tools/AwesomeProjects/">
@@ -234,113 +266,35 @@ var _hmt = _hmt || [];
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Tools/">Tools</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/tags/AI/">AI</a>, <a class="tag-link" href="/tags/Awesome/">Awesome</a>, <a class="tag-link" href="/tags/iOS/">iOS</a>
     </div>
-          
-					
 
-					
-                </div>
+			
+
+			
+                    </div>
+                
             </header>
+        
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-                <div id="toc" class="toc-article">
-                <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction"><span class="toc-number">1.</span> <span class="toc-text">Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#About"><span class="toc-number">1.1.</span> <span class="toc-text">About</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Contribute"><span class="toc-number">1.2.</span> <span class="toc-text">Contribute</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Menu"><span class="toc-number">2.</span> <span class="toc-text">Menu</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TECH"><span class="toc-number">2.1.</span> <span class="toc-text">TECH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NON-TECH"><span class="toc-number">2.2.</span> <span class="toc-text">NON-TECH</span></a></li></ol></li></ol>
-                </div>
-            
-            <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><ul>
-<li><a href="https://github.com/skyseraph/awesome-projects" target="_blank" rel="external"><strong>awesome-projects</strong></a> 致力于收集 Awesome Projects，Tech or Non-Tech.  </li>
-<li>欢迎您的加入!   <a href="https://github.com/skyseraph/awesome-projects" target="_blank" rel="external">Fork</a> or <a href="skyseraph00@126.com">Email</a> to Me, tks!</li>
-</ul>
-<h2 id="Contribute"><a href="#Contribute" class="headerlink" title="Contribute"></a>Contribute</h2><p><a href="http://skyseraph.com/">SkySeraph</a> …</p>
-<h1 id="Menu"><a href="#Menu" class="headerlink" title="Menu"></a>Menu</h1><hr>
-<h2 id="TECH"><a href="#TECH" class="headerlink" title="TECH"></a>TECH</h2><table>
-<thead>
-<tr>
-<th>Menu</th>
-<th>Desc.</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/android.md" target="_blank" rel="external">Android</a></td>
-<td>Awesome Androids</td>
-</tr>
-<tr>
-<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/ios.md" target="_blank" rel="external">iOS</a></td>
-<td>Awesome iOSs</td>
-</tr>
-<tr>
-<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/ai.md" target="_blank" rel="external">AI</a></td>
-<td>Awesome AIs</td>
-</tr>
-<tr>
-<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/front_end.md" target="_blank" rel="external">Front-End</a></td>
-<td>Awesome Front-Ends</td>
-</tr>
-<tr>
-<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/hardWare.md" target="_blank" rel="external">HardWare</a></td>
-<td>Awesome HardWares</td>
-</tr>
-<tr>
-<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/tech_all.md" target="_blank" rel="external">Tech-All</a></td>
-<td>Awesome Techs All</td>
-</tr>
-</tbody>
-</table>
-<h2 id="NON-TECH"><a href="#NON-TECH" class="headerlink" title="NON-TECH"></a>NON-TECH</h2><table>
-<thead>
-<tr>
-<th>Menu</th>
-<th>Desc.</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/weblink.md" target="_blank" rel="external">Web</a></td>
-<td>Awesome Web Links</td>
-</tr>
-<tr>
-<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/interview.md" target="_blank" rel="external">Interview</a></td>
-<td>Awesome interviews</td>
-</tr>
-<tr>
-<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/soft.md" target="_blank" rel="external">Soft</a></td>
-<td>Awesome Softs</td>
-</tr>
-<tr>
-<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/ebooks.md" target="_blank" rel="external">EBooks</a></td>
-<td>Awesome EBooks</td>
-</tr>
-<tr>
-<td><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/data.md" target="_blank" rel="external">Data</a></td>
-<td>Awesome Datas</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<hr>
-<p>By SkySeraph 10/01/2017</p>
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2017/10/01/Tools/AwesomeProjects/">http://skyseraph.com/2017/10/01/Tools/AwesomeProjects/</a></p>
-
+            <p><h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><ul>
+<li><a href="https://github.com/skyseraph/awesome-projects"><strong>awesome-projects</strong></a> 致力于收集 Awesome Projects，Tech or Non-Tech.  </li>
+<li>欢迎您的加入!   <a href="https://github.com/skyseraph/awesome-projects">Fork</a> or <a href="skyseraph00@126.com">Email</a> to Me, tks!</li>
+</ul></p>
+            <p class="article-more-link">
+                <a href="/2017/10/01/Tools/AwesomeProjects/#more">Read More</a>
+            </p>
         
         </div>
         <footer class="article-footer">
@@ -386,8 +340,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 </div>
 
             
-    
-        <a href="http://skyseraph.com/2017/10/01/Tools/AwesomeProjects/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2017/10/01/Tools/AwesomeProjects/">Comments</a>
     
 
         </footer>
@@ -401,7 +353,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="article-inner">
         
         
-        
             <header class="article-header">
                 
     
@@ -410,8 +361,9 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/2017/06/04/Android/UiAutomator2.0升级填坑记/">
@@ -420,153 +372,33 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/tags/UiAutomator/">UiAutomator</a>
     </div>
-          
-					
 
-					
-                </div>
+			
+
+			
+                    </div>
+                
             </header>
+        
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-                <div id="toc" class="toc-article">
-                <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#啰嗦"><span class="toc-number">1.</span> <span class="toc-text">啰嗦</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#重大特性"><span class="toc-number">2.</span> <span class="toc-text">重大特性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基础使用"><span class="toc-number">3.</span> <span class="toc-text">基础使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#采坑记"><span class="toc-number">4.</span> <span class="toc-text">采坑记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#REFS"><span class="toc-number">5.</span> <span class="toc-text">REFS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-number">6.</span> <span class="toc-text">后记</span></a></li></ol>
-                </div>
-            
-            <hr>
-<h1 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h1><p>Google Android Developers 在2015年3月就发布了UiAutomator 2.0版本（下文简称U2），而公司的核心产品中用到还是UiAutomator老版本（下文简称U1），业界用U2的也不是很多，虽然有诸多问题和不便（如高版本OS中不支持Remote Debug等），但大家似乎在苟延残喘中麻木了。 公司以前也有专家做过研究和探索，毕竟老项目是万级别的，涉及诸多算法和复杂业务逻辑，遇到几个问题最终不了了之。于是乎，又到了我手里了。</p>
-<h1 id="重大特性"><a href="#重大特性" class="headerlink" title="重大特性"></a>重大特性</h1><p><strong>1</strong>.  基于 Instrumentation，使用Instrumentation test runner即可运行UiAutomator，反之，也即在基于Instrumentation的test中也能使用UiAutomator; 可以获取应用Context，可以使用Android服务及接口。</p>
-<p><strong>2</strong>.  基于 Junit4，测试用例无需继承于任何父类，方法名不限，使用Annotation进行; U1需要继承UiAutomatorTestCase，测试方法需要以test开头.  </p>
-<p><strong>3</strong>.  与U1的Maven或Ant构建方式不同，U2采用Gradle进行构建； U2输出为APK，Android工程，而U1为Java工程，输出jar包。</p>
-<p><strong>4</strong>.  新增<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/UiObject2.html" target="_blank" rel="external">UiObject2</a>、<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/Until.html" target="_blank" rel="external">Until</a>、<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/By.html" target="_blank" rel="external">By</a>、<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/BySelector.html" target="_blank" rel="external">BySelector</a>等接口, 详细请参考<a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/package-summary.html" target="_blank" rel="external">官方文档</a>。<br>其中，U2必须明确EditText框才能向里面输入文字，U1直接指定父类也可以在子类中输入文字。</p>
-<p><strong>5</strong>.  Log日志输出变更。U1可以使用System.out.print输出流回显至执行端，而U2输出到Logcat。</p>
-<p><strong>6</strong>.  命令运行差异。</p>
-<p><code>adb shell uiautomator runtest xx.jar -c package.name.ClassName</code><br><code>adb shell am instrument -w -r   -e class com.xx.xx com.xx.xx.test/ android.support.test.runner.AndroidJUnitRunner</code>  </p>
-<p>代码中运行：<br>Runtime.getRuntime().exec(“*<em>“)<br>device.executeShellCommand(“*</em>“)      </p>
-<p>命令格式：<code>instrument [options] component</code>，详细命令格式介绍参考<a href="https://developer.android.com/studio/command-line/adb.html" target="_blank" rel="external">官方文档</a>。</p>
-<h1 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h1><ul>
-<li><p>新建Android Studio工程。   </p>
-</li>
-<li><p>gradle中添加依赖。   </p>
-</li>
-</ul>
-<p>androidTestCompile(‘com.android.support.test.espresso:espresso-core:2.2.2’{<br>exclude group: ‘com.android.support’, module: ‘support-annotations’<br>})<br>androidTestCompile ‘com.android.support.test:runner:0.5’<br>androidTestCompile ‘com.android.support.test:rules:0.5’<br>androidTestCompile ‘com.android.support.test.uiautomator:uiautomator-v18:2.1.2’<br>androidTestCompile ‘com.android.support:support-annotations:25.3.1’  </p>
-<p>如需要依赖jar包   </p>
-<pre><code>androidTestCompile fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;]) 
-</code></pre><ul>
-<li>androidTest目录下添加测试用例。   </li>
-</ul>
-<p>@RunWith(AndroidJUnit4.class)<br>@FixMethodOrder(MethodSorters.NAME_ASCENDING)<br>public class XXTest {<br>    public Bundle bundle;<br>    public UiDevice device;<br>    private Instrumentation instrumentation;</p>
-<pre><code>@BeforeClass
-public static void beforeClass() {
-
-}
-
-@Before
-public void before() {
-    // Initialize UiDevice instance
-    instrumentation = InstrumentationRegistry.getInstrumentation();
-    device = UiDevice.getInstance(instrumentation);
-    bundle = InstrumentationRegistry.getArguments();
-    assertThat(device, notNullValue());
-}
-
-@After
-public void after() {
-    L.i(TAG + &quot;After&quot;);
-}
-
-@AfterClass
-public static void afterClass() {
-    L.i(TAG + &quot;AfterClass&quot;);
-}
-
-public Bundle getParams() {
-    return bundle;
-}
-</code></pre><p>}</p>
-<h1 id="采坑记"><a href="#采坑记" class="headerlink" title="采坑记"></a>采坑记</h1><ul>
-<li><p><strong>编译错误.</strong><br>这个应该说是官方故意坑爹吧，U2的包名结构发生了变化，所以需要将之前所有用到的U1相关API包名进行替换，具体为<br>com.android.uiautomator.core.<em>  -&gt; android.support.test.uiautomator.</em></p>
-</li>
-<li><p><strong>反射相关.</strong><br>这个有点坑爹，还是U2包名结构问题（原项目很多地方用到了反射获取U1相关类/方法等），除非对原业务非常熟悉，否则只有遇到问题分析时才会发现此坑，读者以后如果遇到这种类似包结构变化的问题，先不管三七二十一，全局搜索相关字段全局了解再说。当然，如果用到了混淆，也要对应修改。</p>
-</li>
-<li><p><strong>UiAutomatorTestCase相关.</strong><br>问题：去除所有测试类中的extend UiAutomatorTestCase后异常。因为原项目依赖于UiAutomatorTestCase中的getPara API来获取U1命令传参。<br>方案：修改成U2的InstrumentationRegistry.getArguments方式。  </p>
-</li>
-<li><p><strong>日志相关.</strong><br>问题：原项目中业务逻辑依赖System.out.println日志输出结果，而U2中System.out.println不会回显到终端显示，直接影响之前业务逻辑的执行。<br>方案：使用Instrumentation.sentStatus自定义状态。  </p>
-</li>
-<li><p><strong>属性文件.</strong><br>描述：这个有点意思，原项目为Java工程，有很多属性配置在properties属性文件中，大概有20来个properties文件。而对属性文件的读取是在一个common的公共jar包中，采取的是Thread.currentThread().getContextClassLoader().getResourceAsStream方式。<br>问题：①属性配置文件无法打包进apk中 ②读取方式问题<br>解决：<br>方法1： 将属性配置文件全部放入assets目录，然后通过Context().getAssets().open方式读取；而原先的jar中的公共类，抽离出来作为业务类。<br>方法2： 通过gradle自定义打包，将所有属性配置文件打包进apk中，建议。  </p>
-</li>
-<li><p><strong>xml配置文件.</strong><br>问题：原工程用到了RPC框架，有xml配置文件，存在与上述properties类似问题。<br>解决：gradle自定义打包。  </p>
-</li>
-<li><p><strong>权限问题.</strong><br><strong>问题</strong>：Android M+对权限进行了升级，本工程需要用到文件存储权限，仅在Manifest中声明WRITE_EXTERNAL_STORAGE权限还不够。<br><strong>解决</strong>：  </p>
-</li>
-</ul>
-<p>方法1：</p>
-<pre><code>@Before  
-public void grantPermission() {  
-    if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.M) {  
-        getInstrumentation().getUiAutomation().executeShellCommand(&quot;pm grant &quot;+getTargetContext().getPackageName()+&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;);  
-    }
-}
-</code></pre><p>方法2：通过Rule  </p>
-<pre><code>@Rule
-public final PermissionsRule permissionsRule = new PermissionsRule(
-new String[]{  
-Manifest.permission.READ_EXTERNAL_STORAGE,
-   Manifest.permission.WRITE_EXTERNAL_STORAGE});
-</code></pre><ul>
-<li><strong>NoClassDefFoundError问题.</strong>  </li>
-</ul>
-<p><strong>问题</strong>：在Android 4.4手机出现NoClassDefFoundError问题，Instrumentation消息为 </p>
-<pre><code>INSTRUMENTATION_RESULT: longMsg=java.lang.NoClassDefFoundError: org.junit.runner.manipulation.Filter$1 
-</code></pre><p><strong>解决</strong>： MultiDex手动拆包A<br>①gradle文件中添加multiDexKeepProguard </p>
-<pre><code>defaultConfig {
-    multiDexEnabled true
-    multiDexKeepProguard file(&apos;multidex.pro&apos;)
-}
-</code></pre><p>②multidex文件中添加  </p>
-<pre><code>-keep class android.support.multidex.** {*;}
--keep public class org.junit.runner.** {*;}
-</code></pre><ul>
-<li><strong>系统签名问题</strong>.<br><strong>描述</strong>：此问题是后续测试中才发现的，原来的稳定性/兼容性测试上的性能指标参数大部分显示为空，极其诡异，后面花了很大功夫进行分析发现，很多指标会出现会出现类似Permission Denial : cannot dump <servicename>错误，获取不到任何数据。因为原工程需要获取电池、CPU、内存等等几十项性能参数指标，很大一部分是通过sh读取系统文件等方式获取的，通过Runtime.getRuntime().exec 或者 ProcessBuilder.start方式， 比如通过dump中的dump battery获取电池信息，因为dumpsys涉及android:protectionLevel=”signatureOrSystem”，需要权限 <uses-permission android:name="android.permission.DUMP">，需要声明android:sharedUserId=”android.uid.system”，需要系统签名….<br><strong>解决</strong>：<br><strong>①</strong>系统签名（无奈之举）.<br><strong>②</strong>采用device.executeShellCommand，注意只支持API 21+.  </uses-permission></servicename></li>
-</ul>
-<h1 id="REFS"><a href="#REFS" class="headerlink" title="REFS"></a>REFS</h1><ul>
-<li><p><a href="https://developer.android.google.cn/reference/android/support/test/uiautomator/package-summary.html" target="_blank" rel="external">Google 官方文档</a></p>
-</li>
-<li><p><a href="https://github.com/googlesamples/android-testing" target="_blank" rel="external">Google 官方Demo</a></p>
-</li>
-<li><p><a href="https://stackoverflow.com/questions/32787234/how-to-manage-runtime-permissions-android-marshmallow-espresso-tests" target="_blank" rel="external">How to manage Runtime permissions android marshmallow espresso tests</a></p>
-</li>
-<li><p><a href="http://blog.csdn.net/qq_30552993/article/details/75355492" target="_blank" rel="external">设置Multidex出现java.lang.NoClassDefFoundError</a></p>
-</li>
-<li><p><a href="https://stackoverflow.com/questions/40867407/android-espresso-multidex-fail" target="_blank" rel="external">Android Espresso multidex fail</a></p>
-</li>
-</ul>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>本文首发于<a href="http://skyseraph.com/">skyseraph.com</a>：<a href="http://skyseraph.com/2017/06/04/Android/UiAutomator2.0升级填坑记/">“UiAutomator2.0升级填坑记”</a><br>同步发表/转载 <a href="http://www.cnblogs.com/skyseraph/p/7297450.html" target="_blank" rel="external">cnBlogs</a> / <a href="http://blog.csdn.net/zgzhaobo/article/details/77105059" target="_blank" rel="external">CSDN</a> / <a href="">TesterHome</a> …</p>
-<hr>
-<font size="2"><br>By <a href="www.skyseraph.com">SkySeraph</a>-2017<br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2017/06/04/Android/UiAutomator2.0升级填坑记/">http://skyseraph.com/2017/06/04/Android/UiAutomator2.0升级填坑记/</a></p>
-
+            <p><hr>
+<h1 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h1><p>Google Android Developers 在2015年3月就发布了UiAutomator 2.0版本（下文简称U2），而公司的核心产品中用到还是UiAutomator老版本（下文简称U1），业界用U2的也不是很多，虽然有诸多问题和不便（如高版本OS中不支持Remote Debug等），但大家似乎在苟延残喘中麻木了。 公司以前也有专家做过研究和探索，毕竟老项目是万级别的，涉及诸多算法和复杂业务逻辑，遇到几个问题最终不了了之。于是乎，又到了我手里了。</p></p>
+            <p class="article-more-link">
+                <a href="/2017/06/04/Android/UiAutomator2.0升级填坑记/#more">Read More</a>
+            </p>
         
         </div>
         <footer class="article-footer">
@@ -612,8 +444,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 </div>
 
             
-    
-        <a href="http://skyseraph.com/2017/06/04/Android/UiAutomator2.0升级填坑记/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2017/06/04/Android/UiAutomator2.0升级填坑记/">Comments</a>
     
 
         </footer>
@@ -627,7 +457,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="article-inner">
         
         
-        
             <header class="article-header">
                 
     
@@ -636,8 +465,9 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/2017/05/27/SkySeraph/Sharing/那些年，从博客到出书的博主/">
@@ -646,226 +476,37 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/SkySeraph/">SkySeraph</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/SkySeraph/Sharing/">Sharing</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/tags/Sharing/">Sharing</a>, <a class="tag-link" href="/tags/SkySeraph/">SkySeraph</a>, <a class="tag-link" href="/tags/著书/">著书</a>
     </div>
-          
-					
 
-					
-                </div>
+			
+
+			
+                    </div>
+                
             </header>
+        
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-                <div id="toc" class="toc-article">
-                <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#技术"><span class="toc-number">1.</span> <span class="toc-text">技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#综合"><span class="toc-number">1.1.</span> <span class="toc-text">综合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#移动开发（Android-iOS）"><span class="toc-number">1.2.</span> <span class="toc-text">移动开发（Android/iOS）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PC-Web-后台"><span class="toc-number">1.3.</span> <span class="toc-text">PC/Web/后台</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#游戏"><span class="toc-number">1.4.</span> <span class="toc-text">游戏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AI-CV"><span class="toc-number">1.5.</span> <span class="toc-text">AI/CV</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它"><span class="toc-number">1.6.</span> <span class="toc-text">其它</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#管理"><span class="toc-number">2.</span> <span class="toc-text">管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其它-1"><span class="toc-number">3.</span> <span class="toc-text">其它</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-number">4.</span> <span class="toc-text">后记</span></a></li></ol>
-                </div>
-            
-            <hr>
+            <p><hr>
 <ul>
 <li>古人说，著书立说，纵然而今的现实，书籍本身质量存在一定的局限，但不可否认，一本书从构思，撰写到最终交稿出版，需要一定的沉淀，同时时间的代价是非常大的，而所谓的稿酬其实是几乎是可忽略的。  </li>
 <li>一直认为的技术书有两种，一种是入门级别的，例如Android/iOS/Swift/.. XX，XX天学会XX等等，就如Google I/O 2017最新宣布Android Studio 3.0完全支持Kotlin，出版社老师就联系我是不是写一本Kotlin XX，我宛然拒绝了。。。另一种是经验或感悟相关的，需要作者一定的沉淀，有思考，有总结，有思考，这是笔者更青睐的一种方式，所以也是上面婉拒的原因之一。</li>
 <li>顺便将读者读过或了解过的一些从博客到出书相关书籍进行一个汇总，分享。</li>
-</ul>
-<h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1><h2 id="综合"><a href="#综合" class="headerlink" title="综合"></a>综合</h2><blockquote>
-<p><strong>黄博文</strong>   </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="http://www.cnblogs.com/huang0925" target="_blank" rel="external">cnBlogs-无敌北瓜</a></p>
-<p><strong>2</strong>. 译作：<a href="http://product.china-pub.com/5007999" target="_blank" rel="external">《面向对象的思考过程（第四版）》</a>2016.机械工程出版社  </p>
-<p><strong>3</strong>. 其它： Work in ThoughtWorks</p>
-<blockquote>
-<p><strong>蒋鑫</strong>  </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="http://www.ossxp.com/doc/gotgit/" target="_blank" rel="external">ossxp</a></p>
-<p><strong>2</strong>. 著作：<a href="https://book.douban.com/subject/6526452/" target="_blank" rel="external">《Git权威指南》</a> 2011.机械工业出版社华章公司  </p>
-<p><strong>3</strong>. 作者： 蒋鑫，国内顶尖的版本控制专家和咨询顾问之一，2015年12月加入华为技术有限公司。</p>
-<blockquote>
-<p><strong>李运华</strong>  </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="http://blog.csdn.net/yunhua_lee" target="_blank" rel="external">CSDN-华仔-技术博客</a></p>
-<p><strong>2</strong>. 著作：<a href="https://book.douban.com/subject/26674160/" target="_blank" rel="external">《面向对象葵花宝典：思想、技巧与实践》</a> 2015.电子工业出版社  </p>
-<p><strong>3</strong>. 作者： 李运华，阿里资深技术专家</p>
-<blockquote>
-<p><strong>范钢</strong>  </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="http://www.cnblogs.com/mooodo/" target="_blank" rel="external">cnBlogs-充满诗意的联盟</a></p>
-<p><strong>2</strong>. 著作：<a href="https://book.douban.com/subject/25853677/" target="_blank" rel="external">《大话重构》</a> 2014.4 人民邮电出版社  </p>
-<h2 id="移动开发（Android-iOS）"><a href="#移动开发（Android-iOS）" class="headerlink" title="移动开发（Android/iOS）"></a>移动开发（Android/iOS）</h2><blockquote>
-<p><strong>邓凡平</strong>   </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="http://blog.csdn.net/innost" target="_blank" rel="external">csdn-Innost的专栏</a></p>
-<p><strong>2</strong>. 著作：<br><a href="https://book.douban.com/subject/25863872/" target="_blank" rel="external">《深入理解Android：Wi-Fi、NFC和GPS卷》</a> 2014.机械工业出版社<br><a href="https://book.douban.com/subject/11542973/" target="_blank" rel="external">《深入理解Android : 卷II》</a> 2014.机械工业出版社<br><a href="https://book.douban.com/subject/6802440/" target="_blank" rel="external">《深入理解Android : 卷I》</a> 2014.机械工业出版社   </p>
-<p><strong>3</strong>. 其它： </p>
-<blockquote>
-<p><strong>罗升阳</strong>   </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="http://blog.csdn.net/luoshengyang" target="_blank" rel="external">csdn-老罗的Android之旅</a></p>
-<p><strong>2</strong>. 著作：<a href="">《Android系统源代码情景分析》</a>  2012.电子工业出版社</p>
-<p><strong>3</strong>. 作者： 1984年生，浙大学士(2007界)，上交大硕士(2010界)</p>
-<blockquote>
-<p><strong>林学森</strong>   </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="http://blog.csdn.net/xuesen_lin" target="_blank" rel="external">csdn-林学森的Android专栏</a></p>
-<p><strong>2</strong>. 著作：<a href="https://book.douban.com/subject/25921329/" target="_blank" rel="external">《深入理解Android内核设计思想》</a>  2014.5 人民邮电出版社</p>
-<p><strong>3</strong>. 作者： 香港中文大学硕士, 华为技术专家 </p>
-<blockquote>
-<p><strong>王巍</strong>   </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="https://onevcat.com/" target="_blank" rel="external">onevcat</a></p>
-<p><strong>2</strong>. 著作：<br><a href="https://objccn.io/products/" target="_blank" rel="external">《函数式 Swift》</a><br><a href="https://objccn.io/products/" target="_blank" rel="external">《Core Data》</a><br><a href="https://objccn.io/products/" target="_blank" rel="external">《Swift 进阶》</a>   </p>
-<p><strong>3</strong>. 作者： iOS/Unity 开发者，现居日本，就职LINE</p>
-<blockquote>
-<p><strong>包建强</strong> </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="http://www.cnblogs.com/Jax/" target="_blank" rel="external">cnBlogs-Jianqiang’s Mobile Dev Blog</a></p>
-<p><strong>2</strong>. 著作：<br><a href="https://book.douban.com/subject/26649050/" target="_blank" rel="external">《App研发录：架构设计、Crash分析和竞品技术分析》</a> 2015.机械工业出版社<br><a href="https://book.douban.com/subject/4037255/" target="_blank" rel="external">《.NET探秘MSIL权威指南》</a>译 2009.人民邮电出版社</p>
-<p><strong>3</strong>. 作者： 毕业于复旦数学系，微软2008年MVP</p>
-<blockquote>
-<p><strong>郭霖</strong>   </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="http://blog.csdn.net/guolin_blog" target="_blank" rel="external">csdn-郭霖的专栏</a></p>
-<p><strong>2</strong>. 著作：<a href="https://item.jd.com/12012505.html#" target="_blank" rel="external">《第一行代码》</a> 2016.人民邮电出版社  </p>
-<p><strong>3</strong>. 其它： </p>
-<blockquote>
-<p><strong>徐宜生</strong>   </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="http://blog.csdn.net/eclipsexys" target="_blank" rel="external">csdn-eclipse_xu</a></p>
-<p><strong>2</strong>. 著作：<br><a href="https://book.douban.com/subject/26599539/" target="_blank" rel="external">《Android群英传》</a>  2015.9 电子工业出版社<br><a href="https://book.douban.com/subject/26855851/" target="_blank" rel="external">《Android群英传:神兵利器》</a>  2016.9 电子工业出版社</p>
-<p><strong>3</strong>. 作者： CSDN认证专家,职于上海沪江网</p>
-<blockquote>
-<p><strong>任玉刚</strong>   </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="http://blog.csdn.net/singwhatiwanna" target="_blank" rel="external">csdn-任玉刚</a></p>
-<p><strong>2</strong>. 著作：<a href="https://book.douban.com/subject/26599538/" target="_blank" rel="external">《Android开发艺术探索》</a>  2015.9  电子工业出版社  </p>
-<p><strong>3</strong>. 其它： </p>
-<blockquote>
-<p><strong>SkySeraph</strong>   </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="http://skyseraph.com/">SkySeraph</a></p>
-<p><strong>2</strong>. 著作：<br><a href="http://skyseraph.com/">《移动应用架构师之路》</a>   2017.人民邮电出版社<br><a href="http://skyseraph.com/2014/03/14/NFC/《Android%20NFC%20开发实战详解%20》/">《Android NFC 开发实战详解》</a>   2014.人民邮电出版社  </p>
-<blockquote>
-<p><strong>陈刚</strong></p>
-</blockquote>
-<ol>
-<li><p>站点：<a href="http://blog.csdn.net/cg1991130" target="_blank" rel="external">CSDN-Cwift的专栏</a></p>
-</li>
-<li><p>著作：<br><a href="https://book.douban.com/subject/26708968/" target="_blank" rel="external">《Swift 开发手册：技巧与实战》</a>  2016.1 电子工业出版社</p>
-</li>
-</ol>
-<h2 id="PC-Web-后台"><a href="#PC-Web-后台" class="headerlink" title="PC/Web/后台"></a>PC/Web/后台</h2><blockquote>
-<p><strong>王福强</strong>   </p>
-</blockquote>
-<ol>
-<li><p>站点：<a href="https://afoo.me/" target="_blank" rel="external">阿福-瞎子摸象的践行者</a></p>
-</li>
-<li><p>著作：<br><a href="https://book.douban.com/subject/26808298/" target="_blank" rel="external">《SpringBoot揭秘：快速构建微服务体系》</a> 2016.机械工业出版社<br><a href="https://book.douban.com/subject/3897837/" target="_blank" rel="external">《Spring揭秘》</a> 2009.人民邮电出版社<br><a href="https://github.com/fujohnwang/real_world_scala" target="_blank" rel="external">《Real World Scala》</a>  </p>
-</li>
-<li><p>其它： </p>
-</li>
-</ol>
-<blockquote>
-<p><strong>徐涛</strong>   </p>
-</blockquote>
-<ol>
-<li><p>站点：<a href="http://www.cnblogs.com/TomXu/" target="_blank" rel="external">cnBlogs-汤姆大叔</a></p>
-</li>
-<li><p>著/译作：<br><a href="https://book.douban.com/subject/25886197/" target="_blank" rel="external">《深入理解Bootstrap》</a> 2014.5. 机械工业出版社<br><a href="https://book.douban.com/subject/19933548/" target="_blank" rel="external">译《JavaScript编程精解》</a> 2012.10. 机械工业出版社华章公司<br><a href="https://book.douban.com/subject/24744217/" target="_blank" rel="external">译《JavaScript设计模式》</a> 2013.人民邮电出版社<br><a href="https://book.douban.com/subject/25980651/" target="_blank" rel="external">译《Backbone.js应用程序开发》</a> 2014.9  人民邮电出版社</p>
-</li>
-</ol>
-<blockquote>
-<p><strong>鸟哥</strong></p>
-</blockquote>
-<ol>
-<li><p>站点：<a href="http://cn.linux.vbird.org/" target="_blank" rel="external">vdird</a></p>
-</li>
-<li><p>著作：<br><a href="https://book.douban.com/subject/4889838/" target="_blank" rel="external">《鸟哥的Linux私房菜》</a>  2010.6 人民邮电出版社</p>
-</li>
-<li><p>其它：台湾成功大学环境工程系博士 </p>
-</li>
-</ol>
-<blockquote>
-<p><strong>黄峰达</strong></p>
-</blockquote>
-<ol>
-<li><p>站点：<a href="https://www.phodal.com/blog/" target="_blank" rel="external">PHODAL</a></p>
-</li>
-<li><p>著作：<br><a href="https://book.douban.com/subject/26841195/" target="_blank" rel="external">《自己动手设计物联网》</a>  2016.7 电子工业出版社<br><a href="https://book.douban.com/subject/27044427/" target="_blank" rel="external">《全栈应用开发：精益实践》</a>  2017.5 电子工业出版社   </p>
-</li>
-<li><p>其它：</p>
-</li>
-</ol>
-<blockquote>
-<p><strong>汪建</strong></p>
-</blockquote>
-<ol>
-<li><p>站点：<a href="http://blog.csdn.net/wangyangzhizhou" target="_blank" rel="external">CSDN-wangyangzhizhou的专栏</a></p>
-</li>
-<li><p>著作：<br><a href="https://item.jd.com/12185360.html" target="_blank" rel="external">《Tomcat内核设计剖析》</a> 2017.4 人民邮电出版社</p>
-</li>
-</ol>
-<blockquote>
-<p><strong>曾健生</strong>   </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="http://blog.csdn.net/newjueqi" target="_blank" rel="external">csdn-曾健生的专栏</a></p>
-<p><strong>2</strong>. 著作：<a href="https://book.douban.com/subject/26792337/" target="_blank" rel="external">《App后台开发运维和架构实践》</a>  2016. 电子工业出版社</p>
-<p><strong>3</strong>. 其它： </p>
-<h2 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h2><blockquote>
-<p><strong>宜雨松</strong>   </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="http://www.xuanyusong.com" target="_blank" rel="external">雨松MONO</a></p>
-<p><strong>2</strong>. 著作：<a href="https://book.douban.com/subject/10785711/" target="_blank" rel="external">《Unity 3D游戏开发》</a> 2014.人民邮电出版社 </p>
-<p><strong>3</strong>. 作者：CSDN博客专家 </p>
-<blockquote>
-<p><strong>陈嘉栋</strong>   </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="http://www.cnblogs.com/murongxiaopifu/" target="_blank" rel="external">cnBlogs-慕容小匹夫</a></p>
-<p><strong>2</strong>. 著作：<a href="https://book.douban.com/subject/26881959/" target="_blank" rel="external">《Unity 3D脚本编程》</a> 2016.9 电子工业出版社 </p>
-<p><strong>3</strong>. 作者： 光宇在线客户端高级开发工程师 </p>
-<h2 id="AI-CV"><a href="#AI-CV" class="headerlink" title="AI/CV"></a>AI/CV</h2><blockquote>
-<p><strong>赵永科</strong>   </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="http://blog.csdn.net/kkk584520" target="_blank" rel="external">csdn-卜居</a></p>
-<p><strong>2</strong>. 著作：<a href="https://book.douban.com/subject/26825082/" target="_blank" rel="external">《深度学习：21天实战Caffe）》</a>   2016.电子工业出版社  </p>
-<p><strong>3</strong>. 其它： Work in 阿里云</p>
-<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p><strong>3</strong>. 其它： </p>
-<hr>
-<h1 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h1><p>todo</p>
-<h1 id="其它-1"><a href="#其它-1" class="headerlink" title="其它"></a>其它</h1><hr>
-<blockquote>
-<p><strong>池建强</strong>   </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="http://macshuo.com/" target="_blank" rel="external">MacTalk-池建强的随想录</a></p>
-<p><strong>2</strong>. 著作：<a href="">《MacTalk·人生元编程》</a> </p>
-<p><strong>3</strong>. 其它：</p>
-<blockquote>
-<p><strong>老杰</strong>   </p>
-</blockquote>
-<p><strong>1</strong>. 站点：<a href="https://blog.oldj.net/" target="_blank" rel="external">oldj’s blog</a></p>
-<p><strong>2</strong>. 著作：电子书 <a href="http://www.jianshu.com/nb/300493" target="_blank" rel="external">“代码英雄传”</a> </p>
-<p><strong>3</strong>. 其它： </p>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>本文首发于<a href="http://skyseraph.com/">skyseraph.com</a>：<a href="http://skyseraph.com/2017/05/27/SkySeraph/Sharing/那些年，从博客到出书的博主/">“那些年，从博客到出书的博主”</a><br>同步发表/转载 <a href="http://www.cnblogs.com/skyseraph/p/6915503.html" target="_blank" rel="external">cnBlogs</a> / …</p>
-<hr>
-<font size="2"><br>By <a href="www.skyseraph.com">SkySeraph</a>-2017<br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2017/05/27/SkySeraph/Sharing/那些年，从博客到出书的博主/">http://skyseraph.com/2017/05/27/SkySeraph/Sharing/那些年，从博客到出书的博主/</a></p>
-
+</ul></p>
+            <p class="article-more-link">
+                <a href="/2017/05/27/SkySeraph/Sharing/那些年，从博客到出书的博主/#more">Read More</a>
+            </p>
         
         </div>
         <footer class="article-footer">
@@ -911,8 +552,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 </div>
 
             
-    
-        <a href="http://skyseraph.com/2017/05/27/SkySeraph/Sharing/那些年，从博客到出书的博主/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2017/05/27/SkySeraph/Sharing/那些年，从博客到出书的博主/">Comments</a>
     
 
         </footer>
@@ -926,7 +565,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="article-inner">
         
         
-        
             <header class="article-header">
                 
     
@@ -935,8 +573,9 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/2017/01/26/Android/Appuim源码剖析(Boottrap)/">
@@ -945,99 +584,34 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/tags/Appuim/">Appuim</a>
     </div>
-          
-					
 
-					
-                </div>
+			
+
+			
+                    </div>
+                
             </header>
+        
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-                <div id="toc" class="toc-article">
-                <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#About"><span class="toc-number">1.</span> <span class="toc-text">About</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Appuim"><span class="toc-number">1.1.</span> <span class="toc-text">Appuim</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关概念"><span class="toc-number">1.2.</span> <span class="toc-text">相关概念</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Appuim-架构"><span class="toc-number">2.</span> <span class="toc-text">Appuim 架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Bootstrap源码剖析"><span class="toc-number">3.</span> <span class="toc-text">Bootstrap源码剖析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#源码结构"><span class="toc-number">3.1.</span> <span class="toc-text">源码结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动时序"><span class="toc-number">3.2.</span> <span class="toc-text">启动时序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类关系图"><span class="toc-number">3.3.</span> <span class="toc-text">类关系图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码分析"><span class="toc-number">3.4.</span> <span class="toc-text">源码分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Refs"><span class="toc-number">4.</span> <span class="toc-text">Refs</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-number">5.</span> <span class="toc-text">后记</span></a></li></ol>
-                </div>
-            
-            <hr>
+            <p><hr>
 <h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><h2 id="Appuim"><a href="#Appuim" class="headerlink" title="Appuim"></a>Appuim</h2><p>Appium 是一个自动化测试开源工具，支持 iOS 平台和 Android 平台上的原生应用，web 应用和混合应用。</p>
-<p>这里有很关键一点，跨平台。更多了解Appuim多平台支持相关信息，参考官方<a href="https://github.com/appium/appium/blob/master/docs/old/cn/platform-support.cn.md" target="_blank" rel="external">platform-support</a></p>
-<h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><ul>
-<li>C/S 架构<br>Appium 的核心是一个 web 服务器，它提供了一套 REST 的接口，接收客户端的连接，监听到命令，接着在移动设备上执行这些命令，然后将执行结果放在 HTTP 响应中返还给客户端。</li>
-</ul>
-<ul>
-<li><p>Session机制<br>Appuim的自动化测试是在一个 session 的上下文中运行，可以理解成Appuim会话。<br>每一次当Appium server成功启动后，客户端的测试库（client library）会要求与Server创建一个会话（session）。<br>会话的作用是为了确保能区别不同的客户端请求与不同的被测应用，每个特定的会话都有一个特定的sessionId参数。每次测试开始时，客户端将初始化一个session会话，虽然不同的语言初始化的方式不同，但是他们都要发送POST/session请求到服务器端，这些请求里面都会带有一个对象：desired capabilities ,这个时候服务器端会启动自动化session然后返回一个session ID，以后的命令都会用这个seesion ID去匹配。</p>
-</li>
-<li><p>Appuim Client<br>包含众多语言库（Java, Ruby, Python, PHP, JavaScript,C#等），都实现了 Appium 对 WebDriver 协议的扩展。</p>
-</li>
-<li><p>JSON wire protocol<br>Appuim中非常重要的协议</p>
-</li>
-</ul>
-<h1 id="Appuim-架构"><a href="#Appuim-架构" class="headerlink" title="Appuim 架构"></a>Appuim 架构</h1><p>Appuim基于Nodejs编写，基于HTTP协议，可以看成一个类似<a href="http://www.seleniumhq.org/projects/webdriver/" target="_blank" rel="external">selenium webdriver</a>的基于移动平台的webdriver，遵循RESTful设计风格web服务器，接受客户端的连接然后在手机设备上执行命令，最后通过HTTP的响应收集命令执行的结果。</p>
-<p>如下为我整理的Appuim Android平台下架构原理图，iOS也类似，只是Bootstrap部分由Instruments替换，UiAutomator由UIAutomation替换。</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E6%9E%B6%E6%9E%84%E5%9B%BE-min.jpg" alt=""></p>
-<p>如下两图参考<a href="">testerhome PPT</a>的Appuim Android和iOS平台下数据流程图。</p>
-<p>其中，Android平台下，Android API 17+，底层调用android平台自带的UI测试框架Uiautomator;反之，调用的selendroid测试框架来完成。</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-android-%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE-min.jpg" alt=""></p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-ios-%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE-min.jpg" alt=""></p>
-<h1 id="Bootstrap源码剖析"><a href="#Bootstrap源码剖析" class="headerlink" title="Bootstrap源码剖析"></a>Bootstrap源码剖析</h1><h2 id="源码结构"><a href="#源码结构" class="headerlink" title="源码结构"></a>源码结构</h2><p>如下所示，Appuim Bootstrap部分源码结构，分UiWatchers、Bootstrap和UIAutomator三部分，非常清晰。</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/Appuim-%E6%BA%90%E7%A0%81%E7%BB%93%E6%9E%84-min.jpg" alt=""></p>
-<h2 id="启动时序"><a href="#启动时序" class="headerlink" title="启动时序"></a>启动时序</h2><p>Bootstrap入口类为Bootstrap.java，继承自UiAutomatorTestCase，然后开启Socket接收命令，时序如下。</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E6%97%B6%E5%BA%8F%E5%9B%BE-min.jpg" alt=""></p>
-<h2 id="类关系图"><a href="#类关系图" class="headerlink" title="类关系图"></a>类关系图</h2><p>类关系如下图所示，很简单。</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/appuim-%E7%B1%BB%E5%9B%BE-min.jpg" alt=""></p>
-<h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><p>Bootstrap整体分SocketServer部分，CommandHandler部分，Watchers部分和UiAutomator四部分。</p>
-<ul>
-<li>SocketServer。完成PC Server端命令接收和解析，再通过CommandHandler的execute操作调用UiAutomator实现触控操作。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">    client = server.accept();</div><div class="line">    Logger.debug(<span class="string">"Client connected"</span>);</div><div class="line">    in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(client.getInputStream(), <span class="string">"UTF-8"</span>));</div><div class="line">    out = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(client.getOutputStream(), <span class="string">"UTF-8"</span>));</div><div class="line">    <span class="keyword">while</span> (keepListening) &#123;</div><div class="line">      handleClientData();</div><div class="line">    &#125;</div><div class="line">    in.close();</div><div class="line">    out.close();</div><div class="line">    client.close();</div><div class="line">    Logger.debug(<span class="string">"Closed client connection"</span>);</div><div class="line">  &#125; <span class="keyword">catch</span> (<span class="keyword">final</span> IOException e) &#123;</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> SocketServerException(<span class="string">"Error when client was trying to connect"</span>);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>CommandHandler，虚基类，功能类都集成自该类完成execute操作，通过HashMap映射，如下。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> HashMap&lt;String, CommandHandler&gt; map = <span class="keyword">new</span> HashMap&lt;String, CommandHandler&gt;();</div><div class="line"></div><div class="line">  <span class="keyword">static</span> &#123;</div><div class="line">    map.put(<span class="string">"waitForIdle"</span>, <span class="keyword">new</span> WaitForIdle());</div><div class="line">    map.put(<span class="string">"clear"</span>, <span class="keyword">new</span> Clear());</div><div class="line">    map.put(<span class="string">"orientation"</span>, <span class="keyword">new</span> Orientation());</div><div class="line">    map.put(<span class="string">"swipe"</span>, <span class="keyword">new</span> Swipe());</div><div class="line">    map.put(<span class="string">"flick"</span>, <span class="keyword">new</span> Flick());</div><div class="line">    map.put(<span class="string">"drag"</span>, <span class="keyword">new</span> Drag());</div><div class="line">    map.put(<span class="string">"pinch"</span>, <span class="keyword">new</span> Pinch());</div><div class="line">    map.put(<span class="string">"click"</span>, <span class="keyword">new</span> Click());</div><div class="line">    map.put(<span class="string">"touchLongClick"</span>, <span class="keyword">new</span> TouchLongClick());</div><div class="line">    map.put(<span class="string">"touchDown"</span>, <span class="keyword">new</span> TouchDown());</div><div class="line">    map.put(<span class="string">"touchUp"</span>, <span class="keyword">new</span> TouchUp());</div><div class="line">    map.put(<span class="string">"touchMove"</span>, <span class="keyword">new</span> TouchMove());</div><div class="line">    map.put(<span class="string">"getText"</span>, <span class="keyword">new</span> GetText());</div><div class="line">    map.put(<span class="string">"setText"</span>, <span class="keyword">new</span> SetText());</div><div class="line">    map.put(<span class="string">"getName"</span>, <span class="keyword">new</span> GetName());</div><div class="line">    map.put(<span class="string">"getAttribute"</span>, <span class="keyword">new</span> GetAttribute());</div><div class="line">    map.put(<span class="string">"getDeviceSize"</span>, <span class="keyword">new</span> GetDeviceSize());</div><div class="line">    map.put(<span class="string">"scrollTo"</span>, <span class="keyword">new</span> ScrollTo());</div><div class="line">    map.put(<span class="string">"find"</span>, <span class="keyword">new</span> Find());</div><div class="line">    map.put(<span class="string">"getLocation"</span>, <span class="keyword">new</span> GetLocation());</div><div class="line">    map.put(<span class="string">"getSize"</span>, <span class="keyword">new</span> GetSize());</div><div class="line">    map.put(<span class="string">"wake"</span>, <span class="keyword">new</span> Wake());</div><div class="line">    map.put(<span class="string">"pressBack"</span>, <span class="keyword">new</span> PressBack());</div><div class="line">    map.put(<span class="string">"pressKeyCode"</span>, <span class="keyword">new</span> PressKeyCode());</div><div class="line">    map.put(<span class="string">"longPressKeyCode"</span>, <span class="keyword">new</span> LongPressKeyCode());</div><div class="line">    map.put(<span class="string">"takeScreenshot"</span>, <span class="keyword">new</span> TakeScreenshot());</div><div class="line">    map.put(<span class="string">"updateStrings"</span>, <span class="keyword">new</span> UpdateStrings());</div><div class="line">    map.put(<span class="string">"getDataDir"</span>, <span class="keyword">new</span> GetDataDir());</div><div class="line">    map.put(<span class="string">"performMultiPointerGesture"</span>, <span class="keyword">new</span> MultiPointerGesture());</div><div class="line">    map.put(<span class="string">"openNotification"</span>, <span class="keyword">new</span> OpenNotification());</div><div class="line">    map.put(<span class="string">"source"</span>, <span class="keyword">new</span> Source());</div><div class="line">    map.put(<span class="string">"compressedLayoutHierarchy"</span>, <span class="keyword">new</span> CompressedLayoutHierarchy());</div><div class="line">    map.put(<span class="string">"configurator"</span>, <span class="keyword">new</span> ConfiguratorHandler());</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<p>具体映射通过AndroidCommandExecutor中的execute实现。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> AndroidCommandResult <span class="title">execute</span><span class="params">(<span class="keyword">final</span> AndroidCommand command)</span> </span>&#123;</div><div class="line">  <span class="keyword">try</span> &#123;</div><div class="line">    Logger.debug(<span class="string">"Got command action: "</span> + command.action());</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (map.containsKey(command.action())) &#123;</div><div class="line">      <span class="keyword">return</span> map.get(command.action()).execute(command);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">new</span> AndroidCommandResult(WDStatus.UNKNOWN_COMMAND,</div><div class="line">          <span class="string">"Unknown command: "</span> + command.action());</div><div class="line">    &#125;</div><div class="line">  &#125; <span class="keyword">catch</span> (<span class="keyword">final</span> JSONException e) &#123;</div><div class="line">    Logger.error(<span class="string">"Could not decode action/params of command"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> AndroidCommandResult(WDStatus.JSON_DECODER_ERROR,</div><div class="line">        <span class="string">"Could not decode action/params of command, please check format!"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>Watchers，Android ANR 和 Crash，如下代码。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerAnrAndCrashWatchers</span><span class="params">()</span> </span>&#123;</div><div class="line">  UiDevice.getInstance().registerWatcher(<span class="string">"ANR"</span>, <span class="keyword">new</span> UiWatcher() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkForCondition</span><span class="params">()</span> </span>&#123;</div><div class="line">      UiObject window = <span class="keyword">new</span> UiObject(<span class="keyword">new</span> UiSelector()</div><div class="line">          .className(<span class="string">"com.android.server.am.AppNotRespondingDialog"</span>));</div><div class="line">      String errorText = <span class="keyword">null</span>;</div><div class="line">      <span class="keyword">if</span> (window.exists()) &#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">          errorText = window.getText();</div><div class="line">        &#125; <span class="keyword">catch</span> (UiObjectNotFoundException e) &#123;</div><div class="line">          Log.e(LOG_TAG, <span class="string">"dialog gone?"</span>, e);</div><div class="line">        &#125;</div><div class="line">        onAnrDetected(errorText);</div><div class="line">        postHandler();</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>; <span class="comment">// triggered</span></div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">false</span>; <span class="comment">// no trigger</span></div><div class="line">    &#125;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
-<ul>
-<li>UiAutomator，通过UiAutomator执行触控操作。</li>
-</ul>
-<h1 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h1><ul>
-<li><p>官方Links<br><a href="http://appium.io/" target="_blank" rel="external">主页</a><br><a href="https://github.com/appium" target="_blank" rel="external">源码主页</a><br><a href="https://github.com/appium/appium" target="_blank" rel="external">Appuim源码</a><br><a href="https://github.com/appium/appium-android-bootstrap" target="_blank" rel="external">Bootstrap源码</a>  </p>
-</li>
-<li><p><a href="https://www.google.com.hk/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=4&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwjJ9rDkvavSAhVL7YMKHTwWDCEQFgg2MAM&amp;url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F26738728%2F&amp;usg=AFQjCNGG8n5FtIO10lr_zo57dHf7onuB5A" target="_blank" rel="external">《Appium Essential》</a></p>
-</li>
-<li><p><a href="http://www.slideshare.net/lihuazhang/appium-tester-home" target="_blank" rel="external">testerhome PPT</a>  </p>
-</li>
-<li><p><a href="https://github.com/appium/appium/blob/master/docs/old/cn/intro.cn.md" target="_blank" rel="external">Appuim介绍</a>  </p>
-</li>
-</ul>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>本文首发于<a href="http://skyseraph.com/">skyseraph.com</a>：<a href="http://skyseraph.com/2017/01/26/Android/Appuim%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90(Boottrap">“Appuim源码剖析(Bootstrap)”</a>/)<br>同步发表/转载 <a href="http://www.cnblogs.com/skyseraph/p/6443596.html" target="_blank" rel="external">cnBlogs</a> / <a href="http://blog.csdn.net/zgzhaobo/article/details/57145480" target="_blank" rel="external">CSDN</a> /  …</p>
-<hr>
-<font size="2"><br>By <a href="www.skyseraph.com">SkySeraph</a>-2017<br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2017/01/26/Android/Appuim源码剖析(Boottrap)/">http://skyseraph.com/2017/01/26/Android/Appuim源码剖析(Boottrap)/</a></p>
-
+<p>这里有很关键一点，跨平台。更多了解Appuim多平台支持相关信息，参考官方<a href="https://github.com/appium/appium/blob/master/docs/old/cn/platform-support.cn.md">platform-support</a></p></p>
+            <p class="article-more-link">
+                <a href="/2017/01/26/Android/Appuim源码剖析(Boottrap)/#more">Read More</a>
+            </p>
         
         </div>
         <footer class="article-footer">
@@ -1083,8 +657,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 </div>
 
             
-    
-        <a href="http://skyseraph.com/2017/01/26/Android/Appuim源码剖析(Boottrap)/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2017/01/26/Android/Appuim源码剖析(Boottrap)/">Comments</a>
     
 
         </footer>
@@ -1098,7 +670,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="article-inner">
         
         
-        
             <header class="article-header">
                 
     
@@ -1107,8 +678,9 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/">
@@ -1117,74 +689,35 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/SkySeraph/">SkySeraph</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/SkySeraph/Life/">Life</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/tags/Life/">Life</a>, <a class="tag-link" href="/tags/SkySeraph/">SkySeraph</a>
     </div>
-          
-					
 
-					
-                </div>
+			
+
+			
+                    </div>
+                
             </header>
+        
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-                <div id="toc" class="toc-article">
-                <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题记"><span class="toc-number">1.</span> <span class="toc-text">题记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A君"><span class="toc-number">2.</span> <span class="toc-text">A君</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#聊聊周围"><span class="toc-number">3.</span> <span class="toc-text">聊聊周围</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#B君"><span class="toc-number">3.1.</span> <span class="toc-text">B君</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C君"><span class="toc-number">3.2.</span> <span class="toc-text">C君</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D君"><span class="toc-number">3.3.</span> <span class="toc-text">D君</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#这两年的一面之缘"><span class="toc-number">4.</span> <span class="toc-text">这两年的一面之缘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#E君"><span class="toc-number">4.1.</span> <span class="toc-text">E君</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#F君"><span class="toc-number">4.2.</span> <span class="toc-text">F君</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#G君"><span class="toc-number">4.3.</span> <span class="toc-text">G君</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#H君"><span class="toc-number">4.4.</span> <span class="toc-text">H君</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#…"><span class="toc-number">4.5.</span> <span class="toc-text">…</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回到自己"><span class="toc-number">5.</span> <span class="toc-text">回到自己</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#到你了"><span class="toc-number">6.</span> <span class="toc-text">到你了</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-number">7.</span> <span class="toc-text">后记</span></a></li></ol>
-                </div>
-            
-            <hr>
-<p><img src="http://img9.itiexue.net/1049/10494897.jpg" width="300" height="400"></p>
+            <p><hr>
+<p><img src= "http://img9.itiexue.net/1049/10494897.jpg"  width="300" height="400"/></p>
 <h2 id="题记"><a href="#题记" class="headerlink" title="题记"></a>题记</h2><p>“现代人不是渴望成功，而是渴望马上成功。”</p>
-<p>前几天同一个创客类培训机构合伙人就合作事宜巴拉吧啦，一句话刺激到了小小的心脏，加上90后创业者的遍地开花🌼，似乎些许浮躁，香菇难受，辗转反侧，诸多思考，有了此文。</p>
-<h2 id="A君"><a href="#A君" class="headerlink" title="A君"></a>A君</h2><p>先从这位创业者（简称A君）说起吧。<br><strong>A</strong>，一位87年小伙，13年研究生毕业后校招进鹅厂，14年深圳宝安2w- 买了房解决了第一个生存问题，15年在一个老板给的200w启动资金下，与几个同事还有以前的同学一起创业，路演获取前海梦工厂创意园办公基地免费入驻…<br>他想让我加入他们培训体系中某个领域所谓的“权威人士”， 录制线上视频并兼线下培训高级讲师，与我之前合作过的几家大型线上/线下培训机构不同，聊天中他一味的强调他们平台多么多么N，可以将我包装成这个领域绝对的权威，签署排他协议，可以通过他们平台获得很好的声誉，还可以在它们的专栏中出售自己书籍/作品，当报名学员比较多时组织线下培训，培训费用以某个比例分成巴拉巴拉…说白了，没有实际利益，大饼的方式加上我个人时间确实差不多饱和，所以当场直接婉拒了。<br>然后继续聊他们的创业，讨论了一些关于创业的观点，巴拉巴拉，然后谈到我自己时，我说我的创业路一定会前行，但现在想先满足或者说解决部分生活上的财务自由再开始…他给我一句话刺到了我，“创业的话，真的不年轻了…”，然后提到他们公司现在招聘的都是90后，93/94年小伙子，有冲劲，技术也不错，Github上开源项目star也众多…面试时问 “大家技术都不错，相比别人，我们为什么要录用你而不是别人？”，”年轻资本，熬夜资本…” 这样的答复A自己都笑了，确实很现实，创业公司不多一份付出也不现实（说的有点委婉了），熬夜我们肯定熬不过他们年轻人，这是他们的资本，就如现在邀请我作为他们讲师也一样，这个领域让这群90后去啃，给一定的时间也完全不会有问题，他希望可以找一个既有地位的人来负责比较好（真厉害又被绕进去了）…后面还聊了很多，交换了微信和名片，嘱咐不要急着给答复回去权衡思考下，同他们一起把这件事有意义的事干一干…巴拉巴拉，又一大堆，这些都不重要了，我的思维还停留在他前面的那句话，“创业的话，真的不年轻了…”，是的，打算创业，30，而立之年，创业还未真正开始，慌？盲？迟？ 创业，真的想清楚了？</p>
-<h2 id="聊聊周围"><a href="#聊聊周围" class="headerlink" title="聊聊周围"></a>聊聊周围</h2><h3 id="B君"><a href="#B君" class="headerlink" title="B君"></a>B君</h3><p><strong>B君</strong>，大学同学，14年离职后同三个同事创立了一家停车场相关公司，自己负责技术，其它三个负责资金和市场，股份平均（创业禁忌）。他们四人每人每月6k生活补贴，其它所有资金都作为储备资金，风风火火的干了一年，团队也从四人做到了十来个，月账面流水也从几万到几十万。<br>15年，B选择退出，以股份比例分到了一大笔钱。自己注册了另外一家公司，还是做原来的产品，跑华强北购买元器件，找PCB板商画板贴片再招人包装，然后跑市场积累客户，一年多下来，毛收入做到了200w。<br>现在的他，每天就是进货出货，跑跑市场谈谈主要客户，自由时间大把大把的，每天打打球陪陪小孩，从来没有10点前起过床，也经常找我聊聊是否有其它扩展门路，结合互联网如何来做巴拉巴拉…<br>说说他这个产品吧，很简单的一个小硬件产品，停车远距离刷卡，读头+卡片，主要赚取卡片插差价。14年15年很多次跟我聊天，说心里话，我压根就看不起这样的产品，这样的所谓“创业”，我跟他聊天灌输的思想一定是高大上的，一定是平台级的，一定是结合互联网，一定是大大的XX。现在，我会发现，错了，我有很多很多很好ideal，我有很好的互联网思维，我拥有技术，但创业或许是个伪命题，只是一个概念，那时的我纯粹的认为创业真的只是一种情怀，是为了情怀，从来没考虑过商业化的思想，突然感觉好像错了，创业，谈情怀之前先谈利益，赚到钱了能盈利才是企业，才是创业，才是中国现社会追从的成功人生。 是么？  </p>
-<h3 id="C君"><a href="#C君" class="headerlink" title="C君"></a>C君</h3><p><strong>C君</strong>，同校师兄，08年毕业来到深圳，从SCM到DSP到ARM，从普通工程师到现在某企业（中小企业，100多号人）总技术负责人，拥有企业的股份。他没有所谓的创业，但却能实现100w+的年收入，当然，单纯工作工资肯定没这么多，他在很早时通过别人介绍认识了他现在做的这个行业中某位台湾老板，当时完全不计较得失没日没夜的给他绘图做板开发，最终成为了长期合作伙伴维持并到现在，他们的产品在台北市拥有近乎1/3的市场…是的，他以工作和兼职的方式也在深圳立足下来，农村出生，今年（2016年喔）在深圳南山刚换了第二套房。 每次跟他爬塘朗山，聊天中会发现他是那种慢性子，做事有条不紊，绝不会去追求冒险。我不止一次问他为什么不创立一家公司，招一点人把事做大，他每次都笑一笑说道，成立公司又能怎么样呢？能赚的更多么？ 当时不理解，觉得太势利，目光看不远，只在乎短期利益，现在想想，其实也不然，雄浑大志之前一定也要脚踏实地，现在大多数互联网创业者，用所谓的互联网思维去创业，成天谈的就是融资圈钱甚至上市，通过融资去圈用户，然后再考虑如何盈利，是的动辄几百万甚至上千万融资（独角兽类公司毕竟是少数，我们需要那样的实例和憧憬，但短期还是先从产品做起），自身也华丽转身，转身之后呢？我希望的创业也是就酱紫的？  </p>
-<h3 id="D君"><a href="#D君" class="headerlink" title="D君"></a>D君</h3><p><strong>D君</strong>，初中同学，未读大学，职高毕业就来到了南广州，从事会展相关设计工作，前面和行业一个朋友一起成立了一家会展相关公司，承办国内外中小型会展设计与布展，目前公司十多个人，一部分是设计师，公司每年也有好几百w的毛收入。我们聚的不是很多，寥寥几次都是记忆深刻，总是带着我出入一些作为码农不太可能涉入的场合，such as夜总会、酒吧、棋牌室等，一群人聊的除了生意就是女人…这也是身边的一个创业者，有可以自己赖以生存的小公司，用他自己的话说反正比打工强。  </p>
-<p>…</p>
-<p>是的，上面介绍的都是身边的熟人朋友，做的事并不是纯互联网，或实业或者硬件相关，或许他们观点不太正确，甚至有点out，有点跟不上或者脱离我们现在吹的天花乱坠的互联网+的时代，但是，他们至少在他的那领域暂时可以说是成功的，获取了财富，获得了自己想要的，还有自由之身。当然，我周边也有一些互联网创业朋友，天天谈创业，谈融资，天天吹，很多都处在或惆怅融资或惆怅产品阶段，对此不评价…</p>
-<h2 id="这两年的一面之缘"><a href="#这两年的一面之缘" class="headerlink" title="这两年的一面之缘"></a>这两年的一面之缘</h2><p>这两年有太多创业者找我聊天，有过太多一面之缘，微信上有近乎150+个创业者信息，或创始人或CEO或CTO或合伙人或投资者。看了很多项目，聊了很多项目，也更加发现项目本身真的不那么重要，创业也真的想象中的那么高大上，简单聊聊几个。</p>
-<h3 id="E君"><a href="#E君" class="headerlink" title="E君"></a>E君</h3><p><strong>E君</strong>，一家传统行业的老板，有过行业多次创业经验，15年辞职到现在的公司任执行总裁，创始人是拥有多个摄影基地，拥有雄厚资本，一起创立的公司天使轮就2000w的融资，租赁了比较豪华奢侈有讲究的office，每次过去都是会在他们奢侈办公室喝茶聊项目，然后晚上入驻酒店。我给他们做了几个月的技术负责人，虽然一直要求我去全职入职做他们的技术总监/CTO，综合考虑后最终还是婉拒了。谈谈这个公司吧，才开始技术（双端App+服务端+Web页+公众号 全平台）是外包的，我加入的时候外包已经开始了，我跟进时发现外包公司技术很low，有点忽悠的感觉，招聘应届生来写不熟悉的代码。后面为了进度（定在某个时间需要新闻发布会，准备A轮融资），采取了一方面外包开发继续，一方面组建自己的技术团队，然后再通过自己技术团队逐步将外包可用代码和需求迭代过来，整个过程还是挺艰辛的，最终产品稍许delay后基本按期凑合发布了（发布前一晚还在熬夜赶业务调整需求，没法留出时间做任何性能或质量上的测试等等）。其实按道理说这是一个很不错的经历，团队是我自己组建的，各方面都还不错，但中间过程中我逐渐发现，总监E和Boss都是传统行业人，都不懂技术而且都不太重视技术，他们眼里技术只是为了完成他们这个App或者某个功能，很多时候沟通起来真费劲甚至有些可笑，我的那只团队成员中间近乎3个月没怎么休息过（有一个月全月都在工作，团队成员都单独找我私聊，我用各种理由把E说服后，后面才好些），每天加班赶需求改需求，纵然我给他们挡了很多，给E立了很多项目规范，建立需求池，培训敏捷迭代开发…但，很多都只是暂时的，很难建立一套真正的互联网化敏捷化的项目过程，甚至都很难以项目的方式推进…整个过程下来逐渐发现其实这不是自己想要的创业，想要的事业，想要的一起奋斗的团队，加入后也不会有太大改观，领导的思维很重要，有些固有思维几乎是不可该改变的，确实，纵然，资金+资源这块是E公司最大的优势（这也是我见了几十家创业公司中资源和资本最充足的），但拼凑的团队以及太多传统行业的束缚以及对技术的不重视，会觉得这家企业不会走很长远，不会做的足够大，这是我当时的判断。现在这家公司线下还是做的火热火热的（整合和合作了众多线下一线品牌加盟商），几个月了线上却还只有几千的用户量，日活也少的可怜，比起我自己做的一些App都少很多。是的，创业，团队和资源同样重要，创始人的思维更重要，有什么的思维注定了可以你的团队，你的企业，你的事业可以走多远，所以，创业者的思维，你准备好了么？ </p>
-<h3 id="F君"><a href="#F君" class="headerlink" title="F君"></a>F君</h3><p><strong>F君</strong>，一家3D打印平台的CEO/创始人，她在这个行业一直做了近20年，对整个相关联的实体了解颇深（3D打印商等），也正好赶上习大大的一带一路政策，所以就夫妻一起在14年底注册了这家公司来做这样一个平台，深受当地政府的厚重（跟我聊天时将她与市长的微信聊天记录给我看，展览时国家部级领导人参观交流的照片等），政府免费提供了一层楼给其办公，公司人员就十来个，融了两次资（私人老板），第一次200w，10%的股份；第二次200w，5%的股份。 我们见了两次面，一次是她来我上班的地方，咖啡馆里简单聊了两个小时，第二次是在15年底，她公司的城市，我们聊了一整天，上午在其办公室，中午餐馆，下午办公室园区，一直再聊。个人直觉对这样一个行业，领域是非常的看好和认同，CEO眼光也不错，内心希望加入（回家后还跟媳妇商量了好久），但最终没有去成，败在现实利益面前。我们后面邮件往来了很多次主要是沟通待遇利益问题，CTO职位，她最终能给的股份期权非常有限，而且受限很大（不是一次性给），而工资就很少了，基本就是万把块钱的基本生活费，考虑到当时自己的情况，纠结了好久最后选择了放弃。这是自己现在回想会觉得有丝许后悔的为数不多一件事，其实，那时的我也不懂什么创业不创业，仅仅是凭自己的直觉，认为这件事可以为之，认可这样一个领域和产品，却败给了现实的自己。 现在的我反思，总结出创业最最重要的一点，是你必须认可这样一件事，这样才能全身心有激情的去当作自己的事业奋斗，但，同时，创业之路是有风险的，不可能考虑太多现实物质基础的，这样，你真的准备好了么？</p>
-<h3 id="G君"><a href="#G君" class="headerlink" title="G君"></a>G君</h3><p><strong>G君</strong>，应该是一位富二代，从他第二次深夜里开着加长版大奔（恕我浅薄，第一次在深圳见到）来我住的地方判断的（当时车上还坐着一位美女，然后犹豫找不着停车位就让她在车上等着，我俩找了个小店深聊到凌晨1点多）。他从事的是银行放贷这一块的，手里有很多资源，已经有好几家公司，他想做一个放贷相关的金融平台，然后提到马云，然后巴拉巴拉…后面又跟我聊了很多金融相关的东东，包括谈到很多现实的问题，例如在深圳没房，他说保证我明年不出一分钱拥有一套房，具体如何通过资本运作获得跟我详细讲了，听的我云里雾里…是的，他是玩资本的，而且玩了很多年了，国内外资本兼备，对金融完全陌生的我对他有些感到害怕（实话说长这么大还没具体说害怕过某个人）和胆怯…他要求我立即辞职，第二天就去他高大上办公室开始干起，具体他要做的事我都事晕的没有思考的余地，针对马上辞职这个观点，我试着辩解说这不太可能，他马上说提供高额补贴，巴拉巴拉…感觉在他面前我完全没有任何话语权，这是我长这么大从来没有遇到的事…我当时只好回复说要回去同媳妇商量下再决定，当然最后还是没去。 后面和一些朋友聊到这事，他们都说我的抉择是正确的，至少我认为，对于创业，至少要在你熟悉的领域进行，完全陌生的领域，虽然你只需要负责技术，但这不应该叫创业，所以，创业，这个领域你熟悉么？<br>（ps，现在朋友圈看到G经常晒各种照片，非常成功，各种投资，上月还看到其参加第十一届中国中小企业企业家创新发展大会中拿奖…只能说是一枚有魄力有资本有资源的领导者，服…只是资本的世界现在的我真的不懂～）</p>
-<h3 id="H君"><a href="#H君" class="headerlink" title="H君"></a>H君</h3><p><strong>H君</strong>，没见过面但留有印象，外包做了一个智慧问答平台，纯互联网项目，他的思想一直说这个项目是他自己这辈子真正想要做的事，自己出资金找外包团队做，不考虑融资（至少暂时），只想好好的把这样一件事做好…巴拉巴拉，这样的聊天让我感觉有点异类，真的可以做到在自己资金并不是那么充裕的前提下出资来做一件情怀的事情或产品么，这值得尊重和记忆。 他也跟我沟通，说他CTO有两三个人选，感觉我面相上像，有一种领导者的感觉，所以选我（当时听了，挺舒服的，第一次听人这样夸我…），但我们都还一直没见过面哦，他也不急，说等外包产品完成并发布后我再介入…就这样，中间等到了两个多月，在这段时间里，我在他的那个产品相关的群里逐渐发现，其实，项目除外，他并不是我想象中的那样情怀，很多可能只是言语上的高大上，或者只是我还太嫩…，当然，至少我认为，对于创业，情怀的东西需要要，但只有情怀我觉得是干不好一件事情的，就如我之前提到的，做企业你必须要考虑盈利，不以营利为目的的企业都是耍流氓。</p>
-<h3 id="…"><a href="#…" class="headerlink" title="…"></a>…</h3><p><strong>I君、J君</strong>，…</p>
-<p>…</p>
-<h2 id="回到自己"><a href="#回到自己" class="headerlink" title="回到自己"></a>回到自己</h2><blockquote>
-<p>创业是什么？</p>
-</blockquote>
-<p>我认为的创业，只是一种信息的不对称下，风口面前，事物或东西的归属，或许是你，或许是他人，区别点在于，站在风口面前的你，对这种不对称信息的了解和熟知（Ideal），你的资本是否可以经得起风口风的力度（资源／技术／团队等）？ （By SkySeraph 2016）</p>
-<blockquote>
-<p>你真的需要创业么？ </p>
-</blockquote>
-<p>你需要创业么？ 你真的需要创业么？ 这里不想谈太多其它主观客观巴拉巴拉讨论，仅一点，你想通过创业获得什么？  财富？ 地位？ 情怀？ 梦想？ 或许是其中之一，但它们不矛盾，你冒着风险，一定抉择后艰辛旅程后这些都只是结果，仅是结果产物。 我更希望的创业是在一定的时机和阶段，做一件自己想要为之的事，把它做成，留一点东西在这个社会，让复杂的事加上你的用心变的简单，仅此而已。</p>
-<p>知乎一句话比较直接的击中了现在很多打工人的心。 “认真读书，拿好成绩，上好大学，找好工作，去大公司。努力在公司奋斗30年，费劲力气往上爬，不乱花销，攒钱买房子，做投资。等到退休了，就是有钱人了。相信这个，并且为之付出200%的努力的，就是穷人思维”。 对比一下，前半段是我经历了经历着，似乎没得选择；后半段之前没有考虑过的，以后也不会这样考虑，不曾想过打工可以成为自己的事业，可以实现财富自由，当然，创业也未必，但有可能。为了这种可能，你觉得呢？  </p>
-<blockquote>
-<p>我的创业路</p>
-</blockquote>
-<p>任正非，43岁，华为，87年；<br>马云，35岁，阿里，99年；<br>马化腾，27岁，腾讯，98年；<br>…</p>
-<p>创业是一件水到渠成的事，是人人可以为之的事，所以，不着急，不忧虑，试着梳理自己的Ideal，择一其二慢慢实现，沉下心里做几件自己想做的事，相信该来的一切都会来临。<br>而立之年，你的创业元年。 </p>
-<h2 id="到你了"><a href="#到你了" class="headerlink" title="到你了"></a>到你了</h2><p>你呢？ </p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>本文首发于<a href="http://skyseraph.com/">skyseraph.com</a>：<a href="http://skyseraph.com/2016/10/31/SkySeraph/Life/%E8%80%8C%E7%AB%8B%E4%B9%8B%E5%B9%B4%EF%BC%8C%E6%9C%AA%E5%BC%80%E5%A7%8B%E7%9A%84%E5%88%9B%E4%B8%9A%E8%B7%AF/">“而立之年，未开始的创业路”</a><br>同步发表/转载 <a href="http://www.cnblogs.com/skyseraph/p/6165041.html" target="_blank" rel="external">cnBlogs</a> / <a href="http://blog.csdn.net/zgzhaobo/article/details/53589644" target="_blank" rel="external">CSDN</a> / <a href="http://blog.jobbole.com/109032/" target="_blank" rel="external">伯乐在线</a> …</p>
-<p>By SkySeraph 10/2016 SZ China   </p>
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/">http://skyseraph.com/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/</a></p>
-
+<p>前几天同一个创客类培训机构合伙人就合作事宜巴拉吧啦，一句话刺激到了小小的心脏，加上90后创业者的遍地开花🌼，似乎些许浮躁，香菇难受，辗转反侧，诸多思考，有了此文。</p></p>
+            <p class="article-more-link">
+                <a href="/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/#more">Read More</a>
+            </p>
         
         </div>
         <footer class="article-footer">
@@ -1231,7 +764,333 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
             
     
-        <a href="http://skyseraph.com/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/">Comments</a>
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-Tools/Jenkins Gitlab持续集成打包平台搭建" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/">Jenkins Gitlab持续集成打包平台搭建</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/">
+            <time datetime="2016-07-17T16:00:00.000Z" itemprop="datePublished">2016-07-18</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Tools/">Tools</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Android/">Android</a>, <a class="tag-link" href="/tags/CI/">CI</a>, <a class="tag-link" href="/tags/Gitlab/">Gitlab</a>, <a class="tag-link" href="/tags/Jenkins/">Jenkins</a>, <a class="tag-link" href="/tags/iOS/">iOS</a>
+    </div>
+
+			
+
+			
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><hr>
+<h1 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h1><h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><ul>
+<li><a href="https://jenkins.io/index.html">Jenkins</a>，一个用Java编写的开源的持续集成工具，提供了软件开发的持续集成服务，可监控并触发持续重复的工作，具有开源，支持多平台和插件扩展，安装简单，界面化管理等特点。更多介绍参考<a href="https://en.wikipedia.org/wiki/Jenkins_(software">维基</a>介绍.  </li>
+</ul></p>
+            <p class="article-more-link">
+                <a href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-iOS/Select all the cell in UITabView or UICollectionView problem" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/">Select all the cell in UITabView or UICollectionView problem</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/">
+            <time datetime="2016-06-29T16:40:20.000Z" itemprop="datePublished">2016-06-30</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/iOS/">iOS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Swift/">Swift</a>, <a class="tag-link" href="/tags/iOS/">iOS</a>
+    </div>
+
+			
+
+			
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><hr>
+<h1 id="The-Issue"><a href="#The-Issue" class="headerlink" title="The Issue"></a>The Issue</h1><p>Recently in my new project I need to select all the cell data in my UITabViewCell and UICollectionViewCell, and need to do some operations with all the cells(like delete etc.), What I do as follows:</p></p>
+            <p class="article-more-link">
+                <a href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-Android/一种提高Android应用进程存活率新方法" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/06/19/Android/一种提高Android应用进程存活率新方法/">一种提高Android应用进程存活率新方法</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/06/19/Android/一种提高Android应用进程存活率新方法/">
+            <time datetime="2016-06-18T16:40:20.000Z" itemprop="datePublished">2016-06-19</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Android/">Android</a>, <a class="tag-link" href="/tags/存活率/">存活率</a>, <a class="tag-link" href="/tags/进程/">进程</a>
+    </div>
+
+			
+
+			
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><hr>
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="Android-进程优先级"><a href="#Android-进程优先级" class="headerlink" title="Android 进程优先级"></a>Android 进程优先级</h2><p><strong>1 进程优先级等级一般分法</strong></p>
+<ul>
+<li>Activte process</li>
+<li>Visible Process</li>
+<li>Service process</li>
+<li>Background process</li>
+<li>Empty process</li>
+</ul>
+<p><strong>2 Service技巧</strong>  </p>
+<ul>
+<li>onStartCommand返回START_STICKY</li>
+<li>onDestroy中startself </li>
+<li>Service后台变前置，setForground(true) </li>
+<li>android:persistent = “true” </li>
+</ul></p>
+            <p class="article-more-link">
+                <a href="/2016/06/19/Android/一种提高Android应用进程存活率新方法/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
     
 
         </footer>
@@ -1242,11 +1101,12 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
 
     <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
 </section>
             
-                <aside id="sidebar">
+                
+<aside id="sidebar">
    
         
     <div class="widget-wrap">
@@ -1390,6 +1250,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
+
             
         </div>
         <footer id="footer">
@@ -1404,24 +1265,44 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 </script>
         
     
-    <script>
-    var disqus_shortname = 'skyseraph';
-    
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+		var gitment = new Gitment({
+			owner: 'skyseraph',
+			repo: 'master',
+			oauth: {
+				client_id: 'd0b94b76cd93fe2cc346',
+				client_secret: '72289b4a44a71a021fb5eaaa760026fad93f60a6',
+			},
+		})
+		gitment.render('commentContainer')
+	</script>
+	
 
 
 
     
-        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
     
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
+    
+
 
 
 <!-- Custom Scripts -->

@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="SkySeraph">
 <meta property="og:description" content="Appuim">
 <meta property="og:image" content="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ8PsHcdHiRZQ9plFuKvJTAUR-raIBJdUzEeQc3z2yfT41Xz2MJ">
-<meta property="og:updated_time" content="2017-05-14T03:06:43.265Z">
+<meta property="og:updated_time" content="2017-12-17T01:46:36.136Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Appuim源码剖析(Bootstrap)">
 <meta name="twitter:description" content="Appuim">
@@ -20,21 +20,26 @@
     
 
     
+        <link rel="alternate" href="/atom.xml" title="SkySeraph" type="application/atom+xml" />
+    
 
     
         <link rel="icon" href="/css/images/avatar.png" />
     
 
-    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
-    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
     <link rel="stylesheet" href="/css/style.css">
 
-    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
     
     
-        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
     
     
         <script type="text/javascript">
@@ -62,7 +67,9 @@ var _hmt = _hmt || [];
 
     
 
+
 </head>
+
 <body>
     <div id="container">
         <header id="header">
@@ -193,17 +200,42 @@ var _hmt = _hmt || [];
             <table>
                 <tr>
                     
-                    <td><a href="http://github.com/skyseraph" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
                     
-                    <td><a href="http://stackoverflow.com/users/1343127/skyseraph" target="_blank" title="stack-overflow"><i class="fa fa-stack-overflow"></i></a></td>
+                    <td>
+                        <a href="http://github.com/skyseraph" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="http://weibo.com/skyseraph" target="_blank" title="weibo"><i class="fa fa-weibo"></i></a></td>
+                    <td>
+                        <a href="http://stackoverflow.com/users/1343127/skyseraph" target="_blank" title="stack-overflow" class=tooltip>
+                            <i class="fa fa-stack-overflow"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="https://twitter.com/seraph_sky" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+                    <td>
+                        <a href="http://weibo.com/skyseraph" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="/" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></td>
+                    <td>
+                        <a href="https://twitter.com/seraph_sky" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+                    <td>
+                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/atom.xml" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
                     
                 </tr>
             </table>
@@ -217,7 +249,6 @@ var _hmt = _hmt || [];
     <div class="article-inner">
         
         
-        
             <header class="article-header">
                 
     
@@ -226,8 +257,9 @@ var _hmt = _hmt || [];
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/2017/01/26/Android/Appuim源码剖析(Boottrap)/">
@@ -236,34 +268,36 @@ var _hmt = _hmt || [];
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/tags/Appuim/">Appuim</a>
     </div>
-          
-					
+
+			
 <div class="article-category">
 	<i class="fa fa-line-chart"></i>
 	<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> article.hits
 </div>
 
 
-					
+			
 <div class="article-author"><i class="fa fa-user"></i>
   
   <a href="http://skyseraph.com" title="SkySeraph">SkySeraph</a>
 </div>
   
 
-                </div>
+                    </div>
+                
             </header>
+        
         
         <div class="article-entry" itemprop="articleBody">
         
@@ -276,6 +310,7 @@ var _hmt = _hmt || [];
             <hr>
 <h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><h2 id="Appuim"><a href="#Appuim" class="headerlink" title="Appuim"></a>Appuim</h2><p>Appium 是一个自动化测试开源工具，支持 iOS 平台和 Android 平台上的原生应用，web 应用和混合应用。</p>
 <p>这里有很关键一点，跨平台。更多了解Appuim多平台支持相关信息，参考官方<a href="https://github.com/appium/appium/blob/master/docs/old/cn/platform-support.cn.md" target="_blank" rel="external">platform-support</a></p>
+<a id="more"></a>
 <h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><ul>
 <li>C/S 架构<br>Appium 的核心是一个 web 服务器，它提供了一套 REST 的接口，接收客户端的连接，监听到命令，接着在移动设备上执行这些命令，然后将执行结果放在 HTTP 响应中返还给客户端。</li>
 </ul>
@@ -386,8 +421,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
             
     
-        <a href="http://skyseraph.com/2017/01/26/Android/Appuim源码剖析(Boottrap)/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2017/01/26/Android/Appuim源码剖析(Boottrap)/">Comments</a>
-    
 
         </footer>
     </div>
@@ -418,19 +451,16 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
 
     
-    <section id="comments">
     
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
+        <section id="comments">
+	<div id="commentContainer"></div>
+</section>
     
-    </section>
 
 </section>
             
-                <aside id="sidebar">
+                
+<aside id="sidebar">
    
         
     <div class="widget-wrap">
@@ -574,6 +604,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
+
             
         </div>
         <footer id="footer">
@@ -588,26 +619,44 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 </script>
         
     
-    <script>
-    var disqus_shortname = 'skyseraph';
-    
-    
-    var disqus_url = 'http://skyseraph.com/2017/01/26/Android/Appuim源码剖析(Boottrap)/';
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+		var gitment = new Gitment({
+			owner: 'skyseraph',
+			repo: 'master',
+			oauth: {
+				client_id: 'd0b94b76cd93fe2cc346',
+				client_secret: '72289b4a44a71a021fb5eaaa760026fad93f60a6',
+			},
+		})
+		gitment.render('commentContainer')
+	</script>
+	
 
 
 
     
-        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
     
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
+    
+
 
 
 <!-- Custom Scripts -->

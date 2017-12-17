@@ -17,21 +17,26 @@
     
 
     
+        <link rel="alternate" href="/atom.xml" title="SkySeraph" type="application/atom+xml" />
+    
 
     
         <link rel="icon" href="/css/images/avatar.png" />
     
 
-    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
-    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
     <link rel="stylesheet" href="/css/style.css">
 
-    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
     
     
-        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
     
     
         <script type="text/javascript">
@@ -59,7 +64,9 @@ var _hmt = _hmt || [];
 
     
 
+
 </head>
+
 <body>
     <div id="container">
         <header id="header">
@@ -190,17 +197,42 @@ var _hmt = _hmt || [];
             <table>
                 <tr>
                     
-                    <td><a href="http://github.com/skyseraph" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
                     
-                    <td><a href="http://stackoverflow.com/users/1343127/skyseraph" target="_blank" title="stack-overflow"><i class="fa fa-stack-overflow"></i></a></td>
+                    <td>
+                        <a href="http://github.com/skyseraph" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="http://weibo.com/skyseraph" target="_blank" title="weibo"><i class="fa fa-weibo"></i></a></td>
+                    <td>
+                        <a href="http://stackoverflow.com/users/1343127/skyseraph" target="_blank" title="stack-overflow" class=tooltip>
+                            <i class="fa fa-stack-overflow"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="https://twitter.com/seraph_sky" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+                    <td>
+                        <a href="http://weibo.com/skyseraph" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="/" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></td>
+                    <td>
+                        <a href="https://twitter.com/seraph_sky" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+                    <td>
+                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/atom.xml" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
                     
                 </tr>
             </table>
@@ -211,790 +243,8 @@ var _hmt = _hmt || [];
 
             
             <section id="main">
-    <article id="post-Tools/Jenkins Gitlab持续集成打包平台搭建" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/">Jenkins Gitlab持续集成打包平台搭建</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/">
-            <time datetime="2016-07-17T16:00:00.000Z" itemprop="datePublished">2016-07-18</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Tools/">Tools</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Android/">Android</a>, <a class="tag-link" href="/tags/CI/">CI</a>, <a class="tag-link" href="/tags/Gitlab/">Gitlab</a>, <a class="tag-link" href="/tags/Jenkins/">Jenkins</a>, <a class="tag-link" href="/tags/iOS/">iOS</a>
-    </div>
-          
-					
-
-					
-                </div>
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-                <div id="toc" class="toc-article">
-                <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#相关概念"><span class="toc-number">1.</span> <span class="toc-text">相关概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Jenkins"><span class="toc-number">1.1.</span> <span class="toc-text">Jenkins</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gitlab"><span class="toc-number">1.2.</span> <span class="toc-text">Gitlab</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CI"><span class="toc-number">1.3.</span> <span class="toc-text">CI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OTA"><span class="toc-number">1.4.</span> <span class="toc-text">OTA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pgyer"><span class="toc-number">1.5.</span> <span class="toc-text">pgyer</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#流程结构"><span class="toc-number">2.</span> <span class="toc-text">流程结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#平台搭建"><span class="toc-number">3.</span> <span class="toc-text">平台搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Jenkins安装和启动"><span class="toc-number">3.1.</span> <span class="toc-text">Jenkins安装和启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Jenkins插件安装"><span class="toc-number">3.2.</span> <span class="toc-text">Jenkins插件安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Jenkins系统设置"><span class="toc-number">3.3.</span> <span class="toc-text">Jenkins系统设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Jenkins-Jobs配置"><span class="toc-number">3.4.</span> <span class="toc-text">Jenkins Jobs配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Jobs基础配置"><span class="toc-number">3.4.1.</span> <span class="toc-text">Jobs基础配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Jobs源码库配置-Gitlab为例"><span class="toc-number">3.4.2.</span> <span class="toc-text">Jobs源码库配置(Gitlab为例)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Jobs触发条件配置"><span class="toc-number">3.4.3.</span> <span class="toc-text">Jobs触发条件配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Jobs构建方式-编译-配置"><span class="toc-number">3.4.4.</span> <span class="toc-text">Jobs构建方式/编译 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Jobs构建后处理"><span class="toc-number">3.4.5.</span> <span class="toc-text">Jobs构建后处理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-number">4.</span> <span class="toc-text">后记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#签名和证书问题-iOS"><span class="toc-number">4.1.</span> <span class="toc-text">签名和证书问题(iOS)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#邮件发送失败"><span class="toc-number">4.2.</span> <span class="toc-text">邮件发送失败</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Jenkins-Https-Support"><span class="toc-number">4.3.</span> <span class="toc-text">Jenkins Https Support</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Refs"><span class="toc-number">5.</span> <span class="toc-text">Refs</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记-1"><span class="toc-number">6.</span> <span class="toc-text">后记</span></a></li></ol>
-                </div>
-            
-            <hr>
-<h1 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h1><h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><ul>
-<li><a href="https://jenkins.io/index.html" target="_blank" rel="external">Jenkins</a>，一个用Java编写的开源的持续集成工具，提供了软件开发的持续集成服务，可监控并触发持续重复的工作，具有开源，支持多平台和插件扩展，安装简单，界面化管理等特点。更多介绍参考<a href="https://en.wikipedia.org/wiki/Jenkins_(software" target="_blank" rel="external">维基</a>介绍.  </li>
-</ul>
-<h2 id="Gitlab"><a href="#Gitlab" class="headerlink" title="Gitlab"></a>Gitlab</h2><ul>
-<li>GitLab是一个利用Ruby on Rails开发的开源应用程序，实现一个自托管的Git项目仓库，可通过Web界面进行访问公开的或者私人项目，更多介绍参考<a href="https://en.wikipedia.org/wiki/GitLab" target="_blank" rel="external">维基</a>介绍.</li>
-</ul>
-<h2 id="CI"><a href="#CI" class="headerlink" title="CI"></a>CI</h2><ul>
-<li>持续集成, 简称CI（continuous integration）.</li>
-<li>CI作为敏捷开发重要的一步，其目的在于让产品快速迭代的同时，尽可能保持高质量.</li>
-<li>CI一种可以增加项目可见性，降低项目失败风险的开发实践。其每一次代码更新，都要通过自动化测试来检测代码和功能的正确性，只有通过自动测试的代码才能进行后续的交付和部署.</li>
-<li>CI 是团队成员间（产研测）更好地协调工作，更好的适应敏捷迭代开发，自动完成减少人工干预，保证每个时间点上团队成员提交的代码都能成功集成的，可以很好的用于对Android/iOS项目的打包.</li>
-</ul>
-<h2 id="OTA"><a href="#OTA" class="headerlink" title="OTA"></a>OTA</h2><ul>
-<li>OTA（Over-the-Air Technology）空中下载技术,具体参<a href="https://support.apple.com/en-us/HT201435" target="_blank" rel="external">考此文介绍</a>.</li>
-</ul>
-<h2 id="pgyer"><a href="#pgyer" class="headerlink" title="pgyer"></a>pgyer</h2><ul>
-<li><a href="https://www.pgyer.com/apps" target="_blank" rel="external">蒲公英(pgyer)</a>为移动开发者提供App免费测试分发应用的服务平台，支持iOS与Android，简单两步分发应用。类似的还有fir.im等.</li>
-</ul>
-<h1 id="流程结构"><a href="#流程结构" class="headerlink" title="流程结构"></a>流程结构</h1><p>简单绘制了下Jenkins的一个流程，如下图：</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E6%B5%81%E7%A8%8B-min.png" alt="">  </p>
-<p><a href="http://www.ibm.com/developerworks/cn/devops/d-continuous-delivery-framework-jenkins/" target="_blank" rel="external">IBM Developer</a>上也有一个看似更复杂一点的图，如下图<br><img src="http://www.ibm.com/developerworks/cn/devops/d-continuous-delivery-framework-jenkins/image007.png" alt="">   </p>
-<p>持续交互流程图：<br><img src="http://www.ibm.com/developerworks/cn/devops/d-continuous-delivery-framework-jenkins/image006.png" alt="">  </p>
-<h1 id="平台搭建"><a href="#平台搭建" class="headerlink" title="平台搭建"></a>平台搭建</h1><h2 id="Jenkins安装和启动"><a href="#Jenkins安装和启动" class="headerlink" title="Jenkins安装和启动"></a>Jenkins安装和启动</h2><p><a href="https://jenkins.io/index.html" target="_blank" rel="external">官网</a>： <a href="https://jenkins.io/index.html" target="_blank" rel="external">https://jenkins.io/index.html</a><br><a href="http://mirrors.jenkins-ci.org/war/latest/jenkins.war" target="_blank" rel="external">下载</a>： <a href="http://mirrors.jenkins-ci.org/war/latest/jenkins.war" target="_blank" rel="external">http://mirrors.jenkins-ci.org/war/latest/jenkins.war</a>  </p>
-<blockquote>
-<p>安装： </p>
-</blockquote>
-<ul>
-<li>依赖于Java环境，首先安装和配置<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">Java环境</a>  </li>
-<li>到<a href="https://jenkins.io/index.html" target="_blank" rel="external">官网</a>下载Jenkins,双击安装，如果是Mac电脑，会自动生成全局变量jenkins  </li>
-<li>修改参数： jenkins + 相关参数，如<br>jenkins –httpPort=8888  #更换端口号，当默认端口8080被占用，或指定特定端口时。</li>
-</ul>
-<blockquote>
-<p>启动  </p>
-</blockquote>
-<ul>
-<li>手动启动： java  -jar jenkins.war  </li>
-<li>后台启动(默认端口)： nohup java -jar jenkins.war &amp;  </li>
-<li>后台启动(指定端口)： nohup java -jar jenkins.war -httpPort=88 &amp;  </li>
-<li>后台启动(HTTPS)： nohup java -jar jenkins.war -httpsPort=88 &amp;  </li>
-<li>浏览：<a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a>  , localhost可配置</li>
-</ul>
-<h2 id="Jenkins插件安装"><a href="#Jenkins插件安装" class="headerlink" title="Jenkins插件安装"></a>Jenkins插件安装</h2><blockquote>
-<p>插件安装</p>
-</blockquote>
-<p>操作： Manage Jenkins -&gt; Manage Plugins -&gt; Available -&gt; Search -&gt; Click to install，如下图所示</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%851-min.png" alt="">   </p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%852-min.png" alt="">  </p>
-<blockquote>
-<p>实用插件</p>
-</blockquote>
-<ul>
-<li>iOS专用：Xcode integration  </li>
-<li>Android专用：Gradle plugin </li>
-<li>Gitlab插件：GitLab Plugin 和 Gitlab Hook Plugin   </li>
-<li>Git插件： Git plugin  </li>
-<li>GitBuckit插件： GitBuckit plugin   </li>
-<li>签名证书管理插件:  Credentials Plugin 和Keychains and Provisioning Profiles Management  </li>
-<li>FTP插件:  Publish over FTP  </li>
-<li>脚本插件: Post-Build Script Plug-in  </li>
-<li>修改Build名称/描述(二维码)： build-name-setter / description setter plugin</li>
-<li>获取仓库提交的commit log： Git Changelog Plugin  </li>
-<li>自定义全局变量: Environment Injector Plugin  </li>
-<li>自定义邮件插件： Email Extension Plugin  </li>
-<li>获取当前登录用户信息： build-user-vars-plugin </li>
-<li>显示代码测试覆盖率报表： Cobertura Plugin   </li>
-<li>来展示生成的单元测试报表，支持一切单测框架，如junit、nosetests等： Junit Plugin</li>
-<li>其它： GIT plugin / SSH Credentials Plugin</li>
-</ul>
-<h2 id="Jenkins系统设置"><a href="#Jenkins系统设置" class="headerlink" title="Jenkins系统设置"></a>Jenkins系统设置</h2><p>操作： Manage Jenkins -&gt; Configure System </p>
-<ul>
-<li>Jenkins内部shell UTF-8 编码设置，如下图所示</li>
-</ul>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E8%AE%BE%E7%BD%AE1-min.png" alt="">  </p>
-<ul>
-<li>Jenkins Location和Email设置，如下图所示</li>
-</ul>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E8%AE%BE%E7%BD%AE2-min.png" alt="">  </p>
-<ul>
-<li>E-mail Notification，设置如下如所示</li>
-</ul>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkis%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE3-min.png" alt="Jenkis系统设置3"></p>
-<p>SMTP详细配置请参考 <a href="http://www.nailedtothex.org/roller/kyle/entry/articles-jenkins-email" target="_blank" rel="external">How to send Email at every build with Jenkins</a>  </p>
-<h2 id="Jenkins-Jobs配置"><a href="#Jenkins-Jobs配置" class="headerlink" title="Jenkins Jobs配置"></a>Jenkins Jobs配置</h2><h3 id="Jobs基础配置"><a href="#Jobs基础配置" class="headerlink" title="Jobs基础配置"></a>Jobs基础配置</h3><blockquote>
-<p>配置编译参数</p>
-</blockquote>
-<p>例如，如果需要打包者自行选择打包类型，如需要编译Release/Debug/Test等不同版本的包，那需要配置Jobs的编译参数，配置方法如下图所示：</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE2-min.png" alt="Jenkins编译设置-参数设置2"></p>
-<p>你还可以配置一些其它参数，例如：</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE3-min.png" alt="Jenkins编译设置-参数设置3"></p>
-<p>配置完后，build界面中就会出现，如下如所示：</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE1-min.png" alt="Jenkins编译设置-参数设置1"></p>
-<p><a href="http://stackoverflow.com/questions/7751735/how-to-configure-a-single-jenkins-job-to-make-the-release-process-from-trunk-or" target="_blank" rel="external">How to configure a single Jenkins job to make the release process from trunk or branches?</a></p>
-<blockquote>
-<p>配置匿名用户权限</p>
-</blockquote>
-<p>后面打包的应用发布时，如果懒得自己搭建服务器，就用Jenkins的，但发布出去的链接需要登录才能访问，这时候你可以设置匿名用户的访问权限，这样匿名用户可以下载访问你提供的应用链接了，非常取巧的方法，如下图：</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE4-min.png" alt="Jenkins编译设置-参数设置4.png"></p>
-<h3 id="Jobs源码库配置-Gitlab为例"><a href="#Jobs源码库配置-Gitlab为例" class="headerlink" title="Jobs源码库配置(Gitlab为例)"></a>Jobs源码库配置(Gitlab为例)</h3><blockquote>
-<p>配置SSH</p>
-</blockquote>
-<p>操作： Manage Jenkins -&gt; Credentials -&gt; Global credentials (unrestricted) -&gt; Add Credentials</p>
-<ol>
-<li>本机生成SSH：ssh-keygen -t rsa -C “Your email” ， 生成过程中需设置密码，最终生成id_rsa和id_rsa.pub(公钥)  </li>
-<li>本机添加秘钥到SSH：ssh-add 文件名（需输入管理密码）  </li>
-<li>Gitlab上添加公钥：复制id_rsa.pub里面的公钥添加到Gitlab    </li>
-<li>Jenkins上配置密钥到SSH：复制id_rsa.pub里面的公钥添加到Jenkins（private key选项）  </li>
-</ol>
-<blockquote>
-<p>新建Job  </p>
-</blockquote>
-<p>在Jenkins中，所有的任务都是以”Job”为单位的。在进行操作前，你需要新建一个Job，Job新建比较简单，只需要在Jenkins管理的首页左侧，点击“New Job”，一般选择free-style software project，再输入Job的名字即可。</p>
-<blockquote>
-<p>配置Gitlab</p>
-</blockquote>
-<p>在新建的任务（Jobs）中，Gitlab源码配置如下图：需要输入git仓库和build分支，公钥使用上面配置SSH生成的公钥。</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins-%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE1-min.png" alt="">    </p>
-<h3 id="Jobs触发条件配置"><a href="#Jobs触发条件配置" class="headerlink" title="Jobs触发条件配置"></a>Jobs触发条件配置</h3><p>Jenkins支持多种触发器配置，包括：</p>
-<ul>
-<li><p>定期进行构建（Build periodically），定时器使用示例如下：  </p>
-<p>  H(25-30) 18 <em> </em> 1-5： 工作日下午6点25到30分之间进行build<br>  H 23 <em> </em> 1-5：工作日每晚23:00至23:59之间的某一时刻进行build<br>  H(0-29)/15 <em> </em> <em> </em>：前半小时内每隔15分钟进行build（开始时间不确定）<br>  H/20 <em> </em> <em> </em>：每隔20分钟进行build（开始时间不确定）   </p>
-</li>
-<li><p>根据提交进行构建（Build when a change is pushed to GitHub）</p>
-</li>
-<li>定期检测代码更新，如有更新则进行构建（Poll SCM）</li>
-</ul>
-<h3 id="Jobs构建方式-编译-配置"><a href="#Jobs构建方式-编译-配置" class="headerlink" title="Jobs构建方式/编译 配置"></a>Jobs构建方式/编译 配置</h3><p>Jenkins支持多种编译配置方式，包括：</p>
-<ul>
-<li>Xcode: iOS编译配置（安装Xcode integration插件） </li>
-<li>Invoke Gradle script：  Android编译配置(安装Gradle plugin插件)   </li>
-<li>Exceute Shell： 脚本方式  </li>
-</ul>
-<p>对于iOS应用的构建，如果选择Xcode方式构建，需要配置好开发者证书，具体参考后面签名和整数问题。<br>推荐使用Exceute Shell方式，简单有效。</p>
-<h3 id="Jobs构建后处理"><a href="#Jobs构建后处理" class="headerlink" title="Jobs构建后处理"></a>Jobs构建后处理</h3><blockquote>
-<p>Artifacts和邮件通知配置，参考下图   </p>
-</blockquote>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE-Archive-min.png" alt="Jenkins项目设置-Archive-min">  </p>
-<p>可借助Email Extension Plugin 插件进行详细配置，具体可参考<a href="http://blog.csdn.net/fengshi_sh/article/details/50669754" target="_blank" rel="external">此文</a></p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Jenkins%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE-%E9%82%AE%E4%BB%B6-min.png" alt="Jenkins项目设置-邮件-min">  </p>
-<blockquote>
-<p>发布</p>
-</blockquote>
-<ul>
-<li>FTP服务器, 最传统的方式，可助蒲公英或者fir.im（安装对应的Jenkins插件）。</li>
-<li>专业的Artifacts存储仓库, 比如Nexus, Artifactory等。</li>
-<li>对象存储服务：比如阿里云OSS，AWS S3等，以阿里云为例，具体请参考此文 <a href="http://blog.fit2cloud.com/2015/01/20/aliyun-oss-jenkins-plugin.html" target="_blank" rel="external">在Jenkins持续集成方案中使用阿里云OSS作为Artifacts仓库</a>  </li>
-</ul>
-<p>当然，如果不想自己的应用发布到三方网站，只希望在自己的内网上托管，这样需要在自己内网上搭建服务器，服务器搭建方式有很多种，Mac上可以用自带的Apache服务，也可以用其它服务。</p>
-<p>iOS的发布可能希望用到OTA，可参考<a href="http://blog.csdn.net/close_marty/article/details/38559673" target="_blank" rel="external">此文</a>  还有这篇<a href="http://www.jianshu.com/p/35ca63ec0d8e" target="_blank" rel="external">一步一步实现无线安装iOS应用(内网OTA)</a> </p>
-<p>这里分享一个我写的shell脚本模板(<a href="https://github.com/skyseraph/PlistAutoCreate" target="_blank" rel="external">已开源</a>)，可以用于iOS的plist文件自动创建以及OTA简单发布页面的自动创建，参考<a href="https://github.com/skyseraph/PlistAutoCreate" target="_blank" rel="external">此链接获取源码</a>, 欢迎Star.</p>
-<p>自动生成一个简单HTML界面，如下图，点击Install即可安装：</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/jenkins_index.png" alt="Jenkis发布1">  </p>
-<p>注意，这里iOS7.1以后限定必须要要用https，所以需要对jenkins设置下https，参考下面”后记” 中的Jenkins Https设置</p>
-<blockquote>
-<p>Last Show  </p>
-</blockquote>
-<p>构建成功后最终的结果如下如所示：</p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/jenkins_finish.jpg" alt="">  </p>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><h2 id="签名和证书问题-iOS"><a href="#签名和证书问题-iOS" class="headerlink" title="签名和证书问题(iOS)"></a>签名和证书问题(iOS)</h2><ul>
-<li><a href="https://circleci.com/docs/ios-code-signing/" target="_blank" rel="external">Set up code signing for iOS projects</a></li>
-<li><a href="http://eqi.cc/2016/05/17/%E5%AE%89%E8%A3%85jenkins%E5%88%B0%E5%8F%91%E5%B8%83ipa%E4%B8%AD%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/" target="_blank" rel="external">安装JENKINS到发布IPA中的那些坑</a></li>
-</ul>
-<h2 id="邮件发送失败"><a href="#邮件发送失败" class="headerlink" title="邮件发送失败"></a>邮件发送失败</h2><ul>
-<li>实际搭建过程中有遇到此问题，折腾了小会，还以为是公司邮箱地址为题，后面发现仅仅是一个小配置问题。</li>
-<li>Extended E-mail Notification中也需要和E-mail Notification一样，点击Advanced，然后选择Use SMTP Authentication，配置同E-mail Notification的参数。</li>
-</ul>
-<h2 id="Jenkins-Https-Support"><a href="#Jenkins-Https-Support" class="headerlink" title="Jenkins Https Support"></a>Jenkins Https Support</h2><p>查询Jenkins Https相关命令： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar jenkins.war --help | grep -i https</div></pre></td></tr></table></figure>
-<p>说明：下面以Mac为例.</p>
-<blockquote>
-<p>KeyStore方式</p>
-</blockquote>
-<ul>
-<li>生成： </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">keytool -genkey -keyalg RSA -alias selfsigned -keystore keystore.jks -storepass 密码 -dname &quot;cn=WEB&quot;</div></pre></td></tr></table></figure>
-<ul>
-<li>使用： </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar jenkins.war --httpPort=-1 --httpsPort=8080 --httpsKeyStore=/目录/keystore.jks --httpsKeyStorePassword=密码</div></pre></td></tr></table></figure>
-<ul>
-<li>注意： 第一次使用时需要将”WEB”证书导入，导入步骤为：Chrome导出证书 -&gt; 安装证书 -&gt; 设置证书”全部允许”， 图解步骤可参考下面实用参考中的第5篇文章.</li>
-</ul>
-<blockquote>
-<p>Certificate方式  </p>
-</blockquote>
-<ul>
-<li>生成：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo openssl genrsa -out server.key 2048  </div><div class="line">sudo openssl req -new -key server.key -out server.csr  </div><div class="line">sudo openssl genrsa  -out ca.key 1024  </div><div class="line">sudo openssl req  -new -x509 -days 365 -key ca.key -out ca.crt  </div><div class="line">sudo openssl ca -in server.csr -out server.crt -cert ca.crt -keyfile ca.key</div></pre></td></tr></table></figure>
-<ul>
-<li>使用：</li>
-</ul>
-<p>启动Jenkins:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar jenkins.war --httpsPort=8088 --httpsCertificate=/path/server.crt --httpsPrivateKey=/path/server.key</div></pre></td></tr></table></figure></p>
-<ul>
-<li>注意/说明：<br>1 同上<br>2 iOS手机需要导入cer证书(ca.crt)<br>3 Common Name  填写IP地址或域名地址<br>4 第5步骤如果提提示“I am unable to access the ./demoCA/newcerts directory” 错误，解决方法为：<br>在当前操作目录，新建demoCA\newcerts2层文件夹<br>然后再demoCA文件夹下新建一个空的index.txt文件<br>再新建一个serial文件，没有后缀。里面填入01  </li>
-</ul>
-<blockquote>
-<p>实用参考   </p>
-</blockquote>
-<ul>
-<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Starting+and+Accessing+Jenkins" target="_blank" rel="external">Starting and Accessing Jenkins</a>  官网说明</li>
-<li><a href="http://balodeamit.blogspot.hk/2014/03/jenkins-switch-to-ssl-https-mode.html" target="_blank" rel="external">Jenkins: Switch to SSL/ HTTPS mode</a>  支持HTTPS的两种方式</li>
-<li><a href="https://wiki.wocommunity.org/display/documentation/Installing+and+Configuring+Jenkins" target="_blank" rel="external">Installing and Configuring Jenkins</a>  KeyStore方式</li>
-<li><a href="https://discuss.zendesk.com/hc/en-us/articles/202652748-Generating-a-self-signed-SSL-certificate-using-the-Java-keytool-command-2004193-" target="_blank" rel="external">Generating a self-signed SSL certificate using the Java keytool command (2004193)</a>  KeyStore方式</li>
-<li><a href="http://www.andrewconnell.com/blog/setup-self-signed-certificates-trusting-them-on-os-x#ZAUu13DJEy2AYEYM.99" target="_blank" rel="external">Setup Self-Signed Certificates &amp; Trusting them on OS X</a>  Certificate方式</li>
-<li><a href="http://nassir.iteye.com/blog/1983613" target="_blank" rel="external">免费openssl生成ssl证书</a>   Certificate方式   </li>
-<li><a href="https://github.com/hughperkins/howto-jenkins-ssl" target="_blank" rel="external">howto-jenkins-ssl</a>  </li>
-<li><a href="https://support.cloudbees.com/hc/en-us/articles/226744608-Jenkins-fails-to-Start-due-to-HttpsConnectorFactory" target="_blank" rel="external">Jenkins fails to Start due to HttpsConnectorFactory</a>  </li>
-<li><a href="http://yuur369.iteye.com/blog/1720321" target="_blank" rel="external">openssl 生成服务端证书所遇到的问题</a>  </li>
-</ul>
-<h1 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h1><ul>
-<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Use+Jenkins" target="_blank" rel="external">Using Jenkins</a></li>
-<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Building+a+software+project" target="_blank" rel="external">Building a software project</a></li>
-<li><a href="https://danielbeard.wordpress.com/2013/04/23/auto-build-and-deploy-ios-apps-using-jenkins/" target="_blank" rel="external">Auto build and deploy iOS apps using Jenkins</a>  </li>
-<li><a href="http://savvyapps.com/blog/continuous-integration-ios-jenkins" target="_blank" rel="external">Continuous Integration for iOS with Jenkins</a>  </li>
-<li><a href="http://docs.gitlab.com/ee/integration/jenkins.html#jenkins-ci-deprecated-service" target="_blank" rel="external">GitLab Documentation</a> </li>
-<li><a href="https://felixha.wordpress.com/2014/04/24/luu-bi/" target="_blank" rel="external">Setup Jenkins + TestFlight for iOS apps</a>    </li>
-<li><a href="https://nickcharlton.net/posts/installing-jenkins-osx-yosemite.html" target="_blank" rel="external">Installing Jenkins on OS X Yosemite</a></li>
-<li><a href="https://www.ibm.com/developerworks/cn/java/j-lo-jenkins/" target="_blank" rel="external">基于 Jenkins 快速搭建持续集成环境</a>  </li>
-<li><a href="http://files.cnblogs.com/files/itech/Jenkins%E5%85%A5%E9%97%A8.pdf" target="_blank" rel="external">Jenkins入门</a>  </li>
-<li><a href="http://blog.csdn.net/close_marty/article/details/38559673" target="_blank" rel="external">jenkins中集成OTA发布</a>  </li>
-</ul>
-<h1 id="后记-1"><a href="#后记-1" class="headerlink" title="后记"></a>后记</h1><p>本文首发于<a href="http://skyseraph.com/">skyseraph.com</a>：<a href="http://skyseraph.com/2016/07/18/Tools/Jenkins%20Gitlab%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E6%89%93%E5%8C%85%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/">“Jenkins Gitlab持续集成打包平台搭建”</a><br>同步发表/转载 <a href="http://www.cnblogs.com/skyseraph/p/5695021.html" target="_blank" rel="external">cnBlogs</a> / <a href="http://blog.csdn.net/zgzhaobo/article/details/52002181" target="_blank" rel="external">CSDN</a> / <a href=""></a> …</p>
-<hr>
-<font size="2"><br>By SkySeraph-2016<br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2016/07/18/Tools/Jenkins">http://skyseraph.com/2016/07/18/Tools/Jenkins</a> Gitlab持续集成打包平台搭建/</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-    <div class="bdsharebuttonbox">
-    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
-    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
-    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
-    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
-</div>
-<script>
-window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-<style>
-    .bdshare_popup_box {
-        border-radius: 4px;
-        border: #e1e1e1 solid 1px;
-    }
-    .bdshare-button-style0-16 a,
-    .bdshare-button-style0-16 .bds_more {
-        padding-left: 20px;
-        margin: 6px 10px 6px 0;
-    }
-    .bdshare_dialog_list a,
-    .bdshare_popup_list a,
-    .bdshare_popup_bottom a {
-        font-family: 'Microsoft Yahei';
-    }
-    .bdshare_popup_top {
-        display: none;
-    }
-    .bdshare_popup_bottom {
-        height: auto;
-        padding: 5px;
-    }
-</style>
-
-
-</div>
-
-            
-    
-        <a href="http://skyseraph.com/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-iOS/Select all the cell in UITabView or UICollectionView problem" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/">Select all the cell in UITabView or UICollectionView problem</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/">
-            <time datetime="2016-06-29T16:40:20.000Z" itemprop="datePublished">2016-06-30</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/iOS/">iOS</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Swift/">Swift</a>, <a class="tag-link" href="/tags/iOS/">iOS</a>
-    </div>
-          
-					
-
-					
-                </div>
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-                <div id="toc" class="toc-article">
-                <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#The-Issue"><span class="toc-number">1.</span> <span class="toc-text">The Issue</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Solutions-in-NetWork"><span class="toc-number">2.</span> <span class="toc-text">Solutions in NetWork</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#The-real-Solution"><span class="toc-number">3.</span> <span class="toc-text">The real Solution</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ref"><span class="toc-number">4.</span> <span class="toc-text">Ref</span></a></li></ol>
-                </div>
-            
-            <hr>
-<h1 id="The-Issue"><a href="#The-Issue" class="headerlink" title="The Issue"></a>The Issue</h1><p>Recently in my new project I need to select all the cell data in my UITabViewCell and UICollectionViewCell, and need to do some operations with all the cells(like delete etc.), What I do as follows:</p>
-<blockquote>
-<p>UITabView  </p>
-</blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">selectAll</span><span class="params">(select: Bool)</span></span> &#123;</div><div class="line">    <span class="keyword">let</span> numSections = mListTableView?.numberOfSections</div><div class="line">    <span class="keyword">if</span> <span class="keyword">let</span> numSections = numSections &#123;</div><div class="line">        <span class="keyword">for</span> numSection <span class="keyword">in</span>  <span class="number">0</span> ..&lt; numSections&#123;</div><div class="line">            <span class="keyword">let</span> numItems = mListTableView?.numberOfRowsInSection(numSection)</div><div class="line">            <span class="keyword">if</span> <span class="keyword">let</span> numItems = numItems &#123;</div><div class="line">                <span class="keyword">for</span> numItem <span class="keyword">in</span> <span class="number">0</span> ..&lt; numItems &#123;</div><div class="line">                    selectCell(<span class="type">NSIndexPath</span>(forRow: numItem, inSection: numSection), select: select)</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">selectCell</span><span class="params">(indexPath : NSIndexPath, select: Bool)</span></span> &#123;</div><div class="line">    <span class="keyword">if</span> mListTableView?.cellForRowAtIndexPath(indexPath) != <span class="literal">nil</span> &#123;</div><div class="line">        <span class="keyword">let</span> cell = mListTableView?.cellForRowAtIndexPath(indexPath) <span class="keyword">as</span>! <span class="type">DownloadListViewCell</span></div><div class="line">        <span class="comment">//cell.setSelected(select, animated: true)</span></div><div class="line">        cell.setSelectForDelete(select)  <span class="comment">// select status UI in UITabViewCell</span></div><div class="line">        mDownloadList[indexPath.row].selectToDelete = select  <span class="comment">// Pojo data</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>UICollectionView  </p>
-</blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">selectAll</span><span class="params">(select: Bool)</span></span> &#123;</div><div class="line">    <span class="keyword">let</span> numSections = mMyOfflineCollectView?.numberOfSections()</div><div class="line">    <span class="keyword">if</span> <span class="keyword">let</span> numSections = numSections &#123;</div><div class="line">        <span class="keyword">for</span> numSection <span class="keyword">in</span>  <span class="number">0</span> ..&lt; numSections&#123;</div><div class="line">            <span class="keyword">let</span> numItems = mMyOfflineCollectView?.numberOfItemsInSection(numSection)</div><div class="line">            <span class="keyword">if</span> <span class="keyword">let</span> numItems = numItems &#123;</div><div class="line">                <span class="keyword">for</span> numItem <span class="keyword">in</span> <span class="number">0</span> ..&lt; numItems &#123;</div><div class="line">                    selectCell(<span class="type">NSIndexPath</span>(forRow: numItem, inSection: numSection), flag: select)</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">selectCell</span><span class="params">(indexPath : NSIndexPath, flag: Bool)</span></span> &#123;</div><div class="line">    <span class="keyword">if</span> mMyOfflineCollectView.cellForItemAtIndexPath(indexPath) != <span class="literal">nil</span> &#123;</div><div class="line">        <span class="keyword">let</span> cell = mMyOfflineCollectView.cellForItemAtIndexPath(indexPath) <span class="keyword">as</span>! <span class="type">MyOfflineCollectionViewCell</span></div><div class="line">        cell.setSelect(flag)</div><div class="line">        <span class="keyword">if</span> flag &#123;</div><div class="line">            mMyOfflineCollectView.selectItemAtIndexPath(indexPath, animated: <span class="literal">true</span>, scrollPosition: <span class="type">UICollectionViewScrollPosition</span>.<span class="type">None</span>)</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            mMyOfflineCollectView.deselectItemAtIndexPath(indexPath, animated: <span class="literal">true</span>)</div><div class="line">        &#125;</div><div class="line">        mMyofflinesData[indexPath.row].needDelete = flag</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>But</strong>, The problem is , I can only select the visible cell  when I scoll down or up, or do operations</p>
-<h1 id="Solutions-in-NetWork"><a href="#Solutions-in-NetWork" class="headerlink" title="Solutions in NetWork"></a>Solutions in NetWork</h1><p><a href="http://stackoverflow.com/questions/22861804/uicollectionview-cellforitematindexpath-is-nil" target="_blank" rel="external">UICollectionView cellForItemAtIndexPath is nil</a></p>
-<p><a href="http://stackoverflow.com/questions/21469459/cellforitematindexpath-returns-nil-after-force-scrolling-to-make-it-visible" target="_blank" rel="external">cellForItemAtIndexPath returns nil after force scrolling to make it visible</a></p>
-<p><a href="http://stackoverflow.com/questions/1524043/select-all-the-cells-in-uitableview" target="_blank" rel="external">Select all the cells in UITableView</a></p>
-<p><a href="http://stackoverflow.com/questions/21168393/easier-way-to-select-all-rows-in-uitableview" target="_blank" rel="external">Easier way to select all rows in UITableView</a></p>
-<p><a href="http://stackoverflow.com/questions/32748447/tableview-cellforrowatindexpath-returns-nil-with-too-many-cells-swift" target="_blank" rel="external">tableView.cellForRowAtIndexPath returns nil with too many cells (swift)</a></p>
-<p><a href="http://stackoverflow.com/questions/31188893/tableview-cellforrowatindexpathindexpath-return-nil" target="_blank" rel="external">tableView.cellForRowAtIndexPath(indexPath) return nil</a></p>
-<h1 id="The-real-Solution"><a href="#The-real-Solution" class="headerlink" title="The real Solution"></a>The real Solution</h1><p>The real problem happened at the cellForRowAtIndexPath / cellForItemAtIndexPath, Which defined in Apple as follows:</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">cellForRowAtIndexPath</span><span class="params">(indexPath: NSIndexPath)</span></span> -&gt; <span class="type">UITableViewCell</span>? </div><div class="line"><span class="comment">// returns nil if cell is **not visible** or index path is out of range</span></div></pre></td></tr></table></figure>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">cellForItemAtIndexPath</span><span class="params">(indexPath: NSIndexPath)</span></span> -&gt; <span class="type">UICollectionViewCell</span>?</div></pre></td></tr></table></figure>
-<p>When the cell is not visible, the cellForRowAtIndexPath will return <strong>nil</strong>,<br>So, it’s not the right way to do the cell select operation out the<br>UITableViewDataSource in cellForRowAtIndexPath (UITabView), <strong>you should do it separate</strong>. The right way as follows:   </p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath)</span></span> -&gt; <span class="type">UITableViewCell</span> &#123;</div><div class="line">    <span class="keyword">let</span> cell = tableView.dequeueReusableCellWithIdentifier(<span class="type">DOWNLOAD_LIST_CELL_INDENTIFIER</span>, forIndexPath: indexPath) <span class="keyword">as</span>! <span class="type">DownloadListViewCell</span></div><div class="line">    cell.selectionStyle = <span class="type">UITableViewCellSelectionStyle</span>.<span class="type">None</span>        </div><div class="line">    <span class="comment">// ...  </span></div><div class="line">   cell.setSelectForDelete(<span class="keyword">self</span>.mDownloadList[indexPath.row].selectToDelete)<span class="comment">// select status UI in UITabViewCell</span></div><div class="line">    <span class="comment">// ...</span></div><div class="line">    <span class="keyword">return</span> cell</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">selectCell</span><span class="params">(indexPath : NSIndexPath, select: Bool)</span></span> &#123;</div><div class="line">    mDownloadList[indexPath.row].selectToDelete = select <span class="comment">// Pojo data</span></div><div class="line">    mListTableView?.reloadData() <span class="comment">// reloadData</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h1><p><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableView_Class/index.html#//apple_ref/occ/instm/UITableView/cellForRowAtIndexPath:" target="_blank" rel="external">UITableView</a></p>
-<p><a href="https://developer.apple.com/reference/uikit/uicollectionview" target="_blank" rel="external">UICollectionView</a></p>
-<hr>
-<font size="2"><br>By SkySeraph-2016<br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2016/06/30/iOS/Select">http://skyseraph.com/2016/06/30/iOS/Select</a> all the cell in UITabView or UICollectionView problem/</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-    <div class="bdsharebuttonbox">
-    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
-    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
-    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
-    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
-</div>
-<script>
-window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-<style>
-    .bdshare_popup_box {
-        border-radius: 4px;
-        border: #e1e1e1 solid 1px;
-    }
-    .bdshare-button-style0-16 a,
-    .bdshare-button-style0-16 .bds_more {
-        padding-left: 20px;
-        margin: 6px 10px 6px 0;
-    }
-    .bdshare_dialog_list a,
-    .bdshare_popup_list a,
-    .bdshare_popup_bottom a {
-        font-family: 'Microsoft Yahei';
-    }
-    .bdshare_popup_top {
-        display: none;
-    }
-    .bdshare_popup_bottom {
-        height: auto;
-        padding: 5px;
-    }
-</style>
-
-
-</div>
-
-            
-    
-        <a href="http://skyseraph.com/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-Android/一种提高Android应用进程存活率新方法" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/06/19/Android/一种提高Android应用进程存活率新方法/">一种提高Android应用进程存活率新方法</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/06/19/Android/一种提高Android应用进程存活率新方法/">
-            <time datetime="2016-06-18T16:40:20.000Z" itemprop="datePublished">2016-06-19</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Android/">Android</a>, <a class="tag-link" href="/tags/存活率/">存活率</a>, <a class="tag-link" href="/tags/进程/">进程</a>
-    </div>
-          
-					
-
-					
-                </div>
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-                <div id="toc" class="toc-article">
-                <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基础知识"><span class="toc-number">1.</span> <span class="toc-text">基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-进程优先级"><span class="toc-number">1.1.</span> <span class="toc-text">Android 进程优先级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-Low-Memory-Killer"><span class="toc-number">1.2.</span> <span class="toc-text">Android Low Memory Killer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看某个App的进程"><span class="toc-number">1.3.</span> <span class="toc-text">查看某个App的进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-AM命令"><span class="toc-number">1.4.</span> <span class="toc-text">Linux AM命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NotificationListenerService"><span class="toc-number">1.5.</span> <span class="toc-text">NotificationListenerService</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android账号和同步机制"><span class="toc-number">1.6.</span> <span class="toc-text">Android账号和同步机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android多进程"><span class="toc-number">1.7.</span> <span class="toc-text">Android多进程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#现有方法"><span class="toc-number">2.</span> <span class="toc-text">现有方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#网络连接保活方法"><span class="toc-number">2.1.</span> <span class="toc-text">网络连接保活方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#双service-通知栏-提高进程优先级"><span class="toc-number">2.2.</span> <span class="toc-text">双service(通知栏) 提高进程优先级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Service及时拉起"><span class="toc-number">2.3.</span> <span class="toc-text">Service及时拉起</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#守护进程-进程互拉"><span class="toc-number">2.4.</span> <span class="toc-text">守护进程/进程互拉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-Am命令开启后台进程"><span class="toc-number">2.5.</span> <span class="toc-text">Linux Am命令开启后台进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NotificationListenerService通知"><span class="toc-number">2.6.</span> <span class="toc-text">NotificationListenerService通知</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前台浮窗"><span class="toc-number">2.7.</span> <span class="toc-text">前台浮窗</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#新方法-AccountSync"><span class="toc-number">3.</span> <span class="toc-text">新方法(AccountSync)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">3.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#效果"><span class="toc-number">3.2.</span> <span class="toc-text">效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#风险"><span class="toc-number">3.3.</span> <span class="toc-text">风险</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现-核心代码"><span class="toc-number">3.4.</span> <span class="toc-text">实现 (核心代码)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Refs"><span class="toc-number">4.</span> <span class="toc-text">Refs</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-number">5.</span> <span class="toc-text">后记</span></a></li></ol>
-                </div>
-            
-            <hr>
-<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="Android-进程优先级"><a href="#Android-进程优先级" class="headerlink" title="Android 进程优先级"></a>Android 进程优先级</h2><p><strong>1 进程优先级等级一般分法</strong></p>
-<ul>
-<li>Activte process</li>
-<li>Visible Process</li>
-<li>Service process</li>
-<li>Background process</li>
-<li>Empty process</li>
-</ul>
-<p><strong>2 Service技巧</strong>  </p>
-<ul>
-<li>onStartCommand返回START_STICKY</li>
-<li>onDestroy中startself </li>
-<li>Service后台变前置，setForground(true) </li>
-<li>android:persistent = “true” </li>
-</ul>
-<p><strong>3 进程优先级号</strong></p>
-<p><strong><a href="https://android.googlesource.com/platform/frameworks/base/+/android-4.4.4_r1/services/java/com/android/server/am/ProcessList.java" target="_blank" rel="external">ProcessList.java</a></strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Adjustment used in certain places where we don't know it yet.</span></div><div class="line"><span class="comment">// (Generally this is something that is going to be cached, but we</span></div><div class="line"><span class="comment">// don't know the exact value in the cached range to assign yet.)</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> UNKNOWN_ADJ = <span class="number">16</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a process only hosting activities that are not visible,</span></div><div class="line"><span class="comment">// so it can be killed without any disruption.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> CACHED_APP_MAX_ADJ = <span class="number">15</span>;</div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> CACHED_APP_MIN_ADJ = <span class="number">9</span>;</div><div class="line"></div><div class="line"><span class="comment">// The B list of SERVICE_ADJ -- these are the old and decrepit</span></div><div class="line"><span class="comment">// services that aren't as shiny and interesting as the ones in the A list.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SERVICE_B_ADJ = <span class="number">8</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is the process of the previous application that the user was in.</span></div><div class="line"><span class="comment">// This process is kept above other things, because it is very common to</span></div><div class="line"><span class="comment">// switch back to the previous app.  This is important both for recent</span></div><div class="line"><span class="comment">// task switch (toggling between the two top recent apps) as well as normal</span></div><div class="line"><span class="comment">// UI flow such as clicking on a URI in the e-mail app to view in the browser,</span></div><div class="line"><span class="comment">// and then pressing back to return to e-mail.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PREVIOUS_APP_ADJ = <span class="number">7</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a process holding the home application -- we want to try</span></div><div class="line"><span class="comment">// avoiding killing it, even if it would normally be in the background,</span></div><div class="line"><span class="comment">// because the user interacts with it so much.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> HOME_APP_ADJ = <span class="number">6</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a process holding an application service -- killing it will not</span></div><div class="line"><span class="comment">// have much of an impact as far as the user is concerned.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SERVICE_ADJ = <span class="number">5</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a process with a heavy-weight application.  It is in the</span></div><div class="line"><span class="comment">// background, but we want to try to avoid killing it.  Value set in</span></div><div class="line"><span class="comment">// system/rootdir/init.rc on startup.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> HEAVY_WEIGHT_APP_ADJ = <span class="number">4</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a process currently hosting a backup operation.  Killing it</span></div><div class="line"><span class="comment">// is not entirely fatal but is generally a bad idea.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BACKUP_APP_ADJ = <span class="number">3</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a process only hosting components that are perceptible to the</span></div><div class="line"><span class="comment">// user, and we really want to avoid killing them, but they are not</span></div><div class="line"><span class="comment">// immediately visible. An example is background music playback.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PERCEPTIBLE_APP_ADJ = <span class="number">2</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a process only hosting activities that are visible to the</span></div><div class="line"><span class="comment">// user, so we'd prefer they don't disappear.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VISIBLE_APP_ADJ = <span class="number">1</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is the process running the current foreground app.  We'd really</span></div><div class="line"><span class="comment">// rather not kill it!</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FOREGROUND_APP_ADJ = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a process that the system or a persistent process has bound to,</span></div><div class="line"><span class="comment">// and indicated it is important.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PERSISTENT_SERVICE_ADJ = -<span class="number">11</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a system persistent process, such as telephony.  Definitely</span></div><div class="line"><span class="comment">// don't want to kill it, but doing so is not completely fatal.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PERSISTENT_PROC_ADJ = -<span class="number">12</span>;</div><div class="line"></div><div class="line"><span class="comment">// The system process runs at the default adjustment.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SYSTEM_ADJ = -<span class="number">16</span>;</div><div class="line"></div><div class="line"><span class="comment">// Special code for native processes that are not being managed by the system (so</span></div><div class="line"><span class="comment">// don't have an oom adj assigned by the system).</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> NATIVE_ADJ = -<span class="number">17</span>;</div></pre></td></tr></table></figure>
-<h2 id="Android-Low-Memory-Killer"><a href="#Android-Low-Memory-Killer" class="headerlink" title="Android Low Memory Killer"></a>Android Low Memory Killer</h2><p>Android系统内存不足时，系统会杀掉一部分进程以释放空间，谁生谁死的这个生死大权就是由LMK所决定的，这就是Android系统中的Low Memory Killer，其基于Linux的OOM机制,其阈值定义如下面所示的lowmemorykiller文件中，当然也可以通过系统的init.rc实现自定义。<br><strong>lowmemorykiller.c</strong>   </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">uint32_t</span> lowmem_debug_level = <span class="number">1</span>;</div><div class="line"><span class="keyword">static</span> <span class="keyword">int</span> lowmem_adj[<span class="number">6</span>] = &#123;</div><div class="line">    <span class="number">0</span>,</div><div class="line">    <span class="number">1</span>,</div><div class="line">    <span class="number">6</span>,</div><div class="line">    <span class="number">12</span>,</div><div class="line">&#125;;</div><div class="line"><span class="keyword">static</span> <span class="keyword">int</span> lowmem_adj_size = <span class="number">4</span>;</div><div class="line"><span class="keyword">static</span> <span class="keyword">int</span> lowmem_minfree[<span class="number">6</span>] = &#123;</div><div class="line">    <span class="number">3</span> * <span class="number">512</span>,    <span class="comment">/* 6MB */</span></div><div class="line">    <span class="number">2</span> * <span class="number">1024</span>,   <span class="comment">/* 8MB */</span></div><div class="line">    <span class="number">4</span> * <span class="number">1024</span>,   <span class="comment">/* 16MB */</span></div><div class="line">    <span class="number">16</span> * <span class="number">1024</span>,  <span class="comment">/* 64MB */</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">static</span> <span class="keyword">int</span> lowmem_minfree_size = <span class="number">4</span>;</div></pre></td></tr></table></figure>
-<p><strong>①</strong> 在Low Memory Killer中通过进程的oom_adj与占用内存的大小决定要杀死的进程，<strong>oom_adj值越小越不容易被杀死</strong>。其中，lowmem_minfree是杀进程的时机，谁被杀，则取决于lowmem_adj，具体值得含义参考上面 <em>Android进程优先级</em> 所述.</p>
-<p><strong>②</strong> 在init.rc中定义了init进程（系统进程）的oom_adj为<strong>-16</strong>，其不可能会被杀死(init的PID是1)，而前台进程是<strong>0</strong>（这里的前台进程是指用户正在使用的Activity所在的进程），用户按Home键回到桌面时的优先级是<strong>6</strong>，普通的Service的进程是<strong>8</strong>.<br><strong>init.rc</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Set init and its forked children's oom_adj.</div><div class="line">    write /proc/<span class="number">1</span>/oom_adj <span class="number">-16</span></div></pre></td></tr></table></figure>
-<p>关于Low Memory Killer的具体实现原理可参考Ref-2.</p>
-<h2 id="查看某个App的进程"><a href="#查看某个App的进程" class="headerlink" title="查看某个App的进程"></a>查看某个App的进程</h2><p>步骤（手机与PC连接）   </p>
-<ol>
-<li>adb shell  </li>
-<li>ps | grep 进程名  </li>
-<li>cat /proc/pid/oom_adj  //其中<strong>pid</strong>是上述grep得到的进程号  </li>
-</ol>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/ps%20grep.png" alt=""></p>
-<h2 id="Linux-AM命令"><a href="#Linux-AM命令" class="headerlink" title="Linux AM命令"></a>Linux AM命令</h2><p><strong>am命令</strong>：在Android系统中通过adb shell 启动某个Activity、Service、拨打电话、启动浏览器等操作Android的命令.其源码在Am.java中，在shell环境下执行am命令实际是启动一个线程执行Am.java中的主函数（main方法），am命令后跟的参数都会当做运行时参数传递到主函数中，主要实现在Am.java的run方法中。  </p>
-<p><strong>拨打电话</strong><br>命令：am start -a android.intent.action.CALL -d tel:电话号码<br>示例：am start -a android.intent.action.CALL -d tel:10086  </p>
-<p><strong>打开一个网页</strong><br>命令：am start -a android.intent.action.VIEW -d 网址<br>示例：am start -a android.intent.action.VIEW -d <a href="http://www.skyseraph.com" target="_blank" rel="external">http://www.skyseraph.com</a>  </p>
-<p><strong>启动一个服务</strong><br>命令：am startservice &lt;服务名称&gt;<br>示例：am startservice -n com.android.music/  com.android.music.MediaPlaybackService</p>
-<h2 id="NotificationListenerService"><a href="#NotificationListenerService" class="headerlink" title="NotificationListenerService"></a>NotificationListenerService</h2><p>“A service that receives calls from the system when new notifications are posted or removed, or their ranking changed.” From Google</p>
-<p>用来监听到通知的发送以及移除和排名位置变化,如果我们注册了这个服务，当系统任何一条通知到来或者被移除掉，我们都能通过这个service来监听到，甚至可以做一些管理工作。</p>
-<h2 id="Android账号和同步机制"><a href="#Android账号和同步机制" class="headerlink" title="Android账号和同步机制"></a>Android账号和同步机制</h2><p>属于Android中较偏冷的知识，具体参考 Ref 3 /4 /5  </p>
-<h2 id="Android多进程"><a href="#Android多进程" class="headerlink" title="Android多进程"></a>Android多进程</h2><ul>
-<li><strong>实现</strong>：android:process</li>
-<li><strong>好处</strong>：一个独立的进程可以充分利用自己的RAM预算,使其主进程拥有更多的空间处理资源。此外，操作系统对待运行在不同组件中的进程是不一样的。这意味着，当系统运行在低可用内存的条件时，并不是所有的进程都会被杀死</li>
-<li><strong>大坑</strong>：每一个进程将有自己的Dalvik VM实例,意味着你不能通过这些实例共享数据,至少不是传统意义上的。例如,静态字段在每个进程都有自己的值,而不是你倾向于相信的只有一个值。</li>
-<li>更多详细请参考Ref 9</li>
-</ul>
-<h1 id="现有方法"><a href="#现有方法" class="headerlink" title="现有方法"></a>现有方法</h1><h2 id="网络连接保活方法"><a href="#网络连接保活方法" class="headerlink" title="网络连接保活方法"></a>网络连接保活方法</h2><p>A. GCM<br>B. 公共的第三方push通道(信鸽等)<br>C. 自身跟服务器通过轮询，或者长连接<br>具体实现请参考 微信架构师杨干荣的”微信Android客户端后台保活经验分享” （Ref-1）.</p>
-<h2 id="双service-通知栏-提高进程优先级"><a href="#双service-通知栏-提高进程优先级" class="headerlink" title="双service(通知栏) 提高进程优先级"></a>双service(通知栏) 提高进程优先级</h2><p><strong>思路</strong>：（API level &gt; 18 ）   </p>
-<ul>
-<li>应用启动时启动一个假的Service（FakeService）, startForeground()，传一个空的Notification  </li>
-<li>启动真正的Service（AlwaysLiveService），startForeground()，注意必须相同Notification ID  </li>
-<li>FakeService stopForeground()  </li>
-</ul>
-<p><strong>效果</strong>：通过adb查看,运行在后台的服务其进程号变成了<strong>1</strong>（优先级仅次于前台进程）</p>
-<p><strong>风险</strong>：Android系统前台service的一个漏洞，可能在6.0以上系统中修复</p>
-<p><strong>实现</strong>：核心代码如下  </p>
-<ul>
-<li>AlwaysLiveService 常驻内存服务   </li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">onStartCommand</span><span class="params">(Intent intent, <span class="keyword">int</span> flags, <span class="keyword">int</span> startId)</span> </span>&#123;</div><div class="line">       startForeground(R.id.notify, <span class="keyword">new</span> Notification());</div><div class="line">       startService(<span class="keyword">new</span> Intent(<span class="keyword">this</span>, FakeService.class));</div><div class="line">       <span class="keyword">return</span> <span class="keyword">super</span>.onStartCommand(intent, flags, startId);</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>FakeService 临时服务</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FakeService</span> <span class="keyword">extends</span> <span class="title">Service</span> </span>&#123;	</div><div class="line">    <span class="meta">@Nullable</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> IBinder <span class="title">onBind</span><span class="params">(Intent intent)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">onStartCommand</span><span class="params">(Intent intent, <span class="keyword">int</span> flags, <span class="keyword">int</span> startId)</span> </span>&#123;</div><div class="line">        startForeground(R.id.notify, <span class="keyword">new</span> Notification());</div><div class="line">        stopSelf();</div><div class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.onStartCommand(intent, flags, startId);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        stopForeground(<span class="keyword">true</span>);</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Service及时拉起"><a href="#Service及时拉起" class="headerlink" title="Service及时拉起"></a>Service及时拉起</h2><p>AlarmReceiver， ConnectReceiver，BootReceiver等  </p>
-<ul>
-<li>Service设置（见上面基础部分） </li>
-<li>通过监听系统广播，如开机，锁屏，亮屏等重新启动服务 </li>
-<li>通过alarm定时器，启动服务 </li>
-</ul>
-<h2 id="守护进程-进程互拉"><a href="#守护进程-进程互拉" class="headerlink" title="守护进程/进程互拉"></a>守护进程/进程互拉</h2><p>在分析360手机助手app时，发现其拥有N多个进程，一个进程kill后会被其它未kill的进程拉起，这也是一种思路吧，虽然有点流氓~<br>守护进程一般有这样两种方式：  </p>
-<ul>
-<li>多个java进程守护互拉</li>
-<li>底层C守护进程拉起App上层/java进程</li>
-</ul>
-<h2 id="Linux-Am命令开启后台进程"><a href="#Linux-Am命令开启后台进程" class="headerlink" title="Linux Am命令开启后台进程"></a>Linux Am命令开启后台进程</h2><p>一种底层实现让进程不被杀死的方法，在Android4.4以上可能有兼容性问题，具体参考Ref-7  </p>
-<h2 id="NotificationListenerService通知"><a href="#NotificationListenerService通知" class="headerlink" title="NotificationListenerService通知"></a>NotificationListenerService通知</h2><p>一种需要用户允许特定权限的系统拉起方式，4.3以上系统</p>
-<h2 id="前台浮窗"><a href="#前台浮窗" class="headerlink" title="前台浮窗"></a>前台浮窗</h2><p>有朋友提出一种应用退出后启动一个不可交互的浮窗，个人觉得这种方法是无效的，读者有兴趣可以一试，参考<a href="https://github.com/Justson/Pixel-Activity-Keep-Alive" target="_blank" rel="external">Pixel-Activity-Keep-Alive</a>  </p>
-<h1 id="新方法-AccountSync"><a href="#新方法-AccountSync" class="headerlink" title="新方法(AccountSync)"></a>新方法(AccountSync)</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>利用Android系统提供的账号和同步机制实现</p>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><ul>
-<li>通过adb查看,运行在后台的服务其进程号变成了1（优先级仅次于前台进程），能提高进程优先级，对比如下图 </li>
-</ul>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/ps%20grep2.png" alt="正常情况"></p>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/ps%20grep1.png" alt="采用AccountSyncAdapter方法后"></p>
-<ul>
-<li>进程被系统kill后，可以由syn拉起</li>
-</ul>
-<h2 id="风险"><a href="#风险" class="headerlink" title="风险"></a>风险</h2><ul>
-<li>SyncAdapter时间进度不高，往往会因为手机处于休眠状态，而时间往后调整，同步间隔最低为<strong>1分钟</strong></li>
-<li>用户可以单独停止或者删除，有些手机账号默认是不同步的，需要手动开启</li>
-</ul>
-<h2 id="实现-核心代码"><a href="#实现-核心代码" class="headerlink" title="实现 (核心代码)"></a>实现 (核心代码)</h2><blockquote>
-<p><strong>1 建立数据同步系统（ContentProvider）</strong>   </p>
-</blockquote>
-<p>通过一个ContentProvider用来作数据同步，由于并没有实际数据同步，所以此处就直接建立一个空的ContentProvider即可</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXAccountProvider</span> <span class="keyword">extends</span> <span class="title">ContentProvider</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String AUTHORITY = <span class="string">"包名.provider"</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String CONTENT_URI_BASE = <span class="string">"content://"</span> + AUTHORITY;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String TABLE_NAME = <span class="string">"data"</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Uri CONTENT_URI = Uri.parse(CONTENT_URI_BASE + <span class="string">"/"</span> + TABLE_NAME);</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Nullable</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Cursor <span class="title">query</span><span class="params">(Uri uri, String[] projection, String selection,</span></span></div><div class="line">                        String[] selectionArgs, String sortOrder) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Nullable</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getType</span><span class="params">(Uri uri)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Nullable</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Uri <span class="title">insert</span><span class="params">(Uri uri, ContentValues values)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">delete</span><span class="params">(Uri uri, String selection, String[] selectionArgs)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">update</span><span class="params">(Uri uri, ContentValues values, String selection, String[] selectionArgs)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>然后再Manifest中声明  </p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">provider</span></span></div><div class="line">	<span class="attr">android:name</span>=<span class="string">"**.XXAccountProvider"</span></div><div class="line">	<span class="attr">android:authorities</span>=<span class="string">"@string/account_auth_provider"</span></div><div class="line">	<span class="attr">android:exported</span>=<span class="string">"false"</span></div><div class="line">	<span class="attr">android:syncable</span>=<span class="string">"true"</span>/&gt;</div></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>2 建立Sync系统 (SyncAdapter) </strong>   </p>
-</blockquote>
-<p>通过实现SyncAdapter这个系统服务后, 利用系统的定时器对程序数据ContentProvider进行更新，具体步骤为：</p>
-<ul>
-<li>创建Sync服务</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXSyncService</span> <span class="keyword">extends</span> <span class="title">Service</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Object sSyncAdapterLock = <span class="keyword">new</span> Object();</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> XXSyncAdapter sSyncAdapter = <span class="keyword">null</span>;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">synchronized</span> (sSyncAdapterLock) &#123;</div><div class="line">            <span class="keyword">if</span> (sSyncAdapter == <span class="keyword">null</span>) &#123;</div><div class="line">                sSyncAdapter = <span class="keyword">new</span> XXSyncAdapter(getApplicationContext(), <span class="keyword">true</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> IBinder <span class="title">onBind</span><span class="params">(Intent intent)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> sSyncAdapter.getSyncAdapterBinder();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">XXSyncAdapter</span> <span class="keyword">extends</span> <span class="title">AbstractThreadedSyncAdapter</span> </span>&#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">XXSyncAdapter</span><span class="params">(Context context, <span class="keyword">boolean</span> autoInitialize)</span> </span>&#123;</div><div class="line">            <span class="keyword">super</span>(context, autoInitialize);</div><div class="line">        &#125;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPerformSync</span><span class="params">(Account account, Bundle extras, String authority, ContentProviderClient provider, SyncResult syncResult)</span> </span>&#123;</div><div class="line">            getContext().getContentResolver().notifyChange(XXAccountProvider.CONTENT_URI, <span class="keyword">null</span>, <span class="keyword">false</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>声明Sync服务 </li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">service</span></span></div><div class="line">	<span class="attr">android:name</span>=<span class="string">"**.XXSyncService"</span></div><div class="line">	<span class="attr">android:exported</span>=<span class="string">"true"</span></div><div class="line">	<span class="attr">android:process</span>=<span class="string">":core"</span>&gt;</div><div class="line">	<span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">action</span></span></div><div class="line">			<span class="attr">android:name</span>=<span class="string">"android.content.SyncAdapter"</span>/&gt;</div><div class="line">	<span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">meta-data</span></span></div><div class="line">		<span class="attr">android:name</span>=<span class="string">"android.content.SyncAdapter"</span></div><div class="line">		<span class="attr">android:resource</span>=<span class="string">"@xml/sync_adapter"</span>/&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">service</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>其中sync_adapter为：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">sync-adapter</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">              <span class="attr">android:accountType</span>=<span class="string">"@string/account_auth_type"</span></div><div class="line">              <span class="attr">android:allowParallelSyncs</span>=<span class="string">"false"</span></div><div class="line">              <span class="attr">android:contentAuthority</span>=<span class="string">"@string/account_auth_provide"</span></div><div class="line">              <span class="attr">android:isAlwaysSyncable</span>=<span class="string">"true"</span></div><div class="line">              <span class="attr">android:supportsUploading</span>=<span class="string">"false"</span></div><div class="line">              <span class="attr">android:userVisible</span>=<span class="string">"true"</span>/&gt;</div></pre></td></tr></table></figure>
-<p>参数说明：  </p>
-<p>android:contentAuthority 指定要同步的ContentProvider在其AndroidManifest.xml文件中有个android:authorities属性。<br>android:accountType 表示进行同步的账号的类型。<br>android:userVisible 设置是否在“设置”中显示<br>android:supportsUploading 设置是否必须notifyChange通知才能同步<br>android:allowParallelSyncs 是否支持多账号同时同步<br>android:isAlwaysSyncable 设置所有账号的isSyncable为1<br>android:syncAdapterSettingsAction 指定一个可以设置同步的activity的Action。</p>
-<ul>
-<li>账户调用Sync服务<br>首先配置好Account（第三步），然后再通过ContentProvider实现<br>手动更新 </li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">triggerRefresh</span><span class="params">()</span> </span>&#123;</div><div class="line">	Bundle b = <span class="keyword">new</span> Bundle();</div><div class="line">	b.putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, <span class="keyword">true</span>);</div><div class="line">	b.putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, <span class="keyword">true</span>);</div><div class="line">	ContentResolver.requestSync(</div><div class="line">			account,</div><div class="line">			CONTENT_AUTHORITY,</div><div class="line">			b);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>添加账号  </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Account account = AccountService.GetAccount(); </div><div class="line">AccountManager accountManager = (AccountManager) context.getSystemService(Context.ACCOUNT_SERVICE);</div><div class="line">accountManager.addAccountExplicitly(...)</div></pre></td></tr></table></figure>
-<p>同步周期设置  </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ContentResolver.setIsSyncable(account, CONTENT_AUTHORITY, <span class="number">1</span>);</div><div class="line">ContentResolver.setSyncAutomatically(account, CONTENT_AUTHORITY, <span class="keyword">true</span>);</div><div class="line">ContentResolver.addPeriodicSync(account, CONTENT_AUTHORITY, <span class="keyword">new</span> Bundle(), SYNC_FREQUENCY);</div></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>3 建立账号系统 (Account Authenticator)</strong>   </p>
-</blockquote>
-<p>通过建立Account账号，并关联SyncAdapter服务实现同步</p>
-<ul>
-<li>创建Account服务</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXAuthService</span> <span class="keyword">extends</span> <span class="title">Service</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> XXAuthenticator mAuthenticator;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line">        mAuthenticator = <span class="keyword">new</span> XXAuthenticator(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> XXAuthenticator <span class="title">getAuthenticator</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (mAuthenticator == <span class="keyword">null</span>)</div><div class="line">            mAuthenticator = <span class="keyword">new</span> XXAuthenticator(<span class="keyword">this</span>);</div><div class="line">        <span class="keyword">return</span> mAuthenticator;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> IBinder <span class="title">onBind</span><span class="params">(Intent intent)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> getAuthenticator().getIBinder();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">XXAuthenticator</span> <span class="keyword">extends</span> <span class="title">AbstractAccountAuthenticator</span> </span>&#123;</div><div class="line">        <span class="keyword">private</span> <span class="keyword">final</span> Context context;</div><div class="line">        <span class="keyword">private</span> AccountManager accountManager;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">XXAuthenticator</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">            <span class="keyword">super</span>(context);</div><div class="line">            <span class="keyword">this</span>.context = context;</div><div class="line">            accountManager = AccountManager.get(context);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> Bundle <span class="title">addAccount</span><span class="params">(AccountAuthenticatorResponse response, String accountType, String authTokenType, String[] requiredFeatures, Bundle options)</span></span></div><div class="line">                <span class="keyword">throws</span> NetworkErrorException &#123;</div><div class="line">			<span class="comment">// 添加账号 示例代码</span></div><div class="line">            <span class="keyword">final</span> Bundle bundle = <span class="keyword">new</span> Bundle();</div><div class="line">            <span class="keyword">final</span> Intent intent = <span class="keyword">new</span> Intent(context, AuthActivity.class);</div><div class="line">            intent.putExtra(AccountManager.KEY_ACCOUNT_AUTHENTICATOR_RESPONSE, response);</div><div class="line">            bundle.putParcelable(AccountManager.KEY_INTENT, intent);</div><div class="line">            <span class="keyword">return</span> bundle;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> Bundle <span class="title">getAuthToken</span><span class="params">(AccountAuthenticatorResponse response, Account account, String authTokenType, Bundle options)</span></span></div><div class="line">                <span class="keyword">throws</span> NetworkErrorException &#123;</div><div class="line">			<span class="comment">// 认证 示例代码</span></div><div class="line">            String authToken = accountManager.peekAuthToken(account, getString(R.string.account_token_type));</div><div class="line">            <span class="comment">//if not, might be expired, register again</span></div><div class="line">            <span class="keyword">if</span> (TextUtils.isEmpty(authToken)) &#123;</div><div class="line">                <span class="keyword">final</span> String password = accountManager.getPassword(account);</div><div class="line">                <span class="keyword">if</span> (password != <span class="keyword">null</span>) &#123;</div><div class="line">                    <span class="comment">//get new token</span></div><div class="line">					authToken = account.name + password;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="comment">//without password, need to sign again</span></div><div class="line">            <span class="keyword">final</span> Bundle bundle = <span class="keyword">new</span> Bundle();</div><div class="line">            <span class="keyword">if</span> (!TextUtils.isEmpty(authToken)) &#123;</div><div class="line">                bundle.putString(AccountManager.KEY_ACCOUNT_NAME, account.name);</div><div class="line">                bundle.putString(AccountManager.KEY_ACCOUNT_TYPE, account.type);</div><div class="line">                bundle.putString(AccountManager.KEY_AUTHTOKEN, authToken);</div><div class="line">                <span class="keyword">return</span> bundle;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//no account data at all, need to do a sign</span></div><div class="line">            <span class="keyword">final</span> Intent intent = <span class="keyword">new</span> Intent(context, AuthActivity.class);</div><div class="line">            intent.putExtra(AccountManager.KEY_ACCOUNT_AUTHENTICATOR_RESPONSE, response);</div><div class="line">            intent.putExtra(AuthActivity.ARG_ACCOUNT_NAME, account.name);</div><div class="line">            bundle.putParcelable(AccountManager.KEY_INTENT, intent);</div><div class="line">            <span class="keyword">return</span> bundle;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">getAuthTokenLabel</span><span class="params">(String authTokenType)</span> </span>&#123;</div><div class="line"><span class="comment">//            throw new UnsupportedOperationException();</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> Bundle <span class="title">editProperties</span><span class="params">(AccountAuthenticatorResponse response, String accountType)</span> </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> Bundle <span class="title">confirmCredentials</span><span class="params">(AccountAuthenticatorResponse response, Account account, Bundle options)</span></span></div><div class="line">                <span class="keyword">throws</span> NetworkErrorException &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> Bundle <span class="title">updateCredentials</span><span class="params">(AccountAuthenticatorResponse response, Account account, String authTokenType, Bundle options)</span></span></div><div class="line">                <span class="keyword">throws</span> NetworkErrorException &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> Bundle <span class="title">hasFeatures</span><span class="params">(AccountAuthenticatorResponse response, Account account, String[] features)</span></span></div><div class="line">                <span class="keyword">throws</span> NetworkErrorException &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>声明Account服务</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">service</span></span></div><div class="line">	<span class="attr">android:name</span>=<span class="string">"**.XXAuthService"</span></div><div class="line">	<span class="attr">android:exported</span>=<span class="string">"true"</span></div><div class="line">	<span class="attr">android:process</span>=<span class="string">":core"</span>&gt;</div><div class="line">	<span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">action</span></span></div><div class="line">			<span class="attr">android:name</span>=<span class="string">"android.accounts.AccountAuthenticator"</span>/&gt;</div><div class="line">	<span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">meta-data</span></span></div><div class="line">		<span class="attr">android:name</span>=<span class="string">"android.accounts.AccountAuthenticator"</span></div><div class="line">		<span class="attr">android:resource</span>=<span class="string">"@xml/authenticator"</span>/&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">service</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>其中authenticator为：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">account-authenticator</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">android:accountType</span>=<span class="string">"@string/account_auth_type"</span></div><div class="line">    <span class="attr">android:icon</span>=<span class="string">"@drawable/icon"</span></div><div class="line">    <span class="attr">android:smallIcon</span>=<span class="string">"@drawable/icon"</span></div><div class="line">    <span class="attr">android:label</span>=<span class="string">"@string/app_name"</span></div><div class="line">/&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li><p>使用Account服务<br>同SyncAdapter，通过AccountManager使用   </p>
-<ul>
-<li><p>申请Token主要是通过 <a href="https://developer.android.com/reference/android/accounts/AccountManager.html#getAuthToken(android.accounts.Account,%20java.lang.String,%20android.os.Bundle,%20android.app.Activity,%20android.accounts.AccountManagerCallback%3Candroid.os.Bundle%3E,%20android.os.Handler" target="_blank" rel="external">AccountManager.getAuthToken</a>)系列方法</p>
-</li>
-<li><p>添加账号则通过 <a href="https://developer.android.com/reference/android/accounts/AccountManager.html#addAccount(java.lang.String,%20java.lang.String,%20java.lang.String%5B%5D,%20android.os.Bundle,%20android.app.Activity,%20android.accounts.AccountManagerCallback%3Candroid.os.Bundle%3E,%20android.os.Handler" target="_blank" rel="external">AccountManager.addAccount</a>)</p>
-</li>
-<li><p>查看是否存在账号通过 <a href="https://developer.android.com/reference/android/accounts/AccountManager.html#getAccountsByType(java.lang.String" target="_blank" rel="external">AccountManager.getAccountsByType</a>)</p>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h1><ol>
-<li><p><a href="http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&amp;mid=403254393&amp;idx=1&amp;sn=8dc0e3a03031177777b5a5876cb210cc&amp;scene=0#wechat_redirect" target="_blank" rel="external">微信Android客户端后台保活经验分享</a></p>
-</li>
-<li><p><a href="http://www.cnblogs.com/angeldevil/archive/2013/05/21/3090872.html" target="_blank" rel="external">Android Low Memory Killer原理</a></p>
-</li>
-<li><p><a href="http://stackoverflow.com/questions/10962418/startforeground-without-showing-notification/18281520#18281520" target="_blank" rel="external">stackOverflow 上介绍的双Service方法</a></p>
-</li>
-<li><p><a href="http://blog.udinic.com/2013/07/24/write-your-own-android-sync-adapter/" target="_blank" rel="external">Write your own Android Sync Adapter</a></p>
-</li>
-<li><p><a href="http://blog.udinic.com/2013/04/24/write-your-own-android-authenticator/" target="_blank" rel="external">Write your own Android Authenticator</a></p>
-</li>
-<li><p>Android developer</p>
-<ul>
-<li><a href="https://developer.android.com/reference/android/accounts/package-summary.html" target="_blank" rel="external">android.accounts</a> </li>
-<li><a href="https://developer.android.com/reference/android/accounts/AccountManager.html" target="_blank" rel="external">AccountManager</a> </li>
-<li><a href="https://developer.android.com/reference/android/accounts/AbstractAccountAuthenticator.html" target="_blank" rel="external">AbstractAccountAuthenticator</a>  </li>
-<li><a href="https://developer.android.com/reference/android/accounts/AccountAuthenticatorActivity.html" target="_blank" rel="external">AccountAuthenticatorActivity</a></li>
-<li><a href="https://developer.android.com/training/sync-adapters/creating-sync-adapter.html" target="_blank" rel="external">Creating a Sync Adapter</a></li>
-</ul>
-</li>
-<li><p><a href="http://klob.diandi.life/?p=21" target="_blank" rel="external">Android篇从底层实现让进程不被杀死（失效Closed）</a>  </p>
-</li>
-<li><p><a href="http://hoyoshaw.github.io/2015/12/11/Android-4-3-NotificationListenerService-%E7%9A%84%E4%BD%BF%E7%94%A8/" target="_blank" rel="external">Android 4.3+ NotificationListenerService 的使用</a></p>
-</li>
-<li><p><a href="https://medium.com/@rotxed/going-multiprocess-on-android-52975ed8863c#.20jjl1u9h" target="_blank" rel="external">Going multiprocess on Android</a></p>
-</li>
-</ol>
-<p><img src="https://camo.githubusercontent.com/8a7b101c1131bee44c083442109c44fb4a877261/687474703a2f2f377869386b6a2e636f6d312e7a302e676c622e636c6f7564646e2e636f6d2f696d6730312e676966" alt=""> </p>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><blockquote>
-<p><strong>2016.5.24</strong>    </p>
-</blockquote>
-<p><strong>1. </strong>本文发布时间写错了，<strong>5.19</strong>手贱成了<strong>6.19</strong>，就酱紫吧，懒得改了，五月份看过的童鞋就当狠狠滴穿越了一把吧，O(∩_∩)O哈哈哈~~  </p>
-<p><strong>2. </strong>本文在<a href="http://v2ex.com/t/280961" target="_blank" rel="external">V2EX</a>、<a href="http://gold.xitu.io/" target="_blank" rel="external">稀土掘金</a>、<a href="http://www.cnblogs.com/skyseraph/p/5511612.html" target="_blank" rel="external">博客园</a>、<a href="http://blog.csdn.net/zgzhaobo/article/details/51462292" target="_blank" rel="external">CSDN</a>等等诸多网站上有转载或发布，收到了很多评论和讨论，其中有一部分以“天下兴亡匹夫有责”的心态批判笔者等同类开发者把Android生态给搞坏了，提到iOS的诸多好处等等，阐述几点个人观点：  </p>
-<p><strong>① </strong>据笔者研究，目前双Service拉起的方式在国内排前几的应用(微信/支付宝等等)中都有用到，进程互拉方式在360手机助手、应用宝等应用中有用到，这些才是真正黑科技，笔者提到的方法仅仅是取巧性的用到了Android系统提供的方法，谈不上XXX~~  </p>
-<p><strong>② </strong>iOS的封闭造就其天然的优势,不存在这些问题; 而Android的开源，有诸多问题但不可否认的是其促进了技术的发展，科技的发展甚至人类的进步。 物极必反，很多事情都是双刃剑~</p>
-<p><strong>③</strong> 后来经一些网友提醒，发现所谓提异议的这群家伙都是产品汪，半吊子技术，所以XXOO~~</p>
-<p><strong>④</strong> 法海无涯,技术无边,风涯无罪,南无阿弥陀佛~~</p>
-<p>本文首发于<a href="http://skyseraph.com/">skyseraph.com</a>：<a href="http://skyseraph.com/2016/06/19/Android/%E4%B8%80%E7%A7%8D%E6%8F%90%E9%AB%98Android%E5%BA%94%E7%94%A8%E8%BF%9B%E7%A8%8B%E5%AD%98%E6%B4%BB%E7%8E%87%E6%96%B0%E6%96%B9%E6%B3%95/">“一种提高Android应用进程存活率新方法”</a><br>同步发表/转载 <a href="http://www.cnblogs.com/skyseraph/p/5511612.html" target="_blank" rel="external">cnBlogs</a> / <a href="http://blog.csdn.net/zgzhaobo/article/details/51462292" target="_blank" rel="external">CSDN</a> / <a href="http://android.jobbole.com/85286/" target="_blank" rel="external">伯乐在线</a> …</p>
-<hr>
-<font size="2"><br>By <a href="www.skyseraph.com">SkySeraph</a>-2016<br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2016/06/19/Android/一种提高Android应用进程存活率新方法/">http://skyseraph.com/2016/06/19/Android/一种提高Android应用进程存活率新方法/</a></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-    <div class="bdsharebuttonbox">
-    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
-    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
-    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
-    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
-</div>
-<script>
-window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-<style>
-    .bdshare_popup_box {
-        border-radius: 4px;
-        border: #e1e1e1 solid 1px;
-    }
-    .bdshare-button-style0-16 a,
-    .bdshare-button-style0-16 .bds_more {
-        padding-left: 20px;
-        margin: 6px 10px 6px 0;
-    }
-    .bdshare_dialog_list a,
-    .bdshare_popup_list a,
-    .bdshare_popup_bottom a {
-        font-family: 'Microsoft Yahei';
-    }
-    .bdshare_popup_top {
-        display: none;
-    }
-    .bdshare_popup_bottom {
-        height: auto;
-        padding: 5px;
-    }
-</style>
-
-
-</div>
-
-            
-    
-        <a href="http://skyseraph.com/2016/06/19/Android/一种提高Android应用进程存活率新方法/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2016/06/19/Android/一种提高Android应用进程存活率新方法/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <article id="post-AR_VR/一道Android OpenGL笔试题" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
-        
         
         
             <header class="article-header">
@@ -1005,8 +255,9 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/2016/05/05/AR_VR/一道Android OpenGL笔试题/">
@@ -1015,97 +266,37 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/OpenGL/">OpenGL</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/tags/AR-VR/">AR/VR</a>, <a class="tag-link" href="/tags/Android/">Android</a>, <a class="tag-link" href="/tags/OpenGL/">OpenGL</a>
     </div>
-          
-					
 
-					
-                </div>
+			
+
+			
+                    </div>
+                
             </header>
+        
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-                <div id="toc" class="toc-article">
-                <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#答案"><span class="toc-number">2.</span> <span class="toc-text">答案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思考-讨论"><span class="toc-number">3.</span> <span class="toc-text">思考/讨论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-number">4.</span> <span class="toc-text">后记</span></a></li></ol>
-                </div>
-            
-            <hr>
+            <p><hr>
 <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><ul>
 <li>设计一个Android平台的Gallery组件，要求Gallery中每个item内的图片显示达成有效显示的最大精度，并保证Gallery在滚屏时能够全60FPS帧率地及时显示出加载的图片。请详细说明实现架构、关键技术点及APIs。</li>
 <li>约束条件：GPU空间传输通道带宽较小，对于400*400pixel尺寸的图像而言，一次传输耗时超过30ms。</li>
 </ul>
-<h1 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h1><p>当时的答案如下：</p>
-<blockquote>
-<p><strong> 1. Gallery组件类图</strong>   </p>
-</blockquote>
-<p>Gallery组件类图设计如下图所示，其中:  </p>
-<ul>
-<li>GalleryView为自定义Gallery组件视图;   </li>
-<li>GalleryRenderer为GLSurfaceView的Renderer.  </li>
-<li>AbstractImage为抽象的ImageView基类，子类继承实现loadGLTexture和Draw  </li>
-<li>DataCache为图片缓存类，NetworkHelper为NetWork模块的管理类，负责图片的下载.  </li>
-</ul>
-<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/OpenGL-Gallery.jpg" alt="">    </p>
-<blockquote>
-<p><strong>2. 关键技术点及相关API设计</strong></p>
-<blockquote>
-<p>2.1 最大精度下60fps帧率显示图片  </p>
-</blockquote>
-</blockquote>
-<p><strong>方案1： VBO/FBO方案</strong><br><strong><em>VBO</em></strong>(Vertex Buffer Array)： OpenGL存储顶点数据的高速缓存，可减少渲染时间，相关APIs如下(OpenGL ES 2.0以上)  </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">GLES20.glGenBuffers(<span class="number">1</span>, vboId, <span class="number">0</span>);<span class="comment">//申请</span></div><div class="line">GLES20.glBindBuffer(GLES30.GL_ARRAY_BUFFER, vboId[<span class="number">0</span>]);<span class="comment">//绑定</span></div><div class="line">GLES20.glBufferData(GLES30.GL_ARRAY_BUFFER, vertexBuffer.capacity() * <span class="number">4</span>,vertexBuffer,GLES30.GL_STATIC_DRAW);<span class="comment">//存储      </span></div><div class="line">GLES20.glBindBuffer(GLES30.GL_ARRAY_BUFFER, <span class="number">0</span>);</div></pre></td></tr></table></figure>
-<p><a href="http://www.learnopengles.com/android-lesson-seven-an-introduction-to-vertex-buffer-objects-vbos/" target="_blank" rel="external">参考</a>   </p>
-<p><strong><em>PBO</em></strong>(Pixel Buffer Object)：OpenGL存储像素数据的高速缓存，可实现快速的像素数据传递，减少数据的拷贝/传递时间，相关APIs如下(OpenGL ES 3.0以上)  </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">GLES30.glReadBuffer(GLES30.GL_BACK); <span class="comment">//set framebuffer to read from</span></div><div class="line">GLES30.glBindBuffer(GLES30.GL_PIXEL_PACK_BUFFER, mPboHandleContainer[<span class="number">0</span>]);  <span class="comment">// bind pbo</span></div><div class="line">GLES30.glReadPixels(<span class="number">0</span>, <span class="number">0</span>, width, height, GLES30.GL_RGBA, GLES30.GL_UNSIGNED_BYTE, pboByteBuffer); <span class="comment">// read pixels</span></div><div class="line">ByteBuffer byteBuffer =((ByteBuffer) GLES30.glMapBufferRange(GLES30.GL_PIXEL_PACK_BUFFER, <span class="number">0</span>, <span class="number">4</span> * mWidth * mHeight,</div><div class="line">                                              GLES30.GL_MAP_READ_BIT)).order(ByteOrder.nativeOrder()); <span class="comment">// map pbo to bb</span></div><div class="line">GLES30.glUnmapBuffer(GLES30.GL_PIXEL_PACK_BUFFER);<span class="comment">// unmap pbo</span></div><div class="line">GLES30.glBindBuffer(GLES30.GL_PIXEL_PACK_BUFFER, <span class="number">0</span>);<span class="comment">// unbind pbo</span></div></pre></td></tr></table></figure>
-<p><strong>PBO DMA异步快速传递原理及多缓存对象设计</strong>  </p>
-<ul>
-<li>如下面两图所示，其中上图是传统的方法从图像源载入图像数据到纹理对象的过程，像素数据首先存到系统内存中，接着使用glTexImage2D将数据从系统内存拷贝到纹理对象，包含的两个子过程均需要有CPU执行；而下图中，像素数据是直接载入到PBO中，这个过程仍需要CPU来执行，但是从数据从PBO到纹理对象的过程则由GPU来执行DMA，不需要CPU参与。而且opengl可安排异步DMA，不必马上进行像素数据的传递。因此，相比而言，下图中的glTexImage2D立即返回而不是马上执行，这样CPU可以执行其它的操作而不需要等待像素数据传递的结束。</li>
-</ul>
-<p><img src="http://www.songho.ca/opengl/files/gl_pbo02.png" alt=""><br><img src="http://www.songho.ca/opengl/files/gl_pbo03.png" alt="">  </p>
-<ul>
-<li>如下图所示表示同时使用了两个PBO。在glTexSubImage2D将像素数据从PBO拷贝出来的同时，另一份像素数据写进了另一个PBO。即在第n帧时，PBO1用于glTexSubImage2D，而PBO2用于生成一个新的纹理对象了。再到n+1帧时，两个PBO则互换了角色。由于异步DMA传递，像素数据的更新和拷贝过程可同时进行，即CPU将纹理源更新到PBO，同时GPU将从另一PBO中拷贝出纹理，从而提高处理速度。<br><img src="http://www.songho.ca/opengl/files/gl_pbo04.png" alt=""></li>
-</ul>
-<p><a href="http://www.songho.ca/opengl/gl_pbo.html" target="_blank" rel="external">参考</a>（图片来源）</p>
-<p><strong>方案二：Triple-Buffering等</strong>  </p>
-<p><strong>Triple-Buffering基本思路</strong>：<br>frame N正在显示时，frameN+1已经缓存并准备好(Only ready to show)，frameN+2已经开始获取</p>
-<p><strong>纹理索引基本思路</strong>：<br>所有图片都对应一个索引值，cache on memory，preloading，滑动时快速切换索引</p>
-<blockquote>
-<blockquote>
-<p>2.2 Gallery组件架构    </p>
-</blockquote>
-</blockquote>
-<p>Gallery组件是一个独立的模块，前期设计时需考虑后期的可维护性性及可可扩展性等进行综合考虑，<br>例如Gallery中图片的来源，可能来自本地或者网络下载，这样设计时需要将图片加载的模块单独抽离出来以便可扩展性等; 同时，从框架上考虑，Android组件的设计在具体情况下可考虑MVC/MVP等模式，这样不仅便于后期可维护可扩展，另外也能很好的将Model、View和Control/Presenter分离.</p>
-<h1 id="思考-讨论"><a href="#思考-讨论" class="headerlink" title="思考/讨论"></a>思考/讨论</h1><ul>
-<li><p>由于该题是OpenGL题目，所以笔者在回答时重点侧重在图片的显示上，而对图片的加载直接忽略掉了，后面想一下，还是在上述答案中加上对Android中图片下载的多级缓存设计会比较好。  </p>
-</li>
-<li><p>OpenGL渲染深入 </p>
-</li>
-</ul>
-<p>大家有好的答案或建议可直接下面留言回复，一起讨论! ~</p>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>本文首发于<a href="http://skyseraph.com/">skyseraph.com</a>：<a href="http://skyseraph.com/2016/05/05/AR_VR/%E4%B8%80%E9%81%93Android%20OpenGL%E7%AC%94%E8%AF%95%E9%A2%98/">“一道Android OpenGL笔试题”</a><br>同步发表/转载 <a href="http://www.cnblogs.com/skyseraph/p/5511614.html" target="_blank" rel="external">cnBlogs</a> / <a href="http://blog.csdn.net/zgzhaobo/article/details/51563460" target="_blank" rel="external">CSDN</a> / <a href=""></a> …</p>
-<hr>
-<font size="2"><br>By SkySeraph-2016<br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2016/05/05/AR_VR/一道Android">http://skyseraph.com/2016/05/05/AR_VR/一道Android</a> OpenGL笔试题/</p>
-
+<h1 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h1><p>当时的答案如下：</p></p>
+            <p class="article-more-link">
+                <a href="/2016/05/05/AR_VR/一道Android OpenGL笔试题/#more">Read More</a>
+            </p>
         
         </div>
         <footer class="article-footer">
@@ -1151,8 +342,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 </div>
 
             
-    
-        <a href="http://skyseraph.com/2016/05/05/AR_VR/一道Android OpenGL笔试题/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2016/05/05/AR_VR/一道Android OpenGL笔试题/">Comments</a>
     
 
         </footer>
@@ -1166,7 +355,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="article-inner">
         
         
-        
             <header class="article-header">
                 
     
@@ -1175,8 +363,9 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/2014/08/08/Tools/ITLifeCmds/">
@@ -1185,35 +374,31 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Tools/">Tools</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/tags/Git/">Git</a>, <a class="tag-link" href="/tags/Linux/">Linux</a>, <a class="tag-link" href="/tags/adb/">adb</a>
     </div>
-          
-					
 
-					
-                </div>
+			
+
+			
+                    </div>
+                
             </header>
+        
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-                <div id="toc" class="toc-article">
-                <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#adb-命令"><span class="toc-number">1.</span> <span class="toc-text">adb 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#APK操作"><span class="toc-number">1.1.</span> <span class="toc-text">APK操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-命令"><span class="toc-number">2.</span> <span class="toc-text">git 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-命令"><span class="toc-number">3.</span> <span class="toc-text">Linux 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#批处理-命令"><span class="toc-number">4.</span> <span class="toc-text">批处理 命令</span></a></li></ol>
-                </div>
-            
-            <hr>
-<p><a href="https://github.com/skyseraph/Soft-Tools" target="_blank" rel="external"><strong>Star Here ~~</strong></a>. </p>
-<p><a href="https://github.com/skyseraph/Soft-Tools" target="_blank" rel="external">Soft-Tools</a> 完整目录如下（持续更新，欢迎补充~）：</p>
+            <p><hr>
+<p><a href="https://github.com/skyseraph/Soft-Tools"><strong>Star Here ~~</strong></a>. </p>
+<p><a href="https://github.com/skyseraph/Soft-Tools">Soft-Tools</a> 完整目录如下（持续更新，欢迎补充~）：</p>
 <p><strong>命令类</strong></p>
 <table>
 <thead>
@@ -1224,144 +409,34 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Git.md" target="_blank" rel="external">Git</a></td>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Git.md">Git</a></td>
 <td>Git Commands</td>
 </tr>
 <tr>
-<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Adb.md" target="_blank" rel="external">Adb</a></td>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Adb.md">Adb</a></td>
 <td>Adb Commands</td>
 </tr>
 <tr>
-<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Bat.md" target="_blank" rel="external">Bat</a></td>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Bat.md">Bat</a></td>
 <td>Bat Commands</td>
 </tr>
 <tr>
-<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Vim.md" target="_blank" rel="external">Vim</a></td>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Vim.md">Vim</a></td>
 <td>Vim    Commands</td>
 </tr>
 <tr>
-<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Regular.md" target="_blank" rel="external">Regular</a></td>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Regular.md">Regular</a></td>
 <td>Regular</td>
 </tr>
 <tr>
-<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Python.md" target="_blank" rel="external">Python</a></td>
+<td><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Python.md">Python</a></td>
 <td>Python    Commands</td>
 </tr>
 </tbody>
-</table>
-<h1 id="adb-命令"><a href="#adb-命令" class="headerlink" title="adb 命令"></a>adb 命令</h1><blockquote>
-<p>汇总</p>
-</blockquote>
-<ul>
-<li><p>adb <strong>kill-server</strong></p>
-</li>
-<li><p>adb <strong>devices</strong>  </p>
-</li>
-<li><p>adb <strong>install</strong> [-l] [-r] [-s] <file><br>  -l 表示锁定该程序;<br>  -r 表示替换原有的apk安装;<br>  -s 表示安装在SD卡内，而不是设备内部存储</file></p>
-</li>
-<li><p>adb <strong>uninstall</strong> [-k] <package><br>  -k 表示不删除程序运行所产生的数据和缓存目录(如软件的数据库文件)</package></p>
-</li>
-<li><p>adb shell pm clear  <package><br>清除应用缓存</package></p>
-</li>
-<li><p>taskkill /f /im adb*  </p>
-</li>
-<li><p>adb shell getprop ro.build.version.release  版本</p>
-</li>
-<li><p>adb shell + cat /system/build.prop  查看手机配置信息</p>
-</li>
-<li><p>adb shell getprop dalvik.vm.heapsize  </p>
-</li>
-</ul>
-<blockquote>
-<p><strong>获取进程号</strong>    </p>
-</blockquote>
-<ul>
-<li>adb shell  </li>
-<li>ps | grep 进程名  </li>
-<li>cat /proc/pid/oom_adj  //其中<strong>pid</strong>是上述grep得到的进程号     </li>
-</ul>
-<blockquote>
-<p><strong>查看包名相关</strong>    </p>
-</blockquote>
-<ul>
-<li><p>adb shell pm list package [-f]  获取手机内所有包名<br>  -f 包名+路径    </p>
-</li>
-<li><p><strong>adb shell dumpsys window w | findstr \/ | findstr name=</strong><br>查看包名   </p>
-</li>
-<li><p>adb shell dumpsys activity&gt; d:\log.txt<br>导出包名（log中搜索 Stack #1，然后寻找cmp=）   </p>
-</li>
-<li><p>adb shell + logcat | grep START   </p>
-</li>
-</ul>
-<h2 id="APK操作"><a href="#APK操作" class="headerlink" title="APK操作"></a>APK操作</h2><ul>
-<li><p>apktool d x.apk</p>
-</li>
-<li><p>apktool b x</p>
-</li>
-<li><p>apkReSign.jar</p>
-</li>
-</ul>
-<h1 id="git-命令"><a href="#git-命令" class="headerlink" title="git 命令"></a>git 命令</h1><blockquote>
-<p>汇总   </p>
-</blockquote>
-<ul>
-<li><p>git log  历史记录</p>
-</li>
-<li><p>git status  </p>
-</li>
-<li><p>git clean -df      </p>
-</li>
-<li><p>git branch -vv  </p>
-</li>
-</ul>
-<blockquote>
-<p><strong>Git配置相关</strong>    </p>
-</blockquote>
-<ul>
-<li><p>git config -l<br>查看Git当前配置信息</p>
-</li>
-<li><p>配置<br>git config –global user.email “you@email.com”<br>git config –global user.name “Your Name”<br>git config –global core.editor “nano”<br>git config –global color.ui true    </p>
-</li>
-</ul>
-<blockquote>
-<p><strong>删除远程分支A</strong>    </p>
-</blockquote>
-<ul>
-<li><p>git push origin –delete A    </p>
-</li>
-<li><p>git push origin :A    </p>
-</li>
-</ul>
-<blockquote>
-<p><strong>回退</strong>    </p>
-</blockquote>
-<ul>
-<li>远程服务器支持SSH前提下    </li>
-</ul>
-<p>git reset –mixed   // 此为默认方式，不带任何参数的git reset，就是这种方式，它回退到某个版本，只保留源码，回退commit和stage信息</p>
-<p>git reset –soft    // 回退到某个版本，只回退了commit的信息，不会恢复stage（如果还要提交，直接commit即可)</p>
-<p>git reset –hard    // 彻底回退到某个版本， 本地的源码也会变为上一个版本的内容</p>
-<ul>
-<li>远程服务器不支持SSH    </li>
-</ul>
-<p>git branch old_master  //新建old_master分支 作为备份，以防万一</p>
-<p>git push origin old_master:old_master //将本地的old_master分支　推送到远程的old_master</p>
-<p>git reset –hard //本地仓库　彻底回退到某一个版本</p>
-<p>git push origin :master // 删除远程的master分支</p>
-<p>git push origin master //重新创建远程master分支</p>
-<h1 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h1><h1 id="批处理-命令"><a href="#批处理-命令" class="headerlink" title="批处理 命令"></a>批处理 命令</h1><p><strong>Update time </strong>   </p>
-<p>08/08/2014 Create this page      </p>
-<hr>
-<font size="2"><br>By SkySeraph-2014<br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2014/08/08/Tools/ITLifeCmds/">http://skyseraph.com/2014/08/08/Tools/ITLifeCmds/</a></p>
-
+</table></p>
+            <p class="article-more-link">
+                <a href="/2014/08/08/Tools/ITLifeCmds/#more">Read More</a>
+            </p>
         
         </div>
         <footer class="article-footer">
@@ -1408,7 +483,660 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
             
     
-        <a href="http://skyseraph.com/2014/08/08/Tools/ITLifeCmds/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://skyseraph.com/2014/08/08/Tools/ITLifeCmds/">Comments</a>
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-Tools/IT生涯，我的常用软件清单" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2014/08/06/Tools/IT生涯，我的常用软件清单/">IT生涯, 我的常用软件清单</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2014/08/06/Tools/IT生涯，我的常用软件清单/">
+            <time datetime="2014-08-05T16:40:20.000Z" itemprop="datePublished">2014-08-06</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Tools/">Tools</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Tools/">Tools</a>
+    </div>
+
+			
+
+			
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><hr>
+<ul>
+<li>满纸荒唐言 一把辛酸泪 ~~</li>
+</ul>
+<p>前两天把系统给重装了下,好像最近一次安装应该是两年前了,一般情况下不愿意再做此类耗时无聊的事情,但没法,拥有SSD和高配置内存,开几个IDE却卡成翔,系统分析折腾了老半天还是决定重装了,重装后的那个清爽真是无与伦比, 至少依旧可以在我的Win 10上折腾不用开发也搬迁到MacBook了。  </p>
+<p>清爽归清爽,后续软件安装就比较折腾了,电脑上遗留的都是两年前比较老的版本了,没法只能一个一个网上查找,于是重新整理了此篇文章,将自己的软件清单做下梳理,也便于后续持续利用。<br>此文已更新到Github,希望大家一起维护.  </p>
+<p><a href="https://github.com/skyseraph/Soft-Tools"><strong>Star Here ~~</strong></a>. </p>
+<p><a href="https://github.com/skyseraph/Soft-Tools">Soft-Tools</a> 完整目录如下（持续更新，欢迎补充~）：</p></p>
+            <p class="article-more-link">
+                <a href="/2014/08/06/Tools/IT生涯，我的常用软件清单/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-CV/手掌手指分割算法" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<a href="/2014/07/24/CV/手掌手指分割算法/" itemprop="url">
+            <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E6%89%B9%E9%87%8F2.png" class="article-banner" />
+        </a>
+	
+
+
+
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2014/07/24/CV/手掌手指分割算法/">手掌手指分割算法（源码）</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2014/07/24/CV/手掌手指分割算法/">
+            <time datetime="2014-07-24T15:40:20.000Z" itemprop="datePublished">2014-07-24</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/CV/">CV</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CV-MV/">CV/MV</a>, <a class="tag-link" href="/tags/DIP/">DIP</a>, <a class="tag-link" href="/tags/OpenCV/">OpenCV</a>, <a class="tag-link" href="/tags/Project/">Project</a>, <a class="tag-link" href="/tags/图像算法/">图像算法</a>
+    </div>
+
+			
+
+			
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><hr></p>
+            <p class="article-more-link">
+                <a href="/2014/07/24/CV/手掌手指分割算法/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-NFC/《Android NFC 开发实战详解 》" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2014/03/14/NFC/《Android NFC 开发实战详解 》/">《Android NFC 开发实战详解 》</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2014/03/14/NFC/《Android NFC 开发实战详解 》/">
+            <time datetime="2014-03-14T15:23:23.000Z" itemprop="datePublished">2014-03-14</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/NFC/">NFC</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Android/">Android</a>, <a class="tag-link" href="/tags/NFC/">NFC</a>
+    </div>
+
+			
+
+			
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><hr>
+<h1 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h1><p>  哇哈..,历时一年多，一哥的第一本书终于要出版了 (原本应该今年年初出版的,跟马航一样, 莫名其妙就拖到了现在 , 据出版社最新消息, 预计三月中下旬正式出版,敬请期待), 封面如下, 感谢人民邮电的张涛老师为本书的付出,……<br>这本书的写作大概是从去年的3月左右开始的, 全书分为三大块,分别为基础篇,应用篇和实例篇(具体见下述MENU)…  </p></p>
+            <p class="article-more-link">
+                <a href="/2014/03/14/NFC/《Android NFC 开发实战详解 》/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-SkySeraph/Life/写在年末, 我的2013" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2013/11/30/SkySeraph/Life/写在年末, 我的2013/">写在年末, 我的2013</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2013/11/30/SkySeraph/Life/写在年末, 我的2013/">
+            <time datetime="2013-11-30T15:23:23.000Z" itemprop="datePublished">2013-11-30</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/SkySeraph/">SkySeraph</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/SkySeraph/Life/">Life</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Life/">Life</a>, <a class="tag-link" href="/tags/SkySeraph/">SkySeraph</a>
+    </div>
+
+			
+
+			
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><hr>
+<h1 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h1><p>好久没写博客了, 遗忘的历史,遗忘了自我… 岁月拾回,几度轮回…<br>2013，奇妙的一年，糊涂的一年，说不清，理更乱… 从雄心壮志，斗志昂扬，到忙得一塌糊涂，到习惯麻木，而年末却极其清闲无聊，完全找不着自我，以至于能够静下心来好好回顾一年，好好规划即将开始之路…<br>我的2013,这样走过…</p></p>
+            <p class="article-more-link">
+                <a href="/2013/11/30/SkySeraph/Life/写在年末, 我的2013/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-CV/织物疵点检测机器视觉系统 软件测试平台" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<a href="/2012/05/04/CV/织物疵点检测机器视觉系统 软件测试平台/" itemprop="url">
+            <img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/2012050409441863.png" class="article-banner" />
+        </a>
+	
+
+
+
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2012/05/04/CV/织物疵点检测机器视觉系统 软件测试平台/">织物疵点检测机器视觉系统 软件测试平台</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2012/05/04/CV/织物疵点检测机器视觉系统 软件测试平台/">
+            <time datetime="2012-05-03T16:23:20.000Z" itemprop="datePublished">2012-05-04</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/CV/">CV</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CV-MV/">CV/MV</a>, <a class="tag-link" href="/tags/DIP/">DIP</a>, <a class="tag-link" href="/tags/OpenCV/">OpenCV</a>, <a class="tag-link" href="/tags/图像算法/">图像算法</a>, <a class="tag-link" href="/tags/机器视觉/">机器视觉</a>, <a class="tag-link" href="/tags/瑕疵检测/">瑕疵检测</a>
+    </div>
+
+			
+
+			
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><hr>
+<h2 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h2><p>　　之前针对个人研究的不同算法开发过三个检测平台（<a href="http://www.cnblogs.com/skyseraph/archive/2011/03/24/1993438.html">平台一</a> 和 <a href="http://www.cnblogs.com/skyseraph/archive/2011/07/21/2113211.html">平台二</a> ），此平台为最后的综合平台，实现织物疵点检测和分类，实现了织物图像的批量化处理，实现了数据库存储疵点信息和用户管理，同时具备自动化测试的同时还可以进行单步算法调试。</p></p>
+            <p class="article-more-link">
+                <a href="/2012/05/04/CV/织物疵点检测机器视觉系统 软件测试平台/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-Media/流媒体专题" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2012/04/11/Media/流媒体专题/">流媒体专题</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2012/04/11/Media/流媒体专题/">
+            <time datetime="2012-04-10T16:30:20.000Z" itemprop="datePublished">2012-04-11</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Media/">Media</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Android/">Android</a>, <a class="tag-link" href="/tags/H264/">H264</a>, <a class="tag-link" href="/tags/jrtplib/">jrtplib</a>, <a class="tag-link" href="/tags/live555/">live555</a>, <a class="tag-link" href="/tags/流媒体/">流媒体</a>
+    </div>
+
+			
+
+			
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><hr>
+<h2 id="系列"><a href="#系列" class="headerlink" title="系列"></a>系列</h2><p><a href="http://www.cnblogs.com/skyseraph/archive/2012/03/23/2415018.html">【流媒體】Android 实时视频采集/编码/传输/解码/播放—方案调研（初）</a></p>
+<p><a href="http://www.cnblogs.com/skyseraph/archive/2012/03/26/2418665.html">【流媒體】Android 实时视频采集—Cameara预览采集</a></p>
+<p><a href="http://www.cnblogs.com/skyseraph/archive/2012/03/31/2427593.html">【流媒體】Android 实时视频采集—MediaRecoder录制</a></p>
+<p><a href="http://www.cnblogs.com/skyseraph/archive/2012/04/01/2429384.html">【流媒體】H264—MP4格式及在MP4文件中提取H264的SPS、PPS及码流</a></p>
+<p><a href="http://www.cnblogs.com/skyseraph/archive/2012/04/04/2431771.html">【流媒體】 Android 实时视频编码—H.264硬编码</a></p>
+<p><a href="http://www.cnblogs.com/skyseraph/archive/2012/04/07/2435540.html">【流媒體】jrtplib—VS2010 下RTP开源协议库JRTPLIB3.9.1编译</a></p>
+<p><a href="http://www.cnblogs.com/skyseraph/archive/2012/04/11/2442840.html">【流媒體】live555—VS2010/VS2013 下live555编译、使用及测试</a></p></p>
+            <p class="article-more-link">
+                <a href="/2012/04/11/Media/流媒体专题/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
     
 
         </footer>
@@ -1419,11 +1147,12 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
 
     <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+        <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
 </section>
             
-                <aside id="sidebar">
+                
+<aside id="sidebar">
    
         
     <div class="widget-wrap">
@@ -1567,6 +1296,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
+
             
         </div>
         <footer id="footer">
@@ -1581,24 +1311,44 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 </script>
         
     
-    <script>
-    var disqus_shortname = 'skyseraph';
-    
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+		var gitment = new Gitment({
+			owner: 'skyseraph',
+			repo: 'master',
+			oauth: {
+				client_id: 'd0b94b76cd93fe2cc346',
+				client_secret: '72289b4a44a71a021fb5eaaa760026fad93f60a6',
+			},
+		})
+		gitment.render('commentContainer')
+	</script>
+	
 
 
 
     
-        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
     
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
+    
+
 
 
 <!-- Custom Scripts -->

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://skyseraph.com/"/>
-  <updated>2017-10-22T14:58:15.516Z</updated>
+  <updated>2017-12-17T01:26:04.681Z</updated>
   <id>http://skyseraph.com/</id>
   
   <author>
@@ -20,12 +20,13 @@
     <link href="http://skyseraph.com/2017/10/01/Tools/AwesomeProjects/"/>
     <id>http://skyseraph.com/2017/10/01/Tools/AwesomeProjects/</id>
     <published>2017-09-30T17:00:00.000Z</published>
-    <updated>2017-10-22T14:58:15.516Z</updated>
+    <updated>2017-12-17T01:26:04.681Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><ul>
 <li><a href="https://github.com/skyseraph/awesome-projects" target="_blank" rel="external"><strong>awesome-projects</strong></a> 致力于收集 Awesome Projects，Tech or Non-Tech.  </li>
 <li>欢迎您的加入!   <a href="https://github.com/skyseraph/awesome-projects" target="_blank" rel="external">Fork</a> or <a href="skyseraph00@126.com">Email</a> to Me, tks!</li>
 </ul>
+<a id="more"></a>
 <h2 id="Contribute"><a href="#Contribute" class="headerlink" title="Contribute"></a>Contribute</h2><p><a href="http://skyseraph.com/">SkySeraph</a> …</p>
 <h1 id="Menu"><a href="#Menu" class="headerlink" title="Menu"></a>Menu</h1><hr>
 <h2 id="TECH"><a href="#TECH" class="headerlink" title="TECH"></a>TECH</h2><table>
@@ -106,7 +107,10 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h1&gt;&lt;h2 id=&quot;About&quot;&gt;&lt;a href=&quot;#About&quot; c
+      &lt;h1 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h1&gt;&lt;h2 id=&quot;About&quot;&gt;&lt;a href=&quot;#About&quot; class=&quot;headerlink&quot; title=&quot;About&quot;&gt;&lt;/a&gt;About&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/skyseraph/awesome-projects&quot;&gt;&lt;strong&gt;awesome-projects&lt;/strong&gt;&lt;/a&gt; 致力于收集 Awesome Projects，Tech or Non-Tech.  &lt;/li&gt;
+&lt;li&gt;欢迎您的加入!   &lt;a href=&quot;https://github.com/skyseraph/awesome-projects&quot;&gt;Fork&lt;/a&gt; or &lt;a href=&quot;skyseraph00@126.com&quot;&gt;Email&lt;/a&gt; to Me, tks!&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -128,10 +132,11 @@
     <link href="http://skyseraph.com/2017/06/04/Android/UiAutomator2.0%E5%8D%87%E7%BA%A7%E5%A1%AB%E5%9D%91%E8%AE%B0/"/>
     <id>http://skyseraph.com/2017/06/04/Android/UiAutomator2.0升级填坑记/</id>
     <published>2017-06-03T17:40:40.000Z</published>
-    <updated>2017-08-12T12:21:47.089Z</updated>
+    <updated>2017-12-17T01:25:53.037Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h1><p>Google Android Developers 在2015年3月就发布了UiAutomator 2.0版本（下文简称U2），而公司的核心产品中用到还是UiAutomator老版本（下文简称U1），业界用U2的也不是很多，虽然有诸多问题和不便（如高版本OS中不支持Remote Debug等），但大家似乎在苟延残喘中麻木了。 公司以前也有专家做过研究和探索，毕竟老项目是万级别的，涉及诸多算法和复杂业务逻辑，遇到几个问题最终不了了之。于是乎，又到了我手里了。</p>
+<a id="more"></a>
 <h1 id="重大特性"><a href="#重大特性" class="headerlink" title="重大特性"></a>重大特性</h1><p><strong>1</strong>.  基于 Instrumentation，使用Instrumentation test runner即可运行UiAutomator，反之，也即在基于Instrumentation的test中也能使用UiAutomator; 可以获取应用Context，可以使用Android服务及接口。</p>
 <p><strong>2</strong>.  基于 Junit4，测试用例无需继承于任何父类，方法名不限，使用Annotation进行; U1需要继承UiAutomatorTestCase，测试方法需要以test开头.  </p>
 <p><strong>3</strong>.  与U1的Maven或Ant构建方式不同，U2采用Gradle进行构建； U2输出为APK，Android工程，而U1为Java工程，输出jar包。</p>
@@ -272,7 +277,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2017/05/27/SkySeraph/Sharing/%E9%82%A3%E4%BA%9B%E5%B9%B4%EF%BC%8C%E4%BB%8E%E5%8D%9A%E5%AE%A2%E5%88%B0%E5%87%BA%E4%B9%A6%E7%9A%84%E5%8D%9A%E4%B8%BB/"/>
     <id>http://skyseraph.com/2017/05/27/SkySeraph/Sharing/那些年，从博客到出书的博主/</id>
     <published>2017-05-26T17:40:40.000Z</published>
-    <updated>2017-05-28T05:08:00.833Z</updated>
+    <updated>2017-12-17T01:47:53.874Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <ul>
@@ -280,6 +285,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 <li>一直认为的技术书有两种，一种是入门级别的，例如Android/iOS/Swift/.. XX，XX天学会XX等等，就如Google I/O 2017最新宣布Android Studio 3.0完全支持Kotlin，出版社老师就联系我是不是写一本Kotlin XX，我宛然拒绝了。。。另一种是经验或感悟相关的，需要作者一定的沉淀，有思考，有总结，有思考，这是笔者更青睐的一种方式，所以也是上面婉拒的原因之一。</li>
 <li>顺便将读者读过或了解过的一些从博客到出书相关书籍进行一个汇总，分享。</li>
 </ul>
+<a id="more"></a>
 <h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1><h2 id="综合"><a href="#综合" class="headerlink" title="综合"></a>综合</h2><blockquote>
 <p><strong>黄博文</strong>   </p>
 </blockquote>
@@ -474,7 +480,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       &lt;hr&gt;
 &lt;ul&gt;
 &lt;li&gt;古人说，著书立说，纵然而今的现实，书籍本身质量存在一定的局限，但不可否认，一本书从构思，撰写到最终交稿出版，需要一定的沉淀，同时时间的代价是非常大的，而所谓的稿酬其实是几乎是可忽略的。  &lt;/li&gt;
-&lt;li&gt;一直认为的技术书有两种，一种是入门级别的，例
+&lt;li&gt;一直认为的技术书有两种，一种是入门级别的，例如Android/iOS/Swift/.. XX，XX天学会XX等等，就如Google I/O 2017最新宣布Android Studio 3.0完全支持Kotlin，出版社老师就联系我是不是写一本Kotlin XX，我宛然拒绝了。。。另一种是经验或感悟相关的，需要作者一定的沉淀，有思考，有总结，有思考，这是笔者更青睐的一种方式，所以也是上面婉拒的原因之一。&lt;/li&gt;
+&lt;li&gt;顺便将读者读过或了解过的一些从博客到出书相关书籍进行一个汇总，分享。&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -496,11 +504,12 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2017/01/26/Android/Appuim%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90(Boottrap)/"/>
     <id>http://skyseraph.com/2017/01/26/Android/Appuim源码剖析(Boottrap)/</id>
     <published>2017-01-25T17:40:40.000Z</published>
-    <updated>2017-05-14T03:06:43.265Z</updated>
+    <updated>2017-12-17T01:46:36.136Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><h2 id="Appuim"><a href="#Appuim" class="headerlink" title="Appuim"></a>Appuim</h2><p>Appium 是一个自动化测试开源工具，支持 iOS 平台和 Android 平台上的原生应用，web 应用和混合应用。</p>
 <p>这里有很关键一点，跨平台。更多了解Appuim多平台支持相关信息，参考官方<a href="https://github.com/appium/appium/blob/master/docs/old/cn/platform-support.cn.md" target="_blank" rel="external">platform-support</a></p>
+<a id="more"></a>
 <h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><ul>
 <li>C/S 架构<br>Appium 的核心是一个 web 服务器，它提供了一套 REST 的接口，接收客户端的连接，监听到命令，接着在移动设备上执行这些命令，然后将执行结果放在 HTTP 响应中返还给客户端。</li>
 </ul>
@@ -586,12 +595,13 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2016/10/31/SkySeraph/Life/%E8%80%8C%E7%AB%8B%E4%B9%8B%E5%B9%B4%EF%BC%8C%E6%9C%AA%E5%BC%80%E5%A7%8B%E7%9A%84%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
     <id>http://skyseraph.com/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/</id>
     <published>2016-10-30T16:30:30.000Z</published>
-    <updated>2017-03-19T13:58:28.411Z</updated>
+    <updated>2017-12-17T01:48:11.720Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <p><img src="http://img9.itiexue.net/1049/10494897.jpg" width="300" height="400"></p>
 <h2 id="题记"><a href="#题记" class="headerlink" title="题记"></a>题记</h2><p>“现代人不是渴望成功，而是渴望马上成功。”</p>
 <p>前几天同一个创客类培训机构合伙人就合作事宜巴拉吧啦，一句话刺激到了小小的心脏，加上90后创业者的遍地开花🌼，似乎些许浮躁，香菇难受，辗转反侧，诸多思考，有了此文。</p>
+<a id="more"></a>
 <h2 id="A君"><a href="#A君" class="headerlink" title="A君"></a>A君</h2><p>先从这位创业者（简称A君）说起吧。<br><strong>A</strong>，一位87年小伙，13年研究生毕业后校招进鹅厂，14年深圳宝安2w- 买了房解决了第一个生存问题，15年在一个老板给的200w启动资金下，与几个同事还有以前的同学一起创业，路演获取前海梦工厂创意园办公基地免费入驻…<br>他想让我加入他们培训体系中某个领域所谓的“权威人士”， 录制线上视频并兼线下培训高级讲师，与我之前合作过的几家大型线上/线下培训机构不同，聊天中他一味的强调他们平台多么多么N，可以将我包装成这个领域绝对的权威，签署排他协议，可以通过他们平台获得很好的声誉，还可以在它们的专栏中出售自己书籍/作品，当报名学员比较多时组织线下培训，培训费用以某个比例分成巴拉巴拉…说白了，没有实际利益，大饼的方式加上我个人时间确实差不多饱和，所以当场直接婉拒了。<br>然后继续聊他们的创业，讨论了一些关于创业的观点，巴拉巴拉，然后谈到我自己时，我说我的创业路一定会前行，但现在想先满足或者说解决部分生活上的财务自由再开始…他给我一句话刺到了我，“创业的话，真的不年轻了…”，然后提到他们公司现在招聘的都是90后，93/94年小伙子，有冲劲，技术也不错，Github上开源项目star也众多…面试时问 “大家技术都不错，相比别人，我们为什么要录用你而不是别人？”，”年轻资本，熬夜资本…” 这样的答复A自己都笑了，确实很现实，创业公司不多一份付出也不现实（说的有点委婉了），熬夜我们肯定熬不过他们年轻人，这是他们的资本，就如现在邀请我作为他们讲师也一样，这个领域让这群90后去啃，给一定的时间也完全不会有问题，他希望可以找一个既有地位的人来负责比较好（真厉害又被绕进去了）…后面还聊了很多，交换了微信和名片，嘱咐不要急着给答复回去权衡思考下，同他们一起把这件事有意义的事干一干…巴拉巴拉，又一大堆，这些都不重要了，我的思维还停留在他前面的那句话，“创业的话，真的不年轻了…”，是的，打算创业，30，而立之年，创业还未真正开始，慌？盲？迟？ 创业，真的想清楚了？</p>
 <h2 id="聊聊周围"><a href="#聊聊周围" class="headerlink" title="聊聊周围"></a>聊聊周围</h2><h3 id="B君"><a href="#B君" class="headerlink" title="B君"></a>B君</h3><p><strong>B君</strong>，大学同学，14年离职后同三个同事创立了一家停车场相关公司，自己负责技术，其它三个负责资金和市场，股份平均（创业禁忌）。他们四人每人每月6k生活补贴，其它所有资金都作为储备资金，风风火火的干了一年，团队也从四人做到了十来个，月账面流水也从几万到几十万。<br>15年，B选择退出，以股份比例分到了一大笔钱。自己注册了另外一家公司，还是做原来的产品，跑华强北购买元器件，找PCB板商画板贴片再招人包装，然后跑市场积累客户，一年多下来，毛收入做到了200w。<br>现在的他，每天就是进货出货，跑跑市场谈谈主要客户，自由时间大把大把的，每天打打球陪陪小孩，从来没有10点前起过床，也经常找我聊聊是否有其它扩展门路，结合互联网如何来做巴拉巴拉…<br>说说他这个产品吧，很简单的一个小硬件产品，停车远距离刷卡，读头+卡片，主要赚取卡片插差价。14年15年很多次跟我聊天，说心里话，我压根就看不起这样的产品，这样的所谓“创业”，我跟他聊天灌输的思想一定是高大上的，一定是平台级的，一定是结合互联网，一定是大大的XX。现在，我会发现，错了，我有很多很多很好ideal，我有很好的互联网思维，我拥有技术，但创业或许是个伪命题，只是一个概念，那时的我纯粹的认为创业真的只是一种情怀，是为了情怀，从来没考虑过商业化的思想，突然感觉好像错了，创业，谈情怀之前先谈利益，赚到钱了能盈利才是企业，才是创业，才是中国现社会追从的成功人生。 是么？  </p>
 <h3 id="C君"><a href="#C君" class="headerlink" title="C君"></a>C君</h3><p><strong>C君</strong>，同校师兄，08年毕业来到深圳，从SCM到DSP到ARM，从普通工程师到现在某企业（中小企业，100多号人）总技术负责人，拥有企业的股份。他没有所谓的创业，但却能实现100w+的年收入，当然，单纯工作工资肯定没这么多，他在很早时通过别人介绍认识了他现在做的这个行业中某位台湾老板，当时完全不计较得失没日没夜的给他绘图做板开发，最终成为了长期合作伙伴维持并到现在，他们的产品在台北市拥有近乎1/3的市场…是的，他以工作和兼职的方式也在深圳立足下来，农村出生，今年（2016年喔）在深圳南山刚换了第二套房。 每次跟他爬塘朗山，聊天中会发现他是那种慢性子，做事有条不紊，绝不会去追求冒险。我不止一次问他为什么不创立一家公司，招一点人把事做大，他每次都笑一笑说道，成立公司又能怎么样呢？能赚的更多么？ 当时不理解，觉得太势利，目光看不远，只在乎短期利益，现在想想，其实也不然，雄浑大志之前一定也要脚踏实地，现在大多数互联网创业者，用所谓的互联网思维去创业，成天谈的就是融资圈钱甚至上市，通过融资去圈用户，然后再考虑如何盈利，是的动辄几百万甚至上千万融资（独角兽类公司毕竟是少数，我们需要那样的实例和憧憬，但短期还是先从产品做起），自身也华丽转身，转身之后呢？我希望的创业也是就酱紫的？  </p>
@@ -634,8 +644,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
-&lt;p&gt;&lt;img src=&quot;http://img9.itiexue.net/1049/10494897.jpg&quot; width=&quot;300&quot; height=&quot;400&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;题记&quot;&gt;&lt;a href=&quot;#题记&quot; class=&quot;headerlink&quot; titl
+&lt;p&gt;&lt;img src= &quot;http://img9.itiexue.net/1049/10494897.jpg&quot;  width=&quot;300&quot; height=&quot;400&quot;/&gt;&lt;/p&gt;
+&lt;h2 id=&quot;题记&quot;&gt;&lt;a href=&quot;#题记&quot; class=&quot;headerlink&quot; title=&quot;题记&quot;&gt;&lt;/a&gt;题记&lt;/h2&gt;&lt;p&gt;“现代人不是渴望成功，而是渴望马上成功。”&lt;/p&gt;
+&lt;p&gt;前几天同一个创客类培训机构合伙人就合作事宜巴拉吧啦，一句话刺激到了小小的心脏，加上90后创业者的遍地开花🌼，似乎些许浮躁，香菇难受，辗转反侧，诸多思考，有了此文。&lt;/p&gt;
     
     </summary>
     
@@ -655,12 +666,13 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2016/07/18/Tools/Jenkins%20Gitlab%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E6%89%93%E5%8C%85%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/"/>
     <id>http://skyseraph.com/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/</id>
     <published>2016-07-17T16:00:00.000Z</published>
-    <updated>2017-03-19T13:58:28.428Z</updated>
+    <updated>2017-12-17T01:47:24.053Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h1><h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><ul>
 <li><a href="https://jenkins.io/index.html" target="_blank" rel="external">Jenkins</a>，一个用Java编写的开源的持续集成工具，提供了软件开发的持续集成服务，可监控并触发持续重复的工作，具有开源，支持多平台和插件扩展，安装简单，界面化管理等特点。更多介绍参考<a href="https://en.wikipedia.org/wiki/Jenkins_(software" target="_blank" rel="external">维基</a>介绍.  </li>
 </ul>
+<a id="more"></a>
 <h2 id="Gitlab"><a href="#Gitlab" class="headerlink" title="Gitlab"></a>Gitlab</h2><ul>
 <li>GitLab是一个利用Ruby on Rails开发的开源应用程序，实现一个自托管的Git项目仓库，可通过Web界面进行访问公开的或者私人项目，更多介绍参考<a href="https://en.wikipedia.org/wiki/GitLab" target="_blank" rel="external">维基</a>介绍.</li>
 </ul>
@@ -896,7 +908,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h1 id=&quot;相关概念&quot;&gt;&lt;a href=&quot;#相关概念&quot; class=&quot;headerlink&quot; title=&quot;相关概念&quot;&gt;&lt;/a&gt;相关概念&lt;/h1&gt;&lt;h2 id=&quot;Jenkins&quot;&gt;&lt;a href=&quot;#Jenkins&quot; class=&quot;headerlink&quot; title
+&lt;h1 id=&quot;相关概念&quot;&gt;&lt;a href=&quot;#相关概念&quot; class=&quot;headerlink&quot; title=&quot;相关概念&quot;&gt;&lt;/a&gt;相关概念&lt;/h1&gt;&lt;h2 id=&quot;Jenkins&quot;&gt;&lt;a href=&quot;#Jenkins&quot; class=&quot;headerlink&quot; title=&quot;Jenkins&quot;&gt;&lt;/a&gt;Jenkins&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jenkins.io/index.html&quot;&gt;Jenkins&lt;/a&gt;，一个用Java编写的开源的持续集成工具，提供了软件开发的持续集成服务，可监控并触发持续重复的工作，具有开源，支持多平台和插件扩展，安装简单，界面化管理等特点。更多介绍参考&lt;a href=&quot;https://en.wikipedia.org/wiki/Jenkins_(software&quot;&gt;维基&lt;/a&gt;介绍.  &lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -922,10 +936,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2016/06/30/iOS/Select%20all%20the%20cell%20in%20UITabView%20or%20UICollectionView%20problem/"/>
     <id>http://skyseraph.com/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/</id>
     <published>2016-06-29T16:40:20.000Z</published>
-    <updated>2017-03-19T13:58:28.436Z</updated>
+    <updated>2017-12-17T01:49:27.735Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="The-Issue"><a href="#The-Issue" class="headerlink" title="The Issue"></a>The Issue</h1><p>Recently in my new project I need to select all the cell data in my UITabViewCell and UICollectionViewCell, and need to do some operations with all the cells(like delete etc.), What I do as follows:</p>
+<a id="more"></a>
 <blockquote>
 <p>UITabView  </p>
 </blockquote>
@@ -963,7 +978,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h1 id=&quot;The-Issue&quot;&gt;&lt;a href=&quot;#The-Issue&quot; class=&quot;headerlink&quot; title=&quot;The Issue&quot;&gt;&lt;/a&gt;The Issue&lt;/h1&gt;&lt;p&gt;Recently in my new project I need to 
+&lt;h1 id=&quot;The-Issue&quot;&gt;&lt;a href=&quot;#The-Issue&quot; class=&quot;headerlink&quot; title=&quot;The Issue&quot;&gt;&lt;/a&gt;The Issue&lt;/h1&gt;&lt;p&gt;Recently in my new project I need to select all the cell data in my UITabViewCell and UICollectionViewCell, and need to do some operations with all the cells(like delete etc.), What I do as follows:&lt;/p&gt;
     
     </summary>
     
@@ -983,7 +998,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2016/06/19/Android/%E4%B8%80%E7%A7%8D%E6%8F%90%E9%AB%98Android%E5%BA%94%E7%94%A8%E8%BF%9B%E7%A8%8B%E5%AD%98%E6%B4%BB%E7%8E%87%E6%96%B0%E6%96%B9%E6%B3%95/"/>
     <id>http://skyseraph.com/2016/06/19/Android/一种提高Android应用进程存活率新方法/</id>
     <published>2016-06-18T16:40:20.000Z</published>
-    <updated>2017-06-08T14:50:04.870Z</updated>
+    <updated>2017-12-17T01:46:51.991Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="Android-进程优先级"><a href="#Android-进程优先级" class="headerlink" title="Android 进程优先级"></a>Android 进程优先级</h2><p><strong>1 进程优先级等级一般分法</strong></p>
@@ -1001,6 +1016,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 <li>Service后台变前置，setForground(true) </li>
 <li>android:persistent = “true” </li>
 </ul>
+<a id="more"></a>
 <p><strong>3 进程优先级号</strong></p>
 <p><strong><a href="https://android.googlesource.com/platform/frameworks/base/+/android-4.4.4_r1/services/java/com/android/server/am/ProcessList.java" target="_blank" rel="external">ProcessList.java</a></strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Adjustment used in certain places where we don't know it yet.</span></div><div class="line"><span class="comment">// (Generally this is something that is going to be cached, but we</span></div><div class="line"><span class="comment">// don't know the exact value in the cached range to assign yet.)</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> UNKNOWN_ADJ = <span class="number">16</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a process only hosting activities that are not visible,</span></div><div class="line"><span class="comment">// so it can be killed without any disruption.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> CACHED_APP_MAX_ADJ = <span class="number">15</span>;</div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> CACHED_APP_MIN_ADJ = <span class="number">9</span>;</div><div class="line"></div><div class="line"><span class="comment">// The B list of SERVICE_ADJ -- these are the old and decrepit</span></div><div class="line"><span class="comment">// services that aren't as shiny and interesting as the ones in the A list.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SERVICE_B_ADJ = <span class="number">8</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is the process of the previous application that the user was in.</span></div><div class="line"><span class="comment">// This process is kept above other things, because it is very common to</span></div><div class="line"><span class="comment">// switch back to the previous app.  This is important both for recent</span></div><div class="line"><span class="comment">// task switch (toggling between the two top recent apps) as well as normal</span></div><div class="line"><span class="comment">// UI flow such as clicking on a URI in the e-mail app to view in the browser,</span></div><div class="line"><span class="comment">// and then pressing back to return to e-mail.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PREVIOUS_APP_ADJ = <span class="number">7</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a process holding the home application -- we want to try</span></div><div class="line"><span class="comment">// avoiding killing it, even if it would normally be in the background,</span></div><div class="line"><span class="comment">// because the user interacts with it so much.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> HOME_APP_ADJ = <span class="number">6</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a process holding an application service -- killing it will not</span></div><div class="line"><span class="comment">// have much of an impact as far as the user is concerned.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SERVICE_ADJ = <span class="number">5</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a process with a heavy-weight application.  It is in the</span></div><div class="line"><span class="comment">// background, but we want to try to avoid killing it.  Value set in</span></div><div class="line"><span class="comment">// system/rootdir/init.rc on startup.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> HEAVY_WEIGHT_APP_ADJ = <span class="number">4</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a process currently hosting a backup operation.  Killing it</span></div><div class="line"><span class="comment">// is not entirely fatal but is generally a bad idea.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BACKUP_APP_ADJ = <span class="number">3</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a process only hosting components that are perceptible to the</span></div><div class="line"><span class="comment">// user, and we really want to avoid killing them, but they are not</span></div><div class="line"><span class="comment">// immediately visible. An example is background music playback.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PERCEPTIBLE_APP_ADJ = <span class="number">2</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a process only hosting activities that are visible to the</span></div><div class="line"><span class="comment">// user, so we'd prefer they don't disappear.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VISIBLE_APP_ADJ = <span class="number">1</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is the process running the current foreground app.  We'd really</span></div><div class="line"><span class="comment">// rather not kill it!</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FOREGROUND_APP_ADJ = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a process that the system or a persistent process has bound to,</span></div><div class="line"><span class="comment">// and indicated it is important.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PERSISTENT_SERVICE_ADJ = -<span class="number">11</span>;</div><div class="line"></div><div class="line"><span class="comment">// This is a system persistent process, such as telephony.  Definitely</span></div><div class="line"><span class="comment">// don't want to kill it, but doing so is not completely fatal.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PERSISTENT_PROC_ADJ = -<span class="number">12</span>;</div><div class="line"></div><div class="line"><span class="comment">// The system process runs at the default adjustment.</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SYSTEM_ADJ = -<span class="number">16</span>;</div><div class="line"></div><div class="line"><span class="comment">// Special code for native processes that are not being managed by the system (so</span></div><div class="line"><span class="comment">// don't have an oom adj assigned by the system).</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> NATIVE_ADJ = -<span class="number">17</span>;</div></pre></td></tr></table></figure>
@@ -1185,7 +1201,21 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h1 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot; title=&quot;基础知识&quot;&gt;&lt;/a&gt;基础知识&lt;/h1&gt;&lt;h2 id=&quot;Android-进程优先级&quot;&gt;&lt;a href=&quot;#Android-进程优先级&quot; class=&quot;heade
+&lt;h1 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot; title=&quot;基础知识&quot;&gt;&lt;/a&gt;基础知识&lt;/h1&gt;&lt;h2 id=&quot;Android-进程优先级&quot;&gt;&lt;a href=&quot;#Android-进程优先级&quot; class=&quot;headerlink&quot; title=&quot;Android 进程优先级&quot;&gt;&lt;/a&gt;Android 进程优先级&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1 进程优先级等级一般分法&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Activte process&lt;/li&gt;
+&lt;li&gt;Visible Process&lt;/li&gt;
+&lt;li&gt;Service process&lt;/li&gt;
+&lt;li&gt;Background process&lt;/li&gt;
+&lt;li&gt;Empty process&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2 Service技巧&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;onStartCommand返回START_STICKY&lt;/li&gt;
+&lt;li&gt;onDestroy中startself &lt;/li&gt;
+&lt;li&gt;Service后台变前置，setForground(true) &lt;/li&gt;
+&lt;li&gt;android:persistent = “true” &lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -1207,7 +1237,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2016/05/05/AR_VR/%E4%B8%80%E9%81%93Android%20OpenGL%E7%AC%94%E8%AF%95%E9%A2%98/"/>
     <id>http://skyseraph.com/2016/05/05/AR_VR/一道Android OpenGL笔试题/</id>
     <published>2016-05-05T01:40:20.000Z</published>
-    <updated>2017-03-19T13:58:28.346Z</updated>
+    <updated>2017-12-17T01:47:07.499Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><ul>
@@ -1215,6 +1245,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 <li>约束条件：GPU空间传输通道带宽较小，对于400*400pixel尺寸的图像而言，一次传输耗时超过30ms。</li>
 </ul>
 <h1 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h1><p>当时的答案如下：</p>
+<a id="more"></a>
 <blockquote>
 <p><strong> 1. Gallery组件类图</strong>   </p>
 </blockquote>
@@ -1279,7 +1310,10 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       &lt;hr&gt;
 &lt;h1 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;设计一个Android平台的Gallery组件，要求Gallery中每个item内的图片显示达成有效显示的最大精度，并
+&lt;li&gt;设计一个Android平台的Gallery组件，要求Gallery中每个item内的图片显示达成有效显示的最大精度，并保证Gallery在滚屏时能够全60FPS帧率地及时显示出加载的图片。请详细说明实现架构、关键技术点及APIs。&lt;/li&gt;
+&lt;li&gt;约束条件：GPU空间传输通道带宽较小，对于400*400pixel尺寸的图像而言，一次传输耗时超过30ms。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;答案&quot;&gt;&lt;a href=&quot;#答案&quot; class=&quot;headerlink&quot; title=&quot;答案&quot;&gt;&lt;/a&gt;答案&lt;/h1&gt;&lt;p&gt;当时的答案如下：&lt;/p&gt;
     
     </summary>
     
@@ -1301,7 +1335,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2014/08/08/Tools/ITLifeCmds/"/>
     <id>http://skyseraph.com/2014/08/08/Tools/ITLifeCmds/</id>
     <published>2014-08-07T16:40:20.000Z</published>
-    <updated>2017-09-28T13:23:33.234Z</updated>
+    <updated>2017-12-17T01:47:37.449Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <p><a href="https://github.com/skyseraph/Soft-Tools" target="_blank" rel="external"><strong>Star Here ~~</strong></a>. </p>
@@ -1341,6 +1375,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 </tr>
 </tbody>
 </table>
+<a id="more"></a>
 <h1 id="adb-命令"><a href="#adb-命令" class="headerlink" title="adb 命令"></a>adb 命令</h1><blockquote>
 <p>汇总</p>
 </blockquote>
@@ -1458,8 +1493,43 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/skyseraph/Soft-Tools&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;Star Here ~~&lt;/strong&gt;&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;&lt;a href=
+&lt;p&gt;&lt;a href=&quot;https://github.com/skyseraph/Soft-Tools&quot;&gt;&lt;strong&gt;Star Here ~~&lt;/strong&gt;&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/skyseraph/Soft-Tools&quot;&gt;Soft-Tools&lt;/a&gt; 完整目录如下（持续更新，欢迎补充~）：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;命令类&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Menu&lt;/th&gt;
+&lt;th&gt;Desc.&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/skyseraph/Soft-Tools/blob/master/docs/Git.md&quot;&gt;Git&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Git Commands&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/skyseraph/Soft-Tools/blob/master/docs/Adb.md&quot;&gt;Adb&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Adb Commands&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/skyseraph/Soft-Tools/blob/master/docs/Bat.md&quot;&gt;Bat&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Bat Commands&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/skyseraph/Soft-Tools/blob/master/docs/Vim.md&quot;&gt;Vim&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Vim    Commands&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/skyseraph/Soft-Tools/blob/master/docs/Regular.md&quot;&gt;Regular&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Regular&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/skyseraph/Soft-Tools/blob/master/docs/Python.md&quot;&gt;Python&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Python    Commands&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
     
     </summary>
     
@@ -1481,7 +1551,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2014/08/06/Tools/IT%E7%94%9F%E6%B6%AF%EF%BC%8C%E6%88%91%E7%9A%84%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%95/"/>
     <id>http://skyseraph.com/2014/08/06/Tools/IT生涯，我的常用软件清单/</id>
     <published>2014-08-05T16:40:20.000Z</published>
-    <updated>2017-05-21T01:19:24.117Z</updated>
+    <updated>2017-12-17T01:47:30.303Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <ul>
@@ -1491,6 +1561,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 <p>清爽归清爽,后续软件安装就比较折腾了,电脑上遗留的都是两年前比较老的版本了,没法只能一个一个网上查找,于是重新整理了此篇文章,将自己的软件清单做下梳理,也便于后续持续利用。<br>此文已更新到Github,希望大家一起维护.  </p>
 <p><a href="https://github.com/skyseraph/Soft-Tools" target="_blank" rel="external"><strong>Star Here ~~</strong></a>. </p>
 <p><a href="https://github.com/skyseraph/Soft-Tools" target="_blank" rel="external">Soft-Tools</a> 完整目录如下（持续更新，欢迎补充~）：</p>
+<a id="more"></a>
 <p><strong>通用篇</strong></p>
 <table>
 <thead>
@@ -2076,7 +2147,10 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 &lt;ul&gt;
 &lt;li&gt;满纸荒唐言 一把辛酸泪 ~~&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;前两天把系统给重装了下,好像最近一次安装应该是两年前了,一般情况下不愿意再做此类耗时无聊的事情,但没法,拥有SSD和高配置内存,开几个IDE却卡成翔,系统分析折腾了老半天还是决定重装了,重装后的
+&lt;p&gt;前两天把系统给重装了下,好像最近一次安装应该是两年前了,一般情况下不愿意再做此类耗时无聊的事情,但没法,拥有SSD和高配置内存,开几个IDE却卡成翔,系统分析折腾了老半天还是决定重装了,重装后的那个清爽真是无与伦比, 至少依旧可以在我的Win 10上折腾不用开发也搬迁到MacBook了。  &lt;/p&gt;
+&lt;p&gt;清爽归清爽,后续软件安装就比较折腾了,电脑上遗留的都是两年前比较老的版本了,没法只能一个一个网上查找,于是重新整理了此篇文章,将自己的软件清单做下梳理,也便于后续持续利用。&lt;br&gt;此文已更新到Github,希望大家一起维护.  &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/skyseraph/Soft-Tools&quot;&gt;&lt;strong&gt;Star Here ~~&lt;/strong&gt;&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/skyseraph/Soft-Tools&quot;&gt;Soft-Tools&lt;/a&gt; 完整目录如下（持续更新，欢迎补充~）：&lt;/p&gt;
     
     </summary>
     
@@ -2094,9 +2168,10 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2014/07/24/CV/%E6%89%8B%E6%8E%8C%E6%89%8B%E6%8C%87%E5%88%86%E5%89%B2%E7%AE%97%E6%B3%95/"/>
     <id>http://skyseraph.com/2014/07/24/CV/手掌手指分割算法/</id>
     <published>2014-07-24T15:40:20.000Z</published>
-    <updated>2017-03-19T13:58:28.391Z</updated>
+    <updated>2017-12-17T02:08:34.065Z</updated>
     
     <content type="html"><![CDATA[<hr>
+<a id="more"></a>
 <h1 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h1><p>开发环境</p>
 <ul>
 <li>64 bits Windows OS (Win8.1)  </li>
@@ -2139,10 +2214,6 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h1 id=&quot;开发环境&quot;&gt;&lt;a href=&quot;#开发环境&quot; class=&quot;headerlink&quot; title=&quot;开发环境&quot;&gt;&lt;/a&gt;开发环境&lt;/h1&gt;&lt;p&gt;开发环境&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;64 bits Windows OS (Win8.1)  &lt;/li&gt;
-&lt;li&gt;
     
     </summary>
     
@@ -2168,10 +2239,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2014/03/14/NFC/%E3%80%8AAndroid%20NFC%20%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3%20%E3%80%8B/"/>
     <id>http://skyseraph.com/2014/03/14/NFC/《Android NFC 开发实战详解 》/</id>
     <published>2014-03-14T15:23:23.000Z</published>
-    <updated>2017-09-24T07:35:55.881Z</updated>
+    <updated>2017-12-17T01:55:11.442Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h1><p>  哇哈..,历时一年多，一哥的第一本书终于要出版了 (原本应该今年年初出版的,跟马航一样, 莫名其妙就拖到了现在 , 据出版社最新消息, 预计三月中下旬正式出版,敬请期待), 封面如下, 感谢人民邮电的张涛老师为本书的付出,……<br>这本书的写作大概是从去年的3月左右开始的, 全书分为三大块,分别为基础篇,应用篇和实例篇(具体见下述MENU)…  </p>
+<a id="more"></a>
 <hr>
 <h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2014/200849150572095.png" alt=""></p>
 <hr>
@@ -2634,7 +2706,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h1 id=&quot;啰嗦&quot;&gt;&lt;a href=&quot;#啰嗦&quot; class=&quot;headerlink&quot; title=&quot;啰嗦&quot;&gt;&lt;/a&gt;啰嗦&lt;/h1&gt;&lt;p&gt;  哇哈..,历时一年多，一哥的第一本书终于要出版了 (原本应该今年年初出版的,跟马航一样, 莫名其妙就拖到了现在 , 据出版社最
+&lt;h1 id=&quot;啰嗦&quot;&gt;&lt;a href=&quot;#啰嗦&quot; class=&quot;headerlink&quot; title=&quot;啰嗦&quot;&gt;&lt;/a&gt;啰嗦&lt;/h1&gt;&lt;p&gt;  哇哈..,历时一年多，一哥的第一本书终于要出版了 (原本应该今年年初出版的,跟马航一样, 莫名其妙就拖到了现在 , 据出版社最新消息, 预计三月中下旬正式出版,敬请期待), 封面如下, 感谢人民邮电的张涛老师为本书的付出,……&lt;br&gt;这本书的写作大概是从去年的3月左右开始的, 全书分为三大块,分别为基础篇,应用篇和实例篇(具体见下述MENU)…  &lt;/p&gt;
     
     </summary>
     
@@ -2654,10 +2726,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2013/11/30/SkySeraph/Life/%E5%86%99%E5%9C%A8%E5%B9%B4%E6%9C%AB,%20%E6%88%91%E7%9A%842013/"/>
     <id>http://skyseraph.com/2013/11/30/SkySeraph/Life/写在年末, 我的2013/</id>
     <published>2013-11-30T15:23:23.000Z</published>
-    <updated>2017-09-24T07:34:42.088Z</updated>
+    <updated>2017-12-17T01:48:05.840Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h1><p>好久没写博客了, 遗忘的历史,遗忘了自我… 岁月拾回,几度轮回…<br>2013，奇妙的一年，糊涂的一年，说不清，理更乱… 从雄心壮志，斗志昂扬，到忙得一塌糊涂，到习惯麻木，而年末却极其清闲无聊，完全找不着自我，以至于能够静下心来好好回顾一年，好好规划即将开始之路…<br>我的2013,这样走过…</p>
+<a id="more"></a>
 <h1 id="身心"><a href="#身心" class="headerlink" title="身心"></a>身心</h1><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2013/30190643-9fb0a9bfb214425688fb692f9a75c7ad.png" alt=""></p>
 <h1 id="事业"><a href="#事业" class="headerlink" title="事业"></a>事业</h1><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2013/30190652-d053219048304114a7c3c2bba5000592.png" alt=""></p>
 <h1 id="能力-个人提升"><a href="#能力-个人提升" class="headerlink" title="能力/个人提升"></a>能力/个人提升</h1><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2013/30190701-2407c16d375a4ebaa309816792f11eda.png" alt=""></p>
@@ -2683,7 +2756,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h1 id=&quot;啰嗦&quot;&gt;&lt;a href=&quot;#啰嗦&quot; class=&quot;headerlink&quot; title=&quot;啰嗦&quot;&gt;&lt;/a&gt;啰嗦&lt;/h1&gt;&lt;p&gt;好久没写博客了, 遗忘的历史,遗忘了自我… 岁月拾回,几度轮回…&lt;br&gt;2013，奇妙的一年，糊涂的一年，说不清，理更乱… 从雄心
+&lt;h1 id=&quot;啰嗦&quot;&gt;&lt;a href=&quot;#啰嗦&quot; class=&quot;headerlink&quot; title=&quot;啰嗦&quot;&gt;&lt;/a&gt;啰嗦&lt;/h1&gt;&lt;p&gt;好久没写博客了, 遗忘的历史,遗忘了自我… 岁月拾回,几度轮回…&lt;br&gt;2013，奇妙的一年，糊涂的一年，说不清，理更乱… 从雄心壮志，斗志昂扬，到忙得一塌糊涂，到习惯麻木，而年末却极其清闲无聊，完全找不着自我，以至于能够静下心来好好回顾一年，好好规划即将开始之路…&lt;br&gt;我的2013,这样走过…&lt;/p&gt;
     
     </summary>
     
@@ -2703,10 +2776,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2012/05/04/CV/%E7%BB%87%E7%89%A9%E7%96%B5%E7%82%B9%E6%A3%80%E6%B5%8B%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E7%B3%BB%E7%BB%9F%20%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0/"/>
     <id>http://skyseraph.com/2012/05/04/CV/织物疵点检测机器视觉系统 软件测试平台/</id>
     <published>2012-05-03T16:23:20.000Z</published>
-    <updated>2017-09-24T07:31:48.367Z</updated>
+    <updated>2017-12-17T02:05:10.816Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h2 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h2><p>　　之前针对个人研究的不同算法开发过三个检测平台（<a href="http://www.cnblogs.com/skyseraph/archive/2011/03/24/1993438.html" target="_blank" rel="external">平台一</a> 和 <a href="http://www.cnblogs.com/skyseraph/archive/2011/07/21/2113211.html" target="_blank" rel="external">平台二</a> ），此平台为最后的综合平台，实现织物疵点检测和分类，实现了织物图像的批量化处理，实现了数据库存储疵点信息和用户管理，同时具备自动化测试的同时还可以进行单步算法调试。</p>
+<a id="more"></a>
 <h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>开发工具采用VS2010+OpenCV，开发语言为CPP。<br><a href="http://www.cnblogs.com/skyseraph/archive/2010/10/28/1863974.html" target="_blank" rel="external">OpenCV环境搭建</a>  </p>
 <h2 id="功能详述"><a href="#功能详述" class="headerlink" title="功能详述"></a>功能详述</h2><h3 id="1-软件架构"><a href="#1-软件架构" class="headerlink" title="1 软件架构"></a>1 软件架构</h3><p>　　该平台主要包括系统登录模块、图像采集模块、图像预处理模块、织物疵点检测模块、织物疵点分类模块、疵点信息管理模块、用户管理模块以及系统设置模块，检测算法为自主研究，分类算法采用BPNN，软件架构如下图所示<br><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/2012050119365916.png" alt=""></p>
 <h3 id="2-核心功能"><a href="#2-核心功能" class="headerlink" title="2 核心功能"></a>2 核心功能</h3><p>　　该平台核心功能包括：织物疵点检测和分类，疵点信息存储和查询，用户管理等。</p>
@@ -2734,7 +2808,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h2 id=&quot;啰嗦&quot;&gt;&lt;a href=&quot;#啰嗦&quot; class=&quot;headerlink&quot; title=&quot;啰嗦&quot;&gt;&lt;/a&gt;啰嗦&lt;/h2&gt;&lt;p&gt;　　之前针对个人研究的不同算法开发过三个检测平台（&lt;a href=&quot;http://www.cnblogs.com/skyserap
+&lt;h2 id=&quot;啰嗦&quot;&gt;&lt;a href=&quot;#啰嗦&quot; class=&quot;headerlink&quot; title=&quot;啰嗦&quot;&gt;&lt;/a&gt;啰嗦&lt;/h2&gt;&lt;p&gt;　　之前针对个人研究的不同算法开发过三个检测平台（&lt;a href=&quot;http://www.cnblogs.com/skyseraph/archive/2011/03/24/1993438.html&quot;&gt;平台一&lt;/a&gt; 和 &lt;a href=&quot;http://www.cnblogs.com/skyseraph/archive/2011/07/21/2113211.html&quot;&gt;平台二&lt;/a&gt; ），此平台为最后的综合平台，实现织物疵点检测和分类，实现了织物图像的批量化处理，实现了数据库存储疵点信息和用户管理，同时具备自动化测试的同时还可以进行单步算法调试。&lt;/p&gt;
     
     </summary>
     
@@ -2762,7 +2836,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2012/04/11/Media/%E6%B5%81%E5%AA%92%E4%BD%93%E4%B8%93%E9%A2%98/"/>
     <id>http://skyseraph.com/2012/04/11/Media/流媒体专题/</id>
     <published>2012-04-10T16:30:20.000Z</published>
-    <updated>2017-03-19T13:58:28.398Z</updated>
+    <updated>2017-12-17T01:56:09.488Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h2 id="系列"><a href="#系列" class="headerlink" title="系列"></a>系列</h2><p><a href="http://www.cnblogs.com/skyseraph/archive/2012/03/23/2415018.html" target="_blank" rel="external">【流媒體】Android 实时视频采集/编码/传输/解码/播放—方案调研（初）</a></p>
@@ -2772,6 +2846,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 <p><a href="http://www.cnblogs.com/skyseraph/archive/2012/04/04/2431771.html" target="_blank" rel="external">【流媒體】 Android 实时视频编码—H.264硬编码</a></p>
 <p><a href="http://www.cnblogs.com/skyseraph/archive/2012/04/07/2435540.html" target="_blank" rel="external">【流媒體】jrtplib—VS2010 下RTP开源协议库JRTPLIB3.9.1编译</a></p>
 <p><a href="http://www.cnblogs.com/skyseraph/archive/2012/04/11/2442840.html" target="_blank" rel="external">【流媒體】live555—VS2010/VS2013 下live555编译、使用及测试</a></p>
+<a id="more"></a>
 <hr>
 <font size="2"><br>By SkySeraph-2012<br><a href="http://www.cnblogs.com/skyseraph/category/358761.html" target="_blank" rel="external">SkySeraph cnBlogs</a><br></font>   
 
@@ -2787,7 +2862,13 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h2 id=&quot;系列&quot;&gt;&lt;a href=&quot;#系列&quot; class=&quot;headerlink&quot; title=&quot;系列&quot;&gt;&lt;/a&gt;系列&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/skyseraph/archive/2012/03/23/2415
+&lt;h2 id=&quot;系列&quot;&gt;&lt;a href=&quot;#系列&quot; class=&quot;headerlink&quot; title=&quot;系列&quot;&gt;&lt;/a&gt;系列&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/skyseraph/archive/2012/03/23/2415018.html&quot;&gt;【流媒體】Android 实时视频采集/编码/传输/解码/播放—方案调研（初）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/skyseraph/archive/2012/03/26/2418665.html&quot;&gt;【流媒體】Android 实时视频采集—Cameara预览采集&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/skyseraph/archive/2012/03/31/2427593.html&quot;&gt;【流媒體】Android 实时视频采集—MediaRecoder录制&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/skyseraph/archive/2012/04/01/2429384.html&quot;&gt;【流媒體】H264—MP4格式及在MP4文件中提取H264的SPS、PPS及码流&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/skyseraph/archive/2012/04/04/2431771.html&quot;&gt;【流媒體】 Android 实时视频编码—H.264硬编码&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/skyseraph/archive/2012/04/07/2435540.html&quot;&gt;【流媒體】jrtplib—VS2010 下RTP开源协议库JRTPLIB3.9.1编译&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/skyseraph/archive/2012/04/11/2442840.html&quot;&gt;【流媒體】live555—VS2010/VS2013 下live555编译、使用及测试&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -2813,7 +2894,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphTravelLife/"/>
     <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphTravelLife/</id>
     <published>2012-02-05T18:00:00.000Z</published>
-    <updated>2017-12-09T11:25:31.095Z</updated>
+    <updated>2017-12-17T01:48:16.479Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="All"><a href="#All" class="headerlink" title="All"></a>All</h1><p>截止目前（2017）  </p>
@@ -2823,6 +2904,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 <li><strong>29</strong>个城市(见附下“中国城市分级完整名单”).</li>
 <li><strong>10</strong>个机场（宝安国际机场/虹桥机场/白云机场/香港国际机场/双流机场/萧山机场/首都国际机场/美兰机场/巴黎戴高乐机场/柏林泰戈尔机场）</li>
 </ul>
+<a id="more"></a>
 <h1 id="YEAR"><a href="#YEAR" class="headerlink" title="YEAR"></a>YEAR</h1><h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><ul>
 <li>2017.01 中国 九江</li>
 <li>2017.02 中国 深圳（塘朗山） </li>
@@ -2945,7 +3027,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       &lt;hr&gt;
 &lt;h1 id=&quot;All&quot;&gt;&lt;a href=&quot;#All&quot; class=&quot;headerlink&quot; title=&quot;All&quot;&gt;&lt;/a&gt;All&lt;/h1&gt;&lt;p&gt;截止目前（2017）  &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;04&lt;/strong&gt;个国家/地区（中国大陆/香港/德
+&lt;li&gt;&lt;strong&gt;04&lt;/strong&gt;个国家/地区（中国大陆/香港/德国/法国）.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;11&lt;/strong&gt;个省/直辖市（广东/湖南/湖北/福建/贵州/江西/浙江/四川/海南/北京/上海）.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;29&lt;/strong&gt;个城市(见附下“中国城市分级完整名单”).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;10&lt;/strong&gt;个机场（宝安国际机场/虹桥机场/白云机场/香港国际机场/双流机场/萧山机场/首都国际机场/美兰机场/巴黎戴高乐机场/柏林泰戈尔机场）&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -2967,9 +3053,10 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/"/>
     <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/</id>
     <published>2012-02-05T18:00:00.000Z</published>
-    <updated>2017-10-06T10:32:29.059Z</updated>
+    <updated>2017-12-17T01:53:33.429Z</updated>
     
     <content type="html"><![CDATA[<hr>
+<a id="more"></a>
 <h1 id="Reading"><a href="#Reading" class="headerlink" title="Reading"></a>Reading</h1><h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><blockquote>
 <p>技术类</p>
 </blockquote>
@@ -3050,7 +3137,6 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h1 id=&quot;Reading&quot;&gt;&lt;a href=&quot;#Reading&quot; class=&quot;headerlink&quot; title=&quot;Reading&quot;&gt;&lt;/a&gt;Reading&lt;/h1&gt;&lt;h2 id=&quot;2017&quot;&gt;&lt;a href=&quot;#2017&quot; class=&quot;headerlink&quot;
     
     </summary>
     
@@ -3072,9 +3158,10 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphPlanLife/"/>
     <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphPlanLife/</id>
     <published>2012-02-05T18:00:00.000Z</published>
-    <updated>2017-09-28T13:28:49.662Z</updated>
+    <updated>2017-12-17T01:48:43.640Z</updated>
     
     <content type="html"><![CDATA[<hr>
+<a id="more"></a>
 <h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
 <li><a href="http://skyseraph.com/2013/11/30/SkySeraph/Life/写在年末,%20我的2013/">写在年末, 我的2013</a></li>
 </ul>
@@ -3096,7 +3183,6 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h2 id=&quot;2017&quot;&gt;&lt;a href=&quot;#2017&quot; class=&quot;headerlink&quot; title=&quot;2017&quot;&gt;&lt;/a&gt;2017&lt;/h2&gt;&lt;h2 id=&quot;2016&quot;&gt;&lt;a href=&quot;#2016&quot; class=&quot;headerlink&quot; title=&quot;2016
     
     </summary>
     
@@ -3118,9 +3204,10 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphMovieLife/"/>
     <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphMovieLife/</id>
     <published>2012-02-05T18:00:00.000Z</published>
-    <updated>2017-10-06T10:28:08.809Z</updated>
+    <updated>2017-12-17T01:53:42.099Z</updated>
     
     <content type="html"><![CDATA[<hr>
+<a id="more"></a>
 <h1 id="Movie-amp-Video"><a href="#Movie-amp-Video" class="headerlink" title="Movie &amp; Video"></a>Movie &amp; Video</h1><h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><ul>
 <li><a href="https://movie.douban.com/subject/25983044/" target="_blank" rel="external">《Billy Lynn’s Long Halftime Walk》</a></li>
 <li><a href="https://movie.douban.com/subject/26260853/" target="_blank" rel="external">《速度与激情8》</a></li>
@@ -3157,7 +3244,6 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h1 id=&quot;Movie-amp-Video&quot;&gt;&lt;a href=&quot;#Movie-amp-Video&quot; class=&quot;headerlink&quot; title=&quot;Movie &amp;amp; Video&quot;&gt;&lt;/a&gt;Movie &amp;amp; Video&lt;/h1&gt;&lt;h2 id=&quot;2017
     
     </summary>
     
