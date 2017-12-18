@@ -1322,11 +1322,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="OpenGL" scheme="http://skyseraph.com/categories/Tech/OpenGL/"/>
     
     
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
-    
       <category term="AR/VR" scheme="http://skyseraph.com/tags/AR-VR/"/>
     
       <category term="OpenGL" scheme="http://skyseraph.com/tags/OpenGL/"/>
+    
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
   </entry>
   
@@ -2944,9 +2944,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
     
-      <category term="Movie" scheme="http://skyseraph.com/tags/Movie/"/>
-    
       <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+    
+      <category term="Movie" scheme="http://skyseraph.com/tags/Movie/"/>
     
   </entry>
   
