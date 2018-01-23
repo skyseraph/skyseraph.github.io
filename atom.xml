@@ -119,9 +119,9 @@
       <category term="Tools" scheme="http://skyseraph.com/categories/Tech/Tools/"/>
     
     
-      <category term="Awesome" scheme="http://skyseraph.com/tags/Awesome/"/>
-    
       <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
+    
+      <category term="Awesome" scheme="http://skyseraph.com/tags/Awesome/"/>
     
       <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
     
@@ -132,10 +132,10 @@
     <link href="http://skyseraph.com/2017/06/04/Android/UiAutomator2.0%E5%8D%87%E7%BA%A7%E5%A1%AB%E5%9D%91%E8%AE%B0/"/>
     <id>http://skyseraph.com/2017/06/04/Android/UiAutomator2.0升级填坑记/</id>
     <published>2017-06-03T17:40:40.000Z</published>
-    <updated>2017-12-19T13:34:01.409Z</updated>
+    <updated>2018-01-23T14:36:49.958Z</updated>
     
     <content type="html"><![CDATA[<hr>
-<h1 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h1><p>Google Android Developers 在2015年3月就发布了UiAutomator 2.0版本（下文简称U2），而公司的核心产品中用到还是UiAutomator老版本（下文简称U1），业界用U2的也不是很多，虽然有诸多问题和不便（如高版本OS中不支持Remote Debug等），但大家似乎在苟延残喘中麻木了。 公司以前也有专家做过研究和探索，毕竟老项目是万级别的，涉及诸多算法和复杂业务逻辑，遇到几个问题最终不了了之。于是乎，又到了老司机手里。</p>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Google Android Developers 在2015年3月就发布了UiAutomator 2.0版本（下文简称U2），而公司的核心产品中用到还是UiAutomator老版本（下文简称U1），业界用U2的也不是很多，虽然有诸多问题和不便（如高版本OS中不支持Remote Debug等），但大家似乎在苟延残喘中麻木了。 公司以前也有专家做过研究和探索，毕竟老项目是万级别的，涉及诸多算法和复杂业务逻辑，遇到几个问题最终不了了之。于是乎，又到了老司机手里。</p>
 <a id="more"></a>
 <h1 id="重大特性"><a href="#重大特性" class="headerlink" title="重大特性"></a>重大特性</h1><p><strong>1</strong>.  基于 Instrumentation，使用Instrumentation test runner即可运行UiAutomator，反之，也即在基于Instrumentation的test中也能使用UiAutomator; 可以获取应用Context，可以使用Android服务及接口。</p>
 <p><strong>2</strong>.  基于 Junit4，测试用例无需继承于任何父类，方法名不限，使用Annotation进行; U1需要继承UiAutomatorTestCase，测试方法需要以test开头.  </p>
@@ -277,10 +277,10 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2017/05/27/SkySeraph/Sharing/%E9%82%A3%E4%BA%9B%E5%B9%B4%EF%BC%8C%E4%BB%8E%E5%8D%9A%E5%AE%A2%E5%88%B0%E5%87%BA%E4%B9%A6%E7%9A%84%E5%8D%9A%E4%B8%BB/"/>
     <id>http://skyseraph.com/2017/05/27/SkySeraph/Sharing/那些年，从博客到出书的博主/</id>
     <published>2017-05-26T17:40:40.000Z</published>
-    <updated>2017-12-17T01:47:53.874Z</updated>
+    <updated>2018-01-23T14:38:02.004Z</updated>
     
     <content type="html"><![CDATA[<hr>
-<ul>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><ul>
 <li>古人说，著书立说，纵然而今的现实，书籍本身质量存在一定的局限，但不可否认，一本书从构思，撰写到最终交稿出版，需要一定的沉淀，同时时间的代价是非常大的，而所谓的稿酬其实是几乎是可忽略的。  </li>
 <li>一直认为的技术书有两种，一种是入门级别的，例如Android/iOS/Swift/.. XX，XX天学会XX等等，就如Google I/O 2017最新宣布Android Studio 3.0完全支持Kotlin，出版社老师就联系我是不是写一本Kotlin XX，我宛然拒绝了。。。另一种是经验或感悟相关的，需要作者一定的沉淀，有思考，有总结，有思考，这是笔者更青睐的一种方式，所以也是上面婉拒的原因之一。</li>
 <li>顺便将读者读过或了解过的一些从博客到出书相关书籍进行一个汇总，分享。</li>
@@ -361,7 +361,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 <p><strong>SkySeraph</strong>   </p>
 </blockquote>
 <p><strong>1</strong>. 站点：<a href="http://skyseraph.com/">SkySeraph</a></p>
-<p><strong>2</strong>. 著作：<br><a href="http://skyseraph.com/">《移动应用架构师之路》</a>   2017.人民邮电出版社<br><a href="http://skyseraph.com/2014/03/14/NFC/《Android%20NFC%20开发实战详解%20》/">《Android NFC 开发实战详解》</a>   2014.人民邮电出版社  </p>
+<p><strong>2</strong>. 著作：<br><a href="http://skyseraph.com/">《App架构师实践指南》</a>   2017.人民邮电出版社<br><a href="http://skyseraph.com/2014/03/14/NFC/《Android%20NFC%20开发实战详解%20》/">《Android NFC 开发实战详解》</a>   2014.人民邮电出版社  </p>
 <blockquote>
 <p><strong>陈刚</strong></p>
 </blockquote>
@@ -441,12 +441,24 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 <p><strong>2</strong>. 著作：<a href="https://book.douban.com/subject/26881959/" target="_blank" rel="external">《Unity 3D脚本编程》</a> 2016.9 电子工业出版社 </p>
 <p><strong>3</strong>. 作者： 光宇在线客户端高级开发工程师 </p>
 <h2 id="AI-CV"><a href="#AI-CV" class="headerlink" title="AI/CV"></a>AI/CV</h2><blockquote>
+<p><strong>赵志勇</strong>   </p>
+</blockquote>
+<p><strong>1</strong>. 站点：<a href="http://blog.csdn.net/google19890102" target="_blank" rel="external">null的专栏</a></p>
+<p><strong>2</strong>. 著作：<a href="http://blog.csdn.net/google19890102/article/details/52690119" target="_blank" rel="external">《Python机器学习算法）》</a>   2017.电子工业出版社  </p>
+<p><strong>3</strong>. 其它：</p>
+<blockquote>
 <p><strong>赵永科</strong>   </p>
 </blockquote>
 <p><strong>1</strong>. 站点：<a href="http://blog.csdn.net/kkk584520" target="_blank" rel="external">csdn-卜居</a></p>
 <p><strong>2</strong>. 著作：<a href="https://book.douban.com/subject/26825082/" target="_blank" rel="external">《深度学习：21天实战Caffe）》</a>   2016.电子工业出版社  </p>
 <p><strong>3</strong>. 其它： Work in 阿里云</p>
 <h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p><strong>3</strong>. 其它： </p>
+<blockquote>
+<p><strong>July</strong>   </p>
+</blockquote>
+<p><strong>1</strong>. 站点：<a href="http://blog.csdn.net/v_july_v" target="_blank" rel="external">July</a></p>
+<p><strong>2</strong>. 著作：<a href="http://item.jd.com/11786791.html" target="_blank" rel="external">《深度学习：21天实战Caffe）》</a>   2015.人民邮电出版社  </p>
+<p><strong>3</strong>. 其它： 七月在线科技创始人</p>
 <hr>
 <h1 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h1><p>todo</p>
 <h1 id="其它-1"><a href="#其它-1" class="headerlink" title="其它"></a>其它</h1><hr>
@@ -478,7 +490,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
-&lt;ul&gt;
+&lt;h1 id=&quot;Overview&quot;&gt;&lt;a href=&quot;#Overview&quot; class=&quot;headerlink&quot; title=&quot;Overview&quot;&gt;&lt;/a&gt;Overview&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;古人说，著书立说，纵然而今的现实，书籍本身质量存在一定的局限，但不可否认，一本书从构思，撰写到最终交稿出版，需要一定的沉淀，同时时间的代价是非常大的，而所谓的稿酬其实是几乎是可忽略的。  &lt;/li&gt;
 &lt;li&gt;一直认为的技术书有两种，一种是入门级别的，例如Android/iOS/Swift/.. XX，XX天学会XX等等，就如Google I/O 2017最新宣布Android Studio 3.0完全支持Kotlin，出版社老师就联系我是不是写一本Kotlin XX，我宛然拒绝了。。。另一种是经验或感悟相关的，需要作者一定的沉淀，有思考，有总结，有思考，这是笔者更青睐的一种方式，所以也是上面婉拒的原因之一。&lt;/li&gt;
 &lt;li&gt;顺便将读者读过或了解过的一些从博客到出书相关书籍进行一个汇总，分享。&lt;/li&gt;
@@ -918,9 +930,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
-      <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
-    
       <category term="Jenkins" scheme="http://skyseraph.com/tags/Jenkins/"/>
+    
+      <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
     
       <category term="Gitlab" scheme="http://skyseraph.com/tags/Gitlab/"/>
     
@@ -2203,10 +2215,10 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2014/03/14/NFC/%E3%80%8AAndroid%20NFC%20%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3%20%E3%80%8B/"/>
     <id>http://skyseraph.com/2014/03/14/NFC/《Android NFC 开发实战详解 》/</id>
     <published>2014-03-14T15:23:23.000Z</published>
-    <updated>2018-01-21T06:47:19.458Z</updated>
+    <updated>2018-01-23T14:37:24.593Z</updated>
     
     <content type="html"><![CDATA[<hr>
-<h1 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h1><p>  哇哈..,历时一年多，一哥的第一本书终于要出版了 (原本应该今年年初出版的,跟马航一样, 莫名其妙就拖到了现在 , 据出版社最新消息, 预计三月中下旬正式出版,敬请期待), 封面如下, 感谢人民邮电的张涛老师为本书的付出,……<br>这本书的写作大概是从去年的3月左右开始的, 全书分为三大块,分别为基础篇,应用篇和实例篇(具体见下述MENU)…  </p>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>  哇哈..,历时一年多，一哥的第一本书终于要出版了 (原本应该今年年初出版的,跟马航一样, 莫名其妙就拖到了现在 , 据出版社最新消息, 预计三月中下旬正式出版,敬请期待), 封面如下, 感谢人民邮电的张涛老师为本书的付出,……<br>这本书的写作大概是从去年的3月左右开始的, 全书分为三大块,分别为基础篇,应用篇和实例篇(具体见下述MENU)…  </p>
 <a id="more"></a>
 <hr>
 <h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2014/200849150572095.png" alt=""></p>
@@ -2674,7 +2686,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h1 id=&quot;啰嗦&quot;&gt;&lt;a href=&quot;#啰嗦&quot; class=&quot;headerlink&quot; title=&quot;啰嗦&quot;&gt;&lt;/a&gt;啰嗦&lt;/h1&gt;&lt;p&gt;  哇哈..,历时一年多，一哥的第一本书终于要出版了 (原本应该今年年初出版的,跟马航一样, 莫名其妙就拖到了现在 , 据出版社最新消息, 预计三月中下旬正式出版,敬请期待), 封面如下, 感谢人民邮电的张涛老师为本书的付出,……&lt;br&gt;这本书的写作大概是从去年的3月左右开始的, 全书分为三大块,分别为基础篇,应用篇和实例篇(具体见下述MENU)…  &lt;/p&gt;
+&lt;h1 id=&quot;Overview&quot;&gt;&lt;a href=&quot;#Overview&quot; class=&quot;headerlink&quot; title=&quot;Overview&quot;&gt;&lt;/a&gt;Overview&lt;/h1&gt;&lt;p&gt;  哇哈..,历时一年多，一哥的第一本书终于要出版了 (原本应该今年年初出版的,跟马航一样, 莫名其妙就拖到了现在 , 据出版社最新消息, 预计三月中下旬正式出版,敬请期待), 封面如下, 感谢人民邮电的张涛老师为本书的付出,……&lt;br&gt;这本书的写作大概是从去年的3月左右开始的, 全书分为三大块,分别为基础篇,应用篇和实例篇(具体见下述MENU)…  &lt;/p&gt;
     
     </summary>
     
@@ -2725,73 +2737,6 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       &lt;hr&gt;
 &lt;h1 id=&quot;啰嗦&quot;&gt;&lt;a href=&quot;#啰嗦&quot; class=&quot;headerlink&quot; title=&quot;啰嗦&quot;&gt;&lt;/a&gt;啰嗦&lt;/h1&gt;&lt;p&gt;好久没写博客了, 遗忘的历史,遗忘了自我… 岁月拾回,几度轮回…&lt;br&gt;2013，奇妙的一年，糊涂的一年，说不清，理更乱… 从雄心壮志，斗志昂扬，到忙得一塌糊涂，到习惯麻木，而年末却极其清闲无聊，完全找不着自我，以至于能够静下心来好好回顾一年，好好规划即将开始之路…&lt;br&gt;我的2013,这样走过…&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
-    
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Husband忏悔书</title>
-    <link href="http://skyseraph.com/2012/06/30/SkySeraph/Life/HusbandRemorse/"/>
-    <id>http://skyseraph.com/2012/06/30/SkySeraph/Life/HusbandRemorse/</id>
-    <published>2012-06-30T15:23:23.000Z</published>
-    <updated>2017-12-19T13:56:22.034Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<a id="more"></a>
-<p>尊敬的Wife大人，展信愉悦，<img src="http://images.cnblogs.com/cnblogs_com/skyseraph/201206/201206301956161939.gif" alt=""> ：</p>
-<blockquote>
-<p>前两天由于个人有点发羊癫疯，引起“两岸关系”的动荡，遵照之前与您的“和平相处协议”，在您的旨意下，我今天窝在公司，以加班为名，花费整整一上午的时间进行“党内个人”的批评与自我批评。诚然，今早起床的时间是九点，同时本格式架构有参考网络一篇名为“老公的忏悔书”，而内容权属原创，转载请遵照<em>*</em>协议标准，翻版必究，以上事实准确无误，请审核。</p>
-</blockquote>
-<p> 以下是我的检查报告，不当之处可协商，请保持以维护”夫妻关系”的基本准则，秉持河蟹社会精神，维护”地区”和平稳定繁荣，坚决反对”外来武力”的干涉和一切使矛盾升级的行为和行径。</p>
-<ul>
-<li><p>这两晚的事是我的不对，我不应该一直催着你挂电话，一直说自己累了要睡觉了。纵然每个电话也就那么一个多小时；纵然初涉职场，会有迷茫，也会惶惶，需要定位、需要思考、更需要冷静；纵然这几天思绪泛滥，想法多多，需要抉择、需要舍弃。但，工作归工作，工作的任何心情都不能带入两人的情感世界，工作和感情必须并行运行，绝不能在同一个线程里面跑，否则阻塞是必然的。现实原因，彼此分割两地，每天晚上陪老婆聊聊天这样的小小要求都无法满足的话，这实在是太荒唐、太可笑，我没能及时理解，是个人情绪一时阻塞，内存不足导致泄漏，现已释放完毕，在此严重致歉，同时为防止以后类似事件的发生，对OS架构进行了翻版更新，最新测试版本已于当天早晨发布，欢迎重新试用。当然，基于手机辐射过于厉害，为了您健康的身心，以后通话的时间短点还是可以的。</p>
-</li>
-<li><p>每次打电话，很多时候我都是扮演听者的角色，有点闷糊涂的错觉，这是不对的，这种影响是不好的。纵然我是希望你能多说说，排解一下你一天学习的压力；纵然有时在彼此谈话过程中，面对您的强势或过于权势（您知道的，“党国之内”，权威决不允许不能冒犯，弱小者一般很少有话语权的），我似乎身不由己。但，我不能“享受”这种近似强*的过程，必须在享受的同时还得有“反抗”意识；以后，在你每次说话后，我不能没有任何声音和动静，不能只开着后台服务，而主线程中不实时调用，让您意识到自己好像是一个人在演独角戏一般，这样的感觉是不好的，我应该及时跟上，实时调用，同时引导您继续下一个话题，这是我要做和应该做的，我会修正的。当然，由于一般而言，温柔型女孩子都是受大众欢迎的，可以的话，您以后跟他人交流，特别是领导和前辈，您也可以适当的休息休息。</p>
-</li>
-<li><p>没有把你捧在手心、没有很在乎很在乎你的感觉，这是一个比较严重的问题，我也深有感触。纵然内心中我是十分想做大男人，十分想做自己小女人身后坚实的靠山，十分想满足我女人想要的一切一切，十分十分<em>*</em>，这点上，请您知晓，我有这意识，但基于目前国内国际形势比较复杂，面对这样一个拼爹的时代，历史和机遇原因，我没能做成有钱/权人的儿子或女婿，我如果不很努力很努力的打拼，那我要成为有钱人他们的爹就比较困难了，所以，“偶尔”由于超频运行，连自己是谁都给忘了，但，这种情况下，忘了咱自己也不能忘了您，需要经常性的给您发发短信，而且短信的内容不能太过简单朴实，如“猪，吃饭了么…”，“老婆，中午记得休息下哈…”，确实，如您所说，您手机数据库中保存了我所有短信的历史，每次遍历历史记录，程序太过冗余，甚至N多重复，没有任何封装，给领导的感觉确实很恶心很恶心，这点我能体会，语言是基础也是核心，作为IT Husband，一种语言是无法在江湖上立足的，还好在这点上我储备齐全，在今后的岁月进程中，我会尽量采用多种语言，满足您的当下欢乐的同时也能有美好的历史回味，同时为以后您开源炫耀奠定坚持的基础。</p>
-</li>
-<li><p>出口成章，每次不小心总是能伤到你，百无一虚，实属伤人高手，这是一个非常非常严重的问题，偶尔的一句错说，“两岸”战争就会爆发，这点上，我必须学会很好很好的封装，底层如何实现无需知晓，只需要给您提供最华丽、最绚烂的上层接口，必须用“甜言蜜语”替代“老实巴交”，掌控全局同时又能让位于局部，做到精辟精彩。同时以后面对你提出的任何一个问题和要求，我不能也没有权利再如从前一样当场否决，纵然有时候需求很离谱，抑或朝令夕改，必须明白，这都是命令，我要做的只是服从和满足，当然，您也是明白的，我这种男人是说话算话的，在这些情况下出现的这些偶尔的小情况，日后您考虑清楚后，也请您海涵，彼此给对方台阶，在此致歉和拜谢。</p>
-</li>
-</ul>
-<blockquote>
-<p>是的，您一直是一个善解人意的好女孩，希望您能够原谅我，给我改过自新的机会，同时，依照惯例，遵循礼尚往来，也为了家庭稳定，经济繁荣，几个小小建议顺带之，请您欣赏与鉴别：</p>
-</blockquote>
-<ul>
-<li><p>您说过，“每个成功的男人背后都有一个伟大的女人”，虽然您现在也很伟大了，但我还无丝毫的成功迹象，所以也无法更多的衬托出您的伟大，故，基于现实情况，在这个我还处在成功的旅途上年代，冒昧的邀请您随我同行，成功路上的这些岁月，感谢您的陪伴，我会永远铭记的。10年后，或者会有这样一部电影或书籍，“那些年我们走过的成功路”，以飨观众…</p>
-</li>
-<li><p>您说过，“分隔两地的爱情是很难永远维持的，需要经常走动与联系”，这点我也深有体会，虽然如这个暑假，原先U说要来我这边兼职实习，由于我要去外地实训两个多月，所以间接拒绝了；后来又说想过来玩几天，又由于我下周就要动身去实训了，时间爷爷分配给我们的时间孙孙都不凑巧，这让U很伤心很伤心，但，这点上请您一定理解，老者说的岁月如梭，一年时光是很短暂的，一年前的现在我一无所有，无法给U任何依靠，我知道U天天面对这个不稳定测试版本的苦衷，但请相信，程序正在更新中，升级后的明年我给你的一定是另一番美的享受，所以，现在，我们需要恪守，需要憧憬，需要<em>*</em>，因为爱情。</p>
-</li>
-<li><p>鉴于目前您学术上的大业还未完成，天天面对稀奇古怪的天文符号，繁重的学业的同时还得兼职，每天虽然充实但也非常艰辛，这些我都懂，U是一个自食其力的好女孩，很独立很懂事，没有依靠家里完成着自己的学业，同时也不想依靠他人，但我还是不希望U太累，同时U一个女孩子在外面兼职，在这样一个不稳定的社会，我实在不是很放心，所以，希望你平时空余时间做做家教就好了，其它的能放就放下哦，空余时间多多休息，面对任何困难，记得有我，还是我，<strong>**</strong>。</p>
-</li>
-</ul>
-<p>以上诸多种种，请Wife大人明鉴。 友情提示，软件已更新，更多功能，期待试用~~</p>
-<p><img src="http://images.cnblogs.com/cnblogs_com/skyseraph/201206/201206301956161939.gif" alt=""> 。。。<br>（此处省略9百98<img src="http://images.cnblogs.com/cnblogs_com/skyseraph/201206/201206301956161939.gif" alt="">）    </p>
-<p>忏悔的XX. </p>
-<hr>
-<font size="2"><br>By SkySeraph-2012<br>SYNC <a href="http://www.cnblogs.com/skyseraph/archive/2012/06/30/2571268.html" target="_blank" rel="external">SkySeraph cnBlogs</a><br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2012/06/30/SkySeraph/Life/HusbandRemorse/">http://skyseraph.com/2012/06/30/SkySeraph/Life/HusbandRemorse/</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
     
     </summary>
     
@@ -2921,145 +2866,6 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="jrtplib" scheme="http://skyseraph.com/tags/jrtplib/"/>
     
       <category term="H264" scheme="http://skyseraph.com/tags/H264/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SkySeraph Movie Life</title>
-    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphMovieLife/"/>
-    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphMovieLife/</id>
-    <published>2012-02-05T18:00:00.000Z</published>
-    <updated>2018-01-17T14:01:03.765Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<a id="more"></a>
-<h1 id="Movie-amp-Video"><a href="#Movie-amp-Video" class="headerlink" title="Movie &amp; Video"></a>Movie &amp; Video</h1><h2 id="2018"><a href="#2018" class="headerlink" title="2018"></a>2018</h2><ul>
-<li><a href="https://movie.douban.com/subject/26862829/" target="_blank" rel="external">芳华(2017)</a></li>
-<li><a href="https://movie.douban.com/subject/26662193/" target="_blank" rel="external">前任3：再见前任</a></li>
-</ul>
-<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><blockquote>
-<p>Movie</p>
-</blockquote>
-<ul>
-<li><a href="https://movie.douban.com/subject/25983044/" target="_blank" rel="external">《Billy Lynn’s Long Halftime Walk》</a></li>
-<li><a href="https://movie.douban.com/subject/26260853/" target="_blank" rel="external">《速度与激情8》</a></li>
-<li><a href="https://movie.douban.com/subject/26387939/" target="_blank" rel="external">《摔跤吧！爸爸》</a></li>
-<li><a href="https://movie.douban.com/subject/3025375/" target="_blank" rel="external">《奇异博士》</a></li>
-<li><a href="https://movie.douban.com/subject/26862259/" target="_blank" rel="external">《乘风破浪（韩寒）》</a></li>
-<li><a href="https://movie.douban.com/subject/1297481/" target="_blank" rel="external">《芳心何处》</a></li>
-<li><a href="https://movie.douban.com/subject/25801066/" target="_blank" rel="external">《西游伏妖篇》</a></li>
-<li><a href="https://movie.douban.com/subject/2078989/" target="_blank" rel="external">《四月三周两天》</a></li>
-<li><a href="https://movie.douban.com/subject/25769362/" target="_blank" rel="external">《哆啦A梦：伴我同行》</a></li>
-<li><a href="https://movie.douban.com/subject/25882861/" target="_blank" rel="external">《危楼愚夫》</a></li>
-<li><a href="https://movie.douban.com/subject/1867345/" target="_blank" rel="external">《遗愿清单》</a></li>
-<li><a href="https://movie.douban.com/subject/1301166/" target="_blank" rel="external">《垂直极限》</a></li>
-<li><a href="https://movie.douban.com/subject/26363254/" target="_blank" rel="external">《战狼2》</a></li>
-<li><a href="">《Headhunters（猎头者）》</a></li>
-<li><a href="https://movie.douban.com/subject/26378579/" target="_blank" rel="external">王牌特工2：黄金圈 Kingsman: The Golden Circle</a></li>
-</ul>
-<blockquote>
-<p>Video</p>
-</blockquote>
-<ul>
-<li><a href="https://movie.douban.com/subject/26663086/" target="_blank" rel="external">《射雕英雄传 (2017)》</a> </li>
-<li><a href="https://movie.douban.com/subject/26727273/" target="_blank" rel="external">《人民的名义》</a>  </li>
-<li><a href="https://movie.douban.com/subject/26358696/" target="_blank" rel="external">《我的前半生》</a></li>
-<li><a href="">《歌手1》</a></li>
-<li><a href="https://movie.douban.com/subject/19955871/" target="_blank" rel="external">车轮不息 Where The Trail Ends (2012)</a></li>
-</ul>
-<h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><blockquote>
-<p>Movie</p>
-</blockquote>
-<ul>
-<li><a href="">《心迷宮》</a></li>
-<li><a href="">《荒蛮故事》</a></li>
-<li><a href="">《撞车》</a></li>
-<li><a href="">《一个人的武林》</a></li>
-<li><a href="">《荒野猎人The Revenant》</a></li>
-<li><a href="">《澳门风云3》</a></li>
-<li><a href="">《万物生长》</a></li>
-<li><a href="">《美人鱼》</a></li>
-<li><a href="">《星球大战7:原力觉醒》</a></li>
-<li><a href="">《帝国双璧》</a></li>
-<li><a href="">《北京遇上西雅图之不二情书》</a></li>
-<li><a href="">《疯狂动物城》</a></li>
-<li><a href="">《谁的青春不迷茫》</a></li>
-<li><a href="">《愤怒的小鸟》</a></li>
-</ul>
-<blockquote>
-<p>Video</p>
-</blockquote>
-<ul>
-<li><a href="">《纸牌屋》第四季</a></li>
-<li><a href="">《星际迷航》</a></li>
-<li><a href="">《我是歌手 第四季》</a></li>
-</ul>
-<h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><blockquote>
-<p>Movie</p>
-</blockquote>
-<ul>
-<li><a href="">《刺杀金正恩》</a></li>
-<li><a href="">《匆匆那年》</a></li>
-<li><a href="">《霍金传》</a></li>
-<li><a href="">《咱们结婚吧》</a></li>
-<li><a href="">《何以笙箫默》</a></li>
-<li><a href="">《左耳》</a></li>
-<li><a href="">《商务囧途》</a></li>
-<li><a href="">《千与千寻》</a></li>
-<li><a href="">《赤道》</a></li>
-<li><a href="">《我的个神啊》</a></li>
-<li><a href="">《道士下山》</a></li>
-<li><a href="">《西游记之大圣归来》</a></li>
-<li><a href="">《我是路人甲》</a></li>
-<li><a href="">《商海通牒》</a></li>
-<li><a href="">《捉妖记》</a></li>
-<li><a href="">《煎饼侠》</a></li>
-<li><a href="">《碟中谍》</a></li>
-<li><a href="">《港囧》</a></li>
-<li><a href="">《夏洛特烦恼》</a></li>
-<li><a href="">《舞出我人生3》</a></li>
-<li><a href="">《王PT工：特工学院》</a></li>
-<li><a href="">《极品飞车》</a></li>
-<li><a href="">《商海通牒》</a></li>
-<li><a href="">《解救吾先生》</a></li>
-<li><a href="">《实习生》</a></li>
-</ul>
-<blockquote>
-<p>Video</p>
-</blockquote>
-<ul>
-<li><a href="">《柴静拍雾霾之穹顶之下》</a></li>
-<li><a href="">《真正的男人》</a></li>
-<li><a href="">《我是歌手 第三季》</a></li>
-</ul>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><hr>
-<font size="2"><br>By SkySeraph<br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphMovieLife/">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphMovieLife/</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-    
-    </summary>
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
-    
-    
-      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
-    
-      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
-    
-      <category term="Movie" scheme="http://skyseraph.com/tags/Movie/"/>
     
   </entry>
   
@@ -3212,6 +3018,223 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
     
       <category term="Travel" scheme="http://skyseraph.com/tags/Travel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SkySeraph Movie Life</title>
+    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphMovieLife/"/>
+    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphMovieLife/</id>
+    <published>2012-02-05T18:00:00.000Z</published>
+    <updated>2018-01-17T14:01:03.765Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<a id="more"></a>
+<h1 id="Movie-amp-Video"><a href="#Movie-amp-Video" class="headerlink" title="Movie &amp; Video"></a>Movie &amp; Video</h1><h2 id="2018"><a href="#2018" class="headerlink" title="2018"></a>2018</h2><ul>
+<li><a href="https://movie.douban.com/subject/26862829/" target="_blank" rel="external">芳华(2017)</a></li>
+<li><a href="https://movie.douban.com/subject/26662193/" target="_blank" rel="external">前任3：再见前任</a></li>
+</ul>
+<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><blockquote>
+<p>Movie</p>
+</blockquote>
+<ul>
+<li><a href="https://movie.douban.com/subject/25983044/" target="_blank" rel="external">《Billy Lynn’s Long Halftime Walk》</a></li>
+<li><a href="https://movie.douban.com/subject/26260853/" target="_blank" rel="external">《速度与激情8》</a></li>
+<li><a href="https://movie.douban.com/subject/26387939/" target="_blank" rel="external">《摔跤吧！爸爸》</a></li>
+<li><a href="https://movie.douban.com/subject/3025375/" target="_blank" rel="external">《奇异博士》</a></li>
+<li><a href="https://movie.douban.com/subject/26862259/" target="_blank" rel="external">《乘风破浪（韩寒）》</a></li>
+<li><a href="https://movie.douban.com/subject/1297481/" target="_blank" rel="external">《芳心何处》</a></li>
+<li><a href="https://movie.douban.com/subject/25801066/" target="_blank" rel="external">《西游伏妖篇》</a></li>
+<li><a href="https://movie.douban.com/subject/2078989/" target="_blank" rel="external">《四月三周两天》</a></li>
+<li><a href="https://movie.douban.com/subject/25769362/" target="_blank" rel="external">《哆啦A梦：伴我同行》</a></li>
+<li><a href="https://movie.douban.com/subject/25882861/" target="_blank" rel="external">《危楼愚夫》</a></li>
+<li><a href="https://movie.douban.com/subject/1867345/" target="_blank" rel="external">《遗愿清单》</a></li>
+<li><a href="https://movie.douban.com/subject/1301166/" target="_blank" rel="external">《垂直极限》</a></li>
+<li><a href="https://movie.douban.com/subject/26363254/" target="_blank" rel="external">《战狼2》</a></li>
+<li><a href="">《Headhunters（猎头者）》</a></li>
+<li><a href="https://movie.douban.com/subject/26378579/" target="_blank" rel="external">王牌特工2：黄金圈 Kingsman: The Golden Circle</a></li>
+</ul>
+<blockquote>
+<p>Video</p>
+</blockquote>
+<ul>
+<li><a href="https://movie.douban.com/subject/26663086/" target="_blank" rel="external">《射雕英雄传 (2017)》</a> </li>
+<li><a href="https://movie.douban.com/subject/26727273/" target="_blank" rel="external">《人民的名义》</a>  </li>
+<li><a href="https://movie.douban.com/subject/26358696/" target="_blank" rel="external">《我的前半生》</a></li>
+<li><a href="">《歌手1》</a></li>
+<li><a href="https://movie.douban.com/subject/19955871/" target="_blank" rel="external">车轮不息 Where The Trail Ends (2012)</a></li>
+</ul>
+<h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><blockquote>
+<p>Movie</p>
+</blockquote>
+<ul>
+<li><a href="">《心迷宮》</a></li>
+<li><a href="">《荒蛮故事》</a></li>
+<li><a href="">《撞车》</a></li>
+<li><a href="">《一个人的武林》</a></li>
+<li><a href="">《荒野猎人The Revenant》</a></li>
+<li><a href="">《澳门风云3》</a></li>
+<li><a href="">《万物生长》</a></li>
+<li><a href="">《美人鱼》</a></li>
+<li><a href="">《星球大战7:原力觉醒》</a></li>
+<li><a href="">《帝国双璧》</a></li>
+<li><a href="">《北京遇上西雅图之不二情书》</a></li>
+<li><a href="">《疯狂动物城》</a></li>
+<li><a href="">《谁的青春不迷茫》</a></li>
+<li><a href="">《愤怒的小鸟》</a></li>
+</ul>
+<blockquote>
+<p>Video</p>
+</blockquote>
+<ul>
+<li><a href="">《纸牌屋》第四季</a></li>
+<li><a href="">《星际迷航》</a></li>
+<li><a href="">《我是歌手 第四季》</a></li>
+</ul>
+<h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><blockquote>
+<p>Movie</p>
+</blockquote>
+<ul>
+<li><a href="">《刺杀金正恩》</a></li>
+<li><a href="">《匆匆那年》</a></li>
+<li><a href="">《霍金传》</a></li>
+<li><a href="">《咱们结婚吧》</a></li>
+<li><a href="">《何以笙箫默》</a></li>
+<li><a href="">《左耳》</a></li>
+<li><a href="">《商务囧途》</a></li>
+<li><a href="">《千与千寻》</a></li>
+<li><a href="">《赤道》</a></li>
+<li><a href="">《我的个神啊》</a></li>
+<li><a href="">《道士下山》</a></li>
+<li><a href="">《西游记之大圣归来》</a></li>
+<li><a href="">《我是路人甲》</a></li>
+<li><a href="">《商海通牒》</a></li>
+<li><a href="">《捉妖记》</a></li>
+<li><a href="">《煎饼侠》</a></li>
+<li><a href="">《碟中谍》</a></li>
+<li><a href="">《港囧》</a></li>
+<li><a href="">《夏洛特烦恼》</a></li>
+<li><a href="">《舞出我人生3》</a></li>
+<li><a href="">《王PT工：特工学院》</a></li>
+<li><a href="">《极品飞车》</a></li>
+<li><a href="">《商海通牒》</a></li>
+<li><a href="">《解救吾先生》</a></li>
+<li><a href="">《实习生》</a></li>
+</ul>
+<blockquote>
+<p>Video</p>
+</blockquote>
+<ul>
+<li><a href="">《柴静拍雾霾之穹顶之下》</a></li>
+<li><a href="">《真正的男人》</a></li>
+<li><a href="">《我是歌手 第三季》</a></li>
+</ul>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><hr>
+<font size="2"><br>By SkySeraph<br></font>   
+
+<hr>
+<p><strong><em>版权声明</em></strong></p>
+<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
+
+<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
+<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
+<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphMovieLife/">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphMovieLife/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+    
+    </summary>
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
+    
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+    
+      <category term="Movie" scheme="http://skyseraph.com/tags/Movie/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SkySeraph Reading Life</title>
+    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/"/>
+    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/</id>
+    <published>2012-02-05T18:00:00.000Z</published>
+    <updated>2018-01-17T14:00:33.483Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<a id="more"></a>
+<h1 id="Reading"><a href="#Reading" class="headerlink" title="Reading"></a>Reading</h1><h2 id="2018"><a href="#2018" class="headerlink" title="2018"></a>2018</h2><ul>
+<li><a href="">《第一次买保险就买对》</a></li>
+</ul>
+<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><ul>
+<li><a href="https://book.douban.com/subject/3688489/" target="_blank" rel="external">《异类》</a> </li>
+<li><a href="https://book.douban.com/subject/26297606/" target="_blank" rel="external">《从0到1》</a> </li>
+<li><a href="https://book.douban.com/subject/26823208/" target="_blank" rel="external">《离经叛道》</a> </li>
+<li><a href="https://book.douban.com/subject/26306686/" target="_blank" rel="external">《创业维艰》</a> </li>
+<li><a href="http://www.ximalaya.com/60348226/album/5398185/" target="_blank" rel="external">《徐洁：如何练就好声音》</a></li>
+<li><a href="https://book.douban.com/subject/27015138/" target="_blank" rel="external">欧神 《中产解决如何保护自己的财产》</a></li>
+<li><a href="https://book.douban.com/subject/1444900/" target="_blank" rel="external">盖瑞.查普曼《爱的五种语言》</a></li>
+</ul>
+<h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><ul>
+<li><a href="https://book.douban.com/subject/26419762/" target="_blank" rel="external">《成为技术领导者》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/5162149.html" target="_blank" rel="external">【讀書筆記】成为技术领导者</a></li>
+<li><a href="https://book.douban.com/subject/26437231/" target="_blank" rel="external">《技术管理之巅》</a> #1</li>
+<li><a href="https://book.douban.com/subject/25868303/" target="_blank" rel="external">《微管理》</a> #1</li>
+<li><a href="https://book.douban.com/subject/26322756/" target="_blank" rel="external">《产品经理面试宝典》</a> #1</li>
+</ul>
+<h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><ul>
+<li><a href="https://book.douban.com/subject/25873066/" target="_blank" rel="external">《麦肯锡工作法》</a> #1</li>
+<li><a href="https://book.douban.com/subject/25975485/" target="_blank" rel="external">《穿布鞋的马云》</a> #1</li>
+<li><a href="">《成功创业三级跳》</a> #1</li>
+<li><a href="https://book.douban.com/subject/25773433/" target="_blank" rel="external">《你欠大学一次远行》</a> #1</li>
+</ul>
+<h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><ul>
+<li><a href="https://book.douban.com/subject/20505765/" target="_blank" rel="external">《精益创业实战》</a> #1， <a href="http://www.cnblogs.com/skyseraph/p/3895564.html" target="_blank" rel="external">【讀書筆記】精益创业实战</a></li>
+<li><a href="https://book.douban.com/subject/1048007/" target="_blank" rel="external">《高效能人士的七个习惯》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/3693005.html" target="_blank" rel="external">【讀書筆記】高效能人士的七个习惯</a></li>
+<li><a href="https://book.douban.com/subject/4723970/" target="_blank" rel="external">《人人都是产品经理》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/3590471.html" target="_blank" rel="external">【讀書筆記】人人都是产品经理</a></li>
+<li><a href="https://book.douban.com/subject/3688489/" target="_blank" rel="external">《异类》</a> #1</li>
+<li><a href="https://book.douban.com/subject/1033778/" target="_blank" rel="external">《富爸爸，穷爸爸》</a> #1</li>
+<li><a href="https://book.douban.com/subject/3151772/" target="_blank" rel="external">《一页纸项目管理》</a> #1</li>
+</ul>
+<h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
+<li><a href="http://www.cnblogs.com/skyseraph/archive/2013/01/07/2850003.html" target="_blank" rel="external">【分享】RSS订阅技巧及工具和实用RSS链接分享 </a></li>
+</ul>
+<h2 id="2012"><a href="#2012" class="headerlink" title="2012"></a>2012</h2><ul>
+<li><a href="">《》</a></li>
+</ul>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><hr>
+<font size="2"><br>By SkySeraph<br></font>   
+
+<hr>
+<p><strong><em>版权声明</em></strong></p>
+<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
+
+<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
+<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
+<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+    
+    </summary>
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/categories/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/categories/SkySeraph/Life/"/>
+    
+    
+      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+    
+      <category term="Reading" scheme="http://skyseraph.com/tags/Reading/"/>
     
   </entry>
   
