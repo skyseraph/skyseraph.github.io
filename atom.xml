@@ -199,9 +199,9 @@
     
       <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
     
-      <category term="TensorFlow" scheme="http://skyseraph.com/tags/TensorFlow/"/>
-    
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
+    
+      <category term="TensorFlow" scheme="http://skyseraph.com/tags/TensorFlow/"/>
     
   </entry>
   
@@ -3381,9 +3381,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
     
-      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
-    
       <category term="Movie" scheme="http://skyseraph.com/tags/Movie/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
     
   </entry>
   
