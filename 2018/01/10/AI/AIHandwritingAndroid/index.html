@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Android+TensorFlow+CNN+MNIST  手写数字识别实现 | SkySeraph</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Overview本文系“SkySeraph AI 实践到理论系列”第一篇，咱以AI界的HelloWord 经典MNIST数据集为基础，在Android平台，基于TensorFlow，实现CNN的手写数字识别。Code~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android+TensorFlow+CNN+MNIST  手写数字识别实现">
+<meta property="og:url" content="http://skyseraph.com/2018/01/10/AI/AIHandwritingAndroid/index.html">
+<meta property="og:site_name" content="SkySeraph">
+<meta property="og:description" content="Overview本文系“SkySeraph AI 实践到理论系列”第一篇，咱以AI界的HelloWord 经典MNIST数据集为基础，在Android平台，基于TensorFlow，实现CNN的手写数字识别。Code~">
+<meta property="og:image" content="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid01.png">
+<meta property="og:updated_time" content="2018-02-06T15:26:01.826Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android+TensorFlow+CNN+MNIST  手写数字识别实现">
+<meta name="twitter:description" content="Overview本文系“SkySeraph AI 实践到理论系列”第一篇，咱以AI界的HelloWord 经典MNIST数据集为基础，在Android平台，基于TensorFlow，实现CNN的手写数字识别。Code~">
+<meta name="twitter:image" content="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid01.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="SkySeraph" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/css/images/avatar.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-77554390-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?622a2108abaca144ab683efc8b9d1430";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">SkySeraph</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/projects/">Projects</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">SkySeraph</h2>
+            <h3 id="title">Senior Engineer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>ShenZhen, China</span>
+            <a id="follow" target="_blank" href="https://github.com/skyseraph">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                27
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                43
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/skyseraph" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://weibo.com/skyseraph" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://twitter.com/seraph_sky" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/atom.xml" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-AI/AIHandwritingAndroid" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Android+TensorFlow+CNN+MNIST  手写数字识别实现
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/01/10/AI/AIHandwritingAndroid/">
+            <time datetime="2018-01-10T15:23:23.000Z" itemprop="datePublished">2018-01-10</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/AI/">AI</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/AI/">AI</a>, <a class="tag-link" href="/tags/Android/">Android</a>, <a class="tag-link" href="/tags/TensorFlow/">TensorFlow</a>
+    </div>
+
+			
+<div class="article-category">
+	<i class="fa fa-line-chart"></i>
+	<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> article.hits
+</div>
+
+
+			
+<div class="article-author"><i class="fa fa-user"></i>
+  
+  <a href="http://skyseraph.com" title="SkySeraph">SkySeraph</a>
+</div>
+  
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Overview"><span class="toc-number">1.</span> <span class="toc-text">Overview</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Practice"><span class="toc-number">2.</span> <span class="toc-text">Practice</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Environment"><span class="toc-number">2.1.</span> <span class="toc-text">Environment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Train-amp-Evaluate（Python-TensorFlow）"><span class="toc-number">2.2.</span> <span class="toc-text">Train & Evaluate（Python+TensorFlow）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Test（Android-TensorFlow）"><span class="toc-number">2.3.</span> <span class="toc-text">Test（Android+TensorFlow）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Theory"><span class="toc-number">3.</span> <span class="toc-text">Theory</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MNIST"><span class="toc-number">3.1.</span> <span class="toc-text">MNIST</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CNN（Convolutional-Neural-Network）"><span class="toc-number">3.2.</span> <span class="toc-text">CNN（Convolutional Neural Network）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CNN核心概念"><span class="toc-number">3.2.1.</span> <span class="toc-text">CNN核心概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CNN层结构"><span class="toc-number">3.2.2.</span> <span class="toc-text">CNN层结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Regression和Softmax"><span class="toc-number">3.3.</span> <span class="toc-text">Regression和Softmax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linear-Regression"><span class="toc-number">3.3.1.</span> <span class="toc-text">Linear Regression</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Softmax-Regression"><span class="toc-number">3.3.2.</span> <span class="toc-text">Softmax Regression</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#References-amp-Recommends"><span class="toc-number">4.</span> <span class="toc-text">References & Recommends</span></a></li></ol>
+                </div>
+            
+            <hr>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>本文系“SkySeraph AI 实践到理论系列”第一篇，咱以AI界的HelloWord 经典MNIST数据集为基础，在Android平台，基于TensorFlow，实现CNN的手写数字识别。<br><a href="https://github.com/skyseraph/AI_P2T" target="_blank" rel="external">Code~</a>    </p>
+<a id="more"></a>
+<hr>
+<h1 id="Practice"><a href="#Practice" class="headerlink" title="Practice"></a>Practice</h1><h2 id="Environment"><a href="#Environment" class="headerlink" title="Environment"></a>Environment</h2><ul>
+<li>TensorFlow： 1.2.0</li>
+<li>Python： 3.6</li>
+<li>Python IDE： PyCharm 2017.2</li>
+<li>Android IDE： Android Studio 3.0</li>
+</ul>
+<h2 id="Train-amp-Evaluate（Python-TensorFlow）"><a href="#Train-amp-Evaluate（Python-TensorFlow）" class="headerlink" title="Train &amp; Evaluate（Python+TensorFlow）"></a>Train &amp; Evaluate（Python+TensorFlow）</h2><p>训练和评估部分主要目的是生成用于测试用的pb文件，其保存了利用TensorFlow python API构建训练后的网络拓扑结构和参数信息，实现方式有很多种，除了cnn外还可以使用rnn，fcnn等。<br>其中基于cnn的函数也有两套，分别为tf.layers.conv2d和tf.nn.conv2d， tf.layers.conv2d使用tf.nn.conv2d作为后端处理，参数上filters是整数，filter是4维张量。原型如下：<br>convolutional.py文件<br>    def conv2d(inputs, filters, kernel_size, strides=(1, 1), padding=’valid’, data_format=’channels_last’,<br>       dilation_rate=(1, 1), activation=None, use_bias=True, kernel_initializer=None,<br>       bias_initializer=init_ops.zeros_initializer(), kernel_regularizer=None, bias_regularizer=None,<br>       activity_regularizer=None, kernel_constraint=None, bias_constraint=None, trainable=True, name=None,<br>       reuse=None)     </p>
+<p> gen_nn_ops.py 文件</p>
+<pre><code>def conv2d(input, filter, strides, padding, use_cudnn_on_gpu=True, data_format=&quot;NHWC&quot;, name=None)
+</code></pre><p>官方Demo实例中使用的是layers module，结构如下：    </p>
+<ul>
+<li>Convolutional Layer #1：32个5×5的filter，使用ReLU激活函数</li>
+<li>Pooling Layer #1：2×2的filter做max pooling，步长为2</li>
+<li>Convolutional Layer #2：64个5×5的filter，使用ReLU激活函数</li>
+<li>Pooling Layer #2：2×2的filter做max pooling，步长为2</li>
+<li>Dense Layer #1：1024个神经元，使用ReLU激活函数，dropout率0.4 (为了避免过拟合，在训练的时候，40%的神经元会被随机去掉)</li>
+<li>Dense Layer #2 (Logits Layer)：10个神经元，每个神经元对应一个类别（0-9）</li>
+</ul>
+<p>核心代码在cnn_model_fn(features, labels, mode)函数中，完成卷积结构的完整定义，核心代码如下.<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid02.png" alt=""></p>
+<p>也可以采用传统的tf.nn.conv2d函数, 核心代码如下。<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid03.png" alt=""></p>
+<h2 id="Test（Android-TensorFlow）"><a href="#Test（Android-TensorFlow）" class="headerlink" title="Test（Android+TensorFlow）"></a>Test（Android+TensorFlow）</h2><ul>
+<li>核心是使用API接口： TensorFlowInferenceInterface.java</li>
+<li>配置gradle  或者 自编译TensorFlow源码导入jar和so<br>  compile ‘org.tensorflow:tensorflow-android:1.2.0’</li>
+<li><p>导入pb文件.pb文件放assets目录，然后读取</p>
+<p>  String actualFilename = labelFilename.split(“file:///android_asset/“)[1];<br>  Log.i(TAG, “Reading labels from: “ + actualFilename);<br>  BufferedReader br = null;<br>  br = new BufferedReader(new InputStreamReader(assetManager.open(actualFilename)));<br>  String line;<br>  while ((line = br.readLine()) != null) {<br>  c.labels.add(line);<br>  }<br>  br.close();  </p>
+</li>
+<li><p>TensorFlow接口使用<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid13.png" alt=""></p>
+</li>
+<li>最终效果：<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid04.png" alt=""><br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid05.png" alt=""></li>
+</ul>
+<h1 id="Theory"><a href="#Theory" class="headerlink" title="Theory"></a>Theory</h1><h2 id="MNIST"><a href="#MNIST" class="headerlink" title="MNIST"></a>MNIST</h2><p>MNIST，最经典的机器学习模型之一，包含0~9的数字，28*28大小的单色灰度手写数字图片数据库，其中共60,000 training examples和10,000 test examples。<br>文件目录如下，主要包括4个二进制文件，分别为训练和测试图片及Label。<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid06.png" alt=""><br>如下为训练图片的二进制结构，在真实数据前（pixel），有部分描述字段（魔数，图片个数，图片行数和列数），真实数据的存储采用大端规则。<br>（大端规则，就是数据的高字节保存在低内存地址中，低字节保存在高内存地址中）<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid07.png" alt=""><br>在具体实验使用，需要提取真实数据，可采用专门用于处理字节的库struct中的unpack_from方法，核心方法如下：<br>    struct.unpack_from(self._fourBytes2, buf, index)  </p>
+<p>MNIST作为AI的Hello World入门实例数据，TensorFlow封装对其封装好了函数，可直接使用<br>    mnist = input_data.read_data_sets(‘MNIST’, one_hot=True) </p>
+<h2 id="CNN（Convolutional-Neural-Network）"><a href="#CNN（Convolutional-Neural-Network）" class="headerlink" title="CNN（Convolutional Neural Network）"></a>CNN（Convolutional Neural Network）</h2><h3 id="CNN核心概念"><a href="#CNN核心概念" class="headerlink" title="CNN核心概念"></a>CNN核心概念</h3><ul>
+<li>CNN，Convolutional Neural Network，中文全称卷积神经网络，即所谓的卷积网（ConvNets）。 </li>
+<li>卷积（Convolution）可谓是现代深度学习中最最重要的概念了，它是一种数学运算，读者可以从下面链接[23]中卷积相关数学机理，包括分别从傅里叶变换和狄拉克δ函数中推到卷积定义，我们可以从字面上宏观粗鲁的理解成将因子翻转相乘卷起来。</li>
+<li>卷积动画。演示如下图[26]，更多动画演示可参考[27]<br><img src="http://p30lospbv.bkt.clouddn.com/convSobel.gif" alt=""></li>
+<li><p>神经网络。一个由大量神经元（neurons）组成的系统，如下图所示[21]<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid08.png" alt=""><br>其中x表示输入向量，w为权重，b为偏值bias，f为激活函数。</p>
+</li>
+<li><p>Activation Function 激活函数： 常用的非线性激活函数有Sigmoid、tanh、ReLU等等，公式如下如所示。</p>
+<ul>
+<li>Sigmoid缺点 <ul>
+<li>函数饱和使梯度消失（神经元在值为 0 或 1 的时候接近饱和，这些区域，梯度几乎为 0） </li>
+<li>sigmoid 函数不是关于原点中心对称的（无0中心化）</li>
+</ul>
+</li>
+<li>tanh： 存在饱和问题，但它的输出是零中心的，因此实际中 tanh 比 sigmoid 更受欢迎。</li>
+<li>ReLU<ul>
+<li>优点1：ReLU 对于 SGD 的收敛有巨大的加速作用 </li>
+<li>优点2：只需要一个阈值就可以得到激活值，而不用去算一大堆复杂的（指数）运算   </li>
+<li>缺点：需要合理设置学习率（learning rate），防止训练时dead，还可以使用Leaky ReLU/PReLU/Maxout等代替<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid14.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Pooling池化。一般分为平均池化mean pooling和最大池化max pooling，如下图所示[21]为max pooling，除此之外，还有重叠池化（OverlappingPooling）[24]，空金字塔池化（Spatial Pyramid Pooling）[25]<ul>
+<li>平均池化：计算图像区域的平均值作为该区域池化后的值。</li>
+<li>最大池化：选图像区域的最大值作为该区域池化后的值。<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid15.png" alt=""><br><img src="http://p30lospbv.bkt.clouddn.com/poolfig.gif" alt=""></li>
+</ul>
+</li>
+</ul>
+<h3 id="CNN层结构"><a href="#CNN层结构" class="headerlink" title="CNN层结构"></a>CNN层结构</h3><ul>
+<li>三层神经网络。分别为输入层（Input layer）,输出层（Output layer）,隐藏层（Hidden layer），如下图所示[21]<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid10.png" alt=""></li>
+<li>CNN层级结构。 斯坦福cs231n中阐述了一种[INPUT-CONV-RELU-POOL-FC]，如下图所示[21]，分别为输入层，卷积层，激励层，池化层，全连接层。</li>
+<li>CNN通用架构分为如下三层结构：<ul>
+<li>Convolutional layers 卷积层</li>
+<li>Pooling layers 汇聚层</li>
+<li>Dense (fully connected) layers 全连接层<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid12.png" alt=""></li>
+</ul>
+</li>
+<li>动画演示。参考[22]。<br><img src="http://img.blog.csdn.net/20160707204048899" alt=""></li>
+</ul>
+<h2 id="Regression和Softmax"><a href="#Regression和Softmax" class="headerlink" title="Regression和Softmax"></a>Regression和Softmax</h2><p>机器学习有监督学习（supervised learning）中两大算法分别是分类算法和回归算法，分类算法用于离散型分布预测，回归算法用于连续型分布预测。<br>回归的目的就是建立一个回归方程用来预测目标值，回归的求解就是求这个回归方程的回归系数。<br>其中回归（Regression）算法包括Linear Regression，Logistic Regression等， Softmax Regression是其中一种用于解决多分类（multi-class classification）问题的Logistic回归算法的推广，经典实例就是在MNIST手写数字分类上的应用。   </p>
+<h3 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h3><p>Linear Regression是机器学习中最基础的模型，其目标是用预测结果尽可能地拟合目标label</p>
+<ul>
+<li>多元线性回归模型定义<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid16.png" alt=""></li>
+<li>多元线性回归求解<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid17.png" alt=""></li>
+<li>Mean Square Error (MSE)  <ul>
+<li>Gradient Descent（梯度下降法）</li>
+<li>Normal Equation（普通最小二乘法）</li>
+<li>局部加权线性回归（LocallyWeightedLinearRegression, LWLR )：针对线性回归中模型欠拟合现象，在估计中引入一些偏差以便降低预测的均方误差。</li>
+<li>岭回归（ridge regression)和缩减方法</li>
+</ul>
+</li>
+<li>选择： Normal Equation相比Gradient Descent，计算量大（需计算X的转置与逆矩阵），只适用于特征个数小于100000时使用；当特征数量大于100000时使用梯度法。当X不可逆时可替代方法为岭回归算法。LWLR方法增加了计算量，因为它对每个点做预测时都必须使用整个数据集，而不是计算出回归系数得到回归方程后代入计算即可，一般不选择。</li>
+<li>调优： 平衡预测偏差和模型方差（高偏差就是欠拟合，高方差就是过拟合）<ul>
+<li>获取更多的训练样本 - 解决高方差</li>
+<li>尝试使用更少的特征的集合 - 解决高方差</li>
+<li>尝试获得其他特征 - 解决高偏差</li>
+<li>尝试添加多项组合特征 - 解决高偏差</li>
+<li>尝试减小 λ - 解决高偏差</li>
+<li>尝试增加 λ -解决高方差</li>
+</ul>
+</li>
+</ul>
+<h3 id="Softmax-Regression"><a href="#Softmax-Regression" class="headerlink" title="Softmax Regression"></a>Softmax Regression</h3><ul>
+<li>Softmax Regression估值函数（hypothesis）<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid18.png" alt=""></li>
+<li>Softmax Regression代价函数（cost function）<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid19.png" alt=""></li>
+<li>理解：<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid20.png" alt=""></li>
+<li>Softmax Regression &amp; Logistic Regression：   <ul>
+<li>多分类 &amp; 二分类。Logistic Regression为K=2时的Softmax Regression </li>
+<li>针对K类问题，当类别之间互斥时可采用Softmax Regression，当非斥时，可采用K个独立的Logistic Regression</li>
+</ul>
+</li>
+<li>总结： Softmax Regression适用于类别数量大于2的分类，本例中用于判断每张图属于每个数字的概率。 </li>
+</ul>
+<h1 id="References-amp-Recommends"><a href="#References-amp-Recommends" class="headerlink" title="References &amp; Recommends"></a>References &amp; Recommends</h1><blockquote>
+<p>MNIST</p>
+</blockquote>
+<ul>
+<li><a href="http://yann.lecun.com/exdb/mnist/" target="_blank" rel="external">[01]Mnist官网</a> </li>
+<li><a href="http://colah.github.io/posts/2014-10-Visualizing-MNIST/" target="_blank" rel="external">[02]Visualizing MNIST: An Exploration of Dimensionality Reduction</a></li>
+<li><a href="https://www.tensorflow.org/tutorials/layers" target="_blank" rel="external">[03]TensorFlow Mnist官方实例</a></li>
+<li><a href="https://github.com/martin-gorner/tensorflow-mnist-tutorial" target="_blank" rel="external">[04]Sample code for “Tensorflow and deep learning, without a PhD”</a></li>
+</ul>
+<blockquote>
+<p>Softmax </p>
+</blockquote>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=G4G7dWBi3II" target="_blank" rel="external">[11]Convex functions</a></li>
+<li><a href="http://52opencourse.com/133/coursera公开课笔记-斯坦福大学机器学习第七课-正则化-regularization" target="_blank" rel="external">[12]斯坦福大学机器学习第七课-正则化-regularization </a></li>
+<li><a href="https://github.com/lawlite19/MachineLearning_Python" target="_blank" rel="external">[13]MachineLearning_Python</a></li>
+</ul>
+<blockquote>
+<p>CNN</p>
+</blockquote>
+<ul>
+<li><a href="https://cs231n.github.io/convolutional-networks/" target="_blank" rel="external">[21]Stanford University’s Convolutional Neural Networks for Visual Recognition course materials</a>  <a href="https://zhuanlan.zhihu.com/p/22038289" target="_blank" rel="external">翻译</a></li>
+<li><a href="http://blog.csdn.net/v_july_v/article/details/51812459" target="_blank" rel="external">[22]July CNN笔记：通俗理解卷积神经网络</a></li>
+<li><a href="http://www.qiujiawei.com/convolution/" target="_blank" rel="external">[23]理解卷积Convolution</a></li>
+<li><a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks" target="_blank" rel="external">[24]Imagenet classification with deep convolutional neural networks</a></li>
+<li><a href="https://arxiv.org/abs/1406.4729" target="_blank" rel="external">[25]Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition</a></li>
+<li><a href="https://mlnotebook.github.io/post/CNN1/" target="_blank" rel="external">[26]Convolutional Neural Networks-Basics</a></li>
+<li><a href="https://github.com/vdumoulin/conv_arithmetic" target="_blank" rel="external">[27]A technical report on convolution arithmetic in the context of deep learning</a></li>
+</ul>
+<blockquote>
+<p>TensorFlow+CNN / TensorFlow+Android</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/android" target="_blank" rel="external">[31]Google官方Demo</a></li>
+<li><a href="https://codelabs.developers.google.com/?cat=TensorFlow" target="_blank" rel="external">[32]Google官方Codelab</a></li>
+<li><a href="https://hackernoon.com/deep-learning-cnns-in-tensorflow-with-gpus-cba6efe0acc2" target="_blank" rel="external">[33]deep-learning-cnns-in-tensorflow</a> <a href="https://github.com/ColeMurray/tensorflow-cnn-tutorial" target="_blank" rel="external">Github</a></li>
+<li><a href="https://github.com/Nilhcem/tensorflow-classifier-android" target="_blank" rel="external">[34]tensorflow-classifier-android</a></li>
+<li><a href="https://blog.mindorks.com/creating-custom-model-for-android-using-tensorflow-3f963d270bfb" target="_blank" rel="external">[35]creating-custom-model-for-android-using-tensorflow</a> </li>
+<li><a href="https://github.com/mari-linhares/mnist-android-tensorflow" target="_blank" rel="external">[36]TF-NN Mnist实例</a></li>
+</ul>
+<hr>
+<font size="2"><br>By SkySeraph-2018<br><br><a href="">SkySeraph cnBlogs</a><br><a href="">SkySeraph CSDN</a><br></font>
+
+
+
+<hr>
+<p><strong><em>版权声明</em></strong></p>
+<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
+
+<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
+<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
+<p>本文永久链接：<a href="http://skyseraph.com/2018/01/10/AI/AIHandwritingAndroid/">http://skyseraph.com/2018/01/10/AI/AIHandwritingAndroid/</a></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/11/11/AI/TensorFlowBasic/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">TensorFlow基础</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+	<div id="commentContainer"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/10/AI/AIHandwritingAndroid/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid01.png)" alt="Android+TensorFlow+CNN+MNIST  手写数字识别实现" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/AI/">AI</a></p>
+                            <p class="item-title"><a href="/2018/01/10/AI/AIHandwritingAndroid/" class="title">Android+TensorFlow+CNN+MNIST  手写数字识别实现</a></p>
+                            <p class="item-date"><time datetime="2018-01-10T15:23:23.000Z" itemprop="datePublished">2018-01-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/11/11/AI/TensorFlowBasic/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://skyseraph.com/css/images/avatar.png)" alt="TensorFlow基础" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/AI/">AI</a></p>
+                            <p class="item-title"><a href="/2017/11/11/AI/TensorFlowBasic/" class="title">TensorFlow基础</a></p>
+                            <p class="item-date"><time datetime="2017-11-11T15:23:23.000Z" itemprop="datePublished">2017-11-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/10/01/Tools/AwesomeProjects/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://skyseraph.com/css/images/avatar.png)" alt="Awesome Projects" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Tools/">Tools</a></p>
+                            <p class="item-title"><a href="/2017/10/01/Tools/AwesomeProjects/" class="title">Awesome Projects</a></p>
+                            <p class="item-date"><time datetime="2017-09-30T17:00:00.000Z" itemprop="datePublished">2017-10-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/06/04/Android/UiAutomator2.0升级填坑记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://image.slidesharecdn.com/androiduitesting-141008153844-conversion-gate02/95/android-ui-testing-with-uiautomator-1-638.jpg?cb=1412917257)" alt="UiAutomator2.0升级填坑记" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tech/">Tech</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tech/Android/">Android</a></p>
+                            <p class="item-title"><a href="/2017/06/04/Android/UiAutomator2.0升级填坑记/" class="title">UiAutomator2.0升级填坑记</a></p>
+                            <p class="item-date"><time datetime="2017-06-03T17:40:40.000Z" itemprop="datePublished">2017-06-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/05/27/SkySeraph/Sharing/那些年，从博客到出书的博主/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://pic.qiantucdn.com/58pic/16/14/08/37H58PIC3DB_1024.jpg!/fw/780/watermark/url/L3dhdGVybWFyay12MS4zLnBuZw==/align/center)" alt="那些年，从博客到出书的博主" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SkySeraph/">SkySeraph</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/SkySeraph/Sharing/">Sharing</a></p>
+                            <p class="item-title"><a href="/2017/05/27/SkySeraph/Sharing/那些年，从博客到出书的博主/" class="title">那些年，从博客到出书的博主</a></p>
+                            <p class="item-date"><time datetime="2017-05-26T17:40:40.000Z" itemprop="datePublished">2017-05-27</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/">SkySeraph</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Life/">Life</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Sharing/">Sharing</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SkySeraph/Tech/">Tech</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/">Tech</a><span class="category-list-count">18</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/AI/">AI</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/CV/">CV</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Media/">Media</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/NFC/">NFC</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/OpenGL/">OpenGL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Tools/">Tools</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/iOS/">iOS</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/AI/" style="font-size: 13.33px;">AI</a> <a href="/tags/AR-VR/" style="font-size: 10px;">AR/VR</a> <a href="/tags/Android/" style="font-size: 16.67px;">Android</a> <a href="/tags/Appuim/" style="font-size: 10px;">Appuim</a> <a href="/tags/Awesome/" style="font-size: 10px;">Awesome</a> <a href="/tags/Bywork/" style="font-size: 10px;">Bywork</a> <a href="/tags/CI/" style="font-size: 10px;">CI</a> <a href="/tags/CV-MV/" style="font-size: 15px;">CV/MV</a> <a href="/tags/DIP/" style="font-size: 15px;">DIP</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/H264/" style="font-size: 10px;">H264</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Life/" style="font-size: 18.33px;">Life</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Money/" style="font-size: 10px;">Money</a> <a href="/tags/Movie/" style="font-size: 10px;">Movie</a> <a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/OpenCV/" style="font-size: 15px;">OpenCV</a> <a href="/tags/OpenGL/" style="font-size: 10px;">OpenGL</a> <a href="/tags/Plan/" style="font-size: 10px;">Plan</a> <a href="/tags/Project/" style="font-size: 10px;">Project</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/Sharing/" style="font-size: 10px;">Sharing</a> <a href="/tags/SkySeraph/" style="font-size: 20px;">SkySeraph</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/TensorFlow/" style="font-size: 11.67px;">TensorFlow</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/Travel/" style="font-size: 10px;">Travel</a> <a href="/tags/UiAutomator/" style="font-size: 10px;">UiAutomator</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/iOS/" style="font-size: 13.33px;">iOS</a> <a href="/tags/jrtplib/" style="font-size: 10px;">jrtplib</a> <a href="/tags/live555/" style="font-size: 10px;">live555</a> <a href="/tags/图像特征/" style="font-size: 10px;">图像特征</a> <a href="/tags/图像算法/" style="font-size: 15px;">图像算法</a> <a href="/tags/存活率/" style="font-size: 10px;">存活率</a> <a href="/tags/彩色图像/" style="font-size: 11.67px;">彩色图像</a> <a href="/tags/机器视觉/" style="font-size: 10px;">机器视觉</a> <a href="/tags/流媒体/" style="font-size: 10px;">流媒体</a> <a href="/tags/瑕疵检测/" style="font-size: 10px;">瑕疵检测</a> <a href="/tags/著书/" style="font-size: 10px;">著书</a> <a href="/tags/进程/" style="font-size: 10px;">进程</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.cnblogs.com/skyseraph/">SkySeraph-cnBlogs</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 SkySeraph<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Modified by <a href="http://skyseraph.com">SkySeraph</a>.Total <span id="busuanzi_value_site_pv"></span> views.
+        </div>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+        
+    
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+		var gitment = new Gitment({
+			owner: 'skyseraph',
+			repo: 'skyseraph.github.io',
+			oauth: {
+				client_id: 'd0b94b76cd93fe2cc346',
+				client_secret: '72289b4a44a71a021fb5eaaa760026fad93f60a6',
+			},
+		})
+		gitment.render('commentContainer')
+	</script>
+	
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
