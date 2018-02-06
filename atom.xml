@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://skyseraph.com/"/>
-  <updated>2018-02-06T15:26:01.826Z</updated>
+  <updated>2018-02-06T15:30:56.704Z</updated>
   <id>http://skyseraph.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://skyseraph.com/2018/01/10/AI/AIHandwritingAndroid/"/>
     <id>http://skyseraph.com/2018/01/10/AI/AIHandwritingAndroid/</id>
     <published>2018-01-10T15:23:23.000Z</published>
-    <updated>2018-02-06T15:26:01.826Z</updated>
+    <updated>2018-02-06T15:30:56.704Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>本文系“SkySeraph AI 实践到理论系列”第一篇，咱以AI界的HelloWord 经典MNIST数据集为基础，在Android平台，基于TensorFlow，实现CNN的手写数字识别。<br><a href="https://github.com/skyseraph/AI_P2T" target="_blank" rel="external">Code~</a>    </p>
@@ -58,7 +58,7 @@
 </ul>
 <h1 id="Theory"><a href="#Theory" class="headerlink" title="Theory"></a>Theory</h1><h2 id="MNIST"><a href="#MNIST" class="headerlink" title="MNIST"></a>MNIST</h2><p>MNIST，最经典的机器学习模型之一，包含0~9的数字，28*28大小的单色灰度手写数字图片数据库，其中共60,000 training examples和10,000 test examples。<br>文件目录如下，主要包括4个二进制文件，分别为训练和测试图片及Label。<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid06.png" alt=""><br>如下为训练图片的二进制结构，在真实数据前（pixel），有部分描述字段（魔数，图片个数，图片行数和列数），真实数据的存储采用大端规则。<br>（大端规则，就是数据的高字节保存在低内存地址中，低字节保存在高内存地址中）<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid07.png" alt=""><br>在具体实验使用，需要提取真实数据，可采用专门用于处理字节的库struct中的unpack_from方法，核心方法如下：<br>    struct.unpack_from(self._fourBytes2, buf, index)  </p>
 <p>MNIST作为AI的Hello World入门实例数据，TensorFlow封装对其封装好了函数，可直接使用<br>    mnist = input_data.read_data_sets(‘MNIST’, one_hot=True) </p>
-<h2 id="CNN（Convolutional-Neural-Network）"><a href="#CNN（Convolutional-Neural-Network）" class="headerlink" title="CNN（Convolutional Neural Network）"></a>CNN（Convolutional Neural Network）</h2><h3 id="CNN核心概念"><a href="#CNN核心概念" class="headerlink" title="CNN核心概念"></a>CNN核心概念</h3><ul>
+<h2 id="CNN（Convolutional-Neural-Network）"><a href="#CNN（Convolutional-Neural-Network）" class="headerlink" title="CNN（Convolutional Neural Network）"></a>CNN（Convolutional Neural Network）</h2><h3 id="CNN-Keys"><a href="#CNN-Keys" class="headerlink" title="CNN Keys"></a>CNN Keys</h3><ul>
 <li>CNN，Convolutional Neural Network，中文全称卷积神经网络，即所谓的卷积网（ConvNets）。 </li>
 <li>卷积（Convolution）可谓是现代深度学习中最最重要的概念了，它是一种数学运算，读者可以从下面链接[23]中卷积相关数学机理，包括分别从傅里叶变换和狄拉克δ函数中推到卷积定义，我们可以从字面上宏观粗鲁的理解成将因子翻转相乘卷起来。</li>
 <li>卷积动画。演示如下图[26]，更多动画演示可参考[27]<br><img src="http://p30lospbv.bkt.clouddn.com/convSobel.gif" alt=""></li>
@@ -86,7 +86,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="CNN层结构"><a href="#CNN层结构" class="headerlink" title="CNN层结构"></a>CNN层结构</h3><ul>
+<h3 id="CNN-Architecture"><a href="#CNN-Architecture" class="headerlink" title="CNN Architecture"></a>CNN Architecture</h3><ul>
 <li>三层神经网络。分别为输入层（Input layer）,输出层（Output layer）,隐藏层（Hidden layer），如下图所示[21]<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid10.png" alt=""></li>
 <li>CNN层级结构。 斯坦福cs231n中阐述了一种[INPUT-CONV-RELU-POOL-FC]，如下图所示[21]，分别为输入层，卷积层，激励层，池化层，全连接层。</li>
 <li>CNN通用架构分为如下三层结构：<ul>
@@ -97,7 +97,7 @@
 </li>
 <li>动画演示。参考[22]。<br><img src="http://img.blog.csdn.net/20160707204048899" alt=""></li>
 </ul>
-<h2 id="Regression和Softmax"><a href="#Regression和Softmax" class="headerlink" title="Regression和Softmax"></a>Regression和Softmax</h2><p>机器学习有监督学习（supervised learning）中两大算法分别是分类算法和回归算法，分类算法用于离散型分布预测，回归算法用于连续型分布预测。<br>回归的目的就是建立一个回归方程用来预测目标值，回归的求解就是求这个回归方程的回归系数。<br>其中回归（Regression）算法包括Linear Regression，Logistic Regression等， Softmax Regression是其中一种用于解决多分类（multi-class classification）问题的Logistic回归算法的推广，经典实例就是在MNIST手写数字分类上的应用。   </p>
+<h2 id="Regression-Softmax"><a href="#Regression-Softmax" class="headerlink" title="Regression + Softmax"></a>Regression + Softmax</h2><p>机器学习有监督学习（supervised learning）中两大算法分别是分类算法和回归算法，分类算法用于离散型分布预测，回归算法用于连续型分布预测。<br>回归的目的就是建立一个回归方程用来预测目标值，回归的求解就是求这个回归方程的回归系数。<br>其中回归（Regression）算法包括Linear Regression，Logistic Regression等， Softmax Regression是其中一种用于解决多分类（multi-class classification）问题的Logistic回归算法的推广，经典实例就是在MNIST手写数字分类上的应用。   </p>
 <h3 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h3><p>Linear Regression是机器学习中最基础的模型，其目标是用预测结果尽可能地拟合目标label</p>
 <ul>
 <li>多元线性回归模型定义<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid16.png" alt=""></li>
@@ -3249,112 +3249,62 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
   </entry>
   
   <entry>
-    <title>SkySeraph Movie Life</title>
-    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphMovieLife/"/>
-    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphMovieLife/</id>
+    <title>SkySeraph Reading Life</title>
+    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/"/>
+    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/</id>
     <published>2012-02-05T18:00:00.000Z</published>
-    <updated>2018-01-17T14:01:03.765Z</updated>
+    <updated>2018-02-05T14:18:57.376Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <a id="more"></a>
-<h1 id="Movie-amp-Video"><a href="#Movie-amp-Video" class="headerlink" title="Movie &amp; Video"></a>Movie &amp; Video</h1><h2 id="2018"><a href="#2018" class="headerlink" title="2018"></a>2018</h2><ul>
-<li><a href="https://movie.douban.com/subject/26862829/" target="_blank" rel="external">芳华(2017)</a></li>
-<li><a href="https://movie.douban.com/subject/26662193/" target="_blank" rel="external">前任3：再见前任</a></li>
+<h1 id="Reading"><a href="#Reading" class="headerlink" title="Reading"></a>Reading</h1><ul>
+<li><a href="https://read.douban.com" target="_blank" rel="external">豆瓣阅读</a></li>
+<li><a href="https://yuedu.baidu.com" target="_blank" rel="external">百度阅读</a></li>
+<li><a href="http://yuedu.163.com" target="_blank" rel="external">网易云阅读</a></li>
+<li><a href="http://book.qq.com" target="_blank" rel="external">QQ读书</a></li>
+<li><a href="https://book.douban.com/people/skyseraph/" target="_blank" rel="external">SkySeraph 豆瓣读书</a></li>
 </ul>
-<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><blockquote>
-<p>Movie</p>
-</blockquote>
-<ul>
-<li><a href="https://movie.douban.com/subject/25983044/" target="_blank" rel="external">《Billy Lynn’s Long Halftime Walk》</a></li>
-<li><a href="https://movie.douban.com/subject/26260853/" target="_blank" rel="external">《速度与激情8》</a></li>
-<li><a href="https://movie.douban.com/subject/26387939/" target="_blank" rel="external">《摔跤吧！爸爸》</a></li>
-<li><a href="https://movie.douban.com/subject/3025375/" target="_blank" rel="external">《奇异博士》</a></li>
-<li><a href="https://movie.douban.com/subject/26862259/" target="_blank" rel="external">《乘风破浪（韩寒）》</a></li>
-<li><a href="https://movie.douban.com/subject/1297481/" target="_blank" rel="external">《芳心何处》</a></li>
-<li><a href="https://movie.douban.com/subject/25801066/" target="_blank" rel="external">《西游伏妖篇》</a></li>
-<li><a href="https://movie.douban.com/subject/2078989/" target="_blank" rel="external">《四月三周两天》</a></li>
-<li><a href="https://movie.douban.com/subject/25769362/" target="_blank" rel="external">《哆啦A梦：伴我同行》</a></li>
-<li><a href="https://movie.douban.com/subject/25882861/" target="_blank" rel="external">《危楼愚夫》</a></li>
-<li><a href="https://movie.douban.com/subject/1867345/" target="_blank" rel="external">《遗愿清单》</a></li>
-<li><a href="https://movie.douban.com/subject/1301166/" target="_blank" rel="external">《垂直极限》</a></li>
-<li><a href="https://movie.douban.com/subject/26363254/" target="_blank" rel="external">《战狼2》</a></li>
-<li><a href="">《Headhunters（猎头者）》</a></li>
-<li><a href="https://movie.douban.com/subject/26378579/" target="_blank" rel="external">王牌特工2：黄金圈 Kingsman: The Golden Circle</a></li>
+<h2 id="2018"><a href="#2018" class="headerlink" title="2018"></a>2018</h2><ul>
+<li><a href="https://yuedu.baidu.com/ebook/ef67b6f13968011ca200911f" target="_blank" rel="external">《第一次买保险就买对》</a></li>
+<li><a href="https://book.douban.com/subject/10785583/" target="_blank" rel="external">《思考，快与慢》</a>  在读</li>
+<li><a href="https://book.douban.com/subject/21966353/" target="_blank" rel="external">《贫穷的本质》</a> 在读</li>
+<li><a href="https://book.douban.com/subject/26381341/" target="_blank" rel="external">Python Cookbook, 3rd Edtioni</a></li>
+<li><a href="https://book.douban.com/subject/26840215/" target="_blank" rel="external">Hands-On Machine Learning with Scikit-Learn and TensorFlow</a> </li>
 </ul>
-<blockquote>
-<p>Video</p>
-</blockquote>
-<ul>
-<li><a href="https://movie.douban.com/subject/26663086/" target="_blank" rel="external">《射雕英雄传 (2017)》</a> </li>
-<li><a href="https://movie.douban.com/subject/26727273/" target="_blank" rel="external">《人民的名义》</a>  </li>
-<li><a href="https://movie.douban.com/subject/26358696/" target="_blank" rel="external">《我的前半生》</a></li>
-<li><a href="">《歌手1》</a></li>
-<li><a href="https://movie.douban.com/subject/19955871/" target="_blank" rel="external">车轮不息 Where The Trail Ends (2012)</a></li>
+<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><ul>
+<li><a href="https://book.douban.com/subject/3688489/" target="_blank" rel="external">《异类》</a> </li>
+<li><a href="https://book.douban.com/subject/26297606/" target="_blank" rel="external">《从0到1》</a> </li>
+<li><a href="https://book.douban.com/subject/26823208/" target="_blank" rel="external">《离经叛道》</a> </li>
+<li><a href="https://book.douban.com/subject/26306686/" target="_blank" rel="external">《创业维艰》</a> </li>
+<li><a href="http://www.ximalaya.com/60348226/album/5398185/" target="_blank" rel="external">《徐洁：如何练就好声音》</a></li>
+<li><a href="https://book.douban.com/subject/27015138/" target="_blank" rel="external">欧神 《中产解决如何保护自己的财产》</a></li>
+<li><a href="https://book.douban.com/subject/1444900/" target="_blank" rel="external">盖瑞.查普曼《爱的五种语言》</a></li>
 </ul>
-<h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><blockquote>
-<p>Movie</p>
-</blockquote>
-<ul>
-<li><a href="">《心迷宮》</a></li>
-<li><a href="">《荒蛮故事》</a></li>
-<li><a href="">《撞车》</a></li>
-<li><a href="">《一个人的武林》</a></li>
-<li><a href="">《荒野猎人The Revenant》</a></li>
-<li><a href="">《澳门风云3》</a></li>
-<li><a href="">《万物生长》</a></li>
-<li><a href="">《美人鱼》</a></li>
-<li><a href="">《星球大战7:原力觉醒》</a></li>
-<li><a href="">《帝国双璧》</a></li>
-<li><a href="">《北京遇上西雅图之不二情书》</a></li>
-<li><a href="">《疯狂动物城》</a></li>
-<li><a href="">《谁的青春不迷茫》</a></li>
-<li><a href="">《愤怒的小鸟》</a></li>
+<h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><ul>
+<li><a href="https://book.douban.com/subject/26419762/" target="_blank" rel="external">《成为技术领导者》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/5162149.html" target="_blank" rel="external">【讀書筆記】成为技术领导者</a></li>
+<li><a href="https://book.douban.com/subject/26437231/" target="_blank" rel="external">《技术管理之巅》</a> #1</li>
+<li><a href="https://book.douban.com/subject/25868303/" target="_blank" rel="external">《微管理》</a> #1</li>
+<li><a href="https://book.douban.com/subject/26322756/" target="_blank" rel="external">《产品经理面试宝典》</a> #1</li>
 </ul>
-<blockquote>
-<p>Video</p>
-</blockquote>
-<ul>
-<li><a href="">《纸牌屋》第四季</a></li>
-<li><a href="">《星际迷航》</a></li>
-<li><a href="">《我是歌手 第四季》</a></li>
+<h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><ul>
+<li><a href="https://book.douban.com/subject/25873066/" target="_blank" rel="external">《麦肯锡工作法》</a> #1</li>
+<li><a href="https://book.douban.com/subject/25975485/" target="_blank" rel="external">《穿布鞋的马云》</a> #1</li>
+<li><a href="">《成功创业三级跳》</a> #1</li>
+<li><a href="https://book.douban.com/subject/25773433/" target="_blank" rel="external">《你欠大学一次远行》</a> #1</li>
 </ul>
-<h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><blockquote>
-<p>Movie</p>
-</blockquote>
-<ul>
-<li><a href="">《刺杀金正恩》</a></li>
-<li><a href="">《匆匆那年》</a></li>
-<li><a href="">《霍金传》</a></li>
-<li><a href="">《咱们结婚吧》</a></li>
-<li><a href="">《何以笙箫默》</a></li>
-<li><a href="">《左耳》</a></li>
-<li><a href="">《商务囧途》</a></li>
-<li><a href="">《千与千寻》</a></li>
-<li><a href="">《赤道》</a></li>
-<li><a href="">《我的个神啊》</a></li>
-<li><a href="">《道士下山》</a></li>
-<li><a href="">《西游记之大圣归来》</a></li>
-<li><a href="">《我是路人甲》</a></li>
-<li><a href="">《商海通牒》</a></li>
-<li><a href="">《捉妖记》</a></li>
-<li><a href="">《煎饼侠》</a></li>
-<li><a href="">《碟中谍》</a></li>
-<li><a href="">《港囧》</a></li>
-<li><a href="">《夏洛特烦恼》</a></li>
-<li><a href="">《舞出我人生3》</a></li>
-<li><a href="">《王PT工：特工学院》</a></li>
-<li><a href="">《极品飞车》</a></li>
-<li><a href="">《商海通牒》</a></li>
-<li><a href="">《解救吾先生》</a></li>
-<li><a href="">《实习生》</a></li>
+<h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><ul>
+<li><a href="https://book.douban.com/subject/20505765/" target="_blank" rel="external">《精益创业实战》</a> #1， <a href="http://www.cnblogs.com/skyseraph/p/3895564.html" target="_blank" rel="external">【讀書筆記】精益创业实战</a></li>
+<li><a href="https://book.douban.com/subject/1048007/" target="_blank" rel="external">《高效能人士的七个习惯》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/3693005.html" target="_blank" rel="external">【讀書筆記】高效能人士的七个习惯</a></li>
+<li><a href="https://book.douban.com/subject/4723970/" target="_blank" rel="external">《人人都是产品经理》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/3590471.html" target="_blank" rel="external">【讀書筆記】人人都是产品经理</a></li>
+<li><a href="https://book.douban.com/subject/3688489/" target="_blank" rel="external">《异类》</a> #1</li>
+<li><a href="https://book.douban.com/subject/1033778/" target="_blank" rel="external">《富爸爸，穷爸爸》</a> #1</li>
+<li><a href="https://book.douban.com/subject/3151772/" target="_blank" rel="external">《一页纸项目管理》</a> #1</li>
 </ul>
-<blockquote>
-<p>Video</p>
-</blockquote>
-<ul>
-<li><a href="">《柴静拍雾霾之穹顶之下》</a></li>
-<li><a href="">《真正的男人》</a></li>
-<li><a href="">《我是歌手 第三季》</a></li>
+<h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
+<li><a href="http://www.cnblogs.com/skyseraph/archive/2013/01/07/2850003.html" target="_blank" rel="external">【分享】RSS订阅技巧及工具和实用RSS链接分享 </a></li>
+</ul>
+<h2 id="2012"><a href="#2012" class="headerlink" title="2012"></a>2012</h2><ul>
+<li><a href="">《》</a></li>
 </ul>
 <h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><hr>
 <font size="2"><br>By SkySeraph<br></font>   
@@ -3365,7 +3315,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 
 <p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
 <p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphMovieLife/">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphMovieLife/</a></p>
+<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/</a></p>
 ]]></content>
     
     <summary type="html">
@@ -3381,9 +3331,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
     
-      <category term="Movie" scheme="http://skyseraph.com/tags/Movie/"/>
-    
       <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+    
+      <category term="Reading" scheme="http://skyseraph.com/tags/Reading/"/>
     
   </entry>
   
