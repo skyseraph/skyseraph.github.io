@@ -199,9 +199,9 @@
     
       <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
     
-      <category term="TensorFlow" scheme="http://skyseraph.com/tags/TensorFlow/"/>
-    
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
+    
+      <category term="TensorFlow" scheme="http://skyseraph.com/tags/TensorFlow/"/>
     
   </entry>
   
