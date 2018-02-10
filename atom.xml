@@ -3249,24 +3249,64 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
   </entry>
   
   <entry>
-    <title>SkySeraph Plan Life</title>
-    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphPlanLife/"/>
-    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphPlanLife/</id>
+    <title>SkySeraph Reading Life</title>
+    <link href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/"/>
+    <id>http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/</id>
     <published>2012-02-05T18:00:00.000Z</published>
-    <updated>2018-01-17T14:01:27.368Z</updated>
+    <updated>2018-02-05T14:18:57.376Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <a id="more"></a>
-<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><ul>
-<li><a href="http://skyseraph.com/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/">而立之年，未开始的创业路</a></li>
+<h1 id="Reading"><a href="#Reading" class="headerlink" title="Reading"></a>Reading</h1><ul>
+<li><a href="https://read.douban.com" target="_blank" rel="external">豆瓣阅读</a></li>
+<li><a href="https://yuedu.baidu.com" target="_blank" rel="external">百度阅读</a></li>
+<li><a href="http://yuedu.163.com" target="_blank" rel="external">网易云阅读</a></li>
+<li><a href="http://book.qq.com" target="_blank" rel="external">QQ读书</a></li>
+<li><a href="https://book.douban.com/people/skyseraph/" target="_blank" rel="external">SkySeraph 豆瓣读书</a></li>
 </ul>
-<h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
-<li><a href="http://skyseraph.com/2013/11/30/SkySeraph/Life/写在年末,%20我的2013/">写在年末, 我的2013</a></li>
+<h2 id="2018"><a href="#2018" class="headerlink" title="2018"></a>2018</h2><ul>
+<li><a href="https://yuedu.baidu.com/ebook/ef67b6f13968011ca200911f" target="_blank" rel="external">《第一次买保险就买对》</a></li>
+<li><a href="https://book.douban.com/subject/10785583/" target="_blank" rel="external">《思考，快与慢》</a>  在读</li>
+<li><a href="https://book.douban.com/subject/21966353/" target="_blank" rel="external">《贫穷的本质》</a> 在读</li>
+<li><a href="https://book.douban.com/subject/26381341/" target="_blank" rel="external">Python Cookbook, 3rd Edtioni</a></li>
+<li><a href="https://book.douban.com/subject/26840215/" target="_blank" rel="external">Hands-On Machine Learning with Scikit-Learn and TensorFlow</a> </li>
 </ul>
-<h2 id="2012-Before"><a href="#2012-Before" class="headerlink" title="2012  Before"></a>2012  Before</h2><ul>
-<li><a href="http://skyseraph.com/2010/09/12/SkySeraph/Life/ReadResponseThatYear/">那一年的“暑假书籍读后感”</a></li>
+<h2 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h2><ul>
+<li><a href="https://book.douban.com/subject/3688489/" target="_blank" rel="external">《异类》</a> </li>
+<li><a href="https://book.douban.com/subject/26297606/" target="_blank" rel="external">《从0到1》</a> </li>
+<li><a href="https://book.douban.com/subject/26823208/" target="_blank" rel="external">《离经叛道》</a> </li>
+<li><a href="https://book.douban.com/subject/26306686/" target="_blank" rel="external">《创业维艰》</a> </li>
+<li><a href="http://www.ximalaya.com/60348226/album/5398185/" target="_blank" rel="external">《徐洁：如何练就好声音》</a></li>
+<li><a href="https://book.douban.com/subject/27015138/" target="_blank" rel="external">欧神 《中产解决如何保护自己的财产》</a></li>
+<li><a href="https://book.douban.com/subject/1444900/" target="_blank" rel="external">盖瑞.查普曼《爱的五种语言》</a></li>
 </ul>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><hr>
+<h2 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h2><ul>
+<li><a href="https://book.douban.com/subject/26419762/" target="_blank" rel="external">《成为技术领导者》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/5162149.html" target="_blank" rel="external">【讀書筆記】成为技术领导者</a></li>
+<li><a href="https://book.douban.com/subject/26437231/" target="_blank" rel="external">《技术管理之巅》</a> #1</li>
+<li><a href="https://book.douban.com/subject/25868303/" target="_blank" rel="external">《微管理》</a> #1</li>
+<li><a href="https://book.douban.com/subject/26322756/" target="_blank" rel="external">《产品经理面试宝典》</a> #1</li>
+</ul>
+<h2 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h2><ul>
+<li><a href="https://book.douban.com/subject/25873066/" target="_blank" rel="external">《麦肯锡工作法》</a> #1</li>
+<li><a href="https://book.douban.com/subject/25975485/" target="_blank" rel="external">《穿布鞋的马云》</a> #1</li>
+<li><a href="">《成功创业三级跳》</a> #1</li>
+<li><a href="https://book.douban.com/subject/25773433/" target="_blank" rel="external">《你欠大学一次远行》</a> #1</li>
+</ul>
+<h2 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h2><ul>
+<li><a href="https://book.douban.com/subject/20505765/" target="_blank" rel="external">《精益创业实战》</a> #1， <a href="http://www.cnblogs.com/skyseraph/p/3895564.html" target="_blank" rel="external">【讀書筆記】精益创业实战</a></li>
+<li><a href="https://book.douban.com/subject/1048007/" target="_blank" rel="external">《高效能人士的七个习惯》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/3693005.html" target="_blank" rel="external">【讀書筆記】高效能人士的七个习惯</a></li>
+<li><a href="https://book.douban.com/subject/4723970/" target="_blank" rel="external">《人人都是产品经理》</a> #1，<a href="http://www.cnblogs.com/skyseraph/p/3590471.html" target="_blank" rel="external">【讀書筆記】人人都是产品经理</a></li>
+<li><a href="https://book.douban.com/subject/3688489/" target="_blank" rel="external">《异类》</a> #1</li>
+<li><a href="https://book.douban.com/subject/1033778/" target="_blank" rel="external">《富爸爸，穷爸爸》</a> #1</li>
+<li><a href="https://book.douban.com/subject/3151772/" target="_blank" rel="external">《一页纸项目管理》</a> #1</li>
+</ul>
+<h2 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h2><ul>
+<li><a href="http://www.cnblogs.com/skyseraph/archive/2013/01/07/2850003.html" target="_blank" rel="external">【分享】RSS订阅技巧及工具和实用RSS链接分享 </a></li>
+</ul>
+<h2 id="2012"><a href="#2012" class="headerlink" title="2012"></a>2012</h2><ul>
+<li><a href="">《》</a></li>
+</ul>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><hr>
 <font size="2"><br>By SkySeraph<br></font>   
 
 <hr>
@@ -3275,7 +3315,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 
 <p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
 <p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphPlanLife/">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphPlanLife/</a></p>
+<p>本文永久链接：<a href="http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/">http://skyseraph.com/2012/02/06/SkySeraph/Life/SkySeraphReadingLife/</a></p>
 ]]></content>
     
     <summary type="html">
@@ -3293,7 +3333,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
     
-      <category term="Plan" scheme="http://skyseraph.com/tags/Plan/"/>
+      <category term="Reading" scheme="http://skyseraph.com/tags/Reading/"/>
     
   </entry>
   
