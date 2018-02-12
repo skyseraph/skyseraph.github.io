@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="SkySeraph">
 <meta property="og:description" content="Overview本文系“SkySeraph AI 实践到理论系列”第一篇，咱以AI界的HelloWord 经典MNIST数据集为基础，在Android平台，基于TensorFlow，实现CNN的手写数字识别。Code~">
 <meta property="og:image" content="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid01.png">
-<meta property="og:updated_time" content="2018-02-08T14:03:26.554Z">
+<meta property="og:updated_time" content="2018-02-12T13:13:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android+TensorFlow+CNN+MNIST  手写数字识别实现">
 <meta name="twitter:description" content="Overview本文系“SkySeraph AI 实践到理论系列”第一篇，咱以AI界的HelloWord 经典MNIST数据集为基础，在Android平台，基于TensorFlow，实现CNN的手写数字识别。Code~">
@@ -305,8 +305,13 @@ var _hmt = _hmt || [];
 <li>Python IDE： PyCharm 2017.2</li>
 <li>Android IDE： Android Studio 3.0</li>
 </ul>
-<h2 id="Train-amp-Evaluate（Python-TensorFlow）"><a href="#Train-amp-Evaluate（Python-TensorFlow）" class="headerlink" title="Train &amp; Evaluate（Python+TensorFlow）"></a>Train &amp; Evaluate（Python+TensorFlow）</h2><p>训练和评估部分主要目的是生成用于测试用的pb文件，其保存了利用TensorFlow python API构建训练后的网络拓扑结构和参数信息，实现方式有很多种，除了cnn外还可以使用rnn，fcnn等。<br>其中基于cnn的函数也有两套，分别为tf.layers.conv2d和tf.nn.conv2d， tf.layers.conv2d使用tf.nn.conv2d作为后端处理，参数上filters是整数，filter是4维张量。原型如下：<br>convolutional.py文件<br>    def conv2d(inputs, filters, kernel_size, strides=(1, 1), padding=’valid’, data_format=’channels_last’,<br>       dilation_rate=(1, 1), activation=None, use_bias=True, kernel_initializer=None,<br>       bias_initializer=init_ops.zeros_initializer(), kernel_regularizer=None, bias_regularizer=None,<br>       activity_regularizer=None, kernel_constraint=None, bias_constraint=None, trainable=True, name=None,<br>       reuse=None)     </p>
-<p> gen_nn_ops.py 文件</p>
+<h2 id="Train-amp-Evaluate（Python-TensorFlow）"><a href="#Train-amp-Evaluate（Python-TensorFlow）" class="headerlink" title="Train &amp; Evaluate（Python+TensorFlow）"></a>Train &amp; Evaluate（Python+TensorFlow）</h2><p>训练和评估部分主要目的是生成用于测试用的pb文件，其保存了利用TensorFlow python API构建训练后的网络拓扑结构和参数信息，实现方式有很多种，除了cnn外还可以使用rnn，fcnn等。<br>其中基于cnn的函数也有两套，分别为tf.layers.conv2d和tf.nn.conv2d， tf.layers.conv2d使用tf.nn.conv2d作为后端处理，参数上filters是整数，filter是4维张量。原型如下：<br>convolutional.py文件  </p>
+<pre><code>def conv2d(inputs, filters, kernel_size, strides=(1, 1), padding=&apos;valid&apos;, data_format=&apos;channels_last&apos;,
+   dilation_rate=(1, 1), activation=None, use_bias=True, kernel_initializer=None,
+   bias_initializer=init_ops.zeros_initializer(), kernel_regularizer=None, bias_regularizer=None,
+   activity_regularizer=None, kernel_constraint=None, bias_constraint=None, trainable=True, name=None,
+   reuse=None)     
+</code></pre><p> gen_nn_ops.py 文件</p>
 <pre><code>def conv2d(input, filter, strides, padding, use_cudnn_on_gpu=True, data_format=&quot;NHWC&quot;, name=None)
 </code></pre><p>官方Demo实例中使用的是layers module，结构如下：    </p>
 <ul>
@@ -321,7 +326,8 @@ var _hmt = _hmt || [];
 <p>也可以采用传统的tf.nn.conv2d函数, 核心代码如下。<br><img src="http://p30lospbv.bkt.clouddn.com/AIHandwritingAndroid03.png" alt=""></p>
 <h2 id="Test（Android-TensorFlow）"><a href="#Test（Android-TensorFlow）" class="headerlink" title="Test（Android+TensorFlow）"></a>Test（Android+TensorFlow）</h2><ul>
 <li>核心是使用API接口： TensorFlowInferenceInterface.java</li>
-<li>配置gradle  或者 自编译TensorFlow源码导入jar和so<br>  compile ‘org.tensorflow:tensorflow-android:1.2.0’</li>
+<li><p>配置gradle  或者 自编译TensorFlow源码导入jar和so<br>  compile ‘org.tensorflow:tensorflow-android:1.2.0’</p>
+</li>
 <li><p>导入pb文件.pb文件放assets目录，然后读取</p>
 <p>  String actualFilename = labelFilename.split(“file:///android_asset/“)[1];<br>  Log.i(TAG, “Reading labels from: “ + actualFilename);<br>  BufferedReader br = null;<br>  br = new BufferedReader(new InputStreamReader(assetManager.open(actualFilename)));<br>  String line;<br>  while ((line = br.readLine()) != null) {<br>  c.labels.add(line);<br>  }<br>  br.close();  </p>
 </li>
