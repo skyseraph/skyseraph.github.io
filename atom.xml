@@ -203,9 +203,9 @@
       <category term="AI" scheme="http://skyseraph.com/categories/Tech/AI/"/>
     
     
-      <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
-    
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
+    
+      <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
     
       <category term="TensorFlow" scheme="http://skyseraph.com/tags/TensorFlow/"/>
     
@@ -425,9 +425,9 @@
       <category term="Tools" scheme="http://skyseraph.com/categories/Tech/Tools/"/>
     
     
-      <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
-    
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
+    
+      <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
     
       <category term="Awesome" scheme="http://skyseraph.com/tags/Awesome/"/>
     
@@ -1639,11 +1639,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="OpenGL" scheme="http://skyseraph.com/categories/Tech/OpenGL/"/>
     
     
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
-    
       <category term="AR/VR" scheme="http://skyseraph.com/tags/AR-VR/"/>
     
       <category term="OpenGL" scheme="http://skyseraph.com/tags/OpenGL/"/>
+    
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
   </entry>
   
@@ -1652,7 +1652,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2015/11/01/SkySeraph/Tech/ITBywork/"/>
     <id>http://skyseraph.com/2015/11/01/SkySeraph/Tech/ITBywork/</id>
     <published>2015-10-31T16:23:23.000Z</published>
-    <updated>2018-02-05T14:50:03.327Z</updated>
+    <updated>2018-02-23T13:55:52.901Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><ul>
@@ -1664,7 +1664,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 <hr>
 <h1 id="兼职"><a href="#兼职" class="headerlink" title="兼职"></a>兼职</h1><ul>
 <li>线上(海外)。<a href="http://freelancer.com" target="_blank" rel="external">freelancer</a>，<a href="http://odesk.com" target="_blank" rel="external">odesk</a>，<a href="http://elance.com" target="_blank" rel="external">elance</a>等。</li>
-<li>线上(国内)。<a href="http://www.csto.com/home" target="_blank" rel="external">CSTO</a>， <a href="https://mart.coding.net" target="_blank" rel="external">码市</a>，<a href="http://www.taskcity.com" target="_blank" rel="external">智城外包</a>，<a href="https://shixian.com" target="_blank" rel="external">实现网</a>，<a href="http://www.zbj.com" target="_blank" rel="external">猪八戒</a>(泛)等。</li>
+<li>线上(国内)。<a href="http://www.csto.com/home" target="_blank" rel="external">CSTO</a>， <a href="https://mart.coding.net" target="_blank" rel="external">码市</a>，<a href="https://www.proginn.com" target="_blank" rel="external">程序员客栈</a>， <a href="http://www.taskcity.com" target="_blank" rel="external">智城外包</a>，<a href="https://shixian.com" target="_blank" rel="external">实现网</a>，<a href="http://www.zbj.com" target="_blank" rel="external">猪八戒</a>(泛)等。</li>
 <li>友情互助，个人影响力，QQ群等。</li>
 </ul>
 <h1 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h1><ul>
@@ -3306,9 +3306,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
     
-      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
-    
       <category term="Plan" scheme="http://skyseraph.com/tags/Plan/"/>
+    
+      <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
     
   </entry>
   
