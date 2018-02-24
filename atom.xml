@@ -203,9 +203,9 @@
       <category term="AI" scheme="http://skyseraph.com/categories/Tech/AI/"/>
     
     
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
-    
       <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
+    
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
       <category term="TensorFlow" scheme="http://skyseraph.com/tags/TensorFlow/"/>
     
@@ -425,13 +425,13 @@
       <category term="Tools" scheme="http://skyseraph.com/categories/Tech/Tools/"/>
     
     
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
-    
       <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
     
-      <category term="Awesome" scheme="http://skyseraph.com/tags/Awesome/"/>
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
       <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
+    
+      <category term="Awesome" scheme="http://skyseraph.com/tags/Awesome/"/>
     
   </entry>
   
@@ -1639,11 +1639,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="OpenGL" scheme="http://skyseraph.com/categories/Tech/OpenGL/"/>
     
     
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
+    
       <category term="AR/VR" scheme="http://skyseraph.com/tags/AR-VR/"/>
     
       <category term="OpenGL" scheme="http://skyseraph.com/tags/OpenGL/"/>
-    
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
   </entry>
   
@@ -1734,11 +1734,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
   </entry>
   
   <entry>
-    <title>IT生涯，我记忆中的那些命令</title>
+    <title>【程序人生】IT生涯，我记忆中的那些命令</title>
     <link href="http://skyseraph.com/2014/08/08/Tools/ITLifeCmds/"/>
     <id>http://skyseraph.com/2014/08/08/Tools/ITLifeCmds/</id>
     <published>2014-08-07T16:40:20.000Z</published>
-    <updated>2017-12-19T13:37:43.815Z</updated>
+    <updated>2018-02-24T13:42:32.269Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <a id="more"></a>
@@ -1913,11 +1913,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
   </entry>
   
   <entry>
-    <title>IT生涯, 我的常用软件清单</title>
+    <title>【程序人生】IT生涯, 我的常用软件清单</title>
     <link href="http://skyseraph.com/2014/08/06/Tools/IT%E7%94%9F%E6%B6%AF%EF%BC%8C%E6%88%91%E7%9A%84%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%95/"/>
     <id>http://skyseraph.com/2014/08/06/Tools/IT生涯，我的常用软件清单/</id>
     <published>2014-08-05T16:40:20.000Z</published>
-    <updated>2018-01-17T13:57:44.384Z</updated>
+    <updated>2018-02-24T13:42:26.088Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <ul>
@@ -3306,9 +3306,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
     
-      <category term="Plan" scheme="http://skyseraph.com/tags/Plan/"/>
-    
       <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
+    
+      <category term="Plan" scheme="http://skyseraph.com/tags/Plan/"/>
     
   </entry>
   
