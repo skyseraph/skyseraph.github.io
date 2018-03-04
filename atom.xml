@@ -1917,7 +1917,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2015/11/01/SkySeraph/Tech/ITBywork/"/>
     <id>http://skyseraph.com/2015/11/01/SkySeraph/Tech/ITBywork/</id>
     <published>2015-10-31T16:23:23.000Z</published>
-    <updated>2018-03-04T03:53:29.450Z</updated>
+    <updated>2018-03-04T07:43:45.118Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><ul>
@@ -2001,9 +2001,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
     
-      <category term="Money" scheme="http://skyseraph.com/tags/Money/"/>
-    
       <category term="Bywork" scheme="http://skyseraph.com/tags/Bywork/"/>
+    
+      <category term="Wealth" scheme="http://skyseraph.com/tags/Wealth/"/>
     
   </entry>
   
