@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://skyseraph.com/"/>
-  <updated>2018-02-12T13:13:23.000Z</updated>
+  <updated>2018-03-05T13:46:04.235Z</updated>
   <id>http://skyseraph.com/</id>
   
   <author>
@@ -20,11 +20,12 @@
     <link href="http://skyseraph.com/2018/01/10/AI/AIHandwritingAndroid/"/>
     <id>http://skyseraph.com/2018/01/10/AI/AIHandwritingAndroid/</id>
     <published>2018-01-10T15:23:23.000Z</published>
-    <updated>2018-02-12T13:13:23.000Z</updated>
+    <updated>2018-03-05T13:46:04.235Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>本文系“SkySeraph AI 实践到理论系列”第一篇，咱以AI界的HelloWord 经典MNIST数据集为基础，在Android平台，基于TensorFlow，实现CNN的手写数字识别。<br><a href="https://github.com/skyseraph/AI_P2T" target="_blank" rel="external">Code~</a>    </p>
 <a id="more"></a>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <hr>
 <h1 id="Practice"><a href="#Practice" class="headerlink" title="Practice"></a>Practice</h1><h2 id="Environment"><a href="#Environment" class="headerlink" title="Environment"></a>Environment</h2><ul>
 <li>TensorFlow： 1.2.0</li>
@@ -483,11 +484,12 @@
     <link href="http://skyseraph.com/2017/11/11/AI/TensorFlowBasic/"/>
     <id>http://skyseraph.com/2017/11/11/AI/TensorFlowBasic/</id>
     <published>2017-11-11T15:23:23.000Z</published>
-    <updated>2018-02-08T14:02:25.751Z</updated>
+    <updated>2018-03-05T13:45:59.021Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>TensorFlow 最初由Google Brain团队开发， Google 2015年11月9日发布的开源的AI系统（Apache 2.0），前任(身)为DistBelief， 2017年2月11日发布1.0.0版，同时支持Linux、macOS和Windows以及移动平台，包括Android和iOS。<br>TensorFlow一般简写为TF。<br><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/ai.md" target="_blank" rel="external">Awesome AI~</a>    </p>
 <a id="more"></a>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
 <li><a href="https://www.tensorflow.org" target="_blank" rel="external">TensorFlow 官网</a></li>
 <li><a href="https://www.tensorflow.org/api_docs/" target="_blank" rel="external">TensorFlow API</a></li>
@@ -586,13 +588,14 @@
     <link href="http://skyseraph.com/2017/10/01/Tools/AwesomeProjects/"/>
     <id>http://skyseraph.com/2017/10/01/Tools/AwesomeProjects/</id>
     <published>2017-09-30T17:00:00.000Z</published>
-    <updated>2018-02-10T10:57:20.565Z</updated>
+    <updated>2018-03-05T13:48:27.644Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><ul>
 <li><a href="https://github.com/skyseraph/awesome-projects" target="_blank" rel="external"><strong>awesome-projects</strong></a> 致力于收集 Awesome Projects，Tech or Non-Tech.  </li>
 <li>欢迎您的加入!   <a href="https://github.com/skyseraph/awesome-projects" target="_blank" rel="external">Fork</a> or <a href="skyseraph00@126.com">Email</a> to Me, tks!</li>
 </ul>
 <a id="more"></a>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <h2 id="Contribute"><a href="#Contribute" class="headerlink" title="Contribute"></a>Contribute</h2><p><a href="http://skyseraph.com/">SkySeraph</a> …</p>
 <h1 id="Menu"><a href="#Menu" class="headerlink" title="Menu"></a>Menu</h1><hr>
 <h2 id="TECH"><a href="#TECH" class="headerlink" title="TECH"></a>TECH</h2><table>
@@ -707,11 +710,12 @@
     <link href="http://skyseraph.com/2017/06/04/Android/UiAutomator2.0%E5%8D%87%E7%BA%A7%E5%A1%AB%E5%9D%91%E8%AE%B0/"/>
     <id>http://skyseraph.com/2017/06/04/Android/UiAutomator2.0升级填坑记/</id>
     <published>2017-06-03T17:40:40.000Z</published>
-    <updated>2018-01-23T14:36:49.958Z</updated>
+    <updated>2018-03-05T13:46:18.430Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Google Android Developers 在2015年3月就发布了UiAutomator 2.0版本（下文简称U2），而公司的核心产品中用到还是UiAutomator老版本（下文简称U1），业界用U2的也不是很多，虽然有诸多问题和不便（如高版本OS中不支持Remote Debug等），但大家似乎在苟延残喘中麻木了。 公司以前也有专家做过研究和探索，毕竟老项目是万级别的，涉及诸多算法和复杂业务逻辑，遇到几个问题最终不了了之。于是乎，又到了老司机手里。</p>
 <a id="more"></a>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <h1 id="重大特性"><a href="#重大特性" class="headerlink" title="重大特性"></a>重大特性</h1><p><strong>1</strong>.  基于 Instrumentation，使用Instrumentation test runner即可运行UiAutomator，反之，也即在基于Instrumentation的test中也能使用UiAutomator; 可以获取应用Context，可以使用Android服务及接口。</p>
 <p><strong>2</strong>.  基于 Junit4，测试用例无需继承于任何父类，方法名不限，使用Annotation进行; U1需要继承UiAutomatorTestCase，测试方法需要以test开头.  </p>
 <p><strong>3</strong>.  与U1的Maven或Ant构建方式不同，U2采用Gradle进行构建； U2输出为APK，Android工程，而U1为Java工程，输出jar包。</p>
@@ -852,7 +856,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2017/05/27/SkySeraph/Sharing/%E9%82%A3%E4%BA%9B%E5%B9%B4%EF%BC%8C%E4%BB%8E%E5%8D%9A%E5%AE%A2%E5%88%B0%E5%87%BA%E4%B9%A6%E7%9A%84%E5%8D%9A%E4%B8%BB/"/>
     <id>http://skyseraph.com/2017/05/27/SkySeraph/Sharing/那些年，从博客到出书的博主/</id>
     <published>2017-05-26T17:40:40.000Z</published>
-    <updated>2018-02-24T13:40:17.390Z</updated>
+    <updated>2018-03-05T13:49:14.533Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><ul>
@@ -861,6 +865,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 <li>顺便将读者读过或了解过的一些从博客到出书相关书籍进行一个汇总，分享。</li>
 </ul>
 <a id="more"></a>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1><h2 id="综合"><a href="#综合" class="headerlink" title="综合"></a>综合</h2><blockquote>
 <p><strong>黄博文</strong>   </p>
 </blockquote>
@@ -1091,10 +1096,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2017/01/26/Android/Appuim%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90(Boottrap)/"/>
     <id>http://skyseraph.com/2017/01/26/Android/Appuim源码剖析(Boottrap)/</id>
     <published>2017-01-25T17:40:40.000Z</published>
-    <updated>2017-12-19T13:51:46.055Z</updated>
+    <updated>2018-03-05T13:46:24.411Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <a id="more"></a>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><h2 id="Appuim"><a href="#Appuim" class="headerlink" title="Appuim"></a>Appuim</h2><p>Appium 是一个自动化测试开源工具，支持 iOS 平台和 Android 平台上的原生应用，web 应用和混合应用。</p>
 <p>这里有很关键一点，跨平台。更多了解Appuim多平台支持相关信息，参考官方<a href="https://github.com/appium/appium/blob/master/docs/old/cn/platform-support.cn.md" target="_blank" rel="external">platform-support</a></p>
 <h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><ul>
@@ -1182,13 +1188,14 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2016/10/31/SkySeraph/Life/%E8%80%8C%E7%AB%8B%E4%B9%8B%E5%B9%B4%EF%BC%8C%E6%9C%AA%E5%BC%80%E5%A7%8B%E7%9A%84%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
     <id>http://skyseraph.com/2016/10/31/SkySeraph/Life/而立之年，未开始的创业路/</id>
     <published>2016-10-30T16:30:30.000Z</published>
-    <updated>2017-12-17T01:48:11.720Z</updated>
+    <updated>2018-03-05T13:49:09.033Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <p><img src="http://img9.itiexue.net/1049/10494897.jpg" width="300" height="400"></p>
 <h2 id="题记"><a href="#题记" class="headerlink" title="题记"></a>题记</h2><p>“现代人不是渴望成功，而是渴望马上成功。”</p>
 <p>前几天同一个创客类培训机构合伙人就合作事宜巴拉吧啦，一句话刺激到了小小的心脏，加上90后创业者的遍地开花🌼，似乎些许浮躁，香菇难受，辗转反侧，诸多思考，有了此文。</p>
 <a id="more"></a>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <h2 id="A君"><a href="#A君" class="headerlink" title="A君"></a>A君</h2><p>先从这位创业者（简称A君）说起吧。<br><strong>A</strong>，一位87年小伙，13年研究生毕业后校招进鹅厂，14年深圳宝安2w- 买了房解决了第一个生存问题，15年在一个老板给的200w启动资金下，与几个同事还有以前的同学一起创业，路演获取前海梦工厂创意园办公基地免费入驻…<br>他想让我加入他们培训体系中某个领域所谓的“权威人士”， 录制线上视频并兼线下培训高级讲师，与我之前合作过的几家大型线上/线下培训机构不同，聊天中他一味的强调他们平台多么多么N，可以将我包装成这个领域绝对的权威，签署排他协议，可以通过他们平台获得很好的声誉，还可以在它们的专栏中出售自己书籍/作品，当报名学员比较多时组织线下培训，培训费用以某个比例分成巴拉巴拉…说白了，没有实际利益，大饼的方式加上我个人时间确实差不多饱和，所以当场直接婉拒了。<br>然后继续聊他们的创业，讨论了一些关于创业的观点，巴拉巴拉，然后谈到我自己时，我说我的创业路一定会前行，但现在想先满足或者说解决部分生活上的财务自由再开始…他给我一句话刺到了我，“创业的话，真的不年轻了…”，然后提到他们公司现在招聘的都是90后，93/94年小伙子，有冲劲，技术也不错，Github上开源项目star也众多…面试时问 “大家技术都不错，相比别人，我们为什么要录用你而不是别人？”，”年轻资本，熬夜资本…” 这样的答复A自己都笑了，确实很现实，创业公司不多一份付出也不现实（说的有点委婉了），熬夜我们肯定熬不过他们年轻人，这是他们的资本，就如现在邀请我作为他们讲师也一样，这个领域让这群90后去啃，给一定的时间也完全不会有问题，他希望可以找一个既有地位的人来负责比较好（真厉害又被绕进去了）…后面还聊了很多，交换了微信和名片，嘱咐不要急着给答复回去权衡思考下，同他们一起把这件事有意义的事干一干…巴拉巴拉，又一大堆，这些都不重要了，我的思维还停留在他前面的那句话，“创业的话，真的不年轻了…”，是的，打算创业，30，而立之年，创业还未真正开始，慌？盲？迟？ 创业，真的想清楚了？</p>
 <h2 id="聊聊周围"><a href="#聊聊周围" class="headerlink" title="聊聊周围"></a>聊聊周围</h2><h3 id="B君"><a href="#B君" class="headerlink" title="B君"></a>B君</h3><p><strong>B君</strong>，大学同学，14年离职后同三个同事创立了一家停车场相关公司，自己负责技术，其它三个负责资金和市场，股份平均（创业禁忌）。他们四人每人每月6k生活补贴，其它所有资金都作为储备资金，风风火火的干了一年，团队也从四人做到了十来个，月账面流水也从几万到几十万。<br>15年，B选择退出，以股份比例分到了一大笔钱。自己注册了另外一家公司，还是做原来的产品，跑华强北购买元器件，找PCB板商画板贴片再招人包装，然后跑市场积累客户，一年多下来，毛收入做到了200w。<br>现在的他，每天就是进货出货，跑跑市场谈谈主要客户，自由时间大把大把的，每天打打球陪陪小孩，从来没有10点前起过床，也经常找我聊聊是否有其它扩展门路，结合互联网如何来做巴拉巴拉…<br>说说他这个产品吧，很简单的一个小硬件产品，停车远距离刷卡，读头+卡片，主要赚取卡片插差价。14年15年很多次跟我聊天，说心里话，我压根就看不起这样的产品，这样的所谓“创业”，我跟他聊天灌输的思想一定是高大上的，一定是平台级的，一定是结合互联网，一定是大大的XX。现在，我会发现，错了，我有很多很多很好ideal，我有很好的互联网思维，我拥有技术，但创业或许是个伪命题，只是一个概念，那时的我纯粹的认为创业真的只是一种情怀，是为了情怀，从来没考虑过商业化的思想，突然感觉好像错了，创业，谈情怀之前先谈利益，赚到钱了能盈利才是企业，才是创业，才是中国现社会追从的成功人生。 是么？  </p>
 <h3 id="C君"><a href="#C君" class="headerlink" title="C君"></a>C君</h3><p><strong>C君</strong>，同校师兄，08年毕业来到深圳，从SCM到DSP到ARM，从普通工程师到现在某企业（中小企业，100多号人）总技术负责人，拥有企业的股份。他没有所谓的创业，但却能实现100w+的年收入，当然，单纯工作工资肯定没这么多，他在很早时通过别人介绍认识了他现在做的这个行业中某位台湾老板，当时完全不计较得失没日没夜的给他绘图做板开发，最终成为了长期合作伙伴维持并到现在，他们的产品在台北市拥有近乎1/3的市场…是的，他以工作和兼职的方式也在深圳立足下来，农村出生，今年（2016年喔）在深圳南山刚换了第二套房。 每次跟他爬塘朗山，聊天中会发现他是那种慢性子，做事有条不紊，绝不会去追求冒险。我不止一次问他为什么不创立一家公司，招一点人把事做大，他每次都笑一笑说道，成立公司又能怎么样呢？能赚的更多么？ 当时不理解，觉得太势利，目光看不远，只在乎短期利益，现在想想，其实也不然，雄浑大志之前一定也要脚踏实地，现在大多数互联网创业者，用所谓的互联网思维去创业，成天谈的就是融资圈钱甚至上市，通过融资去圈用户，然后再考虑如何盈利，是的动辄几百万甚至上千万融资（独角兽类公司毕竟是少数，我们需要那样的实例和憧憬，但短期还是先从产品做起），自身也华丽转身，转身之后呢？我希望的创业也是就酱紫的？  </p>
@@ -1253,10 +1260,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2016/07/18/Tools/Jenkins%20Gitlab%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E6%89%93%E5%8C%85%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/"/>
     <id>http://skyseraph.com/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/</id>
     <published>2016-07-17T16:00:00.000Z</published>
-    <updated>2017-12-19T13:52:39.022Z</updated>
+    <updated>2018-03-05T13:48:10.263Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <a id="more"></a>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <h1 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h1><h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><ul>
 <li><a href="https://jenkins.io/index.html" target="_blank" rel="external">Jenkins</a>，一个用Java编写的开源的持续集成工具，提供了软件开发的持续集成服务，可监控并触发持续重复的工作，具有开源，支持多平台和插件扩展，安装简单，界面化管理等特点。更多介绍参考<a href="https://en.wikipedia.org/wiki/Jenkins_(software" target="_blank" rel="external">维基</a>介绍.  </li>
 </ul>
@@ -1520,9 +1528,10 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2016/06/30/iOS/Select%20all%20the%20cell%20in%20UITabView%20or%20UICollectionView%20problem/"/>
     <id>http://skyseraph.com/2016/06/30/iOS/Select all the cell in UITabView or UICollectionView problem/</id>
     <published>2016-06-29T16:40:20.000Z</published>
-    <updated>2017-12-17T01:49:27.735Z</updated>
+    <updated>2018-03-05T13:47:50.608Z</updated>
     
     <content type="html"><![CDATA[<hr>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <h1 id="The-Issue"><a href="#The-Issue" class="headerlink" title="The Issue"></a>The Issue</h1><p>Recently in my new project I need to select all the cell data in my UITabViewCell and UICollectionViewCell, and need to do some operations with all the cells(like delete etc.), What I do as follows:</p>
 <a id="more"></a>
 <blockquote>
@@ -1562,6 +1571,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
+&lt;p&gt;文章作者：&lt;a href=&quot;https://about.me/skyseraph&quot;&gt;SkySeraph&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;http://skyseraph.com/&quot;&gt;skyseraph.com&lt;/a&gt; | &lt;a href=&quot;https://github.com/skyseraph&quot;&gt;GitHub&lt;/a&gt; | &lt;a href=&quot;http://www.cnblogs.com/skyseraph/&quot;&gt;cnBlogs&lt;/a&gt; | &lt;a href=&quot;https://www.jianshu.com/u/a7149e4933fb&quot;&gt;简书&lt;/a&gt;…&lt;/p&gt;
 &lt;h1 id=&quot;The-Issue&quot;&gt;&lt;a href=&quot;#The-Issue&quot; class=&quot;headerlink&quot; title=&quot;The Issue&quot;&gt;&lt;/a&gt;The Issue&lt;/h1&gt;&lt;p&gt;Recently in my new project I need to select all the cell data in my UITabViewCell and UICollectionViewCell, and need to do some operations with all the cells(like delete etc.), What I do as follows:&lt;/p&gt;
     
     </summary>
@@ -1582,9 +1592,10 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2016/06/19/Android/%E4%B8%80%E7%A7%8D%E6%8F%90%E9%AB%98Android%E5%BA%94%E7%94%A8%E8%BF%9B%E7%A8%8B%E5%AD%98%E6%B4%BB%E7%8E%87%E6%96%B0%E6%96%B9%E6%B3%95/"/>
     <id>http://skyseraph.com/2016/06/19/Android/一种提高Android应用进程存活率新方法/</id>
     <published>2016-06-18T16:40:20.000Z</published>
-    <updated>2017-12-17T01:46:51.991Z</updated>
+    <updated>2018-03-05T13:46:40.394Z</updated>
     
     <content type="html"><![CDATA[<hr>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="Android-进程优先级"><a href="#Android-进程优先级" class="headerlink" title="Android 进程优先级"></a>Android 进程优先级</h2><p><strong>1 进程优先级等级一般分法</strong></p>
 <ul>
 <li>Activte process</li>
@@ -1785,6 +1796,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
+&lt;p&gt;文章作者：&lt;a href=&quot;https://about.me/skyseraph&quot;&gt;SkySeraph&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;http://skyseraph.com/&quot;&gt;skyseraph.com&lt;/a&gt; | &lt;a href=&quot;https://github.com/skyseraph&quot;&gt;GitHub&lt;/a&gt; | &lt;a href=&quot;http://www.cnblogs.com/skyseraph/&quot;&gt;cnBlogs&lt;/a&gt; | &lt;a href=&quot;https://www.jianshu.com/u/a7149e4933fb&quot;&gt;简书&lt;/a&gt;…&lt;/p&gt;
 &lt;h1 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot; title=&quot;基础知识&quot;&gt;&lt;/a&gt;基础知识&lt;/h1&gt;&lt;h2 id=&quot;Android-进程优先级&quot;&gt;&lt;a href=&quot;#Android-进程优先级&quot; class=&quot;headerlink&quot; title=&quot;Android 进程优先级&quot;&gt;&lt;/a&gt;Android 进程优先级&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1 进程优先级等级一般分法&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Activte process&lt;/li&gt;
@@ -1821,9 +1833,10 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2016/05/05/AR_VR/%E4%B8%80%E9%81%93Android%20OpenGL%E7%AC%94%E8%AF%95%E9%A2%98/"/>
     <id>http://skyseraph.com/2016/05/05/AR_VR/一道Android OpenGL笔试题/</id>
     <published>2016-05-05T01:40:20.000Z</published>
-    <updated>2017-12-17T01:47:07.499Z</updated>
+    <updated>2018-03-05T13:47:38.398Z</updated>
     
     <content type="html"><![CDATA[<hr>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><ul>
 <li>设计一个Android平台的Gallery组件，要求Gallery中每个item内的图片显示达成有效显示的最大精度，并保证Gallery在滚屏时能够全60FPS帧率地及时显示出加载的图片。请详细说明实现架构、关键技术点及APIs。</li>
 <li>约束条件：GPU空间传输通道带宽较小，对于400*400pixel尺寸的图像而言，一次传输耗时超过30ms。</li>
@@ -1893,6 +1906,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
+&lt;p&gt;文章作者：&lt;a href=&quot;https://about.me/skyseraph&quot;&gt;SkySeraph&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;http://skyseraph.com/&quot;&gt;skyseraph.com&lt;/a&gt; | &lt;a href=&quot;https://github.com/skyseraph&quot;&gt;GitHub&lt;/a&gt; | &lt;a href=&quot;http://www.cnblogs.com/skyseraph/&quot;&gt;cnBlogs&lt;/a&gt; | &lt;a href=&quot;https://www.jianshu.com/u/a7149e4933fb&quot;&gt;简书&lt;/a&gt;…&lt;/p&gt;
 &lt;h1 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;设计一个Android平台的Gallery组件，要求Gallery中每个item内的图片显示达成有效显示的最大精度，并保证Gallery在滚屏时能够全60FPS帧率地及时显示出加载的图片。请详细说明实现架构、关键技术点及APIs。&lt;/li&gt;
 &lt;li&gt;约束条件：GPU空间传输通道带宽较小，对于400*400pixel尺寸的图像而言，一次传输耗时超过30ms。&lt;/li&gt;
@@ -1919,16 +1933,16 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2015/11/01/SkySeraph/Tech/ITBywork/"/>
     <id>http://skyseraph.com/2015/11/01/SkySeraph/Tech/ITBywork/</id>
     <published>2015-10-31T16:23:23.000Z</published>
-    <updated>2018-03-05T13:37:41.928Z</updated>
+    <updated>2018-03-05T13:45:28.272Z</updated>
     
     <content type="html"><![CDATA[<hr>
-<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><ul>
 <li>挣钱，左边是手，意味着你需要用双手去辛苦劳动获取报酬；</li>
 <li>赚钱，左边是贝，意味着你可以通过钱再生钱。</li>
 <li>本文先为大家推荐一些个人见过或实践过的技术挣钱方式。</li>
 </ul>
 <a id="more"></a>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <hr>
 <h1 id="兼职"><a href="#兼职" class="headerlink" title="兼职"></a>兼职</h1><ul>
 <li>线上(海外)。<a href="http://freelancer.com" target="_blank" rel="external">freelancer</a>，<a href="http://odesk.com" target="_blank" rel="external">odesk</a>，<a href="http://elance.com" target="_blank" rel="external">elance</a>等。</li>
@@ -1989,7 +2003,6 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
-&lt;p&gt;文章作者：&lt;a href=&quot;https://about.me/skyseraph&quot;&gt;SkySeraph&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;http://skyseraph.com/&quot;&gt;skyseraph.com&lt;/a&gt; | &lt;a href=&quot;https://github.com/skyseraph&quot;&gt;GitHub&lt;/a&gt; | &lt;a href=&quot;http://www.cnblogs.com/skyseraph/&quot;&gt;cnBlogs&lt;/a&gt; | &lt;a href=&quot;https://www.jianshu.com/u/a7149e4933fb&quot;&gt;简书&lt;/a&gt;…&lt;/p&gt;
 &lt;h1 id=&quot;Overview&quot;&gt;&lt;a href=&quot;#Overview&quot; class=&quot;headerlink&quot; title=&quot;Overview&quot;&gt;&lt;/a&gt;Overview&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;挣钱，左边是手，意味着你需要用双手去辛苦劳动获取报酬；&lt;/li&gt;
 &lt;li&gt;赚钱，左边是贝，意味着你可以通过钱再生钱。&lt;/li&gt;
@@ -2016,10 +2029,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2014/08/08/Tools/ITLifeCmds/"/>
     <id>http://skyseraph.com/2014/08/08/Tools/ITLifeCmds/</id>
     <published>2014-08-07T16:40:20.000Z</published>
-    <updated>2018-02-24T13:42:32.269Z</updated>
+    <updated>2018-03-05T13:48:22.725Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <a id="more"></a>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <p><a href="https://github.com/skyseraph/Soft-Tools" target="_blank" rel="external"><strong>Star Here ~~</strong></a>. </p>
 <p><a href="https://github.com/skyseraph/Soft-Tools" target="_blank" rel="external">Soft-Tools</a> 完整目录如下（持续更新，欢迎补充~）：</p>
 <p><strong>命令类</strong></p>
@@ -2195,9 +2209,10 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2014/08/06/Tools/IT%E7%94%9F%E6%B6%AF%EF%BC%8C%E6%88%91%E7%9A%84%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%95/"/>
     <id>http://skyseraph.com/2014/08/06/Tools/IT生涯，我的常用软件清单/</id>
     <published>2014-08-05T16:40:20.000Z</published>
-    <updated>2018-02-24T13:42:26.088Z</updated>
+    <updated>2018-03-05T13:48:18.668Z</updated>
     
     <content type="html"><![CDATA[<hr>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <ul>
 <li>满纸荒唐言 一把辛酸泪 ~~</li>
 </ul>
@@ -2792,6 +2807,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <summary type="html">
     
       &lt;hr&gt;
+&lt;p&gt;文章作者：&lt;a href=&quot;https://about.me/skyseraph&quot;&gt;SkySeraph&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;http://skyseraph.com/&quot;&gt;skyseraph.com&lt;/a&gt; | &lt;a href=&quot;https://github.com/skyseraph&quot;&gt;GitHub&lt;/a&gt; | &lt;a href=&quot;http://www.cnblogs.com/skyseraph/&quot;&gt;cnBlogs&lt;/a&gt; | &lt;a href=&quot;https://www.jianshu.com/u/a7149e4933fb&quot;&gt;简书&lt;/a&gt;…&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;满纸荒唐言 一把辛酸泪 ~~&lt;/li&gt;
 &lt;/ul&gt;
@@ -2816,10 +2832,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2014/07/24/CV/%E6%89%8B%E6%8E%8C%E6%89%8B%E6%8C%87%E5%88%86%E5%89%B2%E7%AE%97%E6%B3%95/"/>
     <id>http://skyseraph.com/2014/07/24/CV/手掌手指分割算法/</id>
     <published>2014-07-24T15:40:20.000Z</published>
-    <updated>2017-12-17T02:08:34.065Z</updated>
+    <updated>2018-03-05T13:47:06.677Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <a id="more"></a>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <h1 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h1><p>开发环境</p>
 <ul>
 <li>64 bits Windows OS (Win8.1)  </li>
@@ -2887,11 +2904,12 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2014/03/14/NFC/%E3%80%8AAndroid%20NFC%20%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3%20%E3%80%8B/"/>
     <id>http://skyseraph.com/2014/03/14/NFC/《Android NFC 开发实战详解 》/</id>
     <published>2014-03-14T15:23:23.000Z</published>
-    <updated>2018-01-23T14:37:24.593Z</updated>
+    <updated>2018-03-05T13:48:35.574Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>  哇哈..,历时一年多，一哥的第一本书终于要出版了 (原本应该今年年初出版的,跟马航一样, 莫名其妙就拖到了现在 , 据出版社最新消息, 预计三月中下旬正式出版,敬请期待), 封面如下, 感谢人民邮电的张涛老师为本书的付出,……<br>这本书的写作大概是从去年的3月左右开始的, 全书分为三大块,分别为基础篇,应用篇和实例篇(具体见下述MENU)…  </p>
 <a id="more"></a>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <hr>
 <h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2014/200849150572095.png" alt=""></p>
 <hr>
@@ -3378,11 +3396,12 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2013/11/30/SkySeraph/Life/%E5%86%99%E5%9C%A8%E5%B9%B4%E6%9C%AB,%20%E6%88%91%E7%9A%842013/"/>
     <id>http://skyseraph.com/2013/11/30/SkySeraph/Life/写在年末, 我的2013/</id>
     <published>2013-11-30T15:23:23.000Z</published>
-    <updated>2017-12-17T01:48:05.840Z</updated>
+    <updated>2018-03-05T13:49:05.113Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h1><p>好久没写博客了, 遗忘的历史,遗忘了自我… 岁月拾回,几度轮回…<br>2013，奇妙的一年，糊涂的一年，说不清，理更乱… 从雄心壮志，斗志昂扬，到忙得一塌糊涂，到习惯麻木，而年末却极其清闲无聊，完全找不着自我，以至于能够静下心来好好回顾一年，好好规划即将开始之路…<br>我的2013,这样走过…</p>
 <a id="more"></a>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <h1 id="身心"><a href="#身心" class="headerlink" title="身心"></a>身心</h1><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2013/30190643-9fb0a9bfb214425688fb692f9a75c7ad.png" alt=""></p>
 <h1 id="事业"><a href="#事业" class="headerlink" title="事业"></a>事业</h1><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2013/30190652-d053219048304114a7c3c2bba5000592.png" alt=""></p>
 <h1 id="能力-个人提升"><a href="#能力-个人提升" class="headerlink" title="能力/个人提升"></a>能力/个人提升</h1><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2013/30190701-2407c16d375a4ebaa309816792f11eda.png" alt=""></p>
@@ -3428,11 +3447,12 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2012/05/04/CV/%E7%BB%87%E7%89%A9%E7%96%B5%E7%82%B9%E6%A3%80%E6%B5%8B%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E7%B3%BB%E7%BB%9F%20%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0/"/>
     <id>http://skyseraph.com/2012/05/04/CV/织物疵点检测机器视觉系统 软件测试平台/</id>
     <published>2012-05-03T16:23:20.000Z</published>
-    <updated>2017-12-17T02:05:10.816Z</updated>
+    <updated>2018-03-05T13:47:27.746Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h2 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h2><p>　　之前针对个人研究的不同算法开发过三个检测平台（<a href="http://www.cnblogs.com/skyseraph/archive/2011/03/24/1993438.html" target="_blank" rel="external">平台一</a> 和 <a href="http://www.cnblogs.com/skyseraph/archive/2011/07/21/2113211.html" target="_blank" rel="external">平台二</a> ），此平台为最后的综合平台，实现织物疵点检测和分类，实现了织物图像的批量化处理，实现了数据库存储疵点信息和用户管理，同时具备自动化测试的同时还可以进行单步算法调试。</p>
 <a id="more"></a>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>开发工具采用VS2010+OpenCV，开发语言为CPP。<br><a href="http://www.cnblogs.com/skyseraph/archive/2010/10/28/1863974.html" target="_blank" rel="external">OpenCV环境搭建</a>  </p>
 <h2 id="功能详述"><a href="#功能详述" class="headerlink" title="功能详述"></a>功能详述</h2><h3 id="1-软件架构"><a href="#1-软件架构" class="headerlink" title="1 软件架构"></a>1 软件架构</h3><p>　　该平台主要包括系统登录模块、图像采集模块、图像预处理模块、织物疵点检测模块、织物疵点分类模块、疵点信息管理模块、用户管理模块以及系统设置模块，检测算法为自主研究，分类算法采用BPNN，软件架构如下图所示<br><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/2012050119365916.png" alt=""></p>
 <h3 id="2-核心功能"><a href="#2-核心功能" class="headerlink" title="2 核心功能"></a>2 核心功能</h3><p>　　该平台核心功能包括：织物疵点检测和分类，疵点信息存储和查询，用户管理等。</p>
@@ -3488,7 +3508,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2012/04/11/Media/%E6%B5%81%E5%AA%92%E4%BD%93%E4%B8%93%E9%A2%98/"/>
     <id>http://skyseraph.com/2012/04/11/Media/流媒体专题/</id>
     <published>2012-04-10T16:30:20.000Z</published>
-    <updated>2017-12-17T01:56:09.488Z</updated>
+    <updated>2018-03-05T13:48:42.877Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h2 id="系列"><a href="#系列" class="headerlink" title="系列"></a>系列</h2><p><a href="http://www.cnblogs.com/skyseraph/archive/2012/03/23/2415018.html" target="_blank" rel="external">【流媒體】Android 实时视频采集/编码/传输/解码/播放—方案调研（初）</a></p>
@@ -3499,6 +3519,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 <p><a href="http://www.cnblogs.com/skyseraph/archive/2012/04/07/2435540.html" target="_blank" rel="external">【流媒體】jrtplib—VS2010 下RTP开源协议库JRTPLIB3.9.1编译</a></p>
 <p><a href="http://www.cnblogs.com/skyseraph/archive/2012/04/11/2442840.html" target="_blank" rel="external">【流媒體】live555—VS2010/VS2013 下live555编译、使用及测试</a></p>
 <a id="more"></a>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <hr>
 <font size="2"><br>By SkySeraph-2012<br><a href="http://www.cnblogs.com/skyseraph/category/358761.html" target="_blank" rel="external">SkySeraph cnBlogs</a><br></font>   
 
