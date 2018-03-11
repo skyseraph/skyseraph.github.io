@@ -213,11 +213,11 @@
   </entry>
   
   <entry>
-    <title>你不可不知的一些理财坏习惯</title>
+    <title>【程序人生】你不可不知的一些理财坏习惯</title>
     <link href="http://skyseraph.com/2018/01/05/SkySeraph/Wealth/BadFinancialHabits/"/>
     <id>http://skyseraph.com/2018/01/05/SkySeraph/Wealth/BadFinancialHabits/</id>
     <published>2018-01-04T16:40:20.000Z</published>
-    <updated>2018-03-05T14:42:50.548Z</updated>
+    <updated>2018-03-08T13:13:26.358Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <p><a href="http://skyseraph.com/2018/01/05/SkySeraph/Wealth/BadFinancialHabits/">你不可不知的一些理财坏习惯</a><br><a id="more"></a></p>
@@ -2029,15 +2029,14 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2014/08/08/Tools/ITLifeCmds/"/>
     <id>http://skyseraph.com/2014/08/08/Tools/ITLifeCmds/</id>
     <published>2014-08-07T16:40:20.000Z</published>
-    <updated>2018-03-05T13:48:22.725Z</updated>
+    <updated>2018-03-11T01:25:57.452Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <a id="more"></a>
 <p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <p><a href="https://github.com/skyseraph/Soft-Tools" target="_blank" rel="external"><strong>Star Here ~~</strong></a>. </p>
 <p><a href="https://github.com/skyseraph/Soft-Tools" target="_blank" rel="external">Soft-Tools</a> 完整目录如下（持续更新，欢迎补充~）：</p>
-<p><strong>命令类</strong></p>
-<table>
+<h1 id="Menu"><a href="#Menu" class="headerlink" title="Menu"></a><strong>Menu</strong></h1><table>
 <thead>
 <tr>
 <th>Menu</th>
@@ -2071,107 +2070,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 </tr>
 </tbody>
 </table>
-<h1 id="adb-命令"><a href="#adb-命令" class="headerlink" title="adb 命令"></a>adb 命令</h1><blockquote>
-<p>汇总</p>
-</blockquote>
-<ul>
-<li><p>adb <strong>kill-server</strong></p>
-</li>
-<li><p>adb <strong>devices</strong>  </p>
-</li>
-<li><p>adb <strong>install</strong> [-l] [-r] [-s] <file><br>  -l 表示锁定该程序;<br>  -r 表示替换原有的apk安装;<br>  -s 表示安装在SD卡内，而不是设备内部存储</file></p>
-</li>
-<li><p>adb <strong>uninstall</strong> [-k] <package><br>  -k 表示不删除程序运行所产生的数据和缓存目录(如软件的数据库文件)</package></p>
-</li>
-<li><p>adb shell pm clear  <package><br>清除应用缓存</package></p>
-</li>
-<li><p>taskkill /f /im adb*  </p>
-</li>
-<li><p>adb shell getprop ro.build.version.release  版本</p>
-</li>
-<li><p>adb shell + cat /system/build.prop  查看手机配置信息</p>
-</li>
-<li><p>adb shell getprop dalvik.vm.heapsize  </p>
-</li>
-</ul>
-<blockquote>
-<p><strong>获取进程号</strong>    </p>
-</blockquote>
-<ul>
-<li>adb shell  </li>
-<li>ps | grep 进程名  </li>
-<li>cat /proc/pid/oom_adj  //其中<strong>pid</strong>是上述grep得到的进程号     </li>
-</ul>
-<blockquote>
-<p><strong>查看包名相关</strong>    </p>
-</blockquote>
-<ul>
-<li><p>adb shell pm list package [-f]  获取手机内所有包名<br>  -f 包名+路径    </p>
-</li>
-<li><p><strong>adb shell dumpsys window w | findstr \/ | findstr name=</strong><br>查看包名   </p>
-</li>
-<li><p>adb shell dumpsys activity&gt; d:\log.txt<br>导出包名（log中搜索 Stack #1，然后寻找cmp=）   </p>
-</li>
-<li><p>adb shell + logcat | grep START   </p>
-</li>
-</ul>
-<h2 id="APK操作"><a href="#APK操作" class="headerlink" title="APK操作"></a>APK操作</h2><ul>
-<li><p>apktool d x.apk</p>
-</li>
-<li><p>apktool b x</p>
-</li>
-<li><p>apkReSign.jar</p>
-</li>
-</ul>
-<h1 id="git-命令"><a href="#git-命令" class="headerlink" title="git 命令"></a>git 命令</h1><blockquote>
-<p>汇总   </p>
-</blockquote>
-<ul>
-<li><p>git log  历史记录</p>
-</li>
-<li><p>git status  </p>
-</li>
-<li><p>git clean -df      </p>
-</li>
-<li><p>git branch -vv  </p>
-</li>
-</ul>
-<blockquote>
-<p><strong>Git配置相关</strong>    </p>
-</blockquote>
-<ul>
-<li><p>git config -l<br>查看Git当前配置信息</p>
-</li>
-<li><p>配置<br>git config –global user.email “you@email.com”<br>git config –global user.name “Your Name”<br>git config –global core.editor “nano”<br>git config –global color.ui true    </p>
-</li>
-</ul>
-<blockquote>
-<p><strong>删除远程分支A</strong>    </p>
-</blockquote>
-<ul>
-<li><p>git push origin –delete A    </p>
-</li>
-<li><p>git push origin :A    </p>
-</li>
-</ul>
-<blockquote>
-<p><strong>回退</strong>    </p>
-</blockquote>
-<ul>
-<li>远程服务器支持SSH前提下    </li>
-</ul>
-<p>git reset –mixed   // 此为默认方式，不带任何参数的git reset，就是这种方式，它回退到某个版本，只保留源码，回退commit和stage信息</p>
-<p>git reset –soft    // 回退到某个版本，只回退了commit的信息，不会恢复stage（如果还要提交，直接commit即可)</p>
-<p>git reset –hard    // 彻底回退到某个版本， 本地的源码也会变为上一个版本的内容</p>
-<ul>
-<li>远程服务器不支持SSH    </li>
-</ul>
-<p>git branch old_master  //新建old_master分支 作为备份，以防万一</p>
-<p>git push origin old_master:old_master //将本地的old_master分支　推送到远程的old_master</p>
-<p>git reset –hard //本地仓库　彻底回退到某一个版本</p>
-<p>git push origin :master // 删除远程的master分支</p>
-<p>git push origin master //重新创建远程master分支</p>
-<h1 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h1><h1 id="批处理-命令"><a href="#批处理-命令" class="headerlink" title="批处理 命令"></a>批处理 命令</h1><p><strong>Update time </strong>   </p>
+<p><strong>Update time </strong>   </p>
 <p>08/08/2014 Create this page      </p>
 <hr>
 <font size="2"><br>By SkySeraph-2014<br></font>   
