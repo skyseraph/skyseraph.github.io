@@ -1256,204 +1256,6 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
   </entry>
   
   <entry>
-    <title>Markdown碎碎念</title>
-    <link href="http://skyseraph.com/2016/10/01/Tools/Markdown/"/>
-    <id>http://skyseraph.com/2016/10/01/Tools/Markdown/</id>
-    <published>2016-09-30T17:00:00.000Z</published>
-    <updated>2018-04-05T03:51:18.939Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="">Markdown碎碎念  </a><br><a id="more"></a></p>
-<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><ul>
-<li>Markdown是一种轻量级标记语言，它以纯文本形式(易读、易写、易更改)编写文档，并最终以HTML格式发布。</li>
-</ul>
-<h1 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><ul>
-<li>使用#数量，可表示1-6级标题</li>
-</ul>
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
-<li>使用[TOC]标记来插入目录</li>
-</ul>
-<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><ul>
-<li>使用<em>** 或者 — 或者 ___ 或者 </em> <em> </em></li>
-</ul>
-<h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><ul>
-<li>行末尾加两个空格  </li>
-</ul>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><ul>
-<li>使用&gt;表示一级引用，&gt;&gt;表示二级引用，&gt;&gt;&gt;表示三级引用。<blockquote>
-<p>一级引用 </p>
-<blockquote>
-<p>二级引用 </p>
-<blockquote>
-<p>三级引用</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><ul>
-<li>使用-、+或*作为标记。</li>
-</ul>
-<h3 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h3><ul>
-<li>使用**加粗文本** 或者 __加粗文本__。 <ul>
-<li><strong>加粗文本</strong> 或者 <strong>加粗文本</strong>  </li>
-</ul>
-</li>
-<li>使用*斜体文本*  或者 _斜体文本_ <ul>
-<li><em>斜体文本</em>  或者 <em>斜体文本</em> </li>
-</ul>
-</li>
-</ul>
-<h3 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h3><ul>
-<li>图片：使用 “![图片文本(可忽略)](图片地址)” 表示  </li>
-<li>链接：使用“![链接文本](链接地址) ” 表示   <pre><code>- 行内链接：[SkySeraph&apos;s Blog](http://skyseraph.com)  
-- 参考链接：\[SkySeraph&apos;s Blog]\[url]，其中url为链接标记，可置于文中任意位置，效果[SkySeraph&apos;s Blog][url]。   
-- 自动链接：直接使用`&lt;&gt;`括起来&lt;http://skyseraph.com&gt;  
-</code></pre></li>
-</ul>
-<h3 id="脚注-注解"><a href="#脚注-注解" class="headerlink" title="脚注(注解)"></a>脚注(注解)</h3><ul>
-<li>使用[^]来定义脚注    <ul>
-<li>这是一个脚注的例子<a href="这里是脚注">^1</a>    </li>
-</ul>
-</li>
-</ul>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="语言">
-// 注意语言前面有空格
-这里是代码
-</code></pre>
-<p>From <a href="http://skyseraph.com/">skyseraph.com</a></p>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><table>
-<thead>
-<tr>
-<th style="text-align:left">标题</th>
-<th style="text-align:center">标题</th>
-<th style="text-align:right">标题</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">居左测试文本</td>
-<td style="text-align:center">居中测试文本</td>
-<td style="text-align:right">居右测试文本</td>
-</tr>
-<tr>
-<td style="text-align:left">居左测试文本1</td>
-<td style="text-align:center">居中测试文本2</td>
-<td style="text-align:right">居右测试文本3</td>
-</tr>
-<tr>
-<td style="text-align:left">居左测试文本11</td>
-<td style="text-align:center">居中测试文本22</td>
-<td style="text-align:right">居右测试文本33</td>
-</tr>
-<tr>
-<td style="text-align:left">居左测试文本111</td>
-<td style="text-align:center">居中测试文本222</td>
-<td style="text-align:right">居右测试文本333</td>
-</tr>
-</tbody>
-</table>
-<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><h3 id="Html标签设置字体-下划线-对齐"><a href="#Html标签设置字体-下划线-对齐" class="headerlink" title="Html标签设置字体/下划线/对齐"></a>Html标签设置字体/下划线/对齐</h3><ul>
-<li>字体</li>
-</ul>
-<p>\<font face="微软雅黑" color="red" size="4">字体及字体颜色和大小\</font><br>效果: <font face="微软雅黑" color="red" size="4">字体及字体颜色和大小</font>  </p>
-<p>\<font color="#0000ff">字体颜色\</font><br>效果: <font color="#0000ff">字体颜色</font></p>
-<ul>
-<li>换行</li>
-</ul>
-<p>使用html标签\<br>`<br>换行</p>
-<ul>
-<li>文本对齐</li>
-</ul>
-<p>\</p><p align="left">居左文本\</p><br>\<p align="center">居中文本\</p><br>\<p align="right">居右文本\</p><br>效果:<p></p>
-<p align="left">居左文本</p><br><p align="center">居中文本</p><br><p align="right">居右文本</p>
-
-<ul>
-<li>下划线</li>
-</ul>
-<p>\<u>下划线文本\</u><br>效果: <u>下划线文本</u></p>
-<ul>
-<li>综合</li>
-<li>\<span style="border-bottom:2px solid red;">所添加的需要加下划线的行内文字\</span><br>效果:<span style="border-bottom:2px solid red;">所添加的需要加下划线的行内文字</span>    </li>
-</ul>
-<p>\<span>This is a \<del>delete line!\</del>\</span><br>效果: <span>This is a <del>delete line!</del></span>   </p>
-<h2 id="行首缩进"><a href="#行首缩进" class="headerlink" title="行首缩进"></a>行首缩进</h2><p>&emsp;&emsp;新的一天，哈哈哈哈。   </p>
-<ul>
-<li>&ensp; 代表半角空格，&emsp; 代表全角空格   </li>
-</ul>
-<p>From <a href="http://skyseraph.com/">skyseraph.com</a></p>
-<h2 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h2><p><strong>清单</strong></p>
-<ul>
-<li>[ ] A</li>
-<li>[x] B</li>
-<li>[ ] C</li>
-<li>[x] D</li>
-<li>[ ] E</li>
-</ul>
-<h2 id="Emoji"><a href="#Emoji" class="headerlink" title="Emoji"></a>Emoji</h2><ul>
-<li><p>Hello， :smile:</p>
-</li>
-<li><p><a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/" target="_blank" rel="external">更多参考</a> </p>
-</li>
-</ul>
-<h2 id="图片大小和位置控制"><a href="#图片大小和位置控制" class="headerlink" title="图片大小和位置控制"></a>图片大小和位置控制</h2><p>图片居中可以使用 \<div> 标签加 align 属性来控制，图片宽高则用 width 和 height 来控制。</div></p>
-<p><strong>图片默认显示效果：</strong></p>
-<p><img src="https://raw.githubusercontent.com/mzlogin/mzlogin.github.io/master/images/posts/markdown/demo.png" alt=""></p>
-<p>\<div align="center">\<img width="65" height="75" src="https://raw.githubusercontent.com/mzlogin/mzlogin.github.io/master/images/posts/markdown/demo.png">\</div></p>
-<p><strong>加以控制后的效果：</strong></p>
-<div align="center"><img width="65" height="75" src="https://raw.githubusercontent.com/mzlogin/mzlogin.github.io/master/images/posts/markdown/demo.png"></div>
-
-
-<h2 id="图文混排"><a href="#图文混排" class="headerlink" title="图文混排"></a>图文混排</h2><p>使用 \<img> 标签来贴图，然后指定 align 属性。</p>
-<p><img align="right" src="https://raw.githubusercontent.com/mzlogin/mzlogin.github.io/master/images/posts/markdown/demo.png"></p>
-<p>这是一个示例图片。</p>
-<p>图片显示在 N 段文字的右边。</p>
-<p>N 与图片高度有关。</p>
-<p>刷屏行。</p>
-<p>刷屏行。</p>
-<p>到这里应该不会受影响了，本行应该延伸到了图片的正下方，所以我要足够长才能确保不同的屏幕下都看到效果。</p>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h3><ul>
-<li><a href="https://www.typora.io" target="_blank" rel="external">Typora</a></li>
-<li><a href="http://www.markdownpad.com" target="_blank" rel="external">MarkdownPad2</a></li>
-</ul>
-<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><p>From <a href="http://skyseraph.com/">skyseraph.com</a></p>
-<h1 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h1><ul>
-<li><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Hexo.md" target="_blank" rel="external">Hexo实用</a></li>
-<li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" rel="external">Markdown Cheatsheet</a></li>
-</ul>
-<p>From <a href="http://skyseraph.com/">skyseraph.com</a></p>
-<p><strong>Update time </strong>   </p>
-<p>10/01/2016 Create this page      </p>
-<hr>
-<font size="2"><br>By SkySeraph-2016<br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2016/10/01/Tools/Markdown/">http://skyseraph.com/2016/10/01/Tools/Markdown/</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;&quot;&gt;Markdown碎碎念  &lt;/a&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Tech" scheme="http://skyseraph.com/categories/Tech/"/>
-    
-      <category term="Tools" scheme="http://skyseraph.com/categories/Tech/Tools/"/>
-    
-    
-      <category term="Hexo" scheme="http://skyseraph.com/tags/Hexo/"/>
-    
-      <category term="Markdown" scheme="http://skyseraph.com/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Jenkins Gitlab持续集成打包平台搭建</title>
     <link href="http://skyseraph.com/2016/07/18/Tools/Jenkins%20Gitlab%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E6%89%93%E5%8C%85%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/"/>
     <id>http://skyseraph.com/2016/07/18/Tools/Jenkins Gitlab持续集成打包平台搭建/</id>
@@ -2216,9 +2018,206 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
     
+      <category term="Bywork" scheme="http://skyseraph.com/tags/Bywork/"/>
+    
       <category term="Wealth" scheme="http://skyseraph.com/tags/Wealth/"/>
     
-      <category term="Bywork" scheme="http://skyseraph.com/tags/Bywork/"/>
+  </entry>
+  
+  <entry>
+    <title>Markdown碎碎念</title>
+    <link href="http://skyseraph.com/2015/10/01/Tools/Markdown/"/>
+    <id>http://skyseraph.com/2015/10/01/Tools/Markdown/</id>
+    <published>2015-09-30T17:00:00.000Z</published>
+    <updated>2018-04-05T03:55:58.638Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="">Markdown碎碎念  </a><br><a id="more"></a></p>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><ul>
+<li>Markdown是一种轻量级标记语言，它以纯文本形式(易读、易写、易更改)编写文档，并最终以HTML格式发布。</li>
+</ul>
+<h1 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><ul>
+<li>使用#数量，可表示1-6级标题</li>
+</ul>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li>使用[TOC]标记来插入目录</li>
+</ul>
+<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><ul>
+<li>使用<em>** 或者 — 或者 ___ 或者 </em> <em> </em></li>
+</ul>
+<h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><ul>
+<li>行末尾加两个空格  </li>
+</ul>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><ul>
+<li>使用&gt;表示一级引用，&gt;&gt;表示二级引用，&gt;&gt;&gt;表示三级引用。<blockquote>
+<p>一级引用 </p>
+<blockquote>
+<p>二级引用 </p>
+<blockquote>
+<p>三级引用</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><ul>
+<li>使用-、+或*作为标记。</li>
+</ul>
+<h3 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h3><ul>
+<li>使用**加粗文本** 或者 __加粗文本__。 <ul>
+<li><strong>加粗文本</strong> 或者 <strong>加粗文本</strong>  </li>
+</ul>
+</li>
+<li>使用*斜体文本*  或者 _斜体文本_ <ul>
+<li><em>斜体文本</em>  或者 <em>斜体文本</em> </li>
+</ul>
+</li>
+</ul>
+<h3 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h3><ul>
+<li>图片：使用 “![图片文本(可忽略)](图片地址)” 表示  </li>
+<li>链接：使用“![链接文本](链接地址) ” 表示   <pre><code>- 行内链接：[SkySeraph&apos;s Blog](http://skyseraph.com)  
+- 参考链接：\[SkySeraph&apos;s Blog]\[url]，其中url为链接标记，可置于文中任意位置，效果[SkySeraph&apos;s Blog][url]。   
+- 自动链接：直接使用`&lt;&gt;`括起来&lt;http://skyseraph.com&gt;  
+</code></pre></li>
+</ul>
+<h3 id="脚注-注解"><a href="#脚注-注解" class="headerlink" title="脚注(注解)"></a>脚注(注解)</h3><ul>
+<li>使用[^]来定义脚注    <ul>
+<li>这是一个脚注的例子<a href="这里是脚注">^1</a>    </li>
+</ul>
+</li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="语言">
+// 注意语言前面有空格
+这里是代码
+</code></pre>
+<p>From <a href="http://skyseraph.com/">skyseraph.com</a></p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">标题</th>
+<th style="text-align:center">标题</th>
+<th style="text-align:right">标题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">居左测试文本</td>
+<td style="text-align:center">居中测试文本</td>
+<td style="text-align:right">居右测试文本</td>
+</tr>
+<tr>
+<td style="text-align:left">居左测试文本1</td>
+<td style="text-align:center">居中测试文本2</td>
+<td style="text-align:right">居右测试文本3</td>
+</tr>
+<tr>
+<td style="text-align:left">居左测试文本11</td>
+<td style="text-align:center">居中测试文本22</td>
+<td style="text-align:right">居右测试文本33</td>
+</tr>
+<tr>
+<td style="text-align:left">居左测试文本111</td>
+<td style="text-align:center">居中测试文本222</td>
+<td style="text-align:right">居右测试文本333</td>
+</tr>
+</tbody>
+</table>
+<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><h3 id="Html标签设置字体-下划线-对齐"><a href="#Html标签设置字体-下划线-对齐" class="headerlink" title="Html标签设置字体/下划线/对齐"></a>Html标签设置字体/下划线/对齐</h3><ul>
+<li>字体</li>
+</ul>
+<p>\<font face="微软雅黑" color="red" size="4">字体及字体颜色和大小\</font><br>效果: <font face="微软雅黑" color="red" size="4">字体及字体颜色和大小</font>  </p>
+<p>\<font color="#0000ff">字体颜色\</font><br>效果: <font color="#0000ff">字体颜色</font></p>
+<ul>
+<li>换行</li>
+</ul>
+<p>使用html标签\<br>`<br>换行</p>
+<ul>
+<li>文本对齐</li>
+</ul>
+<p>\</p><p align="left">居左文本\</p><br>\<p align="center">居中文本\</p><br>\<p align="right">居右文本\</p><br>效果:<p></p>
+<p align="left">居左文本</p><br><p align="center">居中文本</p><br><p align="right">居右文本</p>
+
+<ul>
+<li>下划线</li>
+</ul>
+<p>\<u>下划线文本\</u><br>效果: <u>下划线文本</u></p>
+<ul>
+<li>综合</li>
+<li>\<span style="border-bottom:2px solid red;">所添加的需要加下划线的行内文字\</span><br>效果:<span style="border-bottom:2px solid red;">所添加的需要加下划线的行内文字</span>    </li>
+</ul>
+<p>\<span>This is a \<del>delete line!\</del>\</span><br>效果: <span>This is a <del>delete line!</del></span>   </p>
+<h3 id="行首缩进"><a href="#行首缩进" class="headerlink" title="行首缩进"></a>行首缩进</h3><p>&emsp;&emsp;新的一天，哈哈哈哈。   </p>
+<ul>
+<li>&ensp; 代表半角空格，&emsp; 代表全角空格   </li>
+</ul>
+<p>From <a href="http://skyseraph.com/">skyseraph.com</a></p>
+<h3 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h3><p><strong>清单</strong></p>
+<ul>
+<li>[ ] A</li>
+<li>[x] B</li>
+<li>[ ] C</li>
+<li>[x] D</li>
+<li>[ ] E</li>
+</ul>
+<h3 id="Emoji"><a href="#Emoji" class="headerlink" title="Emoji"></a>Emoji</h3><ul>
+<li><p>Hello， :smile:</p>
+</li>
+<li><p><a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/" target="_blank" rel="external">更多参考</a> </p>
+</li>
+</ul>
+<h3 id="图片大小和位置控制"><a href="#图片大小和位置控制" class="headerlink" title="图片大小和位置控制"></a>图片大小和位置控制</h3><p>图片居中可以使用 \<div> 标签加 align 属性来控制，图片宽高则用 width 和 height 来控制。</div></p>
+<p><strong>图片默认显示效果：</strong></p>
+<p><img src="https://raw.githubusercontent.com/mzlogin/mzlogin.github.io/master/images/posts/markdown/demo.png" alt=""></p>
+<p><strong>加以控制后的效果：</strong></p>
+<div align="center"><img width="65" height="75" src="https://raw.githubusercontent.com/mzlogin/mzlogin.github.io/master/images/posts/markdown/demo.png"></div>
+
+
+<h3 id="图文混排"><a href="#图文混排" class="headerlink" title="图文混排"></a>图文混排</h3><p>使用 \<img> 标签来贴图，然后指定 align 属性。</p>
+<p><img align="right" src="https://raw.githubusercontent.com/mzlogin/mzlogin.github.io/master/images/posts/markdown/demo.png"></p>
+<p>这是一个示例图片。</p>
+<p>图片显示在 N 段文字的右边。</p>
+<p>N 与图片高度有关。</p>
+<p>刷屏行。</p>
+<p>刷屏行。</p>
+<p>到这里应该不会受影响了，本行应该延伸到了图片的正下方，所以我要足够长才能确保不同的屏幕下都看到效果。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h3><ul>
+<li><a href="https://www.typora.io" target="_blank" rel="external">Typora</a></li>
+<li><a href="http://www.markdownpad.com" target="_blank" rel="external">MarkdownPad2</a></li>
+</ul>
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><p>From <a href="http://skyseraph.com/">skyseraph.com</a></p>
+<h1 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h1><ul>
+<li><a href="https://github.com/skyseraph/Soft-Tools/blob/master/docs/Hexo.md" target="_blank" rel="external">Hexo实用</a></li>
+<li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" rel="external">Markdown Cheatsheet</a></li>
+</ul>
+<p>From <a href="http://skyseraph.com/">skyseraph.com</a></p>
+<p><strong>Update time </strong>   </p>
+<p>10/01/2015 Create this page      </p>
+<hr>
+<font size="2"><br>By SkySeraph-2015<br></font>   
+
+<hr>
+<p><strong><em>版权声明</em></strong></p>
+<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
+
+<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
+<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
+<p>本文永久链接：<a href="http://skyseraph.com/2015/10/01/Tools/Markdown/">http://skyseraph.com/2015/10/01/Tools/Markdown/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;&quot;&gt;Markdown碎碎念  &lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Tech" scheme="http://skyseraph.com/categories/Tech/"/>
+    
+      <category term="Tools" scheme="http://skyseraph.com/categories/Tech/Tools/"/>
+    
+    
+      <category term="Hexo" scheme="http://skyseraph.com/tags/Hexo/"/>
+    
+      <category term="Markdown" scheme="http://skyseraph.com/tags/Markdown/"/>
     
   </entry>
   
