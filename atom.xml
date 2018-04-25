@@ -204,9 +204,9 @@
       <category term="AI" scheme="http://skyseraph.com/categories/Tech/AI/"/>
     
     
-      <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
-    
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
+    
+      <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
     
       <category term="TensorFlow" scheme="http://skyseraph.com/tags/TensorFlow/"/>
     
@@ -695,13 +695,13 @@
       <category term="Tools" scheme="http://skyseraph.com/categories/Tech/Tools/"/>
     
     
-      <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
-    
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
-      <category term="Awesome" scheme="http://skyseraph.com/tags/Awesome/"/>
-    
       <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
+    
+      <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
+    
+      <category term="Awesome" scheme="http://skyseraph.com/tags/Awesome/"/>
     
   </entry>
   
@@ -1180,6 +1180,416 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
     
       <category term="Appuim" scheme="http://skyseraph.com/tags/Appuim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《App架构师实践指南》</title>
+    <link href="http://skyseraph.com/2016/11/15/Android/AppArchitecture/"/>
+    <id>http://skyseraph.com/2016/11/15/Android/AppArchitecture/</id>
+    <published>2016-11-15T15:23:23.000Z</published>
+    <updated>2018-04-25T14:29:25.666Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><ul>
+<li>“终于等到了你，还好没放弃”。这是16年撰写交稿的一本书（本文也是当时的时间），撰写将近10个月，出版社等待一年多，一本书==两次怀胎，真心不容易，终于等到你，还好没放弃。。。     </li>
+<li>App架构师实践指南，一本Android/iOS双端App架构技术实践书籍，偏技术，重实践，讲方法。既包含App开发相关核心技能，又包括App架构师成长路线、团队管理、项目实践、产品思维等综合技能。</li>
+</ul>
+<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
+<a id="more"></a>
+<hr>
+<h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><blockquote>
+<p>封面设计</p>
+</blockquote>
+<p><img src="" alt=""></p>
+<blockquote>
+<p>实物拍照</p>
+</blockquote>
+<p><img src="" width="270" height="360"></p>
+<hr>
+<h2 id="LINK"><a href="#LINK" class="headerlink" title="LINK"></a>LINK</h2><ul>
+<li><p><a href="http://product.china-pub.com/7694287" target="_blank" rel="external">china-pub</a></p>
+</li>
+<li><p><a href="https://www.amazon.cn/dp/B07BSMKM18/" target="_blank" rel="external">Amazon</a></p>
+</li>
+<li><p><a href="https://item.jd.com/12337450.html" target="_blank" rel="external">京东</a></p>
+</li>
+<li><p><a href="http://product.dangdang.com/25253039.html" target="_blank" rel="external">当当</a></p>
+</li>
+</ul>
+<hr>
+<h1 id="MENU"><a href="#MENU" class="headerlink" title="MENU"></a>MENU</h1><h2 id="第一篇-前传（基础篇）"><a href="#第一篇-前传（基础篇）" class="headerlink" title="第一篇 前传（基础篇）"></a>第一篇 前传（基础篇）</h2><ul>
+<li>第1章 App架构师成长路线<ul>
+<li>1.1 架构师，架构士？</li>
+<li>1.2 程序员发展路线    </li>
+<li>1.3 App架构士技能矩阵<ul>
+<li>1.3.1 App架构师画布</li>
+<li>1.3.2 技能图谱</li>
+</ul>
+</li>
+<li>1.4 本章小结</li>
+<li>1.5 推荐资料 </li>
+</ul>
+</li>
+<li>第2章 App基础语法系列<ul>
+<li>2.1 那些年，那些语言  <ul>
+<li>2.1.1 那些年，那些语言 </li>
+<li>2.1.2 聊聊Swift </li>
+<li>2.1.3 Swift 3 &amp; Java 8 新特性  </li>
+</ul>
+</li>
+<li>2.2 面向对象思想<ul>
+<li>2.2.1 编程范式</li>
+<li>2.2.2 封装，继承与多态</li>
+<li>2.2.3 内部类的使用和思考</li>
+</ul>
+</li>
+<li>2.3 线程与进程</li>
+<li>2.4 反射，注解与泛型<ul>
+<li>2.4.1 反射与注解</li>
+<li>2.4.2 泛型</li>
+</ul>
+</li>
+<li>2.5 本章小结</li>
+<li>2.6 推荐资料</li>
+</ul>
+</li>
+<li>第3章 App开发工具系列<ul>
+<li>3.1 IDE<ul>
+<li>3.1.1 Android Studio</li>
+<li>3.1.2 XCode</li>
+</ul>
+</li>
+<li>3.2 编译调试</li>
+<li>3.3 版本管理<ul>
+<li>3.3.1 代码管理</li>
+<li>3.3.2 Git分支管理</li>
+</ul>
+</li>
+<li>3.4 产品设计</li>
+<li>3.5 码农珍藏<ul>
+<li>3.5.1 抓包工具</li>
+<li>3.5.2 ADB</li>
+<li>3.5.3 Chrome插件</li>
+</ul>
+</li>
+<li>3.6 本章小结</li>
+<li>3.7 推荐资料</li>
+</ul>
+</li>
+<li>第4章 App SDK使用系列<ul>
+<li>4.1 从Lifecycle说起</li>
+<li>4.2 大话UI<ul>
+<li>4.2.1 关于布局</li>
+<li>4.2.2 常用控件</li>
+<li>4.2.3 自定义View</li>
+</ul>
+</li>
+<li>4.3 存储和网络篇</li>
+<li>4.4 本章小结</li>
+<li>4.5 推荐资料</li>
+</ul>
+</li>
+<li>第5章 开源库选择和使用<ul>
+<li>5.1 关于开源</li>
+<li>5.2 开源库选择</li>
+<li>5.3 开源库使用</li>
+<li>5.4 本章小结</li>
+<li>5.5 推荐资料<h2 id="第二篇-正传（六脉神剑）"><a href="#第二篇-正传（六脉神剑）" class="headerlink" title="第二篇 正传（六脉神剑）"></a>第二篇 正传（六脉神剑）</h2></li>
+</ul>
+</li>
+<li>第6章 App常用模块设计<ul>
+<li>6.1 基础组件库<ul>
+<li>6.1.1 构你的基础组件库</li>
+<li>6.1.2 不得不说的图片库</li>
+<li>6.1.3 浅谈网路和加密库</li>
+</ul>
+</li>
+<li>6.2 常用业务模块<ul>
+<li>6.2.1 启动引导页面</li>
+<li>6.2.2 注册登陆模块</li>
+<li>6.2.3 运营统计模块</li>
+</ul>
+</li>
+<li>6.3 编译打包<ul>
+<li>6.3.1 打包方式和流程</li>
+<li>6.3.2 Gradle实用技巧</li>
+</ul>
+</li>
+<li>6.4 版本适配<ul>
+<li>6.4.1 iOS App适配</li>
+<li>6.4.2 Android App适配</li>
+</ul>
+</li>
+<li>6.5 本章小结</li>
+<li>6.6 推荐资料</li>
+</ul>
+</li>
+<li>第7章 App架构和重构 <ul>
+<li>7.1 从组件和模块说起</li>
+<li>7.2 组件化，模块化和插件化<ul>
+<li>7.2.1 三个概念</li>
+<li>7.2.2 App插件化</li>
+<li>7.2.3 App组件化</li>
+</ul>
+</li>
+<li>7.3 UML基本功</li>
+<li>7.4 大话设计模式</li>
+<li>7.5 接口设计<ul>
+<li>7.5.1 API，What and Why?</li>
+<li>7.5.2 How API?</li>
+</ul>
+</li>
+<li>7.6 常见的架构模式<ul>
+<li>7.6.1 MVX模式</li>
+<li>7.6.2 常见软件架构</li>
+<li>7.6.3 从组件化看App架构</li>
+</ul>
+</li>
+<li>7.7 重构未眠夜<ul>
+<li>7.7.1 重构概览</li>
+<li>7.7.2 架构重构</li>
+<li>7.7.3 代码重构</li>
+</ul>
+</li>
+<li>7.8 架构设计，够了么？</li>
+<li>7.9 本章小结</li>
+<li>7.10 推荐资料</li>
+</ul>
+</li>
+<li>第8章 App质量和稳定性系列<ul>
+<li>8.1 质量标准和稳定性指标<ul>
+<li>8.1.1 应用的核心质量</li>
+<li>8.1.2 稳定性衡量指标</li>
+</ul>
+</li>
+<li>8.2 质量和稳定性手段<ul>
+<li>8.2.1 质量监控</li>
+<li>8.2.2 问题处理原则</li>
+<li>8.2.3 App持续集成</li>
+<li>8.2.4 代码质量监测</li>
+</ul>
+</li>
+<li>8.3 笑谈Crash<ul>
+<li>8.3.1 Crash基础和原理</li>
+<li>8.3.2 Crash收集和统计</li>
+<li>8.3.4 Crash分析</li>
+</ul>
+</li>
+<li>8.4 测试专场<ul>
+<li>8.4.1 测试综述</li>
+<li>8.4.2 兼容性测试</li>
+<li>8.4.3 性能和安全性测试</li>
+<li>8.4.4 自动化测试</li>
+<li>8.4.5 A/B Testing</li>
+<li>8.4.6 代码覆盖率</li>
+<li>8.4.7 线上演练</li>
+</ul>
+</li>
+<li>8.5 本章小结</li>
+<li>8.6 推荐资料</li>
+</ul>
+</li>
+<li>第9章 App性能优化系列<ul>
+<li>9.1 性能分析<ul>
+<li>9.1.1 性能指标</li>
+<li>9.1.2 性能优化</li>
+<li>9.1.3 性能测试平台</li>
+</ul>
+</li>
+<li>9.2 硬件性能优化<ul>
+<li>9.2.1 电量信息获取</li>
+<li>9.2.2 耗电分析</li>
+<li>9.2.3 电量优化</li>
+</ul>
+</li>
+<li>9.3 UI和CPU性能优化<ul>
+<li>9.3.1 基础原理</li>
+<li>9.3.2 流畅度度量</li>
+<li>9.3.3 流畅度/卡顿分析和优化</li>
+</ul>
+</li>
+<li>9.4 内存性能优化<ul>
+<li>9.4.1 内存机制和原理</li>
+<li>9.4.2 内存分析工具</li>
+<li>9.4.3 泄露和溢出</li>
+<li>9.4.4 内存优化</li>
+</ul>
+</li>
+<li>9.5 网络性能优化<ul>
+<li>9.5.1 网络性能概述</li>
+<li>9.5.2 网络性能测试和度量</li>
+<li>9.5.3 网络性能优化</li>
+</ul>
+</li>
+<li>9.6 App包Size优化<ul>
+<li>9.6.1 App包Size优化概述</li>
+<li>9.6.2 App包Size分析</li>
+<li>9.6.3 App包Size优化</li>
+</ul>
+</li>
+<li>9.7 App启动速度优化<ul>
+<li>9.7.1 App启动方式和流程</li>
+<li>9.7.2 App启动时间度量</li>
+<li>9.7.3 App启动速度优化</li>
+</ul>
+</li>
+<li>9.8 App代码优化</li>
+<li>9.9 本章小结</li>
+<li>9.10 推荐资料</li>
+</ul>
+</li>
+<li>第10章 App安全逆向系列<ul>
+<li>10.1 逆向概述<ul>
+<li>10.1.1 App安装包组成</li>
+<li>10.1.2 逆向工具</li>
+<li>10.1.3 Root和越狱</li>
+<li>10.1.4 二次打包</li>
+</ul>
+</li>
+<li>10.2 逆向分析<ul>
+<li>10.2.1 静态分析</li>
+<li>10.2.2 动态分析</li>
+<li>10.2.3 Hook和注入</li>
+</ul>
+</li>
+<li>10.3 安全测试</li>
+<li>10.4 安全建议<ul>
+<li>10.4.1 混淆签名</li>
+<li>10.4.2 加固加壳</li>
+<li>10.4.3 安全编码和隐私</li>
+</ul>
+</li>
+<li>10.5 本章小结</li>
+<li>10.6 推荐资料</li>
+</ul>
+</li>
+<li>第11章 App热门技术和奇淫绝技<ul>
+<li>11.1 进程存活<ul>
+<li>11.1.1 基础知识</li>
+<li>11.1.2 保活方法</li>
+</ul>
+</li>
+<li>11.2 MultiDex</li>
+<li>11.3 RxJava<ul>
+<li>11.3.1 RxJava基础</li>
+<li>11.3.2 RxJava应用实例</li>
+</ul>
+</li>
+<li>11.4 Hybrid</li>
+<li>11.5 Hot Patch</li>
+<li>11.6 AOP<ul>
+<li>11.6.1 OOP &amp; AOP</li>
+<li>11.6.2 AOP应用实例</li>
+</ul>
+</li>
+<li>11.7 本章小结</li>
+</ul>
+</li>
+<li>11.6 推荐资料<h2 id="第三篇-后传（天下五绝）"><a href="#第三篇-后传（天下五绝）" class="headerlink" title="第三篇 后传（天下五绝）"></a>第三篇 后传（天下五绝）</h2></li>
+<li>第12章 App是如何练成的<ul>
+<li>12.1 App练成</li>
+<li>12.2 开发流程</li>
+<li>12.3 也谈版本号</li>
+<li>12.4 本章小结</li>
+</ul>
+</li>
+<li>第13章 项产设运四天王<ul>
+<li>13.1 项目管理<ul>
+<li>13.1.1 敏捷Scrum</li>
+<li>13.1.2 班车模式</li>
+</ul>
+</li>
+<li>13.2 产品思维<ul>
+<li>13.2.1 产品经理</li>
+<li>13.2.2 产品思维</li>
+</ul>
+</li>
+<li>13.3 设计理念<ul>
+<li>13.3.1 UI&amp;UX</li>
+<li>13.3.2 设计理念</li>
+</ul>
+</li>
+<li>13.4 推广运营<ul>
+<li>13.4.1 运营指标</li>
+<li>13.4.2 大话推广</li>
+<li>14.3.3 运营之道</li>
+</ul>
+</li>
+<li>13.5 本章小结</li>
+<li>13.6 推荐资料</li>
+</ul>
+</li>
+<li>第14章 我的高效团队<ul>
+<li>14.1 从代码规范开始</li>
+<li>14.2 不得不说的Code Review</li>
+<li>14.3 晨会，高效一天的开始</li>
+<li>14.4 沟通和团建</li>
+<li>14.5 别忘了技术分享</li>
+<li>14.6 面试，面试再面试</li>
+<li>14.7 自管理，扁平化</li>
+<li>14.8 最后，聊聊加班</li>
+<li>14.9 本章小结</li>
+<li>14.10 推荐资料 <h2 id="第四篇-外传（跋）"><a href="#第四篇-外传（跋）" class="headerlink" title="第四篇 外传（跋）"></a>第四篇 外传（跋）</h2></li>
+</ul>
+</li>
+<li>第15章 架构士那点事<ul>
+<li>15.1 大话全栈工程师</li>
+<li>15.2 架构师思维</li>
+<li>15.3 学而时习之</li>
+<li>15.4 软技能</li>
+<li>15.5 本章小结</li>
+<li>15.6 推荐资料 </li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="CODE"><a href="#CODE" class="headerlink" title="CODE"></a>CODE</h1><ul>
+<li><a href="https://github.com/SkySeraph-XKnife/XKnife-Android" target="_blank" rel="external">XKnife-Android</a></li>
+</ul>
+<hr>
+<h1 id="Feedback-amp-Support"><a href="#Feedback-amp-Support" class="headerlink" title="Feedback &amp; Support"></a>Feedback &amp; Support</h1><p>由于作者水平有限，加之写作时间仓促，书中难免会出现一些错误或不准确的地方，恳请读者批评和指正。任何问题，可通过如下方式与笔者共同讨论，谢谢。反馈方式： </p>
+<ul>
+<li>邮箱： skyseraph00#163.com</li>
+<li>公众号：skyseraph</li>
+</ul>
+<hr>
+<h2 id="勘误ING"><a href="#勘误ING" class="headerlink" title="勘误ING"></a>勘误ING</h2><p>（收集中…）</p>
+<hr>
+<font size="2"><br>By SkySeraph-2016<br><br></font>
+
+
+
+<hr>
+<p><strong><em>版权声明</em></strong></p>
+<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
+
+<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
+<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
+<p>本文永久链接：<a href="http://skyseraph.com/2016/11/15/Android/AppArchitecture/">http://skyseraph.com/2016/11/15/Android/AppArchitecture/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h1 id=&quot;Overview&quot;&gt;&lt;a href=&quot;#Overview&quot; class=&quot;headerlink&quot; title=&quot;Overview&quot;&gt;&lt;/a&gt;Overview&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;“终于等到了你，还好没放弃”。这是16年撰写交稿的一本书（本文也是当时的时间），撰写将近10个月，出版社等待一年多，一本书==两次怀胎，真心不容易，终于等到你，还好没放弃。。。     &lt;/li&gt;
+&lt;li&gt;App架构师实践指南，一本Android/iOS双端App架构技术实践书籍，偏技术，重实践，讲方法。既包含App开发相关核心技能，又包括App架构师成长路线、团队管理、项目实践、产品思维等综合技能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;文章作者：&lt;a href=&quot;https://about.me/skyseraph&quot;&gt;SkySeraph&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;http://skyseraph.com/&quot;&gt;skyseraph.com&lt;/a&gt; | &lt;a href=&quot;https://github.com/skyseraph&quot;&gt;GitHub&lt;/a&gt; | &lt;a href=&quot;http://www.cnblogs.com/skyseraph/&quot;&gt;cnBlogs&lt;/a&gt; | &lt;a href=&quot;https://www.jianshu.com/u/a7149e4933fb&quot;&gt;简书&lt;/a&gt;…&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Tech" scheme="http://skyseraph.com/categories/Tech/"/>
+    
+      <category term="Android" scheme="http://skyseraph.com/categories/Tech/Android/"/>
+    
+    
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
+    
+      <category term="Architecture" scheme="http://skyseraph.com/tags/Architecture/"/>
+    
+      <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
     
   </entry>
   
@@ -1920,11 +2330,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="OpenGL" scheme="http://skyseraph.com/categories/Tech/OpenGL/"/>
     
     
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
-    
       <category term="AR/VR" scheme="http://skyseraph.com/tags/AR-VR/"/>
     
       <category term="OpenGL" scheme="http://skyseraph.com/tags/OpenGL/"/>
+    
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
   </entry>
   
@@ -3535,67 +3945,6 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
     
       <category term="Life" scheme="http://skyseraph.com/tags/Life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>织物疵点检测机器视觉系统 软件测试平台</title>
-    <link href="http://skyseraph.com/2012/05/04/CV/%E7%BB%87%E7%89%A9%E7%96%B5%E7%82%B9%E6%A3%80%E6%B5%8B%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E7%B3%BB%E7%BB%9F%20%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0/"/>
-    <id>http://skyseraph.com/2012/05/04/CV/织物疵点检测机器视觉系统 软件测试平台/</id>
-    <published>2012-05-03T16:23:20.000Z</published>
-    <updated>2018-03-05T13:47:27.746Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<h2 id="啰嗦"><a href="#啰嗦" class="headerlink" title="啰嗦"></a>啰嗦</h2><p>　　之前针对个人研究的不同算法开发过三个检测平台（<a href="http://www.cnblogs.com/skyseraph/archive/2011/03/24/1993438.html" target="_blank" rel="external">平台一</a> 和 <a href="http://www.cnblogs.com/skyseraph/archive/2011/07/21/2113211.html" target="_blank" rel="external">平台二</a> ），此平台为最后的综合平台，实现织物疵点检测和分类，实现了织物图像的批量化处理，实现了数据库存储疵点信息和用户管理，同时具备自动化测试的同时还可以进行单步算法调试。</p>
-<a id="more"></a>
-<p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
-<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>开发工具采用VS2010+OpenCV，开发语言为CPP。<br><a href="http://www.cnblogs.com/skyseraph/archive/2010/10/28/1863974.html" target="_blank" rel="external">OpenCV环境搭建</a>  </p>
-<h2 id="功能详述"><a href="#功能详述" class="headerlink" title="功能详述"></a>功能详述</h2><h3 id="1-软件架构"><a href="#1-软件架构" class="headerlink" title="1 软件架构"></a>1 软件架构</h3><p>　　该平台主要包括系统登录模块、图像采集模块、图像预处理模块、织物疵点检测模块、织物疵点分类模块、疵点信息管理模块、用户管理模块以及系统设置模块，检测算法为自主研究，分类算法采用BPNN，软件架构如下图所示<br><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/2012050119365916.png" alt=""></p>
-<h3 id="2-核心功能"><a href="#2-核心功能" class="headerlink" title="2 核心功能"></a>2 核心功能</h3><p>　　该平台核心功能包括：织物疵点检测和分类，疵点信息存储和查询，用户管理等。</p>
-<h3 id="3-算法流程"><a href="#3-算法流程" class="headerlink" title="3 算法流程"></a>3 算法流程</h3><p>①系统设置，如下图所示<br><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/2012050409424319.png" alt=""></p>
-<p>②图像采集，图像的获取可以采取两种方式，单张图像加载或批量图像（文件夹）加载，在系统设置模块中的图像获取方式中，可选择设置单张图像的路径或者设置图像文件夹的路径来获取图像并实时显示, 如下图所示<br><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/2012050410142148.png" alt=""></p>
-<p>③图像预处理，如下图所示<br><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/2012050410143581.png" alt=""></p>
-<p>④织物检测和分类，如下图所示<br><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/2012050410144927.png" alt=""><br><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/2012050410150071.png" alt=""></p>
-<p>⑤织物信息查询，如下图所示<br><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/2012050409435944.png" alt=""></p>
-<p>⑥用户管理，如下图所示<br><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/2012050409440985.png" alt=""></p>
-<h2 id="实验测试"><a href="#实验测试" class="headerlink" title="实验测试"></a>实验测试</h2><p>针对常见的四类疵点，软件测试结果如下图所示：<br><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/2012050409441863.png" alt=""></p>
-<h2 id="项目工程及核心函数模块"><a href="#项目工程及核心函数模块" class="headerlink" title="项目工程及核心函数模块"></a>项目工程及核心函数模块</h2><p>工程项目及核心处理函数模块如下图：<br><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2015/2012050410013461.png" alt=""></p>
-<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><p><a href="http://www.cnblogs.com/skyseraph/archive/2011/03/24/1993438.html" target="_blank" rel="external">【My Project】织物疵点检测机器视觉系统 平台一</a><br><a href="http://www.cnblogs.com/skyseraph/archive/2011/07/21/2113211.html" target="_blank" rel="external">【My Project】织物疵点检测机器视觉系统 平台二</a><br><a href="http://www.cnblogs.com/skyseraph/archive/2011/08/11/2135291.html" target="_blank" rel="external">关于显著性算法的实践效果请参考此文</a>  </p>
-<hr>
-<font size="2"><br>By SkySeraph-2012<br><a href="http://www.cnblogs.com/skyseraph/archive/2012/05/04/2478105.html" target="_blank" rel="external">SkySeraph cnBlogs</a><br>合作联系：skyseraph00@163.com<br></font>   
-
-<hr>
-<p><strong><em>版权声明</em></strong></p>
-<font size="1"><br> <a href="http://skyseraph.com">SkySeraph</a> by <a href="http://skyseraph.com/about">SkySeraph</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">Creative Commons BY-NC-ND 4.0 International License</a>.<br>由<a href="http://skyseraph.com/about">Bob</a>创作并维护的<a href="http://skyseraph.com">SkySeraph</a>博客采用<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>.<br>本文首发于<a href="http://skyseraph.com">SkySeraph</a>博客（ <a href="http://skyseraph.com">http://skyseraph.com</a> ），版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。<br></font>
-
-<p>微信扫码打赏<a href="http://skyseraph.com">SkySeraph</a><br><img src="/css/images/skyseraph_wx.png" alt=""> </p>
-<p>如果您愿意捐助其它金额<a href="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" target="_blank" rel="external">请戳我~~</a>，扫码支付宝/微信</p>
-<p>本文永久链接：<a href="http://skyseraph.com/2012/05/04/CV/织物疵点检测机器视觉系统">http://skyseraph.com/2012/05/04/CV/织物疵点检测机器视觉系统</a> 软件测试平台/</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h2 id=&quot;啰嗦&quot;&gt;&lt;a href=&quot;#啰嗦&quot; class=&quot;headerlink&quot; title=&quot;啰嗦&quot;&gt;&lt;/a&gt;啰嗦&lt;/h2&gt;&lt;p&gt;　　之前针对个人研究的不同算法开发过三个检测平台（&lt;a href=&quot;http://www.cnblogs.com/skyseraph/archive/2011/03/24/1993438.html&quot;&gt;平台一&lt;/a&gt; 和 &lt;a href=&quot;http://www.cnblogs.com/skyseraph/archive/2011/07/21/2113211.html&quot;&gt;平台二&lt;/a&gt; ），此平台为最后的综合平台，实现织物疵点检测和分类，实现了织物图像的批量化处理，实现了数据库存储疵点信息和用户管理，同时具备自动化测试的同时还可以进行单步算法调试。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Tech" scheme="http://skyseraph.com/categories/Tech/"/>
-    
-      <category term="CV" scheme="http://skyseraph.com/categories/Tech/CV/"/>
-    
-    
-      <category term="图像算法" scheme="http://skyseraph.com/tags/%E5%9B%BE%E5%83%8F%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="DIP" scheme="http://skyseraph.com/tags/DIP/"/>
-    
-      <category term="CV/MV" scheme="http://skyseraph.com/tags/CV-MV/"/>
-    
-      <category term="OpenCV" scheme="http://skyseraph.com/tags/OpenCV/"/>
-    
-      <category term="机器视觉" scheme="http://skyseraph.com/tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
-    
-      <category term="瑕疵检测" scheme="http://skyseraph.com/tags/%E7%91%95%E7%96%B5%E6%A3%80%E6%B5%8B/"/>
     
   </entry>
   
