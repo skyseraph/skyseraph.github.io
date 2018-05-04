@@ -484,7 +484,7 @@
     <link href="http://skyseraph.com/2017/11/12/AI/Aur%C3%A9lienG%C3%A9ronTensorFlow/"/>
     <id>http://skyseraph.com/2017/11/12/AI/AurélienGéronTensorFlow/</id>
     <published>2017-11-12T15:23:23.000Z</published>
-    <updated>2018-05-04T12:35:28.172Z</updated>
+    <updated>2018-05-04T12:40:55.822Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Aurélien Géron “Hands-on Machine Learning with Scikit-Learn and TensorFlow”<br>TensorFlow 最初由Google Brain团队开发， Google 2015年11月9日发布的开源的AI系统（Apache 2.0），前任(身)为DistBelief， 2017年2月11日发布1.0.0版，同时支持Linux、macOS和Windows以及移动平台，包括Android和iOS。<br>TensorFlow一般简写为TF。<br><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/ai.md" target="_blank" rel="external">Awesome AI~</a>    </p>
@@ -588,10 +588,10 @@
     <link href="http://skyseraph.com/2017/11/11/AI/TensorFlowBasic/"/>
     <id>http://skyseraph.com/2017/11/11/AI/TensorFlowBasic/</id>
     <published>2017-11-11T15:23:23.000Z</published>
-    <updated>2018-03-05T13:45:59.021Z</updated>
+    <updated>2018-05-04T12:41:21.392Z</updated>
     
     <content type="html"><![CDATA[<hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>TensorFlow 最初由Google Brain团队开发， Google 2015年11月9日发布的开源的AI系统（Apache 2.0），前任(身)为DistBelief， 2017年2月11日发布1.0.0版，同时支持Linux、macOS和Windows以及移动平台，包括Android和iOS。<br>TensorFlow一般简写为TF。<br><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/ai.md" target="_blank" rel="external">Awesome AI~</a>    </p>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>TensorFlow 最初由Google Brain团队开发， Google 2015年11月9日发布的开源的AI系统(Apache 2.0)，前任(身)为DistBelief，2017年2月11日发布1.0.0版，同时支持Linux、macOS和Windows以及移动平台，包括Android和iOS。<br>TensorFlow一般简写为TF。<br><a href="https://github.com/skyseraph/awesome-projects/blob/master/doc/ai.md" target="_blank" rel="external">Awesome AI~</a>    </p>
 <a id="more"></a>
 <p>文章作者：<a href="https://about.me/skyseraph" target="_blank" rel="external">SkySeraph</a><br>博客：<a href="http://skyseraph.com/">skyseraph.com</a> | <a href="https://github.com/skyseraph" target="_blank" rel="external">GitHub</a> | <a href="http://www.cnblogs.com/skyseraph/" target="_blank" rel="external">cnBlogs</a> | <a href="https://www.jianshu.com/u/a7149e4933fb" target="_blank" rel="external">简书</a>…</p>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
@@ -672,7 +672,7 @@
     <summary type="html">
     
       &lt;hr&gt;
-&lt;h1 id=&quot;Overview&quot;&gt;&lt;a href=&quot;#Overview&quot; class=&quot;headerlink&quot; title=&quot;Overview&quot;&gt;&lt;/a&gt;Overview&lt;/h1&gt;&lt;p&gt;TensorFlow 最初由Google Brain团队开发， Google 2015年11月9日发布的开源的AI系统（Apache 2.0），前任(身)为DistBelief， 2017年2月11日发布1.0.0版，同时支持Linux、macOS和Windows以及移动平台，包括Android和iOS。&lt;br&gt;TensorFlow一般简写为TF。&lt;br&gt;&lt;a href=&quot;https://github.com/skyseraph/awesome-projects/blob/master/doc/ai.md&quot;&gt;Awesome AI~&lt;/a&gt;    &lt;/p&gt;
+&lt;h1 id=&quot;Overview&quot;&gt;&lt;a href=&quot;#Overview&quot; class=&quot;headerlink&quot; title=&quot;Overview&quot;&gt;&lt;/a&gt;Overview&lt;/h1&gt;&lt;p&gt;TensorFlow 最初由Google Brain团队开发， Google 2015年11月9日发布的开源的AI系统(Apache 2.0)，前任(身)为DistBelief，2017年2月11日发布1.0.0版，同时支持Linux、macOS和Windows以及移动平台，包括Android和iOS。&lt;br&gt;TensorFlow一般简写为TF。&lt;br&gt;&lt;a href=&quot;https://github.com/skyseraph/awesome-projects/blob/master/doc/ai.md&quot;&gt;Awesome AI~&lt;/a&gt;    &lt;/p&gt;
     
     </summary>
     
@@ -2434,11 +2434,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="OpenGL" scheme="http://skyseraph.com/categories/Tech/OpenGL/"/>
     
     
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
-    
       <category term="AR/VR" scheme="http://skyseraph.com/tags/AR-VR/"/>
     
       <category term="OpenGL" scheme="http://skyseraph.com/tags/OpenGL/"/>
+    
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
   </entry>
   
@@ -2532,9 +2532,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
     
-      <category term="Bywork" scheme="http://skyseraph.com/tags/Bywork/"/>
-    
       <category term="Wealth" scheme="http://skyseraph.com/tags/Wealth/"/>
+    
+      <category term="Bywork" scheme="http://skyseraph.com/tags/Bywork/"/>
     
   </entry>
   
