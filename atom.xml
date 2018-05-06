@@ -204,20 +204,20 @@
       <category term="AI" scheme="http://skyseraph.com/categories/Tech/AI/"/>
     
     
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
+    
       <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
     
       <category term="TensorFlow" scheme="http://skyseraph.com/tags/TensorFlow/"/>
     
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
-    
   </entry>
   
   <entry>
-    <title>【程序人生】你不可不知的一些理财坏习惯</title>
+    <title>【财富人生】你不可不知的一些理财坏习惯</title>
     <link href="http://skyseraph.com/2018/01/05/SkySeraph/Wealth/BadFinancialHabits/"/>
     <id>http://skyseraph.com/2018/01/05/SkySeraph/Wealth/BadFinancialHabits/</id>
     <published>2018-01-04T16:40:20.000Z</published>
-    <updated>2018-03-08T13:13:26.358Z</updated>
+    <updated>2018-05-05T13:56:39.806Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <p><a href="http://skyseraph.com/2018/01/05/SkySeraph/Wealth/BadFinancialHabits/">你不可不知的一些理财坏习惯</a><br><a id="more"></a></p>
@@ -799,11 +799,11 @@
       <category term="Tools" scheme="http://skyseraph.com/categories/Tech/Tools/"/>
     
     
-      <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
-    
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
       <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
+    
+      <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
     
       <category term="Awesome" scheme="http://skyseraph.com/tags/Awesome/"/>
     
@@ -2530,11 +2530,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="Tech" scheme="http://skyseraph.com/categories/SkySeraph/Tech/"/>
     
     
-      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
+      <category term="Bywork" scheme="http://skyseraph.com/tags/Bywork/"/>
     
       <category term="Wealth" scheme="http://skyseraph.com/tags/Wealth/"/>
     
-      <category term="Bywork" scheme="http://skyseraph.com/tags/Bywork/"/>
+      <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
     
   </entry>
   
