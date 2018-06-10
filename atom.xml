@@ -204,9 +204,9 @@
       <category term="AI" scheme="http://skyseraph.com/categories/Tech/AI/"/>
     
     
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
-    
       <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
+    
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
       <category term="TensorFlow" scheme="http://skyseraph.com/tags/TensorFlow/"/>
     
@@ -799,13 +799,13 @@
       <category term="Tools" scheme="http://skyseraph.com/categories/Tech/Tools/"/>
     
     
+      <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
+    
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
       <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
     
       <category term="Awesome" scheme="http://skyseraph.com/tags/Awesome/"/>
-    
-      <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
     
   </entry>
   
@@ -1687,9 +1687,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="Android" scheme="http://skyseraph.com/categories/Tech/Android/"/>
     
     
-      <category term="Architecture" scheme="http://skyseraph.com/tags/Architecture/"/>
-    
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
+    
+      <category term="Architecture" scheme="http://skyseraph.com/tags/Architecture/"/>
     
       <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
     
@@ -2445,7 +2445,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2015/11/01/SkySeraph/Tech/ITBywork/"/>
     <id>http://skyseraph.com/2015/11/01/SkySeraph/Tech/ITBywork/</id>
     <published>2015-10-31T16:23:23.000Z</published>
-    <updated>2018-03-05T13:45:28.272Z</updated>
+    <updated>2018-06-09T12:19:27.795Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><ul>
@@ -2485,6 +2485,12 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 </ul>
 <h1 id="个人产品-个人品牌"><a href="#个人产品-个人品牌" class="headerlink" title="个人产品/个人品牌"></a>个人产品/个人品牌</h1><ul>
 <li>开发个人产品，如App，社区，软件等，可持续发展。可参考代码家的<a href="https://daimajia.com/2017/06/02/side-projects" target="_blank" rel="external">开发者与业余项目</a>.</li>
+<li>独立开发者<ul>
+<li><a href="https://github.com/1c7/chinese-independent-developer" target="_blank" rel="external">中国独立开发者项目列表</a></li>
+<li><a href="http://sideidea.com" target="_blank" rel="external">sideidea</a></li>
+<li><a href="http://maliquankai.com" target="_blank" rel="external">玛力全开工作室</a></li>
+</ul>
+</li>
 <li>网红/大咖/牛人/自媒体… <ul>
 <li><a href="https://www.huxiu.com/article/187867.html" target="_blank" rel="external">内容红利下的“做号江湖”：一天20篇、每篇5分钟、月入5万</a></li>
 </ul>
