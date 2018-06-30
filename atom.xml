@@ -204,11 +204,11 @@
       <category term="AI" scheme="http://skyseraph.com/categories/Tech/AI/"/>
     
     
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
+    
       <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
     
       <category term="TensorFlow" scheme="http://skyseraph.com/tags/TensorFlow/"/>
-    
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
   </entry>
   
@@ -799,11 +799,11 @@
       <category term="Tools" scheme="http://skyseraph.com/categories/Tech/Tools/"/>
     
     
-      <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
-    
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
       <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
+    
+      <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
     
       <category term="Awesome" scheme="http://skyseraph.com/tags/Awesome/"/>
     
@@ -1292,7 +1292,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     <link href="http://skyseraph.com/2016/11/15/Android/AppArchitecture/"/>
     <id>http://skyseraph.com/2016/11/15/Android/AppArchitecture/</id>
     <published>2016-11-15T15:23:23.000Z</published>
-    <updated>2018-06-03T00:11:00.214Z</updated>
+    <updated>2018-06-23T01:24:00.679Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><ul>
@@ -1303,20 +1303,14 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 <a id="more"></a>
 <hr>
 <h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><blockquote>
-<p>封面设计</p>
-</blockquote>
-<p><img src="" alt=""></p>
-<blockquote>
 <p>实物拍照</p>
 </blockquote>
-<p><img src="" width="270" height="360"></p>
+<p><img src="http://p30lospbv.bkt.clouddn.com/skyseraph/App%E6%9E%B6%E6%9E%84%E5%B8%88%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97_%E5%B0%81%E9%9D%A2.png" width="270" height="360"></p>
 <hr>
 <h2 id="LINK"><a href="#LINK" class="headerlink" title="LINK"></a>LINK</h2><ul>
 <li><p><a href="https://item.jd.com/12337450.html" target="_blank" rel="external">京东</a></p>
 </li>
 <li><p><a href="http://product.dangdang.com/25253039.html" target="_blank" rel="external">当当</a></p>
-</li>
-<li><p><a href="https://www.amazon.cn/dp/B07BSMKM18/" target="_blank" rel="external">Amazon</a></p>
 </li>
 </ul>
 <hr>
@@ -1656,7 +1650,7 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
 <li>公众号：skyseraph</li>
 </ul>
 <hr>
-<h2 id="勘误ING"><a href="#勘误ING" class="headerlink" title="勘误ING"></a>勘误ING</h2><p>（收集中…）</p>
+<h2 id="勘误ING"><a href="#勘误ING" class="headerlink" title="勘误ING"></a>勘误ING</h2><p>（收集中…）<br>欢迎大家留言或Email告知，精选有机会获得作者亲笔签名书一本 .</p>
 <hr>
 <font size="2"><br>By SkySeraph-2016<br><br></font>
 
@@ -1687,9 +1681,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="Android" scheme="http://skyseraph.com/categories/Tech/Android/"/>
     
     
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
-    
       <category term="Architecture" scheme="http://skyseraph.com/tags/Architecture/"/>
+    
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
       <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
     
@@ -2432,11 +2426,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="OpenGL" scheme="http://skyseraph.com/categories/Tech/OpenGL/"/>
     
     
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
+    
       <category term="AR/VR" scheme="http://skyseraph.com/tags/AR-VR/"/>
     
       <category term="OpenGL" scheme="http://skyseraph.com/tags/OpenGL/"/>
-    
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
   </entry>
   
