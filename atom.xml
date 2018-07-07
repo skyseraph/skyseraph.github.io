@@ -204,11 +204,11 @@
       <category term="AI" scheme="http://skyseraph.com/categories/Tech/AI/"/>
     
     
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
-    
       <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
     
       <category term="TensorFlow" scheme="http://skyseraph.com/tags/TensorFlow/"/>
+    
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
   </entry>
   
@@ -799,11 +799,11 @@
       <category term="Tools" scheme="http://skyseraph.com/categories/Tech/Tools/"/>
     
     
+      <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
+    
       <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
       <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
-    
-      <category term="AI" scheme="http://skyseraph.com/tags/AI/"/>
     
       <category term="Awesome" scheme="http://skyseraph.com/tags/Awesome/"/>
     
