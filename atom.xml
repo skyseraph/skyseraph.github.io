@@ -2627,9 +2627,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
     
       <category term="SkySeraph" scheme="http://skyseraph.com/tags/SkySeraph/"/>
     
-      <category term="Bywork" scheme="http://skyseraph.com/tags/Bywork/"/>
-    
       <category term="Wealth" scheme="http://skyseraph.com/tags/Wealth/"/>
+    
+      <category term="Bywork" scheme="http://skyseraph.com/tags/Bywork/"/>
     
   </entry>
   
