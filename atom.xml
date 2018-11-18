@@ -1790,9 +1790,9 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="Android" scheme="http://skyseraph.com/categories/Tech/Android/"/>
     
     
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
-    
       <category term="Architecture" scheme="http://skyseraph.com/tags/Architecture/"/>
+    
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
       <category term="iOS" scheme="http://skyseraph.com/tags/iOS/"/>
     
@@ -2535,11 +2535,11 @@ Manifest.permission.READ_EXTERNAL_STORAGE,
       <category term="OpenGL" scheme="http://skyseraph.com/categories/Tech/OpenGL/"/>
     
     
+      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
+    
       <category term="AR/VR" scheme="http://skyseraph.com/tags/AR-VR/"/>
     
       <category term="OpenGL" scheme="http://skyseraph.com/tags/OpenGL/"/>
-    
-      <category term="Android" scheme="http://skyseraph.com/tags/Android/"/>
     
   </entry>
   
