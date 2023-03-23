@@ -1,0 +1,557 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/skyseraph.png">
+  <link rel="icon" href="/img/skyseraph.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="SkySeraph">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="前传 这个页面主要对本人完成或参与完成的部分项目进行规整，主观的将其分为智能硬件、人工智能和TV&#x2F;游戏&#x2F;移动应用(Android&#x2F;iOS)几大项，每项以时间为序进行逆向排列，其中某些领域研究较多以专题的形式呈现，如NFC&#x2F;RFID专题，我的开源，目前只整理了小部分，长期过程，后续逐一补全。  部分项目有原理或源码分享，请在SkySeraph博客翻找。  欢迎">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Projects">
+<meta property="og:url" content="http://skyseraph.github.io/projects/index.html">
+<meta property="og:site_name" content="SkySeraph">
+<meta property="og:description" content="前传 这个页面主要对本人完成或参与完成的部分项目进行规整，主观的将其分为智能硬件、人工智能和TV&#x2F;游戏&#x2F;移动应用(Android&#x2F;iOS)几大项，每项以时间为序进行逆向排列，其中某些领域研究较多以专题的形式呈现，如NFC&#x2F;RFID专题，我的开源，目前只整理了小部分，长期过程，后续逐一补全。  部分项目有原理或源码分享，请在SkySeraph博客翻找。  欢迎">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E6%B5%8B%E8%AF%95-%E7%99%BD%E5%A4%A9.png">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E6%89%B9%E9%87%8F2.png">
+<meta property="og:image" content="http://pic002.cnblogs.com/images/2012/137896/2012050410150071.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/137896/201605/137896-20160526201626100-237219052.png">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/tv-gesture.png">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/tv-nScreen.png">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/%E5%AE%B6%E5%BA%AD%E4%BA%91-1.jpg">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/%E5%AE%B6%E5%BA%AD%E4%BA%91-2.jpg">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/T-CAST.jpg">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/TV-Floating.jpg">
+<meta property="og:image" content="http://pp.myapp.com/ma_icon/0/icon_42335335_1480314623/96">
+<meta property="og:image" content="http://image.game.uc.cn/2013/11/21/9526686.png">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Octopus-1.jpg">
+<meta property="og:image" content="http://a3.mzstatic.com/us/r30/Purple69/v4/d2/bf/89/d2bf89d7-616e-300b-f6be-14f152e06f05/screen696x696.jpeg">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/bdt.jpg">
+<meta property="og:image" content="http://pp.myapp.com/ma_pic2/0/shot_10417951_19491884_1_1415122453/550">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/TimeR.jpg">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/TimeR1%20.png">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/TimeR2%20.png">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/tv-nfc.png">
+<meta property="og:image" content="https://img.shields.io/github/followers/skyseraph.svg?style=social&label=Follow&style=flat-square">
+<meta property="og:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg">
+<meta property="article:published_time" content="2015-12-30T15:21:20.000Z">
+<meta property="article:modified_time" content="2017-09-24T06:48:44.000Z">
+<meta property="article:author" content="SkySeraph">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E6%B5%8B%E8%AF%95-%E7%99%BD%E5%A4%A9.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Projects - SkySeraph</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"skyseraph.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"622a2108abaca144ab683efc8b9d1430","google":"UA-77554390-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?622a2108abaca144ab683efc8b9d1430";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+    <!-- Google Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.google-analytics.com/analytics.js', function() {
+          window.ga = window.ga || function() { (ga.q = ga.q || []).push(arguments) };
+          ga.l = +new Date;
+          ga('create', 'UA-77554390-1', 'auto');
+          ga('send', 'pageview');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>SkySeraph</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Projects"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <h1 id="前传"><a href="#前传" class="headerlink" title="前传"></a>前传</h1><ul>
+<li><p>这个页面主要对本人完成或参与完成的部分项目进行规整，主观的将其分为智能硬件、人工智能和TV&#x2F;游戏&#x2F;移动应用(Android&#x2F;iOS)几大项，每项以时间为序进行逆向排列，其中某些领域研究较多以专题的形式呈现，如<strong>NFC&#x2F;RFID专题</strong>，<strong>我的开源</strong>，目前只整理了小部分，长期过程，后续逐一补全。</p>
+</li>
+<li><p>部分项目有原理或源码分享，请在<a target="_blank" rel="noopener" href="http://www.skyseraph.com/">SkySeraph</a>博客翻找。</p>
+</li>
+<li><p>欢迎您告诉我您的任何想法或需求，或者有什么好点子我能帮上忙的也可以与我联系，联系方式见文末。</p>
+</li>
+</ul>
+<hr>
+<h1 id="智能硬件"><a href="#智能硬件" class="headerlink" title="智能硬件"></a>智能硬件</h1><p>待补充…</p>
+<hr>
+<h1 id="人工智能（图像算法）"><a href="#人工智能（图像算法）" class="headerlink" title="人工智能（图像算法）"></a>人工智能（图像算法）</h1><h2 id="OCR文字识别"><a href="#OCR文字识别" class="headerlink" title="OCR文字识别"></a><a href=""><strong>OCR文字识别</strong></a></h2><img src= "http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/OCR0.jpg"  width="600" height="200"/>
+
+<img src= "http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/OCR1.jpg"  width="600" height="200"/>
+
+<img src= "http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/OCR2.jpg"  width="600" height="200"/>
+
+<h2 id="手掌手指分割算法"><a href="#手掌手指分割算法" class="headerlink" title="手掌手指分割算法"></a><a target="_blank" rel="noopener" href="http://skyseraph.com/2014/07/24/CV/%E6%89%8B%E6%8E%8C%E6%89%8B%E6%8C%87%E5%88%86%E5%89%B2%E7%AE%97%E6%B3%95/"><strong>手掌手指分割算法</strong></a></h2><p>该算法是<strong>2014</strong>年时为朋友一家公司做指纹识别做的一套手掌分割手指的算法，可以很好的识别出白天&#x2F;黑夜场景下摄像头拍照手掌图片分割后获取手指指纹图片输入给指纹识别，更多介绍请<a target="_blank" rel="noopener" href="http://skyseraph.com/2014/07/24/CV/%E6%89%8B%E6%8E%8C%E6%89%8B%E6%8C%87%E5%88%86%E5%89%B2%E7%AE%97%E6%B3%95/">参考此文</a>（<em>含核心源码</em>），运行效果如下如：</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E6%B5%8B%E8%AF%95-%E7%99%BD%E5%A4%A9.png" srcset="/img/loading.gif" lazyload><br><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/FingerExtract%E6%89%B9%E9%87%8F2.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="织物瑕疵检测系统"><a href="#织物瑕疵检测系统" class="headerlink" title="织物瑕疵检测系统"></a><a target="_blank" rel="noopener" href="http://skyseraph.com/2012/05/04/CV/%E7%BB%87%E7%89%A9%E7%96%B5%E7%82%B9%E6%A3%80%E6%B5%8B%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E7%B3%BB%E7%BB%9F%20%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0/"><strong>织物瑕疵检测系统</strong></a></h2><p>该软件是<strong>2011</strong>年硕士生涯的研究课题，“织物疵点检测机器视觉系统研究”，算法+软件+系统，涉及两篇核心算法学术论文，软件平台基于Visual Studio2010 + OpenCV2.1，单张图片总耗时为<strong>241~278 ms</strong>，<a target="_blank" rel="noopener" href="http://skyseraph.com/2012/05/04/CV/%E7%BB%87%E7%89%A9%E7%96%B5%E7%82%B9%E6%A3%80%E6%B5%8B%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E7%B3%BB%E7%BB%9F%20%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0/">更多介绍请参考此文</a>，其中<a target="_blank" rel="noopener" href="http://www.cnblogs.com/skyseraph/archive/2011/08/11/2135291.html">关于显著性算法的实践效果请参考此文</a>，软件效果如下： </p>
+<p><img src="http://pic002.cnblogs.com/images/2012/137896/2012050410150071.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="彩色图像分析软件"><a href="#彩色图像分析软件" class="headerlink" title="彩色图像分析软件"></a><a target="_blank" rel="noopener" href="http://skyseraph.com/2011/08/14/CV/%E5%BD%A9%E8%89%B2%E5%9B%BE%E5%83%8F%E5%88%86%E6%9E%90%E8%BD%AF%E4%BB%B6%20ColorImgSft-V1.0.1.0/"><strong>彩色图像分析软件</strong></a></h2><p>该软件是<strong>2010</strong>年在国内某大型停车诱导公司做<strong>车位识别</strong>算法时对彩色图像的专题研究整理出的一套彩色图像分析软件，部分原理可<a target="_blank" rel="noopener" href="http://skyseraph.com/2011/08/01/CV/%E5%BD%A9%E8%89%B2%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2%E4%B8%93%E9%A2%98/">参考此文</a>，软件介绍请<a target="_blank" rel="noopener" href="http://skyseraph.com/2011/08/14/CV/%E5%BD%A9%E8%89%B2%E5%9B%BE%E5%83%8F%E5%88%86%E6%9E%90%E8%BD%AF%E4%BB%B6%20ColorImgSft-V1.0.1.0/">参考此文</a>，软件效果如下： </p>
+<p><img src="http://images2015.cnblogs.com/blog/137896/201605/137896-20160526201626100-237219052.png" srcset="/img/loading.gif" lazyload>  </p>
+<h2 id="停车场车位检测算法"><a href="#停车场车位检测算法" class="headerlink" title="停车场车位检测算法"></a><a href=""><strong>停车场车位检测算法</strong></a></h2><p>该算法是2010年给国内一家大型停车诱导公司基于彩色图像的研究的车位识别算法，暂不便公开说明。</p>
+<hr>
+<h1 id="人工智能（ML-x2F-DL-x2F-DRL）"><a href="#人工智能（ML-x2F-DL-x2F-DRL）" class="headerlink" title="人工智能（ML&#x2F;DL&#x2F;DRL）"></a>人工智能（ML&#x2F;DL&#x2F;DRL）</h1><p>待补充…</p>
+<hr>
+<h1 id="TV应用-Android"><a href="#TV应用-Android" class="headerlink" title="TV应用(Android)"></a>TV应用(Android)</h1><h2 id="手势控制"><a href="#手势控制" class="headerlink" title="手势控制"></a>手势控制</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/tv-gesture.png" srcset="/img/loading.gif" lazyload>  </p>
+<h2 id="多屏互动-x2F-nScreen"><a href="#多屏互动-x2F-nScreen" class="headerlink" title="多屏互动&#x2F;nScreen"></a>多屏互动&#x2F;nScreen</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/tv-nScreen.png" srcset="/img/loading.gif" lazyload></p>
+<p><a target="_blank" rel="noopener" href="http://zhushou.360.cn/detail/index/soft_id/141604?recrefer=SE_D_TCL%E5%A4%9A%E5%B1%8F%E4%BA%92%E5%8A%A8">360应用市场</a><br><a target="_blank" rel="noopener" href="http://www.wandoujia.com/apps/com.tcl.multiscreen.interactive">豌豆荚</a></p>
+<h2 id="家庭云-x2F-FamilyCloud"><a href="#家庭云-x2F-FamilyCloud" class="headerlink" title="家庭云&#x2F;FamilyCloud"></a>家庭云&#x2F;FamilyCloud</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/%E5%AE%B6%E5%BA%AD%E4%BA%91-1.jpg" srcset="/img/loading.gif" lazyload>  </p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/%E5%AE%B6%E5%BA%AD%E4%BA%91-2.jpg" srcset="/img/loading.gif" lazyload> </p>
+<h2 id="T-CAST"><a href="#T-CAST" class="headerlink" title="T-CAST"></a>T-CAST</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/T-CAST.jpg" srcset="/img/loading.gif" lazyload></p>
+<h2 id="悬浮球"><a href="#悬浮球" class="headerlink" title="悬浮球"></a>悬浮球</h2><p>该应用曾与极简电视一起参加美国2013 CES展</p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/TV-Floating.jpg" srcset="/img/loading.gif" lazyload> </p>
+<p>…… 还有很多，后面继续补充。。。。</p>
+<hr>
+<h1 id="游戏相关（Android-x2F-iOS）"><a href="#游戏相关（Android-x2F-iOS）" class="headerlink" title="游戏相关（Android&#x2F;iOS）"></a>游戏相关（Android&#x2F;iOS）</h1><h2 id="雷姆利亚（Android-x2F-iOS）"><a href="#雷姆利亚（Android-x2F-iOS）" class="headerlink" title="雷姆利亚（Android&#x2F;iOS）"></a>雷姆利亚（Android&#x2F;iOS）</h2><p><img src="http://pp.myapp.com/ma_icon/0/icon_42335335_1480314623/96" srcset="/img/loading.gif" lazyload><br>一个专注的开放世界观的二次元企划社区平台和动漫平台。</p>
+<p><a target="_blank" rel="noopener" href="https://itunes.apple.com/us/app/lei-mu-li-ya/id1146321243?mt=8">Apple</a><br><a target="_blank" rel="noopener" href="http://sj.qq.com/myapp/detail.htm?apkName=com.leimuliya.app">应用宝</a><br><a target="_blank" rel="noopener" href="http://zhushou.360.cn/detail/index/soft_id/3504817?recrefer=SE_D_%E9%9B%B7%E5%A7%86%E5%88%A9%E4%BA%9A">360应用市场</a><br><a target="_blank" rel="noopener" href="http://www.wandoujia.com/apps/com.leimuliya.app">豌豆荚</a><br><a target="_blank" rel="noopener" href="http://app.mi.com/details?id=com.leimuliya.app&ref=search">小米应用商店</a>  </p>
+<h2 id="九游"><a href="#九游" class="headerlink" title="九游"></a>九游</h2><p><img src="http://image.game.uc.cn/2013/11/21/9526686.png" srcset="/img/loading.gif" lazyload></p>
+<p><a target="_blank" rel="noopener" href="http://www.9game.cn/">官网&#x2F;App</a></p>
+<h2 id="九游SDK（浮窗）"><a href="#九游SDK（浮窗）" class="headerlink" title="九游SDK（浮窗）"></a>九游SDK（浮窗）</h2><img src= "http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Float-1.jpg"  width="600" height="300"/>
+
+<img src= "http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Float-2.jpg"  width="600" height="300"/>
+
+<h2 id="幽灵辅助（皇室战争／COC）"><a href="#幽灵辅助（皇室战争／COC）" class="headerlink" title="幽灵辅助（皇室战争／COC）"></a>幽灵辅助（皇室战争／COC）</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/Octopus-1.jpg" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<h1 id="移动应用-Android-x2F-iOS"><a href="#移动应用-Android-x2F-iOS" class="headerlink" title="移动应用(Android&#x2F;iOS)"></a>移动应用(Android&#x2F;iOS)</h1><h2 id="NETS-MConnect-iOS-x2F-Android"><a href="#NETS-MConnect-iOS-x2F-Android" class="headerlink" title="NETS MConnect(iOS&#x2F;Android)"></a>NETS MConnect(iOS&#x2F;Android)</h2><img src="http://a3.mzstatic.com/us/r30/Purple69/v4/d2/bf/89/d2bf89d7-616e-300b-f6be-14f152e06f05/screen696x696.jpeg" srcset="/img/loading.gif" lazyload  width="150" height="280"/>
+
+<p><a target="_blank" rel="noopener" href="https://itunes.apple.com/sg/app/nets-mconnect/id998916671?mt=8">Apple</a> </p>
+<h2 id="NetTest-Android"><a href="#NetTest-Android" class="headerlink" title="NetTest(Android)"></a>NetTest(Android)</h2><p><a target="_blank" rel="noopener" href="https://www.pgyer.com/nettest">蒲公英</a></p>
+<h2 id="SmartParking-Android"><a href="#SmartParking-Android" class="headerlink" title="SmartParking(Android)"></a>SmartParking(Android)</h2><h2 id="…"><a href="#…" class="headerlink" title="…"></a>…</h2><p>…</p>
+<p>太多，待以后一一补充…</p>
+<hr>
+<h1 id="NFC-x2F-RFID专题"><a href="#NFC-x2F-RFID专题" class="headerlink" title="NFC&#x2F;RFID专题"></a>NFC&#x2F;RFID专题</h1><h2 id="某省会城市一卡通项目"><a href="#某省会城市一卡通项目" class="headerlink" title="某省会城市一卡通项目"></a>某省会城市一卡通项目</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/bdt.jpg" srcset="/img/loading.gif" lazyload>  </p>
+<h2 id="碰碰米"><a href="#碰碰米" class="headerlink" title="碰碰米"></a>碰碰米</h2><p><img src="http://pp.myapp.com/ma_pic2/0/shot_10417951_19491884_1_1415122453/550" srcset="/img/loading.gif" lazyload></p>
+<p><a target="_blank" rel="noopener" href="http://sj.qq.com/myapp/detail.htm?apkName=me.pengpeng.ppme">应用宝</a><br><a target="_blank" rel="noopener" href="http://zhushou.360.cn/detail/index/soft_id/857247">360应用市场</a><br><a target="_blank" rel="noopener" href="http://www.wandoujia.com/apps/me.pengpeng.ppme">豌豆荚</a><br><a target="_blank" rel="noopener" href="http://app.mi.com/details?id=me.pengpeng.ppme">小米应用商店</a><br><a target="_blank" rel="noopener" href="https://www.pgyer.com/ppme">蒲公英</a> </p>
+<h2 id="极控者智能戒指"><a href="#极控者智能戒指" class="headerlink" title="极控者智能戒指"></a><a target="_blank" rel="noopener" href="http://www.jakcom.com/">极控者</a>智能戒指</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/TimeR.jpg" srcset="/img/loading.gif" lazyload>  </p>
+<p><a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.jakcom.timer&hl=zh_CN">Google-Play</a><br><a target="_blank" rel="noopener" href="http://android.myapp.com/myapp/detail.htm?apkName=com.jakcom.timer">应用宝</a><br><a target="_blank" rel="noopener" href="http://zhushou.360.cn/detail/index/soft_id/3082395?recrefer=SE_D_Smart%20Ring">360应用市场</a><br><a target="_blank" rel="noopener" href="http://www.wandoujia.com/apps/com.jakcom.timer">豌豆荚</a><br><a target="_blank" rel="noopener" href="https://www.pgyer.com/smartring">蒲公英</a>  </p>
+<h2 id="NFC云分享"><a href="#NFC云分享" class="headerlink" title="NFC云分享"></a>NFC云分享</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/TimeR1%20.png" srcset="/img/loading.gif" lazyload>  </p>
+<p><a target="_blank" rel="noopener" href="http://android.myapp.com/myapp/detail.htm?apkName=com.imtimer.nfcshareport">应用宝</a><br><a target="_blank" rel="noopener" href="http://zhushou.360.cn/detail/index/soft_id/2194764?recrefer=SE_D_NFC%E4%BA%91%E5%88%86%E4%BA%AB">360应用市场</a><br><a target="_blank" rel="noopener" href="http://www.wandoujia.com/apps/com.imtimer.nfcshareport">豌豆荚</a></p>
+<h2 id="NFC任务管理"><a href="#NFC任务管理" class="headerlink" title="NFC任务管理"></a>NFC任务管理</h2><p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/TimeR2%20.png" srcset="/img/loading.gif" lazyload> </p>
+<p><a target="_blank" rel="noopener" href="http://android.myapp.com/myapp/detail.htm?apkName=com.imtimer.nfctaskediter">应用宝</a><br><a target="_blank" rel="noopener" href="http://zhushou.360.cn/detail/index/soft_id/2194763?recrefer=SE_D_NFC%E4%BA%91%E5%88%86%E4%BA%AB">360应用市场</a><br><a target="_blank" rel="noopener" href="http://www.wandoujia.com/apps/com.imtimer.nfctaskediter">豌豆荚</a></p>
+<h2 id="TV-NFC控制"><a href="#TV-NFC控制" class="headerlink" title="TV NFC控制"></a>TV NFC控制</h2><p>该项目曾参加德国2013 <a target="_blank" rel="noopener" href="http://b2b.ifa-berlin.com/">IFA展</a></p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/hexo/tv-nfc.png" srcset="/img/loading.gif" lazyload>  </p>
+<hr>
+<h1 id="我的开源"><a href="#我的开源" class="headerlink" title="我的开源"></a>我的开源</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/SkySeraph-XKnife"><strong>XKnife</strong></a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/skyseraph/android_nfc_book"><strong>nfc_wifi_assistant</strong></a>    Android NFC Wifi Auto Connect</p>
+</li>
+<li><p><a href=""><strong>TopAppMonitor</strong></a>  Android前台应用监测  </p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/skyseraph/PlistAutoCreate"><strong>PlistAutoCreate</strong></a> iOS plist和OTA 自动生成脚本</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/skyseraph/Soft-Tools"><strong>Soft-Tools</strong></a> Soft Tools</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/skyseraph/Enterprise"><strong>Enterprise</strong></a> Enterprise Reseach</p>
+</li>
+</ul>
+<p>更多待补充…</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/skyseraph"><img src="https://img.shields.io/github/followers/skyseraph.svg?style=social&label=Follow&style=flat-square" srcset="/img/loading.gif" lazyload alt="GitHub followers"></a></p>
+<hr>
+<h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><p>待补充…</p>
+<hr>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><hr>
+<h1 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h1><p><strong>Email</strong>：	skyserpah00#126.com（技术交流）<br><strong>微信号</strong>：   452728574（合作交流，注明需求）   </p>
+<p><img src="http://7xo4q8.com1.z0.glb.clouddn.com/skyseraph/2016/wx_zfb.jpg" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<p>Update time<br>10&#x2F;31&#x2F;2016 Update,add Game<br>08&#x2F;31&#x2F;2016 Update,add nfc<br>06&#x2F;12&#x2F;2016 Update,add TV App<br>11&#x2F;30&#x2F;2015 Create this page      </p>
+
+
+  
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.14.1/waline.min.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.14.1/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://blog-comment-six-tau.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+</article>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
