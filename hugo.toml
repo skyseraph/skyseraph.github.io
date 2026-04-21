@@ -10,14 +10,14 @@ paginate = 10
 [params]
   author = "SkySeraph"
   description = "个人简介待补充"
-  keywords = ["技术博客", "编程", "开发", "SkySeraph"]
-  avatar = "/images/avatar.png"
+  keywords = ["技术博客", "架构", "LLM", "SkySeraph"]
+  avatar = "/images/skyseraph.png"
   github = "skyseraph"
   email = ""
-  since = 2024
+  since = 2015
 
   [params.giscus]
-    enabled = true
+    enabled = false
     repo = "skyseraph/skyseraph.github.io"
     repoID = ""
     category = "Announcements"
@@ -39,9 +39,17 @@ paginate = 10
     url = "/projects/"
     weight = 3
   [[menu.main]]
+    name = "分类"
+    url = "/categories/"
+    weight = 3
+  [[menu.main]]
+    name = "标签"
+    url = "/tags/"
+    weight = 4
+  [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 4
+    weight = 5
 
 [taxonomies]
   tag = "tags"
@@ -49,7 +57,7 @@ paginate = 10
 
 [markup]
   [markup.highlight]
-    style = "github"
+    style = "dracula"
     lineNos = true
     lineNumbersInTable = true
   [markup.goldmark]
