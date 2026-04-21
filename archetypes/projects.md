@@ -1,6 +1,6 @@
 ---
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
-date: {{ .Date }}
+date: {{ now.Format "2006-01-02T15:04:05+08:00" }}
 icon: "📦"
 description: ""
 status: "wip"
