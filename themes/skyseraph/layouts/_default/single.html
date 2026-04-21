@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="container">
+  <div class="article-header">
+    <h1>{{ .Title }}</h1>
+  </div>
+  <article class="prose">{{ .Content }}</article>
+  {{ partial "comments.html" . }}
+</div>
+{{ end }}

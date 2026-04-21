@@ -1,0 +1,57 @@
+baseURL = "https://skyseraph.github.io/"
+languageCode = "zh-CN"
+title = "SkySeraph"
+theme = "skyseraph"
+defaultContentLanguage = "zh"
+enableRobotsTXT = true
+enableEmoji = true
+paginate = 10
+
+[params]
+  author = "SkySeraph"
+  description = "个人简介待补充"
+  keywords = ["技术博客", "编程", "开发", "SkySeraph"]
+  avatar = "/images/avatar.png"
+  github = "skyseraph"
+  email = ""
+  since = 2024
+
+  [params.giscus]
+    enabled = true
+    repo = "skyseraph/skyseraph.github.io"
+    repoID = ""
+    category = "Announcements"
+    categoryID = ""
+    mapping = "pathname"
+    theme = "light"
+
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "文章"
+    url = "/posts/"
+    weight = 2
+  [[menu.main]]
+    name = "作品"
+    url = "/projects/"
+    weight = 3
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[markup]
+  [markup.highlight]
+    style = "github"
+    lineNos = true
+    lineNumbersInTable = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

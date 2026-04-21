@@ -1,0 +1,16 @@
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-copy">
+      &copy; {{ .Site.Params.since }}–{{ now.Year }} {{ .Site.Params.author }} &middot;
+      <a href="{{ "/posts/index.xml" | relURL }}">RSS</a>
+    </span>
+    <div class="footer-links">
+      {{ with .Site.Params.github }}
+      <a href="https://github.com/{{ . }}" target="_blank" rel="noopener">GitHub</a>
+      {{ end }}
+      {{ with .Site.Params.email }}
+      <a href="mailto:{{ . }}">Email</a>
+      {{ end }}
+    </div>
+  </div>
+</footer>

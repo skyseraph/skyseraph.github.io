@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div class="container">
+
+  <div class="page-header">
+    <h1>文章</h1>
+    <p>共 {{ len (where .Site.RegularPages "Type" "posts") }} 篇文章</p>
+  </div>
+
+  {{ $pages := where .Site.RegularPages "Type" "posts" }}
+  {{ $paginator := .Paginate $pages }}
+
+  <ul class="post-list" style="padding: 32px 0;">
+    {{ range $paginator.Pages }}
+    <li class="post-item">
+      <a href="{{ .RelPermalink }}" class="post-item-title">{{ .Title }}</a>
+      <span class="post-item-date">{{ .Date.Format "2006-01-02" }}</span>
+    </li>
+    {{ end }}
+  </ul>
+
+  <!-- Pagination -->
+  {{ if gt $paginator.TotalPages 1 }}
+  <div class="pagination">
+    {{ if $paginator.HasPrev }}
+    <a href="{{ $paginator.Prev.URL }}">&laquo;</a>
+    {{ end }}
+    {{ range $paginator.Pagers }}
+    {{ if eq . $paginator }}
+    <span class="current">{{ .PageNumber }}</span>
+    {{ else }}
+    <a href="{{ .URL }}">{{ .PageNumber }}</a>
+    {{ end }}
+    {{ end }}
+    {{ if $paginator.HasNext }}
+    <a href="{{ $paginator.Next.URL }}">&raquo;</a>
+    {{ end }}
+  </div>
+  {{ end }}
+
+</div>
+{{ end }}

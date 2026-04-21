@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="container">
+  <div class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+  </div>
+  <div style="padding: 32px 0;">
+    {{ range .Data.Pages }}
+    <li class="post-item" style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--color-border);">
+      <a href="{{ .RelPermalink }}" class="post-item-title">{{ .Title }}</a>
+      <span class="post-item-date">{{ .Date.Format "2006-01-02" }}</span>
+    </li>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

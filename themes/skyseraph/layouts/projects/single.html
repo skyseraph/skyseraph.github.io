@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="container">
+  <div class="article-header">
+    <h1>{{ .Title }}</h1>
+    <div class="article-meta">
+      {{ with .Params.status }}
+      <span class="project-status status-{{ . }}">
+        {{ if eq . "active" }}维护中{{ else if eq . "wip" }}开发中{{ else }}已归档{{ end }}
+      </span>
+      {{ end }}
+      {{ with .Params.github }}<a href="https://github.com/{{ . }}" target="_blank" rel="noopener">GitHub →</a>{{ end }}
+      {{ with .Params.demo }}<a href="{{ . }}" target="_blank" rel="noopener">Demo →</a>{{ end }}
+    </div>
+    {{ if .Params.tags }}
+    <div class="article-tags">
+      {{ range .Params.tags }}<span class="article-tag">{{ . }}</span>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+  <article class="prose">{{ .Content }}</article>
+</div>
+{{ end }}

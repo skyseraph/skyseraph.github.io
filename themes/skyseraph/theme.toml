@@ -1,0 +1,9 @@
+name = "skyseraph"
+license = "MIT"
+licenselink = "https://github.com/skyseraph/skyseraph.github.io/blob/main/LICENSE"
+description = "A clean and minimal theme for SkySeraph's blog"
+homepage = "https://skyseraph.github.io"
+min_version = "0.110.0"
+
+[author]
+  name = "SkySeraph"
