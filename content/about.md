@@ -7,7 +7,7 @@ layout: "about"
 
 ## 关于我 👋
 
-欢迎来到 SkySeraph 的个人站点，创建于 2015 年 12 月 30 日（2016.11后沉寂，2026伴随 Vibe Coding再次复活），此前活跃于[博客园](https://www.cnblogs.com/skyseraph) / [CSDN](https://blog.csdn.net/zgzhaobo)。
+欢迎来到 SkySeraph 的个人站点，创建于 2015 年 12 月 30 日（2016.11后沉寂，2026伴随 Vibe Coding再次启航），此前活跃于[博客园](https://www.cnblogs.com/skyseraph) / [CSDN](https://blog.csdn.net/zgzhaobo)。
 
 - 先后就职于 TCL / 阿里巴巴 / HW
 
