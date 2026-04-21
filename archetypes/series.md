@@ -1,7 +1,9 @@
 ---
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
 date: {{ .Date }}
-categories: ["技术"]   # 技术 / 随笔 / 项目
+series: ""        # 所属系列名称，如 "AI周刊"
+issue: 1          # 期数
+categories: ["周刊"]
 tags: []
 toc: false
 draft: true

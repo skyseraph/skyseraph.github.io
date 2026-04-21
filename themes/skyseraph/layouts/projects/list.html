@@ -2,50 +2,89 @@
 <div class="container">
 
   <div class="page-header">
-    <h1>作品</h1>
-    <p>我参与开发或独立完成的项目</p>
+    <h1>
+      <span class="lang-zh">作品</span>
+      <span class="lang-en">Projects</span>
+    </h1>
+    <p>
+      <span class="lang-zh">我参与开发或独立完成的项目</span>
+      <span class="lang-en">Projects I built or contributed to</span>
+    </p>
   </div>
+
+  <!-- Tag filter -->
+  {{ $allTags := slice }}
+  {{ range where .Site.RegularPages "Type" "projects" }}
+    {{ range .Params.tags }}
+      {{ $allTags = $allTags | append . }}
+    {{ end }}
+  {{ end }}
+  {{ $allTags = $allTags | uniq }}
+  {{ if $allTags }}
+  <div style="padding: 16px 0 24px; display:flex; flex-wrap:wrap; gap:6px; align-items:center; border-bottom:1px solid var(--border);">
+    <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim); margin-right:4px;">tag:</span>
+    {{ range $allTags }}
+    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">#{{ . }}</a>
+    {{ end }}
+  </div>
+  {{ end }}
 
   <div class="projects-grid">
     {{ range where .Site.RegularPages "Type" "projects" }}
-    <div class="project-card">
+    {{ $hasDetail := .Content }}
+    {{ $href := cond (ne .Params.demo nil) .Params.demo .RelPermalink }}
+    {{ if $hasDetail }}{{ $href = .RelPermalink }}{{ end }}
+    {{ $external := and (not $hasDetail) (ne .Params.demo nil) }}
+    <a href="{{ $href }}" class="project-card"{{ if $external }} target="_blank" rel="noopener"{{ end }}>
       <div class="project-icon">{{ .Params.icon | default "📦" }}</div>
       <div class="project-info">
         <div class="project-title">
           {{ .Title }}
           {{ with .Params.status }}
           <span class="project-status status-{{ . }}">
-            {{ if eq . "active" }}维护中{{ else if eq . "wip" }}开发中{{ else }}已归档{{ end }}
+            {{ if eq . "active" }}
+              <span class="lang-zh">维护中</span>
+              <span class="lang-en">active</span>
+            {{ else if eq . "wip" }}
+              <span class="lang-zh">开发中</span>
+              <span class="lang-en">wip</span>
+            {{ else }}
+              <span class="lang-zh">已归档</span>
+              <span class="lang-en">archived</span>
+            {{ end }}
           </span>
           {{ end }}
         </div>
         <div class="project-desc">{{ .Params.description | default .Summary }}</div>
         {{ if .Params.tags }}
-        <div class="card-tags" style="margin-bottom: 10px;">
-          {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
+        <div class="card-tags" style="margin-bottom:10px;">
+          {{ range .Params.tags }}
+          <span class="tag">{{ . }}</span>
+          {{ end }}
         </div>
         {{ end }}
         <div class="project-links">
           {{ with .Params.github }}
-          <a href="https://github.com/{{ . }}" class="project-link" target="_blank" rel="noopener">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+          <span class="project-link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
             GitHub
-          </a>
+          </span>
           {{ end }}
           {{ with .Params.demo }}
-          <a href="{{ . }}" class="project-link" target="_blank" rel="noopener">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <span class="project-link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Demo
-          </a>
+          </span>
           {{ end }}
-          {{ if .Content }}
-          <a href="{{ .RelPermalink }}" class="project-link">
-            详情 →
-          </a>
+          {{ if $hasDetail }}
+          <span class="project-link">
+            <span class="lang-zh">详情 →</span>
+            <span class="lang-en">detail →</span>
+          </span>
           {{ end }}
         </div>
       </div>
-    </div>
+    </a>
     {{ end }}
   </div>
 

@@ -9,10 +9,14 @@
         <span class="lang-zh">{{ .Date.Format "2006年01月02日" }}</span>
         <span class="lang-en">{{ .Date.Format "Jan 02, 2006" }}</span>
       </span>
-      {{ if .Params.categories }}
+      {{ with .Params.series }}
       <span class="article-meta-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-        {{ range .Params.categories }}<a href="{{ "/categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <a href="{{ $.CurrentSection.RelPermalink }}">{{ . }}</a>
+        {{ if $.Params.issue }}
+          <span class="lang-zh">第 {{ $.Params.issue }} 期</span>
+          <span class="lang-en">#{{ $.Params.issue }}</span>
+        {{ end }}
       </span>
       {{ end }}
       <span class="article-meta-item">
@@ -44,12 +48,40 @@
     {{ .Content }}
   </article>
 
-  <!-- Post Navigation -->
+  <!-- Series Navigation -->
+  {{ with .Params.series }}
+  {{ $seriesName := . }}
+  {{ $allIssues := where $.Site.RegularPages ".Params.series" $seriesName }}
+  {{ $sorted := sort $allIssues ".Date" "asc" }}
+  {{ $total := len $sorted }}
+  {{ if gt $total 1 }}
+  <div class="series-nav-box">
+    <div class="series-nav-title">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <span class="lang-zh">{{ $seriesName }} · 全部 {{ $total }} 期</span>
+      <span class="lang-en">{{ $seriesName }} · {{ $total }} issues</span>
+    </div>
+    <ul class="series-issue-list">
+      {{ range $sorted }}
+      <li class="{{ if eq .RelPermalink $.RelPermalink }}series-issue-active{{ end }}">
+        <a href="{{ .RelPermalink }}">
+          {{ if .Params.issue }}<span class="series-issue-num">#{{ .Params.issue }}</span>{{ end }}
+          {{ .Title }}
+        </a>
+        <span class="series-issue-date">{{ .Date.Format "01-02" }}</span>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+  {{ end }}
+
+  <!-- Prev / Next in section -->
   <nav class="post-nav">
     {{ with .PrevInSection }}
     <a href="{{ .RelPermalink }}" class="post-nav-item prev">
       <div class="post-nav-label">
-        <span class="lang-zh">← 上一篇</span>
+        <span class="lang-zh">← 上一期</span>
         <span class="lang-en">← Prev</span>
       </div>
       <div class="post-nav-title">{{ .Title }}</div>
@@ -58,7 +90,7 @@
     {{ with .NextInSection }}
     <a href="{{ .RelPermalink }}" class="post-nav-item next">
       <div class="post-nav-label">
-        <span class="lang-zh">下一篇 →</span>
+        <span class="lang-zh">下一期 →</span>
         <span class="lang-en">Next →</span>
       </div>
       <div class="post-nav-title">{{ .Title }}</div>

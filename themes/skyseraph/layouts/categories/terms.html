@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="container">
+
+  <div class="page-header">
+    <h1>categories</h1>
+    <p>共 {{ len .Data.Terms }} 个分类</p>
+  </div>
+
+  <div class="tag-cloud">
+    {{ range .Data.Terms.ByCount }}
+    <a href="{{ .Page.RelPermalink }}" class="tag-cloud-item cat-badge" style="font-size:0.85rem; padding: 5px 14px;">
+      {{ .Page.Title }}<span style="color:var(--text-dim);margin-left:5px;">{{ .Count }}</span>
+    </a>
+    {{ end }}
+  </div>
+
+</div>
+{{ end }}

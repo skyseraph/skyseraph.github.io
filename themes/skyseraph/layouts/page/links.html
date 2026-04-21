@@ -1,0 +1,42 @@
+{{ define "main" }}
+<div class="container">
+
+  <div class="page-header">
+    <h1>
+      <span class="lang-zh">友链</span>
+      <span class="lang-en">Friends</span>
+    </h1>
+    <p>
+      <span class="lang-zh">志同道合的朋友们</span>
+      <span class="lang-en">Blogs &amp; friends I follow</span>
+    </p>
+  </div>
+
+  <div class="links-grid">
+    {{ range .Params.links }}
+    <a href="{{ .url }}" class="link-card" target="_blank" rel="noopener noreferrer">
+      <div class="link-avatar">
+        {{ if .avatar }}
+        <img src="{{ .avatar }}" alt="{{ .name }}">
+        {{ else }}
+        <div class="link-avatar-placeholder">{{ substr .name 0 1 }}</div>
+        {{ end }}
+      </div>
+      <div class="link-info">
+        <div class="link-name">{{ .name }}</div>
+        <div class="link-desc">{{ .desc }}</div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+
+  <div class="links-apply">
+    <p>
+      <span class="lang-zh">想交换友链？在下方留言或发邮件给我，附上博客名称、地址和简介即可。</span>
+      <span class="lang-en">Want to exchange links? Leave a comment below or send me an email with your blog name, URL, and a short description.</span>
+    </p>
+  </div>
+
+  {{ partial "comments.html" . }}
+</div>
+{{ end }}

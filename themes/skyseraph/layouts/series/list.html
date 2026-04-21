@@ -1,0 +1,82 @@
+{{ define "main" }}
+<div class="container">
+
+  {{ if .Sections }}
+  {{/* ── 根页：/series/ 展示所有系列 ── */}}
+  <div class="page-header">
+    <h1>
+      <span class="lang-zh">专栏</span>
+      <span class="lang-en">Series</span>
+    </h1>
+    <p>
+      <span class="lang-zh">持续更新的系列内容</span>
+      <span class="lang-en">Ongoing series &amp; columns</span>
+    </p>
+  </div>
+
+  <div class="series-grid">
+    {{ range .Sections }}
+    {{ $latest := index (sort .Pages ".Date" "desc") 0 }}
+    <a href="{{ .RelPermalink }}" class="series-card">
+      <div class="series-card-header">
+        <div class="series-card-icon">{{ .Params.icon | default "📰" }}</div>
+        <div>
+          <div class="series-card-title">{{ .Title }}</div>
+          <div class="series-card-count">
+            <span class="lang-zh">共 {{ len .Pages }} 期</span>
+            <span class="lang-en">{{ len .Pages }} issues</span>
+          </div>
+        </div>
+      </div>
+      {{ with .Params.description }}
+      <div class="series-card-desc">{{ . }}</div>
+      {{ end }}
+      {{ if $latest }}
+      <div class="series-card-latest">
+        <span style="color:var(--text-dim);font-size:0.75rem;">
+          <span class="lang-zh">最新：</span>
+          <span class="lang-en">Latest: </span>
+        </span>
+        {{ $latest.Title }}
+        <span class="series-card-date">{{ $latest.Date.Format "2006-01-02" }}</span>
+      </div>
+      {{ end }}
+    </a>
+    {{ end }}
+  </div>
+
+  {{ else }}
+  {{/* ── 子系列页：/series/ai-weekly/ 展示该系列所有期 ── */}}
+  <div class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+    {{ if not .Params.description }}
+    <p>
+      <span class="lang-zh">共 {{ len .Pages }} 期</span>
+      <span class="lang-en">{{ len .Pages }} issues</span>
+    </p>
+    {{ end }}
+  </div>
+
+  <ul class="post-list" style="padding: 24px 0;">
+    {{ range sort .Pages ".Date" "desc" }}
+    <li class="post-item" style="flex-direction:column; align-items:flex-start; gap:4px; padding:14px 0;">
+      <div style="display:flex; justify-content:space-between; width:100%; align-items:baseline; gap:12px;">
+        <a href="{{ .RelPermalink }}" class="post-item-title">{{ .Title }}</a>
+        <span class="post-item-date">{{ .Date.Format "2006-01-02" }}</span>
+      </div>
+      {{ if .Params.issue }}
+      <div style="padding-left:1.2em;">
+        <span class="series-badge">
+          <span class="lang-zh">第 {{ .Params.issue }} 期</span>
+          <span class="lang-en">#{{ .Params.issue }}</span>
+        </span>
+      </div>
+      {{ end }}
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+
+</div>
+{{ end }}

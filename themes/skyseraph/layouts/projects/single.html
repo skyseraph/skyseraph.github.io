@@ -5,7 +5,16 @@
     <div class="article-meta">
       {{ with .Params.status }}
       <span class="project-status status-{{ . }}">
-        {{ if eq . "active" }}维护中{{ else if eq . "wip" }}开发中{{ else }}已归档{{ end }}
+        {{ if eq . "active" }}
+          <span class="lang-zh">维护中</span>
+          <span class="lang-en">active</span>
+        {{ else if eq . "wip" }}
+          <span class="lang-zh">开发中</span>
+          <span class="lang-en">wip</span>
+        {{ else }}
+          <span class="lang-zh">已归档</span>
+          <span class="lang-en">archived</span>
+        {{ end }}
       </span>
       {{ end }}
       {{ with .Params.github }}<a href="https://github.com/{{ . }}" target="_blank" rel="noopener">GitHub →</a>{{ end }}
