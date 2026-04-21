@@ -31,7 +31,9 @@ layout: "about"
 
 ### 专利
 
-- 20+，待补充 ...
+- 20+，逐渐补充 ...
+- Account Configuration Method and Device for Private Cloud, 2013-07-01, [Google Patents](https://patents.google.com/patent/CN103581260A/zh) 
+- Device Debugging and Commissioning Method and Apparatus，2019-08-16，[Google Patents](https://patents.google.com/patent/CN110601889A/zh) 
 
 ## 演讲 & 培训
 
@@ -39,7 +41,7 @@ layout: "about"
 
 - 2015-2017 极客学院签约布道师（在线培训讲师）
 - 2016  MSUP 特聘高级讲师
-- 2022\~至今 华大高级讲师，HW培训中心 Committer软件教练
+- 2022\~至今 华大高级讲师，HW培训中心 Committer软件教练，荣获3次华为金牌教师（2023~2025）
 - ......
 
 ### 演讲
@@ -65,7 +67,7 @@ layout: "about"
 
 ## About Me 👋
 
-Welcome to SkySeraph’s personal site, created on Dec 30, 2015 (went quiet after Nov 2016, revived in 2026 with Vibe Coding). Previously active on  [CNBlogs](https://www.cnblogs.com/skyseraph) / [CSDN](https://blog.csdn.net/zgzhaobo).
+Welcome to SkySeraph’s personal site, created on Dec 30, 2015 (went silent after November 2016, and set sail again with Vibe Coding in 2026). Previously active on  [CNBlogs](https://www.cnblogs.com/skyseraph) / [CSDN](https://blog.csdn.net/zgzhaobo).
 
 - Former engineer at TCL / Alibaba / HW
 
@@ -87,13 +89,15 @@ Welcome to SkySeraph’s personal site, created on Dec 30, 2015 (went quiet afte
 
 ### Patents
 - 20+, to be updated …
+- Account Configuration Method and Device for Private Cloud, 2013-07-01, [Google Patents](https://patents.google.com/patent/CN103581260A/zh) 
+- Device Debugging and Commissioning Method and Apparatus，2019-08-16，[Google Patents](https://patents.google.com/patent/CN110601889A/zh) 
 
 ## Talks & Training
 
 ### Training
-- 2015–2017 Contracted Evangelist at GeekAcademy (Online Instructor)
+- 2015–2017 Contracted Evangelist (Online Training Lecturer) at GeekAcademy
 - 2016 Senior Lecturer at MSUP
-- 2022–Present Senior Lecturer at Huada; Software Coach & Committer at Huawei Training Center
+- 2022–Present Senior Lecturer at BGI, Committer & Software Coach at HW Training Center; awarded Huawei Gold Teacher three times (2023–2025)
 
 ### Talks
 - 2018.9.15 [Android Green Alliance — Exploration and Practice of Game Automation Testing](https://mp.weixin.qq.com/s/sjyiuQV6ZQRNEHKv0Fetkw), awarded [Android Green Alliance Outstanding Speaker 2018](https://mp.weixin.qq.com/s/gsiid9_in8A5QUXehaSF2A)
