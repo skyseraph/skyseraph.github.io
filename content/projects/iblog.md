@@ -1,6 +1,6 @@
 ---
 title: "skyseraph.github.io"
-date: 2015-12-30
+date: 2015-12-01
 icon: "🌌"
 description: "基于 Hugo 构建的个人技术博客，部署在 GitHub Pages"
 status: "active"

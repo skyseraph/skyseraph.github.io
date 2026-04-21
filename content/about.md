@@ -16,6 +16,7 @@ layout: "about"
 - AI / LLM / AIGC / ...
 - APP ：Android / iOS / ...
 - 产品设计 / 软件架构 / 敏捷开发
+- ...
 
 ## 出版 & 专利 & 论文
 
@@ -31,9 +32,10 @@ layout: "about"
 
 ### 专利
 
+- Data Transmission Method and Device，2013-07,[Google Patents](https://patents.google.com/patent/CN103368604A/zh)
+- Account Configuration Method and Device for Private Cloud, 2013-07, [Google Patents](https://patents.google.com/patent/CN103581260A/zh) 
+- Device Debugging and Commissioning Method and Apparatus，2019-08，[Google Patents](https://patents.google.com/patent/CN110601889A/zh) 
 - 20+，逐渐补充 ...
-- Account Configuration Method and Device for Private Cloud, 2013-07-01, [Google Patents](https://patents.google.com/patent/CN103581260A/zh) 
-- Device Debugging and Commissioning Method and Apparatus，2019-08-16，[Google Patents](https://patents.google.com/patent/CN110601889A/zh) 
 
 ## 演讲 & 培训
 
@@ -76,6 +78,7 @@ Welcome to SkySeraph’s personal site, created on Dec 30, 2015 (went silent aft
 - AI / LLM / AIGC ...
 - APP: Android / iOS ...
 - Product Design / Software Architecture / Agile
+- ...
 
 ## Publications & Patents & Papers
 
@@ -88,9 +91,10 @@ Welcome to SkySeraph’s personal site, created on Dec 30, 2015 (went silent aft
 - 3 papers, to be updated …
 
 ### Patents
+- Data Transmission Method and Device，2013-07,[Google Patents](https://patents.google.com/patent/CN103368604A/zh)
+- Account Configuration Method and Device for Private Cloud, 2013-07, [Google Patents](https://patents.google.com/patent/CN103581260A/zh) 
+- Device Debugging and Commissioning Method and Apparatus，2019-08，[Google Patents](https://patents.google.com/patent/CN110601889A/zh) 
 - 20+, to be updated …
-- Account Configuration Method and Device for Private Cloud, 2013-07-01, [Google Patents](https://patents.google.com/patent/CN103581260A/zh) 
-- Device Debugging and Commissioning Method and Apparatus，2019-08-16，[Google Patents](https://patents.google.com/patent/CN110601889A/zh) 
 
 ## Talks & Training
 

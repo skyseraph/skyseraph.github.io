@@ -1,6 +1,6 @@
 ---
 title: "示例项目"
-date: 2015-12-30
+date: 2015-12-01
 icon: "🚀"
 description: "待补充项目描述"
 status: "wip"
