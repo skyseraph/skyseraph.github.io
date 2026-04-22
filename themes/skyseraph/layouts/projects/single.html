@@ -17,6 +17,7 @@
         {{ end }}
       </span>
       {{ end }}
+      <span style="font-size:0.85rem;color:var(--text-dim);">{{ .Date.Format "2006" }}</span>
       {{ with .Params.github }}<a href="https://github.com/{{ . }}" target="_blank" rel="noopener">GitHub →</a>{{ end }}
       {{ with .Params.demo }}<a href="{{ . }}" target="_blank" rel="noopener">Demo →</a>{{ end }}
     </div>

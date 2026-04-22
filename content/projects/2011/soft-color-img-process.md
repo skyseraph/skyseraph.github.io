@@ -6,7 +6,7 @@ description: ""
 status: "archived"
 github: ""
 demo: ""
-tags: ["软件"]
+tags: ["工具软件"]
 draft: false
 ---
 
