@@ -26,7 +26,16 @@
     </div>
     {{ end }}
   </div>
-  <article class="prose">{{ .Content }}</article>
+  {{ with .Params.description }}<p style="font-size:1.05rem;color:var(--text-dim);margin:16px 0 24px;">{{ . }}</p>{{ end }}
+  {{ if .Content }}
+  <details style="margin-top:24px;">
+    <summary style="cursor:pointer;font-size:0.9rem;color:var(--text-dim);user-select:none;padding:8px 0;">
+      <span class="lang-zh">展开详情</span>
+      <span class="lang-en">Show details</span>
+    </summary>
+    <article class="prose" style="margin-top:16px;">{{ .Content }}</article>
+  </details>
+  {{ end }}
   {{ partial "comments.html" . }}
 </div>
 {{ end }}

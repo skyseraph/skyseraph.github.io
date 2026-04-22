@@ -1,5 +1,5 @@
 ---
-title: "App架构师实践指南"
+title: "《App架构师实践指南》"
 date: 2016-04-22
 icon: "📦"
 description: ""
