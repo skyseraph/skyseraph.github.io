@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="container">
 
-  {{ if .Sections }}
+  {{ if .Parent.IsHome }}
   {{/* ── 根页：/series/ 展示所有系列 ── */}}
   <div class="page-header">
     <h1>

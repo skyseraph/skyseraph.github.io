@@ -22,9 +22,9 @@ layout: "about"
 
 ### 专著
 
-- 《Android NFC 开发实战详解》人民邮电出版社 2014
+- [《Android NFC 开发实战详解》](https://skyseraph.github.io/projects/2014/android-nfc-book/)人民邮电出版社 2014
 - 《Android NFC开发实战详解》繁体版，台湾佳魁资讯股份有限公司出版 2014
-- 《App架构师实践指南》人民邮电出版社 2016（年度畅销书）
+- [《App架构师实践指南》](https://skyseraph.github.io/projects/2016/app-arch-book/) 人民邮电出版社 2016（年度畅销书）
 
 ### 论文
 
@@ -102,9 +102,9 @@ Welcome to SkySeraph’s personal site, created on Dec 2015 (went silent after N
 
 ### Books
 
-- Android NFC Development in Practice — Posts & Telecom Press, 2014
+- [Android NFC Development in Practice — Posts & Telecom Press](https://skyseraph.github.io/projects/2014/android-nfc-book/), 2014
 - Android NFC Development in Practice (Traditional Chinese Edition) — Jiakui Information, Taiwan, 2014
-- App Architect’s Practical Guide — Posts & Telecom Press, 2016 (Bestseller of the Year)
+- [App Architect’s Practical Guide — Posts & Telecom Press](https://skyseraph.github.io/projects/2016/app-arch-book/), 2016 (Bestseller of the Year)
 
 ### Papers
 
