@@ -6,7 +6,7 @@ description: "基于 Hugo 构建的个人技术博客，部署在 GitHub Pages"
 status: "active"
 github: "skyseraph/skyseraph.github.io"
 demo: "https://skyseraph.github.io"
-tags: ["Hugo", "GitHub Pages", "博客"]
+tags: ["开源"]
 ---
 
 本博客使用 Hugo 静态站点生成器构建，自定义主题，通过 GitHub Actions 自动部署到 GitHub Pages。
