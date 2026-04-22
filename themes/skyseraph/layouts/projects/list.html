@@ -55,7 +55,7 @@
           </span>
           {{ end }}
         </div>
-        <div class="project-desc">{{ .Params.description | default .Summary }}</div>
+        {{ with .Params.description }}<div class="project-desc">{{ . }}</div>{{ end }}
         {{ if .Params.tags }}
         <div class="card-tags" style="margin-bottom:10px;">
           {{ range .Params.tags }}
