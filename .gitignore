@@ -1,6 +1,7 @@
 public/
 resources/
 doc/
+skill/
 .hugo_build.lock
 .DS_Store
 Thumbs.db
