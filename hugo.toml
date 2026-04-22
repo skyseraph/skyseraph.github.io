@@ -6,6 +6,7 @@ defaultContentLanguage = "zh"
 enableRobotsTXT = true
 enableEmoji = true
 paginate = 10
+buildFuture = true
 
 [params]
   author = "SkySeraph"
