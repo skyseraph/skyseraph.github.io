@@ -109,7 +109,7 @@
       <a href="{{ .RelPermalink }}" class="card">
         <div class="card-icon">{{ .Params.icon | default "📦" }}</div>
         <div class="card-title">{{ .Title }}</div>
-        <div class="card-desc">{{ .Params.description | default .Summary }}</div>
+        {{ with .Params.description }}<div class="card-desc">{{ . }}</div>{{ end }}
         {{ if .Params.tags }}
         <div class="card-tags">
           {{ range first 3 .Params.tags }}
