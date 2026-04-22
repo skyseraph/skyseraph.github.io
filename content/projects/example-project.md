@@ -5,7 +5,7 @@ icon: "🚀"
 description: "待补充项目描述"
 status: "wip"
 github: ""
-tags: ["待补充"]
+tags: [""]
 ---
 
 项目详情待补充。

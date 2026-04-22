@@ -7,7 +7,7 @@ layout: "about"
 
 ## 关于我 👋
 
-欢迎来到 SkySeraph 的个人站点，创建于 2015 年 12 月 30 日（2016.11后沉寂，2026伴随 Vibe Coding再次启航），此前活跃于[博客园](https://www.cnblogs.com/skyseraph) / [CSDN](https://blog.csdn.net/zgzhaobo)。
+欢迎来到 SkySeraph 的个人站点，创建于 2015 年 12 月 （2016.11后沉寂，2026伴随 Vibe Coding再次启航），此前活跃于[博客园](https://www.cnblogs.com/skyseraph) / [CSDN](https://blog.csdn.net/zgzhaobo)。
 
 - 先后就职于 TCL / 阿里巴巴 / HW
 
@@ -32,15 +32,36 @@ layout: "about"
 
 ### 专利
 
-- 20+，逐渐补充 ...
+- [CN113094253A - Equipment debugging method and device - Google Patents](https://patents.google.com/patent/CN113094253A/en) 
+- [CN103414740A - Private cloud account configuration method and device - Google Patents](https://patents.google.com/patent/CN103414740A/en) 
+- [CN103312524A - Automatic alarming method and system for display equipment - Google Patents](https://patents.google.com/patent/CN103312524A/en) 
+- [CN103412728A - Method and system for device file printing based on local area network - Google Patents](https://patents.google.com/patent/CN103412728A/en) 
+- [CN103413561A - Wireless sound box-based audio playing method and system - Google Patents](https://patents.google.com/patent/CN103413561A/en)
+- [CN105320248B - Aerial gesture input method and device - Google Patents](https://patents.google.com/patent/CN105320248B/en)
+- [CN111383186B - An image processing method, device and terminal equipment - Google Patents](https://patents.google.com/patent/CN111383186B/en)
+- [WO2016070688A1 - Remote control method and system for virtual operation interface - Google Patents](https://patents.google.com/patent/WO2016070688A1/en)
+- [CN103412643A - Terminal and remote control method thereof - Google Patents](https://patents.google.com/patent/CN103412643A/en)
+- [CN103685520A - Method and device for pushing songs on basis of voice recognition - Google Patents](https://patents.google.com/patent/CN103685520A/en)
+- [CN103312524A - Automatic alarming method and system for display equipment - Google Patents](https://patents.google.com/patent/CN103312524A/en)
+- [CN103294398A - Method and device for controlling display terminal based on suspension-type visual window - Google Patents](https://patents.google.com/patent/CN103294398A/en)
+- [CN103472915A - Reading control method and reading control device on basis of pupil tracking and display equipment - Google Patents](https://patents.google.com/patent/CN103472915A/en)
+- [CN104918112A - Camera resource application method and device - Google Patents](https://patents.google.com/patent/CN104918112A/en)
+- [CN103488295A - Method and device for automatically controlling rotation of display equipment - Google Patents](https://patents.google.com/patent/CN103488295A/en)
+- [CN103546200A - Data transmission method and system based on near-field communication - Google Patents](https://patents.google.com/patent/CN103546200A/en)
+- [CN105589576A - Action direction identification method and device - Google Patents](https://patents.google.com/patent/CN105589576A/en)
+- [CN103680101A - Method and system for editing NFC (near field communication) data for NFC equipment or NFC label - Google Patents](https://patents.google.com/patent/CN103680101A/en)
+- [CN105304058A - Method and device for automatically adjusting display parameters - Google Patents](https://patents.google.com/patent/CN105304058A/en)
+- [CN105573156A - Remote control method and system - Google Patents](https://patents.google.com/patent/CN105573156A/en)
+- [CN105376621A - Display control method, intelligent display terminal and portable control terminal - Google Patents](https://patents.google.com/patent/CN105376621A/en) 
+-  ...
 
 ## 演讲 & 培训
 
 ### 培训
 
-- 2015-2017 极客学院签约布道师（在线培训讲师）
+- 2015-2016 极客学院签约布道师（在线培训讲师）
 - 2016  MSUP 特聘高级讲师
-- 2022\~至今 华大高级讲师，HW培训中心 Committer软件教练，荣获3次华为金牌教师（2023~2025）
+- 2022-至今 华大高级讲师，HW培训中心 Committer软件教练，荣获3次华为金牌教师（2023~2025）
 - ......
 
 ### 演讲
@@ -66,7 +87,7 @@ layout: "about"
 
 ## About Me 👋
 
-Welcome to SkySeraph’s personal site, created on Dec 30, 2015 (went silent after November 2016, and set sail again with Vibe Coding in 2026). Previously active on  [CNBlogs](https://www.cnblogs.com/skyseraph) / [CSDN](https://blog.csdn.net/zgzhaobo).
+Welcome to SkySeraph’s personal site, created on Dec 2015 (went silent after November 2016, and set sail again with Vibe Coding in 2026). Previously active on  [CNBlogs](https://www.cnblogs.com/skyseraph) / [CSDN](https://blog.csdn.net/zgzhaobo).
 
 - Former engineer at TCL / Alibaba / HW
 
@@ -80,20 +101,44 @@ Welcome to SkySeraph’s personal site, created on Dec 30, 2015 (went silent aft
 ## Publications & Patents & Papers
 
 ### Books
+
 - Android NFC Development in Practice — Posts & Telecom Press, 2014
 - Android NFC Development in Practice (Traditional Chinese Edition) — Jiakui Information, Taiwan, 2014
 - App Architect’s Practical Guide — Posts & Telecom Press, 2016 (Bestseller of the Year)
 
 ### Papers
+
 - 3 papers, to be updated …
 
 ### Patents
-- 20+, to be updated …
+
+- [CN113094253A - Equipment debugging method and device - Google Patents](https://patents.google.com/patent/CN113094253A/en) 
+- [CN103414740A - Private cloud account configuration method and device - Google Patents](https://patents.google.com/patent/CN103414740A/en) 
+- [CN103312524A - Automatic alarming method and system for display equipment - Google Patents](https://patents.google.com/patent/CN103312524A/en) 
+- [CN103412728A - Method and system for device file printing based on local area network - Google Patents](https://patents.google.com/patent/CN103412728A/en) 
+- [CN103413561A - Wireless sound box-based audio playing method and system - Google Patents](https://patents.google.com/patent/CN103413561A/en)
+- [CN105320248B - Aerial gesture input method and device - Google Patents](https://patents.google.com/patent/CN105320248B/en)
+- [CN111383186B - An image processing method, device and terminal equipment - Google Patents](https://patents.google.com/patent/CN111383186B/en)
+- [WO2016070688A1 - Remote control method and system for virtual operation interface - Google Patents](https://patents.google.com/patent/WO2016070688A1/en)
+- [CN103412643A - Terminal and remote control method thereof - Google Patents](https://patents.google.com/patent/CN103412643A/en)
+- [CN103685520A - Method and device for pushing songs on basis of voice recognition - Google Patents](https://patents.google.com/patent/CN103685520A/en)
+- [CN103312524A - Automatic alarming method and system for display equipment - Google Patents](https://patents.google.com/patent/CN103312524A/en)
+- [CN103294398A - Method and device for controlling display terminal based on suspension-type visual window - Google Patents](https://patents.google.com/patent/CN103294398A/en)
+- [CN103472915A - Reading control method and reading control device on basis of pupil tracking and display equipment - Google Patents](https://patents.google.com/patent/CN103472915A/en)
+- [CN104918112A - Camera resource application method and device - Google Patents](https://patents.google.com/patent/CN104918112A/en)
+- [CN103488295A - Method and device for automatically controlling rotation of display equipment - Google Patents](https://patents.google.com/patent/CN103488295A/en)
+- [CN103546200A - Data transmission method and system based on near-field communication - Google Patents](https://patents.google.com/patent/CN103546200A/en)
+- [CN105589576A - Action direction identification method and device - Google Patents](https://patents.google.com/patent/CN105589576A/en)
+- [CN103680101A - Method and system for editing NFC (near field communication) data for NFC equipment or NFC label - Google Patents](https://patents.google.com/patent/CN103680101A/en)
+- [CN105304058A - Method and device for automatically adjusting display parameters - Google Patents](https://patents.google.com/patent/CN105304058A/en)
+- [CN105573156A - Remote control method and system - Google Patents](https://patents.google.com/patent/CN105573156A/en)
+- [CN105376621A - Display control method, intelligent display terminal and portable control terminal - Google Patents](https://patents.google.com/patent/CN105376621A/en) 
+-  ...
 
 ## Talks & Training
 
 ### Training
-- 2015–2017 Contracted Evangelist (Online Training Lecturer) at GeekAcademy
+- 2015–2016 Contracted Evangelist (Online Training Lecturer) at GeekAcademy
 - 2016 Senior Lecturer at MSUP
 - 2022–Present Senior Lecturer at BGI, Committer & Software Coach at HW Training Center; awarded Huawei Gold Teacher three times (2023–2025)
 
