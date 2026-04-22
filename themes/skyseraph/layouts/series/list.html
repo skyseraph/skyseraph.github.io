@@ -16,15 +16,16 @@
 
   <div class="series-grid">
     {{ range .Sections }}
-    {{ $latest := index (sort .Pages ".Date" "desc") 0 }}
+    {{ $allIssues := .RegularPages }}
+    {{ $latest := index (sort $allIssues ".Date" "desc") 0 }}
     <a href="{{ .RelPermalink }}" class="series-card">
       <div class="series-card-header">
         <div class="series-card-icon">{{ .Params.icon | default "📰" }}</div>
         <div>
           <div class="series-card-title">{{ .Title }}</div>
           <div class="series-card-count">
-            <span class="lang-zh">共 {{ len .Pages }} 期</span>
-            <span class="lang-en">{{ len .Pages }} issues</span>
+            <span class="lang-zh">共 {{ len $allIssues }} 期</span>
+            <span class="lang-en">{{ len $allIssues }} issues</span>
           </div>
         </div>
       </div>
@@ -46,20 +47,21 @@
   </div>
 
   {{ else }}
-  {{/* ── 子系列页：/series/ai-weekly/ 展示该系列所有期 ── */}}
+  {{/* ── 子系列页：/series/ai-weekly/ 展示该系列所有期（含年份子目录）── */}}
+  {{ $allPages := .RegularPages }}
   <div class="page-header">
     <h1>{{ .Title }}</h1>
     {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
     {{ if not .Params.description }}
     <p>
-      <span class="lang-zh">共 {{ len .Pages }} 期</span>
-      <span class="lang-en">{{ len .Pages }} issues</span>
+      <span class="lang-zh">共 {{ len $allPages }} 期</span>
+      <span class="lang-en">{{ len $allPages }} issues</span>
     </p>
     {{ end }}
   </div>
 
   <ul class="post-list" style="padding: 24px 0;">
-    {{ range sort .Pages ".Date" "desc" }}
+    {{ range sort $allPages ".Date" "desc" }}
     <li class="post-item" style="flex-direction:column; align-items:flex-start; gap:4px; padding:14px 0;">
       <div style="display:flex; justify-content:space-between; width:100%; align-items:baseline; gap:12px;">
         <a href="{{ .RelPermalink }}" class="post-item-title">{{ .Title }}</a>
