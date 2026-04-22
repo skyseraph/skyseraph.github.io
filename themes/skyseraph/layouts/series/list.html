@@ -16,7 +16,7 @@
 
   <div class="series-grid">
     {{ range .Sections }}
-    {{ $allIssues := .RegularPages }}
+    {{ $allIssues := .RegularPagesRecursive }}
     {{ $latest := index (sort $allIssues ".Date" "desc") 0 }}
     <a href="{{ .RelPermalink }}" class="series-card">
       <div class="series-card-header">
@@ -48,7 +48,7 @@
 
   {{ else }}
   {{/* ── 子系列页：/series/ai-weekly/ 展示该系列所有期（含年份子目录）── */}}
-  {{ $allPages := .RegularPages }}
+  {{ $allPages := .RegularPagesRecursive }}
   <div class="page-header">
     <h1>{{ .Title }}</h1>
     {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
