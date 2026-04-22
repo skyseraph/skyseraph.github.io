@@ -17,11 +17,11 @@ paginate = 10
   since = 2015
 
   [params.giscus]
-    enabled = false
+    enabled = true
     repo = "skyseraph/skyseraph.github.io"
-    repoID = ""
+    repoID = "R_kgDOJNG05w"
     category = "Announcements"
-    categoryID = ""
+    categoryID = "DIC_kwDOJNG0584C7aUl"
     mapping = "pathname"
     theme = "light"
 

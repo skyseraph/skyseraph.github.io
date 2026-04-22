@@ -27,5 +27,6 @@
     {{ end }}
   </div>
   <article class="prose">{{ .Content }}</article>
+  {{ partial "comments.html" . }}
 </div>
 {{ end }}
