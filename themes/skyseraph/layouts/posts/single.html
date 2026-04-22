@@ -31,18 +31,25 @@
   </div>
 
   {{ if .Params.toc }}
-  <div class="toc" style="margin-top: 32px;">
-    <div class="toc-title">
-      <span class="lang-zh">目录</span>
-      <span class="lang-en">Contents</span>
-    </div>
-    {{ .TableOfContents }}
+  <div class="article-with-toc">
+    <aside class="toc-sidebar">
+      <div class="toc">
+        <div class="toc-title">
+          <span class="lang-zh">目录</span>
+          <span class="lang-en">Contents</span>
+        </div>
+        {{ .TableOfContents }}
+      </div>
+    </aside>
+    <article class="prose">
+      {{ .Content }}
+    </article>
   </div>
-  {{ end }}
-
+  {{ else }}
   <article class="prose">
     {{ .Content }}
   </article>
+  {{ end }}
 
   <!-- Post Navigation -->
   <nav class="post-nav">

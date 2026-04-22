@@ -660,30 +660,81 @@ img { max-width: 100%; height: auto; }
 .project-link:hover { color: var(--green); }
 
 /* ============================================
-   TOC
+   TOC — Sidebar Layout
    ============================================ */
+
+/* Two-column wrapper: shown only when viewport is wide enough */
+.article-with-toc {
+  display: block; /* mobile: stacked, sidebar hidden */
+}
+
+/* Sidebar */
+.toc-sidebar {
+  display: none; /* hidden on mobile */
+}
+
+/* Wide screen: side-by-side */
+@media (min-width: 1100px) {
+  .article-with-toc {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 40px;
+    align-items: start;
+    /* Break out of the 760px container to use full width */
+    width: calc(100vw - 80px);
+    max-width: 1200px;
+    margin-left: calc(50% - min(50vw - 40px, 600px));
+  }
+
+  .toc-sidebar {
+    display: block;
+    position: sticky;
+    top: calc(var(--nav-height) + 24px);
+    max-height: calc(100vh - var(--nav-height) - 48px);
+    overflow-y: auto;
+    /* subtle scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+}
+
+/* TOC box */
 .toc {
   background: var(--bg-alt);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 14px 18px;
-  margin-bottom: 28px;
-  font-size: 0.82rem;
+  padding: 14px 16px;
+  font-size: 0.8rem;
 }
+
 .toc-title {
   font-family: var(--font-mono);
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: var(--text-dim);
   text-transform: uppercase;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   letter-spacing: 0.08em;
 }
+
 .toc ul { list-style: none; padding-left: 0; }
-.toc ul ul { padding-left: 14px; }
-.toc li { margin: 3px 0; }
-.toc a { color: var(--text-muted); }
+.toc ul ul { padding-left: 12px; border-left: 1px solid var(--border); margin-left: 4px; }
+.toc li { margin: 4px 0; }
+.toc a {
+  color: var(--text-muted);
+  display: block;
+  padding: 1px 4px;
+  border-radius: 3px;
+  transition: color 0.15s, background 0.15s;
+  line-height: 1.5;
+}
 .toc a:hover { color: var(--cyan); }
+
+/* Active heading highlight (set by JS) */
+.toc a.toc-active {
+  color: var(--cyan);
+  background: var(--primary-dim);
+}
 
 /* ============================================
    Post Nav
