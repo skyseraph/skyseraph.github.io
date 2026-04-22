@@ -1,0 +1,9 @@
+{{- $src := .Get 0 -}}
+{{- $alt := .Get 1 | default "" -}}
+{{- $caption := .Get 2 | default "" -}}
+{{- $base := .Site.Params.imageBase -}}
+{{- $url := printf "%s/%s" $base $src -}}
+<figure>
+  <img src="{{ $url }}" alt="{{ $alt }}" loading="lazy" style="max-width:100%;border-radius:6px;">
+  {{- if $caption }}<figcaption>{{ $caption }}</figcaption>{{ end -}}
+</figure>

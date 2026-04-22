@@ -16,6 +16,8 @@ paginate = 10
   email = ""
   since = 2015
 
+  imageBase = "https://cdn.jsdelivr.net/gh/skyseraph/skyseraph.github.io@main/static/images"
+
   [params.giscus]
     enabled = true
     repo = "skyseraph/skyseraph.github.io"
