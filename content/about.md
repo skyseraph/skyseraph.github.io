@@ -84,7 +84,7 @@ layout: "about"
 
 ---
 
-> 应无所住，而生其心。持续学习，保持好奇。
+> 持续学习，保持好奇。
 
 </div>
 
@@ -151,11 +151,11 @@ Welcome to SkySeraph’s personal site, created on Dec 2015 (went silent after N
 
 ## Honors & Awards
 
-- 待补充 ...
+-  ...
 
-## 软件/产品
+## Software & Products
 
-- [软件/产品/工具](https://skyseraph.github.io/projects/)
+- [Software](https://skyseraph.github.io/projects/)
 
 
 
@@ -167,6 +167,6 @@ Welcome to SkySeraph’s personal site, created on Dec 2015 (went silent after N
 
 ---
 
-> Act without attachment, yet with full presence. Keep learning, stay curious.
+> Keep hungry, keep foolish.
 
 </div>
