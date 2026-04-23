@@ -6,7 +6,7 @@ description: "Skill创作工具"
 status: "wip"
 github: "https://github.com/skyseraph/SkillNexus"
 demo: ""
-tags: ["Skill"]
+tags: ["开源"]
 draft: false
 ---
 
