@@ -7,7 +7,7 @@ status: "wip"
 github: "https://github.com/skyseraph/SkillNexus"
 demo: ""
 tags: ["Skill"]
-draft: true
+draft: false
 ---
 
 # About
@@ -16,6 +16,4 @@ draft: true
 
 - [SkillNexus](https://github.com/skyseraph/SkillNexus)
 
-  ![SkillNexus](https://cdn.jsdelivr.net/gh/skyserap
-  h/skyseraph.github.io@main/static/images/projects/
-  2026/SkillNexus.png)
+![](/images/projects/2026/SkillNexus.png)
