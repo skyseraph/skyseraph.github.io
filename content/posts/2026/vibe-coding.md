@@ -4,7 +4,7 @@ date: 2026-04-15T22:00:56+08:00
 categories: ["技术"]   # 技术 / 随笔 / 项目
 tags: ["LLM","Agentic Engineering","Vibe Coding","Harness","Hermes Agent","OpenClaw","未来编程"]
 toc: true
-draft: true
+draft: false
 ---
 
 ---
