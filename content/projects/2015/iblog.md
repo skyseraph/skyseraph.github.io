@@ -33,4 +33,4 @@ tags: ["开源"]
 | 起步 | 2010~2015 | cnBlogs(精选博主)/CSDN |
 | 迁移 | 2015 | 个人域名 + Hexo |
 | 沉寂 | 2016~2026 | 消失的10年 |
-| 持续迭代 | 2026 至今 | GitHub Pages + VibeCoding |
+| 再次启航 | 2026 至今 | GitHub Pages + VibeCoding |
