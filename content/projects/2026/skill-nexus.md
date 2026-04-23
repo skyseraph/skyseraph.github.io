@@ -16,4 +16,6 @@ draft: true
 
 - [SkillNexus](https://github.com/skyseraph/SkillNexus)
 
-![](/images/projects/2026/SkillNexus.png)
+  ![SkillNexus](https://cdn.jsdelivr.net/gh/skyserap
+  h/skyseraph.github.io@main/static/images/projects/
+  2026/SkillNexus.png)
