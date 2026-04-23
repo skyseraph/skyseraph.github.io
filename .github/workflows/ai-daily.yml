@@ -1,0 +1,88 @@
+name: AI Daily Generator
+
+on:
+  schedule:
+    - cron: '0 0 * * *'   # UTC 00:00 = CST 08:00
+  workflow_dispatch:
+    inputs:
+      date:
+        description: '指定日期 YYYY-MM-DD（默认今天）'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: scripts/ai-daily/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/ai-daily/requirements.txt
+
+      - name: Generate AI Daily draft
+        id: gen
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TARGET_DATE: ${{ inputs.date }}
+        run: python scripts/ai-daily/main.py
+        working-directory: ${{ github.workspace }}
+
+      - name: Create branch and PR
+        if: steps.gen.outputs.has_content == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          BRANCH="ai-daily/${{ steps.gen.outputs.date }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add "${{ steps.gen.outputs.file_path }}"
+          git commit -m "feat: AI日报 #${{ steps.gen.outputs.issue_num }} · ${{ steps.gen.outputs.headline }}"
+          git push origin "$BRANCH"
+          gh pr create \
+            --title "feat: AI日报 #${{ steps.gen.outputs.issue_num }} · ${{ steps.gen.outputs.headline }}" \
+            --body "$(cat <<'PREOF'
+          ## AI 日报草稿
+
+          - 日期：${{ steps.gen.outputs.date }}
+          - 期数：#${{ steps.gen.outputs.issue_num }}
+          - 采集来源：HuggingFace / arXiv / HackerNews / Reddit / TechCrunch / GitHub Trending
+
+          ## Review 清单
+
+          - [ ] 焦点事件链接可访问
+          - [ ] 论文摘要无幻觉
+          - [ ] 工具链接有效
+          - [ ] frontmatter 日期/期数正确
+          - [ ] 发布前将 `draft: true` 改为 `draft: false`
+
+          Merge 后自动触发 Hugo 构建部署。
+          PREOF
+          )" \
+            --base main \
+            --head "$BRANCH"
+
+      - name: Push WeChat draft
+        if: steps.gen.outputs.has_content == 'true'
+        env:
+          WECHAT_APP_ID: ${{ secrets.WECHAT_APP_ID }}
+          WECHAT_APP_SECRET: ${{ secrets.WECHAT_APP_SECRET }}
+          WECHAT_THUMB_MEDIA_ID: ${{ secrets.WECHAT_THUMB_MEDIA_ID }}
+        run: python scripts/ai-daily/publish_wechat.py "${{ steps.gen.outputs.file_path }}"
+        working-directory: ${{ github.workspace }}
+        continue-on-error: true

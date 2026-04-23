@@ -13,12 +13,12 @@ layout: "about"
 
 ## 关注领域
 
-- AI / LLM / AIGC / ...
+- AI / LLM / AIGC / Agent /...
 - APP ：Android / iOS / ...
-- 产品设计 / 软件架构 / 敏捷开发
+- 软件工程 / 软件架构 /产品设计 / 敏捷开发 ...
 - ...
 
-## 出版 & 专利 & 论文
+## 精选著作
 
 ### 专著
 
@@ -26,11 +26,7 @@ layout: "about"
 - 《Android NFC开发实战详解》繁体版，台湾佳魁资讯股份有限公司出版 2014
 - [《App架构师实践指南》](https://skyseraph.github.io/projects/2016/app-arch-book/) 人民邮电出版社 2016（年度畅销书）
 
-### 论文
-
-- 3篇，待补充 ...
-
-### 专利
+### 专利 & 论文
 
 - [CN113094253A - Equipment debugging method and device - Google Patents](https://patents.google.com/patent/CN113094253A/en) 
 - [CN103414740A - Private cloud account configuration method and device - Google Patents](https://patents.google.com/patent/CN103414740A/en) 
@@ -71,6 +67,15 @@ layout: "about"
 - 2024 [LLMGaia：从数据、模型到应用\_在线课程\_华为云开发者学堂\_云计算培训-华为云](https://connect.huaweicloud.com/courses/learn/C101737534854078340/about?ticket=ST-92613189-eSiVgXZdxYYRzV3sR6iy9FHj-sso)
 - .......
 
+## 荣誉与奖项
+
+- 待补充 ...
+
+## 软件/产品
+
+- [软件/产品/工具](https://skyseraph.github.io/projects/)
+
+
 ## 联系方式
 
 - **GitHub**：[skyseraph](https://github.com/skyseraph)
@@ -93,12 +98,12 @@ Welcome to SkySeraph’s personal site, created on Dec 2015 (went silent after N
 
 ## Focus Areas
 
-- AI / LLM / AIGC ...
-- APP: Android / iOS ...
-- Product Design / Software Architecture / Agile
+- AI / LLM / AIGC / Agent /...
+- APP ：Android / iOS / ...
+- Soft Engineering / Soft Architecture / Product Design / Agile ...
 - ...
 
-## Publications & Patents & Papers
+## Selected Publications
 
 ### Books
 
@@ -106,11 +111,7 @@ Welcome to SkySeraph’s personal site, created on Dec 2015 (went silent after N
 - Android NFC Development in Practice (Traditional Chinese Edition) — Jiakui Information, Taiwan, 2014
 - [App Architect’s Practical Guide — Posts & Telecom Press](https://skyseraph.github.io/projects/2016/app-arch-book/), 2016 (Bestseller of the Year)
 
-### Papers
-
-- 3 papers, to be updated …
-
-### Patents
+### Patents & Papers
 
 - [CN113094253A - Equipment debugging method and device - Google Patents](https://patents.google.com/patent/CN113094253A/en) 
 - [CN103414740A - Private cloud account configuration method and device - Google Patents](https://patents.google.com/patent/CN103414740A/en) 
@@ -146,6 +147,16 @@ Welcome to SkySeraph’s personal site, created on Dec 2015 (went silent after N
 - 2018.9.15 [Android Green Alliance — Exploration and Practice of Game Automation Testing](https://mp.weixin.qq.com/s/sjyiuQV6ZQRNEHKv0Fetkw), awarded [Android Green Alliance Outstanding Speaker 2018](https://mp.weixin.qq.com/s/gsiid9_in8A5QUXehaSF2A)
 - 2023.12 LLMGaia: Data Quality Engineering in the Era of Large Models …
 - 2024 [LLMGaia: From Data, Models to Applications — Huawei Cloud Developer Academy](https://connect.huaweicloud.com/courses/learn/C101737534854078340/about?ticket=ST-92613189-eSiVgXZdxYYRzV3sR6iy9FHj-sso)
+
+
+## Honors & Awards
+
+- 待补充 ...
+
+## 软件/产品
+
+- [软件/产品/工具](https://skyseraph.github.io/projects/)
+
 
 
 ## Contact
