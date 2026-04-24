@@ -737,6 +737,42 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ============================================
+   Post Signature
+   ============================================ */
+.post-signature {
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.post-signature-divider {
+  height: 1px;
+  background: linear-gradient(to right, var(--cyan), var(--green), var(--yellow));
+  margin-bottom: 24px;
+  border-radius: 2px;
+}
+.post-signature-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.post-signature-avatar img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  object-fit: cover;
+}
+.post-signature-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+}
+.post-signature-desc {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+/* ============================================
    Post Nav
    ============================================ */
 .post-nav {

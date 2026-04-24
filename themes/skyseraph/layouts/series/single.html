@@ -55,6 +55,8 @@
   </article>
   {{ end }}
 
+  {{ partial "post-signature.html" . }}
+
   <!-- Series Navigation -->
   {{ with .Params.series }}
   {{ $seriesName := . }}

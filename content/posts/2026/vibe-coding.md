@@ -522,6 +522,8 @@ Vibe Coding 做了什么？它把"认知精度→代码"这一步的摩擦大幅
 
 *by SkySeraph as AI 2026.4*  
 
+[Vibe Coding 深度观察：一场关于编程本质的世纪之争](https://mp.weixin.qq.com/s/ZDF70r7VyuzSszfAz8qpdQ)
+
 *文章最后更新：2026年4月23日*  
 *欢迎引用，转载请注明出处：SkySeraph · AI Agent Infrastructure*  
 

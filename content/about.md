@@ -69,6 +69,7 @@ layout: "about"
 
 ## 荣誉与奖项
 
+- [八年两获“华为金牌个人”，研发之路他这么一路走来](https://mp.weixin.qq.com/s/Fz7vMZs1p3TL1tt8p6Lrew) 
 - 待补充 ...
 
 ## 软件/产品
@@ -81,6 +82,8 @@ layout: "about"
 - **GitHub**：[skyseraph](https://github.com/skyseraph)
 - **Email**：452728574#qq.com（技术交流）
 - [**更多联系方式**](https://skyseraph.github.io/)
+
+![个人公众号](/images/qrcode.jpg)
 
 ---
 
@@ -151,6 +154,7 @@ Welcome to SkySeraph’s personal site, created on Dec 2015 (went silent after N
 
 ## Honors & Awards
 
+- [Twice a Huawei Gold Individual Winner in Eight Years: His Journey in R&D](https://mp.weixin.qq.com/s/Fz7vMZs1p3TL1tt8p6Lrew) 
 -  ...
 
 ## Software & Products
@@ -164,6 +168,8 @@ Welcome to SkySeraph’s personal site, created on Dec 2015 (went silent after N
 - **GitHub**: [skyseraph](https://github.com/skyseraph)
 - **Email**: 452728574#qq.com
 - [**More**](https://skyseraph.github.io/)
+
+![Personal WeChat Official Account](/images/qrcode.jpg)
 
 ---
 
