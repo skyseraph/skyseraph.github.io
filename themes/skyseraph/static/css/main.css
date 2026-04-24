@@ -831,6 +831,18 @@ img { max-width: 100%; height: auto; }
   border-color: var(--cyan);
 }
 
+/* pin badge */
+.pin-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-family: var(--font-mono);
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: rgba(255,215,0,0.15);
+  color: var(--yellow);
+  white-space: nowrap;
+}
+
 /* category badge */
 .cat-badge {
   display: inline-block;

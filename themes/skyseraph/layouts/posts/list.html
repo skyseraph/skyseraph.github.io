@@ -38,14 +38,20 @@
   </div>
   {{ end }}
 
-  {{ $pages := where .Site.RegularPages "Type" "posts" }}
-  {{ $paginator := .Paginate $pages }}
+  {{ $all := where .Site.RegularPages "Type" "posts" }}
+  {{ $pinned := where $all "Params.pin" true }}
+  {{ $unpinned := where $all "Params.pin" "!=" true }}
+  {{ $sorted := append $pinned $unpinned }}
+  {{ $paginator := .Paginate $sorted }}
 
   <ul class="post-list" style="padding: 24px 0;">
     {{ range $paginator.Pages }}
     <li class="post-item" style="flex-direction: column; align-items: flex-start; gap: 4px; padding: 14px 0;">
       <div style="display:flex; justify-content:space-between; width:100%; align-items:baseline; gap:12px;">
-        <a href="{{ .RelPermalink }}" class="post-item-title">{{ .Title }}</a>
+        <div style="display:flex; align-items:baseline; gap:8px;">
+          {{ if .Params.pin }}<span class="pin-badge">置顶</span>{{ end }}
+          <a href="{{ .RelPermalink }}" class="post-item-title">{{ .Title }}</a>
+        </div>
         <span class="post-item-date">{{ .Date.Format "2006-01-02" }}</span>
       </div>
       <div style="display:flex; gap:6px; flex-wrap:wrap; padding-left: 1.2em;">

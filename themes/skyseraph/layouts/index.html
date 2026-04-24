@@ -43,10 +43,17 @@
       </a>
     </div>
     <ul class="post-list">
-      {{ range first 6 (where .Site.RegularPages "Type" "posts") }}
+      {{ $all := where .Site.RegularPages "Type" "posts" }}
+      {{ $pinned := where $all "Params.pin" true }}
+      {{ $unpinned := where $all "Params.pin" "!=" true }}
+      {{ $sorted := append $pinned $unpinned }}
+      {{ range first 6 $sorted }}
       <li class="post-item" style="flex-direction:column; align-items:flex-start; gap:4px; padding:12px 0;">
         <div style="display:flex; justify-content:space-between; width:100%; align-items:baseline; gap:12px;">
-          <a href="{{ .RelPermalink }}" class="post-item-title">{{ .Title }}</a>
+          <div style="display:flex; align-items:baseline; gap:8px;">
+            {{ if .Params.pin }}<span class="pin-badge">置顶</span>{{ end }}
+            <a href="{{ .RelPermalink }}" class="post-item-title">{{ .Title }}</a>
+          </div>
           <span class="post-item-date">{{ .Date.Format "2006-01-02" }}</span>
         </div>
         <div style="display:flex; gap:5px; flex-wrap:wrap; padding-left:1.2em;">

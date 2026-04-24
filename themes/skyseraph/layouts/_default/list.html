@@ -5,9 +5,15 @@
     {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
   </div>
   <ul class="post-list" style="padding: 32px 0;">
-    {{ range .Pages }}
+    {{ $pinned := where .Pages "Params.pin" true }}
+    {{ $unpinned := where .Pages "Params.pin" "!=" true }}
+    {{ $sorted := append $pinned $unpinned }}
+    {{ range $sorted }}
     <li class="post-item">
-      <a href="{{ .RelPermalink }}" class="post-item-title">{{ .Title }}</a>
+      <div style="display:flex; align-items:baseline; gap:8px;">
+        {{ if .Params.pin }}<span class="pin-badge">置顶</span>{{ end }}
+        <a href="{{ .RelPermalink }}" class="post-item-title">{{ .Title }}</a>
+      </div>
       <span class="post-item-date">{{ .Date.Format "2006-01-02" }}</span>
     </li>
     {{ end }}
