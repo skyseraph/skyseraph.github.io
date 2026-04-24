@@ -2,7 +2,7 @@
 title: "SkillNexus"
 date: 2026-04-22T23:29:38+08:00
 icon: "📦"
-description: "Skill创作工具"
+description: "Skill创造平台"
 status: "wip"
 github: "https://github.com/skyseraph/SkillNexus"
 demo: ""
@@ -10,9 +10,18 @@ tags: ["开源"]
 draft: false
 ---
 
+
+<div align="center">
+
+# SkillNexus (Skill Studio)
+
+**Skill 创造平台：让能力可量化、可管理、可成长**
+
+</div>
+
 # About
 
-**SkillNexus，你的Skill创作神器**
+**SkillNexus，你的Skill创造神器**
 
 - [SkillNexus](https://github.com/skyseraph/SkillNexus)
 
