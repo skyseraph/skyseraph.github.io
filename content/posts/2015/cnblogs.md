@@ -3,6 +3,7 @@ title: "博客园部分精彩博文"
 date: 2015-12-12
 categories: ["技术"]
 tags: ["CV","Android"]
+pin: true
 ---
 
 
