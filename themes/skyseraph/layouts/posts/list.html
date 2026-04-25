@@ -39,10 +39,18 @@
   {{ end }}
 
   {{ $all := where .Site.RegularPages "Type" "posts" }}
-  {{ $pinned := where $all "Params.pin" true }}
-  {{ $unpinned := where $all "Params.pin" "!=" true }}
-  {{ $sorted := append $pinned $unpinned }}
-  {{ $paginator := .Paginate $sorted }}
+  {{ $.Scratch.Set "sorted" (slice) }}
+  {{ range $all }}
+    {{ if .Params.pin }}
+      {{ $.Scratch.Add "sorted" (slice .) }}
+    {{ end }}
+  {{ end }}
+  {{ range $all }}
+    {{ if not .Params.pin }}
+      {{ $.Scratch.Add "sorted" (slice .) }}
+    {{ end }}
+  {{ end }}
+  {{ $paginator := .Paginate ($.Scratch.Get "sorted") }}
 
   <ul class="post-list" style="padding: 24px 0;">
     {{ range $paginator.Pages }}

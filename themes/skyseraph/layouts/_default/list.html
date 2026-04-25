@@ -5,10 +5,18 @@
     {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
   </div>
   <ul class="post-list" style="padding: 32px 0;">
-    {{ $pinned := where .Pages "Params.pin" true }}
-    {{ $unpinned := where .Pages "Params.pin" "!=" true }}
-    {{ $sorted := append $pinned $unpinned }}
-    {{ range $sorted }}
+    {{ $.Scratch.Set "sorted" (slice) }}
+    {{ range .Pages }}
+      {{ if .Params.pin }}
+        {{ $.Scratch.Add "sorted" (slice .) }}
+      {{ end }}
+    {{ end }}
+    {{ range .Pages }}
+      {{ if not .Params.pin }}
+        {{ $.Scratch.Add "sorted" (slice .) }}
+      {{ end }}
+    {{ end }}
+    {{ range ($.Scratch.Get "sorted") }}
     <li class="post-item">
       <div style="display:flex; align-items:baseline; gap:8px;">
         {{ if .Params.pin }}<span class="pin-badge">置顶</span>{{ end }}

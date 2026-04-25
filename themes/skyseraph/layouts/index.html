@@ -44,10 +44,18 @@
     </div>
     <ul class="post-list">
       {{ $all := where .Site.RegularPages "Type" "posts" }}
-      {{ $pinned := where $all "Params.pin" true }}
-      {{ $unpinned := where $all "Params.pin" "!=" true }}
-      {{ $sorted := append $pinned $unpinned }}
-      {{ range first 6 $sorted }}
+      {{ $.Scratch.Set "sorted" (slice) }}
+      {{ range $all }}
+        {{ if .Params.pin }}
+          {{ $.Scratch.Add "sorted" (slice .) }}
+        {{ end }}
+      {{ end }}
+      {{ range $all }}
+        {{ if not .Params.pin }}
+          {{ $.Scratch.Add "sorted" (slice .) }}
+        {{ end }}
+      {{ end }}
+      {{ range first 6 ($.Scratch.Get "sorted") }}
       <li class="post-item" style="flex-direction:column; align-items:flex-start; gap:4px; padding:12px 0;">
         <div style="display:flex; justify-content:space-between; width:100%; align-items:baseline; gap:12px;">
           <div style="display:flex; align-items:baseline; gap:8px;">
