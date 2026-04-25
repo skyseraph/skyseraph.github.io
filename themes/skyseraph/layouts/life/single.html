@@ -1,0 +1,81 @@
+{{ define "main" }}
+<div class="container">
+
+  <div class="article-header">
+    <h1>{{ .Title }}</h1>
+    <div class="article-meta">
+      <span class="article-meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span class="lang-zh">{{ .Date.Format "2006年01月02日" }}</span>
+        <span class="lang-en">{{ .Date.Format "Jan 02, 2006" }}</span>
+      </span>
+      {{ if .Params.categories }}
+      <span class="article-meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        {{ range .Params.categories }}<a href="{{ "/categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
+      </span>
+      {{ end }}
+      <span class="article-meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span class="lang-zh">{{ .ReadingTime }} 分钟</span>
+        <span class="lang-en">{{ .ReadingTime }} min read</span>
+      </span>
+    </div>
+    {{ if .Params.tags }}
+    <div class="article-tags">
+      {{ range .Params.tags }}
+      <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="article-tag"># {{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+  {{ if .Params.toc }}
+  <div class="article-with-toc">
+    <aside class="toc-sidebar">
+      <div class="toc">
+        <div class="toc-title">
+          <span class="lang-zh">目录</span>
+          <span class="lang-en">Contents</span>
+        </div>
+        {{ .TableOfContents }}
+      </div>
+    </aside>
+    <article class="prose">
+      {{ .Content }}
+    </article>
+  </div>
+  {{ else }}
+  <article class="prose">
+    {{ .Content }}
+  </article>
+  {{ end }}
+
+  {{ partial "post-signature.html" . }}
+
+  <!-- Post Navigation -->
+  <nav class="post-nav">
+    {{ with .PrevInSection }}
+    <a href="{{ .RelPermalink }}" class="post-nav-item prev">
+      <div class="post-nav-label">
+        <span class="lang-zh">← 上一篇</span>
+        <span class="lang-en">← Prev</span>
+      </div>
+      <div class="post-nav-title">{{ .Title }}</div>
+    </a>
+    {{ else }}<div></div>{{ end }}
+    {{ with .NextInSection }}
+    <a href="{{ .RelPermalink }}" class="post-nav-item next">
+      <div class="post-nav-label">
+        <span class="lang-zh">下一篇 →</span>
+        <span class="lang-en">Next →</span>
+      </div>
+      <div class="post-nav-title">{{ .Title }}</div>
+    </a>
+    {{ else }}<div></div>{{ end }}
+  </nav>
+
+  {{ partial "comments.html" . }}
+
+</div>
+{{ end }}

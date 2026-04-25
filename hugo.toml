@@ -46,13 +46,17 @@ buildFuture = true
     url = "/projects/"
     weight = 4
   [[menu.main]]
+    name = "生活"
+    url = "/life/"
+    weight = 5
+  [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 5
+    weight = 6
   [[menu.main]]
     name = "友链"
     url = "/links/"
-    weight = 6
+    weight = 7
 
 [taxonomies]
   tag = "tags"

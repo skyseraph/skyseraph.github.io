@@ -1,0 +1,81 @@
+{{ define "main" }}
+<div class="container">
+
+  <div class="page-header">
+    <h1>
+      <span class="lang-zh">生活</span>
+      <span class="lang-en">Life</span>
+    </h1>
+    <p>
+      <span class="lang-zh">记录生活点滴，发现生活之美</span>
+      <span class="lang-en">Moments, thoughts and life</span>
+    </p>
+  </div>
+
+  <!-- Category filter -->
+  {{ $cats := .Site.Taxonomies.categories }}
+  {{ if $cats }}
+  <div style="padding: 20px 0 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+    <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim); margin-right:4px;">cat:</span>
+    <a href="{{ "/life/" | relURL }}" class="cat-badge">
+      <span class="lang-zh">全部</span>
+      <span class="lang-en">All</span>
+    </a>
+    {{ range $name, $pages := $cats }}
+    <a href="{{ "/categories/" | relURL }}{{ $name | urlize }}" class="cat-badge">{{ $name }}</a>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <!-- Tag filter -->
+  {{ $tags := .Site.Taxonomies.tags }}
+  {{ if $tags }}
+  <div style="padding: 10px 0 20px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; border-bottom: 1px solid var(--border);">
+    <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim); margin-right:4px;">tag:</span>
+    {{ range $name, $pages := $tags }}
+    <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}" class="tag">#{{ $name }}</a>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ $pages := where .Site.RegularPages "Type" "life" }}
+  {{ $paginator := .Paginate $pages }}
+
+  <ul class="post-list" style="padding: 24px 0;">
+    {{ range $paginator.Pages }}
+    <li class="post-item" style="flex-direction: column; align-items: flex-start; gap: 4px; padding: 14px 0;">
+      <div style="display:flex; justify-content:space-between; width:100%; align-items:baseline; gap:12px;">
+        <div style="display:flex; align-items:baseline; gap:8px;">
+          {{ if .Params.pin }}<span class="pin-badge">置顶</span>{{ end }}
+          <a href="{{ .RelPermalink }}" class="post-item-title">{{ .Title }}</a>
+        </div>
+        <span class="post-item-date">{{ .Date.Format "2006-01-02" }}</span>
+      </div>
+      <div style="display:flex; gap:6px; flex-wrap:wrap; padding-left: 1.2em;">
+        {{ range .Params.categories }}
+        <a href="{{ "/categories/" | relURL }}{{ . | urlize }}" class="cat-badge">{{ . }}</a>
+        {{ end }}
+        {{ range .Params.tags }}
+        <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">#{{ . }}</a>
+        {{ end }}
+      </div>
+    </li>
+    {{ end }}
+  </ul>
+
+  {{ if gt $paginator.TotalPages 1 }}
+  <div class="pagination">
+    {{ if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}">&laquo;</a>{{ end }}
+    {{ range $paginator.Pagers }}
+      {{ if eq . $paginator }}
+      <span class="current">{{ .PageNumber }}</span>
+      {{ else }}
+      <a href="{{ .URL }}">{{ .PageNumber }}</a>
+      {{ end }}
+    {{ end }}
+    {{ if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}">&raquo;</a>{{ end }}
+  </div>
+  {{ end }}
+
+</div>
+{{ end }}
