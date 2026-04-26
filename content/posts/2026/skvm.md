@@ -5,7 +5,7 @@ categories: ["技术"]   # 技术 / 随笔 / 项目
 tags: ["Skill"]
 pin: false
 toc: true
-draft: true
+draft: false
 ---
 
 # SkVM 深度解析：为 LLM Agent Skills 构建的编译与运行时系统
