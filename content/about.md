@@ -57,7 +57,9 @@ layout: "about"
 
 - 2015-2016 极客学院签约布道师（在线培训讲师）
 - 2016  MSUP 特聘高级讲师
-- 2022-至今 华大高级讲师，HW培训中心 Committer软件教练，荣获3次华为金牌教师（2023~2025）
+- 2022-至今 华大高级讲师/Committer软件教练，荣获3次华为金牌教师（2023/2024/2025）
+  - Committer《CleanCode和软件重构》
+  - NEO新员工《金牌员工面对面》
 - ......
 
 ### 演讲
@@ -69,7 +71,7 @@ layout: "about"
 
 ## 荣誉与奖项
 
-- [八年两获“华为金牌个人”，研发之路他这么一路走来](https://mp.weixin.qq.com/s/Fz7vMZs1p3TL1tt8p6Lrew) 
+- [[华为人] 八年两获“华为金牌个人”，研发之路他这么一路走来](https://mp.weixin.qq.com/s/Fz7vMZs1p3TL1tt8p6Lrew) 
 - 待补充 ...
 
 ## 软件/产品
@@ -144,7 +146,10 @@ Welcome to SkySeraph’s personal site, created on Dec 2015 (went silent after N
 ### Training
 - 2015–2016 Contracted Evangelist (Online Training Lecturer) at GeekAcademy
 - 2016 Senior Lecturer at MSUP
-- 2022–Present Senior Lecturer at BGI, Committer & Software Coach at HW Training Center; awarded Huawei Gold Teacher three times (2023–2025)
+- 2022 – Present: Senior Lecturer & Committer Software Coach at BGI
+  - Awarded the Huawei Gold Medal Instructor for three consecutive times (2023/2024/2025)
+  - Served as a Committer for the Clean Code & Software Refactoring project
+  - Delivered exclusive sharing sessions for the NEO onboarding program: Elite Colleague Dialogue
 
 ### Talks
 - 2018.9.15 [Android Green Alliance — Exploration and Practice of Game Automation Testing](https://mp.weixin.qq.com/s/sjyiuQV6ZQRNEHKv0Fetkw), awarded [Android Green Alliance Outstanding Speaker 2018](https://mp.weixin.qq.com/s/gsiid9_in8A5QUXehaSF2A)
@@ -154,7 +159,7 @@ Welcome to SkySeraph’s personal site, created on Dec 2015 (went silent after N
 
 ## Honors & Awards
 
-- [Twice a Huawei Gold Individual Winner in Eight Years: His Journey in R&D](https://mp.weixin.qq.com/s/Fz7vMZs1p3TL1tt8p6Lrew) 
+- [[Huawei People] Twice a Huawei Gold Individual Winner in Eight Years: His Journey in R&D](https://mp.weixin.qq.com/s/Fz7vMZs1p3TL1tt8p6Lrew) 
 -  ...
 
 ## Software & Products

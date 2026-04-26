@@ -84,6 +84,8 @@ Anthropic 于 2025 年 10 月发布 Agent Skills 开放标准：一个 **Skill**
 - ① Agent 难判断哪些 Skill 值得加载
 - ② 检索到的 Skill 内容嘈杂。**查询特定精细化**策略可在 Terminal-Bench 2.0 将 Opus 4.6 从 57.7% → 65.5%
 
+**深入解读：** [SkVM 深度解析：为 LLM Agent Skills 构建的编译与运行时系统](https://skyseraph.github.io/posts/2026/skvm/)
+
 ---
 
 ### 2.5 SkVM:Revisiting Language VM for Skills across Heterogenous LLMs and Harnesses
