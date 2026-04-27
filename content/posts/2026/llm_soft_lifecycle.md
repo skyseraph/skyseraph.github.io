@@ -11,7 +11,7 @@ draft: false
 
 > 作者：skyseraph   
 > 日期：2026-04-26   
-> 原始链接：[llm_soft_lyfecycle](https://skyseraph.github.io/posts/2026/llm_soft_lyfecycle)    
+> 原始链接：[llm_soft_lifecycle](https://skyseraph.github.io/posts/2026/llm_soft_lifecycle)    
 > 本文汇集业界主流 AI 公司实践、领域大咖公开观点与个人思考，所有引用均注明来源
 
 ---
@@ -196,11 +196,13 @@ Adnan Masood 的定义更为精炼：
 
 **三层工程栈的关系**：
 
+```
 Harness Engineering  ← 全局基础设施（包含以下两层）
 
   └── Context Engineering  ← 信息管理（包含以下一层）
 
         └── Prompt Engineering  ← 指令撰写
+```
 
 "Prompt engineering crafts the instructions. Context engineering dictates what goes into the context window and when. Harness engineering is the full application and infrastructure."^\[DecodingAI.com, *Agentic Harness Engineering: LLMs as the New OS*, 2026-04\]
 
