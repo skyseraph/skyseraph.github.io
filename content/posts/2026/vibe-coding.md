@@ -7,6 +7,10 @@ toc: true
 draft: false
 ---
 
+> 作者：skyseraph
+> 日期：2026-04-15
+> 原文链接：[Vibe Coding 深度观察](https://skyseraph.github.io/posts/2026/vibe-coding/)
+
 ---
 
 ## 目录

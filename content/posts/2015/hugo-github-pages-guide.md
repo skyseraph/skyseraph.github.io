@@ -6,6 +6,12 @@ tags: ["博客"]
 toc: true
 ---
 
+> 作者：skyseraph
+> 日期：2015-12-01
+> 原文链接：[Hugo 博客搭建指南](https://skyseraph.github.io/posts/2015/hugo-github-pages-guide/)
+
+---
+
 ## 前言
 
 本文记录如何使用 Hugo 搭建个人技术博客并部署到 GitHub Pages，全程只需要 Markdown 写作，推送代码后自动构建发布。

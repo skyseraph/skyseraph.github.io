@@ -15,7 +15,7 @@ draft: false
 
 # SkillNexus (Skill Studio)
 
-**Skill 创造平台：让能力可量化、可管理、可成长**
+**Skill 创造平台：让你的Skill可生成、可量化、可管理、可成长**
 
 </div>
 

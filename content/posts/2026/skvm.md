@@ -10,8 +10,9 @@ draft: false
 
 # SkVM 深度解析：为 LLM Agent Skills 构建的编译与运行时系统
 
-> 作者：skyseraph  
-> 日期：2026-04-26  
+> 作者：skyseraph
+> 日期：2026-04-26
+> 原文链接：[SkVM 深度解析](https://skyseraph.github.io/posts/2026/skvm/)
 > 参考论文：[SkVM: Revisiting Language VM for Skills across Heterogenous LLMs and Harnesses](https://arxiv.org/abs/2604.03088)
 > 开源代码：[SkVM](https://github.com/SJTU-IPADS/SkVM/)
 

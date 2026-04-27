@@ -7,6 +7,12 @@ toc: true
 draft: false
 ---
 
+> 作者：skyseraph
+> 日期：2026-04-22
+> 原文链接：[Agent Skill Autonomous](https://skyseraph.github.io/posts/2026/agent-skill-autonomous/)
+
+---
+
 # Agent Skill Autonomous
 
 **时间：** 2026年4月22日  

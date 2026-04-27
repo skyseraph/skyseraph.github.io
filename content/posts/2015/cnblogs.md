@@ -7,6 +7,12 @@ pin: true
 ---
 
 
+> 作者：skyseraph
+> 日期：2015-12-12
+> 原文链接：[博客园部分精彩博文](https://skyseraph.github.io/posts/2015/cnblogs/)
+
+---
+
 # 图像算法系列（2010） 
 
 [【图像算法】图像特征：GLCM - SkySeraph - 博客园](https://www.cnblogs.com/skyseraph/archive/2011/08/27/2155776.html) 
