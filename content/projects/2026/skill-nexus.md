@@ -26,4 +26,7 @@ draft: false
 - [SkillNexus Github](https://github.com/skyseraph/SkillNexus)
 - [SkillNexus 专栏](https://skyseraph.github.io/series/skill-nexus/)
 
-![](/images/projects/2026/SkillNexus.png)
+
+![home](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/home.png)
+
+![studio](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/studio.png)
