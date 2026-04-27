@@ -6,9 +6,9 @@ tags: ["博客"]
 toc: true
 ---
 
-> 作者：skyseraph
-> 日期：2015-12-01
-> 原文链接：[Hugo 博客搭建指南](https://skyseraph.github.io/posts/2015/hugo-github-pages-guide/)
+> 作者：skyseraph  
+> 日期：2015-12-01  
+> 原文链接：[Hugo 博客搭建指南](https://skyseraph.github.io/posts/2015/hugo-github-pages-guide/)  
 
 ---
 

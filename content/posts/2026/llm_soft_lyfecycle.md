@@ -9,9 +9,9 @@ draft: true
 ---
 
 
-> 作者：skyseraph  
-> 日期：2026-04-26  
-> 原始链接：[llm_soft_lyfecycle](https://skyseraph.github.io/posts/2026/)
+> 作者：skyseraph   
+> 日期：2026-04-26   
+> 原始链接：[llm_soft_lyfecycle](https://skyseraph.github.io/posts/2026/llm_soft_lyfecycle)    
 > 本文汇集业界主流 AI 公司实践、领域大咖公开观点与个人思考，所有引用均注明来源
 
 ---
