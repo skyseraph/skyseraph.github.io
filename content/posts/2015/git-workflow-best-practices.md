@@ -6,9 +6,9 @@ tags: ["Git", "工程效率"]
 toc: true
 ---
 
-> 作者：skyseraph
-> 日期：2015-12-01
-> 原文链接：[Git 工作流最佳实践](https://skyseraph.github.io/posts/2015/git-workflow-best-practices/)
+> 作者：skyseraph  
+> 日期：2015-12-01  
+> 原文链接：[Git 工作流最佳实践](https://skyseraph.github.io/posts/2015/git-workflow-best-practices/)  
 
 ---
 
