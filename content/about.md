@@ -4,19 +4,7 @@ date: 2015-12-30
 layout: "about"
 ---
 
-<span class="lang-en">
-<div class="lang-switcher" style="text-align:right; margin-bottom:1.5rem;">
-  <a href="/about/" style="color:var(--color-text-muted); font-size:0.85rem;" onclick="localStorage.setItem('preferred-lang','zh');location.reload()">中文 / Chinese</a>
-</div>
-</span>
-
-<span class="lang-zh" style="display:none;">
-<div class="lang-switcher" style="text-align:right; margin-bottom:1.5rem;">
-  <a href="/about/" style="color:var(--color-text-muted); font-size:0.85rem;" onclick="localStorage.setItem('preferred-lang','en');location.reload()">EN / English</a>
-</div>
-</span>
-
-<span class="lang-en">
+<div class="lang-en">
 ## About Me 👋
 
 Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after November 2016, and set sail again with Vibe Coding in 2026). Previously active on [CNBlogs](https://www.cnblogs.com/skyseraph) / [CSDN](https://blog.csdn.net/zgzhaobo).
@@ -98,7 +86,7 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
 ---
 
 > Keep hungry, keep foolish.
-</span>
+</div>
 
 <span class="lang-zh" style="display:none;">
 ## 关于我 👋
