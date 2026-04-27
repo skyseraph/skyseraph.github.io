@@ -10,7 +10,7 @@ buildFuture = true
 
 [params]
   author = "SkySeraph"
-  description = "AI for All"
+  description = "AI for All & All for AI"
   keywords = ["AI/LLM", "APP/Android", "架构师", "SkySeraph"]
   avatar = "/images/skyseraph.png"
   github = "skyseraph"
