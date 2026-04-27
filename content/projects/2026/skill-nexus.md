@@ -30,3 +30,16 @@ draft: false
 ![home](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/home.png)
 
 ![studio](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/studio.png)
+
+![eval](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/eval.png)
+
+![eval-img](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/eval-%E9%9B%B7%E8%BE%BE%E5%9B%BE.png)
+
+
+![eval-img2](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/eval-%E7%83%AD%E5%8A%9B%E5%9B%BE.png)
+
+![evo](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/evo-%E8%BF%9B%E5%8C%96%E5%BC%95%E6%93%8E.png)
+
+![task](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/task.png)
+
+![treading](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/treading.png)
