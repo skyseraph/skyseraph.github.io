@@ -60,7 +60,7 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
 - 2016 Senior Lecturer at MSUP
 - 2022 – Present: Senior Lecturer & Committer Software Coach at BGI
   - Awarded the Huawei Gold Medal Instructor for three consecutive times (2023/2024/2025)
-  - Committer for Clean Code & Software Refactoring
+  - Committer for CodeView & Software Refactoring
   - NEO new employee sharing: Elite Colleague Dialogue
 
 ### Talks

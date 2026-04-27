@@ -60,7 +60,7 @@ layout: "about"
 - 2015-2016 极客学院签约布道师（在线培训讲师）
 - 2016 MSUP 特聘高级讲师
 - 2022-至今 华大高级讲师 / Committer 软件教练，荣获 3 次华为金牌教师（2023/2024/2025）
-  - Committer《CleanCode 和软件重构》
+  - Committer《CodeReview & 代码重构》
   - NEO 新员工《金牌员工面对面》
 
 ### 演讲
