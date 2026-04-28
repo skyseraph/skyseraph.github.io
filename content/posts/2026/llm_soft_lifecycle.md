@@ -11,10 +11,10 @@ description: "2025-2026年，AI 软件开发正经历从「人写代码」到「
 ---
 
 
-> 作者：skyseraph
-> 日期：2026-04-26
-> 原始链接：[llm_soft_lifecycle](https://skyseraph.github.io/posts/2026/llm_soft_lifecycle)
-> 本文汇集业界主流 AI 公司实践、领域大咖公开观点与个人思考，所有引用均注明来源
+> 作者：skyseraph  
+> 日期：2026-04-26  
+> 原始链接：[llm_soft_lifecycle](https://skyseraph.github.io/posts/2026/llm_soft_lifecycle)  
+> 本文汇集业界主流 AI 公司实践、领域大咖公开观点与个人思考，所有引用均注明来源  
 
 ---
 
