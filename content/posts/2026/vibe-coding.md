@@ -2,7 +2,7 @@
 title: "Vibe Coding 深度观察：一场关于编程本质的世纪之争"
 date: 2026-04-15T22:00:56+08:00
 categories: ["技术"]   # 技术 / 随笔 / 项目
-tags: ["LLM","Agentic Engineering","Vibe Coding","Harness","Hermes Agent","OpenClaw","未来编程"]
+tags: ["LLM","Agentic","Vibe Coding","Harness","Hermes Agent","OpenClaw","未来编程"]
 toc: true
 draft: false
 ---

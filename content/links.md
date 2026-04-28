@@ -3,6 +3,10 @@ title: "友链"
 layout: "links"
 nocomments: true
 links:
+  - name: "SkySeraph"
+    url: "https://skyseraph.github.io/"
+    desc: "SkySeraph博客"
+    avatar: ""
   - name: "阮一峰的网络日志"
     url: "https://www.ruanyifeng.com/blog/"
     desc: "技术与人文"
