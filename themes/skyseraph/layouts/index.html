@@ -137,6 +137,38 @@
     </div>
   </section>
 
+  <!-- Life -->
+  {{ $lifePages := where (where .Site.RegularPages "Type" "life") "Section" "!=" "" }}
+  {{ if $lifePages }}
+  <section class="home-section">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="lang-zh">生活</span>
+        <span class="lang-en">life</span>
+      </h2>
+      <a href="{{ "/life/" | relURL }}" class="section-more">
+        <span class="lang-zh">全部生活 →</span>
+        <span class="lang-en">all life →</span>
+      </a>
+    </div>
+    <ul class="post-list">
+      {{ range first 4 (sort $lifePages ".Date" "desc") }}
+      <li class="post-item" style="flex-direction:column; align-items:flex-start; gap:4px; padding:12px 0;">
+        <div style="display:flex; justify-content:space-between; width:100%; align-items:baseline; gap:12px;">
+          <a href="{{ .RelPermalink }}" class="post-item-title">{{ .Title }}</a>
+          <span class="post-item-date">{{ .Date.Format "2006-01-02" }}</span>
+        </div>
+        <div style="padding-left:1.2em;">
+          {{ range first 3 .Params.tags }}
+          <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">#{{ . }}</a>
+          {{ end }}
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+
   <!-- Tags -->
   {{ $tags := .Site.Taxonomies.tags }}
   {{ if $tags }}
