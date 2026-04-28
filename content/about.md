@@ -69,7 +69,7 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
 ## Honors & Awards
 
 - 2024 [[Huawei People] Twice a Huawei Gold Individual Winner in Eight Years: His Journey in R&D](https://mp.weixin.qq.com/s/Fz7vMZs1p3TL1tt8p6Lrew)
-- 2016 ~ xx : ......
+- 2016 ~ xx : HW 30+ ...
 - 2016 Alibaba Pinecone Award
 - 2013 Annual Outstanding Employee, TCL Corporation
 - 2013 TCL UE Ultimate TV Creative Campaign:3 × Ultimate Popularity Award (Top 10) / 2 × Ultimate Creativity Award (Top 10)
@@ -77,8 +77,8 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
 - 2007 Third Prize, National Undergraduate Electronic Design Competition (Sony Cup
 - 2007 National Encouragement Scholarship
 - 2006 National Scholarship
-- 2005~2011 School-level Honors & Scholarships:Model Student / Merit Student / Special-class Scholarship /First-class Scholarship (3 times) / Advanced Individual /
-Outstanding League Member / Outstanding Postgraduate / Excellent Academic Paper ...
+- 2009~2011  University-level: Outstanding Postgraduate, Excellent Academic Paper, First-Class Scholarship, etc.
+- 2005~2009  University-level: Model Student of Excellence, Merit Student, Outstanding League Member, Advanced Individual, Special Scholarship, 3 times of Grade A Scholarship, 5+ awards in various university competitions
 
 ## Software & Products
 
@@ -163,7 +163,7 @@ Outstanding League Member / Outstanding Postgraduate / Excellent Academic Paper 
 ## 荣誉与奖项
 
 - 2024 [[华为人] 八年两获"华为金牌个人"，研发之路他这么一路走来](https://mp.weixin.qq.com/s/Fz7vMZs1p3TL1tt8p6Lrew)
-- 2016 ~ xx : ...... 
+- 2016 ~ xx : HW 30+ ... 
 - 2016 BABA 松果奖
 - 2013 TCL 公司年度优秀员工（2013年度）
 - 2013 TCL UE极致电视创意活动：3件极致人气奖(TOP 10)/2件极致创意奖(TOP 10)
@@ -171,7 +171,8 @@ Outstanding League Member / Outstanding Postgraduate / Excellent Academic Paper 
 - 2007年 全国大学生电子竞赛(索尼杯) 三等奖
 - 2007年 国家励志奖学金
 - 2006年 国家奖学金
-- 2005~2011 校级 三好学生标兵1/三好学生1/特等奖学金1/甲等奖学金3/先进个人1/优秀共青团员/优秀研究生/优秀学术论文/...
+- 2009~2011 校级 优秀研究生/优秀学术论文/一等奖学金/...
+- 2005~2009 校级 三好学生标兵/三好学生/优秀共青团员/先进个人/特等奖学金/甲等奖学金3/校级各类竞赛5+...
 -  ... 
 
 ## 软件 / 产品
