@@ -1,6 +1,6 @@
 ---
 title: "SkillNexus"
-date: 2026-04-22T23:29:38+08:00
+date: 2026-04-19T23:29:38+08:00
 icon: "📦"
 description: "Skill创造平台"
 status: "wip"

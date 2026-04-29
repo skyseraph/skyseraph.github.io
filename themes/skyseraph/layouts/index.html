@@ -44,6 +44,7 @@
     </div>
     <ul class="post-list">
       {{ $all := where .Site.RegularPages "Type" "posts" }}
+      {{ $all = where $all "Date" "<=" now }}
       {{ $.Scratch.Set "sorted" (slice) }}
       {{ range $all }}
         {{ if .Params.pin }}
@@ -79,6 +80,7 @@
 
   <!-- Columns (Series) -->
   {{ $seriesPages := where .Site.RegularPages "Type" "series" }}
+  {{ $seriesPages = where $seriesPages "Date" "<=" now }}
   {{ if $seriesPages }}
   <section class="home-section">
     <div class="section-header">
@@ -92,10 +94,24 @@
       </a>
     </div>
     <ul class="post-list">
-      {{ range first 4 (sort $seriesPages ".Date" "desc") }}
+      {{ $.Scratch.Set "seriesSorted" (slice) }}
+      {{ range $seriesPages }}
+        {{ if .Params.pin }}
+          {{ $.Scratch.Add "seriesSorted" (slice .) }}
+        {{ end }}
+      {{ end }}
+      {{ range $seriesPages }}
+        {{ if not .Params.pin }}
+          {{ $.Scratch.Add "seriesSorted" (slice .) }}
+        {{ end }}
+      {{ end }}
+      {{ range first 4 ($.Scratch.Get "seriesSorted") }}
       <li class="post-item" style="flex-direction:column; align-items:flex-start; gap:4px; padding:12px 0;">
         <div style="display:flex; justify-content:space-between; width:100%; align-items:baseline; gap:12px;">
-          <a href="{{ .RelPermalink }}" class="post-item-title">{{ .Title }}</a>
+          <div style="display:flex; align-items:baseline; gap:8px;">
+            {{ if .Params.pin }}<span class="pin-badge">置顶</span>{{ end }}
+            <a href="{{ .RelPermalink }}" class="post-item-title">{{ .Title }}</a>
+          </div>
           <span class="post-item-date">{{ .Date.Format "2006-01-02" }}</span>
         </div>
         <div style="padding-left:1.2em;">
@@ -139,6 +155,7 @@
 
   <!-- Life -->
   {{ $lifePages := where (where .Site.RegularPages "Type" "life") "Section" "!=" "" }}
+  {{ $lifePages = where $lifePages "Date" "<=" now }}
   {{ if $lifePages }}
   <section class="home-section">
     <div class="section-header">
@@ -152,10 +169,24 @@
       </a>
     </div>
     <ul class="post-list">
-      {{ range first 4 (sort $lifePages ".Date" "desc") }}
+      {{ $.Scratch.Set "lifeSorted" (slice) }}
+      {{ range $lifePages }}
+        {{ if .Params.pin }}
+          {{ $.Scratch.Add "lifeSorted" (slice .) }}
+        {{ end }}
+      {{ end }}
+      {{ range $lifePages }}
+        {{ if not .Params.pin }}
+          {{ $.Scratch.Add "lifeSorted" (slice .) }}
+        {{ end }}
+      {{ end }}
+      {{ range first 4 ($.Scratch.Get "lifeSorted") }}
       <li class="post-item" style="flex-direction:column; align-items:flex-start; gap:4px; padding:12px 0;">
         <div style="display:flex; justify-content:space-between; width:100%; align-items:baseline; gap:12px;">
-          <a href="{{ .RelPermalink }}" class="post-item-title">{{ .Title }}</a>
+          <div style="display:flex; align-items:baseline; gap:8px;">
+            {{ if .Params.pin }}<span class="pin-badge">置顶</span>{{ end }}
+            <a href="{{ .RelPermalink }}" class="post-item-title">{{ .Title }}</a>
+          </div>
           <span class="post-item-date">{{ .Date.Format "2006-01-02" }}</span>
         </div>
         <div style="padding-left:1.2em;">

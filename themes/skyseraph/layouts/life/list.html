@@ -38,8 +38,20 @@
   </div>
   {{ end }}
 
-  {{ $pages := where .Site.RegularPages "Type" "life" }}
-  {{ $paginator := .Paginate $pages }}
+  {{ $all := where .Site.RegularPages "Type" "life" }}
+  {{ $all = where $all "Date" "<=" now }}
+  {{ $.Scratch.Set "sorted" (slice) }}
+  {{ range $all }}
+    {{ if .Params.pin }}
+      {{ $.Scratch.Add "sorted" (slice .) }}
+    {{ end }}
+  {{ end }}
+  {{ range $all }}
+    {{ if not .Params.pin }}
+      {{ $.Scratch.Add "sorted" (slice .) }}
+    {{ end }}
+  {{ end }}
+  {{ $paginator := .Paginate ($.Scratch.Get "sorted") }}
 
   <ul class="post-list" style="padding: 24px 0;">
     {{ range $paginator.Pages }}

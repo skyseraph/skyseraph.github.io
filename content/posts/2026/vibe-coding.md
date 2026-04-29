@@ -1,6 +1,6 @@
 ---
 title: "Vibe Coding 深度观察：一场关于编程本质的世纪之争"
-date: 2026-04-15T22:00:56+08:00
+date: 2026-04-12T22:00:56+08:00
 categories: ["技术"]   # 技术 / 随笔 / 项目
 tags: ["LLM","Agentic","Vibe Coding","Harness","Hermes Agent","OpenClaw","未来编程"]
 toc: true
@@ -8,8 +8,9 @@ draft: false
 ---
 
 > 作者：skyseraph    
-> 日期：2026-04-15     
+> 日期：2026-04-12     
 > 原文链接：[Vibe Coding 深度观察](https://skyseraph.github.io/posts/2026/vibe-coding/)    
+> 开源工具：[SkillNexus](https://github.com/skyseraph/SkillNexus)   
 
 ---
 

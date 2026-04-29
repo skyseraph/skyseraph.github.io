@@ -39,6 +39,7 @@
   {{ end }}
 
   {{ $all := where .Site.RegularPages "Type" "posts" }}
+  {{ $all = where $all "Date" "<=" now }}
   {{ $.Scratch.Set "sorted" (slice) }}
   {{ range $all }}
     {{ if .Params.pin }}
