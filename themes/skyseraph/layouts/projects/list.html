@@ -12,6 +12,25 @@
     </p>
   </div>
 
+  <!-- Year filter -->
+  {{ $allYears := slice }}
+  {{ range where .Site.RegularPages "Type" "projects" }}
+    {{ $year := .Date.Format "2006" }}
+    {{ if not (in $allYears $year) }}
+      {{ $allYears = $allYears | append $year }}
+    {{ end }}
+  {{ end }}
+  {{ $allYears = $allYears | sort }}
+  {{ if gt (len $allYears) 1 }}
+  <div style="padding: 16px 0 12px; display:flex; flex-wrap:wrap; gap:6px; align-items:center;">
+    <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim); margin-right:4px;">year:</span>
+    <button class="year-filter-btn active" data-year="all">全部</button>
+    {{ range $allYears }}
+    <button class="year-filter-btn" data-year="{{ . }}">{{ . }}</button>
+    {{ end }}
+  </div>
+  {{ end }}
+
   <!-- Tag filter -->
   {{ $allTags := slice }}
   {{ range where .Site.RegularPages "Type" "projects" }}
@@ -21,7 +40,7 @@
   {{ end }}
   {{ $allTags = $allTags | uniq }}
   {{ if $allTags }}
-  <div style="padding: 16px 0 24px; display:flex; flex-wrap:wrap; gap:6px; align-items:center; border-bottom:1px solid var(--border);">
+  <div style="padding: 0 0 24px; display:flex; flex-wrap:wrap; gap:6px; align-items:center; border-bottom:1px solid var(--border);">
     <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim); margin-right:4px;">tag:</span>
     {{ range $allTags }}
     <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">#{{ . }}</a>
@@ -31,16 +50,18 @@
 
   <div class="projects-grid">
     {{ range where .Site.RegularPages "Type" "projects" }}
+    {{ $year := .Date.Format "2006" }}
     {{ $hasDetail := .Content }}
     {{ $href := cond (ne .Params.demo nil) .Params.demo .RelPermalink }}
     {{ if $hasDetail }}{{ $href = .RelPermalink }}{{ end }}
     {{ $external := and (not $hasDetail) (ne .Params.demo nil) }}
-    <a href="{{ $href }}" class="project-card"{{ if $external }} target="_blank" rel="noopener"{{ end }}>
+    <a href="{{ $href }}" class="project-card"{{ if $external }} target="_blank" rel="noopener"{{ end }} data-year="{{ $year }}">
       <div class="project-icon">{{ .Params.icon | default "📦" }}</div>
       <div class="project-info">
-        <div class="project-title">
-          {{ .Title }}
-          {{ with .Params.status }}
+        <div class="project-title" style="justify-content:space-between; flex-wrap:wrap; gap:8px;">
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+            {{ .Title }}
+            {{ with .Params.status }}
           <span class="project-status status-{{ . }}">
             {{ if eq . "active" }}
               <span class="lang-zh">维护中</span>
@@ -54,6 +75,8 @@
             {{ end }}
           </span>
           {{ end }}
+          </div>
+          <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim); flex-shrink:0;">{{ $year }}</span>
         </div>
         {{ with .Params.description }}<div class="project-desc">{{ . }}</div>{{ end }}
         {{ if .Params.tags }}
@@ -88,5 +111,24 @@
     {{ end }}
   </div>
 
-</div>
+<script>
+(function(){
+  var btns = document.querySelectorAll('.year-filter-btn');
+  var cards = document.querySelectorAll('.project-card[data-year]');
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      btns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var year = btn.getAttribute('data-year');
+      cards.forEach(function(card){
+        if(year === 'all' || card.getAttribute('data-year') === year){
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
 {{ end }}

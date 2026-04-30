@@ -605,6 +605,24 @@ img { max-width: 100%; height: auto; }
 /* ============================================
    Projects
    ============================================ */
+.year-filter-btn {
+  background: none;
+  border: 1px solid var(--border-hi);
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: border-color 0.15s, color 0.15s;
+}
+.year-filter-btn:hover { border-color: var(--cyan); color: var(--text); }
+.year-filter-btn.active {
+  background: var(--cyan);
+  border-color: var(--cyan);
+  color: var(--bg);
+}
 .projects-grid { display: grid; gap: 16px; padding: 32px 0; }
 
 .project-card {

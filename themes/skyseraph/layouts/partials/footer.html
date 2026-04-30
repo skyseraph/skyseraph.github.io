@@ -11,6 +11,11 @@
       {{ with .Site.Params.email }}
       <a href="mailto:{{ . }}">Email</a>
       {{ end }}
+      {{ with .Site.Params.wechat }}
+      {{ end }}
+      <a href="javascript:void(0)" id="wechat-qrcode-trigger">公众号</a>
+      <span class="footer-sep">·</span>
+      <a href="/links/">友链</a>
     </div>
   </div>
   <div class="footer-stats">
@@ -30,4 +35,23 @@
     </span>
   </div>
 </footer>
+<div id="wechat-qrcode-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:var(--bg-card);border-radius:12px;padding:24px;text-align:center;max-width:280px;">
+    <div style="font-weight:600;margin-bottom:12px;">欢迎关注公众号</div>
+    <img src="/images/qrcode.jpg" alt="公众号二维码" style="width:200px;height:200px;border-radius:8px;">
+    <div style="margin-top:10px;font-size:0.8rem;color:var(--text-dim);">扫码或长按识别</div>
+    <button id="wechat-qrcode-close" style="margin-top:16px;padding:6px 20px;border:1px solid var(--border);background:none;border-radius:6px;cursor:pointer;">关闭</button>
+  </div>
+</div>
+<script>
+document.getElementById('wechat-qrcode-trigger').addEventListener('click',function(){
+  document.getElementById('wechat-qrcode-modal').style.display='flex';
+});
+document.getElementById('wechat-qrcode-close').addEventListener('click',function(){
+  document.getElementById('wechat-qrcode-modal').style.display='none';
+});
+document.getElementById('wechat-qrcode-modal').addEventListener('click',function(e){
+  if(e.target===this)this.style.display='none';
+});
+</script>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>

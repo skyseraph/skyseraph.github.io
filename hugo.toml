@@ -15,6 +15,7 @@ buildFuture = true
   avatar = "/images/skyseraph.png"
   github = "skyseraph"
   email = ""
+  wechat = "skyseraph2020"
   since = 2015
 
   imageBase = "https://cdn.jsdelivr.net/gh/skyseraph/skyseraph.github.io@main/static/images"
@@ -53,10 +54,6 @@ buildFuture = true
     name = "About"
     url = "/about/"
     weight = 6
-  [[menu.main]]
-    name = "友链"
-    url = "/links/"
-    weight = 7
 
 [taxonomies]
   tag = "tags"
