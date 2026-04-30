@@ -13,7 +13,7 @@ description: "本文系统阐述「向善利他，正道正业」的思想渊源
 > 作者：skyseraph  
 > 日期：2026-04-26  
 > 原始链接：[向善利他，正道正业](https://skyseraph.github.io/life/2026/benevolence-altruism-righteousness-integrity)   
-> 个人总结思考，引用请注明来源
+> 个人总结/整理/思考，引用请注明来源  
 
 ---
 
