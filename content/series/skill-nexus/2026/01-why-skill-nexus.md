@@ -2,6 +2,7 @@
 title: "SkillNexus #01 · 你的 Skill 目录，正在变成屎山"
 slug: 01-why-skill-nexus
 series: "SkillNexus"
+date: 2026-05-01
 issue: 1
 categories: ["专栏"]
 tags: ["SkillNexus", "Agent", "Skill",  "Claude Code"]

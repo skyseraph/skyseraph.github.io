@@ -2,6 +2,7 @@
 title: "SkillNexus #09 · 评测报告不只是看完就算——SkillNexus 的离线报告系统"
 slug: 09-offline-report
 series: "SkillNexus"
+date: 2026-05-01
 issue: 9
 categories: ["专栏"]
 tags: ["SkillNexus", "Agent", "Skill",  "Claude Code"]

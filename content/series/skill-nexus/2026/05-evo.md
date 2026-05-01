@@ -2,6 +2,7 @@
 title: "SkillNexus #05 · 进化引擎：让 Skill 自动变好"
 slug: 05-evo
 series: "SkillNexus"
+date: 2026-05-01
 issue: 5
 categories: ["专栏"]
 tags: ["SkillNexus", "Agent", "Skill",  "Claude Code"]

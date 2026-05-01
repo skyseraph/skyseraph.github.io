@@ -2,6 +2,7 @@
 title: "SkillNexus #07 · 技术架构：Electron 双进程 + 零依赖进化 SDK"
 slug: 07-architecture
 series: "SkillNexus"
+date: 2026-05-01
 issue: 7
 categories: ["专栏"]
 tags: ["SkillNexus", "Agent", "Skill",  "Claude Code"]

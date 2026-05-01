@@ -2,6 +2,7 @@
 title: "SkillNexus #06 · Trending 榜单：你的 Skill 资产地图"
 slug: "06-trending"
 series: "SkillNexus"
+date: 2026-05-01
 issue: 6
 categories: ["专栏"]
 tags: ["SkillNexus", "Agent", "Skill",  "Claude Code"]

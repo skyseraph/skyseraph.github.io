@@ -2,6 +2,7 @@
 title: "SkillNexus #03 · 从一行描述到可用 Skill——Studio 的 5 种创作模式"
 slug: 03-studio
 series: "SkillNexus"
+date: 2026-05-01
 issue: 3
 categories: ["专栏"]
 tags: ["SkillNexus", "Agent", "Skill",  "Claude Code"]

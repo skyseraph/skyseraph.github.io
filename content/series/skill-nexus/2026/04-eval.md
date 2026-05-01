@@ -2,6 +2,7 @@
 title: "SkillNexus #04 · 8 维度评测框架：让\"感觉还行\"变成数据"
 slug: 04-eval
 series: "SkillNexus"
+date: 2026-05-01
 issue: 4
 categories: ["专栏"]
 tags: ["SkillNexus", "Agent", "Skill",  "Claude Code"]

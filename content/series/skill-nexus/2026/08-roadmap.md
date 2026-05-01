@@ -2,6 +2,7 @@
 title: "SkillNexus #08 · 现状与路线图：SkillNexus 的下一步"
 slug: 08-roadmap
 series: "SkillNexus"
+date: 2026-05-01
 issue: 8
 categories: ["专栏"]
 tags: ["SkillNexus", "Agent", "Skill",  "Claude Code"]

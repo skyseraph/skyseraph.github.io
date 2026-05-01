@@ -2,6 +2,7 @@
 title: "SkillNexus #10 · 可视化设计：为什么 Skill 评测需要 6 种图表"
 slug: 10-visualization
 series: "SkillNexus"
+date: 2026-05-01
 issue: 10
 categories: ["专栏"]
 tags: ["SkillNexus", "Agent", "Skill",  "Claude Code"]

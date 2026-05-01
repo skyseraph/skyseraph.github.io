@@ -2,6 +2,7 @@
 title: "SkillNexus #02 · 5 分钟完成第一次 Skill 评测——SkillNexus 上手指南"
 slug: 02-quickstart
 series: "SkillNexus"
+date: 2026-05-01
 issue: 2
 categories: ["专栏"]
 tags: ["SkillNexus", "Agent", "Skill",  "Claude Code"]
