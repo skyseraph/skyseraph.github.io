@@ -5,6 +5,7 @@ layout: "about"
 ---
 
 <div class="lang-en">
+
 ## About Me 👋
 
 Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after November 2016, and set sail again with Vibe Coding in 2026). Previously active on [CNBlogs](https://www.cnblogs.com/skyseraph) / [CSDN](https://blog.csdn.net/zgzhaobo).
@@ -98,6 +99,7 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
 </div>
 
 <span class="lang-zh" style="display:none;">
+
 ## 关于我 👋
 
 欢迎来到 SkySeraph 的个人站点，创建于 2015 年 12 月（2016 后消失，十年沉寂，2026 伴随 Vibe Coding 再次启航），此前活跃于[博客园](https://www.cnblogs.com/skyseraph) / [CSDN](https://blog.csdn.net/zgzhaobo)。
