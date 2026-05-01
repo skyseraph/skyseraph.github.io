@@ -1,7 +1,6 @@
 ---
 title: "友链"
 layout: "links"
-nocomments: true
 links:
   - name: "SkySeraph"
     url: "https://skyseraph.github.io/"
