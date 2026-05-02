@@ -1,6 +1,5 @@
 ---
 title: "《纳瓦尔宝典》"
-
 date: 2015-12-02T23:23:30+08:00
 categories: ["生活"]
 tags: ["读书笔记", "思维模型"]
@@ -9,9 +8,8 @@ toc: true
 draft: false
 ---
 
-> 作者：
-> 原始链接：[almanack_of_naval_ravikant](https://skyseraph.github.io/life/2015/almanack_of_naval_ravikant)
-
+> 作者：SkySeraph  
+> 原始链接：[almanack_of_naval_ravikant](https://skyseraph.github.io/life/2015/almanack_of_naval_ravikant)  
 > 日期：2015-12-02  
 
 

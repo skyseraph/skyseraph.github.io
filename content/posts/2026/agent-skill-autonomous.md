@@ -1,19 +1,16 @@
 ---
 title: "Agent Skill Autonomous"
 date: 2026-04-19T08:00:00+08:00
-
 categories: ["技术"]   # 技术 / 随笔 / 项目
 tags: ["LLM","Agent","Skill","Autonomous"]
 toc: true
 draft: false
 ---
 
-> 作者：
-> 原始链接：[agent-skill-autonomous](https://skyseraph.github.io/posts/2026/agent-skill-autonomous)
-
+> 作者：SkySeraph  
+> 原始链接：[agent-skill-autonomous](https://skyseraph.github.io/posts/2026/agent-skill-autonomous)  
 > 日期：2026-04-19    
-
-> 开源工具：[SkillNexus](https://github.com/skyseraph/SkillNexus)  
+> 开源工具：[SkillNexus](https://github.com/skyseraph/SkillNexus)   
 
 ---
 

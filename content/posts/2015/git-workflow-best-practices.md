@@ -1,17 +1,14 @@
 ---
 title: "Git 工作流最佳实践"
 date: 2015-12-01
-
 categories: ["技术"]
 tags: ["Git", "工具"]
 toc: true
 ---
 
-> 作者：
-> 原始链接：[git-workflow-best-practices](https://skyseraph.github.io/posts/2015/git-workflow-best-practices)
-
-> 日期：2015-12-01  
-
+> 作者：SkySeraph  
+> 原始链接：[git-workflow-best-practices](https://skyseraph.github.io/posts/2015/git-workflow-best-practices)  
+> 日期：2015-12-01   
 
 ---
 

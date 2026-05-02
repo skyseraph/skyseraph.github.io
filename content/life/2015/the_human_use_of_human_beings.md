@@ -1,6 +1,5 @@
 ---
 title: "《人有人的用处》"
-
 date: 2015-12-02T23:23:30+08:00
 categories: ["生活"]
 tags: ["读书笔记"]
@@ -9,9 +8,8 @@ toc: true
 draft: false
 ---
 
-> 作者：
-> 原始链接：[the_human_use_of_human_beings](https://skyseraph.github.io/life/2015/the_human_use_of_human_beings)
-
+> 作者：SkySeraph  
+> 原始链接：[the_human_use_of_human_beings](https://skyseraph.github.io/life/2015/the_human_use_of_human_beings)  
 > 日期：2015-12-02  
 
 

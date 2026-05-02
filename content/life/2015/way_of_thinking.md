@@ -1,6 +1,5 @@
 ---
 title: "稻盛和夫的人生公式：思维方式决定一切"
-
 date: 2015-12-12T23:23:30+08:00
 categories: ["生活"]
 tags: ["人生", "思维模型"]
@@ -10,11 +9,9 @@ draft: false
 summary: 稻盛和夫的人生公式：思维方式决定一切
 ---
 
-> 作者：
-> 原始链接：[way_of_thinking](https://skyseraph.github.io/life/2015/way_of_thinking)
-
+> 作者：SkySeraph  
+> 原始链接：[way_of_thinking](https://skyseraph.github.io/life/2015/way_of_thinking)  
 > 日期：2015-12-12  
-
 > 个人总结/整理/思考，引用请注明来源  
 
 

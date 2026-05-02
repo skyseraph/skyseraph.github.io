@@ -1,16 +1,14 @@
 ---
 title: "开源 Skills 全生命周期创造平台"
 date: 2026-05-02T08:00:00+08:00
-
 categories: ["技术"]
 tags: ["Skill", "SkillNexus"]
 toc: true
 draft: false
 ---
 
-> 作者：
-> 原始链接：[skillnexus_intro](https://skyseraph.github.io/posts/2026/skillnexus_intro)
-
+> 作者：SkySeraph  
+> 原始链接：[skillnexus_intro](https://skyseraph.github.io/posts/2026/skillnexus_intro)  
 > 日期：2026-05-02  
 > 原文：[SkillNexus Intro](https://skyseraph.github.io/posts/2026/skillnexus_intro/)   
 > 开源：[SkillNexus](https://github.com/skyseraph/SkillNexus)  

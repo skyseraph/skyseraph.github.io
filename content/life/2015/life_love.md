@@ -1,6 +1,5 @@
 ---
 title: "先谋生，再谋爱"
-
 date: 2015-12-12T23:23:30+08:00
 categories: ["生活"]
 tags: ["人生", "哲学"]
@@ -10,11 +9,9 @@ draft: false
 summary: 先谋生，再谋爱，先变优秀，再遇见一个不需要取悦的人
 ---
 
-> 作者：
-> 原始链接：[life_love](https://skyseraph.github.io/life/2015/life_love)
-
-> 日期：2015-12-2  
-
+> 作者：SkySeraph  
+> 原始链接：[life_love](https://skyseraph.github.io/life/2015/life_love)  
+> 日期：2015-12-2   
 > 个人总结/整理/思考，引用请注明来源  
 
 

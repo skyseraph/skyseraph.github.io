@@ -8,12 +8,10 @@ toc: true
 draft: false
 ---
 
-> 作者：
-> 原始链接：[llm](https://skyseraph.github.io/posts/2026/llm)
-
+> 作者：SkySeraph   
+> 原始链接：[llm](https://skyseraph.github.io/posts/2026/llm)  
+> 公众号：[llm](https://mp.weixin.qq.com/s/yKGL9JAL7Q-Vc9zmSIuS0Q)  
 > 日期：2026-04-30 
-
-
 
 > 数据截至 2026-05-01
 

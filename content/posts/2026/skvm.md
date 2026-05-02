@@ -8,16 +8,12 @@ toc: true
 draft: false
 ---
 
-
-> 作者：
-> 原始链接：[skvm](https://skyseraph.github.io/posts/2026/skvm)
-
+> 作者：SkySeraph  
+> 原始链接：[skvm](https://skyseraph.github.io/posts/2026/skvm)  
 > 日期：2026-04-26    
-
 > 参考论文：[SkVM: Revisiting Language VM for Skills across Heterogenous LLMs and Harnesses](https://arxiv.org/abs/2604.03088)    
 > 开源代码：[SkVM](https://github.com/SJTU-IPADS/SkVM/)    
 > 开源工具：[SkillNexus](https://github.com/skyseraph/SkillNexus)  
-
 
 ---
 

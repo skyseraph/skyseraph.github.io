@@ -1,18 +1,15 @@
 ---
 title: "博客园部分精彩博文"
 date: 2015-12-12
-
 categories: ["技术"]
 tags: ["CV","Android"]
 pin: true
 ---
 
 
-> 作者：
-> 原始链接：[cnblogs](https://skyseraph.github.io/posts/2015/cnblogs)
-
+> 作者：SkySeraph  
+> 原始链接：[cnblogs](https://skyseraph.github.io/posts/2015/cnblogs)  
 > 日期：2015-12-12  
-
 
 ---
 
