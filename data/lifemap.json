@@ -1,0 +1,70 @@
+{
+  "settings": {
+    "center": [26.0, 113.0],
+    "zoom": 5,
+    "minZoom": 3,
+    "maxZoom": 18
+  },
+  "places": [
+    {
+      "id": "tcl",
+      "type": "work",
+      "name": "TCL",
+      "nameEn": "TCL",
+      "coordinates": [22.8067, 113.1220],
+      "city": "深圳",
+      "province": "广东",
+      "country": "中国",
+      "startDate": "2011",
+      "endDate": "2015",
+      "description": "第一份工作",
+      "icon": "briefcase",
+      "color": "#ffb86c"
+    },
+    {
+      "id": "alibaba",
+      "type": "work",
+      "name": "阿里巴巴",
+      "nameEn": "Alibaba",
+      "coordinates": [30.2741, 120.1551],
+      "city": "杭州",
+      "province": "浙江",
+      "country": "中国",
+      "startDate": "2015",
+      "endDate": "2016",
+      "description": "阿里工作",
+      "icon": "briefcase",
+      "color": "#ffb86c"
+    },
+    {
+      "id": "huawei",
+      "type": "work",
+      "name": "华为",
+      "nameEn": "Huawei",
+      "coordinates": [22.8010, 113.4051],
+      "city": "深圳",
+      "province": "广东",
+      "country": "中国",
+      "startDate": "2016",
+      "endDate": null,
+      "description": "华为工作",
+      "icon": "briefcase",
+      "color": "#ffb86c"
+    },
+    {
+      "id": "beijing-trip",
+      "type": "travel",
+      "name": "北京",
+      "nameEn": "Beijing",
+      "coordinates": [39.9042, 116.4074],
+      "city": "北京",
+      "province": "北京",
+      "country": "中国",
+      "startDate": "2016",
+      "endDate": null,
+      "description": "多次出差",
+      "icon": "plane",
+      "color": "#bd93f9"
+    }
+  ]
+}

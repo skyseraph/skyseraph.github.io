@@ -1,0 +1,149 @@
+{{ define "main" }}
+<div class="container">
+
+  <div class="page-header">
+    <h1>
+      <span class="lang-zh">人生地图</span>
+      <span class="lang-en">Life Map</span>
+    </h1>
+    <p>
+      <span class="lang-zh">记录生命中重要的地点和足迹</span>
+      <span class="lang-en">Mapping my life journey</span>
+    </p>
+  </div>
+
+  <!-- Filter Controls -->
+  <div class="lifemap-filters" style="padding: 16px 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; border-bottom: 1px solid var(--border);">
+    <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-dim);">filter:</span>
+    <button class="lifemap-filter-btn active" data-filter="all">
+      <span class="lang-zh">全部</span>
+      <span class="lang-en">All</span>
+    </button>
+    <button class="lifemap-filter-btn" data-filter="work">
+      <span class="lang-zh">工作</span>
+      <span class="lang-en">Work</span>
+    </button>
+    <button class="lifemap-filter-btn" data-filter="travel">
+      <span class="lang-zh">旅行</span>
+      <span class="lang-en">Travel</span>
+    </button>
+  </div>
+
+  <!-- Map Container -->
+  <div id="lifemap-container" style="height: 550px; border-radius: 8px; overflow: hidden; margin: 20px 0; border: 1px solid var(--border);"></div>
+
+  <!-- Timeline Panel -->
+  <div class="lifemap-timeline" style="padding: 24px 0;">
+    <h3 style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--cyan); margin-bottom: 16px;">
+      <span class="lang-zh">时间线</span>
+      <span class="lang-en">Timeline</span>
+    </h3>
+    <div id="timeline-list" style="display: flex; flex-direction: column; gap: 10px;"></div>
+  </div>
+
+</div>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<script type="application/json" id="lifemap-data">
+{{ readFile "data/lifemap.json" | safeJS }}
+</script>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+const iconDefs = {
+  'home': '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>',
+  'briefcase': '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>',
+  'graduation-cap': '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>',
+  'plane': '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path></svg>'
+};
+
+function createCustomIcon(type, color) {
+  const iconSvg = iconDefs[type] || iconDefs['home'];
+  return L.divIcon({
+    html: '<div style="background:' + color + ';width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.25);color:white;">' + iconSvg + '</div>',
+    className: 'custom-marker',
+    iconSize: [28, 28],
+    iconAnchor: [14, 14],
+    popupAnchor: [0, -14]
+  });
+}
+
+const mapData = JSON.parse(document.getElementById('lifemap-data').textContent);
+const map = L.map('lifemap-container').setView(mapData.settings.center, mapData.settings.zoom);
+
+L.tileLayer('https://tile.openstreetmap.cn/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap',
+  maxZoom: 19
+}).addTo(map);
+
+const markers = {};
+const timelineList = document.getElementById('timeline-list');
+
+// Add markers
+mapData.places.forEach(place => {
+  const marker = L.marker(place.coordinates, {
+    icon: createCustomIcon(place.icon, place.color)
+  }).addTo(map);
+
+  const endStr = place.endDate || '至今';
+  const popupContent = '<div style="min-width:160px;"><h4 style="margin:0 0 4px;color:' + place.color + ';font-size:0.95rem;">' + place.name + '</h4><p style="margin:0 0 3px;font-size:0.8rem;color:#666;">' + (place.city || '') + (place.province ? ', ' + place.province : '') + '</p><p style="margin:0;font-size:0.75rem;color:#888;">' + place.startDate + ' - ' + endStr + '</p>' + (place.description ? '<p style="margin:4px 0 0;font-size:0.82rem;">' + place.description + '</p>' : '') + '</div>';
+
+  marker.bindPopup(popupContent);
+  markers[place.id] = { marker, place };
+
+  // Timeline item
+  const item = document.createElement('div');
+  item.className = 'timeline-item';
+  item.dataset.type = place.type;
+  item.innerHTML = '<div style="display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);cursor:pointer;transition:border-color 0.15s;" onclick="focusMarker(\'' + place.id + '\')"><div style="width:8px;height:8px;border-radius:50%;background:' + place.color + ';flex-shrink:0;"></div><div style="flex:1;"><div style="font-weight:600;font-size:0.88rem;">' + place.name + '</div><div style="font-size:0.72rem;color:var(--text-dim);">' + place.startDate + ' - ' + endStr + '</div></div><div style="font-size:0.68rem;color:var(--text-dim);padding:2px 6px;background:var(--bg-secondary);border-radius:3px;">' + place.type + '</div></div>';
+  timelineList.appendChild(item);
+});
+
+window.focusMarker = function(id) {
+  const { marker, place } = markers[id];
+  map.setView(place.coordinates, Math.max(map.getZoom(), 11));
+  marker.openPopup();
+};
+
+// Filter
+document.querySelectorAll('.lifemap-filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const filter = this.dataset.filter;
+    document.querySelectorAll('.lifemap-filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+
+    Object.values(markers).forEach(({ marker, place }) => {
+      if (filter === 'all' || place.type === filter) marker.addTo(map);
+      else marker.remove();
+    });
+
+    document.querySelectorAll('.timeline-item').forEach(item => {
+      item.style.display = (filter === 'all' || item.dataset.type === filter) ? 'block' : 'none';
+    });
+  });
+});
+</script>
+
+<style>
+.lifemap-filter-btn {
+  background: none;
+  border: 1px dashed var(--border);
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.lifemap-filter-btn:hover { border-color: var(--cyan); color: var(--text); }
+.lifemap-filter-btn.active { background: var(--cyan); border-color: var(--cyan); color: #000; }
+.custom-marker { background: transparent; border: none; }
+.leaflet-popup-content-wrapper { border-radius: 8px; }
+.timeline-item:hover > div { border-color: var(--cyan); }
+</style>
+{{ end }}

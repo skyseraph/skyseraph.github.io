@@ -49,7 +49,7 @@ buildFuture = true
   [[menu.main]]
     name = "生活"
     url = "/life/"
-    weight = 5
+    weight = 6
   [[menu.main]]
     name = "闪念"
     url = "/thoughts/"
