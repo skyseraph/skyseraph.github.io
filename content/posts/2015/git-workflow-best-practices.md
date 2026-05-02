@@ -2,7 +2,7 @@
 title: "Git 工作流最佳实践"
 date: 2015-12-01
 categories: ["技术"]
-tags: ["Git", "工程效率"]
+tags: ["Git", "工具"]
 toc: true
 ---
 
