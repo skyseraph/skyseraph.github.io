@@ -12,22 +12,66 @@
     </p>
   </div>
 
-  <!-- Tag filter -->
-  {{ $tags := index .Site.Taxonomies "thoughts.tags" }}
-  {{ if $tags }}
-  <div style="padding: 20px 0 24px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; border-bottom: 1px solid var(--border);">
-    <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim); margin-right:4px;">tag:</span>
+  <!-- Tag Graph Visualization -->
+  <div id="tag-graph-container" style="margin: 20px 0 30px; border: 1px solid var(--border); border-radius: 8px; padding: 16px; display: none;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+      <span style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-dim);">TAG RELATIONSHIP</span>
+      <button onclick="toggleTagGraph()" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--text-dim);">×</button>
+    </div>
+    <div id="tag-graph" style="width: 100%; height: 280px; background: var(--bg-secondary); border-radius: 6px;"></div>
+  </div>
+
+  <!-- Tag Graph toggle button -->
+  <div style="margin: 16px 0; display: flex; align-items: center; gap: 8px;">
+    <button onclick="toggleTagGraph()" style="background: none; border: 1px dashed var(--border); border-radius: 4px; padding: 3px 10px; font-size: 0.72rem; cursor: pointer; color: var(--text-dim);">
+      图谱
+    </button>
+    {{ $tags := index .Site.Taxonomies "thoughts.tags" }}
+    {{ if $tags }}
+    <span style="font-size:0.7rem; font-family:var(--font-mono); color:var(--text-dim);">tag:</span>
     <a href="{{ "/thoughts/" | relURL }}" class="tag">#all</a>
     {{ range $tags.ByCount }}
     <a href="{{ "/thoughts/" | relURL }}?tag={{ .Page.Title | urlize }}" class="tag">#{{ .Page.Title }}</a>
     {{ end }}
+    {{ end }}
   </div>
-  {{ end }}
 
   {{ $all := where .Site.RegularPages "Type" "thoughts" }}
   {{ $all = where $all "Date" "<=" now }}
   {{ $all = sort $all "Date" "desc" }}
   {{ $paginator := .Paginate $all 20 }}
+
+  <!-- Build tag co-occurrence data for graph -->
+  {{ $allThoughts := where .Site.RegularPages "Type" "thoughts" }}
+  {{ $allThoughts = where $allThoughts "Date" "<=" now }}
+
+  <!-- Use Scratch to collect unique tags -->
+  {{ $.Scratch.Set "tagList" slice }}
+  {{ range $allThoughts }}
+    {{ range .Params.tags }}
+      {{ $t := . }}
+      {{ $found := false }}
+      {{ range ($.Scratch.Get "tagList") }}
+        {{ if eq . $t }}{{ $found = true }}{{ end }}
+      {{ end }}
+      {{ if not $found }}
+        {{ $.Scratch.Add "tagList" (slice $t) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  <!-- Tag graph data as JSON -->
+  <script type="application/json" id="tag-graph-data">
+  {
+    "nodes": [
+      {{ $tagList := $.Scratch.Get "tagList" }}
+      {{ range $i, $tag := $tagList }}
+      {{ if $i }},{{ end }}{"id": "{{ $tag }}", "count": {{ len (where $allThoughts ".Params.tags" "intersect" (slice $tag)) }}}
+      {{ end }}
+    ],
+    "links": []
+  }
+  </script>
 
   <div class="thoughts-timeline" style="padding: 24px 0;">
     {{ $.Scratch.Set "currentDate" "" }}
@@ -73,4 +117,116 @@
   {{ end }}
 
 </div>
+
+<!-- D3.js for tag graph -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script>
+function toggleTagGraph() {
+  const container = document.getElementById('tag-graph-container');
+  const graphDiv = document.getElementById('tag-graph');
+  if (container.style.display === 'none') {
+    container.style.display = 'block';
+    if (!graphDiv.hasChildNodes()) {
+      renderTagGraph();
+    }
+  } else {
+    container.style.display = 'none';
+  }
+}
+
+function renderTagGraph() {
+  const data = JSON.parse(document.getElementById('tag-graph-data').textContent);
+  if (!data.nodes.length) return;
+
+  const container = document.getElementById('tag-graph');
+  const width = container.clientWidth;
+  const height = container.clientHeight || 280;
+
+  // Clear previous
+  container.innerHTML = '';
+
+  const svg = d3.select('#tag-graph')
+    .append('svg')
+    .attr('width', width)
+    .attr('height', height)
+    .style('border-radius', '6px');
+
+  // Find max count for scaling
+  const maxCount = Math.max(...data.nodes.map(n => n.count));
+  const nodeScale = d3.scaleLinear().domain([1, maxCount]).range([6, 20]);
+
+  // Link width scale
+  const maxWeight = Math.max(...data.links.map(l => l.weight));
+  const linkScale = d3.scaleLinear().domain([1, maxWeight]).range([1, 4]);
+
+  const simulation = d3.forceSimulation(data.nodes)
+    .force('link', d3.forceLink(data.links).id(d => d.id).distance(80))
+    .force('charge', d3.forceManyBody().strength(-120))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force('collision', d3.forceCollide().radius(25));
+
+  // Links
+  const link = svg.append('g')
+    .selectAll('line')
+    .data(data.links)
+    .enter()
+    .append('line')
+    .attr('stroke', 'var(--border)')
+    .attr('stroke-opacity', 0.6)
+    .attr('stroke-width', d => linkScale(d.weight));
+
+  // Nodes
+  const node = svg.append('g')
+    .selectAll('g')
+    .data(data.nodes)
+    .enter()
+    .append('g')
+    .style('cursor', 'pointer')
+    .on('click', (event, d) => {
+      window.location.href = '/thoughts/?tag=' + encodeURIComponent(d.id);
+    });
+
+  // Node circles
+  node.append('circle')
+    .attr('r', d => nodeScale(d.count))
+    .attr('fill', 'var(--cyan)')
+    .attr('opacity', 0.8);
+
+  // Node labels
+  node.append('text')
+    .text(d => '#' + d.id)
+    .attr('text-anchor', 'middle')
+    .attr('dy', d => nodeScale(d.count) + 14)
+    .attr('fill', 'var(--text-dim)')
+    .attr('font-size', '11px')
+    .attr('font-family', 'var(--font-mono)');
+
+  // Drag behavior
+  node.call(d3.drag()
+    .on('start', (event, d) => {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    })
+    .on('drag', (event, d) => {
+      d.fx = event.x;
+      d.fy = event.y;
+    })
+    .on('end', (event, d) => {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }));
+
+  simulation.on('tick', () => {
+    link
+      .attr('x1', d => d.source.x)
+      .attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x)
+      .attr('y2', d => d.target.y);
+
+    node.attr('transform', d => `translate(${d.x},${d.y})`);
+  });
+}
+</script>
 {{ end }}
