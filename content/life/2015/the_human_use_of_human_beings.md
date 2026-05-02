@@ -1,6 +1,6 @@
 ---
 title: "《人有人的用处》"
-slug: The Human Use of Human Beings，Cybernetics and Society
+
 date: 2015-12-02T23:23:30+08:00
 categories: ["生活"]
 tags: ["读书笔记"]
@@ -9,9 +9,11 @@ toc: true
 draft: false
 ---
 
-> 作者：skyseraph  
+> 作者：
+> 原始链接：[the_human_use_of_human_beings](https://skyseraph.github.io/life/2015/the_human_use_of_human_beings)
+
 > 日期：2015-12-02  
-> 原始链接：[《人有人的用处》](https://skyseraph.github.io/life/2015/the_human_use_of_human_beings)   
+
 
 > 1950年写就的预言书——维纳用控制论的语言，提前七十年描述了信息社会的到来、自动化对劳动的冲击，以及人类在机器时代如何守住自身尊严。
 

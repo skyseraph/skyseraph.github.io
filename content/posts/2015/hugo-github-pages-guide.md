@@ -1,14 +1,17 @@
 ---
 title: "Hugo 博客搭建指南：从零到 GitHub Pages"
 date: 2015-12-01
+
 categories: ["技术"]
 tags: ["博客"]
 toc: true
 ---
 
-> 作者：skyseraph  
+> 作者：
+> 原始链接：[hugo-github-pages-guide](https://skyseraph.github.io/posts/2015/hugo-github-pages-guide)
+
 > 日期：2015-12-01  
-> 原文链接：[Hugo 博客搭建指南](https://skyseraph.github.io/posts/2015/hugo-github-pages-guide/)  
+
 
 ---
 

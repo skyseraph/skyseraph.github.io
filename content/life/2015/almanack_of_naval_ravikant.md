@@ -1,6 +1,6 @@
 ---
 title: "《纳瓦尔宝典》"
-slug: The Almanack of Naval Ravikant
+
 date: 2015-12-02T23:23:30+08:00
 categories: ["生活"]
 tags: ["读书笔记", "思维模型"]
@@ -9,9 +9,11 @@ toc: true
 draft: false
 ---
 
-> 作者：skyseraph  
+> 作者：
+> 原始链接：[almanack_of_naval_ravikant](https://skyseraph.github.io/life/2015/almanack_of_naval_ravikant)
+
 > 日期：2015-12-02  
-> 原始链接：[《纳瓦尔宝典》](https://skyseraph.github.io/life/2015/almanack_of_naval_ravikant)   
+
 
 > 一套关于如何思考财富与幸福的底层操作系统——用极简语言拆解复杂人生哲学，将可执行原则还给每一个普通人。
 

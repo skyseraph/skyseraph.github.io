@@ -1,6 +1,6 @@
 ---
 title: "人生八苦：佛教智慧中的生命真相"
-slug: "The Eight Sufferings of Life" 
+
 date: 2026-05-02T23:23:30+08:00
 categories: ["生活"]
 tags: ["人生", "哲学", "佛教"]
@@ -9,9 +9,11 @@ toc: true
 draft: false
 ---
 
-> 作者：skyseraph  
+> 作者：
+> 原始链接：[eight_sufferings](https://skyseraph.github.io/life/2026/eight_sufferings)
+
 > 日期：2026-05-02  
-> 原始链接：[人生八苦：佛教智慧中的生命真相](https://skyseraph.github.io/life/2026/eight_sufferings)   
+
 > 个人总结/整理/思考，引用请注明来源  
 
 ---

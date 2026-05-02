@@ -8,9 +8,11 @@ toc: true
 draft: false
 ---
 
-> 作者：skyseraph  
+> 作者：
+> 原始链接：[llm_ide](https://skyseraph.github.io/posts/2026/llm_ide)
+
 > 日期：2026-04-30 
-> 原始链接：[llm](https://skyseraph.github.io/posts/2026/llm_ide)  
+
 
 > 数据截至 2026-05-01 
 

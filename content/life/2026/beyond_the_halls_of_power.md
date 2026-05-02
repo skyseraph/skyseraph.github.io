@@ -1,12 +1,14 @@
 ---
 title: "陈楚生《庙堂之外》：致每一个步履忙忙的普通人"
 date: 2026-04-11T23:23:30+08:00
+
 categories: ["生活"]
 tags: ["人生", "歌曲"]
 pin: false
 toc: true
 draft: false
 ---
+> 原始链接：[beyond_the_halls_of_power](https://skyseraph.github.io/life/2026/beyond_the_halls_of_power)
 
 > 收录于陈楚生 2024 年专辑，词曲皆由本人创作。
 
