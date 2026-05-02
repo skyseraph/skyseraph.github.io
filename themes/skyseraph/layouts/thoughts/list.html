@@ -1,0 +1,76 @@
+{{ define "main" }}
+<div class="container">
+
+  <div class="page-header">
+    <h1>
+      <span class="lang-zh">闪念</span>
+      <span class="lang-en">Thoughts</span>
+    </h1>
+    <p>
+      <span class="lang-zh">瞬间的想法，随时记录</span>
+      <span class="lang-en">Quick thoughts, captured instantly</span>
+    </p>
+  </div>
+
+  <!-- Tag filter -->
+  {{ $tags := index .Site.Taxonomies "thoughts.tags" }}
+  {{ if $tags }}
+  <div style="padding: 20px 0 24px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; border-bottom: 1px solid var(--border);">
+    <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim); margin-right:4px;">tag:</span>
+    <a href="{{ "/thoughts/" | relURL }}" class="tag">#all</a>
+    {{ range $tags.ByCount }}
+    <a href="{{ "/thoughts/" | relURL }}?tag={{ .Page.Title | urlize }}" class="tag">#{{ .Page.Title }}</a>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ $all := where .Site.RegularPages "Type" "thoughts" }}
+  {{ $all = where $all "Date" "<=" now }}
+  {{ $all = sort $all "Date" "desc" }}
+  {{ $paginator := .Paginate $all 20 }}
+
+  <div class="thoughts-timeline" style="padding: 24px 0;">
+    {{ $.Scratch.Set "currentDate" "" }}
+    {{ range $paginator.Pages }}
+      {{ $dateStr := .Date.Format "2006-01-02" }}
+      {{ if ne $dateStr ($.Scratch.Get "currentDate") }}
+        {{ $.Scratch.Set "currentDate" $dateStr }}
+        <div class="timeline-date-header" style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--cyan); margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border);">
+          <span class="lang-zh">{{ .Date.Format "2006年01月02日" }}</span>
+          <span class="lang-en">{{ .Date.Format "Jan 02, 2006" }}</span>
+        </div>
+      {{ end }}
+      <div class="thought-item" style="display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(30, 45, 69, 0.5);">
+        <div class="thought-time" style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); flex-shrink: 0; padding-top: 3px; min-width: 48px;">
+          {{ .Date.Format "15:04" }}
+        </div>
+        <div class="thought-content" style="flex: 1; font-size: 0.9rem; line-height: 1.8; color: var(--text);">
+          <p style="margin: 0 0 8px;">{{ .Content | truncate 200 }}</p>
+          {{ if .Params.tags }}
+          <div class="thought-tags" style="display: flex; flex-wrap: wrap; gap: 5px;">
+            {{ range .Params.tags }}
+            <a href="{{ "/thoughts/?tag=" }}{{ . | urlize }}" class="tag">#{{ . }}</a>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+
+  {{ if gt $paginator.TotalPages 1 }}
+  <div class="pagination">
+    {{ if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}">&laquo;</a>{{ end }}
+    {{ range $paginator.Pagers }}
+      {{ if eq . $paginator }}
+      <span class="current">{{ .PageNumber }}</span>
+      {{ else }}
+      <a href="{{ .URL }}">{{ .PageNumber }}</a>
+      {{ end }}
+    {{ end }}
+    {{ if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}">&raquo;</a>{{ end }}
+  </div>
+  {{ end }}
+
+</div>
+{{ end }}

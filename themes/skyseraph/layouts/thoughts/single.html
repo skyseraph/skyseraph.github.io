@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="container">
+
+  <div class="thought-single" style="padding: 32px 0; max-width: 600px;">
+    <div class="thought-single-meta" style="margin-bottom: 20px;">
+      <span class="thought-single-date" style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-dim);">
+        <span class="lang-zh">{{ .Date.Format "2006年01月02日 15:04" }}</span>
+        <span class="lang-en">{{ .Date.Format "Jan 02, 2006 15:04" }}</span>
+      </span>
+    </div>
+
+    <article class="prose thought-prose" style="padding: 0; font-size: 0.9rem;">
+      {{ .Content }}
+    </article>
+
+    {{ if .Params.tags }}
+    <div class="thought-tags" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px;">
+      {{ range .Params.tags }}
+      <a href="{{ "/thoughts/?tag=" }}{{ . | urlize }}" class="tag">#{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+</div>
+{{ end }}
