@@ -1,6 +1,7 @@
 public/
 resources/
 doc/
+inner/
 skill/
 .hugo_build.lock
 .DS_Store
