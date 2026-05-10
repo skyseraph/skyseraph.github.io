@@ -93,6 +93,9 @@ pin: true
 # 读书笔记
 
 [【讀書筆記】人人都是产品经理](https://www.cnblogs.com/skyseraph/p/3590471.html)
+
 [【讀書筆記】高效能人士的七个习惯](https://www.cnblogs.com/skyseraph/p/3693005.html)
+
 [【讀書筆記】精益创业实战](https://www.cnblogs.com/skyseraph/p/3895564.html)
+
 [【讀書筆記】成为技术领导者](https://www.cnblogs.com/skyseraph/p/5162149.html)
