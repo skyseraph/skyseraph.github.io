@@ -378,7 +378,7 @@ async function executeHookWithTimeout(
 
 ## 下一步
 
-一篇：[15 - 安全审查：Security Review 命令实现](./15-security-review.md)，深入安全审查命令的源码实现。
+一篇：[15 - 安全审查：Security Review 命令实现](https://skyseraph.github.io/series/cc-source-code/2026/15-security-review)，深入安全审查命令的源码实现。
 
 ---
 

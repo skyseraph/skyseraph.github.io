@@ -426,7 +426,7 @@ onProgress?.({ toolUseID, data: { type: 'bash', output: '...' } })
 
 ## 下一步
 
-下一篇：[06 - Skills 加载与执行机制](./06-skills-system.md)，深入 `skills/` 模块的动态加载、Skill 定义格式与执行流程。
+下一篇：[06 - Skills 加载与执行机制](https://skyseraph.github.io/series/cc-source-code/2026/06-skills-system)，深入 `skills/` 模块的动态加载、Skill 定义格式与执行流程。
 
 ---
 

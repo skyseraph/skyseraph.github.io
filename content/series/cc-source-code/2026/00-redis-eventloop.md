@@ -25,36 +25,36 @@ draft: true
 
 | #    | 文章 | 状态 | 说明 |
 | :--- | :--- | :--- | :--- |
-| 01   | [整体架构概览：目录结构与模块划分](./01-architecture-overview.md) | 🔨 进行中 |  |
-| 02   | [入口点解析：从 CLI 到 REPL](./02-entrypoint-repl.md) | 📝 规划中 |  |
-| 03   | [Bridge 模块：主进程与渲染进程的通信机制](./03-bridge-arch.md) | 📝 规划中 |  |
-| 04   | [Coordinator：多阶段任务编排器](./04-coordinator.md) | 📝 规划中 |  |
+| 01   | [整体架构概览：目录结构与模块划分](https://skyseraph.github.io/series/cc-source-code/2026/01-architecture-overview) | 📝 完成 |  |
+| 02   | [入口点解析：从 CLI 到 REPL](https://skyseraph.github.io/series/cc-source-code/2026/02-entrypoint-repl) | 📝 完成 |  |
+| 03   | [Bridge 模块：主进程与渲染进程的通信机制](https://skyseraph.github.io/series/cc-source-code/2026/03-bridge-arch) | 📝 完成 |  |
+| 04   | [Coordinator：多阶段任务编排器](https://skyseraph.github.io/series/cc-source-code/2026/04-coordinator) | 📝 完成 |  |
 
 ### Part 2：核心模块
 
 | #    | 文章 | 状态 | 说明 |
 | :--- | :--- | :--- | :--- |
-| 05   | [Tools 系统：工具定义、注册与执行](./05-tools-system.md) | 📝 规划中 |  |
-| 06   | [Skills 加载与执行机制](./06-skills-system.md) | 📝 规划中 |  |
-| 07   | [MCP 协议：多工具协调](./07-mcp-protocol.md) | 📝 规划中 |  |
-| 08   | [消息传递：inbound/outbound 架构](./08-messaging.md) | 📝 规划中 |  |
+| 05   | [Tools 系统：工具定义、注册与执行](https://skyseraph.github.io/series/cc-source-code/2026/05-tools-system) | 📝 完成 |  |
+| 06   | [Skills 加载与执行机制](https://skyseraph.github.io/series/cc-source-code/2026/06-skills-system) | 📝 完成 |  |
+| 07   | [MCP 协议：多工具协调](https://skyseraph.github.io/series/cc-source-code/2026/07-mcp-protocol) | 📝 完成 |  |
+| 08   | [消息传递：inbound/outbound 架构](https://skyseraph.github.io/series/cc-source-code/2026/08-messaging) | 📝 完成 |  |
 
 ### Part 3：高级特性
 
 | #    | 文章 | 状态 | 说明 |
 | :--- | :--- | :--- | :--- |
-| 09   | [权限系统：PermissionCallbacks 与安全边界](./09-permission-system.md) | 📝 规划中 |  |
-| 10   | [状态管理：memdir 与会话持久化](./10-memdir-state.md) | 📝 规划中 |  |
-| 11   | [插件系统：Plugin 架构与生命周期](./11-plugin-system.md) | 📝 规划中 |  |
-| 12   | [跨进程通信：RemoteBridge 与远程模式](./12-remote-bridge.md) | 📝 规划中 |  |
+| 09   | [权限系统：PermissionCallbacks 与安全边界](https://skyseraph.github.io/series/cc-source-code/2026/09-permission-system) | 📝 完成 |  |
+| 10   | [状态管理：memdir 与会话持久化](https://skyseraph.github.io/series/cc-source-code/2026/10-memdir-state) | 📝 完成 |  |
+| 11   | [插件系统：Plugin 架构与生命周期](https://skyseraph.github.io/series/cc-source-code/2026/11-plugin-system) | 📝 完成 |  |
+| 12   | [跨进程通信：RemoteBridge 与远程模式](https://skyseraph.github.io/series/cc-source-code/2026/12-remote-bridge) | 📝 完成 |  |
 
 ### Part 4：代码深度
 
 | #    | 文章 | 状态 | 说明 |
 | :--- | :--- | :--- | :--- |
-| 13   | [Task 执行引擎：从创建到完成的完整流程](./13-task-engine.md) | 📝 规划中 |  |
-| 14   | [Hook 系统：生命周期拦截点](./14-hooks.md) | 📝 规划中 |  |
-| 15   | [安全审查：Security Review 命令实现](./15-security-review.md) | 📝 规划中 |  |
+| 13   | [Task 执行引擎：从创建到完成的完整流程](https://skyseraph.github.io/series/cc-source-code/2026/13-task-engine) | 📝 完成 |  |
+| 14   | [Hook 系统：生命周期拦截点](https://skyseraph.github.io/series/cc-source-code/2026/14-hooks) | 📝 完成 |  |
+| 15   | [安全审查：Security Review 命令实现](https://skyseraph.github.io/series/cc-source-code/2026/15-security-review) | 📝 完成 |  |
 
 ---
 

@@ -351,7 +351,7 @@ function buildMemoryPrompt(): string {
 
 ## 下一步
 
-下一篇：[11 - 插件系统：Plugin 架构与生命周期](./11-plugin-system.md)，深入 `plugins/` 模块的插件架构与生命周期管理。
+下一篇：[11 - 插件系统：Plugin 架构与生命周期](https://skyseraph.github.io/series/cc-source-code/2026/11-plugin-system)，深入 `plugins/` 模块的插件架构与生命周期管理。
 
 ---
 

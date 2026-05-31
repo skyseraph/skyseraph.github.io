@@ -404,7 +404,7 @@ main.tsx
 
 ## 下一步
 
-下一篇：[03 - Bridge 模块：主进程与渲染进程的通信机制](./03-bridge-arch.md)，深入 IDE 扩展与 CLI 之间的双向通信层。
+下一篇：[03 - Bridge 模块：主进程与渲染进程的通信机制](https://skyseraph.github.io/series/cc-source-code/2026/03-bridge-arch)，深入 IDE 扩展与 CLI 之间的双向通信层。
 
 ---
 

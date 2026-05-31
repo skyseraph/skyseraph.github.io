@@ -264,7 +264,7 @@ main.tsx
 
 ## 下一步
 
-下一篇：[02 - 入口点解析：从 CLI 到 REPL](./02-entrypoint-repl.md)，深入 `main.tsx`、`commands.ts` 与 REPL 初始化流程。
+下一篇：[02 - 入口点解析：从 CLI 到 REPL](https://skyseraph.github.io/series/cc-source-code/2026/02-entrypoint-repl)，深入 `main.tsx`、`commands.ts` 与 REPL 初始化流程。
 
 ---
 

@@ -399,7 +399,7 @@ applyPermissionUpdates(permissionUpdates)
 
 ## 下一步
 
-下一篇：[10 - 状态管理：memdir 与会话持久化](./10-memdir-state.md)，深入 `memdir/` 模块的内存目录、会话状态持久化机制。
+下一篇：[10 - 状态管理：memdir 与会话持久化](https://skyseraph.github.io/series/cc-source-code/2026/10-memdir-state)，深入 `memdir/` 模块的内存目录、会话状态持久化机制。
 
 ---
 

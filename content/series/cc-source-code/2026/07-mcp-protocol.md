@@ -369,7 +369,7 @@ interface OfficialMcpServer {
 
 ## 下一步
 
-下一篇：[08 - 消息传递：inbound/outbound 架构](./08-messaging.md)，深入消息传递层、inbound/outbound 架构与消息类型定义。
+下一篇：[08 - 消息传递：inbound/outbound 架构](https://skyseraph.github.io/series/cc-source-code/2026/08-messaging)，深入消息传递层、inbound/outbound 架构与消息类型定义。
 
 ---
 

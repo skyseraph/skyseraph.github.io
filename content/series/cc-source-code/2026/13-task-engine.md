@@ -359,7 +359,7 @@ TaskCreateTool
 
 ## 下一步
 
-下一篇：[14 - Hook 系统：生命周期拦截点](./14-hooks.md)，深入 Hook 类型定义、生命周期拦截与扩展点机制。
+下一篇：[14 - Hook 系统：生命周期拦截点](https://skyseraph.github.io/series/cc-source-code/2026/14-hooks)，深入 Hook 类型定义、生命周期拦截与扩展点机制。
 
 ---
 

@@ -429,7 +429,7 @@ type ContentReplacementRecord = {
 
 ## 下一步
 
-下一篇：[09 - 权限系统：PermissionCallbacks 与安全边界](./09-permission-system.md)，深入权限检查、PermissionCallbacks 与安全边界机制。
+下一篇：[09 - 权限系统：PermissionCallbacks 与安全边界](https://skyseraph.github.io/series/cc-source-code/2026/09-permission-system)，深入权限检查、PermissionCallbacks 与安全边界机制。
 
 ---
 

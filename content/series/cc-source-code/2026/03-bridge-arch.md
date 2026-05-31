@@ -415,7 +415,7 @@ export const capacityWake = createCapacityWake(loopSignal)
 
 ## 下一步
 
-下一篇：[04 - Coordinator：多阶段任务编排器](./04-coordinator.md)，深入 `coordinator/` 模块的多 Agent 协作机制。
+下一篇：[04 - Coordinator：多阶段任务编排器](https://skyseraph.github.io/series/cc-source-code/2026/04-coordinator)，深入 `coordinator/` 模块的多 Agent 协作机制。
 
 ---
 

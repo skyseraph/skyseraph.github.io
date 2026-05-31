@@ -365,7 +365,7 @@ interface PluginPolicy {
 
 ## 下一步
 
-下一篇：[12 - 跨进程通信：RemoteBridge 与远程模式](./12-remote-bridge.md)，深入远程桥接、SSH 会话与跨进程通信机制。
+下一篇：[12 - 跨进程通信：RemoteBridge 与远程模式](https://skyseraph.github.io/series/cc-source-code/2026/12-remote-bridge)，深入远程桥接、SSH 会话与跨进程通信机制。
 
 ---
 

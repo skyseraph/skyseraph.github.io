@@ -344,7 +344,7 @@ registerMCPSkillBuilders()
 
 ## 下一步
 
-下一篇：[07 - MCP 协议：多工具协调](./07-mcp-protocol.md)，深入 `services/mcp/` 模块的 MCP 服务器连接与管理。
+下一篇：[07 - MCP 协议：多工具协调](https://skyseraph.github.io/series/cc-source-code/2026/07-mcp-protocol)，深入 `services/mcp/` 模块的 MCP 服务器连接与管理。
 
 ---
 

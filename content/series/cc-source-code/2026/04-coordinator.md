@@ -1,5 +1,5 @@
 ---
-title: "CC源码剖析 #04 · Tools 系统：工具定义、注册与执行"
+title: "CC源码剖析 #04 · 多阶段任务编排器"
 date: 2026-05-01T08:00:00+08:00
 series: "CC源码剖析"
 issue: 5
@@ -283,7 +283,7 @@ coordinatorMode.ts
 
 ## 下一步
 
-下一篇：[05 - Tools 系统：工具定义、注册与执行](./05-tools-system.md)，深入 `tools/` 模块的 Tool 基类、Schema 验证与权限模型。
+下一篇：[05 - Tools 系统：工具定义、注册与执行](https://skyseraph.github.io/series/cc-source-code/2026/05-tools-system)，深入 `tools/` 模块的 Tool 基类、Schema 验证与权限模型。
 
 ---
 
