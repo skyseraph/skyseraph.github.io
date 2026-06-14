@@ -58,7 +58,7 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
 - 2016 Senior Lecturer at MSUP
 - 2022 – Present: Senior Lecturer & Committer Software Coach at BGI
   - Awarded the Huawei Gold Medal Instructor for three consecutive times (2023/2024/2025)
-  - Committer for CodeView & Software Refactoring
+  - Committer for CodeView & Software Refactoring,  210h+
   - NEO new employee sharing: Elite Colleague Dialogue
 
 ### Talks
@@ -70,7 +70,7 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
 ## Honors & Awards
 
 - 2024 [[Huawei People] Twice a Huawei Gold Individual Winner in Eight Years: His Journey in R&D](https://mp.weixin.qq.com/s/Fz7vMZs1p3TL1tt8p6Lrew)
-- 2016 ~ xx : HW 30+ ...
+- 2016 ~ xx : HW 35+ ...
 - 2016 Alibaba Pinecone Award
 - 2013 Annual Outstanding Employee, TCL Corporation
 - 2013 TCL UE Ultimate TV Creative Campaign:3 × Ultimate Popularity Award (Top 10) / 2 × Ultimate Creativity Award (Top 10)
@@ -152,8 +152,8 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
 - 2015-2016 极客学院签约布道师（在线培训讲师）
 - 2016 MSUP 特聘高级讲师
 - 2022-至今 华大高级讲师 / Committer 软件教练，荣获 3 次华为金牌教师（2023/2024/2025）
-  - Committer《CodeReview & 代码重构》
-  - NEO 新员工《金牌员工面对面》
+  - Committer《CodeReview & 代码重构》 40次+，210h+
+  - NEO 新员工《金牌员工面对面》 9次
 
 ### 演讲
 
@@ -165,7 +165,7 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
 ## 荣誉与奖项
 
 - 2024 [[华为人] 八年两获"华为金牌个人"，研发之路他这么一路走来](https://mp.weixin.qq.com/s/Fz7vMZs1p3TL1tt8p6Lrew)
-- 2016 ~ xx : HW 30+ ... 
+- 2016 ~ xx : HW 35+ ... 
 - 2016 BABA 松果奖
 - 2013 TCL 公司年度优秀员工（2013年度）
 - 2013 TCL UE极致电视创意活动：3件极致人气奖(TOP 10)/2件极致创意奖(TOP 10)
