@@ -4,7 +4,7 @@ date: 2026-04-19T23:29:38+08:00
 icon: "📦"
 description: "Skill创造平台"
 status: "wip"
-github: "https://github.com/skyseraph/SkillNexus"
+github: "https://github.com/iskyseraph/SkillNexus"
 demo: ""
 tags: ["开源"]
 draft: false
@@ -23,7 +23,8 @@ draft: false
 
 **SkillNexus，你的Skill创造神器**
 
-- [SkillNexus Github](https://github.com/skyseraph/SkillNexus)
+- [SkillNexus Website](https://iskyseraph.github.io/skillnexus-website/)
+- [SkillNexus Github](https://github.com/iskyseraph/SkillNexus) 
 - [SkillNexus 专栏](https://skyseraph.github.io/series/skill-nexus/)
 
 
