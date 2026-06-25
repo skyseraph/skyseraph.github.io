@@ -28,19 +28,19 @@ draft: false
 - [SkillNexus 专栏](https://skyseraph.github.io/series/skill-nexus/)
 
 
-![home](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/home.png)
+![home](/images/projects/2026/home.png)
 
-![studio](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/studio.png)
+![studio](/images/projects/2026/studio.png)
 
-![eval](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/eval.png)
+![eval](/images/projects/2026/eval.png)
 
-![eval-img](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/eval-%E9%9B%B7%E8%BE%BE%E5%9B%BE.png)
+![eval-img](/images/projects/2026/eval-雷达图.png)
 
 
-![eval-img2](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/eval-%E7%83%AD%E5%8A%9B%E5%9B%BE.png)
+![eval-img2](/images/projects/2026/eval-热力图.png)
 
-![evo](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/evo-%E8%BF%9B%E5%8C%96%E5%BC%95%E6%93%8E.png)
+![evo](/images/projects/2026/evo-进化引擎.png)
 
-![task](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/task.png)
+![task](/images/projects/2026/task.png)
 
-![treading](https://raw.githubusercontent.com/skyseraph/SkillNexus/main/docs/images/treading.png)
+![treading](/images/projects/2026/treading.png)
