@@ -89,7 +89,16 @@
           {{ .Date.Format "15:04" }}
         </div>
         <div class="thought-content" style="flex: 1; font-size: 0.9rem; line-height: 1.8; color: var(--text);">
-          <p style="margin: 0 0 8px;">{{ .Content | truncate 200 }}</p>
+          <p style="margin: 0 0 8px;">{{ .Content | plainify | truncate 200 }}</p>
+          {{ with .Content }}
+          {{ $imgRe := `<img[^>]+src="([^"]+)"[^>]*>` }}
+          {{ range findRE $imgRe . }}
+          {{ $src := replaceRE $imgRe `$1` . }}
+          <div style="margin: 8px 0;">
+            <img src="{{ $src }}" alt="" style="max-width: 100%; border-radius: var(--radius); border: 1px solid var(--border);" loading="lazy">
+          </div>
+          {{ end }}
+          {{ end }}
           {{ if .Params.tags }}
           <div class="thought-tags" style="display: flex; flex-wrap: wrap; gap: 5px;">
             {{ range .Params.tags }}
