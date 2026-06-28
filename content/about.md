@@ -71,7 +71,7 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
 
 - 2024 [[Huawei People] Twice a Huawei Gold Individual Winner in Eight Years: His Journey in R&D](https://mp.weixin.qq.com/s/Fz7vMZs1p3TL1tt8p6Lrew)
 - 2016 ~ xx : HW 35+ ...
-- 2016 Alibaba Pinecone Award
+- 2015 Alibaba Pinecone Award
 - 2013 Annual Outstanding Employee, TCL Corporation
 - 2013 TCL UE Ultimate TV Creative Campaign:3 × Ultimate Popularity Award (Top 10) / 2 × Ultimate Creativity Award (Top 10)
 - 2009 Outstanding Graduate of Hunan Province
@@ -174,7 +174,7 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
   - [2023年 信通院AI4SE “银弹” 优秀案例](https://www.aidqc.com/html/web/xhyfb/cgfb/yxal/1912430376221667329.html)
   - ... 
 - 阿里巴巴
-  - 2016 BABA 松果奖
+  - 2015 BABA 松果奖
 - TCL
   - 2013 TCL 公司年度优秀员工（2013年度）
   - 2013 TCL UE极致电视创意活动：3件极致人气奖(TOP 10)/2件极致创意奖(TOP 10)
