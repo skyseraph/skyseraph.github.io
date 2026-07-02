@@ -1,6 +1,6 @@
 public/
 resources/
-doc/
+inner/
 inner/
 skill/
 .hugo_build.lock
