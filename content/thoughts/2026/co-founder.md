@@ -1,7 +1,7 @@
 ---
 title: "新的文艺复兴：每个人都是 co-founder"
 date: 2026-06-21T21:30:00+08:00
-tags: ["闪念"]
+tags: ["闪念","语录"]
 draft: false
 ---
 
