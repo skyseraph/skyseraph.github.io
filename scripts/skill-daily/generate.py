@@ -115,13 +115,29 @@ def generate_draft(collected: dict, date_str: str | None = None) -> tuple[str, i
 - 输出纯 Markdown，不加任何解释或前言
 """
 
-    client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY)
+    client_kwargs = {"api_key": config.ANTHROPIC_API_KEY}
+    if config.ANTHROPIC_BASE_URL:
+        client_kwargs["base_url"] = config.ANTHROPIC_BASE_URL
+    client = anthropic.Anthropic(**client_kwargs)
     msg = client.messages.create(
         model=config.ANTHROPIC_MODEL,
         max_tokens=4096,
         messages=[{"role": "user", "content": prompt}],
     )
-    content = msg.content[0].text.strip()
+    # 提取文本内容（跳过 ThinkingBlock 等非文本块）
+    content = ""
+    for block in msg.content:
+        if hasattr(block, "text"):
+            content = block.text.strip()
+            break
+    if not content:
+        # 兜底：尝试所有块拼接文本
+        content = "\n".join(
+            block.text for block in msg.content if hasattr(block, "text")
+        ).strip()
+    if not content:
+        print("[ERROR] Claude API 返回内容为空")
+        return "", 0, ""
 
     # 去掉模型可能包裹的 ```markdown 代码块
     content = re.sub(r"^```markdown\n?", "", content)

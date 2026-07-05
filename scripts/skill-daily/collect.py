@@ -126,7 +126,7 @@ def _fetch_github_trending(since: str = "daily") -> list[dict]:
     """
     url = f"https://github.com/trending?since={since}"
     try:
-        resp = requests.get(url, headers=config.HEADERS, timeout=config.REQUEST_TIMEOUT)
+        resp = requests.get(url, headers=config.HEADERS, timeout=config.TRENDING_TIMEOUT)
         resp.raise_for_status()
         soup = BeautifulSoup(resp.text, "html.parser")
 
