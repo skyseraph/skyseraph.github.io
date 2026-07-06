@@ -124,19 +124,31 @@ def generate_draft(collected: dict, date_str: str | None = None) -> tuple[str, i
         max_tokens=4096,
         messages=[{"role": "user", "content": prompt}],
     )
-    # 提取文本内容（跳过 ThinkingBlock 等非文本块）
-    content = ""
-    for block in msg.content:
-        if hasattr(block, "text"):
-            content = block.text.strip()
-            break
+    # 提取文本内容：只取 TextBlock，跳过 ThinkingBlock 等非文本块
+    # 使用 SDK 类型精确判断，避免 ThinkingBlock.text 被误提取
+    from anthropic.types import TextBlock, ThinkingBlock
+
+    text_blocks = [b for b in msg.content if isinstance(b, TextBlock)]
+    content = "\n".join(b.text for b in text_blocks).strip()
+
     if not content:
-        # 兜底：尝试所有块拼接文本
+        # 兜底：用 type name 判断（兼容 DashScope 等代理可能返回的非标准类型）
+        text_blocks = [b for b in msg.content
+                       if type(b).__name__ == "TextBlock" and hasattr(b, "text")]
+        content = "\n".join(b.text for b in text_blocks).strip()
+
+    if not content:
+        # 最终兜底：任何有 .text 属性且非 ThinkingBlock 的块
         content = "\n".join(
-            block.text for block in msg.content if hasattr(block, "text")
+            getattr(b, "text", "") for b in msg.content
+            if hasattr(b, "text") and not isinstance(b, ThinkingBlock)
+            and type(b).__name__ != "ThinkingBlock"
         ).strip()
+
     if not content:
-        print("[ERROR] Claude API 返回内容为空")
+        print(f"[ERROR] Claude API 返回内容为空 (blocks: {len(msg.content)}, "
+              f"types: {[type(b).__name__ for b in msg.content]}, "
+              f"stop_reason: {msg.stop_reason})")
         return "", 0, ""
 
     # 去掉模型可能包裹的 ```markdown 代码块
