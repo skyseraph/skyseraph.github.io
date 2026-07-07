@@ -119,11 +119,22 @@ def generate_draft(collected: dict, date_str: str | None = None) -> tuple[str, i
     if config.ANTHROPIC_BASE_URL:
         client_kwargs["base_url"] = config.ANTHROPIC_BASE_URL
     client = anthropic.Anthropic(**client_kwargs)
-    msg = client.messages.create(
-        model=config.ANTHROPIC_MODEL,
-        max_tokens=4096,
-        messages=[{"role": "user", "content": prompt}],
-    )
+
+    # 构建 API 请求参数
+    api_kwargs = {
+        "model": config.ANTHROPIC_MODEL,
+        "max_tokens": config.ANTHROPIC_MAX_TOKENS,
+        "messages": [{"role": "user", "content": prompt}],
+    }
+    # 启用 extended thinking 时，设置思考预算
+    # max_tokens 必须 >= thinking_budget + 输出文本预算
+    if config.ANTHROPIC_THINKING_BUDGET > 0:
+        api_kwargs["thinking"] = {
+            "type": "enabled",
+            "budget_tokens": config.ANTHROPIC_THINKING_BUDGET,
+        }
+
+    msg = client.messages.create(**api_kwargs)
     # 提取文本内容：只取 TextBlock，跳过 ThinkingBlock 等非文本块
     # 使用 SDK 类型精确判断，避免 ThinkingBlock.text 被误提取
     from anthropic.types import TextBlock, ThinkingBlock

@@ -30,6 +30,10 @@ SOURCES_YML   = ".claude/skills/skill.daily/sources.yml"
 TEMPLATE_PATH = ".claude/skills/skill.daily/templates.md"
 SERIES_DIR    = "content/series/skill-daily"
 
+# ── 生成 ─────────────────────────────────────────────────────────
+ANTHROPIC_MAX_TOKENS      = 16384   # 总输出预算（思考+文本），extended thinking 模型需更大值
+ANTHROPIC_THINKING_BUDGET = 8192    # 思考 token 预算（0 = 不启用 thinking 参数）
+
 # ── 采集 ─────────────────────────────────────────────────────────
 TIME_WINDOW_HOURS    = 24       # 日级别：过去 24h
 COLLECT_GRACE_HOURS  = 4        # 宽容窗口
