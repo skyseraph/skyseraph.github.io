@@ -23,6 +23,27 @@ def _next_issue() -> int:
     return len([f for f in files if "_index" not in f]) + 1
 
 
+def _load_history() -> set[str]:
+    """扫描过往日报，提取所有已推荐过的项目 repo（owner/repo 格式）
+
+    从所有已发布日报的 .md 文件中提取 https://github.com/owner/repo 链接，
+    转换为 owner/repo 格式返回去重集合。
+    """
+    seen: set[str] = set()
+    files = glob.glob(f"{config.SERIES_DIR}/**/*.md", recursive=True)
+    for fp in files:
+        if "_index" in fp:
+            continue
+        try:
+            text = open(fp, encoding="utf-8").read()
+        except FileNotFoundError:
+            continue
+        # 提取所有 GitHub 仓库 URL：https://github.com/owner/repo
+        urls = re.findall(r'https://github\.com/([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)', text)
+        seen.update(urls)
+    return seen
+
+
 def _extract_template() -> str:
     """从 templates.md 提取日报 markdown 模板"""
     try:
@@ -69,11 +90,45 @@ def generate_draft(collected: dict, date_str: str | None = None) -> tuple[str, i
     issue = _next_issue()
     template = _extract_template()
 
+    # ── 历史推荐过滤 ──────────────────────────────────────────────
+    history = _load_history()
+    if history:
+        print(f"[INFO] 已推荐过 {len(history)} 个项目，本轮将过滤")
+        # 从采集数据中移除已推荐项目
+        filtered: dict[str, list] = {}
+        removed_total = 0
+        for cat, items in collected.items():
+            before = len(items)
+            new_items = [i for i in items if i.get("full_name", "") not in history]
+            filtered[cat] = new_items
+            removed = before - len(new_items)
+            removed_total += removed
+            if removed:
+                print(f"  {cat}: 移除 {removed}/{before} 个历史项目")
+        collected = filtered
+        if removed_total:
+            print(f"[INFO] 共移除 {removed_total} 个历史项目")
+
     # 计算时间窗口起始
     d = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
     window_start = (d - timedelta(hours=config.TIME_WINDOW_HOURS)).strftime("%Y-%m-%d")
 
     data_json = json.dumps(collected, ensure_ascii=False, indent=2)
+
+    # 构建历史排除列表文本
+    history_text = ""
+    if history:
+        sorted_list = sorted(history)
+        history_text = f"""
+
+## 已推荐过的项目（禁止重复推荐）
+
+以下项目已在过往 Skill日报中推荐，本轮不得再次纳入今日榜、新项目速递或候补：
+{', '.join(sorted_list)}
+
+注意：
+- 即使这些项目仍有新动态，也不应再次推荐，避免日报内容重复
+- 趋势分析中可以提及已推荐项目的进展作为对比参照，但不得将其作为代表项目或纳入任何榜单"""
 
     prompt = f"""你是 AI Skill 生态资深分析师，请根据以下采集数据生成一期 Skill 日报草稿。
 
@@ -101,6 +156,7 @@ def generate_draft(collected: dict, date_str: str | None = None) -> tuple[str, i
 - 若同时满足两榜条件 → 新项目速递中标注 ★ 双榜入选
 - 总分 40-49 → 纳入「候补」（简列 1-2 项）
 - 总分 < 40 → 排除
+{history_text}
 
 ## 约束规则
 - 所有项目 URL 必须来自采集数据，禁止编造任何 GitHub URL
