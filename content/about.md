@@ -153,7 +153,7 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
 - 2016 MSUP 特聘高级讲师
 - 2022-至今 华大高级讲师 / Committer 软件教练，荣获 3 次华为金牌教师（2023/2024/2025）
   - Committer《CodeReview & 代码重构》 40次+，210h+，培养800+ HW Committer
-  - NEO 新员工《金牌员工面对面》 10次，覆盖440+ HW新员工
+  - NEO 新员工《金牌员工面对面》 10+，覆盖500+ HW新员工
 
 ### 演讲
 
