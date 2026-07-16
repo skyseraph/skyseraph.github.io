@@ -8,8 +8,7 @@ draft: false
 ---
 
 > 作者：SkySeraph  
-> 原始链接：[The Bitter Lesson](https://skyseraph.github.io/posts/2025/the_bitter_lesson)  
-> 日期：2025-10-01   
+> 原始链接：[The Bitter Lesson](https://skyseraph.github.io/posts/2025/the_bitter_lesson)   
 > 核心总结：人类总以为聪明能赢蛮力，但 70 年 AI 史反复证明：算力 + 通用方法，才是终极赢家。 
 > 原文作者：Richard S. Sutton（强化学习之父）   
 > 发表：2019-03-13    
