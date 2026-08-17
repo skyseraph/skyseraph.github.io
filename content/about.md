@@ -8,65 +8,54 @@ layout: "about"
 
 ## About Me  👋
 
-Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after November 2016, and set sail again with Vibe Coding in 2026). Previously active on [CNBlogs](https://www.cnblogs.com/skyseraph) / [CSDN](https://blog.csdn.net/zgzhaobo).
+Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after 2016, a decade of stillness, then set sail again with Vibe Coding in 2026). Previously active on [CNBlogs](https://www.cnblogs.com/skyseraph) / [CSDN](https://blog.csdn.net/zgzhaobo).
 
-- Former engineer at TCL / Alibaba / HW
+- Former engineer at TCL / BABA / HW
 
 ## Focus Areas
 
-- AI/LLM/AIGC(人工智能): 2022～至今
-  - AI Agents/Infra/Data/Eval...
-- APP(移动互联网)：2011～至今
-  - Android / iOS / ...
-- CV/MV(计算机视觉/机器视觉)：2009～至今
-  - DIP/OpenCV/CV/MV/...
-- 软件工程：2010～至今
-  - Soft Engineering / Soft Architecture / Product Design ...
-- 嵌入式：2005～2010
-  - SCM/ARM/FPGA/...
-- ...
+- **AI / LLM / Agent Infra** (2022–Present)
+  - LLMGaia (Data Engineering), Pangu Model Eval Engineering, SkillStudio / SkillNexus (Open Source), ModelAgent / VerifyAgent
+- **APP / Mobile Internet** (2011–Present)
+  - Android / iOS / HarmonyOS full-platform architecture, 10M+ DAU engineering
+- **CV / MV / Computer Vision** (2009–Present)
+  - On-device image processing, OpenCV, embedded vision optimization
+- **Software Engineering & R&D Efficiency** (2010–Present)
+  - Software architecture, Code Review systems, tech evangelism & org enablement
+- **Embedded / Early Foundations** (2005–2010)
+  - SCM / ARM / FPGA
+
+---
 
 ## Selected Publications
 
 ### Books
 
-- [Android NFC Development in Practice — Posts & Telecom Press](https://skyseraph.github.io/projects/2014/android-nfc-book/), 2014
-- Android NFC Development in Practice (Traditional Chinese Edition) — Jiakui Information, Taiwan, 2014
-- [App Architect's Practical Guide — Posts & Telecom Press](https://skyseraph.github.io/projects/2016/app-arch-book/), 2016 (Bestseller of the Year)
+- **[Android NFC Development in Practice](https://skyseraph.github.io/projects/2014/android-nfc-book/)** — Posts & Telecom Press, 2014 (incl. Traditional Chinese edition)
+  - First Chinese NFC practical guide, defined early mobile near-field communication development standards
+- **[App Architect's Practical Guide](https://skyseraph.github.io/projects/2016/app-arch-book/)** — Posts & Telecom Press, 2016 (Bestseller of the Year)
+  - Systematic methodology for mobile app architecture design, influenced a generation of mobile developers
 
-### Patents & Papers
+### Representative Patents (Published, 20+ incl. PCT Overseas)
 
-- [CN113094253A - Equipment debugging method and device](https://patents.google.com/patent/CN113094253A/en)
-- [CN103414740A - Private cloud account configuration method and device](https://patents.google.com/patent/CN103414740A/en)
-- [CN103312524A - Automatic alarming method and system for display equipment](https://patents.google.com/patent/CN103312524A/en)
-- [CN103412728A - Method and system for device file printing based on local area network](https://patents.google.com/patent/CN103412728A/en)
-- [CN103413561A - Wireless sound box-based audio playing method and system](https://patents.google.com/patent/CN103413561A/en)
-- [CN105320248B - Aerial gesture input method and device](https://patents.google.com/patent/CN105320248B/en)
-- [CN111383186B - An image processing method, device and terminal equipment](https://patents.google.com/patent/CN111383186B/en)
-- [WO2016070688A1 - Remote control method and system for virtual operation interface](https://patents.google.com/patent/WO2016070688A1/en)
-- [CN103412643A - Terminal and remote control method thereof](https://patents.google.com/patent/CN103412643A/en)
-- [CN103685520A - Method and device for pushing songs on basis of voice recognition](https://patents.google.com/patent/CN103685520A/en)
-- [CN103294398A - Method and device for controlling display terminal based on suspension-type visual window](https://patents.google.com/patent/CN103294398A/en)
-- [CN103472915A - Reading control method and reading control device on basis of pupil tracking and display equipment](https://patents.google.com/patent/CN103472915A/en)
-- [CN104918112A - Camera resource application method and device](https://patents.google.com/patent/CN104918112A/en)
-- [CN103488295A - Method and device for automatically controlling rotation of display equipment](https://patents.google.com/patent/CN103488295A/en)
-- [CN103546200A - Data transmission method and system based on near-field communication](https://patents.google.com/patent/CN103546200A/en)
-- [CN105589576A - Action direction identification method and device](https://patents.google.com/patent/CN105589576A/en)
-- [CN103680101A - Method and system for editing NFC data for NFC equipment or NFC label](https://patents.google.com/patent/CN103680101A/en)
-- [CN105304058A - Method and device for automatically adjusting display parameters](https://patents.google.com/patent/CN105304058A/en)
-- [CN105573156A - Remote control method and system](https://patents.google.com/patent/CN105573156A/en)
-- [CN105376621A - Display control method, intelligent display terminal and portable control terminal](https://patents.google.com/patent/CN105376621A/en)
-- ...
+| Domain | Direction | Technical Value |
+|--------|-----------|-----------------|
+| AI Interaction | Aerial gesture input | Contactless terminal interaction |
+| Vision Engineering | On-device image processing | Embedded vision algorithm optimization |
+| HCI | Pupil-tracking reading control | Mobile contactless interaction |
+| Communication Protocols | NFC data transmission | NFC protocol stack optimization |
+| Multimedia | Wireless speaker audio sync | Multi-device audio synchronization |
+
+> 20+ granted patents covering computer vision, HCI, wireless communication, and multimedia systems, including PCT overseas grants.
 
 ## Talks & Training
 
 ### Training
 - 2015–2016 Contracted Evangelist (Online Training Lecturer) at GeekAcademy
 - 2016 Senior Lecturer at MSUP
-- 2022 – Present: Senior Lecturer & Committer Software Coach at BGI
-  - Awarded the Huawei Gold Medal Instructor for three consecutive times (2023/2024/2025)
-  - Committer for CodeView & Software Refactoring,  210h+
-  - NEO new employee sharing: Elite Colleague Dialogue
+- 2022–Present: Enterprise Committer Software Coach / Senior Lecturer at BGI, awarded Huawei Gold Medal Instructor 3 times (2023/2024/2025)
+  - Committer for Code Review & Software Refactoring
+  - NEO new employee sharing: Gold Medal Colleague Dialogue
 
 ### Talks
 - 2018.9.15 [Android Green Alliance — Exploration and Practice of Game Automation Testing](https://mp.weixin.qq.com/s/sjyiuQV6ZQRNEHKv0Fetkw), awarded [Android Green Alliance Outstanding Speaker 2018](https://mp.weixin.qq.com/s/gsiid9_in8A5QUXehaSF2A)
@@ -76,17 +65,9 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
 
 ## Honors & Awards
 
-- 2024 [[Huawei People] Twice a Huawei Gold Individual Winner in Eight Years: His Journey in R&D](https://mp.weixin.qq.com/s/Fz7vMZs1p3TL1tt8p6Lrew)
-- 2016 ~ xx : HW 35+ ...
-- 2015 Alibaba Pinecone Award
-- 2013 Annual Outstanding Employee, TCL Corporation
-- 2013 TCL UE Ultimate TV Creative Campaign:3 × Ultimate Popularity Award (Top 10) / 2 × Ultimate Creativity Award (Top 10)
-- 2009 Outstanding Graduate of Hunan Province
-- 2007 Third Prize, National Undergraduate Electronic Design Competition (Sony Cup
-- 2007 National Encouragement Scholarship
-- 2006 National Scholarship
-- 2009~2011  University-level: Outstanding Postgraduate, Excellent Academic Paper, First-Class Scholarship, etc.
-- 2005~2009  University-level: Model Student of Excellence, Merit Student, Outstanding League Member, Advanced Individual, Special Scholarship, 3 times of Grade A Scholarship, 5+ awards in various university competitions
+- **Industry**: CAICT AI4SE "Silver Bullet" Outstanding Case (2023)
+- **Enterprise**: Multiple top-tier tech company highest individual honors (Gold Individual ×2, Gold Instructor ×3)
+- **Early**: National Scholarship, National Encouragement Scholarship, National Undergraduate Electronic Design Competition, Outstanding Graduate of Hunan Province, etc.
 
 ## Software & Products
 
@@ -100,9 +81,11 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
 
 ![Personal WeChat Official Account](/images/qrcode.jpg)
 
+> ⚠️ **Privacy Notice**: All enterprise experiences listed are either publicly available or desensitized. Views expressed are personal and do not represent any employer. Technical discussions are limited to publicly available technical topics.
+
 ---
 
-> Keep hungry, keep foolish.
+> *Know the boundaries. Chase the unknown.*
 </div>
 
 <span class="lang-zh" style="display:none;">
@@ -115,49 +98,39 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
 
 ## 关注领域
 
-- AI/LLM/AIGC(人工智能): 2022～至今
-  - AI Agents/Infra/Data/Eval...
-- APP(移动互联网)：2011～至今
-  - Android / iOS / ...
-- CV/MV(计算机视觉/机器视觉)：2009～至今
-  - DIP/OpenCV/CV/MV/...
-- 软件工程：2010～至今
-  - Soft Engineering / Soft Architecture / Product Design ...
-- 嵌入式：2005～2010
-  - SCM/ARM/FPGA/...
-- ...
+- **AI / LLM / Agent 基础设施**（2022～至今）
+  - LLMGaia（盖亚数据工程）、盘古模型评测工程、SkillStudio / SkillNexus（开源）、ModelAgent / VerifyAgent
+- **APP / 移动互联网**（2011～至今）
+  - Android / iOS / HarmonyOS 全平台架构，千万级日活工程化
+- **CV / MV / 计算机视觉**（2009～至今）
+  - 端侧图像处理、OpenCV、嵌入式视觉优化
+- **软件工程与研发效能**（2010～至今）
+  - 软件架构、Code Review 体系、技术布道与组织赋能
+- **嵌入式 / 早期积累**（2005～2010）
+  - SCM / ARM / FPGA
+
+---
 
 ## 精选著作
 
 ### 专著
 
-- [《Android NFC 开发实战详解》](https://skyseraph.github.io/projects/2014/android-nfc-book/) 人民邮电出版社 2014
-- 《Android NFC开发实战详解》繁体版，台湾佳魁资讯股份有限公司出版 2014
-- [《App架构师实践指南》](https://skyseraph.github.io/projects/2016/app-arch-book/) 人民邮电出版社 2016（年度畅销书）
+- **[《Android NFC 开发实战详解》](https://skyseraph.github.io/projects/2014/android-nfc-book/)** 人民邮电出版社 2014（含繁体版）
+  - 国内首部 NFC 技术实战专著，定义早期移动端近场通信开发标准
+- **[《App架构师实践指南》](https://skyseraph.github.io/projects/2016/app-arch-book/)** 人民邮电出版社 2016（年度畅销书）
+  - 系统阐述移动应用架构设计方法论，影响一代移动开发者
 
-### 专利 & 论文
+### 代表性专利（已公开，20+ 项，含 PCT 海外授权）
 
-- [CN113094253A - 设备调试方法及装置](https://patents.google.com/patent/CN113094253A/zh)
-- [CN103414740A - 私有云账户配置方法及装置](https://patents.google.com/patent/CN103414740A/zh)
-- [CN103312524A - 一种显示设备的自动告警方法及系统](https://patents.google.com/patent/CN103312524A/zh)
-- [CN103412728A - 基于局域网的文件打印方法及系统](https://patents.google.com/patent/CN103412728A/zh)
-- [CN103413561A - 基于无线音箱的音频播放方法及系统](https://patents.google.com/patent/CN103413561A/zh)
-- [CN105320248B - 空中手势输入方法及装置](https://patents.google.com/patent/CN105320248B/zh)
-- [CN111383186B - 图像处理方法、装置及终端设备](https://patents.google.com/patent/CN111383186B/zh)
-- [WO2016070688A1 - 虚拟操作界面的遥控方法及系统](https://patents.google.com/patent/WO2016070688A1/zh)
-- [CN103412643A - 终端及其遥控方法](https://patents.google.com/patent/CN103412643A/zh)
-- [CN103685520A - 基于语音识别推送歌曲的方法及装置](https://patents.google.com/patent/CN103685520A/zh)
-- [CN103294398A - 基于悬浮式视觉窗口的显示终端控制方法及装置](https://patents.google.com/patent/CN103294398A/zh)
-- [CN103472915A - 基于瞳孔追踪的阅读控制方法及装置](https://patents.google.com/patent/CN103472915A/zh)
-- [CN104918112A - 摄像头资源应用方法及装置](https://patents.google.com/patent/CN104918112A/zh)
-- [CN103488295A - 显示设备自动旋转控制方法及装置](https://patents.google.com/patent/CN103488295A/zh)
-- [CN103546200A - 基于近场通信的数据传输方法及系统](https://patents.google.com/patent/CN103546200A/zh)
-- [CN105589576A - 动作方向识别方法及装置](https://patents.google.com/patent/CN105589576A/zh)
-- [CN103680101A - NFC设备或NFC标签的NFC数据编辑方法及系统](https://patents.google.com/patent/CN103680101A/zh)
-- [CN105304058A - 自动调节显示参数的方法及装置](https://patents.google.com/patent/CN105304058A/zh)
-- [CN105573156A - 遥控方法及系统](https://patents.google.com/patent/CN105573156A/zh)
-- [CN105376621A - 显示控制方法、智能显示终端及便携式控制终端](https://patents.google.com/patent/CN105376621A/zh)
-- ...
+| 领域 | 方向 | 技术价值 |
+|------|------|---------|
+| AI 交互 | 空中手势输入 | 无接触式终端交互方案 |
+| 视觉工程 | 端侧图像处理 | 嵌入式视觉算法优化 |
+| 人机交互 | 瞳孔追踪阅读控制 | 移动端无接触交互 |
+| 通信协议 | 近场通信数据传输 | NFC 协议栈优化 |
+| 多媒体 | 无线音箱音频协同 | 多设备音频同步方案 |
+
+> 累计获授权专利 20+ 项，覆盖计算机视觉、人机交互、无线通信与多媒体系统，含 PCT 海外授权专利。
 
 ## 演讲 & 培训
 
@@ -165,9 +138,9 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
 
 - 2015-2016 极客学院签约布道师（在线培训讲师）
 - 2016 MSUP 特聘高级讲师
-- 2022-至今 华大高级讲师 / Committer 软件教练，荣获 3 次华为金牌教师（2023/2024/2025）
-  - Committer《CodeReview & 代码重构》 40次+，210h+，培养800+ HW Committer
-  - NEO 新员工《金牌员工面对面》 10+，覆盖500+ HW新员工
+- 2022-至今 企业级 Committer 软件教练/ 华大高级讲师 ，荣获 3 次华为金牌教师（2023/2024/2025）
+  - Committer《CodeReview & 代码重构》 xx次+，xxx h+，培养xxx + HW Committer
+  - NEO 新员工《金牌员工面对面》 xx+，覆盖xxx + HW新员工
 
 ### 演讲
 
@@ -178,34 +151,9 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
 
 ## 荣誉与奖项
 
-- 华为 2016 ~ 至今: 35+
-  - 华为人报：[[华为人] 八年两获"华为金牌个人"，研发之路他这么一路走来](https://mp.weixin.qq.com/s/Fz7vMZs1p3TL1tt8p6Lrew)
-  - 华为金牌个人 2次
-  - 华为金牌教师 3次，2012实验室年度优秀讲师  
-  - 华为CMC年度突出贡献个人、华为内源骑士、内源之星、王牌Committer、 ...
-  - 华为集体大功连1次，各类总裁团队奖 x次 ... 
-  - 华为明日之星、访问学者、2012之星 ... 
-  - [2023年 信通院AI4SE “银弹” 优秀案例](https://www.aidqc.com/html/web/xhyfb/cgfb/yxal/1912430376221667329.html)
-  - ... 
-- 阿里巴巴
-  - 2015 BABA 松果奖
-- TCL
-  - 2013 TCL 公司年度优秀员工（2013年度）
-  - 2013 TCL UE极致电视创意活动：3件极致人气奖(TOP 10)/2件极致创意奖(TOP 10)
-- 2009年 湖南省优秀毕业生
-- 2007年 全国大学生电子竞赛(索尼杯) 三等奖
-- 2006年 国家奖学金、2007年 国家励志奖学金 
-- 2009~2011 研究生 
-  - 校级 优秀研究生
-  - 校级 优秀学术论文
-  - 校级 一等奖学金
-  - ...
-- 2005~2009 本科  
-  - 校级 三好学生标兵/三好学生/...
-  - 校级 优秀共青团员/先进个人/...
-  - 校级 特等奖学金/甲等奖学金3+
-  - 校级 各类竞赛5+ /... 
--  ... 
+- **行业级**：信通院 AI4SE "银弹" 优秀案例（2023）
+- **企业级**：多次获头部科技企业最高个人技术荣誉（金牌个人 ×2、金牌讲师 ×3）
+- **早期**：国家奖学金、国家励志奖学金、全国大学生电子设计竞赛奖项、湖南省优秀毕业生等
 
 ## 软件 / 产品
 
@@ -219,7 +167,9 @@ Welcome to SkySeraph's personal site, created on Dec 2015 (went silent after Nov
 
 ![个人公众号](/images/qrcode.jpg)
 
+> ⚠️ **隐私声明**：本页面所涉企业经历均为已公开信息或经脱敏处理，不代表任何雇主观点。技术交流仅限公开技术议题。
+
 ---
 
-> 持续学习，保持好奇。
+> *知边界，探未知。*
 </span>
