@@ -1,0 +1,155 @@
+{{ define "main" }}
+<div class="container">
+
+  <div class="page-header">
+    <h1>
+      <span class="lang-zh">{{ .Title | default "AI动态" }}</span>
+      <span class="lang-en">{{ .Params.subtitle | default "AI News" }}</span>
+    </h1>
+    <p>
+      <span class="lang-zh">{{ .Params.description | default "追踪最新 AI 关键事件" }}</span>
+      <span class="lang-en">Latest key events in AI, as they happen</span>
+    </p>
+  </div>
+
+  {{ $all := where .Site.RegularPages "Type" "ainews" }}
+  {{ $all = where $all "Date" "<=" now }}
+  {{ $all = $all.ByDate.Reverse }}
+
+  <!-- 事件类型筛选 -->
+  {{ $kindLabels := dict
+      "model"   "模型发布"
+      "product" "产品更新"
+      "paper"   "论文研究"
+      "funding" "融资收购"
+      "policy"  "政策监管"
+      "agent"   "智能体" }}
+  <div class="ainews-filter" style="padding:20px 0 12px; display:flex; flex-wrap:wrap; gap:6px; align-items:center;">
+    <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim); margin-right:4px;">event:</span>
+    <button class="event-filter-btn active" data-event="all">全部</button>
+    {{ range $k, $label := $kindLabels }}
+      {{ $cnt := len (where $all ".Params.event" $k) }}
+      {{ if $cnt }}
+      <button class="event-filter-btn" data-event="{{ $k }}">{{ $label }} <span style="opacity:0.55;">{{ $cnt }}</span></button>
+      {{ end }}
+    {{ end }}
+  </div>
+
+  <!-- 独立标签体系（ainewstags，与全站 tags 隔离） -->
+  {{ $tags := index .Site.Taxonomies "ainewstags" }}
+  {{ if $tags }}
+  <div class="ainewstags" style="padding:0 0 22px; display:flex; flex-wrap:wrap; gap:6px; align-items:center; border-bottom:1px solid var(--border);">
+    <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim); margin-right:4px;">tag:</span>
+    <button class="tag-filter-btn active" data-tag="all">#all</button>
+    {{ range $tags.ByCount }}
+    <button class="tag-filter-btn" data-tag="{{ .Page.Title | urlize }}">#{{ .Page.Title }}</button>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <!-- 置顶：featured 事件先展示 -->
+  {{ $featured := where $all ".Params.featured" true }}
+  {{ with $featured }}
+  <div class="ainews-featured" style="padding:26px 0 0;">
+    <div class="ainews-section-label">★ 置顶焦点</div>
+    <div class="ainews-grid">
+      {{ range first 2 . }}
+      {{ partial "ainews-card.html" (dict "page" . "featured" true) }}
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  {{ $paginator := .Paginate $all 12 }}
+
+  <div class="ainews-section-label" style="padding-top:28px;">
+    <span class="lang-zh">全部动态 · 共 {{ len $all }} 条</span>
+    <span class="lang-en">All updates · {{ len $all }} items</span>
+  </div>
+
+  <div class="ainews-grid" id="ainews-grid">
+    {{ range $paginator.Pages }}
+    {{ partial "ainews-card.html" (dict "page" .) }}
+    {{ end }}
+  </div>
+  <div id="ainews-empty" style="display:none; padding:48px 0; text-align:center; color:var(--text-dim); font-size:0.85rem; font-family:var(--font-mono);">
+    没有符合条件的动态 · no matching updates
+  </div>
+
+  {{ if gt $paginator.TotalPages 1 }}
+  <div class="pagination">
+    {{ if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}">&laquo;</a>{{ end }}
+    {{ range $paginator.Pagers }}
+      {{ if eq . $paginator }}
+      <span class="current">{{ .PageNumber }}</span>
+      {{ else }}
+      <a href="{{ .URL }}">{{ .PageNumber }}</a>
+      {{ end }}
+    {{ end }}
+    {{ if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}">&raquo;</a>{{ end }}
+  </div>
+  {{ end }}
+
+</div>
+
+<script>
+(function () {
+  var cards    = Array.prototype.slice.call(document.querySelectorAll('#ainews-grid .ainews-card, .ainews-featured .ainews-card'));
+  var eventBtns = document.querySelectorAll('.event-filter-btn');
+  var tagBtns   = document.querySelectorAll('.tag-filter-btn');
+  var state     = { event: 'all', tag: 'all' };
+
+  // URL 参数支持分享筛选结果：/ainews/?event=model&tag=agent
+  var qs = new URLSearchParams(window.location.search);
+  if (qs.get('event')) state.event = qs.get('event');
+  if (qs.get('tag'))  state.tag  = qs.get('tag');
+
+  function apply() {
+    var shown = 0;
+    cards.forEach(function (card) {
+      var okEvent = state.event === 'all' || card.getAttribute("data-event") === state.event;
+      var okTag  = state.tag  === 'all' || (card.getAttribute('data-tags') || '').split(' ').indexOf(state.tag) !== -1;
+      var ok = okEvent && okTag;
+      card.style.display = ok ? '' : 'none';
+      if (ok) shown++;
+    });
+    var empty = document.getElementById('ainews-empty');
+    if (empty) empty.style.display = shown ? 'none' : '';
+    // 筛选时隐藏置顶区块，避免与结果重复感
+    var feat = document.querySelector('.ainews-featured');
+    if (feat && (state.event !== 'all' || state.tag !== 'all')) feat.style.display = 'none';
+    else if (feat) feat.style.display = '';
+  }
+
+  function syncBtns() {
+    eventBtns.forEach(function (b) { b.classList.toggle('active', b.getAttribute("data-event") === state.event); });
+    tagBtns.forEach(function (b)  { b.classList.toggle('active', b.getAttribute('data-tag')  === state.tag);  });
+  }
+
+  eventBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      state.event = btn.getAttribute("data-event");
+      syncBtns(); apply();
+    });
+  });
+  tagBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      state.tag = btn.getAttribute('data-tag');
+      syncBtns(); apply();
+    });
+  });
+
+  // 点击卡片上的标签 → 联动顶部筛选
+  document.querySelectorAll('#ainews-grid .tag-clickable, .ainews-featured .tag-clickable').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      state.tag = btn.getAttribute('data-tag');
+      syncBtns(); apply();
+      var bar = document.querySelector('.ainews-tags');
+      if (bar) bar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  if (state.event !== 'all' || state.tag !== 'all') { syncBtns(); apply(); }
+})();
+</script>
+{{ end }}

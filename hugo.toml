@@ -43,9 +43,13 @@ buildFuture = true
     url = "/series/"
     weight = 3
   [[menu.main]]
+    name = "AI"
+    url = "/ainews/"
+    weight = 4
+  [[menu.main]]
     name = "作品"
     url = "/projects/"
-    weight = 4
+    weight = 5
   [[menu.main]]
     name = "生活"
     url = "/life/"
@@ -62,6 +66,10 @@ buildFuture = true
 [taxonomies]
   tag = "tags"
   category = "categories"
+  # AI动态专栏独立标签体系（与全站 tags 隔离）
+  # 注意：Hugo 要求 taxonomy 的「键名 = 值 = front matter 字段名」三者完全一致，
+  #      否则 term 页不生成（键名也不要与 content 下的目录同名，会抢模板）
+  ainewstags = "ainewstags"
 
 [markup]
   [markup.highlight]

@@ -1,0 +1,30 @@
+{{/* taxonomy kind = "terms"：标签总览页（/ainewstags/） */}}
+{{ define "main" }}
+<div class="container">
+
+  <div class="page-header">
+    <h1>
+      <span class="lang-zh">AI动态标签</span>
+      <span class="lang-en">AI News Tags</span>
+    </h1>
+    <p>
+      <span class="lang-zh">共 {{ len .Data.Terms }} 个标签 · 与全站 tags 相互独立</span>
+      <span class="lang-en">{{ len .Data.Terms }} tags · independent from site-wide tags</span>
+    </p>
+  </div>
+
+  <div class="tag-cloud">
+    {{ range .Data.Terms.ByCount }}
+    {{/* 链到 term 页而非 query 参数：urlize 对中文会二次百分号编码，query 形式匹配不上 */}}
+    <a href="{{ .Page.RelPermalink }}" class="tag-cloud-item">
+      #{{ .Page.Title }}<span style="color:var(--text-dim);margin-left:4px;">{{ .Count }}</span>
+    </a>
+    {{ end }}
+  </div>
+
+  <div style="padding-top:20px;">
+    <a href="{{ "/ainews/" | relURL }}" class="ainews-back">← 返回 AI动态</a>
+  </div>
+
+</div>
+{{ end }}

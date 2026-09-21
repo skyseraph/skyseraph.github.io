@@ -1,0 +1,70 @@
+{{/* AI动态卡片：支持封面图 / 视频 / 纯文本三种形态
+  用法：{{ partial "ainews-card.html" (dict "page" . "featured" true) }} */}}
+{{ $p := .page }}
+{{ $featured := .featured | default false }}
+
+{{ $kind := $p.Params.event | default "model" }}
+{{ $kindLabels := dict
+    "model"   "模型发布"
+    "product" "产品更新"
+    "paper"   "论文研究"
+    "funding" "融资收购"
+    "policy"  "政策监管"
+    "agent"   "智能体" }}
+{{ $kindLabel := index $kindLabels $kind | default $kind }}
+
+{{ $cover := $p.Params.cover }}
+{{ if and $cover (not (or (hasPrefix $cover "http://") (hasPrefix $cover "https://"))) }}
+  {{ $cover = printf "%s/%s" $p.Site.Params.imageBase $cover }}
+{{ end }}
+{{ $video := $p.Params.video }}
+
+{{ $tagIDs := slice }}
+{{ range $p.Params.ainewstags }}{{ $tagIDs = $tagIDs | append (. | urlize) }}{{ end }}
+
+<article class="ainews-card{{ if $featured }} is-featured{{ end }}"
+         data-event="{{ $kind }}"
+         data-tags="{{ delimit $tagIDs " " }}">
+
+  {{ if or $cover $video }}
+  <a class="ainews-media" href="{{ $p.RelPermalink }}">
+    {{ if $video }}
+    <span class="ainews-play" aria-hidden="true">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    </span>
+    {{ end }}
+    {{ with $cover }}
+    <img src="{{ . }}" alt="{{ $p.Title }}" loading="lazy">
+    {{ end }}
+  </a>
+  {{ end }}
+
+  <div class="ainews-body">
+    <div class="ainews-card-top">
+      <span class="ainews-kind ev-{{ $kind }}">{{ $kindLabel }}</span>
+      {{ if $featured }}<span class="pin-badge">置顶</span>{{ end }}
+      <span class="ainews-date">{{ $p.Date.Format "2006-01-02" }}</span>
+    </div>
+
+    <a class="ainews-title" href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
+
+    {{ with $p.Params.summary }}
+    <p class="ainews-summary">{{ . }}</p>
+    {{ else }}
+    <p class="ainews-summary">{{ $p.Summary | plainify | truncate 110 }}</p>
+    {{ end }}
+
+    <div class="ainews-card-foot">
+      <div class="ainews-card-tags">
+        {{ range $p.Params.ainewstags }}
+        <button type="button" class="tag tag-clickable" data-tag="{{ . | urlize }}">#{{ . }}</button>
+        {{ end }}
+      </div>
+      {{ with $p.Params.source }}
+      <a class="ainews-source" href="{{ . }}" target="_blank" rel="noopener">
+        {{ $p.Params.sourceName | default "来源" }} ↗
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</article>

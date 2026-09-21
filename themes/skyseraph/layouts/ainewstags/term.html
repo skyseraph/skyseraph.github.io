@@ -1,0 +1,25 @@
+{{/* taxonomy kind = "term"：单个标签下的动态列表（/ainewstags/<标签>/） */}}
+{{ define "main" }}
+<div class="container">
+
+  <div class="page-header">
+    <h1># {{ .Title }}</h1>
+    <p>
+      <span class="lang-zh">{{ len .Pages }} 条动态</span>
+      <span class="lang-en">{{ len .Pages }} updates</span>
+    </p>
+  </div>
+
+  <div style="padding:0 0 20px;">
+    <a href="{{ "/ainewstags/" | relURL }}" class="ainews-back">← 全部标签</a>
+    <a href="{{ "/ainews/" | relURL }}" class="ainews-back" style="margin-left:16px;">← 返回 AI动态</a>
+  </div>
+
+  <div class="ainews-grid">
+    {{ range .Pages.ByDate.Reverse }}
+    {{ partial "ainews-card.html" (dict "page" .) }}
+    {{ end }}
+  </div>
+
+</div>
+{{ end }}
