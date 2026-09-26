@@ -18,10 +18,10 @@ layout: "about"
   <div class="focus-card">
     <div class="focus-card-icon">🤖</div>
     <div class="focus-card-title">AI / LLM / Agent</div>
-    <div class="focus-card-desc">LLMGaia, Pangu Eval, SkillStudio, ModelAgent</div>
+    <div class="focus-card-desc">LLM Data/Eval, Skill/Agen</div>
   </div>
   
-  <div class="focus-card">
+  <div class="focus-car
     <div class="focus-card-icon">📱</div>
     <div class="focus-card-title">Mobile Engineering</div>
     <div class="focus-card-desc">Android/iOS/HarmonyOS, 10M+ DAU architecture</div>
@@ -42,15 +42,14 @@ layout: "about"
 
 </section>
 
-<section id="journey" class="about-section">
-
+<section id="journey" class="about-section"
 ## Journey
 
 <div class="journey-timeline">
   <div class="journey-item">
     <div class="journey-period">2022 — Present</div>
     <div class="journey-title">AI / LLM / Agent Infrastructure</div>
-    <div class="journey-desc">LLMGaia (Data Engineering), Pangu Model Eval Engineering, SkillStudio / SkillNexus (Open Source), ModelAgent / VerifyAgent</div>
+    <div class="journey-desc"> LLM Data Engineering, LLM Eval Engineering, SkillStudio / SkillNexus (Open Source), ModelAgent、 VerifyAgent</div>
   </div>
   
   <div class="journey-item">
@@ -228,7 +227,7 @@ layout: "about"
   <div class="journey-item">
     <div class="journey-period">2022 — 至今</div>
     <div class="journey-title">AI / LLM / Agent 基础设施</div>
-    <div class="journey-desc">LLMGaia（盖亚数据工程）、盘古模型评测工程、SkillStudio / SkillNexus（开源）、ModelAgent / VerifyAgent</div>
+    <div class="journey-desc">LLM数据工程、模型评测工程、SkillStudio / SkillNexus（开源）、ModelAgent、VerifyAgent</div>
   </div>
   
   <div class="journey-item">

@@ -9,3 +9,5 @@ Thumbs.db
 .claude/
 __pycache__/
 CLAUDE.md
+data/
+data/*.*
