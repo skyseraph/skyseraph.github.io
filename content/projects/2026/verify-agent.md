@@ -21,3 +21,4 @@ draft: false
 
 # About
 
+![gui](/images/projects/2026/va-gui.png)
