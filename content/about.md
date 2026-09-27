@@ -172,11 +172,9 @@ layout: "about"
 
 ![Personal WeChat Official Account](/images/qrcode.jpg)
 
-> ⚠️ **Privacy Notice**: All enterprise experiences listed are either publicly available or desensitized. Views expressed are personal and do not represent any employer.
+Privacy Notice: All enterprise experiences listed are either publicly available or desensitized. Views expressed are personal and do not represent any employer.
 
----
-
-> *Know the boundaries. Chase the unknown.*
+*Know the boundaries. Chase the unknown.*
 
 </section>
 
@@ -350,11 +348,9 @@ layout: "about"
 
 ![个人公众号](/images/qrcode.jpg)
 
-> ⚠️ **隐私声明**：本页面所涉企业经历均为已公开信息或经脱敏处理，不代表任何雇主观点。技术交流仅限公开技术议题。
+隐私声明：本页面所涉企业经历均为已公开信息或经脱敏处理，不代表任何雇主观点。技术交流仅限公开技术议题。
 
----
-
-> *知边界，探未知。*
+*知边界，探未知。*
 
 </section>
 
