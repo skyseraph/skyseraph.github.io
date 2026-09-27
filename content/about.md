@@ -21,7 +21,7 @@ layout: "about"
     <div class="focus-card-desc">LLM Data/Eval, Skill/Agen</div>
   </div>
   
-  <div class="focus-car
+  <div class="focus-card">
     <div class="focus-card-icon">📱</div>
     <div class="focus-card-title">Mobile Engineering</div>
     <div class="focus-card-desc">Android/iOS/HarmonyOS, 10M+ DAU architecture</div>
@@ -42,7 +42,8 @@ layout: "about"
 
 </section>
 
-<section id="journey" class="about-section"
+<section id="journey" class="about-section">
+
 ## Journey
 
 <div class="journey-timeline">
