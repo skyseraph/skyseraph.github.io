@@ -9,7 +9,7 @@ sourceName: " AI"
 summary: "Faros 用 22000 名开发者、4000 个团队的两年遥测数据说明：AI 让代码产出大涨，但评审时长、缺陷率、返工量涨得更快，生成成本与验证成本的缺口就是「验证税」。"
 ainewstags: ["Faros", "验证Verify", ""]
 featured: false
-draft: true
+draft: false
 ---
 
 ## 摘要
