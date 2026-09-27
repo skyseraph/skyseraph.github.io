@@ -4,7 +4,7 @@ date: 2026-04-19T23:29:38+08:00
 icon: "📦"
 description: "Skill创造平台"
 status: "wip"
-github: "https://github.com/iskyseraph/SkillNexus"
+github: "iskyseraph/SkillNexus"
 demo: ""
 tags: ["开源"]
 draft: false

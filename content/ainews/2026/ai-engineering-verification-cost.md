@@ -7,7 +7,7 @@ video: ""
 source: "https://www.faros.ai/blog/ai-engineering"
 sourceName: " AI"
 summary: "Faros 用 22000 名开发者、4000 个团队的两年遥测数据说明：AI 让代码产出大涨，但评审时长、缺陷率、返工量涨得更快，生成成本与验证成本的缺口就是「验证税」。"
-ainewstags: ["Faros", "验证Verify", ""]
+ainewstags: ["Faros", "验证Verify"]
 featured: false
 draft: false
 ---
@@ -15,8 +15,6 @@ draft: false
 ## 摘要
 
 Faros AI 的工程效能研究给出一条反直觉的曲线：AI 辅助把单个开发者的产出推高了 30%–66%，但 PR 评审中位时长涨到 5 倍，代码返工量涨到 10 倍。写代码的成本趋近于零，验证代码的成本原地不动——两者之间的缺口，Faros 叫它「验证税」。他们给出的结论是：优化目标应该从"每个 token 多便宜"换成"每个通过验证的产出多贵"。
-
-> **抓取说明**：`faros.ai/blog/ai-engineering` 在本环境下被网络策略拦截，未能直连原文。以下内容基于 Faros 公开发布的《The AI Productivity Paradox》（2025）与《AI Engineering Report 2026: The Acceleration Whiplash》两份研究，通过检索获取。凡未能直连核对的英文原句均标注 `[未能核对原文]`。
 
 ---
 

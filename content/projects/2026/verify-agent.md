@@ -4,7 +4,7 @@ date: 2026-06-28T09:29:38+08:00
 icon: "📦"
 description: "VerifyAgent"
 status: "wip"
-github: "https://github.com/skyseraph/verifyagent"
+github: "skyseraph/verifyagent"
 demo: ""
 tags: ["开源"]
 draft: false

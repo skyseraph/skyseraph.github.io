@@ -4,7 +4,7 @@ date: 2026-06-14T09:29:38+08:00
 icon: "📦"
 description: "世界杯 2026 "
 status: "archived"
-github: "https://github.com/skyseraph/world-cup-2026"
+github: "skyseraph/world-cup-2026"
 demo: ""
 tags: ["开源"]
 draft: false
