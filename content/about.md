@@ -152,6 +152,7 @@ layout: "about"
 - 2018.9.15 [Android Green Alliance — Exploration and Practice of Game Automation Testing](https://mp.weixin.qq.com/s/sjyiuQV6ZQRNEHKv0Fetkw), awarded [Android Green Alliance Outstanding Speaker 2018](https://mp.weixin.qq.com/s/gsiid9_in8A5QUXehaSF2A)
 - 2023.12 LLMGaia: Data Quality Engineering in the Era of Large Models
 - 2024 [LLMGaia: From Data, Models to Applications — Huawei Cloud Developer Academy](https://connect.huaweicloud.com/courses/learn/C101737534854078340/about)
+- 2026.9 Challenges and Exploration of High-Quality Delivery in the Age of Intelligence — *Quality in the Age of Intelligence: The Coordinates Have Shifted — From Code Review to Intent Verification*
 
 ### Honors & Awards
 
@@ -328,6 +329,7 @@ Privacy Notice: All enterprise experiences listed are either publicly available 
 - 2018.9.15 [安卓绿色联盟《游戏自动化测试能力探索和实践》](https://mp.weixin.qq.com/s/sjyiuQV6ZQRNEHKv0Fetkw)，荣获[安卓绿色联盟 2018 年度优秀讲师](https://mp.weixin.qq.com/s/gsiid9_in8A5QUXehaSF2A)
 - 2023.12《LLMGaia：大模型时代的数据质量工程》
 - 2024 [LLMGaia：从数据、模型到应用 — 华为云开发者学堂](https://connect.huaweicloud.com/courses/learn/C101737534854078340/about)
+- 2026.9 智能时代下高质量交付的挑战与探索 主题《智能时代，质量的坐标变了：从审核代码到验证意图》
 
 ### 荣誉与奖项
 
