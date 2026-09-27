@@ -7,7 +7,7 @@ video: ""
 source: "https://techcrunch.com/2026/09/23/anthropic-says-its-biology-lab-has-already-found-something-big/"
 sourceName: "TechCrunch"
 summary: "Anthropic秘密运营的湿实验室公开亮相，950个Claude智能体协作21小时发现类CRISPR新酶系统ART，预印本已发布，功能尚待确认。"
-ainewstags: [科学AI, 论文研究, 智能体, 产品更新]
+ainewstags: [Anthropic, 湿实验室, CRISPR]
 featured: false
 draft: false
 ---
