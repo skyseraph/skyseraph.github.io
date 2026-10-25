@@ -195,7 +195,7 @@ Privacy Notice: All enterprise experiences listed are either publicly available 
   <div class="focus-card">
     <div class="focus-card-icon">🤖</div>
     <div class="focus-card-title">AI / LLM / Agent</div>
-    <div class="focus-card-desc">LLMGaia（盖亚）、盘古评测、SkillStudio、ModelAgent</div>
+    <div class="focus-card-desc">数据工程、评测工程、SkillStudio、ModelAgent、VerifyAgent...</div>
   </div>
   
   <div class="focus-card">
@@ -270,7 +270,7 @@ Privacy Notice: All enterprise experiences listed are either publicly available 
   <div class="highlight-card-content">
     <div class="highlight-card-title">《Android NFC 开发实战详解》</div>
     <div class="highlight-card-meta">人民邮电出版社 2014（含繁体版）</div>
-    <div class="highlight-card-desc">国内首部 NFC 技术实战专著，定义早期移动端近场通信开发标准</div>
+    <div class="highlight-card-desc">国内首部 NFC 技术实战专著，繁体版输出宝岛</div>
     <div class="highlight-card-links">
       <a href="https://skyseraph.github.io/projects/2014/android-nfc-book/">详情</a>
     </div>
@@ -334,7 +334,7 @@ Privacy Notice: All enterprise experiences listed are either publicly available 
 ### 荣誉与奖项
 
 - **行业级**：信通院 AI4SE "银弹" 优秀案例（2023）
-- **企业级**：多次获头部科技企业最高个人技术荣誉（金牌个人 ×2、金牌讲师 ×3）
+- **企业级**：多次获头部科技企业最高个人技术荣誉（金牌个人 ×2、金牌讲师 ×3等）
 - **早期**：国家奖学金、国家励志奖学金、全国大学生电子设计竞赛奖项、湖南省优秀毕业生等
 
 </section>
