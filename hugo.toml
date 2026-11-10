@@ -70,6 +70,8 @@ buildFuture = true
   # 注意：Hugo 要求 taxonomy 的「键名 = 值 = front matter 字段名」三者完全一致，
   #      否则 term 页不生成（键名也不要与 content 下的目录同名，会抢模板）
   ainewstags = "ainewstags"
+  # AI产品洞察日报专栏独立标签体系（与 ainewstags 互相隔离）
+  aiproducttags = "aiproducttags"
 
 [markup]
   [markup.highlight]

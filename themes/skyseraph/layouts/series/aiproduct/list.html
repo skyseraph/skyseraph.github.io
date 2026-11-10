@@ -1,0 +1,157 @@
+{{ define "main" }}
+<div class="container">
+
+  <div class="page-header">
+    <h1>
+      <span class="lang-zh">{{ .Title | default "AI 产品洞察" }}</span>
+      <span class="lang-en">{{ .Params.subtitle | default "AI Product Insights" }}</span>
+    </h1>
+    <p>
+      <span class="lang-zh">{{ .Params.description | default "每天把 AI 信号变成产品判断" }}</span>
+      <span class="lang-en">Turn daily AI signals into product judgment</span>
+    </p>
+  </div>
+
+  {{ $all := .RegularPagesRecursive }}
+  {{ $all = where $all "Date" "<=" now }}
+  {{ $all = $all.ByDate.Reverse }}
+
+  <p style="padding-top:6px; font-size:0.8rem; font-family:var(--font-mono); color:var(--text-dim);">
+    每日 08:30 更新
+    {{ with index $all 0 }} · 最近更新 {{ .Date.Format "01-02" }}{{ end }}
+    · <a href="{{ "series/aiproduct/index.xml" | relURL }}">RSS 订阅 ↗</a>
+  </p>
+
+  <!-- 事件类型筛选 -->
+  {{ $kindLabels := dict
+      "daily"   "产品日报"
+      "weekly"  "周报回顾" }}
+  <div class="ainews-filter" style="padding:20px 0 12px; display:flex; flex-wrap:wrap; gap:6px; align-items:center;">
+    <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim); margin-right:4px;">event:</span>
+    <button class="event-filter-btn active" data-event="all">全部</button>
+    {{ range $k, $label := $kindLabels }}
+      {{ $cnt := len (where $all ".Params.event" $k) }}
+      {{ if $cnt }}
+      <button class="event-filter-btn" data-event="{{ $k }}">{{ $label }} <span style="opacity:0.55;">{{ $cnt }}</span></button>
+      {{ end }}
+    {{ end }}
+  </div>
+
+  <!-- 独立标签体系（aiproducttags，与全站 tags 隔离） -->
+  {{ $tags := index .Site.Taxonomies "aiproducttags" }}
+  {{ if $tags }}
+  <div class="ainewstags" style="padding:0 0 22px; display:flex; flex-wrap:wrap; gap:6px; align-items:center; border-bottom:1px solid var(--border);">
+    <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim); margin-right:4px;">tag:</span>
+    <button class="tag-filter-btn active" data-tag="all">#all</button>
+    {{ range $tags.ByCount }}
+    <button class="tag-filter-btn" data-tag="{{ .Page.Title | urlize }}">#{{ .Page.Title }}</button>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <!-- 置顶：featured 先展示 -->
+  {{ $featured := where $all ".Params.featured" true }}
+  {{ with $featured }}
+  <div class="ainews-featured" style="padding:26px 0 0;">
+    <div class="ainews-section-label">★ 置顶焦点</div>
+    <div class="ainews-grid">
+      {{ range first 2 . }}
+      {{ partial "aiproduct-card.html" (dict "page" . "featured" true) }}
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  {{ $paginator := .Paginate $all 12 }}
+
+  <div class="ainews-section-label" style="padding-top:28px;">
+    <span class="lang-zh">全部日报 · 共 {{ len $all }} 期</span>
+    <span class="lang-en">All issues · {{ len $all }}</span>
+    <a href="{{ "/ainews/" | relURL }}" style="margin-left:auto; font-size:0.75rem; color:var(--text-dim);">姊妹专栏：AI动态 ↗</a>
+  </div>
+
+  <div class="ainews-grid" id="ainews-grid">
+    {{ range $paginator.Pages }}
+    {{ partial "aiproduct-card.html" (dict "page" .) }}
+    {{ end }}
+  </div>
+  <div id="ainews-empty" style="display:none; padding:48px 0; text-align:center; color:var(--text-dim); font-size:0.85rem; font-family:var(--font-mono);">
+    没有符合条件的日报 · no matching issues
+  </div>
+
+  {{ if gt $paginator.TotalPages 1 }}
+  <div class="pagination">
+    {{ if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}">&laquo;</a>{{ end }}
+    {{ range $paginator.Pagers }}
+      {{ if eq . $paginator }}
+      <span class="current">{{ .PageNumber }}</span>
+      {{ else }}
+      <a href="{{ .URL }}">{{ .PageNumber }}</a>
+      {{ end }}
+    {{ end }}
+    {{ if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}">&raquo;</a>{{ end }}
+  </div>
+  {{ end }}
+
+</div>
+
+<script>
+(function () {
+  var cards    = Array.prototype.slice.call(document.querySelectorAll('#ainews-grid .ainews-card, .ainews-featured .ainews-card'));
+  var eventBtns = document.querySelectorAll('.event-filter-btn');
+  var tagBtns   = document.querySelectorAll('.tag-filter-btn');
+  var state     = { event: 'all', tag: 'all' };
+
+  // URL 参数支持分享筛选结果：/series/aiproduct/?event=daily&tag=agent
+  var qs = new URLSearchParams(window.location.search);
+  if (qs.get('event')) state.event = qs.get('event');
+  if (qs.get('tag'))  state.tag  = qs.get('tag');
+
+  function apply() {
+    var shown = 0;
+    cards.forEach(function (card) {
+      var okEvent = state.event === 'all' || card.getAttribute("data-event") === state.event;
+      var okTag  = state.tag  === 'all' || (card.getAttribute('data-tags') || '').split(' ').indexOf(state.tag) !== -1;
+      var ok = okEvent && okTag;
+      card.style.display = ok ? '' : 'none';
+      if (ok) shown++;
+    });
+    var empty = document.getElementById('ainews-empty');
+    if (empty) empty.style.display = shown ? 'none' : '';
+    var feat = document.querySelector('.ainews-featured');
+    if (feat && (state.event !== 'all' || state.tag !== 'all')) feat.style.display = 'none';
+    else if (feat) feat.style.display = '';
+  }
+
+  function syncBtns() {
+    eventBtns.forEach(function (b) { b.classList.toggle('active', b.getAttribute("data-event") === state.event); });
+    tagBtns.forEach(function (b)  { b.classList.toggle('active', b.getAttribute('data-tag')  === state.tag);  });
+  }
+
+  eventBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      state.event = btn.getAttribute("data-event");
+      syncBtns(); apply();
+    });
+  });
+
+  tagBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      state.tag = btn.getAttribute('data-tag');
+      syncBtns(); apply();
+    });
+  });
+
+  document.querySelectorAll('#ainews-grid .tag-clickable, .ainews-featured .tag-clickable').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      state.tag = btn.getAttribute('data-tag');
+      syncBtns(); apply();
+      var bar = document.querySelector('.ainews-tags');
+      if (bar) bar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  if (state.event !== 'all' || state.tag !== 'all') { syncBtns(); apply(); }
+})();
+</script>
+{{ end }}

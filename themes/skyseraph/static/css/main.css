@@ -1692,6 +1692,9 @@ html {
 .ev-funding { background: rgba(255,184,108,0.1);color: var(--orange); border-color: rgba(255,184,108,0.25); }
 .ev-policy  { background: rgba(255,85,85,0.1);  color: var(--red);    border-color: rgba(255,85,85,0.25); }
 .ev-agent   { background: rgba(77,159,255,0.1); color: var(--blue);   border-color: rgba(77,159,255,0.25); }
+/* AI产品洞察日报（aiproduct 专栏）事件类型 */
+.ev-daily   { background: rgba(255,214,10,0.1);  color: #d9b60b;     border-color: rgba(255,214,10,0.25); }
+.ev-weekly  { background: rgba(171,178,191,0.12);color: #9aa5b1;     border-color: rgba(171,178,191,0.28); }
 
 .ainews-title {
   font-size: 0.98rem;

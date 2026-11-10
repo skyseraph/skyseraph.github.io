@@ -1,0 +1,58 @@
+{{/* AI产品洞察日报卡片（复用 ainews 卡片结构，标签体系与事件类型独立）
+  用法：{{ partial "aiproduct-card.html" (dict "page" . "featured" true) }} */}}
+{{ $p := .page }}
+{{ $featured := .featured | default false }}
+
+{{ $kind := $p.Params.event | default "daily" }}
+{{ $kindLabels := dict
+    "daily"   "产品日报"
+    "weekly"  "周报回顾" }}
+{{ $kindLabel := index $kindLabels $kind | default $kind }}
+
+{{ $cover := $p.Params.cover }}
+{{ if and $cover (not (or (hasPrefix $cover "http://") (hasPrefix $cover "https://"))) }}
+  {{ $cover = printf "%s/%s" $p.Site.Params.imageBase $cover }}
+{{ end }}
+
+{{ $tagIDs := slice }}
+{{ range $p.Params.aiproducttags }}{{ $tagIDs = $tagIDs | append (. | urlize) }}{{ end }}
+
+<article class="ainews-card{{ if $featured }} is-featured{{ end }}"
+         data-event="{{ $kind }}"
+         data-tags="{{ delimit $tagIDs " " }}">
+
+  {{ with $cover }}
+  <a class="ainews-media" href="{{ $p.RelPermalink }}">
+    <img src="{{ . }}" alt="{{ $p.Title }}" loading="lazy">
+  </a>
+  {{ end }}
+
+  <div class="ainews-body">
+    <div class="ainews-card-top">
+      <span class="ainews-kind ev-{{ $kind }}">{{ $kindLabel }}</span>
+      {{ if $featured }}<span class="pin-badge">置顶</span>{{ end }}
+      <span class="ainews-date">{{ $p.Date.Format "2006-01-02" }}</span>
+    </div>
+
+    <a class="ainews-title" href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
+
+    {{ with $p.Params.summary }}
+    <p class="ainews-summary">{{ . }}</p>
+    {{ else }}
+    <p class="ainews-summary">{{ $p.Summary | plainify | truncate 110 }}</p>
+    {{ end }}
+
+    <div class="ainews-card-foot">
+      <div class="ainews-card-tags">
+        {{ range $p.Params.aiproducttags }}
+        <button type="button" class="tag tag-clickable" data-tag="{{ . | urlize }}">#{{ . }}</button>
+        {{ end }}
+      </div>
+      {{ with $p.Params.source }}
+      <a class="ainews-source" href="{{ . }}" target="_blank" rel="noopener">
+        {{ $p.Params.sourceName | default "来源" }} ↗
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</article>
