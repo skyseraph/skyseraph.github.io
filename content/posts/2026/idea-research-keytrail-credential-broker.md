@@ -8,19 +8,19 @@ toc: true
 draft: false
 ---
 
-> 研究对象：[《AI 产品洞察日报｜2026-11-11》创意 1](/series/aiproduct/2026/2026-11-11/)：KeyTrail — coding agent 的密钥运行时代理。本文是 idea-research 六步框架的完整产出：信号回顾、痛点验证、竞品格局、技术可行性、反方论证、Go/No-Go 结论。
+> 研究对象：[《AI 产品洞察日报｜2026-11-11》创意 1](/series/aiproduct/2026/2026-11-11/)：KeyTrail — coding agent 的密钥运行时代理。
 
 ## 摘要
 
 **结论：No-Go（按日报定义的 MVP 形态），改造方向存在但需先验证。** 痛点真实到超出日报引用的范围——三组独立研究、两条泄漏路径、一个平台级事故，泄密频率本身已是信号。但创意的核心假设「『我的 agent 碰过哪些密钥』没有产品能回答」在 2026-11-11 已经不成立：**credential broker（凭证经纪）在过去半年被命名、被文档化，并已有至少六款产品落地**，其中 Infisical 以开源 + 商业双轨亲自下场。更麻烦的是，运行时代理防的「出口泄漏」只占实际泄漏事件的少数——多数事故发生在入口（文件被提交）与平台侧（产物公开可读）。代理层窗口已关；唯一还空着的是事后取证层，本文将其命名为「密钥接触面」审计。
 
-## 一、信号回顾：日报的原始判断
+## 一、日报的原始判断
 
 日报创意 1 的定位是「agent 永远拿不到明文密钥，只拿用完即焚的代理凭证」，MVP 为本地 sidecar 劫持环境变量注入点，先接 Claude Code / Codex / Grok Build，定价对标一次泄密事故的响应成本。它承接洞察 5 的判断：Grok Build 3.5 万应用泄密与 Claude Code 配置成批暴露密钥之后，「我的 agent 碰过哪些密钥、产物流向了哪」没有产品能回答，这会是继 SBOM 之后企业采购的下一个必填项。
 
 这个判断隐含两个待检验的命题：一是痛点足够痛（有人因此付钱），二是空白点存在（没有人已经在做）。趋势记录里「模型行为漂移与第三方信任」已连续两日出现，本研究同时是对该趋势既有判断的修正机会。
 
-## 二、痛点验证：证据比日报引用的更硬
+## 二、证据比日报引用的更硬
 
 痛点这一关，证据不仅够，而且过量。按泄漏路径分三类：
 
@@ -35,7 +35,7 @@ draft: false
 
 痛点验证通过，且无需降级。但注意三类泄漏的权重：入口与平台事故有精确统计（万级、十万级），出口外发主要是概念验证与研究演示。**这个分布本身就是后面结论的伏笔。**
 
-## 三、竞品格局：空白点已经不存在
+## 三、空白点已经不存在
 
 直接竞品检索的结果超出预期——「agent 不持有明文凭证」这个解法已经品类化，社区甚至给它起了统一的名字：credential brokering。[Infisical 2026 年 5 月的博客](https://infisical.com/blog/credential-brokering-for-ai-agents)把模式讲透；[agentic-patterns.com 已将「Local-First Credential Broker」收录为标准模式](https://agentic-patterns.com/patterns/local-first-credential-broker)；[TRM Labs 的工程博客标题就是一句宣言](https://www.trmlabs.com/trm-tech-blog/ai-agent-security-granting-access-without-giving-away-the-keys)：
 
@@ -54,7 +54,7 @@ draft: false
 
 判断：**日报的空白点判断过期了，且过期发生得很快。**「留痕」被 Agent Vault 的请求审计覆盖，「用完即焚」被 OneCLI/seekrit 的注入与占位符机制覆盖，品类观察文章（[Sublime Coding](https://sublimecoding.com/blog/ai-agent-secrets-management)、[SwytchCode 对比](https://www.swytchcode.com/content/best-secrets-management-ai-agents)）都已出现——当一个赛道开始有「最佳工具对比」内容时，先发窗口已经关闭。
 
-## 四、技术可行性：路径成立，但已被先行者验证完了
+## 四、路径成立，但已被先行者验证完了
 
 技术可行性反而是六步里最不需要担心的：日报设想的「劫持环境变量注入点」有三条已被走通的实现路径——应用层钩子（Claude Code 的 apiKeyHelper）、进程层注入（seekrit 的 spawn-time 注入）、网络层网关（OneCLI）。MVP 4-6 周的估计合理，但交付物将与上述开源等价物功能重叠。真正的硬约束有两个：
 
@@ -64,7 +64,7 @@ draft: false
 
 超出 MVP 能力的部分：非 HTTP 凭证（git push 的 SSH key、数据库连接串）绕不开明文传递；跨 Claude Code / Codex / Grok Build 的统一注入点各自协议不同；企业 RBAC 与合规报表是另一个量级的工程。
 
-## 五、反方论证：这个创意会怎么死
+## 五、这个创意会怎么死
 
 **死法一：品类密度碾压。** 4-6 周 MVP 交付时，市面已有至少四个开源等价物和一个免费+商业双轨的头部玩家（Infisical 是密钥管理领域的存量厂商，自带企业分发渠道）。新进入者既无社区信任（这是安全产品，Koda 那句「它这么新，我能信多少」会原样砸到自己头上），也无渠道。安全工具的替换成本极高，后来者连被试用的机会都少。
 
@@ -72,7 +72,7 @@ draft: false
 
 **死法三：定价锚点与痛点主体错位——这是最根本的一条。** 日报把定价锚在「一次泄密事故的响应成本」上，但第二节的证据分布显示：有统计的事故绝大多数是入口泄漏（文件被提交，gitleaks 免费解决）和平台泄漏（Grok Build 分享链接，代理管不着），运行时外发目前主要是研究演示。代理形态防的是三类里**频率最低、证据最少**的一类。为低频事件付持续订阅费的是企业，而企业采购先看 CyberArk/HashiCorp Vault/Infisical PAM 的存量清单——那里已经躺着「agent 支持」的 checkbox。
 
-## 六、结论：No-Go，缝隙在「密钥接触面」取证
+## 六、No-Go，缝隙在「密钥接触面」取证
 
 **三选一结论：No-Go。** 一句话理由：痛点真实，但解法已被品类化（六款产品、两家头部厂商），且代理防的出口泄漏只是实际事故的少数——窗口和定位双双不成立。
 
