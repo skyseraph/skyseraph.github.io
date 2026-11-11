@@ -56,7 +56,7 @@ draft: false
 
 ## 四、路径成立，但已被先行者验证完了
 
-技术可行性反而是六步里最不需要担心的：日报设想的「劫持环境变量注入点」有三条已被走通的实现路径——应用层钩子（Claude Code 的 apiKeyHelper）、进程层注入（seekrit 的 spawn-time 注入）、网络层网关（OneCLI）。MVP 4-6 周的估计合理，但交付物将与上述开源等价物功能重叠。真正的硬约束有两个：
+技术路径反而是整个创意里最不需要担心的：日报设想的「劫持环境变量注入点」有三条已被走通的实现路径——应用层钩子（Claude Code 的 apiKeyHelper）、进程层注入（seekrit 的 spawn-time 注入）、网络层网关（OneCLI）。MVP 4-6 周的估计合理，但交付物将与上述开源等价物功能重叠。真正的硬约束有两个：
 
 **其一，「用完即焚」依赖上游配合，否则只是信任转移。** 多数 LLM 与 SaaS API 只接受静态 key；要让 agent 侧只见一次性 token，代理必须在某处持有明文再转发——Agent Vault 的 MITM 架构正是如此。这意味着密钥没有消失，只是搬家了：[社区对网关形态的质疑集中在单点故障与「凭什么信这个新工具」](https://www.spotech.online/en/onecli-onecli-open-source-credential-b2c8)（[Koda 评测](https://www.koda.community/reviews/2026-08-24-onecli-is-the-sandboxed-version-of-the-agent-your-team-is-already-running-unsupervised.html)）。短期凭证的原生支持只存在于厂商自己的订阅通道（OAuth），那是平台的地盘。
 
