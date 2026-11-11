@@ -8,19 +8,19 @@ toc: true
 draft: false
 ---
 
-> 研究对象：[《AI 产品洞察日报｜2026-11-11》创意 2](/series/aiproduct/2026/2026-11-11/)：ProofGate — PR 级「生成即证明」门禁。本文是 idea-research 六步框架的完整产出：信号回顾、痛点验证、竞品格局、技术可行性、反方论证、Go/No-Go 结论。
+> 研究对象：[《AI 产品洞察日报｜2026-11-11》创意 2](/series/aiproduct/2026/2026-11-11/)：ProofGate — PR 级「生成即证明」门禁。
 
 ## 摘要
 
 **结论：改造后 Go——放弃「证明优先」，改做「反例优先」的证伪门禁。** 痛点一关证据过量：审查负担倒挂有了社区定量讨论，AI 生成测试「永远通过且看起来合理」成了共识性抱怨，形式验证的人力成本（50-100 倍于写代码）也有一手证词。但竞品检索发现日报的空白点判断已经过期一半：**Harmonic 的 Aristotle 不仅在做「AI 写证明 + Lean 机器检查」，连 ProofGate 设想的「已证明 / 反例 / 超出能力」三态输出都逐字实现了**，目前只差语言覆盖（Verilog/C，主流应用语言未开放）。正面做通用证明门禁等于撞进对方路线图；反例发现才是当下就能交付、不受「规约是否写对」质疑的价值——反例自己会说话。
 
-## 一、信号回顾：日报的原始判断
+## 一、日报的原始判断
 
 日报创意 2 的定位是「对 AI 生成的纯函数代码自动生成正确性证明或反例，作为合并门禁」，MVP 为 6-8 周覆盖可形式化子集（算法、数据变换、金融计算），接 GitHub Actions 输出三态结果，定价对标高合规行业的人工审计人天成本。它承接洞察 6 的判断：[AlphaProof Code](https://deepmind.google/blog/introducing-alphaproof-code/) 把定理证明带进工程代码（[HN 538 分、170 评论](https://news.ycombinator.com/item?id=50439193)），「生成 + 证明」一旦成对出售，金融、航空、内核的 AI 编码就解锁，「把 proof-carrying code 做成 CI 门禁的团队先吃头啖汤」。
 
 这个判断隐含两个待检验的命题：一是 AI 代码的信任缺口真的大到有人为「证明」付钱；二是「证明门禁」这个产品位置还空着。趋势记录里「模型信任」已连续两日出现，本研究同时是对该趋势的回检。
 
-## 二、痛点验证：审查倒挂、测试失效、证明太贵
+## 二、审查倒挂、测试失效、证明太贵
 
 痛点证据不仅够三条，而且三条各占一个独立侧面。
 
@@ -42,7 +42,7 @@ draft: false
 
 痛点验证通过，无需降级。真正的变量在竞品。
 
-## 三、竞品格局：三态门禁已被做出一半
+## 三、三态门禁已被做出一半
 
 直接竞品检索的结果比 KeyTrail 案例更戏剧性：日报设想的产品形态，不是一个近似物，而是一个逐字命中。
 
@@ -60,7 +60,7 @@ draft: false
 
 判断：**空白点不成立一半。**「三态证明门禁」作为产品形态已被 Aristotle 占位，剩下的是语言与客群空隙——Python/TypeScript/Java 的应用层、GitHub Action 开箱即用、面向 AI 生成代码的规约自动生成。但这个空隙不是护城河，是对方公开宣告的路线图（"more on the way"）。
 
-## 四、技术可行性：证明贵，反例便宜
+## 四、证明贵，反例便宜
 
 日报 MVP 的「自动生成正确性证明」需要一次诚实的拆解：三态里两态的技术成熟度完全不对称。
 
@@ -70,7 +70,7 @@ draft: false
 
 关键技术风险两个。**其一，规约瓶颈**：形式验证三十年的教训是写规约比写代码难，HN 讨论里被反复重申——*"You'd just move from bugs in code to bugs in the spec"*，而 AI 生成规约引入新变体：模型可能为凑证明改写规约（侧面一那条"many, many bugs"评论就是实例）。**其二，可形式化子集的覆盖率**：纯函数在业务代码里占比有限，*"The scope of what we can verify is still tiny"* 是社区对验证范围的共识——门禁只查 5% 的代码时，用户很快学会无视它（推断）。外部依赖：GitHub Actions 生态位、开源证明引擎、以及跑证明搜索的 LLM API 账单。超出 MVP 能力的部分：并发、IO、GUI 与整程序行为验证，这些在可见的未来都做不了。
 
-## 五、反方论证：这个创意会怎么死
+## 五、这个创意会怎么死
 
 **死法一：Aristotle 正面碾压，且路线图压顶。** 三态输出、每 commit 验证、按量计费全都已在对方产品页上，语言扩展是明牌。更底层的是 HN 那条釜底抽薪的质疑：*"I do not understand how this is materially different to just asking existing frontier model to 'rewrite thing in Lean', then check for verifiably unintended diffs."*——当前沿模型的重写与证明能力每季度上一个台阶，独立门禁产品的技术溢价会被模型能力直接吸收（推断：DeepMind 已开源验证工件，正是这种吸收的先兆）。
 
@@ -78,7 +78,7 @@ draft: false
 
 **死法三：成本结构与门禁时延互相拆台。** 同帖的黑色幽默——*"it'll be much better once each CI run costs $10,000 for the AI to make sure you didn't break its giant proof"*。证明搜索吃 token 与算力，CI 要快又要便宜；为压时延缩小验证范围，又撞上死法二的覆盖率问题。加上 CodeRabbit 们手握渠道与信任（尽管[其企业案例已开始被社区审计质疑](https://www.reddit.com/r/ChatGPTCoding/comments/1x4fwxa/we_audited_coderabbits_enterprise_case_study_174)），一个初创公司在「AI 代码治理」大类里再讲一个更贵、更慢、更窄的故事，销售上没有胜算（推断）。
 
-## 六、结论：改造后 Go——从「证明门禁」退到「证伪门禁」
+## 六、改造后 Go——从「证明门禁」退到「证伪门禁」
 
 **三选一结论：改造后 Go。** 一句话理由：痛点真实、预算池存在，但「证明优先」的通用门禁与 Aristotle 逐字撞车且被巨头路线图覆盖；把第一交付物从 Proved 换成 Refuted——反例用现成引擎（CrossHair/Kani）、分钟级时延、且天然免疫「规约写没写对」的质疑，因为一个能复现的反例不需要你信任任何东西。
 
