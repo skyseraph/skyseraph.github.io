@@ -27,14 +27,17 @@
   </div>
   {{ end }}
 
-  <!-- Tag filter -->
+  <!-- Tag filter（默认折叠 2 行） -->
   {{ $tags := .Site.Taxonomies.tags }}
   {{ if $tags }}
-  <div style="padding: 10px 0 20px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; border-bottom: 1px solid var(--border);">
-    <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim); margin-right:4px;">tag:</span>
-    {{ range $name, $pages := $tags }}
-    <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}" class="tag">#{{ $name }}</a>
-    {{ end }}
+  <div class="tag-fold" id="tagFold" style="padding: 10px 0 20px; border-bottom: 1px solid var(--border);">
+    <div class="tag-links" style="display: flex; flex-wrap: wrap; gap: 6px; align-items: center;">
+      <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim); margin-right:4px;">tag:</span>
+      {{ range $name, $pages := $tags }}
+      <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}" class="tag">#{{ $name }}</a>
+      {{ end }}
+    </div>
+    <button type="button" class="tag-fold-toggle">展开标签 ▾</button>
   </div>
   {{ end }}
 
@@ -90,4 +93,18 @@
   {{ end }}
 
 </div>
+
+<script>
+(function () {
+  var fold = document.getElementById('tagFold');
+  if (!fold) return;
+  var bar = fold.querySelector('.tag-links');
+  if (bar && bar.scrollHeight > bar.clientHeight + 4) fold.classList.add('overflows');
+  var tgl = fold.querySelector('.tag-fold-toggle');
+  if (tgl) tgl.addEventListener('click', function () {
+    fold.classList.toggle('expanded');
+    tgl.textContent = fold.classList.contains('expanded') ? '收起 ▴' : '展开标签 ▾';
+  });
+})();
+</script>
 {{ end }}
