@@ -1579,6 +1579,29 @@ html {
 }
 
 .ainews-filter button,
+/* 标签条折叠：默认 2 行，超出可展开（.tag-fold 包裹层由列表模板提供） */
+.tag-fold { position: relative; }
+.tag-fold .ainewstags {
+  max-height: 60px;            /* 约 2 行按钮（26px×2 + gap） */
+  overflow: hidden;
+  transition: max-height .25s ease;
+}
+.tag-fold.expanded .ainewstags { max-height: 640px; }
+/* 折叠态底部渐隐，提示下方还有 */
+.tag-fold.overflows:not(.expanded) .ainewstags::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 0; height: 22px;
+  background: linear-gradient(transparent, var(--bg, #fff));
+  pointer-events: none;
+}
+.tag-fold-toggle {
+  font-size: 0.72rem; font-family: var(--font-mono);
+  color: var(--text-dim); background: none; border: none;
+  cursor: pointer; padding: 4px 2px 0;
+}
+.tag-fold-toggle:hover { color: var(--text); }
+.tag-fold:not(.overflows) .tag-fold-toggle { display: none; }
+
 .ainewstags button {
   background: none;
   border: 1px solid var(--border);

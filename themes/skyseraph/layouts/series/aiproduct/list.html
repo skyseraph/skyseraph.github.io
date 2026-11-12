@@ -37,15 +37,18 @@
     {{ end }}
   </div>
 
-  <!-- 独立标签体系（aiproducttags，与全站 tags 隔离） -->
+  <!-- 独立标签体系（aiproducttags，与全站 tags 隔离；默认折叠 2 行） -->
   {{ $tags := index .Site.Taxonomies "aiproducttags" }}
   {{ if $tags }}
-  <div class="ainewstags" style="padding:0 0 22px; display:flex; flex-wrap:wrap; gap:6px; align-items:center; border-bottom:1px solid var(--border);">
-    <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim); margin-right:4px;">tag:</span>
-    <button class="tag-filter-btn active" data-tag="all">#all</button>
-    {{ range $tags.ByCount }}
-    <button class="tag-filter-btn" data-tag="{{ .Page.Title | urlize }}">#{{ .Page.Title }}</button>
-    {{ end }}
+  <div class="tag-fold" id="tagFold" style="padding:0 0 22px; border-bottom:1px solid var(--border);">
+    <div class="ainewstags" style="display:flex; flex-wrap:wrap; gap:6px; align-items:center;">
+      <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim); margin-right:4px;">tag:</span>
+      <button class="tag-filter-btn active" data-tag="all">#all</button>
+      {{ range $tags.ByCount }}
+      <button class="tag-filter-btn" data-tag="{{ .Page.Title | urlize }}">#{{ .Page.Title }}</button>
+      {{ end }}
+    </div>
+    <button type="button" class="tag-fold-toggle">展开标签 ▾</button>
   </div>
   {{ end }}
 
@@ -152,6 +155,18 @@
   });
 
   if (state.event !== 'all' || state.tag !== 'all') { syncBtns(); apply(); }
+
+  // 标签条折叠：超出 2 行才显示展开按钮
+  var fold = document.getElementById('tagFold');
+  if (fold) {
+    var bar = fold.querySelector('.ainewstags');
+    if (bar && bar.scrollHeight > bar.clientHeight + 4) fold.classList.add('overflows');
+    var tgl = fold.querySelector('.tag-fold-toggle');
+    if (tgl) tgl.addEventListener('click', function () {
+      fold.classList.toggle('expanded');
+      tgl.textContent = fold.classList.contains('expanded') ? '收起 ▴' : '展开标签 ▾';
+    });
+  }
 })();
 </script>
 {{ end }}
